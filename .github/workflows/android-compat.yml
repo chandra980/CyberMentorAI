@@ -6,6 +6,7 @@ on:
     branches: [main]
     paths:
       - 'android-app/**'
+      - 'scripts/android_launch_smoke.sh'
       - '.github/workflows/android-compat.yml'
 
 concurrency:
