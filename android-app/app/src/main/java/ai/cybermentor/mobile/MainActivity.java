@@ -158,7 +158,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
     }
 
     public final class NativeBridge {
-        private final Context ctx; NativeBridge(Context c){ctx=c;}
+        private final Context ctx; NativeBridge(Context c){ctx=c;}\n        @JavascriptInterface public void toast(String msg){runOnUiThread(()->Toast.makeText(ctx,msg==null?"":msg,Toast.LENGTH_SHORT).show());}
         @JavascriptInterface public boolean hasApiKey(){try{return loadKey()!=null;}catch(Exception e){return false;}}
         @JavascriptInterface public String saveApiKey(String k){try{if(k==null||k.trim().length()<20)return "Invalid key";saveKey(k.trim());return "OK";}catch(Exception e){return "Save failed: "+e.getMessage();}}
         @JavascriptInterface public void clearApiKey(){getSharedPreferences(PREFS,MODE_PRIVATE).edit().remove(PREF_KEY).apply();}
@@ -174,7 +174,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         @JavascriptInterface public void startVoice(){runOnUiThread(()->{Intent i=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);try{startActivityForResult(i,VOICE_CODE);}catch(Exception e){Toast.makeText(ctx,"Speech recognition unavailable",Toast.LENGTH_SHORT).show();}});}
         @JavascriptInterface public void speak(String t){if(tts!=null&&t!=null&&!t.isBlank())tts.speak(t,TextToSpeech.QUEUE_FLUSH,null,"cm");}
         @JavascriptInterface public void shareText(String title,String text){runOnUiThread(()->{Intent i=new Intent(Intent.ACTION_SEND);i.setType("text/plain");i.putExtra(Intent.EXTRA_SUBJECT,title);i.putExtra(Intent.EXTRA_TEXT,text);startActivity(Intent.createChooser(i,"Share"));});}
-        @JavascriptInterface public String appVersion(){return BuildConfig.VERSION_NAME;}
+        @JavascriptInterface public String appVersion(){try{return ctx.getPackageManager().getPackageInfo(ctx.getPackageName(),0).versionName;}catch(Exception e){return "unknown";}}
         @JavascriptInterface public void refreshOpenAIModels(String id){try{String k=loadKey();if(k==null){js("window.CyberMentorNative&&window.CyberMentorNative.onModelCatalog("+JSONObject.quote(id)+",false,'No API key saved')");return;}get(id,OPENAI_MODELS_ENDPOINT,k,"onModelCatalog");}catch(Exception e){}}
         @JavascriptInterface public void fetchCyberFeed(String id){get(id,FEED_ENDPOINT,null,"onCyberFeed");}
         @JavascriptInterface public void checkForUpdates(String id){get(id,RELEASE_ENDPOINT,null,"onUpdateInfo");}
