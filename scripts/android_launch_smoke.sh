@@ -24,19 +24,22 @@ adb shell dumpsys activity activities | grep -q "$PKG/.MainActivity"
 
 # Verify native WebView load and JavaScript initialization.
 LOG="$(adb logcat -d)"
-if ! printf '%s\n' "$LOG" | grep -q "CyberMentorAI.*WEBAPP_READY"; then
+LOG_FILE="/tmp/cybermentor-logcat-$API_LEVEL.txt"
+printf '%s\n' "$LOG" > "$LOG_FILE"
+if ! grep -q "CyberMentorAI.*WEBAPP_READY" "$LOG_FILE"; then
   echo "CyberMentor WebView did not finish loading on API $API_LEVEL"
-  printf '%s\n' "$LOG"
+  cat "$LOG_FILE"
   exit 1
 fi
-if ! printf '%s\n' "$LOG" | grep -q "CyberMentorAI.*UI_READY"; then
+if ! grep -q "CyberMentorAI.*UI_READY" "$LOG_FILE"; then
   echo "CyberMentor JavaScript UI did not initialize on API $API_LEVEL"
-  printf '%s\n' "$LOG"
+  cat "$LOG_FILE"
   exit 1
 fi
-if printf '%s\n' "$LOG" | grep -A8 "FATAL EXCEPTION" | grep -q "$PKG"; then
+grep -A8 "FATAL EXCEPTION" "$LOG_FILE" > "/tmp/cybermentor-fatal-$API_LEVEL.txt" || true
+if grep -q "$PKG" "/tmp/cybermentor-fatal-$API_LEVEL.txt"; then
   echo "Fatal exception detected on API $API_LEVEL"
-  printf '%s\n' "$LOG"
+  cat "$LOG_FILE"
   exit 1
 fi
 
