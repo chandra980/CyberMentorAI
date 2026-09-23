@@ -1,5 +1,17 @@
 # CyberMentor AI
 
+## Start here
+
+For platform-by-platform installation and usage, read **[INSTALL.md](INSTALL.md)**.
+
+Quick links:
+
+- Repository: https://github.com/chandra980/CyberMentorAI
+- Actions: https://github.com/chandra980/CyberMentorAI/actions
+- Releases: https://github.com/chandra980/CyberMentorAI/releases/latest
+- Android direct APK (after a successful release): https://github.com/chandra980/CyberMentorAI/releases/latest/download/CyberMentorAI-Android.apk
+
+
 Advanced multiplatform cybersecurity learning assistant for Android, Windows, macOS, Linux, CLI and browser-connected workflows.
 
 Built around the case-study design loop:
@@ -133,12 +145,13 @@ A scheduled GitHub Action refreshes defensive security topics from:
 
 The updater stores metadata in `data/cyber_feed.json`. It does not fetch or execute exploit code.
 
-## GitHub Actions
+## GitHub Actions and QA
 
 - **Build Android APK** - test APK on Android-related pushes or manual run.
 - **Build Desktop and CLI** - Windows/Linux/macOS packages.
 - **Update Cybersecurity Intelligence** - daily defensive-topic refresh.
-- **Publish Installers** - automatically builds and publishes a GitHub Release with the Android APK and desktop/CLI binaries when application code changes.
+- **Publish Installers** - automatically builds and publishes a GitHub Release with Android APK, desktop GUI, CLI and backend binaries when application code changes.
+- **Cross-platform QA** - validates Python syntax, Android XML, mobile bridge consistency, mobile JavaScript syntax and backend health on every push.
 
 ## Security boundary
 
