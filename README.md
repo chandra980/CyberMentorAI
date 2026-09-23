@@ -12,13 +12,18 @@ Quick links:
 - Android direct APK (after a successful release): https://github.com/chandra980/CyberMentorAI/releases/latest/download/CyberMentorAI-Android.apk
 
 
-Advanced multiplatform cybersecurity learning assistant for Android, Windows, macOS, Linux, CLI and browser-connected workflows.
+Advanced multiplatform cybersecurity learning assistant for Android, Windows, macOS, Linux, CLI and browser-connected workflows. Desktop v3 runs standalone with direct OpenAI, Ollama, or Secure Backend modes; a separate backend is optional.
 
 Built around the case-study design loop:
 
 **Problem -> User -> Role -> Instructions -> Context / Knowledge -> Output -> Test -> Find Failure -> Refine -> Retest**
 
 ## Download
+
+Recommended Windows installer after the next v3 release:
+
+`CyberMentorAI-Setup-Windows.exe`
+
 
 After the first successful release build:
 
@@ -114,7 +119,9 @@ python cli/cybermentor.py
 
 ## Desktop GUI
 
-Start the backend first, then:
+The packaged GUI is standalone for normal personal use. Open **Settings** once and choose OpenAI, Ollama, or Secure Backend. No separate CyberMentor backend process is required unless you specifically want shared/server mode.
+
+Source run:
 
 ```bash
 python desktop/gui.py
