@@ -86,6 +86,12 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         WebView.setWebContentsDebuggingEnabled(false);
         webView=new WebView(this);
         webView.setBackgroundColor(Color.rgb(7,17,31));
+        webView.setOnApplyWindowInsetsListener((view,insets)->{
+            int top=insets.getSystemWindowInsetTop();
+            int bottom=insets.getSystemWindowInsetBottom();
+            view.setPadding(0,top,0,bottom);
+            return insets;
+        });
         setContentView(webView);
         WebSettings s=webView.getSettings();
         s.setJavaScriptEnabled(true);
