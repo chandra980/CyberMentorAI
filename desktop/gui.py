@@ -204,7 +204,9 @@ def provider_chat(cfg,user_text,history):
 def self_test():
     cfg=load_cfg()
     assert "provider" in cfg and "mode" in cfg and len(TOPICS)>20
-    assert "Authorized Lab Mode" in MODES["Lab"]\n    assert auto_route_mode("suspicious sysmon alert")=="SOC"\n    assert choose_model(["gpt-7-luna","gpt-6-sol","gpt-5.6-sol"],"Learning","Auto Best")=="gpt-7-luna"
+    assert "Authorized Lab Mode" in MODES["Lab"]
+    assert auto_route_mode("suspicious sysmon alert")=="SOC"
+    assert choose_model(["gpt-7-luna","gpt-6-sol","gpt-5.6-sol"],"Learning","Auto Best")=="gpt-7-luna"
     print("CyberMentor AI desktop self-test passed")
     return 0
 
