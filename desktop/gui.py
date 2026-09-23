@@ -2,10 +2,13 @@
 import argparse, json, os, platform, threading, urllib.request, urllib.error, webbrowser, re
 from pathlib import Path
 
-APP_NAME="CyberMentor AI"\nOWNER_NAME="Chandra Kumar Yadav"
+APP_NAME="CyberMentor AI"
+OWNER_NAME="Chandra Kumar Yadav"
 REPO="chandra980/CyberMentorAI"
 CONFIG_DIR=Path.home()/".cybermentor"
-CONFIG_FILE=CONFIG_DIR/"config.json"\nHISTORY_FILE=CONFIG_DIR/"history.json"\nAPP_VERSION="3.1"
+CONFIG_FILE=CONFIG_DIR/"config.json"
+HISTORY_FILE=CONFIG_DIR/"history.json"
+APP_VERSION="3.1"
 KEY_SERVICE="CyberMentorAI"
 DEFAULT_FEED=f"https://raw.githubusercontent.com/{REPO}/main/data/cyber_feed.json"
 
@@ -234,7 +237,7 @@ def main():
     copy_btn=ctk.CTkButton(side,text="⧉  Copy Last Answer",fg_color="#182838",hover_color="#293d50");copy_btn.pack(fill="x",padx=18,pady=4)
     export_btn=ctk.CTkButton(side,text="⇩  Export Chat",fg_color="#182838",hover_color="#293d50");export_btn.pack(fill="x",padx=18,pady=4)
     update_btn=ctk.CTkButton(side,text="↻  Check Updates",fg_color="#182838",hover_color="#293d50");update_btn.pack(fill="x",padx=18,pady=4)
-    ctk.CTkLabel(side,text="Authorized labs • Defensive learning\nNo exploit feed execution",font=("Segoe UI",10),text_color="#58778b",justify="left").pack(side="bottom",anchor="w",padx=20,pady=20)
+    ctk.CTkLabel(side,text=f"Operator: {OWNER_NAME}\\nAuthorized labs • Defensive learning",font=("Segoe UI",10),text_color="#58778b",justify="left").pack(side="bottom",anchor="w",padx=20,pady=20)
 
     mainf=ctk.CTkFrame(app,fg_color="#06111d",corner_radius=0);mainf.grid(row=0,column=1,sticky="nsew",padx=0,pady=0);mainf.grid_columnconfigure(0,weight=1);mainf.grid_rowconfigure(3,weight=1)
     hero=ctk.CTkFrame(mainf,fg_color="#0b2030",corner_radius=18,border_width=1,border_color="#183b4f");hero.grid(row=0,column=0,sticky="ew",padx=20,pady=(20,10))
