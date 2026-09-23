@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse, json, os, platform, threading, urllib.request, urllib.error, webbrowser
+import argparse, json, os, platform, threading, urllib.request, urllib.error, webbrowser, re
 from pathlib import Path
 
 APP_NAME="CyberMentor AI"\nOWNER_NAME="Chandra Kumar Yadav"
@@ -100,26 +100,31 @@ def extract_text(d):
     return json.dumps(d,ensure_ascii=False,indent=2)
 
 def choose_model(ids, mode="Learning", profile="Auto Best"):
-    ids=sorted({x for x in ids if isinstance(x,str) and x})
+    ids=sorted({x for x in ids if isinstance(x,str) and x and x.startswith("gpt-")})
+    excluded=("audio","image","realtime","transcribe","tts","search","embedding")
+    ids=[x for x in ids if not any(k in x.lower() for k in excluded)]
     cyber_modes={"Lab","SOC","Pentest"}
-    # If the account is approved for the current defensive cyber model, use it only when requested.
     if profile=="Cyber Specialized" and mode in cyber_modes:
-        for candidate in ("gpt-daybreak-red-latest","gpt-5.6-cyber"):
-            if candidate in ids:return candidate
-    prefs=[]
+        specialized=[x for x in ids if "cyber" in x.lower() or "daybreak" in x.lower()]
+        if specialized:return sorted(specialized,reverse=True)[0]
+    general=[x for x in ids if "cyber" not in x.lower() and "daybreak" not in x.lower()]
+    def rank(mid):
+        m=re.search(r"gpt-(\d+)(?:\.(\d+))?",mid)
+        major=int(m.group(1)) if m else 0
+        minor=int(m.group(2) or 0) if m else 0
+        tier=3 if "sol" in mid.lower() else 2 if "terra" in mid.lower() else 1 if "luna" in mid.lower() else 2
+        return (major,minor,tier,mid)
+    ordered=sorted(general,key=rank,reverse=True)
+    if not ordered:return ""
     if profile=="Economy":
-        prefs=["gpt-6-luna","gpt-5.6-luna","gpt-5.6-terra","gpt-5.6"]
-    elif profile=="Balanced":
-        prefs=["gpt-6-luna","gpt-5.6-terra","gpt-5.6","gpt-5.6-luna"]
-    else:
-        prefs=["gpt-6-sol","gpt-6","gpt-5.6-sol","gpt-5.6","gpt-5.6-terra","gpt-5.6-luna"]
-    for pref in prefs:
-        exact=[x for x in ids if x==pref]
-        if exact:return exact[0]
-        hits=sorted([x for x in ids if x.startswith(pref) and not any(k in x for k in ("audio","image","realtime","transcribe","tts"))],reverse=True)
-        if hits:return hits[0]
-    compatible=sorted([x for x in ids if x.startswith("gpt-") and not any(k in x for k in ("audio","image","realtime","transcribe","tts"))],reverse=True)
-    return compatible[0] if compatible else ""
+        same=sorted(ordered,key=lambda x:(rank(x)[0],rank(x)[1],0 if "luna" in x.lower() else 1 if "terra" in x.lower() else 2, x),reverse=True)
+        return same[0]
+    if profile=="Balanced":
+        latest_major,latest_minor=rank(ordered[0])[:2]
+        candidates=[x for x in ordered if rank(x)[:2]==(latest_major,latest_minor)]
+        terra=[x for x in candidates if "terra" in x.lower()]
+        return terra[0] if terra else candidates[0]
+    return ordered[0]
 
 def auto_route_mode(text):
     x=text.lower()
@@ -196,7 +201,7 @@ def provider_chat(cfg,user_text,history):
 def self_test():
     cfg=load_cfg()
     assert "provider" in cfg and "mode" in cfg and len(TOPICS)>20
-    assert "Authorized Lab Mode" in MODES["Lab"]\n    assert auto_route_mode("suspicious sysmon alert")=="SOC"\n    assert choose_model(["gpt-6-sol","gpt-5.6-sol"],"Learning","Auto Best")=="gpt-6-sol"
+    assert "Authorized Lab Mode" in MODES["Lab"]\n    assert auto_route_mode("suspicious sysmon alert")=="SOC"\n    assert choose_model(["gpt-7-luna","gpt-6-sol","gpt-5.6-sol"],"Learning","Auto Best")=="gpt-7-luna"
     print("CyberMentor AI desktop self-test passed")
     return 0
 
