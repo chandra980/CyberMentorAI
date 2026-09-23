@@ -28,90 +28,71 @@ https://github.com/chandra980/CyberMentorAI/releases/latest/download/CyberMentor
 
 ## 2. Windows
 
-From the same Releases page download:
+From the latest Releases page download:
 
-- `CyberMentorAI-Windows.exe` - GUI
+- `CyberMentorAI-Windows.exe` - recommended GUI
 - `cybermentor-Windows.exe` - CLI
-- `cybermentor-backend-Windows.exe` - local backend
+- `cybermentor-backend-Windows.exe` - optional shared/local backend
 
-### Simple OpenAI setup
+### Easiest Windows use
 
-Open PowerShell:
+1. Double-click `CyberMentorAI-Windows.exe`.
+2. Open **Settings** once.
+3. Choose **OpenAI** and paste your own API key, or choose **Ollama** if you already run a local model, or choose **Secure Backend** if an organization gives you a server URL.
+4. Save.
+5. Type your problem and press **RUN**.
 
-```powershell
-$env:AI_PROVIDER="openai"
-$env:OPENAI_API_KEY="YOUR_KEY"
-.\cybermentor-backend-Windows.exe
-```
+The Windows GUI no longer requires the separate backend executable for normal personal use. Its Python/runtime GUI dependencies are bundled inside the EXE.
 
-Keep that window open. Then launch `CyberMentorAI-Windows.exe`.
+### Local/free Ollama mode
 
-### Local/free Ollama setup
-
-Install Ollama separately, download a model, then:
-
-```powershell
-$env:AI_PROVIDER="ollama"
-$env:OLLAMA_MODEL="YOUR_INSTALLED_MODEL"
-.\cybermentor-backend-Windows.exe
-```
-
-Then open the GUI or CLI.
+Install Ollama separately and install a model. Then select **Ollama** in CyberMentor settings. No separate CyberMentor backend is required for this personal-local mode.
 
 ## 3. macOS
 
-Download:
+Download `CyberMentorAI-macOS`. Make it executable if required and launch it.
 
-- `CyberMentorAI-macOS`
-- `cybermentor-macOS`
-- `cybermentor-backend-macOS`
+The GUI can connect directly to OpenAI, Ollama, or a Secure Backend. A separate CyberMentor backend is optional.
 
-In Terminal:
-
-```bash
-chmod +x CyberMentorAI-macOS cybermentor-macOS cybermentor-backend-macOS
-export AI_PROVIDER=openai
-export OPENAI_API_KEY='YOUR_KEY'
-./cybermentor-backend-macOS
-```
-
-Then launch the GUI binary from another Terminal window.
-
-macOS Gatekeeper may require the user to approve an unsigned community binary in Privacy & Security.
+macOS Gatekeeper may require approval in Privacy & Security because community GitHub binaries are not Apple-notarized.
 
 ## 4. Linux
 
-Download:
-
-- `CyberMentorAI-Linux`
-- `cybermentor-Linux`
-- `cybermentor-backend-Linux`
+Download `CyberMentorAI-Linux`.
 
 Run:
 
 ```bash
-chmod +x CyberMentorAI-Linux cybermentor-Linux cybermentor-backend-Linux
-export AI_PROVIDER=openai
-export OPENAI_API_KEY='YOUR_KEY'
-./cybermentor-backend-Linux
+chmod +x CyberMentorAI-Linux
+./CyberMentorAI-Linux
 ```
 
-Then start `./CyberMentorAI-Linux`.
+Open Settings once and choose OpenAI, Ollama, or Secure Backend.
 
-If Tk is not available on the Linux desktop, install the distribution's Tk package or use the CLI.
+If the desktop environment has no graphical display/Tk support, use the CLI instead.
 
 ## 5. CLI
 
-With the backend running:
+The CLI now works directly with OpenAI, Ollama, or an optional backend.
+
+OpenAI:
 
 ```bash
-./cybermentor-Linux --once "Explain DNS security"
+cybermentor-Windows.exe --provider openai --api-key YOUR_KEY --once "Explain DNS security"
 ```
 
-or on Windows:
+Linux/macOS:
 
-```powershell
-.\cybermentor-Windows.exe --once "Explain DNS security"
+```bash
+./cybermentor-Linux --provider openai --once "Explain DNS security"
+```
+
+with `OPENAI_API_KEY` set in the environment.
+
+Ollama:
+
+```bash
+./cybermentor-Linux --provider ollama --once "Teach me Wireshark filters"
 ```
 
 Interactive mode starts when `--once` is omitted.
@@ -154,6 +135,6 @@ Do not commit a personal or shared OpenAI API key into this public repository. F
 
 **Backend mode fails:** confirm the backend URL uses HTTPS (except localhost), the server is running, and the access token matches.
 
-**Desktop GUI cannot connect:** start the backend first or set `CYBERMENTOR_BACKEND` to the correct URL.
+**Desktop GUI asks for setup:** open Settings once and choose OpenAI, Ollama, or Secure Backend. The separate backend executable is optional for normal personal use.
 
 **Ollama model not found:** install the model in Ollama and set `OLLAMA_MODEL` to that exact installed model name.
