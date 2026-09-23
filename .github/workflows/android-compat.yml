@@ -8,6 +8,10 @@ on:
       - 'android-app/**'
       - '.github/workflows/android-compat.yml'
 
+concurrency:
+  group: android-compat-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 
