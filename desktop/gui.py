@@ -290,7 +290,7 @@ def main():
         quick=ctk.CTkFrame(body,fg_color="#101d27",corner_radius=14);quick.pack(fill="x",padx=12,pady=(0,12))
         ctk.CTkLabel(quick,text="OpenAI API key",font=("Segoe UI",13,"bold")).pack(anchor="w",padx=14,pady=(14,4))
         key_row=ctk.CTkFrame(quick,fg_color="transparent");key_row.pack(fill="x",padx=14,pady=(0,6));key_row.grid_columnconfigure(0,weight=1)
-        key_entry=ctk.CTkEntry(key_row,textvariable=key,show="•",placeholder_text="Paste API key here")
+        key_entry=ctk.CTkEntry(key_row,textvariable=key,show="*",placeholder_text="Paste API key here")
         key_entry.grid(row=0,column=0,sticky="ew")
         show_btn=ctk.CTkButton(key_row,text="SHOW",width=72,fg_color="#183b52");show_btn.grid(row=0,column=1,padx=(8,0))
         key_status=ctk.CTkLabel(quick,text=("Saved key detected on this PC" if get_secret() else "No key saved yet"),text_color=("#36e2b4" if get_secret() else "#839dad"))
@@ -323,7 +323,7 @@ def main():
         ctk.CTkLabel(advanced,text="Secure backend HTTPS URL").pack(anchor="w",padx=14)
         ctk.CTkEntry(advanced,textvariable=backend).pack(fill="x",padx=14,pady=(4,10))
         ctk.CTkLabel(advanced,text="Backend access token (optional)").pack(anchor="w",padx=14)
-        ctk.CTkEntry(advanced,textvariable=token,show="•").pack(fill="x",padx=14,pady=(4,14))
+        ctk.CTkEntry(advanced,textvariable=token,show="*").pack(fill="x",padx=14,pady=(4,14))
 
         msg=ctk.CTkLabel(body,text="",text_color="#e6bf66",wraplength=640,justify="left");msg.pack(anchor="w",padx=12,pady=(6,4))
         save_settings_btn=ctk.CTkButton(body,text="SAVE ALL SETTINGS",height=42,fg_color="#163a4f",hover_color="#1d4c66")
@@ -336,7 +336,7 @@ def main():
 
         def toggle_key():
             key_visible["show"]=not key_visible["show"]
-            key_entry.configure(show="" if key_visible["show"] else "•")
+            key_entry.configure(show="" if key_visible["show"] else "*")
             show_btn.configure(text="HIDE" if key_visible["show"] else "SHOW")
 
         def clear_key():
