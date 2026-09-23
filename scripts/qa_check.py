@@ -54,14 +54,16 @@ for cmd in [
     p=subprocess.run(cmd,capture_output=True,text=True,timeout=30)
     if p.returncode!=0: errors.append("Self-test failed: "+" ".join(cmd)+"\n"+p.stdout+"\n"+p.stderr)
 
-if errors:
-    print("\n".join("ERROR: "+e for e in errors))
-    sys.exit(1)
-print("QA checks passed")
-
-
-# Android 10 WebView compatibility: avoid syntax unsupported by older WebView engines.
+# Android 10-16 compatibility guards.
 mobile_html=(ROOT/"android-app/app/src/main/assets/index.html").read_text(encoding="utf-8")
 for syntax in ("?.","??"):
     if syntax in mobile_html:
         errors.append(f"Android 10 WebView compatibility: unsupported JavaScript syntax found: {syntax}")
+for token in (".isBlank(","WindowInsetsController"):
+    if token in java:
+        errors.append(f"Android 10 native compatibility: avoid {token}")
+
+if errors:
+    print("\n".join("ERROR: "+e for e in errors))
+    sys.exit(1)
+print("QA checks passed")
