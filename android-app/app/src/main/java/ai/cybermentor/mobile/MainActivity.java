@@ -231,7 +231,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
     private void get(String id,String endpoint,String bearer,String cb){
         executor.submit(()->{HttpURLConnection c=null; try{
             c=(HttpURLConnection)new URL(endpoint).openConnection(); c.setConnectTimeout(20000); c.setReadTimeout(40000); c.setRequestProperty("Accept","application/json"); c.setRequestProperty("User-Agent","CyberMentorAI-Android/2.0");
-            if(bearer!=null&&!bearer.isBlank())c.setRequestProperty("Authorization","Bearer "+bearer);
+            if(bearer!=null&&!bearer.trim().isEmpty())c.setRequestProperty("Authorization","Bearer "+bearer);
             int code=c.getResponseCode(); String body=readBody(c,code>=400);
             js("window.CyberMentorNative&&window.CyberMentorNative."+cb+"("+JSONObject.quote(id)+","+(code>=200&&code<300)+","+JSONObject.quote(body)+")");
         }catch(Exception e){js("window.CyberMentorNative&&window.CyberMentorNative."+cb+"("+JSONObject.quote(id)+",false,"+JSONObject.quote(e.getMessage())+")");}
