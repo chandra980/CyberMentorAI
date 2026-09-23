@@ -236,7 +236,7 @@ jobs:
         shell: bash
         run: |
           set -euo pipefail
-          TAG="v3.1.${GITHUB_RUN_NUMBER}"
+          TAG="v3.2.${GITHUB_RUN_NUMBER}"
           gh release create "$TAG" release-assets/* \
             --title "CyberMentor AI $TAG" \
             --notes "Current supported release by Chandra Kumar Yadav. Includes Android APK, one-click Windows installer, desktop GUI, CLI and optional backend binaries. Older CyberMentor releases are removed automatically." \
