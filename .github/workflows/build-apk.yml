@@ -7,6 +7,10 @@ on:
       - 'android-app/**'
       - 'assistant_prompt.txt'
       - '.github/workflows/build-apk.yml'
+concurrency:
+  group: android-build-${{ github.ref }}
+  cancel-in-progress: true
+
 permissions:
   contents: read
 jobs:
