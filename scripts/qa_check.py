@@ -34,8 +34,8 @@ for token in [
 ]:
     if token not in desktop: errors.append(f"Desktop feature missing: {token}")
 for token in [
-    "SAVE & CONNECT","TEST / DETECT MODEL","Auto-routing","Quick topics",
-    "AndroidAI.saveApiKey","AndroidAI.checkForUpdates"
+    "SAVE KEY & TEST CONNECTION","RETEST CONNECTION","Auto-routing","Quick topics",
+    "AndroidAI.saveApiKey","AndroidAI.checkForUpdates","API BILLING","Connection Center"
 ]:
     if token not in html: errors.append(f"Android UX feature missing: {token}")
 
