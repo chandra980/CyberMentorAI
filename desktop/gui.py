@@ -8,7 +8,7 @@ REPO="chandra980/CyberMentorAI"
 CONFIG_DIR=Path.home()/".cybermentor"
 CONFIG_FILE=CONFIG_DIR/"config.json"
 HISTORY_FILE=CONFIG_DIR/"history.json"
-APP_VERSION="3.1"
+APP_VERSION="3.2"
 KEY_SERVICE="CyberMentorAI"
 DEFAULT_FEED=f"https://raw.githubusercontent.com/{REPO}/main/data/cyber_feed.json"
 
