@@ -129,6 +129,34 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         }catch(Exception e){js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+",false,"+JSONObject.quote(e.getMessage())+")");}
         finally{if(c!=null)c.disconnect();}});
     }
+    private String bestOpenAIModel(String key)throws Exception{
+        HttpURLConnection c=null;
+        try{
+            c=(HttpURLConnection)new URL(OPENAI_MODELS_ENDPOINT).openConnection();
+            c.setConnectTimeout(20000); c.setReadTimeout(30000);
+            c.setRequestProperty("Accept","application/json");
+            c.setRequestProperty("Authorization","Bearer "+key);
+            int code=c.getResponseCode(); String body=readBody(c,code>=400);
+            if(code<200||code>=300)throw new Exception("Model catalog request failed");
+            org.json.JSONArray a=new JSONObject(body).optJSONArray("data");
+            if(a==null||a.length()==0)throw new Exception("No models available");
+            String best="";
+            String[] prefs=new String[]{"gpt-5.6","gpt-5","gpt-4.1","gpt-4o","gpt-4"};
+            for(String pref:prefs){
+                for(int i=0;i<a.length();i++){
+                    String id=a.optJSONObject(i)==null?"":a.optJSONObject(i).optString("id","");
+                    if(id.startsWith(pref) && !id.contains("audio") && !id.contains("image") && !id.contains("realtime")) return id;
+                }
+            }
+            for(int i=0;i<a.length();i++){
+                String id=a.optJSONObject(i)==null?"":a.optJSONObject(i).optString("id","");
+                if(id.startsWith("gpt-") && !id.contains("audio") && !id.contains("image") && !id.contains("realtime")){best=id;break;}
+            }
+            if(best.isEmpty())throw new Exception("No compatible GPT model found");
+            return best;
+        }finally{if(c!=null)c.disconnect();}
+    }
+
     private void get(String id,String endpoint,String bearer,String cb){
         executor.submit(()->{HttpURLConnection c=null; try{
             c=(HttpURLConnection)new URL(endpoint).openConnection(); c.setConnectTimeout(20000); c.setReadTimeout(40000); c.setRequestProperty("Accept","application/json"); c.setRequestProperty("User-Agent","CyberMentorAI-Android/2.0");
@@ -164,9 +192,20 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         @JavascriptInterface public String saveApiKey(String k){try{if(k==null||k.trim().length()<20)return "Invalid key";saveKey(k.trim());return "OK";}catch(Exception e){return "Save failed: "+e.getMessage();}}
         @JavascriptInterface public void clearApiKey(){getSharedPreferences(PREFS,MODE_PRIVATE).edit().remove(PREF_KEY).apply();}
         @JavascriptInterface public void chat(String id,String payload){
-            try{String k=loadKey(); if(k==null){js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+",false,'No API key saved')");return;}
-                JSONObject o=new JSONObject(payload);o.remove("provider");post(id,OPENAI_ENDPOINT,k,o.toString());
-            }catch(Exception e){js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+",false,"+JSONObject.quote(e.getMessage())+")");}
+            executor.submit(()->{
+                try{
+                    String k=loadKey();
+                    if(k==null){js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+",false,'SETUP_REQUIRED')");return;}
+                    JSONObject o=new JSONObject(payload);o.remove("provider");
+                    String model=o.optString("model","").trim();
+                    if(model.isEmpty()){
+                        model=bestOpenAIModel(k);
+                        o.put("model",model);
+                        js("window.CyberMentorNative&&window.CyberMentorNative.onAutoModel("+JSONObject.quote(model)+")");
+                    }
+                    post(id,OPENAI_ENDPOINT,k,o.toString());
+                }catch(Exception e){js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+",false,"+JSONObject.quote(e.getMessage())+")");}
+            });
         }
         @JavascriptInterface public void backendChat(String id,String base,String token,String payload){
             if(base==null||(!base.startsWith("https://")&&!base.startsWith("http://127.0.0.1")&&!base.startsWith("http://localhost"))){js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+",false,'Backend must use HTTPS or localhost')");return;}
