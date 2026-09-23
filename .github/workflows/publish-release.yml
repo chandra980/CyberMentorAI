@@ -86,23 +86,37 @@ jobs:
         run: |
           set -euo pipefail
           mkdir -p release-assets
-          cp downloaded/release-Android/CyberMentorAI-Android.apk release-assets/CyberMentorAI-Android.apk
-          cp downloaded/release-Windows/CyberMentorAI.exe release-assets/CyberMentorAI-Windows.exe
-          cp downloaded/release-Windows/cybermentor.exe release-assets/cybermentor-Windows.exe
-          cp downloaded/release-Windows/cybermentor-backend.exe release-assets/cybermentor-backend-Windows.exe
-          cp downloaded/release-Windows/CyberMentorAI-Setup-Windows.exe release-assets/CyberMentorAI-Setup-Windows.exe
-          cp downloaded/release-Linux/CyberMentorAI release-assets/CyberMentorAI-Linux
-          cp downloaded/release-Linux/cybermentor release-assets/cybermentor-Linux
-          cp downloaded/release-Linux/cybermentor-backend release-assets/cybermentor-backend-Linux
-          cp downloaded/release-macOS/CyberMentorAI release-assets/CyberMentorAI-macOS
-          cp downloaded/release-macOS/cybermentor release-assets/cybermentor-macOS
-          cp downloaded/release-macOS/cybermentor-backend release-assets/cybermentor-backend-macOS
+          pick() { find "$1" -type f -name "$2" -print -quit; }
+          cp "$(pick downloaded/release-Android 'CyberMentorAI-Android.apk')" release-assets/CyberMentorAI-Android.apk
+          cp "$(pick downloaded/release-Windows 'CyberMentorAI.exe')" release-assets/CyberMentorAI-Windows.exe
+          cp "$(pick downloaded/release-Windows 'cybermentor.exe')" release-assets/cybermentor-Windows.exe
+          cp "$(pick downloaded/release-Windows 'cybermentor-backend.exe')" release-assets/cybermentor-backend-Windows.exe
+          cp "$(pick downloaded/release-Windows 'CyberMentorAI-Setup-Windows.exe')" release-assets/CyberMentorAI-Setup-Windows.exe
+          cp "$(pick downloaded/release-Linux 'CyberMentorAI')" release-assets/CyberMentorAI-Linux
+          cp "$(pick downloaded/release-Linux 'cybermentor')" release-assets/cybermentor-Linux
+          cp "$(pick downloaded/release-Linux 'cybermentor-backend')" release-assets/cybermentor-backend-Linux
+          cp "$(pick downloaded/release-macOS 'CyberMentorAI')" release-assets/CyberMentorAI-macOS
+          cp "$(pick downloaded/release-macOS 'cybermentor')" release-assets/cybermentor-macOS
+          cp "$(pick downloaded/release-macOS 'cybermentor-backend')" release-assets/cybermentor-backend-macOS
+          test -s release-assets/CyberMentorAI-Android.apk
+          test -s release-assets/CyberMentorAI-Windows.exe
+          test -s release-assets/CyberMentorAI-Setup-Windows.exe
           chmod +x release-assets/CyberMentorAI-Linux release-assets/cybermentor-Linux release-assets/cybermentor-backend-Linux || true
           chmod +x release-assets/CyberMentorAI-macOS release-assets/cybermentor-macOS release-assets/cybermentor-backend-macOS || true
           cd release-assets
           sha256sum * > SHA256SUMS.txt
-      - name: Create GitHub Release
+
+      - name: Publish latest-only GitHub Release
         shell: bash
         run: |
-          TAG="v3.0.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" release-assets/*             --title "CyberMentor AI $TAG"             --notes "Automatic multiplatform build from commit ${GITHUB_SHA}. Includes Android APK, one-click Windows installer, desktop GUI, CLI and backend binaries. Android installation requires user approval. Cloud AI providers may require their own credentials or backend configuration."             --target "${GITHUB_SHA}"
+          set -euo pipefail
+          TAG="v3.1.${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" release-assets/* \
+            --title "CyberMentor AI $TAG" \
+            --notes "Current supported release. Includes Android APK, one-click Windows installer, desktop GUI, CLI and optional backend binaries. Older CyberMentor releases are removed automatically so users see only the current supported version." \
+            --target "${GITHUB_SHA}"
+          for OLD in $(gh release list --limit 100 --json tagName --jq '.[].tagName'); do
+            if [ "$OLD" != "$TAG" ]; then
+              gh release delete "$OLD" --cleanup-tag --yes || true
+            fi
+          done
