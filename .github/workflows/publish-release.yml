@@ -38,7 +38,7 @@ jobs:
           cp app/build/outputs/apk/debug/app-debug.apk ../CyberMentorAI-Android.apk
       - uses: actions/upload-artifact@v4
         with:
-          name: release-android
+          name: release-Android
           path: CyberMentorAI-Android.apk
 
   desktop:
@@ -55,6 +55,7 @@ jobs:
       - run: python -m pip install --upgrade pip pyinstaller
       - run: pyinstaller --noconfirm --onefile --windowed --name CyberMentorAI desktop/gui.py
       - run: pyinstaller --noconfirm --onefile --name cybermentor cli/cybermentor.py
+      - run: pyinstaller --noconfirm --onefile --name cybermentor-backend backend/server.py
       - uses: actions/upload-artifact@v4
         with:
           name: release-${{ runner.os }}
@@ -69,16 +70,29 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/download-artifact@v4
         with:
-          path: release-assets
+          path: downloaded
           pattern: release-*
-          merge-multiple: true
-      - name: Checksums
+      - name: Normalize release filenames
         shell: bash
         run: |
+          set -euo pipefail
+          mkdir -p release-assets
+          cp downloaded/release-Android/CyberMentorAI-Android.apk release-assets/CyberMentorAI-Android.apk
+          cp downloaded/release-Windows/CyberMentorAI.exe release-assets/CyberMentorAI-Windows.exe
+          cp downloaded/release-Windows/cybermentor.exe release-assets/cybermentor-Windows.exe
+          cp downloaded/release-Windows/cybermentor-backend.exe release-assets/cybermentor-backend-Windows.exe
+          cp downloaded/release-Linux/CyberMentorAI release-assets/CyberMentorAI-Linux
+          cp downloaded/release-Linux/cybermentor release-assets/cybermentor-Linux
+          cp downloaded/release-Linux/cybermentor-backend release-assets/cybermentor-backend-Linux
+          cp downloaded/release-macOS/CyberMentorAI release-assets/CyberMentorAI-macOS
+          cp downloaded/release-macOS/cybermentor release-assets/cybermentor-macOS
+          cp downloaded/release-macOS/cybermentor-backend release-assets/cybermentor-backend-macOS
+          chmod +x release-assets/CyberMentorAI-Linux release-assets/cybermentor-Linux release-assets/cybermentor-backend-Linux || true
+          chmod +x release-assets/CyberMentorAI-macOS release-assets/cybermentor-macOS release-assets/cybermentor-backend-macOS || true
           cd release-assets
           sha256sum * > SHA256SUMS.txt
       - name: Create GitHub Release
         shell: bash
         run: |
           TAG="v2.0.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" release-assets/*             --title "CyberMentor AI $TAG"             --notes "Automatic multiplatform build from commit ${GITHUB_SHA}. Includes Android APK plus desktop/CLI binaries. Android install requires user approval. Cloud AI providers may require their own credentials or backend configuration."             --target "${GITHUB_SHA}"
+          gh release create "$TAG" release-assets/*             --title "CyberMentor AI $TAG"             --notes "Automatic multiplatform build from commit ${GITHUB_SHA}. Includes Android APK, desktop GUI, CLI and backend binaries. Android installation requires user approval. Cloud AI providers may require their own credentials or backend configuration."             --target "${GITHUB_SHA}"
