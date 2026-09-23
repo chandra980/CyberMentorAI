@@ -58,3 +58,10 @@ if errors:
     print("\n".join("ERROR: "+e for e in errors))
     sys.exit(1)
 print("QA checks passed")
+
+
+# Android 10 WebView compatibility: avoid syntax unsupported by older WebView engines.
+mobile_html=(ROOT/"android-app/app/src/main/assets/index.html").read_text(encoding="utf-8")
+for syntax in ("?.","??"):
+    if syntax in mobile_html:
+        errors.append(f"Android 10 WebView compatibility: unsupported JavaScript syntax found: {syntax}")
