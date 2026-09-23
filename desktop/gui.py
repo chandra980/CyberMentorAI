@@ -131,13 +131,13 @@ def choose_model(ids, mode="Learning", profile="Auto Best"):
 
 def auto_route_mode(text):
     x=text.lower()
-    if any(k in x for k in ("alert","event log","ioc","siem","incident","soc","sysmon","suspicious process","edr")):return "SOC"
-    if any(k in x for k in ("dvwa","juice shop","webgoat","metasploitable","lab mode","practice lab")):return "Lab"
-    if any(k in x for k in ("pentest","penetration test","recon","enumeration","vulnerability assessment")):return "Pentest"
-    if any(k in x for k in ("exam","mcq","quiz","revision","question paper")):return "Exam"
     if any(k in x for k in ("interview","mock interview","job interview")):return "Interview"
-    if any(k in x for k in ("lesson plan","teach my class","students","homework","teacher mode")):return "Teacher"
+    if any(k in x for k in ("lesson plan","teach my class","students","homework","teacher mode","faculty")):return "Teacher"
+    if any(k in x for k in ("exam","mcq","quiz","revision","question paper")):return "Exam"
     if any(k in x for k in ("project","capstone","architecture","build a tool")):return "Project"
+    if any(k in x for k in ("dvwa","juice shop","webgoat","metasploitable","lab mode","practice lab","practice environment")):return "Lab"
+    if any(k in x for k in ("pentest","penetration test","recon","enumeration","vulnerability assessment")):return "Pentest"
+    if any(k in x for k in ("alert","event log","ioc","siem","incident","soc","sysmon","suspicious process","edr")):return "SOC"
     return "Learning"
 
 def friendly_error(exc_or_text):
