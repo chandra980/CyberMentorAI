@@ -62,7 +62,7 @@ function init(){
  $('connection').value=cfg.connection;$('backendUrl').value=cfg.backendUrl||'';$('backendToken').value=cfg.backendToken||'';$('model').value=cfg.model||'';$('reasoning').value=cfg.reasoning;$('language').value=cfg.language;$('detail').value=cfg.detail;$('level').value=cfg.level;
  $('modes').innerHTML=Object.keys(MODES).map(m=>'<button class="mode '+(m===cfg.mode?'active':'')+'" onclick="setMode(\''+m+'\')"><b>'+m+'</b><small>'+MODES[m]+'</small></button>').join('');
  $('chips').innerHTML=TOPICS.map(t=>'<button class="chip" onclick="prefill(\''+t.replace(/'/g,"\\'")+'\')">'+t+'</button>').join('');
- renderSettings();renderSummary();renderHistory();show('home');setTimeout(checkUpdates,1000);if(window.AndroidAI&&AndroidAI.hasApiKey())$('conn').textContent='AI READY';
+ renderSettings();renderSummary();renderHistory();show('home');setTimeout(checkUpdates,1000);if(window.AndroidAI&&AndroidAI.hasApiKey())$('conn').textContent='AI READY';if(window.AndroidAI&&AndroidAI.reportUiReady)AndroidAI.reportUiReady();
 }
 function show(id){['home','chat','intel','settings'].forEach(x=>$(x).classList.toggle('hidden',x!==id));$('composer').style.display=id==='chat'?'block':'none';}
 function setMode(m){cfg.mode=m;save();init();show('chat');}
