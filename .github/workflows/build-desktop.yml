@@ -38,10 +38,10 @@ jobs:
         if: runner.os == 'Windows'
         shell: pwsh
         run: |
-          & .\dist\CyberMentorAI.exe --self-test
-          if ($LASTEXITCODE -ne 0) { throw "Desktop self-test failed" }
-          & .\dist\cybermentor.exe --self-test
-          if ($LASTEXITCODE -ne 0) { throw "CLI self-test failed" }
+          $gui=Start-Process .\dist\CyberMentorAI.exe -ArgumentList "--self-test" -PassThru -Wait
+          if ($gui.ExitCode -ne 0) { throw "Desktop self-test failed with exit code $($gui.ExitCode)" }
+          $cli=Start-Process .\dist\cybermentor.exe -ArgumentList "--self-test" -PassThru -Wait -NoNewWindow
+          if ($cli.ExitCode -ne 0) { throw "CLI self-test failed with exit code $($cli.ExitCode)" }
           $env:PORT="18787"
           $p=Start-Process .\dist\cybermentor-backend.exe -PassThru -WindowStyle Hidden
           try {
