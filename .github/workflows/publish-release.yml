@@ -95,6 +95,42 @@ jobs:
         run: pyinstaller --noconfirm --onefile --name cybermentor cli/cybermentor.py
       - name: Build optional backend
         run: pyinstaller --noconfirm --onefile --name cybermentor-backend backend/server.py
+      - name: Smoke-test packaged Windows binaries
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          & .\dist\CyberMentorAI.exe --self-test
+          if ($LASTEXITCODE -ne 0) { throw "Desktop self-test failed" }
+          & .\dist\cybermentor.exe --self-test
+          if ($LASTEXITCODE -ne 0) { throw "CLI self-test failed" }
+          $env:PORT="18787"
+          $p=Start-Process .\dist\cybermentor-backend.exe -PassThru -WindowStyle Hidden
+          try {
+            Start-Sleep -Seconds 2
+            $health=Invoke-RestMethod -Uri "http://127.0.0.1:18787/api/health" -TimeoutSec 10
+            if (-not $health.ok) { throw "Backend health check failed" }
+          } finally {
+            Stop-Process -Id $p.Id -Force -ErrorAction SilentlyContinue
+          }
+      - name: Smoke-test packaged Unix binaries
+        if: runner.os != 'Windows'
+        shell: bash
+        run: |
+          set -euo pipefail
+          chmod +x dist/CyberMentorAI dist/cybermentor dist/cybermentor-backend
+          dist/CyberMentorAI --self-test
+          dist/cybermentor --self-test
+          PORT=18787 dist/cybermentor-backend >/tmp/cybermentor-backend.log 2>&1 &
+          PID=$!
+          trap 'kill $PID 2>/dev/null || true' EXIT
+          sleep 2
+          python - <<'PY'
+          import json, urllib.request
+          with urllib.request.urlopen("http://127.0.0.1:18787/api/health",timeout=10) as r:
+              d=json.loads(r.read())
+          assert d.get("ok") is True,d
+          print("Packaged backend health OK")
+          PY
       - name: Sign Windows application binaries
         if: runner.os == 'Windows' && env.WINDOWS_CERT_PFX_B64 != ''
         shell: pwsh
@@ -129,6 +165,17 @@ jobs:
             Select-Object -First 1
           if (-not $signtool) { throw "signtool.exe not found" }
           & $signtool.FullName sign /fd SHA256 /f $cert /p $env:WINDOWS_CERT_PASSWORD /tr http://timestamp.digicert.com /td SHA256 "installer\output\CyberMentorAI-Setup-Windows.exe"
+      - name: Smoke-test Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          $installDir=Join-Path $env:RUNNER_TEMP "CyberMentorInstalled"
+          $p=Start-Process "installer\output\CyberMentorAI-Setup-Windows.exe" -ArgumentList "/VERYSILENT","/SUPPRESSMSGBOXES","/NORESTART","/DIR=$installDir" -PassThru -Wait
+          if ($p.ExitCode -ne 0) { throw "Installer returned exit code $($p.ExitCode)" }
+          $app=Join-Path $installDir "CyberMentorAI.exe"
+          if (-not (Test-Path $app)) { throw "Installed app executable not found" }
+          & $app --self-test
+          if ($LASTEXITCODE -ne 0) { throw "Installed app self-test failed" }
       - uses: actions/upload-artifact@v4
         with:
           name: release-${{ runner.os }}
