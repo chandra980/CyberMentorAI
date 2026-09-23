@@ -1,0 +1,80 @@
+name: Publish Installers
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'android-app/**'
+      - 'desktop/**'
+      - 'cli/**'
+      - 'backend/**'
+      - 'assistant_prompt.txt'
+      - '.github/workflows/publish-release.yml'
+permissions:
+  contents: write
+
+jobs:
+  android:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: '21'
+      - uses: android-actions/setup-android@v3
+      - run: sdkmanager "platform-tools" "platforms;android-36" "build-tools;36.0.0"
+      - uses: gradle/actions/setup-gradle@v4
+        with:
+          gradle-version: '9.1.0'
+      - name: Build APK
+        run: |
+          cd android-app
+          gradle :app:assembleDebug --stacktrace
+          cp app/build/outputs/apk/debug/app-debug.apk ../CyberMentorAI-Android.apk
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-android
+          path: CyberMentorAI-Android.apk
+
+  desktop:
+    strategy:
+      fail-fast: false
+      matrix:
+        os: [windows-latest, ubuntu-latest, macos-latest]
+    runs-on: ${{ matrix.os }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pip pyinstaller
+      - run: pyinstaller --noconfirm --onefile --windowed --name CyberMentorAI desktop/gui.py
+      - run: pyinstaller --noconfirm --onefile --name cybermentor cli/cybermentor.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: release-${{ runner.os }}
+          path: dist/*
+
+  publish:
+    needs: [android, desktop]
+    runs-on: ubuntu-latest
+    env:
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/download-artifact@v4
+        with:
+          path: release-assets
+          pattern: release-*
+          merge-multiple: true
+      - name: Checksums
+        shell: bash
+        run: |
+          cd release-assets
+          sha256sum * > SHA256SUMS.txt
+      - name: Create GitHub Release
+        shell: bash
+        run: |
+          TAG="v2.0.${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" release-assets/*             --title "CyberMentor AI $TAG"             --notes "Automatic multiplatform build from commit ${GITHUB_SHA}. Includes Android APK plus desktop/CLI binaries. Android install requires user approval. Cloud AI providers may require their own credentials or backend configuration."             --target "${GITHUB_SHA}"
