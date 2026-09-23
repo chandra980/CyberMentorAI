@@ -16,6 +16,7 @@ import android.util.Log;
 import android.view.Window;
 import android.view.Gravity;
 import android.webkit.JavascriptInterface;
+import android.webkit.RenderProcessGoneDetail;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
@@ -83,7 +84,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 
     private void createWebApp(){
         WebView.setWebContentsDebuggingEnabled(false);
-        webView=new WebView(getApplicationContext());
+        webView=new WebView(this);
         webView.setBackgroundColor(Color.rgb(7,17,31));
         setContentView(webView);
         WebSettings s=webView.getSettings();
@@ -112,6 +113,11 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             @Override public void onPageFinished(WebView view,String url){
                 super.onPageFinished(view,url);
                 js("window.CyberMentorNative&&window.CyberMentorNative.onNativeReady&&window.CyberMentorNative.onNativeReady()");
+            }
+            @Override public boolean onRenderProcessGone(WebView view,RenderProcessGoneDetail detail){
+                Log.e(TAG,"WebView renderer exited; crash="+detail.didCrash());
+                runOnUiThread(()->showStartupFallback(new RuntimeException("Android WebView renderer stopped")));
+                return true;
             }
         });
 
