@@ -31,4 +31,15 @@ for p in required:
 if errors:
     print("\n".join("ERROR: "+e for e in errors))
     sys.exit(1)
+import subprocess
+for cmd in [
+    [sys.executable,str(ROOT/"desktop/gui.py"),"--self-test"],
+    [sys.executable,str(ROOT/"cli/cybermentor.py"),"--self-test"],
+]:
+    p=subprocess.run(cmd,capture_output=True,text=True,timeout=30)
+    if p.returncode!=0: errors.append("Self-test failed: "+" ".join(cmd)+"\n"+p.stdout+"\n"+p.stderr)
+
+if errors:
+    print("\n".join("ERROR: "+e for e in errors))
+    sys.exit(1)
 print("QA checks passed")
