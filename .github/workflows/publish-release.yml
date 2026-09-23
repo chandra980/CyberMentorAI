@@ -8,6 +8,7 @@ on:
       - 'desktop/**'
       - 'cli/**'
       - 'backend/**'
+      - 'installer/**'
       - 'assistant_prompt.txt'
       - '.github/workflows/publish-release.yml'
 permissions:
@@ -56,10 +57,18 @@ jobs:
       - run: pyinstaller --noconfirm --onefile --windowed --name CyberMentorAI desktop/gui.py
       - run: pyinstaller --noconfirm --onefile --name cybermentor cli/cybermentor.py
       - run: pyinstaller --noconfirm --onefile --name cybermentor-backend backend/server.py
+      - name: Build Windows installer
+        if: runner.os == 'Windows'
+        shell: pwsh
+        run: |
+          choco install innosetup --yes --no-progress
+          & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\CyberMentorAI.iss
       - uses: actions/upload-artifact@v4
         with:
           name: release-${{ runner.os }}
-          path: dist/*
+          path: |
+            dist/*
+            installer/output/*
 
   publish:
     needs: [android, desktop]
@@ -81,6 +90,7 @@ jobs:
           cp downloaded/release-Windows/CyberMentorAI.exe release-assets/CyberMentorAI-Windows.exe
           cp downloaded/release-Windows/cybermentor.exe release-assets/cybermentor-Windows.exe
           cp downloaded/release-Windows/cybermentor-backend.exe release-assets/cybermentor-backend-Windows.exe
+          cp downloaded/release-Windows/CyberMentorAI-Setup-Windows.exe release-assets/CyberMentorAI-Setup-Windows.exe
           cp downloaded/release-Linux/CyberMentorAI release-assets/CyberMentorAI-Linux
           cp downloaded/release-Linux/cybermentor release-assets/cybermentor-Linux
           cp downloaded/release-Linux/cybermentor-backend release-assets/cybermentor-backend-Linux
@@ -94,5 +104,5 @@ jobs:
       - name: Create GitHub Release
         shell: bash
         run: |
-          TAG="v2.0.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" release-assets/*             --title "CyberMentor AI $TAG"             --notes "Automatic multiplatform build from commit ${GITHUB_SHA}. Includes Android APK, desktop GUI, CLI and backend binaries. Android installation requires user approval. Cloud AI providers may require their own credentials or backend configuration."             --target "${GITHUB_SHA}"
+          TAG="v3.0.${GITHUB_RUN_NUMBER}"
+          gh release create "$TAG" release-assets/*             --title "CyberMentor AI $TAG"             --notes "Automatic multiplatform build from commit ${GITHUB_SHA}. Includes Android APK, one-click Windows installer, desktop GUI, CLI and backend binaries. Android installation requires user approval. Cloud AI providers may require their own credentials or backend configuration."             --target "${GITHUB_SHA}"
