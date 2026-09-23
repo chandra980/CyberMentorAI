@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import argparse,json,os,urllib.request,urllib.error
+import argparse,json,os,urllib.request,urllib.error,re
 
 MODES=["Learning","Lab","SOC","Pentest","Exam","Interview","Teacher","Project"]
 
@@ -30,10 +30,15 @@ def best_model(key):
     c,d=req("https://api.openai.com/v1/models",headers={"Authorization":"Bearer "+key},timeout=30)
     if c>=400:raise RuntimeError(out_text(d))
     ids=[x.get("id","") for x in d.get("data",[]) if x.get("id")]
-    for pref in ("gpt-5.6","gpt-5","gpt-4.1","gpt-4o","gpt-4"):
-        for x in sorted(ids,reverse=True):
-            if x.startswith(pref) and not any(k in x for k in ("audio","image","realtime")):return x
-    raise RuntimeError("No compatible GPT model found.")
+    ids=[x for x in ids if x.startswith("gpt-") and not any(k in x.lower() for k in ("audio","image","realtime","transcribe","tts","embedding","search","cyber","daybreak"))]
+    def rank(mid):
+        m=re.search(r"gpt-(\d+)(?:\.(\d+))?",mid)
+        major=int(m.group(1)) if m else 0
+        minor=int(m.group(2) or 0) if m else 0
+        tier=3 if "sol" in mid.lower() else 2 if "terra" in mid.lower() else 1 if "luna" in mid.lower() else 2
+        return (major,minor,tier,mid)
+    if not ids:raise RuntimeError("No compatible GPT model found.")
+    return sorted(ids,key=rank,reverse=True)[0]
 
 def instruct(mode,level):
     return f"You are CyberMentor AI, an advanced cybersecurity tutor and defensive lab mentor. Mode: {mode}. Level: {level}. Be accurate, mark uncertainty, explain commands, and limit practical offensive guidance to authorized systems and training labs."
