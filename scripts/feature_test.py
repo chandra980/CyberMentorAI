@@ -68,3 +68,28 @@ assert n["output"][0]["content"][0]["text"]=="ok"
 assert n["model"]=="test-model"
 
 print("Feature tests passed")
+
+
+# Mocked OpenAI end-to-end response path: model discovery -> Responses API -> formatted output.
+orig_req=gui.req_json
+orig_secret=gui.get_secret
+try:
+    gui.get_secret=lambda:"sk-test-key-not-real"
+    def fake_req(url,method="GET",payload=None,headers=None,timeout=120):
+        if url.endswith("/v1/models"):
+            return 200,{"data":[{"id":"gpt-8-sol"},{"id":"gpt-7-terra"}]}
+        if url.endswith("/v1/responses"):
+            assert payload["model"]=="gpt-8-sol"
+            assert payload["input"][-1]["content"]=="Explain firewall"
+            return 200,{"output":[{"type":"message","role":"assistant","content":[{"type":"output_text","text":"Mocked OpenAI end-to-end output OK"}]}]}
+        raise AssertionError(url)
+    gui.req_json=fake_req
+    test_cfg=gui.load_cfg()
+    test_cfg.update(provider="OpenAI",model="",model_profile="Auto Best",mode="Learning",level="Beginner")
+    answer=gui.provider_chat(test_cfg,"Explain firewall",[])
+    assert answer=="Mocked OpenAI end-to-end output OK",answer
+finally:
+    gui.req_json=orig_req
+    gui.get_secret=orig_secret
+
+print("Mocked OpenAI end-to-end test passed")
