@@ -13,10 +13,10 @@ android {
 
     defaultConfig {
         applicationId = "ai.cybermentor.mobile"
-        minSdk = 26
+        minSdk = 29
         targetSdk = 36
-        versionCode = 31
-        versionName = "3.1.0"
+        versionCode = 32
+        versionName = "3.2.0"
     }
 
     signingConfigs {
@@ -28,6 +28,11 @@ android {
                 keyPassword = releaseKeyPassword
             }
         }
+    }
+
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17
+        targetCompatibility = JavaVersion.VERSION_17
     }
 
     buildTypes {
