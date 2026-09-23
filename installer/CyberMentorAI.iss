@@ -1,5 +1,5 @@
 #define MyAppName "CyberMentor AI"
-#define MyAppVersion "3.1.0"
+#define MyAppVersion "3.2.0"
 #define MyAppPublisher "Chandra Kumar Yadav"
 #define MyAppExeName "CyberMentorAI.exe"
 
