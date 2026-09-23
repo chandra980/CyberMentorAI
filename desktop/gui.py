@@ -243,8 +243,8 @@ def main():
 
     mainf=ctk.CTkFrame(app,fg_color="#06111d",corner_radius=0);mainf.grid(row=0,column=1,sticky="nsew",padx=0,pady=0);mainf.grid_columnconfigure(0,weight=1);mainf.grid_rowconfigure(3,weight=1)
     hero=ctk.CTkFrame(mainf,fg_color="#0b2030",corner_radius=18,border_width=1,border_color="#183b4f");hero.grid(row=0,column=0,sticky="ew",padx=20,pady=(20,10))
-    ctk.CTkLabel(hero,text="THINK LIKE AN ANALYST. BUILD LIKE AN ENGINEER.",font=("Segoe UI",20,"bold"),text_color="#f2fbff").pack(anchor="w",padx=18,pady=(16,3))
-    ctk.CTkLabel(hero,text=f"Ask one problem. CyberMentor routes the workflow automatically.  •  Built by {OWNER_NAME}",font=("Segoe UI",12),text_color="#7ea0b3").pack(anchor="w",padx=18,pady=(0,14))
+    ctk.CTkLabel(hero,text="CYBER DEFENSE COMMAND CENTER // THINK LIKE AN ANALYST.",font=("Segoe UI",20,"bold"),text_color="#f2fbff").pack(anchor="w",padx=18,pady=(16,3))
+    ctk.CTkLabel(hero,text=f"Drop one problem. CyberMentor routes the workflow, selects the engine and structures the answer automatically.  •  Built by {OWNER_NAME}",font=("Segoe UI",12),text_color="#7ea0b3").pack(anchor="w",padx=18,pady=(0,14))
 
     topics=ctk.CTkScrollableFrame(mainf,height=78,orientation="horizontal",fg_color="transparent");topics.grid(row=1,column=0,sticky="ew",padx=18,pady=(0,6))
     topic_buttons=[]
@@ -364,12 +364,17 @@ def main():
                     if code>=400:raise RuntimeError(extract_text(d))
                     chosen=model.get().strip() or choose_model([x.get("id") for x in d.get("data",[])],cfg.get("mode","Learning"),model_profile.get())
                     if not chosen:raise RuntimeError("No compatible model was returned by the provider.")
+                    probe={"model":chosen,"input":"Reply exactly with CYBERMENTOR_READY","max_output_tokens":32}
+                    pcode,pdata=req_json("https://api.openai.com/v1/responses","POST",probe,{"Authorization":"Bearer "+saved},timeout=60)
+                    if pcode>=400:raise RuntimeError(extract_text(pdata))
+                    probe_text=extract_text(pdata).strip()
+                    if not probe_text:raise RuntimeError("The provider returned an empty test response.")
                     cfg.update(provider="OpenAI",model=chosen,model_profile=model_profile.get(),language=language.get(),detail=detail.get());save_cfg(cfg)
                     def ok():
                         model.set(chosen);key_status.configure(text=f"CONNECTED ✓  {chosen}",text_color="#36e2b4")
                         provider_lbl.configure(text="ENGINE: OpenAI");status_lbl.configure(text=f"Ready • {chosen}")
                         connect_btn.configure(state="normal",text="SAVE & CONNECT");test_btn.configure(state="normal")
-                        msg.configure(text="Connection verified. Close Settings and press RUN.",text_color="#36e2b4")
+                        msg.configure(text="Live AI response test passed. Close Settings and press RUN.",text_color="#36e2b4")
                     app.after(0,ok)
                 except Exception as e:
                     def bad():
@@ -463,6 +468,8 @@ def main():
         threading.Thread(target=work,daemon=True).start()
     settings_btn.configure(command=open_settings);intel_btn.configure(command=intel);clear_btn.configure(command=clear);copy_btn.configure(command=copy_last);export_btn.configure(command=export_chat);update_btn.configure(command=check_updates);send_btn.configure(command=send)
     app.bind("<Control-Return>",lambda e:send())
+    if cfg.get("provider")=="OpenAI" and not get_secret():
+        app.after(650,open_settings)
     app.mainloop();return 0
 
 if __name__=="__main__":
