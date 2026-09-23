@@ -12,8 +12,9 @@ import android.provider.Settings;
 import android.speech.RecognizerIntent;
 import android.speech.tts.TextToSpeech;
 import android.util.Base64;
+import android.util.Log;
 import android.view.Window;
-import android.view.WindowInsetsController;
+import android.view.Gravity;
 import android.webkit.JavascriptInterface;
 import android.webkit.ValueCallback;
 import android.webkit.WebChromeClient;
@@ -21,6 +22,7 @@ import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.webkit.WebViewClient;
 import android.widget.Toast;
+import android.widget.TextView;
 import org.json.JSONObject;
 import java.io.BufferedReader;
 import java.io.InputStream;
@@ -57,42 +59,86 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
     private ValueCallback<Uri[]> fileCallback;
     private final ExecutorService executor = Executors.newFixedThreadPool(3);
     private TextToSpeech tts;
+    private static final String TAG = "CyberMentorAI";
 
     @Override public void onCreate(Bundle b) {
         super.onCreate(b);
+        try {
+            configureSystemBars();
+            createWebApp();
+        } catch (Throwable startupError) {
+            Log.e(TAG,"Startup failure",startupError);
+            showStartupFallback(startupError);
+        }
+    }
+
+    private void configureSystemBars(){
         Window w=getWindow();
         w.setStatusBarColor(Color.rgb(7,17,31));
         w.setNavigationBarColor(Color.rgb(7,17,31));
-        if (android.os.Build.VERSION.SDK_INT>=30) {
-            w.setDecorFitsSystemWindows(true);
-            WindowInsetsController c=w.getInsetsController();
-            if(c!=null)c.setSystemBarsAppearance(0,WindowInsetsController.APPEARANCE_LIGHT_STATUS_BARS);
+        if(android.os.Build.VERSION.SDK_INT>=23){
+            w.getDecorView().setSystemUiVisibility(0);
         }
-        tts=new TextToSpeech(this,this);
-        webView=new WebView(this);
+    }
+
+    private void createWebApp(){
+        WebView.setWebContentsDebuggingEnabled(false);
+        webView=new WebView(getApplicationContext());
         webView.setBackgroundColor(Color.rgb(7,17,31));
         setContentView(webView);
         WebSettings s=webView.getSettings();
-        s.setJavaScriptEnabled(true); s.setDomStorageEnabled(true); s.setDatabaseEnabled(true);
-        s.setAllowFileAccess(true); s.setAllowContentAccess(true); s.setMediaPlaybackRequiresUserGesture(false);
+        s.setJavaScriptEnabled(true);
+        s.setDomStorageEnabled(true);
+        s.setDatabaseEnabled(true);
+        s.setAllowFileAccess(true);
+        s.setAllowContentAccess(true);
+        s.setMediaPlaybackRequiresUserGesture(false);
+        s.setCacheMode(WebSettings.LOAD_DEFAULT);
+        s.setSupportZoom(false);
+        s.setBuiltInZoomControls(false);
+        s.setDisplayZoomControls(false);
+        if(android.os.Build.VERSION.SDK_INT>=26)s.setSafeBrowsingEnabled(true);
+
         webView.setWebViewClient(new WebViewClient(){
             @Override public boolean shouldOverrideUrlLoading(WebView view, android.webkit.WebResourceRequest request){
                 Uri u=request.getUrl();
-                if("http".equals(u.getScheme())||"https".equals(u.getScheme())){
-                    startActivity(new Intent(Intent.ACTION_VIEW,u)); return true;
+                String scheme=u==null?null:u.getScheme();
+                if("http".equalsIgnoreCase(scheme)||"https".equalsIgnoreCase(scheme)){
+                    try{startActivity(new Intent(Intent.ACTION_VIEW,u));}catch(Exception ignored){}
+                    return true;
                 }
                 return false;
             }
+            @Override public void onPageFinished(WebView view,String url){
+                super.onPageFinished(view,url);
+                js("window.CyberMentorNative&&window.CyberMentorNative.onNativeReady&&window.CyberMentorNative.onNativeReady()");
+            }
         });
+
         webView.setWebChromeClient(new WebChromeClient(){
             @Override public boolean onShowFileChooser(WebView v,ValueCallback<Uri[]> cb,FileChooserParams p){
-                if(fileCallback!=null)fileCallback.onReceiveValue(null); fileCallback=cb;
+                if(fileCallback!=null)fileCallback.onReceiveValue(null);
+                fileCallback=cb;
                 try { startActivityForResult(p.createIntent(),FILE_CHOOSER_CODE); return true; }
                 catch(ActivityNotFoundException e){ fileCallback=null; return false; }
             }
         });
         webView.addJavascriptInterface(new NativeBridge(this),"AndroidAI");
         webView.loadUrl("file:///android_asset/index.html");
+    }
+
+    private void showStartupFallback(Throwable e){
+        TextView v=new TextView(this);
+        v.setTextColor(Color.WHITE);
+        v.setBackgroundColor(Color.rgb(7,17,31));
+        v.setGravity(Gravity.CENTER);
+        v.setPadding(42,42,42,42);
+        v.setTextSize(16);
+        String detail=e==null?"Unknown startup error":e.getClass().getSimpleName()+": "+String.valueOf(e.getMessage());
+        v.setText("CyberMentor AI could not initialize the Android WebView.\n\n"+
+                "Update Android System WebView / Google Chrome, restart the phone, and open the app again.\n\n"+
+                "Diagnostic: "+detail);
+        setContentView(v);
     }
 
     @Override protected void onActivityResult(int requestCode,int resultCode,Intent data){
@@ -109,9 +155,20 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
     }
 
     @Override public void onBackPressed(){ if(webView!=null&&webView.canGoBack())webView.goBack(); else super.onBackPressed(); }
-    @Override protected void onDestroy(){ if(tts!=null){tts.stop();tts.shutdown();} executor.shutdownNow(); if(webView!=null)webView.destroy(); super.onDestroy(); }
+    @Override protected void onDestroy(){
+        if(tts!=null){try{tts.stop();tts.shutdown();}catch(Exception ignored){}}
+        executor.shutdownNow();
+        if(webView!=null){try{webView.removeJavascriptInterface("AndroidAI");webView.stopLoading();webView.destroy();}catch(Exception ignored){}}
+        super.onDestroy();
+    }
     @Override public void onInit(int status){ if(status==TextToSpeech.SUCCESS&&tts!=null)tts.setLanguage(Locale.US); }
-    private void js(String s){ runOnUiThread(()->webView.evaluateJavascript(s,null)); }
+    private void js(String script){
+        runOnUiThread(()->{
+            if(webView!=null && !isFinishing()){
+                try{webView.evaluateJavascript(script,null);}catch(Throwable t){Log.w(TAG,"JavaScript bridge call failed",t);}
+            }
+        });
+    }
 
     private static String readBody(HttpURLConnection c,boolean err)throws Exception{
         InputStream st=err?c.getErrorStream():c.getInputStream(); if(st==null)return "";
@@ -122,7 +179,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         executor.submit(()->{HttpURLConnection c=null; try{
             c=(HttpURLConnection)new URL(endpoint).openConnection(); c.setRequestMethod("POST"); c.setConnectTimeout(30000); c.setReadTimeout(180000); c.setDoOutput(true);
             c.setRequestProperty("Content-Type","application/json"); c.setRequestProperty("Accept","application/json");
-            if(bearer!=null&&!bearer.isBlank())c.setRequestProperty("Authorization","Bearer "+bearer);
+            if(bearer!=null&&!bearer.trim().isEmpty())c.setRequestProperty("Authorization","Bearer "+bearer);
             byte[] b=payload.getBytes(StandardCharsets.UTF_8); c.setFixedLengthStreamingMode(b.length); try(OutputStream os=c.getOutputStream()){os.write(b);}
             int code=c.getResponseCode(); String body=readBody(c,code>=400); JSONObject env=new JSONObject(); env.put("status",code); env.put("body",body);
             js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult("+JSONObject.quote(id)+","+(code>=200&&code<300)+","+JSONObject.quote(env.toString())+")");
@@ -182,7 +239,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
         getSharedPreferences(PREFS,MODE_PRIVATE).edit().putString(PREF_KEY,packed).apply();
     }
     private String loadKey()throws Exception{
-        String p=getSharedPreferences(PREFS,MODE_PRIVATE).getString(PREF_KEY,null); if(p==null||p.isBlank())return null;
+        String p=getSharedPreferences(PREFS,MODE_PRIVATE).getString(PREF_KEY,null); if(p==null||p.trim().isEmpty())return null;
         String[] a=p.split(":",2); Cipher c=Cipher.getInstance("AES/GCM/NoPadding"); c.init(Cipher.DECRYPT_MODE,key(),new GCMParameterSpec(128,Base64.decode(a[0],Base64.NO_WRAP)));
         return new String(c.doFinal(Base64.decode(a[1],Base64.NO_WRAP)),StandardCharsets.UTF_8);
     }
@@ -214,7 +271,13 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             post(id,base.endsWith("/")?base+"api/chat":base+"/api/chat",token,payload);
         }
         @JavascriptInterface public void startVoice(){runOnUiThread(()->{Intent i=new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH);i.putExtra(RecognizerIntent.EXTRA_LANGUAGE_MODEL,RecognizerIntent.LANGUAGE_MODEL_FREE_FORM);try{startActivityForResult(i,VOICE_CODE);}catch(Exception e){Toast.makeText(ctx,"Speech recognition unavailable",Toast.LENGTH_SHORT).show();}});}
-        @JavascriptInterface public void speak(String t){if(tts!=null&&t!=null&&!t.isBlank())tts.speak(t,TextToSpeech.QUEUE_FLUSH,null,"cm");}
+        @JavascriptInterface public void speak(String t){
+            if(t==null||t.trim().isEmpty())return;
+            runOnUiThread(()->{
+                if(tts==null)tts=new TextToSpeech(MainActivity.this,status->{if(status==TextToSpeech.SUCCESS&&tts!=null){tts.setLanguage(Locale.US);tts.speak(t,TextToSpeech.QUEUE_FLUSH,null,"cm");}});
+                else tts.speak(t,TextToSpeech.QUEUE_FLUSH,null,"cm");
+            });
+        }
         @JavascriptInterface public void shareText(String title,String text){runOnUiThread(()->{Intent i=new Intent(Intent.ACTION_SEND);i.setType("text/plain");i.putExtra(Intent.EXTRA_SUBJECT,title);i.putExtra(Intent.EXTRA_TEXT,text);startActivity(Intent.createChooser(i,"Share"));});}
         @JavascriptInterface public String appVersion(){try{return ctx.getPackageManager().getPackageInfo(ctx.getPackageName(),0).versionName;}catch(Exception e){return "unknown";}}
         @JavascriptInterface public void refreshOpenAIModels(String id){try{String k=loadKey();if(k==null){js("window.CyberMentorNative&&window.CyberMentorNative.onModelCatalog("+JSONObject.quote(id)+",false,'No API key saved')");return;}get(id,OPENAI_MODELS_ENDPOINT,k,"onModelCatalog");}catch(Exception e){}}
