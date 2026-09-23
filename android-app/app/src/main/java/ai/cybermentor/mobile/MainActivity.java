@@ -140,17 +140,19 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             if(code<200||code>=300)throw new Exception("Model catalog request failed");
             org.json.JSONArray a=new JSONObject(body).optJSONArray("data");
             if(a==null||a.length()==0)throw new Exception("No models available");
-            String best="";
-            String[] prefs=new String[]{"gpt-5.6","gpt-5","gpt-4.1","gpt-4o","gpt-4"};
-            for(String pref:prefs){
-                for(int i=0;i<a.length();i++){
-                    String id=a.optJSONObject(i)==null?"":a.optJSONObject(i).optString("id","");
-                    if(id.startsWith(pref) && !id.contains("audio") && !id.contains("image") && !id.contains("realtime")) return id;
-                }
-            }
+            String best=""; int bestMajor=-1,bestMinor=-1,bestTier=-1;
+            java.util.regex.Pattern p=java.util.regex.Pattern.compile("gpt-(\\d+)(?:\\.(\\d+))?");
             for(int i=0;i<a.length();i++){
-                String id=a.optJSONObject(i)==null?"":a.optJSONObject(i).optString("id","");
-                if(id.startsWith("gpt-") && !id.contains("audio") && !id.contains("image") && !id.contains("realtime")){best=id;break;}
+                JSONObject o=a.optJSONObject(i); if(o==null)continue;
+                String id=o.optString("id","");
+                String low=id.toLowerCase(java.util.Locale.ROOT);
+                if(!id.startsWith("gpt-")||low.contains("audio")||low.contains("image")||low.contains("realtime")||low.contains("transcribe")||low.contains("tts")||low.contains("embedding")||low.contains("search")||low.contains("cyber")||low.contains("daybreak"))continue;
+                java.util.regex.Matcher m=p.matcher(id);
+                int major=0,minor=0;if(m.find()){major=Integer.parseInt(m.group(1));if(m.group(2)!=null)minor=Integer.parseInt(m.group(2));}
+                int tier=low.contains("sol")?3:(low.contains("terra")?2:(low.contains("luna")?1:2));
+                if(major>bestMajor||(major==bestMajor&&minor>bestMinor)||(major==bestMajor&&minor==bestMinor&&tier>bestTier)||(major==bestMajor&&minor==bestMinor&&tier==bestTier&&id.compareTo(best)>0)){
+                    best=id;bestMajor=major;bestMinor=minor;bestTier=tier;
+                }
             }
             if(best.isEmpty())throw new Exception("No compatible GPT model found");
             return best;
