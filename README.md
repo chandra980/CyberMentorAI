@@ -1,49 +1,52 @@
 # CyberMentor AI
 
-## Start here
+**Professional cybersecurity learning, SOC, lab, exam and project assistant by Chandra Kumar Yadav.**
 
-For platform-by-platform installation and usage, read **[INSTALL.md](INSTALL.md)**.
-
-Quick links:
-
-- Repository: https://github.com/chandra980/CyberMentorAI
-- Actions: https://github.com/chandra980/CyberMentorAI/actions
-- Releases: https://github.com/chandra980/CyberMentorAI/releases/latest
-- Android direct APK (after a successful release): https://github.com/chandra980/CyberMentorAI/releases/latest/download/CyberMentorAI-Android.apk
-
-
-Advanced multiplatform cybersecurity learning assistant for Android, Windows, macOS, Linux, CLI and browser-connected workflows. Desktop v3 runs standalone with direct OpenAI, Ollama, or Secure Backend modes; a separate backend is optional.
-
-Built around the case-study design loop:
-
-**Problem -> User -> Role -> Instructions -> Context / Knowledge -> Output -> Test -> Find Failure -> Refine -> Retest**
+> **Current-release policy:** this repository publishes one supported release at a time. When a new successful release is published, older GitHub Releases/tags are removed automatically so users are not forced to choose between old versions.
 
 ## Download
 
-Recommended Windows installer after the next v3 release:
+**Latest supported release:**  
+https://github.com/chandra980/CyberMentorAI/releases/latest
 
-`CyberMentorAI-Setup-Windows.exe`
+Recommended files:
 
+- **Windows:** `CyberMentorAI-Setup-Windows.exe`
+- **Android:** `CyberMentorAI-Android.apk`
+- **Windows portable:** `CyberMentorAI-Windows.exe`
+- **Linux:** `CyberMentorAI-Linux`
+- **macOS:** `CyberMentorAI-macOS`
+- **CLI:** `cybermentor-<platform>`
+- **Optional shared backend:** `cybermentor-backend-<platform>`
 
-After the first successful release build:
+## 30-second setup
 
-- Latest release page: https://github.com/chandra980/CyberMentorAI/releases/latest
-- Direct Android APK: https://github.com/chandra980/CyberMentorAI/releases/latest/download/CyberMentorAI-Android.apk
+### Windows
 
-> Android will still ask the user to approve installation of an APK downloaded outside Google Play.
+1. Install `CyberMentorAI-Setup-Windows.exe`.
+2. Open **CyberMentor AI**.
+3. Open **Settings**.
+4. Paste your own OpenAI API key.
+5. Press **SAVE & CONNECT**.
+6. Wait for **CONNECTED ✓**.
+7. Type any problem and press **RUN**.
 
-## Included targets
+The normal desktop app is standalone. The separate backend executable is optional.
 
-| Target | Implementation |
-|---|---|
-| Android | Native Java shell + secure WebView bridge |
-| Windows/macOS/Linux GUI | Python + Tkinter, packaged with PyInstaller |
-| CLI | Python client |
-| Backend | Python API gateway |
-| Web | Lightweight browser companion |
-| Current cyber topics | Scheduled CISA KEV + NIST NVD refresh |
+### Android
 
-## Core assistant modes
+1. Install `CyberMentorAI-Android.apk`.
+2. Open **Settings**.
+3. Paste the API key.
+4. Press **SAVE & CONNECT**.
+5. Wait for **CONNECTED ✓**.
+6. Ask your question.
+
+The API key is stored with Android Keystore on Android and the OS credential store/keyring on desktop.
+
+## Core experience
+
+CyberMentor can automatically route a natural-language request into:
 
 - Learning
 - Authorized Lab
@@ -54,116 +57,95 @@ After the first successful release build:
 - Teacher
 - Project
 
-The assistant adapts to Beginner, Intermediate and Advanced levels.
+Levels: **Beginner / Intermediate / Advanced**.
 
-## AI providers
+Quick topics include networking, OSI/TCP-IP, Linux, Windows, cryptography, web security, OWASP, SOC, SIEM, EDR, IDS/IPS, threat intelligence, incident response, digital forensics, Active Directory, Python, PowerShell, SQL, API security, containers, threat hunting, MITRE ATT&CK, Wireshark, Nmap, Burp Suite, Zeek, Suricata, Splunk, Sysmon, Volatility, YARA and Sigma.
 
-### OpenAI
+## AI engine
 
-For personal use, the Android app can store a user's own API key using Android Keystore encryption.
+CyberMentor does not require the user to manually track changing model IDs. When the model field is blank, the app queries the provider's available model catalog and selects a compatible current GPT generation automatically.
 
-For a shared/public build, use the backend architecture so a shared provider key is never embedded in the APK, EXE, JavaScript bundle or repository.
+Desktop preferences include:
 
-The app can query the provider's model endpoint so the selectable model list can be refreshed instead of permanently depending on one hard-coded catalog.
+- Auto Best / Balanced / Economy / Cyber Specialized model profile
+- Auto / English / Hindi / Hinglish language
+- Quick / Professional / Deep answer depth
+- OpenAI / Ollama / Secure Backend
+- manual model override for advanced users
 
-### Ollama / local models
+Specialized cyber models are used only when they are actually available to the user's API account and explicitly selected.
 
-The backend also supports a local Ollama server:
+## Useful daily features
 
-```bash
-export AI_PROVIDER=ollama
-export OLLAMA_MODEL=qwen3:8b
-python backend/server.py
+- persistent local conversation history
+- Copy Last Answer
+- Export Chat
+- Check Updates
+- Live Cyber Intel
+- CISA KEV + NIST NVD defensive feed
+- voice input on Android
+- model auto-detection
+- friendly error recovery instead of raw Python/network tracebacks
+- SHA-256 release checksums
+- one-click Windows installer
+
+## Free/local mode
+
+CyberMentor can connect to a locally installed Ollama model. Local model software and model files must already be installed on that computer. No cloud API charge is incurred by CyberMentor for local inference.
+
+## Security architecture
+
+For personal desktop/mobile use, a user may save their own API key locally.
+
+For public or organizational deployments, use:
+
+```text
+CyberMentor App
+      |
+      v
+Authenticated HTTPS Backend
+      |
+      v
+AI Provider
 ```
 
-Local models avoid per-request cloud API charges but require suitable hardware.
+Never commit a shared provider API key to this public repository.
 
-### OpenAI-compatible endpoint
+## Current cyber intelligence
 
-Configure:
-
-```bash
-export AI_PROVIDER=compatible
-export COMPAT_BASE_URL=https://your-provider.example
-export COMPAT_API_KEY=...
-```
-
-## Backend with OpenAI
-
-```bash
-export AI_PROVIDER=openai
-export OPENAI_API_KEY=your-key
-export OPENAI_MODEL=your-model-id
-python backend/server.py
-```
-
-If exposing the backend to other devices, set an application token and put the service behind HTTPS:
-
-```bash
-export HOST=0.0.0.0
-export APP_ACCESS_TOKEN=a-long-random-secret
-python backend/server.py
-```
-
-## CLI
-
-```bash
-python cli/cybermentor.py --once "Explain Kerberos for a SOC analyst"
-```
-
-Interactive:
-
-```bash
-python cli/cybermentor.py
-```
-
-## Desktop GUI
-
-The packaged GUI is standalone for normal personal use. Open **Settings** once and choose OpenAI, Ollama, or Secure Backend. No separate CyberMentor backend process is required unless you specifically want shared/server mode.
-
-Source run:
-
-```bash
-python desktop/gui.py
-```
-
-## Android
-
-The Android app includes:
-
-- mobile-first chat UI
-- Learning/Lab/SOC/Pentest/Exam/Interview/Teacher/Project modes
-- level control
-- local chat history
-- voice input and text-to-speech
-- encrypted personal API-key storage
-- secure backend mode
-- live model refresh
-- cybersecurity intelligence feed
-- GitHub Release update checks
-- app icon and splash screen
-
-## Automatic internet updates
-
-A scheduled GitHub Action refreshes defensive security topics from:
+The scheduled updater refreshes defensive metadata from:
 
 - CISA Known Exploited Vulnerabilities
 - NIST National Vulnerability Database
 
-The updater stores metadata in `data/cyber_feed.json`. It does not fetch or execute exploit code.
+It does not download or execute exploit code.
 
-## GitHub Actions and QA
+## Quality gates
 
-- **Build Android APK** - test APK on Android-related pushes or manual run.
-- **Build Desktop and CLI** - Windows/Linux/macOS packages.
-- **Update Cybersecurity Intelligence** - daily defensive-topic refresh.
-- **Publish Installers** - automatically builds and publishes a GitHub Release with Android APK, desktop GUI, CLI and backend binaries when application code changes.
-- **Cross-platform QA** - validates Python syntax, Android XML, mobile bridge consistency, mobile JavaScript syntax and backend health on every push.
+Every change is checked by automated workflows covering:
 
-## Security boundary
+- Python compilation
+- desktop self-tests
+- CLI self-tests
+- Android XML validation
+- Android native/JavaScript bridge checks
+- mobile JavaScript syntax
+- backend health smoke test
+- Android APK compilation
+- Windows/Linux/macOS packaging
+- Windows installer generation
+- release checksums
 
-CyberMentor AI is for education, defensive security and authorized testing. Practical lab work should target systems you own, have explicit permission to test, or intentionally vulnerable training environments.
+See: https://github.com/chandra980/CyberMentorAI/actions
 
-## Repository owner
+## Installation details
 
-Maintained under: **chandra980/CyberMentorAI**
+Read **[INSTALL.md](INSTALL.md)** for platform-specific instructions and troubleshooting.
+
+## Platform trust / signing
+
+The project supports normal GitHub distribution, but operating-system reputation warnings are controlled by Microsoft/Google/Apple, not by application UI code. For the strongest production trust, releases should be signed with a stable Android release keystore and a trusted Windows code-signing certificate (and Apple signing/notarization for macOS). The build pipeline can be extended with those private signing credentials without putting them in this public repository.
+
+## Authorized-use boundary
+
+CyberMentor AI is designed for cybersecurity education, defensive security and testing on systems the user owns, has explicit authorization to test, or intentionally vulnerable training labs.
