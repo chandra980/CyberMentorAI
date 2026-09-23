@@ -1,12 +1,33 @@
-# CyberMentor AI - Installation and Usage
+# CyberMentor AI — Installation
 
-This guide is written for people who receive only the repository link and want the easiest path for their platform.
-
-## 1. Android phone or tablet
-
-Open the latest release page:
+This repository keeps a **single current supported release**. Use the latest release page instead of choosing an old version:
 
 https://github.com/chandra980/CyberMentorAI/releases/latest
+
+## Windows — recommended
+
+Download:
+
+`CyberMentorAI-Setup-Windows.exe`
+
+Then:
+
+1. Open the installer.
+2. Install CyberMentor AI.
+3. Launch the app.
+4. Open **Settings**.
+5. Provider: **OpenAI**.
+6. Paste your API key.
+7. Press **SAVE & CONNECT**.
+8. Wait for **CONNECTED ✓**.
+9. Close Settings.
+10. Type your problem and press **RUN**.
+
+You do **not** need to separately start `cybermentor-backend-Windows.exe` for normal personal use.
+
+The portable `CyberMentorAI-Windows.exe` can also be used without the installer.
+
+## Android
 
 Download:
 
@@ -14,80 +35,88 @@ Download:
 
 Then:
 
-1. Open the downloaded APK.
-2. If Android blocks installation, allow **Install unknown apps** for the browser or file manager you used.
-3. Install and open **CyberMentor AI**.
-4. Open **Settings** inside the app.
-5. For personal use choose **Direct OpenAI**, add your own API key, press **Save key**, then **Refresh models**.
-6. For a shared/production setup choose **Secure backend** and enter the HTTPS backend URL supplied by the server owner.
-7. Choose Learning, Lab, SOC, Pentest, Exam, Interview, Teacher or Project mode.
+1. Open the APK.
+2. Android may ask permission to install apps from that browser/file manager because the APK is distributed outside Google Play.
+3. Install and launch **CyberMentor AI**.
+4. Open **Settings**.
+5. Paste your OpenAI API key.
+6. Press **SAVE & CONNECT**.
+7. Wait for **CONNECTED ✓**.
+8. Ask your question.
 
-Direct APK link after a release exists:
+The API key is encrypted using Android Keystore.
 
-https://github.com/chandra980/CyberMentorAI/releases/latest/download/CyberMentorAI-Android.apk
+## API setup
 
-## 2. Windows
+The easiest personal setup is:
 
-From the latest Releases page download:
+```text
+CyberMentor AI
+    |
+    | your own API key stored locally
+    v
+OpenAI API
+```
 
-- `CyberMentorAI-Windows.exe` - recommended GUI
-- `cybermentor-Windows.exe` - CLI
-- `cybermentor-backend-Windows.exe` - optional shared/local backend
+The app can auto-detect a compatible current model when the model field is left blank.
 
-### Easiest Windows use
+Do not paste your private API key into GitHub issues, repository files, screenshots, or public chats.
 
-1. Double-click `CyberMentorAI-Windows.exe`.
-2. Open **Settings** once.
-3. Choose **OpenAI** and paste your own API key, or choose **Ollama** if you already run a local model, or choose **Secure Backend** if an organization gives you a server URL.
-4. Save.
-5. Type your problem and press **RUN**.
+## Local/free Ollama mode
 
-The Windows GUI no longer requires the separate backend executable for normal personal use. Its Python/runtime GUI dependencies are bundled inside the EXE.
+If Ollama is already installed with a local model:
 
-### Local/free Ollama mode
+1. Open CyberMentor settings.
+2. Provider: **Ollama**.
+3. Keep the default local URL unless your Ollama server uses another address.
+4. Leave model blank to use the first installed model, or enter an installed model name.
+5. Save settings.
+6. Ask a question.
 
-Install Ollama separately and install a model. Then select **Ollama** in CyberMentor settings. No separate CyberMentor backend is required for this personal-local mode.
+Ollama itself and the model must be installed separately because they are independent software and can be several gigabytes.
 
-## 3. macOS
+## Secure Backend mode
 
-Download `CyberMentorAI-macOS`. Make it executable if required and launch it.
+This is for an organization or shared deployment.
 
-The GUI can connect directly to OpenAI, Ollama, or a Secure Backend. A separate CyberMentor backend is optional.
+1. Provider: **Secure Backend**.
+2. Enter the HTTPS CyberMentor backend URL.
+3. Add an access token if the server owner configured one.
+4. Save settings.
 
-macOS Gatekeeper may require approval in Privacy & Security because community GitHub binaries are not Apple-notarized.
+A public APK/EXE should never contain a shared master API key.
 
-## 4. Linux
+## Linux
 
 Download `CyberMentorAI-Linux`.
-
-Run:
 
 ```bash
 chmod +x CyberMentorAI-Linux
 ./CyberMentorAI-Linux
 ```
 
-Open Settings once and choose OpenAI, Ollama, or Secure Backend.
+Then use Settings exactly as on Windows.
 
-If the desktop environment has no graphical display/Tk support, use the CLI instead.
+## macOS
 
-## 5. CLI
+Download `CyberMentorAI-macOS`.
 
-The CLI now works directly with OpenAI, Ollama, or an optional backend.
+```bash
+chmod +x CyberMentorAI-macOS
+./CyberMentorAI-macOS
+```
+
+macOS may require approval in Privacy & Security for an unsigned/non-notarized community binary.
+
+## CLI
 
 OpenAI:
 
 ```bash
-cybermentor-Windows.exe --provider openai --api-key YOUR_KEY --once "Explain DNS security"
+cybermentor-Windows.exe --provider openai --api-key YOUR_KEY --once "Explain Kerberos"
 ```
 
-Linux/macOS:
-
-```bash
-./cybermentor-Linux --provider openai --once "Explain DNS security"
-```
-
-with `OPENAI_API_KEY` set in the environment.
+or set `OPENAI_API_KEY` and omit `--api-key`.
 
 Ollama:
 
@@ -95,46 +124,54 @@ Ollama:
 ./cybermentor-Linux --provider ollama --once "Teach me Wireshark filters"
 ```
 
-Interactive mode starts when `--once` is omitted.
+## What happens after setup
 
-## 6. Source-code users
+Users can simply type requests such as:
 
-Python 3.12+:
+- `Explain DNS security from zero`
+- `Give me a SOC alert investigation exercise`
+- `Create a DVWA SQL injection training lab`
+- `Take my SOC analyst interview`
+- `Prepare me for a network security exam`
+- `Make a university lesson plan on firewalls`
+- `Design an intermediate cybersecurity project`
 
-```bash
-python backend/server.py
-python desktop/gui.py
-python cli/cybermentor.py
-```
+Auto Mode routes the request to the relevant workflow.
 
-Android developers can open `android-app/` in Android Studio or use the GitHub Actions build.
+## Updates
 
-## 7. Internet-updated cybersecurity topics
+Use **Check Updates** inside the desktop app or the Android Settings screen.
 
-The repository runs a scheduled workflow that refreshes defensive metadata from CISA KEV and NIST NVD into:
+Latest release:
 
-`data/cyber_feed.json`
+https://github.com/chandra980/CyberMentorAI/releases/latest
 
-The Android Intel screen can read this feed. The updater is defensive and does not download or execute exploit code.
+When a new successful release is published, the release workflow removes older CyberMentor GitHub Releases/tags so users see one supported version.
 
-## 8. Updates
+## Microsoft SmartScreen / browser warnings
 
-The Android app checks GitHub Releases for new versions. It cannot silently install an update; Android requires user approval.
+A GitHub-hosted executable can still be flagged as an **unrecognized app** or uncommon download by Microsoft Defender SmartScreen even when it contains no malicious code. That reputation decision is made by Microsoft.
 
-Desktop users should download the newer binary from Releases.
+The correct production solution is a trusted Windows code-signing certificate and, for maximum distribution trust, a recognized store/distribution channel. Application code must not bypass or disable SmartScreen.
 
-## 9. Important security note
+## Android Play Protect / unknown-source prompts
 
-Do not commit a personal or shared OpenAI API key into this public repository. For public distribution, keep provider secrets on a backend server and expose only an authenticated HTTPS endpoint to clients.
+Android can warn when an APK is installed outside Google Play. The app cannot legitimately suppress that Android security prompt.
 
-## 10. Troubleshooting
+For strongest production trust, publish a stable release-signed APK/AAB through a recognized Android distribution channel.
 
-**404 on the direct APK link:** no successful GitHub Release exists yet, or the asset name differs. Open the Releases page and confirm the asset is present.
+## Troubleshooting
 
-**Android app says no API key:** Settings -> Direct OpenAI -> save your key -> refresh models.
+**API key saved but connection fails:** press **TEST SAVED CONNECTION** on desktop or **TEST / DETECT MODEL** on Android. A bad key, disabled API billing, unavailable model, or provider/network issue will be shown as a friendly status.
 
-**Backend mode fails:** confirm the backend URL uses HTTPS (except localhost), the server is running, and the access token matches.
+**No model selected:** leave the model field blank and reconnect; CyberMentor will query the available model list.
 
-**Desktop GUI asks for setup:** open Settings once and choose OpenAI, Ollama, or Secure Backend. The separate backend executable is optional for normal personal use.
+**Ollama unavailable:** start Ollama and install at least one model.
 
-**Ollama model not found:** install the model in Ollama and set `OLLAMA_MODEL` to that exact installed model name.
+**Secure backend unavailable:** verify the HTTPS URL and access token.
+
+**Old version still installed:** uninstall the old CyberMentor build, then install the latest supported release from the Releases page.
+
+## Security note
+
+CyberMentor is for defensive security, education, and authorized lab/pentest use only.
