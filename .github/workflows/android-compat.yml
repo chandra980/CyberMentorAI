@@ -73,24 +73,4 @@ jobs:
           profile: pixel_2
           disable-animations: true
           emulator-options: -no-snapshot -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim
-          script: |
-            set -e
-            adb wait-for-device
-            adb install -r CyberMentorAI-compat.apk
-            adb logcat -c
-            adb shell am force-stop ai.cybermentor.mobile
-            adb shell am start -W -n ai.cybermentor.mobile/.MainActivity
-            sleep 8
-            PID="$(adb shell pidof ai.cybermentor.mobile | tr -d '\r')"
-            if [ -z "$PID" ]; then
-              echo "CyberMentor process died after launch on API ${{ matrix.api-level }}"
-              adb logcat -d
-              exit 1
-            fi
-            adb shell dumpsys activity activities | grep -q "ai.cybermentor.mobile/.MainActivity"
-            if adb logcat -d | grep -E "FATAL EXCEPTION: main|Process: ai.cybermentor.mobile" | grep -q "ai.cybermentor.mobile"; then
-              echo "Fatal exception detected on API ${{ matrix.api-level }}"
-              adb logcat -d
-              exit 1
-            fi
-            echo "CyberMentor launch stable on API ${{ matrix.api-level }}, pid=$PID"
+          script: bash scripts/android_launch_smoke.sh "${{ matrix.api-level }}" CyberMentorAI-compat.apk
