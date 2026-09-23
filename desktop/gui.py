@@ -5,7 +5,7 @@ from pathlib import Path
 APP_NAME="CyberMentor AI"\nOWNER_NAME="Chandra Kumar Yadav"
 REPO="chandra980/CyberMentorAI"
 CONFIG_DIR=Path.home()/".cybermentor"
-CONFIG_FILE=CONFIG_DIR/"config.json"
+CONFIG_FILE=CONFIG_DIR/"config.json"\nHISTORY_FILE=CONFIG_DIR/"history.json"\nAPP_VERSION="3.1"
 KEY_SERVICE="CyberMentorAI"
 DEFAULT_FEED=f"https://raw.githubusercontent.com/{REPO}/main/data/cyber_feed.json"
 
@@ -33,6 +33,20 @@ def save_cfg(cfg):
     CONFIG_DIR.mkdir(parents=True,exist_ok=True)
     CONFIG_FILE.write_text(json.dumps(cfg,indent=2),encoding="utf-8")
     try: os.chmod(CONFIG_FILE,0o600)
+    except Exception: pass
+
+def load_history():
+    try:
+        data=json.loads(HISTORY_FILE.read_text(encoding="utf-8"))
+        return [(str(x.get("role","assistant")),str(x.get("text",""))) for x in data[-200:] if isinstance(x,dict)]
+    except Exception:
+        return []
+
+def save_history(history):
+    CONFIG_DIR.mkdir(parents=True,exist_ok=True)
+    data=[{"role":r,"text":t} for r,t in history[-200:]]
+    HISTORY_FILE.write_text(json.dumps(data,ensure_ascii=False,indent=2),encoding="utf-8")
+    try: os.chmod(HISTORY_FILE,0o600)
     except Exception: pass
 
 def get_secret():
@@ -192,7 +206,7 @@ def main():
     try:import keyring
     except Exception:keyring=None
     ctk.set_appearance_mode("dark");ctk.set_default_color_theme("dark-blue")
-    cfg=load_cfg();history=[]
+    cfg=load_cfg();history=load_history()
 
     app=ctk.CTk();app.title(APP_NAME);app.geometry("1180x760");app.minsize(920,620)
     app.configure(fg_color="#06111d")
@@ -211,6 +225,9 @@ def main():
     settings_btn=ctk.CTkButton(side,text="⚙  Settings",fg_color="#153349",hover_color="#1d4662");settings_btn.pack(fill="x",padx=18,pady=4)
     intel_btn=ctk.CTkButton(side,text="◉  Live Cyber Intel",fg_color="#153349",hover_color="#1d4662");intel_btn.pack(fill="x",padx=18,pady=4)
     clear_btn=ctk.CTkButton(side,text="⌫  Clear Session",fg_color="#182838",hover_color="#293d50");clear_btn.pack(fill="x",padx=18,pady=4)
+    copy_btn=ctk.CTkButton(side,text="⧉  Copy Last Answer",fg_color="#182838",hover_color="#293d50");copy_btn.pack(fill="x",padx=18,pady=4)
+    export_btn=ctk.CTkButton(side,text="⇩  Export Chat",fg_color="#182838",hover_color="#293d50");export_btn.pack(fill="x",padx=18,pady=4)
+    update_btn=ctk.CTkButton(side,text="↻  Check Updates",fg_color="#182838",hover_color="#293d50");update_btn.pack(fill="x",padx=18,pady=4)
     ctk.CTkLabel(side,text="Authorized labs • Defensive learning\nNo exploit feed execution",font=("Segoe UI",10),text_color="#58778b",justify="left").pack(side="bottom",anchor="w",padx=20,pady=20)
 
     mainf=ctk.CTkFrame(app,fg_color="#06111d",corner_radius=0);mainf.grid(row=0,column=1,sticky="nsew",padx=0,pady=0);mainf.grid_columnconfigure(0,weight=1);mainf.grid_rowconfigure(3,weight=1)
@@ -221,7 +238,12 @@ def main():
     topics=ctk.CTkScrollableFrame(mainf,height=78,orientation="horizontal",fg_color="transparent");topics.grid(row=1,column=0,sticky="ew",padx=18,pady=(0,6))
     topic_buttons=[]
     chat=ctk.CTkTextbox(mainf,wrap="word",font=("Segoe UI",13),fg_color="#081623",border_width=1,border_color="#19384b",corner_radius=16);chat.grid(row=3,column=0,sticky="nsew",padx=20,pady=(6,10))
-    chat.insert("end","CyberMentor AI ready. Choose a topic or type your problem below.\n\n")
+    if history:
+        for role,text in history[-30:]:
+            tag="YOU" if role=="user" else "CYBERMENTOR"
+            chat.insert("end",f"{tag}\n{text.strip()}\n\n")
+    else:
+        chat.insert("end","CYBERMENTOR AI // SECURITY OPERATIONS CONSOLE\nDrop a cyber problem, topic, lab, alert, exam goal or project.\n\n")
     chat.configure(state="disabled")
     inputf=ctk.CTkFrame(mainf,fg_color="transparent");inputf.grid(row=4,column=0,sticky="ew",padx=20,pady=(0,20));inputf.grid_columnconfigure(0,weight=1)
     entry=ctk.CTkTextbox(inputf,height=78,wrap="word",fg_color="#0b1e2c",border_width=1,border_color="#22506a",corner_radius=14);entry.grid(row=0,column=0,sticky="ew",padx=(0,10))
@@ -367,7 +389,7 @@ def main():
         def work():
             try:
                 answer=provider_chat(cfg,q,payload_history)
-                history.append(("user",q));history.append(("assistant",answer))
+                history.append(("user",q));history.append(("assistant",answer));save_history(history)
                 app.after(0,lambda:append("assistant",answer))
                 app.after(0,lambda:status_lbl.configure(text=f"Ready • {cfg['provider']} • {cfg.get('model') or 'auto model'}"))
             except Exception as e:
@@ -387,7 +409,37 @@ def main():
         b.pack(side="left",padx=4,pady=4);topic_buttons.append(b)
 
     def clear():
-        history.clear();chat.configure(state="normal");chat.delete("1.0","end");chat.insert("end","New CyberMentor session ready.\n\n");chat.configure(state="disabled")
+        history.clear();save_history(history);chat.configure(state="normal");chat.delete("1.0","end");chat.insert("end","New CyberMentor session ready.\n\n");chat.configure(state="disabled")
+    def copy_last():
+        for role,text in reversed(history):
+            if role=="assistant":
+                app.clipboard_clear();app.clipboard_append(text);status_lbl.configure(text="Last answer copied to clipboard");return
+        status_lbl.configure(text="No answer to copy yet")
+    def export_chat():
+        try:
+            from tkinter import filedialog
+            path=filedialog.asksaveasfilename(title="Export CyberMentor chat",defaultextension=".txt",filetypes=[("Text file","*.txt"),("JSON file","*.json")])
+            if not path:return
+            p=Path(path)
+            if p.suffix.lower()==".json":
+                p.write_text(json.dumps([{"role":r,"text":t} for r,t in history],ensure_ascii=False,indent=2),encoding="utf-8")
+            else:
+                p.write_text("\n\n".join(("YOU" if r=="user" else "CYBERMENTOR")+"\n"+t for r,t in history),encoding="utf-8")
+            status_lbl.configure(text="Chat exported successfully")
+        except Exception as e:
+            status_lbl.configure(text="Could not export chat")
+    def check_updates():
+        status_lbl.configure(text="Checking GitHub Releases…")
+        def work():
+            try:
+                _,d=req_json(f"https://api.github.com/repos/{REPO}/releases/latest",timeout=20)
+                tag=d.get("tag_name","latest")
+                url=d.get("html_url",f"https://github.com/{REPO}/releases/latest")
+                app.after(0,lambda:status_lbl.configure(text=f"Latest release: {tag}"))
+                app.after(0,lambda:webbrowser.open(url))
+            except Exception:
+                app.after(0,lambda:status_lbl.configure(text="Could not check updates right now"))
+        threading.Thread(target=work,daemon=True).start()
     def intel():
         status_lbl.configure(text="Refreshing CISA/NVD learning feed…")
         def work():
@@ -398,7 +450,7 @@ def main():
                 app.after(0,lambda:status_lbl.configure(text="Intel refreshed"))
             except Exception as e:app.after(0,lambda:append("assistant",friendly_error(e)))
         threading.Thread(target=work,daemon=True).start()
-    settings_btn.configure(command=open_settings);intel_btn.configure(command=intel);clear_btn.configure(command=clear);send_btn.configure(command=send)
+    settings_btn.configure(command=open_settings);intel_btn.configure(command=intel);clear_btn.configure(command=clear);copy_btn.configure(command=copy_last);export_btn.configure(command=export_chat);update_btn.configure(command=check_updates);send_btn.configure(command=send)
     app.bind("<Control-Return>",lambda e:send())
     app.mainloop();return 0
 
