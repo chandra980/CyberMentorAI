@@ -15,8 +15,8 @@ android {
         applicationId = "ai.cybermentor.mobile"
         minSdk = 29
         targetSdk = 36
-        versionCode = 32
-        versionName = "3.2.0"
+        versionCode = 33
+        versionName = "3.3.0"
     }
 
     signingConfigs {
@@ -44,4 +44,9 @@ android {
             }
         }
     }
+}
+
+
+dependencies {
+    implementation("androidx.webkit:webkit:1.17.0")
 }
