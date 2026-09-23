@@ -1,4 +1,5 @@
 name: Publish Installers
+
 on:
   workflow_dispatch:
   push:
@@ -9,14 +10,22 @@ on:
       - 'cli/**'
       - 'backend/**'
       - 'installer/**'
+      - 'scripts/**'
+      - 'assets/**'
       - 'assistant_prompt.txt'
       - '.github/workflows/publish-release.yml'
+
 permissions:
   contents: write
 
 jobs:
   android:
     runs-on: ubuntu-latest
+    env:
+      ANDROID_KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
+      ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
+      ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
+      ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-java@v4
@@ -24,6 +33,7 @@ jobs:
           distribution: temurin
           java-version: '21'
       - name: Install Android SDK packages
+        shell: bash
         run: |
           SDKMANAGER="$(find /usr/local/lib/android/sdk/cmdline-tools -type f -name sdkmanager | sort -V | tail -1)"
           echo "Using $SDKMANAGER"
@@ -33,23 +43,16 @@ jobs:
         with:
           gradle-version: '9.1.0'
       - name: Configure Android release signing
-        if: ${{ secrets.ANDROID_KEYSTORE_B64 != '' }}
+        if: env.ANDROID_KEYSTORE_B64 != ''
         shell: bash
-        env:
-          ANDROID_KEYSTORE_B64: ${{ secrets.ANDROID_KEYSTORE_B64 }}
-          ANDROID_KEYSTORE_PASSWORD: ${{ secrets.ANDROID_KEYSTORE_PASSWORD }}
-          ANDROID_KEY_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
-          ANDROID_KEY_PASSWORD: ${{ secrets.ANDROID_KEY_PASSWORD }}
         run: |
           echo "$ANDROID_KEYSTORE_B64" | base64 -d > "$GITHUB_WORKSPACE/android-app/release.keystore"
           echo "ANDROID_KEYSTORE_FILE=$GITHUB_WORKSPACE/android-app/release.keystore" >> "$GITHUB_ENV"
-          echo "ANDROID_KEYSTORE_PASSWORD=$ANDROID_KEYSTORE_PASSWORD" >> "$GITHUB_ENV"
-          echo "ANDROID_KEY_ALIAS=$ANDROID_KEY_ALIAS" >> "$GITHUB_ENV"
-          echo "ANDROID_KEY_PASSWORD=$ANDROID_KEY_PASSWORD" >> "$GITHUB_ENV"
           echo "ANDROID_RELEASE_SIGNING=1" >> "$GITHUB_ENV"
-      - name: Build APK
+      - name: Build Android APK
         shell: bash
         run: |
+          set -euo pipefail
           cd android-app
           if [ "${ANDROID_RELEASE_SIGNING:-0}" = "1" ]; then
             gradle :app:assembleRelease --stacktrace
@@ -62,6 +65,7 @@ jobs:
         with:
           name: release-Android
           path: CyberMentorAI-Android.apk
+          if-no-files-found: error
 
   desktop:
     strategy:
@@ -69,12 +73,16 @@ jobs:
       matrix:
         os: [windows-latest, ubuntu-latest, macos-latest]
     runs-on: ${{ matrix.os }}
+    env:
+      WINDOWS_CERT_PFX_B64: ${{ secrets.WINDOWS_CERT_PFX_B64 }}
+      WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5
         with:
           python-version: '3.12'
-      - run: python -m pip install --upgrade pip pyinstaller customtkinter keyring pillow
+      - name: Install build dependencies
+        run: python -m pip install --upgrade pip pyinstaller customtkinter keyring pillow
       - name: Generate branding assets
         run: python scripts/generate_branding.py
       - name: Build desktop GUI on Windows
@@ -83,78 +91,20 @@ jobs:
       - name: Build desktop GUI on non-Windows
         if: runner.os != 'Windows'
         run: pyinstaller --noconfirm --onefile --windowed --collect-all customtkinter --collect-all keyring --name CyberMentorAI desktop/gui.py
-      - run: pyinstaller --noconfirm --onefile --name cybermentor cli/cybermentor.py
-      - run: pyinstaller --noconfirm --onefile --name cybermentor-backend backend/server.py
+      - name: Build CLI
+        run: pyinstaller --noconfirm --onefile --name cybermentor cli/cybermentor.py
+      - name: Build optional backend
+        run: pyinstaller --noconfirm --onefile --name cybermentor-backend backend/server.py
       - name: Sign Windows application binaries
-        if: runner.os == 'Windows' && ${{ secrets.WINDOWS_CERT_PFX_B64 != '' }}
+        if: runner.os == 'Windows' && env.WINDOWS_CERT_PFX_B64 != ''
         shell: pwsh
-        env:
-          WINDOWS_CERT_PFX_B64: ${{ secrets.WINDOWS_CERT_PFX_B64 }}
-          WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
         run: |
           $cert = Join-Path $env:RUNNER_TEMP "cybermentor-signing.pfx"
           [IO.File]::WriteAllBytes($cert, [Convert]::FromBase64String($env:WINDOWS_CERT_PFX_B64))
           $signtool = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse -Filter signtool.exe |
-            Where-Object { $_.FullName -match '\\x64\\signtool.exe
-      - uses: actions/upload-artifact@v4
-        with:
-          name: release-${{ runner.os }}
-          path: |
-            dist/*
-            installer/output/*
-
-  publish:
-    needs: [android, desktop]
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          path: downloaded
-          pattern: release-*
-      - name: Normalize release filenames
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p release-assets
-          pick() { find "$1" -type f -name "$2" -print -quit; }
-          cp "$(pick downloaded/release-Android 'CyberMentorAI-Android.apk')" release-assets/CyberMentorAI-Android.apk
-          cp "$(pick downloaded/release-Windows 'CyberMentorAI.exe')" release-assets/CyberMentorAI-Windows.exe
-          cp "$(pick downloaded/release-Windows 'cybermentor.exe')" release-assets/cybermentor-Windows.exe
-          cp "$(pick downloaded/release-Windows 'cybermentor-backend.exe')" release-assets/cybermentor-backend-Windows.exe
-          cp "$(pick downloaded/release-Windows 'CyberMentorAI-Setup-Windows.exe')" release-assets/CyberMentorAI-Setup-Windows.exe
-          cp "$(pick downloaded/release-Linux 'CyberMentorAI')" release-assets/CyberMentorAI-Linux
-          cp "$(pick downloaded/release-Linux 'cybermentor')" release-assets/cybermentor-Linux
-          cp "$(pick downloaded/release-Linux 'cybermentor-backend')" release-assets/cybermentor-backend-Linux
-          cp "$(pick downloaded/release-macOS 'CyberMentorAI')" release-assets/CyberMentorAI-macOS
-          cp "$(pick downloaded/release-macOS 'cybermentor')" release-assets/cybermentor-macOS
-          cp "$(pick downloaded/release-macOS 'cybermentor-backend')" release-assets/cybermentor-backend-macOS
-          test -s release-assets/CyberMentorAI-Android.apk
-          test -s release-assets/CyberMentorAI-Windows.exe
-          test -s release-assets/CyberMentorAI-Setup-Windows.exe
-          chmod +x release-assets/CyberMentorAI-Linux release-assets/cybermentor-Linux release-assets/cybermentor-backend-Linux || true
-          chmod +x release-assets/CyberMentorAI-macOS release-assets/cybermentor-macOS release-assets/cybermentor-backend-macOS || true
-          cd release-assets
-          sha256sum * > SHA256SUMS.txt
-
-      - name: Publish latest-only GitHub Release
-        shell: bash
-        run: |
-          set -euo pipefail
-          TAG="v3.1.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" release-assets/* \
-            --title "CyberMentor AI $TAG" \
-            --notes "Current supported release. Includes Android APK, one-click Windows installer, desktop GUI, CLI and optional backend binaries. Older CyberMentor releases are removed automatically so users see only the current supported version." \
-            --target "${GITHUB_SHA}"
-          for OLD in $(gh release list --limit 100 --json tagName --jq '.[].tagName'); do
-            if [ "$OLD" != "$TAG" ]; then
-              gh release delete "$OLD" --cleanup-tag --yes || true
-            fi
-          done
- } |
-            Sort-Object FullName -Descending | Select-Object -First 1
+            Where-Object { $_.FullName -match '\\x64\\signtool.exe$' } |
+            Sort-Object FullName -Descending |
+            Select-Object -First 1
           if (-not $signtool) { throw "signtool.exe not found" }
           foreach ($file in @("dist\CyberMentorAI.exe","dist\cybermentor.exe","dist\cybermentor-backend.exe")) {
             & $signtool.FullName sign /fd SHA256 /f $cert /p $env:WINDOWS_CERT_PASSWORD /tr http://timestamp.digicert.com /td SHA256 $file
@@ -166,75 +116,18 @@ jobs:
           choco install innosetup --yes --no-progress
           & "C:\Program Files (x86)\Inno Setup 6\ISCC.exe" installer\CyberMentorAI.iss
       - name: Sign Windows installer
-        if: runner.os == 'Windows' && ${{ secrets.WINDOWS_CERT_PFX_B64 != '' }}
+        if: runner.os == 'Windows' && env.WINDOWS_CERT_PFX_B64 != ''
         shell: pwsh
-        env:
-          WINDOWS_CERT_PFX_B64: ${{ secrets.WINDOWS_CERT_PFX_B64 }}
-          WINDOWS_CERT_PASSWORD: ${{ secrets.WINDOWS_CERT_PASSWORD }}
         run: |
           $cert = Join-Path $env:RUNNER_TEMP "cybermentor-signing.pfx"
-          if (-not (Test-Path $cert)) { [IO.File]::WriteAllBytes($cert, [Convert]::FromBase64String($env:WINDOWS_CERT_PFX_B64)) }
+          if (-not (Test-Path $cert)) {
+            [IO.File]::WriteAllBytes($cert, [Convert]::FromBase64String($env:WINDOWS_CERT_PFX_B64))
+          }
           $signtool = Get-ChildItem "C:\Program Files (x86)\Windows Kits\10\bin" -Recurse -Filter signtool.exe |
-            Where-Object { $_.FullName -match '\\x64\\signtool.exe
-      - uses: actions/upload-artifact@v4
-        with:
-          name: release-${{ runner.os }}
-          path: |
-            dist/*
-            installer/output/*
-
-  publish:
-    needs: [android, desktop]
-    runs-on: ubuntu-latest
-    env:
-      GH_TOKEN: ${{ github.token }}
-    steps:
-      - uses: actions/checkout@v4
-      - uses: actions/download-artifact@v4
-        with:
-          path: downloaded
-          pattern: release-*
-      - name: Normalize release filenames
-        shell: bash
-        run: |
-          set -euo pipefail
-          mkdir -p release-assets
-          pick() { find "$1" -type f -name "$2" -print -quit; }
-          cp "$(pick downloaded/release-Android 'CyberMentorAI-Android.apk')" release-assets/CyberMentorAI-Android.apk
-          cp "$(pick downloaded/release-Windows 'CyberMentorAI.exe')" release-assets/CyberMentorAI-Windows.exe
-          cp "$(pick downloaded/release-Windows 'cybermentor.exe')" release-assets/cybermentor-Windows.exe
-          cp "$(pick downloaded/release-Windows 'cybermentor-backend.exe')" release-assets/cybermentor-backend-Windows.exe
-          cp "$(pick downloaded/release-Windows 'CyberMentorAI-Setup-Windows.exe')" release-assets/CyberMentorAI-Setup-Windows.exe
-          cp "$(pick downloaded/release-Linux 'CyberMentorAI')" release-assets/CyberMentorAI-Linux
-          cp "$(pick downloaded/release-Linux 'cybermentor')" release-assets/cybermentor-Linux
-          cp "$(pick downloaded/release-Linux 'cybermentor-backend')" release-assets/cybermentor-backend-Linux
-          cp "$(pick downloaded/release-macOS 'CyberMentorAI')" release-assets/CyberMentorAI-macOS
-          cp "$(pick downloaded/release-macOS 'cybermentor')" release-assets/cybermentor-macOS
-          cp "$(pick downloaded/release-macOS 'cybermentor-backend')" release-assets/cybermentor-backend-macOS
-          test -s release-assets/CyberMentorAI-Android.apk
-          test -s release-assets/CyberMentorAI-Windows.exe
-          test -s release-assets/CyberMentorAI-Setup-Windows.exe
-          chmod +x release-assets/CyberMentorAI-Linux release-assets/cybermentor-Linux release-assets/cybermentor-backend-Linux || true
-          chmod +x release-assets/CyberMentorAI-macOS release-assets/cybermentor-macOS release-assets/cybermentor-backend-macOS || true
-          cd release-assets
-          sha256sum * > SHA256SUMS.txt
-
-      - name: Publish latest-only GitHub Release
-        shell: bash
-        run: |
-          set -euo pipefail
-          TAG="v3.1.${GITHUB_RUN_NUMBER}"
-          gh release create "$TAG" release-assets/* \
-            --title "CyberMentor AI $TAG" \
-            --notes "Current supported release. Includes Android APK, one-click Windows installer, desktop GUI, CLI and optional backend binaries. Older CyberMentor releases are removed automatically so users see only the current supported version." \
-            --target "${GITHUB_SHA}"
-          for OLD in $(gh release list --limit 100 --json tagName --jq '.[].tagName'); do
-            if [ "$OLD" != "$TAG" ]; then
-              gh release delete "$OLD" --cleanup-tag --yes || true
-            fi
-          done
- } |
-            Sort-Object FullName -Descending | Select-Object -First 1
+            Where-Object { $_.FullName -match '\\x64\\signtool.exe$' } |
+            Sort-Object FullName -Descending |
+            Select-Object -First 1
+          if (-not $signtool) { throw "signtool.exe not found" }
           & $signtool.FullName sign /fd SHA256 /f $cert /p $env:WINDOWS_CERT_PASSWORD /tr http://timestamp.digicert.com /td SHA256 "installer\output\CyberMentorAI-Setup-Windows.exe"
       - uses: actions/upload-artifact@v4
         with:
@@ -242,6 +135,7 @@ jobs:
           path: |
             dist/*
             installer/output/*
+          if-no-files-found: error
 
   publish:
     needs: [android, desktop]
@@ -278,7 +172,6 @@ jobs:
           chmod +x release-assets/CyberMentorAI-macOS release-assets/cybermentor-macOS release-assets/cybermentor-backend-macOS || true
           cd release-assets
           sha256sum * > SHA256SUMS.txt
-
       - name: Publish latest-only GitHub Release
         shell: bash
         run: |
@@ -286,7 +179,7 @@ jobs:
           TAG="v3.1.${GITHUB_RUN_NUMBER}"
           gh release create "$TAG" release-assets/* \
             --title "CyberMentor AI $TAG" \
-            --notes "Current supported release. Includes Android APK, one-click Windows installer, desktop GUI, CLI and optional backend binaries. Older CyberMentor releases are removed automatically so users see only the current supported version." \
+            --notes "Current supported release by Chandra Kumar Yadav. Includes Android APK, one-click Windows installer, desktop GUI, CLI and optional backend binaries. Older CyberMentor releases are removed automatically." \
             --target "${GITHUB_SHA}"
           for OLD in $(gh release list --limit 100 --json tagName --jq '.[].tagName'); do
             if [ "$OLD" != "$TAG" ]; then
