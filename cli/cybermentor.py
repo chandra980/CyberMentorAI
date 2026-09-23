@@ -1,33 +1,109 @@
 #!/usr/bin/env python3
-import argparse,json,os,urllib.request
-def post(url,payload,token=""):
-    h={"Content-Type":"application/json"}
-    if token:h["Authorization"]="Bearer "+token
-    r=urllib.request.Request(url,data=json.dumps(payload).encode(),headers=h,method="POST")
-    with urllib.request.urlopen(r,timeout=180) as x:return json.loads(x.read())
-def text(d):
-    for item in d.get("output",[]):
+import argparse,json,os,urllib.request,urllib.error
+
+MODES=["Learning","Lab","SOC","Pentest","Exam","Interview","Teacher","Project"]
+
+def req(url,method="GET",payload=None,headers=None,timeout=180):
+    data=None if payload is None else json.dumps(payload).encode()
+    h={"Content-Type":"application/json","Accept":"application/json","User-Agent":"CyberMentorAI-CLI/3.0"}
+    if headers:h.update(headers)
+    r=urllib.request.Request(url,data=data,headers=h,method=method)
+    try:
+        with urllib.request.urlopen(r,timeout=timeout) as x:return x.status,json.loads(x.read())
+    except urllib.error.HTTPError as e:
+        raw=e.read().decode("utf-8","replace")
+        try:return e.code,json.loads(raw)
+        except:return e.code,{"error":{"message":raw or str(e)}}
+
+def out_text(d):
+    if isinstance(d,dict) and d.get("output_text"):return str(d["output_text"])
+    out=[]
+    for item in d.get("output",[]) if isinstance(d,dict) else []:
         for c in item.get("content",[]):
-            if c.get("text"):return c["text"]
+            if isinstance(c,dict) and c.get("text"):out.append(str(c["text"]))
+    if out:return "\n".join(out)
+    if isinstance(d,dict) and d.get("error"):
+        e=d["error"];return str(e.get("message") if isinstance(e,dict) else e)
     return json.dumps(d,indent=2)
+
+def best_model(key):
+    c,d=req("https://api.openai.com/v1/models",headers={"Authorization":"Bearer "+key},timeout=30)
+    if c>=400:raise RuntimeError(out_text(d))
+    ids=[x.get("id","") for x in d.get("data",[]) if x.get("id")]
+    for pref in ("gpt-5.6","gpt-5","gpt-4.1","gpt-4o","gpt-4"):
+        for x in sorted(ids,reverse=True):
+            if x.startswith(pref) and not any(k in x for k in ("audio","image","realtime")):return x
+    raise RuntimeError("No compatible GPT model found.")
+
+def instruct(mode,level):
+    return f"You are CyberMentor AI, an advanced cybersecurity tutor and defensive lab mentor. Mode: {mode}. Level: {level}. Be accurate, mark uncertainty, explain commands, and limit practical offensive guidance to authorized systems and training labs."
+
+def openai_chat(q,a):
+    key=a.api_key or os.getenv("OPENAI_API_KEY","")
+    if not key:raise RuntimeError("No OpenAI API key. Use --api-key or OPENAI_API_KEY.")
+    model=a.model or best_model(key)
+    payload={"model":model,"instructions":instruct(a.mode,a.level),"input":[{"role":"user","content":q}]}
+    c,d=req("https://api.openai.com/v1/responses","POST",payload,{"Authorization":"Bearer "+key})
+    if c>=400:raise RuntimeError(out_text(d))
+    return out_text(d),model
+
+def ollama_chat(q,a):
+    base=a.ollama.rstrip("/")
+    model=a.model
+    if not model:
+        c,d=req(base+"/api/tags",timeout=8)
+        if c>=400 or not d.get("models"):raise RuntimeError("No Ollama model found. Install a model first.")
+        model=d["models"][0].get("name","")
+    msgs=[{"role":"system","content":instruct(a.mode,a.level)},{"role":"user","content":q}]
+    c,d=req(base+"/api/chat","POST",{"model":model,"messages":msgs,"stream":False})
+    if c>=400:raise RuntimeError(out_text(d))
+    return str((d.get("message") or {}).get("content","")),model
+
+def backend_chat(q,a):
+    if not a.backend:raise RuntimeError("No backend URL. Use --backend.")
+    h={}
+    if a.token:h["Authorization"]="Bearer "+a.token
+    p={"model":a.model,"instructions":instruct(a.mode,a.level),"input":[{"role":"user","content":q}]}
+    c,d=req(a.backend.rstrip("/")+"/api/chat","POST",p,h)
+    if c>=400:raise RuntimeError(out_text(d))
+    return out_text(d),a.model or "server-selected"
+
 ap=argparse.ArgumentParser(description="CyberMentor AI CLI")
-ap.add_argument("--backend",default=os.getenv("CYBERMENTOR_BACKEND","http://127.0.0.1:8787"))
+ap.add_argument("--provider",choices=["openai","ollama","backend"],default=os.getenv("CYBERMENTOR_PROVIDER","openai"))
+ap.add_argument("--model",default=os.getenv("CYBERMENTOR_MODEL",""))
+ap.add_argument("--api-key",default="")
+ap.add_argument("--ollama",default=os.getenv("OLLAMA_URL","http://127.0.0.1:11434"))
+ap.add_argument("--backend",default=os.getenv("CYBERMENTOR_BACKEND",""))
 ap.add_argument("--token",default=os.getenv("CYBERMENTOR_TOKEN",""))
-ap.add_argument("--provider",default=os.getenv("AI_PROVIDER","openai"))
-ap.add_argument("--model",default=os.getenv("OPENAI_MODEL","gpt-5.6"))
-ap.add_argument("--mode",default="Learning")
-ap.add_argument("--level",default="Intermediate")
+ap.add_argument("--mode",choices=MODES,default="Learning")
+ap.add_argument("--level",choices=["Beginner","Intermediate","Advanced"],default="Intermediate")
 ap.add_argument("--once")
+ap.add_argument("--self-test",action="store_true")
 a=ap.parse_args()
+
+if a.self_test:
+    assert "SOC" in MODES and "Project" in MODES
+    print("CyberMentor AI CLI self-test passed")
+    raise SystemExit(0)
+
 def ask(q):
-    p={"provider":a.provider,"model":a.model,"instructions":f"Mode: {a.mode}. Level: {a.level}.","input":[{"role":"user","content":q}]}
-    try:print(text(post(a.backend.rstrip("/")+"/api/chat",p,a.token)))
-    except Exception as e:print("Error:",e)
+    try:
+        if a.provider=="openai":ans,model=openai_chat(q,a)
+        elif a.provider=="ollama":ans,model=ollama_chat(q,a)
+        else:ans,model=backend_chat(q,a)
+        print(ans)
+    except Exception as e:
+        s=str(e)
+        if "No OpenAI API key" in s:print("Setup required: provide your OpenAI API key with --api-key or OPENAI_API_KEY.")
+        elif "No Ollama model" in s:print("Setup required: start Ollama and install a model, or switch provider.")
+        else:print("Request failed:",s)
+
 if a.once:ask(a.once)
 else:
-    print("CyberMentor AI CLI. Type /quit to exit.")
+    print(f"CyberMentor AI CLI | provider={a.provider} | mode={a.mode} | level={a.level}")
+    print("Type /quit to exit.")
     while True:
         try:q=input("cybermentor> ").strip()
         except (EOFError,KeyboardInterrupt):break
-        if q in ("/quit","exit","quit"):break
+        if q in ("/quit","quit","exit"):break
         if q:ask(q)
