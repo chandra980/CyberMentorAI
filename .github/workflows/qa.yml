@@ -1,0 +1,41 @@
+name: Cross-platform QA
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  static-checks:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python scripts/qa_check.py
+      - name: Validate mobile JavaScript syntax
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import re
+          s=Path("android-app/app/src/main/assets/index.html").read_text(encoding="utf-8")
+          m=re.search(r"<script>(.*)</script>",s,re.S)
+          if not m: raise SystemExit("No script block found")
+          Path("/tmp/mobile.js").write_text(m.group(1),encoding="utf-8")
+          PY
+          node --check /tmp/mobile.js
+      - name: Backend smoke test
+        run: |
+          python backend/server.py >/tmp/cybermentor-backend.log 2>&1 &
+          PID=$!
+          trap 'kill $PID || true' EXIT
+          sleep 2
+          python - <<'PY'
+          import json, urllib.request
+          with urllib.request.urlopen("http://127.0.0.1:8787/api/health",timeout=5) as r:
+              d=json.loads(r.read())
+          assert d.get("ok") is True, d
+          print("Backend health OK")
+          PY
