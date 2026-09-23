@@ -158,7 +158,8 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
     }
 
     public final class NativeBridge {
-        private final Context ctx; NativeBridge(Context c){ctx=c;}\n        @JavascriptInterface public void toast(String msg){runOnUiThread(()->Toast.makeText(ctx,msg==null?"":msg,Toast.LENGTH_SHORT).show());}
+        private final Context ctx; NativeBridge(Context c){ctx=c;}
+        @JavascriptInterface public void toast(String msg){runOnUiThread(()->Toast.makeText(ctx,msg==null?"":msg,Toast.LENGTH_SHORT).show());}
         @JavascriptInterface public boolean hasApiKey(){try{return loadKey()!=null;}catch(Exception e){return false;}}
         @JavascriptInterface public String saveApiKey(String k){try{if(k==null||k.trim().length()<20)return "Invalid key";saveKey(k.trim());return "OK";}catch(Exception e){return "Save failed: "+e.getMessage();}}
         @JavascriptInterface public void clearApiKey(){getSharedPreferences(PREFS,MODE_PRIVATE).edit().remove(PREF_KEY).apply();}
