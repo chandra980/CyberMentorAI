@@ -22,19 +22,18 @@ fi
 
 adb shell dumpsys activity activities | grep -q "$PKG/.MainActivity"
 
-# Verify the WebView actually rendered the app, not merely that the process stayed alive.
-adb shell uiautomator dump /sdcard/cybermentor-window.xml >/dev/null 2>&1 || true
-adb pull /sdcard/cybermentor-window.xml /tmp/cybermentor-window.xml >/dev/null 2>&1 || true
-if [ -s /tmp/cybermentor-window.xml ]; then
-  if ! grep -q "CyberMentor" /tmp/cybermentor-window.xml; then
-    echo "CyberMentor UI text not visible in accessibility dump on API $API_LEVEL"
-    cat /tmp/cybermentor-window.xml
-    adb logcat -d
-    exit 1
-  fi
-fi
-
+# Verify native WebView load and JavaScript initialization.
 LOG="$(adb logcat -d)"
+if ! printf '%s\n' "$LOG" | grep -q "CyberMentorAI.*WEBAPP_READY"; then
+  echo "CyberMentor WebView did not finish loading on API $API_LEVEL"
+  printf '%s\n' "$LOG"
+  exit 1
+fi
+if ! printf '%s\n' "$LOG" | grep -q "CyberMentorAI.*UI_READY"; then
+  echo "CyberMentor JavaScript UI did not initialize on API $API_LEVEL"
+  printf '%s\n' "$LOG"
+  exit 1
+fi
 if printf '%s\n' "$LOG" | grep -A8 "FATAL EXCEPTION" | grep -q "$PKG"; then
   echo "Fatal exception detected on API $API_LEVEL"
   printf '%s\n' "$LOG"
