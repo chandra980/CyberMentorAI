@@ -61,6 +61,15 @@ jobs:
             gradle :app:assembleDebug --stacktrace
             cp app/build/outputs/apk/debug/app-debug.apk ../CyberMentorAI-Android.apk
           fi
+      - name: Verify release APK
+        shell: bash
+        run: |
+          APKSIGNER="$(find "$ANDROID_HOME/build-tools" -type f -name apksigner | sort -V | tail -1)"
+          AAPT="$(find "$ANDROID_HOME/build-tools" -type f -name aapt | sort -V | tail -1)"
+          "$APKSIGNER" verify --verbose CyberMentorAI-Android.apk
+          "$AAPT" dump badging CyberMentorAI-Android.apk | tee /tmp/apk-badging.txt
+          grep -q "package: name='ai.cybermentor.mobile'" /tmp/apk-badging.txt
+          grep -q "application-label:'CyberMentor AI'" /tmp/apk-badging.txt
       - uses: actions/upload-artifact@v4
         with:
           name: release-Android
