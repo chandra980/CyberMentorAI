@@ -1,0 +1,10 @@
+.DS_Store
+__pycache__/
+*.pyc
+dist/
+build/
+*.jks
+*.keystore
+.env
+android-app/.gradle/
+android-app/app/build/
