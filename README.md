@@ -19,6 +19,10 @@ Recommended files:
 - **CLI:** `cybermentor-<platform>`
 - **Optional shared backend:** `cybermentor-backend-<platform>`
 
+## Current Android compatibility
+
+Android app version **3.3.0** targets API 36 and supports **Android 10 (API 29) through Android 16 (API 36)**. The CI compatibility matrix launches the app across API 29-36, verifies the native activity, WebView UI readiness, repeated cold starts, and background/foreground recovery.
+
 ## 30-second setup
 
 ### Windows
