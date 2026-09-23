@@ -229,6 +229,7 @@ def main():
         key_status.pack(anchor="w",padx=14,pady=(0,8))
         key_actions=ctk.CTkFrame(openai_box,fg_color="transparent");key_actions.pack(fill="x",padx=14,pady=(0,12))
         ctk.CTkButton(key_actions,text="Open API key page",command=lambda:webbrowser.open("https://platform.openai.com/api-keys"),fg_color="#183b52").pack(side="left")
+        save_key_btn=ctk.CTkButton(key_actions,text="SAVE API KEY",fg_color="#21c99a",hover_color="#19aa82",text_color="#031611",font=("Segoe UI",11,"bold"));save_key_btn.pack(side="right",padx=(8,0))
         test_btn=ctk.CTkButton(key_actions,text="TEST CONNECTION",fg_color="#1e725f",hover_color="#23866f");test_btn.pack(side="right")
         ctk.CTkLabel(openai_box,text="Model (leave blank for automatic selection)").pack(anchor="w",padx=14)
         model_entry=ctk.CTkEntry(openai_box,textvariable=model,placeholder_text="Auto-select best available model")
@@ -255,12 +256,32 @@ def main():
             save_cfg(cfg);provider_lbl.configure(text=f"ENGINE: {cfg['provider']}");status_lbl.configure(text="Settings saved • ready")
             if close:win.destroy()
 
+        def save_openai_key():
+            raw=key.get().strip()
+            if not raw:
+                if get_secret():
+                    key_status.configure(text="API key is already saved on this PC.",text_color="#36e2b4")
+                    return True
+                key_status.configure(text="Paste an API key first.",text_color="#ffb65c")
+                return False
+            if len(raw)<20:
+                key_status.configure(text="That API key looks incomplete. Paste the full key.",text_color="#ffb65c")
+                return False
+            if not set_secret(raw):
+                key_status.configure(text="Could not save key in Windows Credential Manager.",text_color="#ff8c8c")
+                return False
+            key.set("")
+            cfg["provider"]="OpenAI"
+            save_cfg(cfg)
+            provider_lbl.configure(text="ENGINE: OpenAI")
+            key_status.configure(text="API KEY SAVED SECURELY ✓",text_color="#36e2b4")
+            status_lbl.configure(text="OpenAI key saved • ready to test")
+            return True
+
         def test_openai():
             raw=key.get().strip()
-            if raw:
-                if not set_secret(raw):
-                    key_status.configure(text="Could not save key in Windows Credential Manager.",text_color="#ff8c8c");return
-                key.set("")
+            if raw and not save_openai_key():
+                return
             saved=get_secret()
             if not saved:
                 key_status.configure(text="Paste an API key first.",text_color="#ffb65c");return
@@ -300,6 +321,7 @@ def main():
         key_entry.bind("<<Paste>>",lambda e:win.after(150,auto_save_pasted_key))
         key_entry.bind("<Control-v>",lambda e:win.after(150,auto_save_pasted_key),add="+")
         key_entry.bind("<Shift-Insert>",lambda e:win.after(150,auto_save_pasted_key),add="+")
+        save_key_btn.configure(command=save_openai_key)
         test_btn.configure(command=test_openai)
         save_btn.configure(command=lambda:apply_cfg(True))
         render_provider()
