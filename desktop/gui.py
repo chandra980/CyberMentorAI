@@ -10,6 +10,7 @@ KEY_SERVICE="CyberMentorAI"
 DEFAULT_FEED=f"https://raw.githubusercontent.com/{REPO}/main/data/cyber_feed.json"
 
 MODES={
+"Auto":"Automatically route the user request to the best CyberMentor workflow.",
 "Learning":"Teach with definition, simple explanation, analogy, technical detail, examples, attack/defense perspective, common mistakes and a practice question.",
 "Lab":"Authorized Lab Mode: objective, prerequisites, safe lab, topology, tools, steps, commands, expected results, explanation, troubleshooting, cleanup and challenge.",
 "SOC":"SOC Analyst Mode: triage, evidence, IOCs, timeline, MITRE ATT&CK, false positives, severity, containment, remediation and reporting. Do not reveal scenario answers immediately.",
