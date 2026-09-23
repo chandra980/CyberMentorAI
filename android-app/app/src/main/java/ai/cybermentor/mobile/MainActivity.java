@@ -118,6 +118,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             }
             @Override public void onPageFinished(WebView view,String url){
                 super.onPageFinished(view,url);
+                Log.i(TAG,"WEBAPP_READY "+url);
                 js("window.CyberMentorNative&&window.CyberMentorNative.onNativeReady&&window.CyberMentorNative.onNativeReady()");
             }
             @Override public boolean onRenderProcessGone(WebView view,RenderProcessGoneDetail detail){
@@ -258,6 +259,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
 
     public final class NativeBridge {
         private final Context ctx; NativeBridge(Context c){ctx=c;}
+        @JavascriptInterface public void reportUiReady(){Log.i(TAG,"UI_READY");}
         @JavascriptInterface public void toast(String msg){runOnUiThread(()->Toast.makeText(ctx,msg==null?"":msg,Toast.LENGTH_SHORT).show());}
         @JavascriptInterface public boolean hasApiKey(){try{return loadKey()!=null;}catch(Exception e){return false;}}
         @JavascriptInterface public String saveApiKey(String k){try{if(k==null||k.trim().length()<20)return "Invalid key";saveKey(k.trim());return "OK";}catch(Exception e){return "Save failed: "+e.getMessage();}}
