@@ -510,22 +510,45 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
             connection.setRequestProperty("User-Agent", "CyberMentorAI-Android/3.3");
             int code = connection.getResponseCode();
             String body = readBody(connection, code >= 400);
-            if (code < 200 || code >= 300) throw new Exception("Model catalog request failed");
-            org.json.JSONArray models = new JSONObject(body).optJSONArray("data");
-            if (models == null || models.length() == 0) throw new Exception("No models available");
+            if (code < 200 || code >= 300) {
+                throw new Exception("OpenAI models HTTP " + code + ": " + body);
+            }
 
+            org.json.JSONArray models = new JSONObject(body).optJSONArray("data");
+            if (models == null || models.length() == 0) throw new Exception("No models available for this API project");
+
+            java.util.HashSet<String> available = new java.util.HashSet<>();
+            for (int i = 0; i < models.length(); i++) {
+                JSONObject item = models.optJSONObject(i);
+                if (item != null) available.add(item.optString("id", ""));
+            }
+
+            // Prefer current general-purpose Responses models in capability order.
+            // Only a model actually returned by this API project can be selected.
+            String[] preferred = new String[] {
+                    "gpt-6-astra",
+                    "gpt-6-sol",
+                    "gpt-6-luna",
+                    "gpt-5.6",
+                    "gpt-5.6-sol",
+                    "gpt-5.6-terra",
+                    "gpt-5.6-luna"
+            };
+            for (String candidate : preferred) {
+                if (available.contains(candidate)) return candidate;
+            }
+
+            // Fallback for projects exposing another GPT text model.
             String best = "";
             int bestMajor = -1, bestMinor = -1, bestTier = -1;
             java.util.regex.Pattern pattern = java.util.regex.Pattern.compile("gpt-(\\d+)(?:\\.(\\d+))?");
-            for (int i = 0; i < models.length(); i++) {
-                JSONObject item = models.optJSONObject(i);
-                if (item == null) continue;
-                String id = item.optString("id", "");
+            for (String id : available) {
                 String low = id.toLowerCase(Locale.ROOT);
                 if (!id.startsWith("gpt-") ||
                         low.contains("audio") || low.contains("image") || low.contains("realtime") ||
                         low.contains("transcribe") || low.contains("tts") || low.contains("embedding") ||
-                        low.contains("search") || low.contains("cyber") || low.contains("daybreak")) continue;
+                        low.contains("search") || low.contains("moderation") || low.contains("cyber") ||
+                        low.contains("daybreak") || low.contains("instruct")) continue;
 
                 java.util.regex.Matcher matcher = pattern.matcher(id);
                 int major = 0, minor = 0;
@@ -533,7 +556,10 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     major = Integer.parseInt(matcher.group(1));
                     if (matcher.group(2) != null) minor = Integer.parseInt(matcher.group(2));
                 }
-                int tier = low.contains("sol") ? 3 : (low.contains("terra") ? 2 : (low.contains("luna") ? 1 : 2));
+                int tier = low.contains("astra") ? 4 :
+                        (low.contains("sol") ? 3 :
+                        (low.contains("terra") ? 2 :
+                        (low.contains("luna") ? 1 : 2)));
                 if (major > bestMajor ||
                         (major == bestMajor && minor > bestMinor) ||
                         (major == bestMajor && minor == bestMinor && tier > bestTier) ||
@@ -544,11 +570,116 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                     bestTier = tier;
                 }
             }
-            if (best.isEmpty()) throw new Exception("No compatible GPT model found");
+            if (best.isEmpty()) throw new Exception("No compatible GPT text model is available for this API project");
             return best;
         } finally {
             if (connection != null) connection.disconnect();
         }
+    }
+
+    private void postOpenAI(String id, String apiKey, JSONObject originalRequest) {
+        executor.submit(() -> {
+            JSONObject request;
+            try {
+                request = new JSONObject(originalRequest.toString());
+            } catch (Exception e) {
+                js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult(" +
+                        JSONObject.quote(id) + ",false," + JSONObject.quote("Invalid request: " + e.getMessage()) + ")");
+                return;
+            }
+
+            boolean reasoningRetried = false;
+            boolean modelRetried = false;
+            boolean transientRetried = false;
+
+            for (int attempt = 0; attempt < 4; attempt++) {
+                HttpURLConnection connection = null;
+                try {
+                    connection = (HttpURLConnection) new URL(OPENAI_ENDPOINT).openConnection();
+                    connection.setRequestMethod("POST");
+                    connection.setConnectTimeout(30000);
+                    connection.setReadTimeout(180000);
+                    connection.setDoOutput(true);
+                    connection.setRequestProperty("Content-Type", "application/json");
+                    connection.setRequestProperty("Accept", "application/json");
+                    connection.setRequestProperty("Authorization", "Bearer " + apiKey);
+                    connection.setRequestProperty("User-Agent", "CyberMentorAI-Android/3.3");
+
+                    byte[] bytes = request.toString().getBytes(StandardCharsets.UTF_8);
+                    connection.setFixedLengthStreamingMode(bytes.length);
+                    try (OutputStream os = connection.getOutputStream()) {
+                        os.write(bytes);
+                    }
+
+                    int code = connection.getResponseCode();
+                    String body = readBody(connection, code >= 400);
+                    if (code >= 200 && code < 300) {
+                        JSONObject envelope = new JSONObject();
+                        envelope.put("status", code);
+                        envelope.put("body", body);
+                        js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult(" +
+                                JSONObject.quote(id) + ",true," + JSONObject.quote(envelope.toString()) + ")");
+                        return;
+                    }
+
+                    String low = body == null ? "" : body.toLowerCase(Locale.ROOT);
+
+                    // If a model/account rejects a reasoning option, retry once with the provider default.
+                    if (!reasoningRetried && code == 400 && request.has("reasoning") &&
+                            (low.contains("reasoning") || low.contains("effort"))) {
+                        reasoningRetried = true;
+                        request.remove("reasoning");
+                        js("window.CyberMentorNative&&window.CyberMentorNative.onAutoRecovery(" +
+                                JSONObject.quote("Reasoning setting was reset automatically for model compatibility.") + ")");
+                        continue;
+                    }
+
+                    // If a stored/manual model became unavailable, recover to the best model currently exposed.
+                    if (!modelRetried && (code == 400 || code == 404) &&
+                            (low.contains("model") || low.contains("unsupported"))) {
+                        modelRetried = true;
+                        String fallback = bestOpenAIModel(apiKey);
+                        if (!fallback.equals(request.optString("model", ""))) {
+                            request.put("model", fallback);
+                            request.remove("reasoning");
+                            js("window.CyberMentorNative&&window.CyberMentorNative.onAutoModel(" +
+                                    JSONObject.quote(fallback) + ")");
+                            js("window.CyberMentorNative&&window.CyberMentorNative.onAutoRecovery(" +
+                                    JSONObject.quote("Model routing was repaired automatically. Retrying with " + fallback + ".") + ")");
+                            continue;
+                        }
+                    }
+
+                    // Retry one transient provider failure; do not retry billing/authentication errors.
+                    if (!transientRetried && (code == 500 || code == 502 || code == 503 || code == 504)) {
+                        transientRetried = true;
+                        try { Thread.sleep(1200L); } catch (InterruptedException ignored) { Thread.currentThread().interrupt(); }
+                        continue;
+                    }
+
+                    JSONObject envelope = new JSONObject();
+                    envelope.put("status", code);
+                    envelope.put("body", body == null ? "" : body);
+                    js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult(" +
+                            JSONObject.quote(id) + ",false," + JSONObject.quote(envelope.toString()) + ")");
+                    return;
+                } catch (Exception e) {
+                    if (!transientRetried) {
+                        transientRetried = true;
+                        try { Thread.sleep(800L); } catch (InterruptedException ignored) { Thread.currentThread().interrupt(); }
+                        continue;
+                    }
+                    js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult(" +
+                            JSONObject.quote(id) + ",false," + JSONObject.quote("NETWORK_ERROR: " + e.getMessage()) + ")");
+                    return;
+                } finally {
+                    if (connection != null) connection.disconnect();
+                }
+            }
+
+            js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult(" +
+                    JSONObject.quote(id) + ",false,'REQUEST_RETRY_EXHAUSTED')");
+        });
     }
 
     private void get(String id, String endpoint, String bearer, String callback) {
@@ -704,7 +835,7 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                         js("window.CyberMentorNative&&window.CyberMentorNative.onAutoModel(" +
                                 JSONObject.quote(model) + ")");
                     }
-                    post(id, OPENAI_ENDPOINT, key, request.toString());
+                    postOpenAI(id, key, request);
                 } catch (Exception e) {
                     js("window.CyberMentorNative&&window.CyberMentorNative.onApiResult(" +
                             JSONObject.quote(id) + ",false," + JSONObject.quote(e.getMessage()) + ")");
@@ -825,6 +956,19 @@ public class MainActivity extends Activity implements TextToSpeech.OnInitListene
                 }
             });
         }
+
+        @JavascriptInterface
+        public void openApiBillingPage() {
+            runOnUiThread(() -> {
+                try {
+                    startActivity(new Intent(Intent.ACTION_VIEW,
+                            Uri.parse("https://platform.openai.com/settings/organization/billing/overview")));
+                } catch (Exception e) {
+                    Toast.makeText(context, "No browser is available", Toast.LENGTH_SHORT).show();
+                }
+            });
+        }
+
 
         @JavascriptInterface
         public void openAppSettings() {
