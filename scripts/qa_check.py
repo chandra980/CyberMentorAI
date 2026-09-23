@@ -24,6 +24,21 @@ for token in ["AndroidAI.chat","AndroidAI.backendChat","AndroidAI.startVoice","A
     if token not in html: errors.append(f"Mobile UI missing {token}")
 if "\\n        @JavascriptInterface" in java: errors.append("Literal escaped newline found in Java source")
 
+
+desktop=(ROOT/"desktop/gui.py").read_text(encoding="utf-8")
+for token in [
+    "SAVE & CONNECT","TEST SAVED CONNECTION","CLEAR SAVED KEY",
+    "Copy Last Answer","Export Chat","Check Updates",
+    "Auto Best","Balanced","Economy","Cyber Specialized",
+    "English","Hindi","Hinglish","Operator:"
+]:
+    if token not in desktop: errors.append(f"Desktop feature missing: {token}")
+for token in [
+    "SAVE KEY","AUTO-DETECT MODEL","Auto-routing","Quick topics",
+    "AndroidAI.saveApiKey","AndroidAI.checkForUpdates"
+]:
+    if token not in html: errors.append(f"Android UX feature missing: {token}")
+
 required=[ROOT/".github/workflows/build-apk.yml",ROOT/".github/workflows/build-desktop.yml",ROOT/".github/workflows/publish-release.yml",ROOT/".github/workflows/update-intel.yml"]
 for p in required:
     if not p.exists(): errors.append(f"Missing workflow: {p.name}")
