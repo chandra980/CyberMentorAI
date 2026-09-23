@@ -207,29 +207,104 @@ def main():
     mode_var.trace_add("write",persist_selects);level_var.trace_add("write",persist_selects)
 
     def open_settings():
-        win=ctk.CTkToplevel(app);win.title("CyberMentor AI Settings");win.geometry("640x590");win.transient(app);win.grab_set()
+        win=ctk.CTkToplevel(app);win.title("CyberMentor AI Settings");win.geometry("700x660");win.minsize(640,560);win.transient(app);win.grab_set()
         provider=ctk.StringVar(value=cfg["provider"])
         model=ctk.StringVar(value=cfg.get("model",""))
         ollama=ctk.StringVar(value=cfg.get("ollama_url","http://127.0.0.1:11434"))
         backend=ctk.StringVar(value=cfg.get("backend_url",""))
         token=ctk.StringVar(value=cfg.get("backend_token",""))
         key=ctk.StringVar(value="")
-        ctk.CTkLabel(win,text="AI ENGINE SETUP",font=("Segoe UI",20,"bold"),text_color="#36e2b4").pack(anchor="w",padx=22,pady=(22,8))
-        ctk.CTkLabel(win,text="Desktop runs standalone. A separate backend is optional.",text_color="#839dad").pack(anchor="w",padx=22,pady=(0,12))
-        ctk.CTkLabel(win,text="Provider").pack(anchor="w",padx=22);ctk.CTkOptionMenu(win,values=["OpenAI","Ollama","Secure Backend"],variable=provider).pack(fill="x",padx=22,pady=(4,10))
-        ctk.CTkLabel(win,text="Model (leave blank for auto-detect)").pack(anchor="w",padx=22);ctk.CTkEntry(win,textvariable=model).pack(fill="x",padx=22,pady=(4,10))
-        ctk.CTkLabel(win,text="OpenAI API key (saved via OS keyring)").pack(anchor="w",padx=22);ctk.CTkEntry(win,textvariable=key,show="•",placeholder_text="Paste only if using OpenAI").pack(fill="x",padx=22,pady=(4,6))
-        ctk.CTkButton(win,text="Open API key page",command=lambda:webbrowser.open("https://platform.openai.com/api-keys"),fg_color="#183b52").pack(anchor="w",padx=22,pady=(0,10))
-        ctk.CTkLabel(win,text="Ollama URL").pack(anchor="w",padx=22);ctk.CTkEntry(win,textvariable=ollama).pack(fill="x",padx=22,pady=(4,10))
-        ctk.CTkLabel(win,text="Secure backend HTTPS URL").pack(anchor="w",padx=22);ctk.CTkEntry(win,textvariable=backend).pack(fill="x",padx=22,pady=(4,10))
-        ctk.CTkLabel(win,text="Backend access token (optional)").pack(anchor="w",padx=22);ctk.CTkEntry(win,textvariable=token,show="•").pack(fill="x",padx=22,pady=(4,14))
-        msg=ctk.CTkLabel(win,text="",text_color="#e6bf66");msg.pack(anchor="w",padx=22)
-        def save():
+        body=ctk.CTkScrollableFrame(win,fg_color="transparent");body.pack(fill="both",expand=True,padx=10,pady=10)
+        ctk.CTkLabel(body,text="AI ENGINE SETUP",font=("Segoe UI",20,"bold"),text_color="#36e2b4").pack(anchor="w",padx=12,pady=(10,5))
+        ctk.CTkLabel(body,text="Paste the API key once. CyberMentor saves it securely and auto-selects a model.",text_color="#839dad").pack(anchor="w",padx=12,pady=(0,14))
+        ctk.CTkLabel(body,text="Provider").pack(anchor="w",padx=12)
+        provider_menu=ctk.CTkOptionMenu(body,values=["OpenAI","Ollama","Secure Backend"],variable=provider)
+        provider_menu.pack(fill="x",padx=12,pady=(4,12))
+
+        openai_box=ctk.CTkFrame(body,fg_color="#101d27",corner_radius=12)
+        ctk.CTkLabel(openai_box,text="OpenAI API key",font=("Segoe UI",13,"bold")).pack(anchor="w",padx=14,pady=(12,4))
+        key_entry=ctk.CTkEntry(openai_box,textvariable=key,show="•",placeholder_text="Paste your API key here")
+        key_entry.pack(fill="x",padx=14,pady=(0,6))
+        key_status=ctk.CTkLabel(openai_box,text=("API key already saved on this PC" if get_secret() else "Paste a key to save automatically"),text_color=("#36e2b4" if get_secret() else "#839dad"))
+        key_status.pack(anchor="w",padx=14,pady=(0,8))
+        key_actions=ctk.CTkFrame(openai_box,fg_color="transparent");key_actions.pack(fill="x",padx=14,pady=(0,12))
+        ctk.CTkButton(key_actions,text="Open API key page",command=lambda:webbrowser.open("https://platform.openai.com/api-keys"),fg_color="#183b52").pack(side="left")
+        test_btn=ctk.CTkButton(key_actions,text="TEST CONNECTION",fg_color="#1e725f",hover_color="#23866f");test_btn.pack(side="right")
+        ctk.CTkLabel(openai_box,text="Model (leave blank for automatic selection)").pack(anchor="w",padx=14)
+        model_entry=ctk.CTkEntry(openai_box,textvariable=model,placeholder_text="Auto-select best available model")
+        model_entry.pack(fill="x",padx=14,pady=(4,14))
+
+        ollama_box=ctk.CTkFrame(body,fg_color="#101d27",corner_radius=12)
+        ctk.CTkLabel(ollama_box,text="Ollama local engine",font=("Segoe UI",13,"bold")).pack(anchor="w",padx=14,pady=(12,4))
+        ctk.CTkLabel(ollama_box,text="Ollama URL").pack(anchor="w",padx=14)
+        ctk.CTkEntry(ollama_box,textvariable=ollama).pack(fill="x",padx=14,pady=(4,14))
+
+        backend_box=ctk.CTkFrame(body,fg_color="#101d27",corner_radius=12)
+        ctk.CTkLabel(backend_box,text="Secure backend",font=("Segoe UI",13,"bold")).pack(anchor="w",padx=14,pady=(12,4))
+        ctk.CTkLabel(backend_box,text="HTTPS URL").pack(anchor="w",padx=14)
+        ctk.CTkEntry(backend_box,textvariable=backend).pack(fill="x",padx=14,pady=(4,10))
+        ctk.CTkLabel(backend_box,text="Access token (optional)").pack(anchor="w",padx=14)
+        ctk.CTkEntry(backend_box,textvariable=token,show="•").pack(fill="x",padx=14,pady=(4,14))
+
+        msg=ctk.CTkLabel(body,text="",text_color="#e6bf66",wraplength=620,justify="left");msg.pack(anchor="w",padx=12,pady=(8,4))
+        save_btn=ctk.CTkButton(body,text="SAVE SETTINGS & READY",height=44,fg_color="#21c99a",hover_color="#19aa82",text_color="#031611",font=("Segoe UI",12,"bold"))
+        save_btn.pack(fill="x",padx=12,pady=(8,16))
+
+        def apply_cfg(close=False):
             cfg.update(provider=provider.get(),model=model.get().strip(),ollama_url=ollama.get().strip(),backend_url=backend.get().strip(),backend_token=token.get().strip())
-            if key.get().strip():
-                if not set_secret(key.get().strip()):msg.configure(text="Could not access OS keyring; use OPENAI_API_KEY environment variable.");return
-            save_cfg(cfg);provider_lbl.configure(text=f"ENGINE: {cfg['provider']}");status_lbl.configure(text="Settings saved • ready");win.destroy()
-        ctk.CTkButton(win,text="SAVE & READY",command=save,height=42,fg_color="#21c99a",hover_color="#19aa82",text_color="#031611",font=("Segoe UI",12,"bold")).pack(fill="x",padx=22,pady=18)
+            save_cfg(cfg);provider_lbl.configure(text=f"ENGINE: {cfg['provider']}");status_lbl.configure(text="Settings saved • ready")
+            if close:win.destroy()
+
+        def test_openai():
+            raw=key.get().strip()
+            if raw:
+                if not set_secret(raw):
+                    key_status.configure(text="Could not save key in Windows Credential Manager.",text_color="#ff8c8c");return
+                key.set("")
+            saved=get_secret()
+            if not saved:
+                key_status.configure(text="Paste an API key first.",text_color="#ffb65c");return
+            provider.set("OpenAI");cfg["provider"]="OpenAI";save_cfg(cfg)
+            key_status.configure(text="API key saved securely • testing…",text_color="#e6bf66")
+            test_btn.configure(state="disabled",text="TESTING…")
+            def work():
+                try:
+                    code,d=req_json("https://api.openai.com/v1/models",headers={"Authorization":"Bearer "+saved},timeout=25)
+                    if code>=400:raise RuntimeError(extract_text(d))
+                    chosen=model.get().strip() or choose_model([x.get("id") for x in d.get("data",[])])
+                    if not chosen:raise RuntimeError("No compatible model was returned.")
+                    cfg.update(provider="OpenAI",model=chosen);save_cfg(cfg)
+                    def ok():
+                        model.set(chosen);key_status.configure(text=f"READY • key saved • model: {chosen}",text_color="#36e2b4")
+                        provider_lbl.configure(text="ENGINE: OpenAI");status_lbl.configure(text=f"Ready • OpenAI • {chosen}")
+                        test_btn.configure(state="normal",text="TEST CONNECTION")
+                    app.after(0,ok)
+                except Exception as e:
+                    def bad():
+                        key_status.configure(text="Key saved, but connection test failed: "+friendly_error(e),text_color="#ff8c8c")
+                        test_btn.configure(state="normal",text="TEST CONNECTION")
+                    app.after(0,bad)
+            threading.Thread(target=work,daemon=True).start()
+
+        def auto_save_pasted_key(*_):
+            raw=key.get().strip()
+            if provider.get()=="OpenAI" and len(raw)>=20:
+                win.after(450,test_openai)
+
+        def render_provider(*_):
+            openai_box.pack_forget();ollama_box.pack_forget();backend_box.pack_forget()
+            if provider.get()=="OpenAI":openai_box.pack(fill="x",padx=12,pady=(0,12))
+            elif provider.get()=="Ollama":ollama_box.pack(fill="x",padx=12,pady=(0,12))
+            else:backend_box.pack(fill="x",padx=12,pady=(0,12))
+        provider.trace_add("write",render_provider)
+        key_entry.bind("<<Paste>>",lambda e:win.after(150,auto_save_pasted_key))
+        key_entry.bind("<Control-v>",lambda e:win.after(150,auto_save_pasted_key),add="+")
+        key_entry.bind("<Shift-Insert>",lambda e:win.after(150,auto_save_pasted_key),add="+")
+        test_btn.configure(command=test_openai)
+        save_btn.configure(command=lambda:apply_cfg(True))
+        render_provider()
+        if provider.get()=="OpenAI" and not get_secret():
+            win.after(250,key_entry.focus_set)
 
     def send():
         q=entry.get("1.0","end").strip()
