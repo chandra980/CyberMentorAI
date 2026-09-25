@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-09-24T07:41:05.665501+00:00",
+  "generated_at": "2026-09-25T07:59:07.803582+00:00",
   "items": [
+    {
+      "id": "CVE-2026-5430",
+      "title": "CVE-2026-5430 - WSO2 Multiple Products Path Traversal Vulnerability ",
+      "source": "CISA KEV",
+      "date": "2026-09-24",
+      "vendor": "WSO2",
+      "product": "Multiple Products",
+      "summary": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution. ",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-09-27"
+    },
+    {
+      "id": "CVE-2026-71362",
+      "title": "CVE-2026-71362 - Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+      "source": "CISA KEV",
+      "date": "2026-09-24",
+      "vendor": "Adobe",
+      "product": "Commerce and Magento ",
+      "summary": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction. ",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-09-27"
+    },
     {
       "id": "CVE-2026-93952",
       "title": "CVE-2026-93952 - Arista VeloCloud Orchestrator Improper Input Validation Vulnerability",
@@ -858,308 +880,6 @@
       "summary": "Oracle E-Business Suite contains an improper privilege management vulnerability that allows an unauthenticated attacker with network access via HTTP to compromise Oracle Payments. Successful attacks of this vulnerability can result in takeover of Oracle Payments.",
       "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
       "due": "2026-07-18"
-    },
-    {
-      "id": "CVE-2023-4346",
-      "title": "CVE-2023-4346 - KNX Association KNX Protocol Connection Authorization Option 1 Overly Restrictive Account Lockout Mechanism Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-07-15",
-      "vendor": "KNX Association",
-      "product": "KNX Protocol Connection Authorization Option 1",
-      "summary": "KNX Association KNX Protocol Connection Authorization Option 1 contains an overly restrictive account lockout mechanism vulnerability that could allow an attacker to purge all devices without additional security options enabled and set a BCU key to lock the device. ",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-29"
-    },
-    {
-      "id": "CVE-2026-56155",
-      "title": "CVE-2026-56155 - Microsoft Active Directory Federation Services Insufficient Granularity of Access Control Vulnerability ",
-      "source": "CISA KEV",
-      "date": "2026-07-14",
-      "vendor": "Microsoft",
-      "product": "Active Directory Federation Services",
-      "summary": "Microsoft Active Directory Federation Services contains an insufficient granularity of access control vulnerability that allows an authorized attacker to elevate privileges locally.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-28"
-    },
-    {
-      "id": "CVE-2026-50605",
-      "title": "CVE-2026-50605",
-      "source": "NIST NVD",
-      "date": "2026-09-17T08:17:01.010",
-      "summary": "A vulnerability has been identified in the Acer Agent Service component included with NitroSense and PredatorSense. Insufficient access controls within a privileged service may allow an authenticated local user to perform unauthorized registry operations. In certain situations, this could lead to privilege escalation or compromise of the affected system."
-    },
-    {
-      "id": "CVE-2026-50606",
-      "title": "CVE-2026-50606",
-      "source": "NIST NVD",
-      "date": "2026-09-17T08:17:01.177",
-      "summary": "A vulnerability has been identified in the Acer System Monitoring component included with NitroSense and PredatorSense. The vulnerability is caused by the use of a hard-coded AES encryption key within the software. Under certain circumstances, a local attacker may be able to use the embedded key to access protected information or perform unauthorized actions."
-    },
-    {
-      "id": "CVE-2026-50607",
-      "title": "CVE-2026-50607",
-      "source": "NIST NVD",
-      "date": "2026-09-17T08:17:01.320",
-      "summary": "A vulnerability has been identified in the Acer System Monitoring component included with NitroSense and PredatorSense. A WebSocket service was configured to listen on all network interfaces, which may expose the service to unintended network access."
-    },
-    {
-      "id": "CVE-2026-86320",
-      "title": "CVE-2026-86320",
-      "source": "NIST NVD",
-      "date": "2026-09-17T08:17:02.200",
-      "summary": "A flaw was found in flatpak-builder where Git hooks are not disabled when applying patch sources with use-git-am: true. An attacker who can provide a malicious source containing a Git post-applypatch hook can cause the hook to execute on the host during the build process, resulting in arbitrary code execution with the privileges of the user running flatpak-builder."
-    },
-    {
-      "id": "CVE-2026-87829",
-      "title": "CVE-2026-87829",
-      "source": "NIST NVD",
-      "date": "2026-09-17T08:17:02.363",
-      "summary": "The Checkout Field Manager (Checkout Manager) for WooCommerce WordPress plugin before 7.9.7 does not properly validate the ownership of an attachment before deleting it, allowing any authenticated user such as a customer to delete arbitrary media attachments belonging to other users."
-    },
-    {
-      "id": "CVE-2026-87831",
-      "title": "CVE-2026-87831",
-      "source": "NIST NVD",
-      "date": "2026-09-17T08:17:02.493",
-      "summary": "The Checkout Field Manager (Checkout Manager) for WooCommerce WordPress plugin before 7.9.7 does not properly validate the ownership of an attachment before deleting it, allowing any authenticated user such as a customer to delete arbitrary media attachments belonging to other users."
-    },
-    {
-      "id": "CVE-2026-15688",
-      "title": "CVE-2026-15688",
-      "source": "NIST NVD",
-      "date": "2026-09-17T09:16:39.240",
-      "summary": "Incorrect Implementation of Authentication Algorithm Vulnerability in Mitsubishi Electric GX Works3 and Motion Control Setting allows a local attacker to successfully authenticate even with an invalid block password by executing the affected product and modifying part of the executable module in memory, and thereby may be able to view, tamper with, destroy, or delete control programs."
-    },
-    {
-      "id": "CVE-2026-50608",
-      "title": "CVE-2026-50608",
-      "source": "NIST NVD",
-      "date": "2026-09-17T09:16:41.253",
-      "summary": "A vulnerability has been identified in the Acer System Monitoring component included with NitroSense and PredatorSense. The WebSocket handshake process does not properly require authentication before allowing connections to the service. Under certain circumstances, unauthorized access to service functionality may be possible."
-    },
-    {
-      "id": "CVE-2026-50609",
-      "title": "CVE-2026-50609",
-      "source": "NIST NVD",
-      "date": "2026-09-17T09:16:41.370",
-      "summary": "A vulnerability has been identified in the Acer System Monitoring component included with NitroSense and PredatorSense. Insufficient access controls within a privileged Named Pipe service may allow an authenticated local user to perform unauthorized registry operations. In certain situations, this could lead to privilege escalation or compromise of the affected system."
-    },
-    {
-      "id": "CVE-2026-50610",
-      "title": "CVE-2026-50610",
-      "source": "NIST NVD",
-      "date": "2026-09-17T09:16:41.487",
-      "summary": "A vulnerability has been identified in the Acer System Monitoring component included with NitroSense and PredatorSense due to insufficient access controls in a privileged service. An authenticated local user may be able to access the service and perform unauthorized registry modifications, potentially resulting in local privilege escalation."
-    },
-    {
-      "id": "CVE-2026-78425",
-      "title": "CVE-2026-78425",
-      "source": "NIST NVD",
-      "date": "2026-09-17T10:17:02.427",
-      "summary": "Authorised users of outside applications behind the same corporate identity provider (IdP), for example, a wiki, a ticketing system, an expenses tool, or anything they legitimately hold an account on can log into their system via SAML SSO. The IdP issues an assertion to them. If that assertion is presented to NeuVector, NeuVector accepts it because the only thing distinguishing \"an assertion for NeuVector\" from \"an assertion for the wiki\" is the element, and the `NotInAudience` warning that reports the mismatch is never read."
-    },
-    {
-      "id": "CVE-2026-78426",
-      "title": "CVE-2026-78426",
-      "source": "NIST NVD",
-      "date": "2026-09-17T10:17:03.520",
-      "summary": "The NeuVector JWT verifier accepts noncanonical Base64URL encodings of the same RSA signature field. An attacker holding a valid JWT that has not expired, but was logged out of NeuVector, can continue using the non-expired token with equivalent spelling of the RSA signature field until the token validity expires."
-    },
-    {
-      "id": "CVE-2026-78427",
-      "title": "CVE-2026-78427",
-      "source": "NIST NVD",
-      "date": "2026-09-17T10:17:03.637",
-      "summary": "The NeuVector admission webhook silently excludes containers from policy evaluation when their image path matches one of three hardcoded service mesh sidecar images. Since the image path is entirely controlled by the workload author, any user capable of deploying workloads can evade admission deny rules simply by naming their image path after one of these sidecar images."
-    },
-    {
-      "id": "CVE-2026-78428",
-      "title": "CVE-2026-78428",
-      "source": "NIST NVD",
-      "date": "2026-09-17T10:17:03.760",
-      "summary": "For users authenticated through SAML or OpenID Connect (OIDC), this vulnerability can result in one user receiving another user's authenticated session when multiple SSO login attempts occur concurrently"
-    },
-    {
-      "id": "CVE-2026-92894",
-      "title": "CVE-2026-92894",
-      "source": "NIST NVD",
-      "date": "2026-09-17T10:17:06.423",
-      "summary": "A flaw was found in the foreman_ansible plugin's Ansible override values API. The destroy action resolves the target LookupValue record by ID without verifying it belongs to an AnsibleVariable the caller is authorized to edit. An authenticated user with the edit_ansible_variables permission can delete any LookupValue by ID, including override values for Ansible variables outside their permission filter scope and override values belonging to Puppet smart class parameters."
-    },
-    {
-      "id": "CVE-2026-66269",
-      "title": "CVE-2026-66269",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:02.693",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Use of Externally-Controlled Input to Select Classes or Code ('Unsafe Reflection') vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass."
-    },
-    {
-      "id": "CVE-2026-81438",
-      "title": "CVE-2026-81438",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:02.833",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains Use of a Broken or Risky Cryptographic Algorithm vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Information disclosure."
-    },
-    {
-      "id": "CVE-2026-81439",
-      "title": "CVE-2026-81439",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:02.957",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains an Incorrect Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass."
-    },
-    {
-      "id": "CVE-2026-81474",
-      "title": "CVE-2026-81474",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:03.077",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Heap-based Buffer Overflow vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to Elevation of privileges."
-    },
-    {
-      "id": "CVE-2026-92611",
-      "title": "CVE-2026-92611",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:03.210",
-      "summary": "In Eclipse Ankaios versions 0.6.0 to before 1.0.4, `LogRule::matches` in the agent control-interface authorizer stops at the first wildcard pattern in a single rule instead of evaluating later entries, which can cause deny `LogRule` entries to be skipped and allow unauthorized access to another workload's logs."
-    },
-    {
-      "id": "CVE-2026-92893",
-      "title": "CVE-2026-92893",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:03.337",
-      "summary": "A flaw was found in the foreman_ansible plugin's Ansible inventory API. The controller builds its host query using an unscoped Host.where call that does not enforce the search filter associated with the caller's view_hosts permission. An authenticated user whose host visibility is restricted by a permission filter can supply arbitrary host IDs within their organization and receive the full Ansible inventory for those hosts, including parameter values marked as hidden."
-    },
-    {
-      "id": "CVE-2026-92903",
-      "title": "CVE-2026-92903",
-      "source": "NIST NVD",
-      "date": "2026-09-17T11:17:03.460",
-      "summary": "Improper input validation in Snowflake CLI versions prior to 3.27.0 allowed unsanitized user-controlled values to be interpolated into SQL strings that are executed as multi-statement queries. An attacker who is able to supply a malicious project configuration file or craft command-line input can cause Snowflake CLI to execute attacker-controlled SQL statements in the context of the victim's Snowflake session and active role. Successful exploitation requires either write or pull-request access to a project repository whose CI/CD pipeline runs Snowflake CLI under an elevated service account role, or the ability to supply untrusted input to CLI-wrapping automation. Impact is limited by the privileges held by the configured Snowflake role at execution time. The fix is available in Snowflake CLI version 3.27.0, which also addresses several additional security findings. Users must manually upgrade."
-    },
-    {
-      "id": "CVE-2026-11874",
-      "title": "CVE-2026-11874",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:17:23.893",
-      "summary": "Rejected reason: Red Hat Product Security has come to the conclusion that this CVE is not needed."
-    },
-    {
-      "id": "CVE-2026-53679",
-      "title": "CVE-2026-53679",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:24.717",
-      "summary": "Rejected reason: Red Hat Product Security has come to the conclusion that this CVE is not needed."
-    },
-    {
-      "id": "CVE-2026-78296",
-      "title": "CVE-2026-78296",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:26.853",
-      "summary": "Insufficient Verification of Data Authenticity vulnerability in WP ManageNinja LLC FluentAuth allows Identity Spoofing.\n\nThis issue affects FluentAuth: from n/a through 2.1.2."
-    },
-    {
-      "id": "CVE-2026-81440",
-      "title": "CVE-2026-81440",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.210",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Use of Hard-coded Credentials vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access."
-    },
-    {
-      "id": "CVE-2026-81441",
-      "title": "CVE-2026-81441",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.337",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Missing Authentication for Critical Function vulnerability. An unauthenticated attacker with local access could potentially exploit this vulnerability, leading to Denial of service."
-    },
-    {
-      "id": "CVE-2026-81475",
-      "title": "CVE-2026-81475",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.457",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Missing Authentication for Critical Function vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Remote execution."
-    },
-    {
-      "id": "CVE-2026-81476",
-      "title": "CVE-2026-81476",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.580",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Remote execution."
-    },
-    {
-      "id": "CVE-2026-81477",
-      "title": "CVE-2026-81477",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.710",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Heap-based Buffer Overflow vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Code execution."
-    },
-    {
-      "id": "CVE-2026-81478",
-      "title": "CVE-2026-81478",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.830",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Use of Hard-coded Cryptographic Key vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access."
-    },
-    {
-      "id": "CVE-2026-81479",
-      "title": "CVE-2026-81479",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:27.950",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Partial String Comparison vulnerability. A low privileged attacker with local access could potentially exploit this vulnerability, leading to Denial of service."
-    },
-    {
-      "id": "CVE-2026-81480",
-      "title": "CVE-2026-81480",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:28.080",
-      "summary": "Dell OpenManage Server Administrator, versions prior to 11.1.0.3, contains a Stack-based Buffer Overflow vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Code execution."
-    },
-    {
-      "id": "CVE-2026-90822",
-      "title": "CVE-2026-90822",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:28.713",
-      "summary": "FatPipe MPVPN, WARP, and IPVPN appliances running the end-of-life firmware version 10.1.2r60p100 contain an OS command injection vulnerability in the xtremed daemon. An unauthenticated remote attacker with access to the affected management interface can submit crafted input to the AuthFormServlet endpoint, causing authentication data to be processed by a shell and allowing arbitrary commands to execute as root.\n\nThe affected management interface is disabled by default and must be affirmatively enabled by the customer before the endpoint becomes reachable. FatPipe recommends restricting management access to trusted administrative networks and using WAN access control lists to limit access to trusted sources.\n\nCustomers running the affected end-of-life firmware can contact FatPipe Support for help confirming their firmware version and upgrading to a current supported release at https://www.fatpipeinc.com/support/support, support@fatpipeinc.com, or +1 800-724-8521 (option 3)."
-    },
-    {
-      "id": "CVE-2026-90823",
-      "title": "CVE-2026-90823",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:28.843",
-      "summary": "FatPipe MPVPN, WARP, and IPVPN appliances running the end-of-life firmware version 10.1.2r60p100 contain a stack-based buffer overflow in /usr/sbin/auth_user_pass. An unauthenticated remote attacker with access to the affected management interface can submit a crafted authentication request that reaches an unchecked copy into a fixed-size stack buffer, potentially allowing arbitrary code execution as root.\n\nThe affected management interface is disabled by default and must be affirmatively enabled by the customer before the endpoint becomes reachable. FatPipe recommends restricting management access to trusted administrative networks and using WAN access control lists to limit access to trusted sources.\n\nCustomers running the affected end-of-life firmware can contact FatPipe Support for help confirming their firmware version and upgrading to a current supported release at https://www.fatpipeinc.com/support/support, support@fatpipeinc.com, or +1 800-724-8521 (option 3)."
-    },
-    {
-      "id": "CVE-2026-92860",
-      "title": "CVE-2026-92860",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:29.927",
-      "summary": "A security flaw has been discovered in rcourtman Pulse up to 6.0.4/6.1.0-rc.4. Affected by this issue is the function fmt.Sprintf of the file /api/security/quick-setup of the component Quick Security Setup Handler. The manipulation of the argument Username results in improper input validation. The attack may be performed from remote. Upgrading the affected component is advised."
-    },
-    {
-      "id": "CVE-2026-92912",
-      "title": "CVE-2026-92912",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:30.123",
-      "summary": "AVideo through c3edcc274c389816d434acadac07ee78eaf330c1 uses cryptographically weak uniqid() values for RTMP publish keys in LiveTransmition, reducing key entropy to approximately one million possibilities per creation second. Attackers who know the channel creation time can brute-force the five-digit microsecond component to forge valid stream keys and broadcast content as the channel owner."
-    },
-    {
-      "id": "CVE-2026-92913",
-      "title": "CVE-2026-92913",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:30.290",
-      "summary": "AVideo through commit c3edcc274c389816d434acadac07ee78eaf330c1 uses a cryptographically weak pseudo-random number generator when creating account activation / login pairing codes. getRandomCode() in objects/functions.php derives the code entirely from uniqid() (sprintf('%08x%05x', seconds, microseconds)) with a single non-CSPRNG rand() character used only as padding, reducing the code space to roughly 36 x 10^6 (~2^25) values for a known generation second. Because plugin/API/set.json.php?APIName=login_code can be called without authentication, it also serves as an oracle for the server's exact microtime. An unauthenticated remote attacker who guesses a valid, unexpired code (codes expire after 10 minutes) can redeem it at plugin/API/get.json.php?APIName=login_code to obtain the target account's email address and a User::getUserHash(users_id, '+1 year') value, a credential accepted in place of the account password for one year, resulting in account takeover. No patched version is available."
-    },
-    {
-      "id": "CVE-2026-92914",
-      "title": "CVE-2026-92914",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:30.440",
-      "summary": "AVideo LoginControl contains an authentication bypass vulnerability in the PGP second factor verification that compares challenge responses using loose equality against an uninitialized session variable. Attackers with a victim's password can bypass the second factor by sending a parameter-less GET request to verifyChallenge.json.php, which evaluates null == null and marks authentication complete."
-    },
-    {
-      "id": "CVE-2026-92915",
-      "title": "CVE-2026-92915",
-      "source": "NIST NVD",
-      "date": "2026-09-17T12:18:30.573",
-      "summary": "WWBN AVideo through commit e01e41ecc (no patched version available) contains a broken access control flaw in objects/userVerifyEmail.php. The script disables the login requirement ($global['ignoreUserMustBeLoggedIn'] = 1), takes users_id directly from the query string, and calls User::sendVerificationLink() with no session requirement, no CSRF/global token, no relationship check between caller and target, and no enforceRateLimit() call. The only intended throttle is keyed to the caller's own session, so cookie-less requests are never limited. An unauthenticated remote attacker can therefore cause an arbitrary number of verification emails to be sent to any account ID, and can enumerate accounts and their verification status from the three distinct JSON responses (\"Verification Sent\", \"Already verified\", \"Unknown error\"). In addition, createVerificationCode() invokes $user->setRecoverPass() and saves the user, so each anonymous request writes a live password-recovery token onto the targeted account; that token is embedded in base64 in the verification link emailed to the account owner and is accepted by objects/userRecoverPassSave.json.php as the credential for setting a new passwor"
     }
   ]
 }
