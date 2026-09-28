@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-09-27T08:23:06.363993+00:00",
+  "generated_at": "2026-09-28T08:48:20.490265+00:00",
   "items": [
+    {
+      "id": "CVE-2026-88772",
+      "title": "CVE-2026-88772 - Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-09-27",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "summary": "Citrix NetScaler ADC and NetScaler Gateway contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for remote code execution or denial of service",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-09-30"
+    },
+    {
+      "id": "CVE-2026-88771",
+      "title": "CVE-2026-88771 - Citrix NetScaler Improper Input Validation Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-09-27",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "summary": "Citrix NetScaler ADC and NetScaler Gateway contain an improper input validation vulnerability that could allow an unauthenticated attacker to execute arbitrary commands.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-09-30"
+    },
     {
       "id": "CVE-2026-67279",
       "title": "CVE-2026-67279 - Mikrotik RouterOS Improper Enforcement of Behavioral Workflow Vulnerability",
@@ -860,306 +882,284 @@
       "due": "2026-07-24"
     },
     {
-      "id": "CVE-2021-27137",
-      "title": "CVE-2021-27137 - DD-WRT Stack-Based Buffer Overflow Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-07-21",
-      "vendor": "DD-WRT",
-      "product": "DD-WRT",
-      "summary": "DD-WRT contains a stack-based buffer overflow vulnerability that could allow an unauthenticated attacker to overflow an internal buffer used by UPnP and trigger a code execution vulnerability.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-24"
-    },
-    {
-      "id": "CVE-2026-58644",
-      "title": "CVE-2026-58644 - Microsoft SharePoint Deserialization of Untrusted Data Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-07-16",
-      "vendor": "Microsoft",
-      "product": "SharePoint",
-      "summary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability that allows an unauthorized attacker to execute code over a network.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-19"
-    },
-    {
-      "id": "CVE-2026-93973",
-      "title": "CVE-2026-93973",
+      "id": "CVE-2025-12999",
+      "title": "CVE-2025-12999",
       "source": "NIST NVD",
-      "date": "2026-09-20T09:16:39.520",
-      "summary": "A vulnerability was detected in SourceCodester Online Reviewer Management System 1.0. The impacted element is an unknown function of the file /reviewer_0/admins/assessments/subject/btn_functions.php?action=remove. Performing a manipulation of the argument ID results in sql injection. The attack can be initiated remotely. The exploit is now public and may be used."
+      "date": "2026-09-21T09:17:04.533",
+      "summary": "UrlUtil.getBaseUrl builds the absolute URLs in a response — download links, icons, asset and API URLs — from the X-Forwarded-Host, X-Forwarded-Proto and X-Forwarded-Prefix request headers, with no check on whether the sender was a trusted proxy, falling back to the client-supplied Host header.                                                                                   \n\n                                                                                                                                                                                              \n\n\nThose responses are cached under keys that do not include the host (extension.json since 0.6.0, namespace.details.json since 0.9.0, sitemap since 0.14.5, latest.extension.version.vscode since 0.34.2). A single request carrying a forged header therefore places attacker-chosen URLs into an entry served to every other client for the lifetime of that entry — one hour by default, and cluster-wide where ovsx.redis.enabled is set.\n\n\n\nThe VSIX download URL, its signature URL and the public key URL are all derived from the same base URL, so extension signing does not limit the impact: an attacker who poisons an entry supplies the"
     },
     {
-      "id": "CVE-2026-93974",
-      "title": "CVE-2026-93974",
+      "id": "CVE-2026-15801",
+      "title": "CVE-2026-15801",
       "source": "NIST NVD",
-      "date": "2026-09-20T09:16:39.693",
-      "summary": "A flaw has been found in SourceCodester Online Reviewer Management System 1.0. This affects an unknown function of the file /reviewer_0/admins/assessments/databank/btn_functions.php?action=remove. Executing a manipulation of the argument ID can lead to sql injection. The attack can be launched remotely. The exploit has been published and may be used."
+      "date": "2026-09-21T09:17:05.743",
+      "summary": "A vulnerability was found in CRI-O related to the container checkpoint and restore feature. When CRI-O is configured to restore containers from checkpoint archives, insufficient validation of restore metadata may allow a user with sufficient privileges to perform unintended operations on the host filesystem. Successful exploitation requires that container checkpoint and restore functionality is enabled, which is not the default configuration. An attacker must also be able to trigger restoration of a container from untrusted checkpoint content."
     },
     {
-      "id": "CVE-2026-86555",
-      "title": "CVE-2026-86555",
+      "id": "CVE-2026-85010",
+      "title": "CVE-2026-85010",
       "source": "NIST NVD",
-      "date": "2026-09-20T10:16:52.797",
-      "summary": "The ZTE SmartLife application has a hardcoded key. The key used to decrypt account server information is stored in plaintext in the code. Once the key is obtained, the server information can be decrypted, thus exposing it."
+      "date": "2026-09-21T09:17:05.920",
+      "summary": "The RestroPress WordPress plugin before 3.4.6 does not validate a client-supplied item add-on price on the server side when items are added to or updated in the cart, allowing unauthenticated users to set an arbitrary price and place orders for an attacker-chosen total, down to and including zero."
     },
     {
-      "id": "CVE-2026-93975",
-      "title": "CVE-2026-93975",
+      "id": "CVE-2026-85113",
+      "title": "CVE-2026-85113",
       "source": "NIST NVD",
-      "date": "2026-09-20T10:16:52.990",
-      "summary": "A vulnerability has been found in code-projects Assessment Management 1.0. This impacts an unknown function of the file admin/edit-user.php of the component User Editing. The manipulation of the argument name/sname/email/username/password/id leads to cross site scripting. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used."
+      "date": "2026-09-21T09:17:06.040",
+      "summary": "The GiveWP WordPress plugin before 4.16.9 does not remove shortcode delimiters from donor-supplied values before rendering them on public pages, and the shortcode stripping it applies can be defeated by nesting, allowing unauthenticated users to execute arbitrary shortcodes registered on the site."
     },
     {
-      "id": "CVE-2026-93976",
-      "title": "CVE-2026-93976",
+      "id": "CVE-2026-86802",
+      "title": "CVE-2026-86802",
       "source": "NIST NVD",
-      "date": "2026-09-20T10:16:53.280",
-      "summary": "A vulnerability was found in code-projects Assessment Management 1.0. Affected is an unknown function of the file admin/add-user.php. The manipulation of the argument level results in cross site scripting. The attack may be launched remotely. The exploit has been made public and could be used."
+      "date": "2026-09-21T09:17:06.157",
+      "summary": "The To Do List Member WordPress plugin through 1.6 does not have authorisation or nonce checks in an import routine, and does not validate the location it fetches the imported data from, allowing unauthenticated users to create arbitrary published posts and taxonomy terms on the site."
     },
     {
-      "id": "CVE-2026-93977",
-      "title": "CVE-2026-93977",
+      "id": "CVE-2026-92400",
+      "title": "CVE-2026-92400",
       "source": "NIST NVD",
-      "date": "2026-09-20T11:16:57.750",
-      "summary": "A vulnerability was determined in code-projects Assessment Management 1.0. Affected by this vulnerability is an unknown functionality of the file lecturer/add-single-mark.php. This manipulation of the argument mark causes cross site scripting. Remote exploitation of the attack is possible. The exploit has been publicly disclosed and may be utilized."
+      "date": "2026-09-21T09:17:06.270",
+      "summary": "The Payment Gateway for PayPal on WooCommerce WordPress plugin before 9.2.1 does not verify that an incoming payment notification was confirmed in the store's configured payment environment or paid to the store's own merchant account before marking an order complete, allowing unauthenticated users to mark their own orders as paid using a genuine transaction from a payment sandbox they control."
     },
     {
-      "id": "CVE-2026-93978",
-      "title": "CVE-2026-93978",
+      "id": "CVE-2026-94150",
+      "title": "CVE-2026-94150",
       "source": "NIST NVD",
-      "date": "2026-09-20T11:16:57.953",
-      "summary": "A vulnerability was identified in code-projects Internship Management System 1.0. Affected by this issue is some unknown functionality of the file /login.php. Such manipulation of the argument Password leads to sql injection. The attack can be executed remotely. The exploit is publicly available and might be used."
+      "date": "2026-09-21T09:17:06.387",
+      "summary": "A security flaw has been discovered in Omega Solution HRM OS up to 20260717. The impacted element is an unknown function of the file /media/view/ of the component SVG File Upload. Performing a manipulation results in cross site scripting. The attack may be initiated remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-93979",
-      "title": "CVE-2026-93979",
+      "id": "CVE-2026-94151",
+      "title": "CVE-2026-94151",
       "source": "NIST NVD",
-      "date": "2026-09-20T11:16:58.130",
-      "summary": "A security flaw has been discovered in code-projects Internship Management System 1.0. This affects an unknown part of the file /employer/login.php. Performing a manipulation of the argument Password results in sql injection. The attack is possible to be carried out remotely. The exploit has been released to the public and may be used for attacks."
+      "date": "2026-09-21T09:17:06.567",
+      "summary": "A weakness has been identified in Omega Solution HRM OS up to 20260717. This affects an unknown function of the file /role-permission/permission of the component Role Permission API. Executing a manipulation of the argument roleId can lead to missing authentication. The attack may be launched remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-93980",
-      "title": "CVE-2026-93980",
+      "id": "CVE-2026-94152",
+      "title": "CVE-2026-94152",
       "source": "NIST NVD",
-      "date": "2026-09-20T11:16:58.307",
-      "summary": "A weakness has been identified in code-projects Internship Management System 1.0. This vulnerability affects unknown code of the file /admin/login.php of the component Admin Login Form. Executing a manipulation of the argument Password can lead to sql injection. The attack may be performed from remote. The exploit has been made available to the public and could be used for attacks."
+      "date": "2026-09-21T09:17:06.747",
+      "summary": "A security vulnerability has been detected in Omega Solution FBP Fulfillment by People 2025. This impacts an unknown function of the file /user/ of the component User Profile API. The manipulation of the argument ID leads to authorization bypass. Remote exploitation of the attack is possible. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-93997",
-      "title": "CVE-2026-93997",
+      "id": "CVE-2026-91921",
+      "title": "CVE-2026-91921",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:05.217",
-      "summary": "A weakness has been identified in SourceCodester Drug Recommendation System 1.0. Affected by this issue is some unknown functionality of the file /Admin/edit_symptom.php. This manipulation of the argument ID causes sql injection. The attack is possible to be carried out remotely. The exploit has been made available to the public and could be used for attacks."
+      "date": "2026-09-21T10:17:15.873",
+      "summary": "Cross-Site Scripting (XSS) vulnerability due to inadequate input sanitisation in the client-side rendering engine of the 1millionbot AI Chat Platform. An unauthenticated remote user could cause external hyperlinks to be rendered in the web interface by sending messages containing Markdown syntax and certain unsanitised content blocks. The impact is limited to the user’s own interactive session; no compromise of internal infrastructure, access to third-party data or impact on administrative panels has been identified."
     },
     {
-      "id": "CVE-2026-94003",
-      "title": "CVE-2026-94003",
+      "id": "CVE-2026-92574",
+      "title": "CVE-2026-92574",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:05.403",
-      "summary": "A vulnerability has been found in Comfast CF-N1-S 2.6.0.1. Impacted is the function get_css_path_from_uri of the file /cgi-bin/mbox-config of the component Web Management Interface. The manipulation leads to stack-based buffer overflow. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used."
+      "date": "2026-09-21T10:17:17.360",
+      "summary": "A vulnerability in CRI-O checkpoint restore allows a user who can create a pod from a malicious checkpointed container to bypass the destination Kubernetes security context. The restored process may retain credentials, Linux capabilities, no_new_privs, and seccomp state from the checkpoint instead of enforcing the destination configuration. This can allow execution with elevated privileges across the container security boundary.\nAffected upstream supported versions are CRI-O 1.34 and later. Downstream Red Hat products are affected from OCP 4.17 onward. Fixes have been applied to supported branches but are not yet released.\nExploitation requires permission to create a pod from a malicious checkpoint image and checkpoint restore functionality to be available."
     },
     {
-      "id": "CVE-2026-94004",
-      "title": "CVE-2026-94004",
+      "id": "CVE-2026-94277",
+      "title": "CVE-2026-94277",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:05.593",
-      "summary": "A vulnerability was found in DedeCMS up to 5.7.118. The affected element is an unknown function of the file plus/mytag_js.php. The manipulation of the argument aid results in code injection. The attack can be launched remotely. The exploit has been made public and could be used."
+      "date": "2026-09-21T10:17:17.570",
+      "summary": "MISP's galaxy matrix statistics view (app/View/Users/statistics_galaxymatrix.ctp) renders the galaxy name directly into HTML output via sprintf() without any HTML encoding. An authenticated user holding the perm_galaxy_editor permission can create or modify a galaxy whose name contains arbitrary HTML or JavaScript markup. Because the value is interpolated verbatim into the page, any user who subsequently opens the galaxy matrix statistics page will have the embedded script executed in their browser context. This enables session hijacking, credential theft, data exfiltration, or the performance of arbitrary actions on behalf of the victim within the MISP application.\n\nVersion affected: <2.5.47"
     },
     {
-      "id": "CVE-2026-94104",
-      "title": "CVE-2026-94104",
+      "id": "CVE-2026-77021",
+      "title": "CVE-2026-77021",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:05.777",
-      "summary": "NivoCart through 2.4.0 contains an arbitrary file upload vulnerability in the File Manager multi() endpoint that fails to validate file extensions for new filenames or when chunks parameter is 2 or higher. Attackers with view-only back-office access can upload PHP files to the web-accessible image/data/ directory and execute them for remote code execution."
+      "date": "2026-09-21T11:17:12.200",
+      "summary": "Improper handling of highly compressed data (data amplification) in Checkmk <2.5.0p14, <2.4.0p37, <2.3.0p51 and 2.2.0 (EOL) allows an attacker who controls a host registered for push mode to exhaust the memory of the agent receiver by sending a small zlib compressed payload that decompresses to an arbitrary size."
     },
     {
-      "id": "CVE-2026-94105",
-      "title": "CVE-2026-94105",
+      "id": "CVE-2026-92612",
+      "title": "CVE-2026-92612",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:05.940",
-      "summary": "NivoCart through 2.4.0 contains a destructive configuration write vulnerability in the admin password reset controller that allows unauthenticated attackers to disable password recovery by supplying an invalid code parameter. Attackers can send a GET request with a missing or incorrect code to rewrite the config_password setting to 0, disabling self-service password recovery until an administrator manually re-enables it."
+      "date": "2026-09-21T11:17:12.590",
+      "summary": "In Eclipse iceoryx2 versions greater than v0.8.0, the StaticString exposes its contents as mutable bytes through safe APIs, while String::as_str() converts those bytes into a Rust string slice without validating UTF-8. An application can therefore create an invalid &str and trigger undefined behavior using entirely safe Rust."
     },
     {
-      "id": "CVE-2026-94106",
-      "title": "CVE-2026-94106",
+      "id": "CVE-2026-16651",
+      "title": "CVE-2026-16651",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:06.110",
-      "summary": "getID3 before 1.9.26 contains an OS command injection vulnerability in shell-out handlers that fail to escape filenames in command strings. Attackers can craft malicious filenames containing shell metacharacters to inject arbitrary commands executed with the privileges of the process embedding getID3."
+      "date": "2026-09-21T12:17:10.167",
+      "summary": "temporalio/sqlparser can panic when Parse, ParseStrictDDL, or ParseNext processes a MySQL version comment whose contents are empty or consist only of one to five decimal digits. ExtractMysqlComment does not check the -1 result returned by strings.IndexFunc before using it as a slice boundary. The resulting Go runtime panic propagates unless the caller recovers it on the parsing goroutine, so applications that parse attacker-controlled SQL can terminate. Temporal Server exposes the affected parser through ListWorkers. When that API is enabled, an authenticated caller with namespace read permission can submit a malformed query that terminates the receiving Matching process. Repeated requests can sustain a denial of service. The issue affects availability only; no confidentiality or integrity impact was identified."
     },
     {
-      "id": "CVE-2026-94107",
-      "title": "CVE-2026-94107",
+      "id": "CVE-2026-16652",
+      "title": "CVE-2026-16652",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:06.277",
-      "summary": "NivoCart through 2.4.0 contains a predictable password reset token vulnerability in the forgotten.php endpoint that generates recovery codes using substr(md5(mt_rand()), 0, 10). Attackers who know an administrator's email address can request a password reset and predict the token to gain administrative account access without rate limiting or expiration."
+      "date": "2026-09-21T12:17:10.400",
+      "summary": "Temporal Server did not bound the work performed while searching for a Schedule's next action time. An authenticated caller with namespace write permission could create or update a Schedule that combines a fine-grained cadence with an exclusion calendar that rejects every candidate time, causing the server to evaluate excluded candidates without a per-search work budget. This can consume excessive CPU in Frontend and Schedule worker components. A persisted specification can also cause its backing Schedule Workflow to repeatedly fail and retry, allowing CPU consumption to continue without additional requests until the Schedule is deleted or its backing Workflow is terminated. Repeated or parallel exploitation can deny service. The issue affects availability only; it does not expose or modify Workflow data."
     },
     {
-      "id": "CVE-2026-94108",
-      "title": "CVE-2026-94108",
+      "id": "CVE-2026-65651",
+      "title": "CVE-2026-65651",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:06.427",
-      "summary": "getID3 through 1.9.26 contains an XML external entity injection vulnerability in the XML2array helper function that fails to properly disable entity loading on PHP before 8.0. Attackers can craft malicious XML metadata in media files to disclose local files, perform server-side request forgery, or cause denial of service through entity expansion."
+      "date": "2026-09-21T12:17:15.553",
+      "summary": "temporalio/sqlparser accepts SQL containing deeply nested unary expressions and can return a correspondingly deep abstract syntax tree without enforcing an applicable nesting limit. The library's String and Walk operations recursively traverse that tree. An application that parses attacker-controlled SQL and later formats or walks the returned tree can encounter a runtime-fatal Go stack overflow that terminates the process; Go panic recovery cannot contain this condition. Temporal Server passes caller-controlled query input through the affected parser in archival, visibility, and worker-query paths. In affected validation paths, the Server recursively formats an invalid expression while constructing an error. In a supported authenticated deployment, a caller with namespace read permission can terminate the receiving Frontend or Matching process. The dynamically confirmed ListWorkers route additionally requires at least one retained worker heartbeat. Repeated requests can sustain a denial of service. The issue affects availability only; no confidentiality or integrity impact was identified."
     },
     {
-      "id": "CVE-2026-94109",
-      "title": "CVE-2026-94109",
+      "id": "CVE-2026-65652",
+      "title": "CVE-2026-65652",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:06.620",
-      "summary": "openEQUELLA before 2026.1.0 contains an authenticated stored server-side template injection vulnerability in FreemarkerPortletRenderer.renderHtml() that allows any authenticated non-guest user to achieve remote code execution by storing a malicious FreeMarker payload through a POST request to the RemotePortletService invoker endpoint. The markup field from stored portlet configuration is passed directly to custFactory.createResult() without a TemplateClassResolver restriction or FreeMarker sandboxing in BasicConfiguration, leaving built-ins such as ?new and freemarker.template.utility.Execute available, causing the payload to execute in the application server process context when any user renders a dashboard containing the affected portlet."
+      "date": "2026-09-21T12:17:15.800",
+      "summary": "github.com/temporalio/tchannel-go did not validate the one-byte checksum-type field in inbound TChannel call frames. A network peer that can reach a listener can complete the standard initialization handshake and send a call request with an unsupported checksum type. The parser uses that value as an index into a four-entry checksum pool, causing an unrecovered Go panic on the connection read goroutine and terminating the hosting process. This allows remote denial of service against applications that expose the listener to untrusted peers. The impact is limited to availability; no confidentiality or integrity impact was identified."
     },
     {
-      "id": "CVE-2026-94111",
-      "title": "CVE-2026-94111",
+      "id": "CVE-2026-65653",
+      "title": "CVE-2026-65653",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:06.787",
-      "summary": "Tencent BrowserSkill through 0.3.0 contains an authentication bypass vulnerability in the local daemon WebSocket origin validation that accepts any chrome-extension origin with 32 characters in range a-p. Attackers can register a malicious extension as a browser client to intercept and manipulate page content, DOM, and screenshots returned to the AI agent."
+      "date": "2026-09-21T12:17:15.973",
+      "summary": "github.com/temporalio/tchannel-go did not reject TChannel call fragments containing checksum metadata but no length-prefixed argument chunks. The fragment reader left its chunk slice empty and then unconditionally selected the first element. A network peer can supply such a malformed call fragment, including as a direct initial call request after completing the standard initialization handshake. On that inbound path, the resulting unrecovered Go slice-bounds panic occurs on a library-created dispatch goroutine and terminates the hosting process. This allows remote denial of service against applications that expose the listener to untrusted peers. The impact is limited to availability; no confidentiality or integrity impact was identified."
     },
     {
-      "id": "CVE-2026-94112",
-      "title": "CVE-2026-94112",
+      "id": "CVE-2026-65654",
+      "title": "CVE-2026-65654",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:06.953",
-      "summary": "mayswind ezBookkeeping before 2.0.0 fails to invalidate TOTP passcodes after use, allowing attackers to replay captured codes within the acceptance window. Attackers with stolen credentials can authenticate and reuse a captured passcode against multiple authorization attempts for approximately 90 seconds without detection."
+      "date": "2026-09-21T12:17:16.133",
+      "summary": "github.com/temporalio/ringpop-go enforces configured LabelOptions limits when an application changes the local node's labels, but affected versions do not apply those limits to label maps received in SWIM membership changes. A network peer that can reach a live Ringpop TChannel listener can repeatedly submit changes for distinct member addresses containing label keys, values, or counts that exceed the receiver's configured limits. Accepted labels are retained in the member list and disseminated to peers, allowing memory and gossip-bandwidth consumption to exceed configured bounds and potentially making the hosting process unavailable. The fix validates peer-supplied label maps before they are retained or disseminated. Availability only; no confidentiality or integrity impact was identified."
     },
     {
-      "id": "CVE-2026-94113",
-      "title": "CVE-2026-94113",
+      "id": "CVE-2026-87858",
+      "title": "CVE-2026-87858",
       "source": "NIST NVD",
-      "date": "2026-09-20T12:17:07.117",
-      "summary": "Frappe ERPNext versions before 15.121.0 and 16.x before 16.34.0 contain an information disclosure vulnerability in whitelisted timesheet endpoints that fail to enforce doctype permissions. Authenticated attackers can call get_projectwise_timesheet_data, get_timesheet_detail_rate, and get_timesheet endpoints to enumerate and retrieve billable time logs including project names, billing amounts, and work descriptions without proper authorization checks."
+      "date": "2026-09-21T12:17:22.230",
+      "summary": "Temporal Server decided whether a Workflow completion callback was internal by reading a caller-supplied HTTP header. An authenticated caller holding only write permission in a single namespace could attach a completion callback whose URL host matched the configured callback address allowlist, whose URL path was any Temporal HTTP API route, and whose header map contained a non-empty header named source. When the History service delivered that callback, the non-empty source header caused it to re-target the request at the local frontend client and rewrite only the scheme and host, preserving the caller's path, query, and request body. Where an internal frontend is deployed with its HTTP API enabled, that client resolves to the internal frontend, which authorizes every request as a system administrator without requiring authentication information. The result is that the server performs an attacker-chosen state-changing HTTP POST against its own administrative API on the caller's behalf, in namespaces where the caller has no permission. The caller never needs network access to the internal frontend, because the History service makes the request. Confirmed effects include terminating W"
     },
     {
-      "id": "CVE-2026-90817",
-      "title": "CVE-2026-90817",
+      "id": "CVE-2026-89139",
+      "title": "CVE-2026-89139",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:44.973",
-      "summary": "An unauthenticated Remote Code Execution vulnerability was found in the survey passthrough routing and Data Import processing logic, in which a malicious user could potentially exploit it by manipulating HTTP requests to access an unintended controller route from a public survey context and by supplying a crafted file-path/stream parameter during import handling. If successfully exploited, this could allow the attacker to remotely execute arbitrary code on the REDCap server. The attacker does not have to be authenticated in order to exploit this, but exploitation requires knowledge of a valid public survey hash. This vulnerability exists in REDCap 13.3.0 and higher."
+      "date": "2026-09-21T12:17:24.440",
+      "summary": "Temporal Server compiles a Worker Controller Instance module into its Worker Service, and that module registers a compute provider named subprocess whose function is to launch a worker by running a command on the machine hosting the Worker Service. The program name and the argument vector that provider executes are taken from the compute provider configuration supplied in the caller's request rather than from operator configuration. An authenticated caller holding only a write role in a single namespace can therefore configure a worker deployment version so that the Worker Service executes a command of the caller's choosing on its own host, under the account the server process runs as. Execution is immediate rather than deferred: the configuration handler invokes every provider using the invoke strategy directly after validating the submitted specification, so no scaling decision, task arrival, or unusual request sequence is required. Because the Worker Service process holds the persistence credentials for every namespace in the cluster and the cluster's TLS material, the consequence reaches beyond the caller's namespace to the cluster as a whole. The provider is present in the off"
     },
     {
-      "id": "CVE-2026-92252",
-      "title": "CVE-2026-92252",
+      "id": "CVE-2026-91863",
+      "title": "CVE-2026-91863",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:46.063",
-      "summary": "Incorrect default permissions in the installation directory of WatchDog Anti-Virus on Windows allow local, low-privileged users to modify, replace, or delete antivirus binaries and configuration files, because the installer grants the Users group Full Control over C:\\Program Files (x86)\\Watchdog Anti-Virus. This may disable antivirus protection or enable privileged code execution if modified binaries are loaded by an elevated WatchDog process."
+      "date": "2026-09-21T12:17:24.697",
+      "summary": "A specially crafted WS-Policy document with deeply nested policy elements can bypass Neethi's nesting-depth limit and exhaust the thread stack, crashing the parser (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
     },
     {
-      "id": "CVE-2026-92253",
-      "title": "CVE-2026-92253",
+      "id": "CVE-2026-91864",
+      "title": "CVE-2026-91864",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:46.243",
-      "summary": "Improper link resolution before file access in the quarantine restoration process of WatchDog Anti-Virus 1.8.640 on Windows allows local, low-privileged attackers to cause a quarantined file to be written to an arbitrary filesystem location by creating a directory junction at the original file path and persuading an administrator to restore the file. This may enable modification of protected files or SYSTEM-level code execution through DLL hijacking."
+      "date": "2026-09-21T12:17:24.807",
+      "summary": "A specially crafted WS-Policy document can pack unlimited content inside a policy assertion, which Neethi copies into memory without counting it against its size limits, exhausting the heap (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
     },
     {
-      "id": "CVE-2026-92254",
-      "title": "CVE-2026-92254",
+      "id": "CVE-2026-91865",
+      "title": "CVE-2026-91865",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:46.390",
-      "summary": "Missing Authorization in the IOCTL handlers of the wsdkd.sys kernel drivers in Watchdog WatchDog Antivirus 1.8.640 (driver versions 1.3.0.0 and earlier) on Microsoft Windows allows local, low-privileged attackers to delete arbitrary files with SYSTEM privileges, bypassing NTFS access controls and potentially disabling security products or destabilizing the operating system, via crafted IOCTL requests sent to the \\Device\\wsdk device."
+      "date": "2026-09-21T12:17:24.903",
+      "summary": "A small WS-Policy document using repeated policy references can force Neethi to re-expand the same references exponentially during normalization, consuming huge amounts of CPU and memory (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
     },
     {
-      "id": "CVE-2026-94015",
-      "title": "CVE-2026-94015",
+      "id": "CVE-2026-91866",
+      "title": "CVE-2026-91866",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:46.540",
-      "summary": "A vulnerability was identified in SourceCodester Drug Recommendation System 1.0. This affects an unknown function of the file /drug_recommender/Admin/edit_user.php. Such manipulation of the argument ID leads to sql injection. The attack may be launched remotely. The exploit is publicly available and might be used."
+      "date": "2026-09-21T12:17:25.000",
+      "summary": "A specially crafted pair of WS-Policy documents can force Neethi's policy-intersection to do exponential amounts of work, pinning the CPU for a long time (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
     },
     {
-      "id": "CVE-2026-94016",
-      "title": "CVE-2026-94016",
+      "id": "CVE-2026-91867",
+      "title": "CVE-2026-91867",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:46.723",
-      "summary": "A security flaw has been discovered in SourceCodester Drug Recommendation System 1.0. This impacts an unknown function of the file /drug_recommender/Admin/add_symptom. Performing a manipulation of the argument txtname results in cross site scripting. Remote exploitation of the attack is possible. The exploit has been released to the public and may be used for attacks."
+      "date": "2026-09-21T12:17:25.107",
+      "summary": "When Neethi fetches a remote policy reference, it only limits the time per read, not the whole transfer, so a server that trickles bytes slowly can keep the fetch alive indefinitely and tie up the calling thread (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
     },
     {
-      "id": "CVE-2026-94028",
-      "title": "CVE-2026-94028",
+      "id": "CVE-2026-94210",
+      "title": "CVE-2026-94210",
       "source": "NIST NVD",
-      "date": "2026-09-20T13:17:46.903",
-      "summary": "A weakness has been identified in mealie-recipes Mealie up to 3.25.1. Affected is the function payload.model_dump of the file mealie/routes/households/controller_group_recipe_actions.py of the component Recipe Action Trigger. Executing a manipulation of the argument url can lead to server-side request forgery. The attack can be executed remotely. The exploit has been made available to the public and could be used for attacks. Upgrading to version 3.26.0 is able to address this issue. This patch is called fb221afa258c8dd2c4ac95b1996c33ef9db3f477. The affected component should be upgraded."
+      "date": "2026-09-21T12:17:27.177",
+      "summary": "A flaw has been found in Hyve5 Leantime up to 3.9.8. Affected by this vulnerability is the function getAllGrouped of the file app/Domain/Tickets/Services/Tickets.php of the component Kanban Board. This manipulation causes cross site scripting. The attack is possible to be carried out remotely. The exploit has been published and may be used. Patch name: a30a6837b4071ac05a4f58d0e1baa2c62aa8695e. To fix this issue, it is recommended to deploy a patch."
     },
     {
-      "id": "CVE-2026-94030",
-      "title": "CVE-2026-94030",
+      "id": "CVE-2026-94368",
+      "title": "CVE-2026-94368",
       "source": "NIST NVD",
-      "date": "2026-09-20T14:17:00.590",
-      "summary": "A security vulnerability has been detected in SerenityOS up to 3d83e4509fd20d7438e1ae8470ffe668c136229c. Affected by this vulnerability is the function decode_bmp_pixel_data of the file Userland/Libraries/LibGfx/ImageFormats/BMPLoader.cpp of the component LibGfx. The manipulation of the argument height leads to integer overflow. The attack is possible to be carried out remotely. The attack's complexity is rated as high. The exploitation appears to be difficult. The exploit has been disclosed publicly and may be used. This product adopts a rolling release strategy to maintain continuous delivery. Therefore, version details for affected or updated releases cannot be specified. The identifier of the patch is 007041bb2dd6d140c9e707caddfb0a49ecf96469. Applying a patch is the recommended action to fix this issue. This was reproducible with a minimal 55-byte PoC via the standard image-decode fuzz target but evidence for an actual exploitable defect is thin."
+      "date": "2026-09-21T12:17:29.010",
+      "summary": "A flaw was found in the signature verification logic of noobaa-core, the core component of the NooBaa Multicloud Object Gateway. The issue occurs when the service processes S3 presigned URLs using Signature Version 4 (SigV4). Due to improper validation, the service fails to reject requests containing unsigned x-amz- headers, instead simply dropping them from the signature calculation. This allows an attacker who possesses a valid presigned PUT URL to add an unsigned x-amz-copy-source header, effectively converting a simple upload into a CopyObject operation. This can lead to unauthorized access and copying of any data the original signer is permitted to reach across the entire storage system."
     },
     {
-      "id": "CVE-2026-94031",
-      "title": "CVE-2026-94031",
+      "id": "CVE-2026-84285",
+      "title": "CVE-2026-84285",
       "source": "NIST NVD",
-      "date": "2026-09-20T14:17:00.780",
-      "summary": "A vulnerability was detected in 0-Gaurav-0 nexus-mcp aed0026e7ac1f23dc940e46e9fd3a2da6904f914. Affected by this issue is the function child_process.exec of the file src/auth/browser.ts of the component nexus_reauth MCP tool. The manipulation of the argument url results in command injection. The attack may be performed from remote. The exploit is now public and may be used. This product utilizes a rolling release system for continuous delivery, and as such, version information for affected or updated releases is not disclosed. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-09-21T13:17:10.830",
+      "summary": "An OS Command Injection vulnerability affecting Tuleap Enterprise Edition from 17.3 through 17.5 could allow an attacker to execute arbitrary commands on the server."
     },
     {
-      "id": "CVE-2026-94032",
-      "title": "CVE-2026-94032",
+      "id": "CVE-2026-94211",
+      "title": "CVE-2026-94211",
       "source": "NIST NVD",
-      "date": "2026-09-20T15:16:29.573",
-      "summary": "A flaw has been found in itsourcecode Leave Management System 1.0. This affects an unknown part of the file /module/department/index.php. This manipulation of the argument ID causes sql injection. It is possible to initiate the attack remotely. The exploit has been published and may be used."
+      "date": "2026-09-21T13:17:11.953",
+      "summary": "A vulnerability has been found in Hyve5 Leantime up to 3.9.8. Affected by this issue is some unknown functionality of the file /app/Domain/Dashboard/Templates/show.blade.php of the component Project Dashboard. Such manipulation leads to cross site scripting. The attack may be performed from remote. The exploit has been disclosed to the public and may be used. \"EDIT perm\" needed to plant; fires cross-user for anyone viewing the project dashboard since the poisoned label name is echoed raw. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94033",
-      "title": "CVE-2026-94033",
+      "id": "CVE-2026-94214",
+      "title": "CVE-2026-94214",
       "source": "NIST NVD",
-      "date": "2026-09-20T15:16:30.553",
-      "summary": "A vulnerability has been found in SourceCodester Drug Recommendation System 1.0. This vulnerability affects unknown code of the file /drug_recommender/Admin/add_user of the component User Management. Such manipulation of the argument txtname/txtemail/txtpassword leads to cross site scripting. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used."
+      "date": "2026-09-21T13:17:12.170",
+      "summary": "A vulnerability was found in ST Engineering iDirect Evolution and Velocity WebServer Evolution up to 20260717. This affects an unknown part of the file /login.html of the component Management Service. Performing a manipulation of the argument Host results in open redirect. It is possible to initiate the attack remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94034",
-      "title": "CVE-2026-94034",
+      "id": "CVE-2026-94216",
+      "title": "CVE-2026-94216",
       "source": "NIST NVD",
-      "date": "2026-09-20T15:16:30.730",
-      "summary": "A vulnerability was found in SourceCodester Drug Recommendation System 1.0. This issue affects some unknown processing of the file /drug_recommender/Admin/change_password of the component Password Change. Performing a manipulation of the argument txtoldpassword/txtnewpassword results in cross site scripting. The attack can be initiated remotely. The exploit has been made public and could be used."
+      "date": "2026-09-21T13:17:12.360",
+      "summary": "A vulnerability was determined in ST Engineering iDirect Evolution and Velocity WebServer Evolution up to 20260717. This vulnerability affects the function authorize of the file /usr/sbin/webserver of the component HTTP Header Handler. Executing a manipulation of the argument Success can lead to open redirect. It is possible to launch the attack remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94035",
-      "title": "CVE-2026-94035",
+      "id": "CVE-2026-94372",
+      "title": "CVE-2026-94372",
       "source": "NIST NVD",
-      "date": "2026-09-20T16:16:55.307",
-      "summary": "A vulnerability was determined in SourceCodester Drug Recommendation System 1.0. Impacted is an unknown function of the file /drug_recommender/index.php. Executing a manipulation of the argument full name can lead to cross site scripting. The attack can be launched remotely. The exploit has been publicly disclosed and may be utilized."
+      "date": "2026-09-21T13:17:12.540",
+      "summary": "MISP contains a stored cross-site scripting (XSS) vulnerability in the default theme's Galaxies index page. When a MISP instance detects unknown custom or default galaxy clusters during synchronization, it renders sample tag names in an informational notice directed at site administrators. In the default theme, these sample tag names were inserted into the HTML output without HTML-entity encoding. A user with tag-editor privileges could craft a malicious misp-galaxy tag containing arbitrary script. When a site administrator subsequently viewed the Galaxies index page, the crafted tag content was interpreted as executable markup in the administrator's browser session, enabling the attacker to read session data, perform actions on behalf of the administrator, or otherwise compromise the administrator's browser context. The Overmind theme already applied HTML escaping to the same values and was not affected. The vulnerability requires the attacker to possess tag-editor-level access to create the crafted tag and requires the victim (a site administrator) to view the Galaxies index page in the default theme. The impact is limited to the administrator's browser session and does not direc"
     },
     {
-      "id": "CVE-2026-94036",
-      "title": "CVE-2026-94036",
+      "id": "CVE-2026-94373",
+      "title": "CVE-2026-94373",
       "source": "NIST NVD",
-      "date": "2026-09-20T16:16:55.490",
-      "summary": "A security flaw has been discovered in D-Link DIR-X1860 and DIR-X1860Z up to 1.0.2.220120.165402. The impacted element is an unknown function of the file /ubus of the component routerd. The manipulation of the argument passwd_set results in improper access controls. The attack must originate from the local network. The exploit has been released to the public and may be used for attacks."
+      "date": "2026-09-21T13:17:12.757",
+      "summary": "MISP contains a DOM-based cross-site scripting (XSS) vulnerability in the contextual menu JavaScript component. The ContextualMenu class populates HTML <option> elements by assigning user-controllable values to the innerHTML property. Because innerHTML parses and renders HTML markup, any untrusted string supplied as the option text (value.text or value) is interpreted as live DOM content rather than plain text. An attacker who can influence the data rendered in the contextual menu can inject arbitrary HTML or JavaScript that executes in the victim's browser within the MISP application origin. This may allow session hijacking, data exfiltration, or unauthorized actions performed on behalf of the authenticated user.\n\nVersion affected: <2.5.47"
     },
     {
-      "id": "CVE-2026-94037",
-      "title": "CVE-2026-94037",
+      "id": "CVE-2026-94374",
+      "title": "CVE-2026-94374",
       "source": "NIST NVD",
-      "date": "2026-09-20T17:16:52.190",
-      "summary": "A weakness has been identified in 00Kisumi00 mcp-file-analyzer up to 84740852f0cf0cf5db4781b1ca6d7c6a6d210405. This affects the function ControlFlowNode of the file main.py of the component analyze_csv_data MCP tool. This manipulation of the argument filename causes path traversal. Remote exploitation of the attack is possible. The exploit has been made available to the public and could be used for attacks. This product follows a rolling release approach for continuous delivery, so version details for affected or updated releases are not provided. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-09-21T13:17:12.953",
+      "summary": "MISP contains an insecure direct object reference vulnerability in the processModuleResultsData method of the Event model. When processing module results, the code iterates over EventReport entries supplied in the resolved data and saves each one. Unlike the adjacent attribute and object processing loops, the report loop did not unset the client-supplied 'id' field before calling save(). Because the MISP EventReport model's create() method does not strip the id field, an authenticated user with permission to submit module results could include an 'id' value referencing an existing report belonging to a different event. Upon save(), the ORM would update that existing row rather than insert a new one, allowing the attacker to \n\n - read the content of another event's report by reparenting it into their own event\n - overwrite the report's fields with attacker-controlled data\n - change the report's event_id to redirect ownership. \n\n\n\n\nThis constitutes an authorization bypass through a user-controlled key, enabling cross-event data disclosure and integrity compromise. The vulnerability requires an authenticated session with the ability to invoke module result processing on an event.\n\nVer"
     },
     {
-      "id": "CVE-2026-94038",
-      "title": "CVE-2026-94038",
+      "id": "CVE-2026-94379",
+      "title": "CVE-2026-94379",
       "source": "NIST NVD",
-      "date": "2026-09-20T17:16:52.370",
-      "summary": "A security vulnerability has been detected in NonceGeek dim-sum-app. This impacts the function textSearchV2Handler of the file deno/main.tsx of the component Deno Backend. Such manipulation of the argument supabase_url leads to server-side request forgery. The attack can be executed remotely. The exploit has been disclosed publicly and may be used. The name of the patch is 8389032e5d52c28c4855c6126ca7d0eae8af346a. It is best practice to apply a patch to resolve this issue."
+      "date": "2026-09-21T13:17:13.200",
+      "summary": "The login() function in MISP's UsersController.php contained insufficient HTTP method validation for several security-critical code paths. The original code used an allowlist approach, checking only for specific HTTP methods (POST and PUT) before enforcing bruteforce protection, email one-time-password (OTP) verification, and login-failure logging. Because the checks were not exhaustive, an unauthenticated attacker could issue login requests using other HTTP methods and bypass all three security controls simultaneously. Specifically: \n\n - the bruteforce blocklisting check and attempt counter were skipped, allowing unlimited credential-guessing attempts without being rate-limited or blocked\n -  the email OTP two-factor authentication step was skipped, defeating the second factor of authentication\n - login-failure events were neither logged nor counted, removing the audit trail and the mechanism that would normally trigger a blocklist entry.\n\n\n\n\nThe security impact is the effective disabling of brute-force protection and multi-factor authentication for any attacker who can craft an HTTP request with a non-POST/PUT method to the login endpoint, potentially leading to credential compro"
     },
     {
-      "id": "CVE-2026-94039",
-      "title": "CVE-2026-94039",
+      "id": "CVE-2026-94381",
+      "title": "CVE-2026-94381",
       "source": "NIST NVD",
-      "date": "2026-09-20T17:16:52.557",
-      "summary": "A vulnerability was detected in vas3k TaxHacker up to 0.8.5. Affected is the function generateInvoicePDF of the file /apps/invoices/actions.ts of the component Invoice PDF Renderer. Performing a manipulation of the argument businessLogo results in server-side request forgery. The attack is possible to be carried out remotely. The exploit is now public and may be used. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-09-21T13:17:13.360",
+      "summary": "MISP has a security issue that can let a user gain more access than their API key is supposed to allow.\n\nA read-only API key should only let someone view information. However, after logging in with such a key, a specific MISP function could accidentally restore the user’s normal account permissions. This means someone with a read-only API key could potentially gain write, delete, or even administrator access if their underlying account has those permissions.\n\nExploiting the issue requires a valid read-only API key and a single request to the affected function.\n\nThe main impact is that MISP’s API key restrictions can be bypassed, allowing actions that the API key was specifically meant to prevent.\n\n\n\n\nVersion affected: <2.5.47"
     },
     {
-      "id": "CVE-2026-94040",
-      "title": "CVE-2026-94040",
+      "id": "CVE-2026-94383",
+      "title": "CVE-2026-94383",
       "source": "NIST NVD",
-      "date": "2026-09-20T17:16:52.730",
-      "summary": "A flaw has been found in vas3k TaxHacker up to 0.8.5. Affected by this vulnerability is the function testLLMProviderAction of the file app/(app)/apps/settings/actions.ts. Executing a manipulation of the argument provider/apiKey/model/baseUrl can lead to server-side request forgery. The attack may be performed from remote. The exploit has been published and may be used. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-09-21T13:17:13.560",
+      "summary": "The MISP blocklist workflow module accepted a user-supplied blocklist filename parameter without validating the file extension. The only sanitization applied was basename() to strip path components and a check for empty or dot values. A site administrator could specify a filename with an arbitrary extension that would be placed in the MISP export directory. If the underlying web server is configured to interpret and execute scripts from that directory, the resulting file could be invoked, leading to arbitrary code execution in the context of the web server process.\n\nThe vulnerability requires the attacker to hold site-administrator privileges within MISP, as the blocklist workflow module is restricted to that role. No additional user interaction is required beyond triggering the workflow action with a crafted filename parameter. The impact is full compromise of the MISP server's confidentiality, integrity, and availability, as arbitrary script execution grants the attacker the same privileges as the web server user.\n\nVersion affected: <2.5.47"
     },
     {
-      "id": "CVE-2026-88854",
-      "title": "CVE-2026-88854",
+      "id": "CVE-2025-71419",
+      "title": "CVE-2025-71419",
       "source": "NIST NVD",
-      "date": "2026-09-20T18:16:53.987",
-      "summary": "Joomla Extension - OrdaSoft.com - Unauthenticated SQL Injection in OrdaSoft Joomla Gallery extension for Joomla < 6.2.7 - The extensions showSearchResult() and showSearchResultAjax() read the textsearch/searchText request parameter with $input->getVar(), which is not a real Joomla filter method and falls through to a filter that strips HTML tags but does not touch quotes or SQL syntax. The value is concatenated directly into a LIKE clause with no escaping. The endpoint requires no login of any kind: mod_osgallery_search is a public, commonly-published search box. Any anonymous site visitor can inject a UNION SELECT and read arbitrary database content."
+      "date": "2026-09-21T14:17:14.303",
+      "summary": "UVdesk core-framework before 1.1.7 contains a stored cross-site scripting vulnerability in the SwiftMailer configuration identifier parameter of the createMailerConfiguration action. Attackers with ROLE_AGENT can inject malicious script into the identifier field, which is persisted and executed when other members access the configuration update page."
     }
   ]
 }
