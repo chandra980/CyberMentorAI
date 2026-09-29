@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-09-28T08:48:20.490265+00:00",
+  "generated_at": "2026-09-29T08:44:33.830440+00:00",
   "items": [
     {
       "id": "CVE-2026-88772",
@@ -882,284 +882,284 @@
       "due": "2026-07-24"
     },
     {
-      "id": "CVE-2025-12999",
-      "title": "CVE-2025-12999",
+      "id": "CVE-2026-15095",
+      "title": "CVE-2026-15095",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:04.533",
-      "summary": "UrlUtil.getBaseUrl builds the absolute URLs in a response — download links, icons, asset and API URLs — from the X-Forwarded-Host, X-Forwarded-Proto and X-Forwarded-Prefix request headers, with no check on whether the sender was a trusted proxy, falling back to the client-supplied Host header.                                                                                   \n\n                                                                                                                                                                                              \n\n\nThose responses are cached under keys that do not include the host (extension.json since 0.6.0, namespace.details.json since 0.9.0, sitemap since 0.14.5, latest.extension.version.vscode since 0.34.2). A single request carrying a forged header therefore places attacker-chosen URLs into an entry served to every other client for the lifetime of that entry — one hour by default, and cluster-wide where ovsx.redis.enabled is set.\n\n\n\nThe VSIX download URL, its signature URL and the public key URL are all derived from the same base URL, so extension signing does not limit the impact: an attacker who poisons an entry supplies the"
+      "date": "2026-09-22T09:17:04.333",
+      "summary": "The Product Feed Manager for WooCommerce – CTX Feed – Support 220+ Shopping & Social Channels plugin for WordPress is vulnerable to Directory Traversal in all versions up to, and including, 6.6.43 via the 'provider' parameter. This makes it possible for authenticated attackers, with shop manager-level access and above, to delete arbitrary files on the server, which can lead to remote code execution when critical files are deleted. Exploitation requires two sequential REST API calls: first to /wp-json/ctxfeed/v1/make_feed/save_feed_config to persist the traversal payload in wp_options, then to /wp-json/ctxfeed/v1/manage_feeds/delete_feed to trigger the unlink(); deletion is further constrained to files whose extensions match the plugin's validated whitelist (csv, xml, tsv, xls, xlsx, json, txt)."
     },
     {
-      "id": "CVE-2026-15801",
-      "title": "CVE-2026-15801",
+      "id": "CVE-2026-65634",
+      "title": "CVE-2026-65634",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:05.743",
-      "summary": "A vulnerability was found in CRI-O related to the container checkpoint and restore feature. When CRI-O is configured to restore containers from checkpoint archives, insufficient validation of restore metadata may allow a user with sufficient privileges to perform unintended operations on the host filesystem. Successful exploitation requires that container checkpoint and restore functionality is enabled, which is not the default configuration. An attacker must also be able to trigger restoration of a container from untrusted checkpoint content."
+      "date": "2026-09-22T09:17:05.090",
+      "summary": "Inefficient algorithmic complexity in the Erlang/OTP asn1 OBJECT IDENTIFIER decoder allows a remote unauthenticated attacker to cause denial of service by sending a crafted OID during the TLS handshake.\n\nThe BER OID decoder asn1rtt_ber:dec_subidentifiers/3 in lib/asn1/src/asn1rtt_ber.erl and the equivalent PER helper asn1rtt_per_common:dec_subidentifiers/3 in lib/asn1/src/asn1rtt_per_common.erl accumulate a base-128 subidentifier into an unbounded integer using (Av bsl 7) + H per continuation byte. Each shift and addition on the growing accumulator is linear in the number of bits already accumulated, giving quadratic total work in the size of a single subidentifier. The JER helper asn1rtt_jer:json2oid/1 in lib/asn1/src/asn1rtt_jer.erl exhibits the same class of unbounded-integer parsing when decoding a dot-separated OID from JSON. A DER-encoded OBJECT IDENTIFIER with one very large arc (approximately 262 KB of continuation bytes) consumes roughly 13 seconds of CPU on typical hardware.\n\nThe vulnerable decoder is generated into every ASN.1 module that contains an OBJECT IDENTIFIER, including OTP-PUB-KEY which is reached during X.509 certificate parsing via public_key:pkix_decode_cert"
     },
     {
-      "id": "CVE-2026-85010",
-      "title": "CVE-2026-85010",
+      "id": "CVE-2026-68956",
+      "title": "CVE-2026-68956",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:05.920",
-      "summary": "The RestroPress WordPress plugin before 3.4.6 does not validate a client-supplied item add-on price on the server side when items are added to or updated in the cart, allowing unauthenticated users to set an arbitrary price and place orders for an attacker-chosen total, down to and including zero."
+      "date": "2026-09-22T09:17:05.313",
+      "summary": "Allocation of Resources Without Limits or Throttling vulnerability in Erlang/OTP ssh allows an authenticated remote attacker to exhaust node memory by repeatedly opening session channels that are never assigned a handler.\n\nThe \"session\" clause of ssh_connection:handle_msg/4 checks only minimal_remote_max_packet_size before calling setup_session/5, which unconditionally builds a #channel{} record and stores it in the ETS channel cache. The max_channels daemon option is consulted only by ssh_channel_sup:max_num_channels_not_exceeded/2, which counts supervisor children, so a channel that never gets a shell, exec, or subsystem handler is invisible to the limit and setting the option to a finite value does not mitigate the attack. RFC 4254 section 5.1 permits many session channels per connection, and each record costs only a few hundred bytes, so a single authenticated connection can accumulate channels until the node runs out of memory and the emulator terminates, affecting every application on it. No file contents, credentials, or write access are obtainable.\n\nThis issue affects OTP from OTP 18.1.2 before OTP 27.3.4.18, OTP 28.5.0.7, and OTP 29.1.1, corresponding to ssh from 4.1.1 bef"
     },
     {
-      "id": "CVE-2026-85113",
-      "title": "CVE-2026-85113",
+      "id": "CVE-2026-89422",
+      "title": "CVE-2026-89422",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:06.040",
-      "summary": "The GiveWP WordPress plugin before 4.16.9 does not remove shortcode delimiters from donor-supplied values before rendering them on public pages, and the shortcode stripping it applies can be defeated by nesting, allowing unauthenticated users to execute arbitrary shortcodes registered on the site."
+      "date": "2026-09-22T09:17:05.540",
+      "summary": "Key Exchange without Entity Authentication vulnerability in Erlang/OTP ssl allows a peer that answers a TLS 1.3 client connection to impersonate the intended server. A pre_shared_key extension in the ServerHello that the client never offered causes the client to complete the handshake without validating the server's certificate, so ssl:connect returns {ok, Socket} against a peer holding no certificate, no private key and no prior session.\n\ntls_client_connection_1_3:handle_server_hello/2 passes the received extension to tls_gen_connection_1_3:handle_resumption/2, which sets resumption = true on its mere presence without checking that the client offered a PSK. tls_handshake_1_3:get_pre_shared_key/4 meanwhile falls back to the all-zero \"no PSK\" value and keys the handshake with the ordinary non-PSK schedule, so the attacker's own ephemeral key suffices. The resumption flag then routes maybe_resumption/1 straight to wait_finished, skipping the certificate-handling states, so certificate path validation, verify_fun, hostname verification, partial_chain, CRL checking and OCSP stapling are all bypassed. The default client configuration is affected; clients restricted to TLS 1.2 are not.\n\n"
     },
     {
-      "id": "CVE-2026-86802",
-      "title": "CVE-2026-86802",
+      "id": "CVE-2026-93556",
+      "title": "CVE-2026-93556",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:06.157",
-      "summary": "The To Do List Member WordPress plugin through 1.6 does not have authorisation or nonce checks in an import routine, and does not validate the location it fetches the imported data from, allowing unauthenticated users to create arbitrary published posts and taxonomy terms on the site."
+      "date": "2026-09-22T09:17:05.800",
+      "summary": "The ‘/password/guardarClau/recover’ endpoint accepts the ‘usuariId’ parameter, which specifies the account whose password is to be changed. The JWT token for the recovery process is not validated against the user specified in that parameter. An unauthenticated attacker could manipulate the identifier and reset the password for any account, including administrative accounts, which could allow them to take control of the account."
     },
     {
-      "id": "CVE-2026-92400",
-      "title": "CVE-2026-92400",
+      "id": "CVE-2026-93928",
+      "title": "CVE-2026-93928",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:06.270",
-      "summary": "The Payment Gateway for PayPal on WooCommerce WordPress plugin before 9.2.1 does not verify that an incoming payment notification was confirmed in the store's configured payment environment or paid to the store's own merchant account before marking an order complete, allowing unauthenticated users to mark their own orders as paid using a genuine transaction from a payment sandbox they control."
+      "date": "2026-09-22T09:17:05.940",
+      "summary": "Authentication Bypass Using an Alternate Path or Channel vulnerability in Magepeople inc. Taxi Booking Manager for WooCommerce allows Authentication Bypass.\n\nThis issue affects Taxi Booking Manager for WooCommerce: from n/a before 2.0.8."
     },
     {
-      "id": "CVE-2026-94150",
-      "title": "CVE-2026-94150",
+      "id": "CVE-2026-95508",
+      "title": "CVE-2026-95508",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:06.387",
-      "summary": "A security flaw has been discovered in Omega Solution HRM OS up to 20260717. The impacted element is an unknown function of the file /media/view/ of the component SVG File Upload. Performing a manipulation results in cross site scripting. The attack may be initiated remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-22T09:17:06.073",
+      "summary": "A heap-based buffer overflow was found in the DHCPv6 and TFTP response builders of libslirp. When the host is configured with a small interface MTU, a guest-supplied DHCPv6 CLIENTID option or TFTP blksize option can overflow the reply buffer with attacker-controlled content and length, resulting in denial of service and potentially arbitrary code execution in the host process. The default interface MTU is not affected."
     },
     {
-      "id": "CVE-2026-94151",
-      "title": "CVE-2026-94151",
+      "id": "CVE-2026-95511",
+      "title": "CVE-2026-95511",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:06.567",
-      "summary": "A weakness has been identified in Omega Solution HRM OS up to 20260717. This affects an unknown function of the file /role-permission/permission of the component Role Permission API. Executing a manipulation of the argument roleId can lead to missing authentication. The attack may be launched remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-22T09:17:06.217",
+      "summary": "Rejected reason: Not a vulnerability. Creating a serial queue that overwrites cups-files.conf requires membership in SystemGroups (lpadmin), which is an opt-in cupsd admin role granted by a superuser. No privilege boundary is crossed."
     },
     {
-      "id": "CVE-2026-94152",
-      "title": "CVE-2026-94152",
+      "id": "CVE-2026-9231",
+      "title": "CVE-2026-9231",
       "source": "NIST NVD",
-      "date": "2026-09-21T09:17:06.747",
-      "summary": "A security vulnerability has been detected in Omega Solution FBP Fulfillment by People 2025. This impacts an unknown function of the file /user/ of the component User Profile API. The manipulation of the argument ID leads to authorization bypass. Remote exploitation of the attack is possible. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-22T09:17:06.353",
+      "summary": "The WP Travel Engine – Tour Booking Plugin – Tour Operator Software plugin for WordPress is vulnerable to Local File Inclusion in all versions up to, and including, 6.8.0 via the wte_get_template function. This makes it possible for authenticated attackers, with contributor-level access and above, to include and execute arbitrary .php files on the server, allowing the execution of any PHP code in those files. This can be used to bypass access controls, obtain sensitive data, or achieve code execution in cases where .php file types can be uploaded and included."
     },
     {
-      "id": "CVE-2026-91921",
-      "title": "CVE-2026-91921",
+      "id": "CVE-2026-25254",
+      "title": "CVE-2026-25254",
       "source": "NIST NVD",
-      "date": "2026-09-21T10:17:15.873",
-      "summary": "Cross-Site Scripting (XSS) vulnerability due to inadequate input sanitisation in the client-side rendering engine of the 1millionbot AI Chat Platform. An unauthenticated remote user could cause external hyperlinks to be rendered in the web interface by sending messages containing Markdown syntax and certain unsanitised content blocks. The impact is limited to the user’s own interactive session; no compromise of internal infrastructure, access to third-party data or impact on administrative panels has been identified."
+      "date": "2026-09-22T10:17:08.583",
+      "summary": "Improper authorization leads to Remote Code Execution via SocketIO interface."
     },
     {
-      "id": "CVE-2026-92574",
-      "title": "CVE-2026-92574",
+      "id": "CVE-2026-25255",
+      "title": "CVE-2026-25255",
       "source": "NIST NVD",
-      "date": "2026-09-21T10:17:17.360",
-      "summary": "A vulnerability in CRI-O checkpoint restore allows a user who can create a pod from a malicious checkpointed container to bypass the destination Kubernetes security context. The restored process may retain credentials, Linux capabilities, no_new_privs, and seccomp state from the checkpoint instead of enforcing the destination configuration. This can allow execution with elevated privileges across the container security boundary.\nAffected upstream supported versions are CRI-O 1.34 and later. Downstream Red Hat products are affected from OCP 4.17 onward. Fixes have been applied to supported branches but are not yet released.\nExploitation requires permission to create a pod from a malicious checkpoint image and checkpoint restore functionality to be available."
+      "date": "2026-09-22T10:17:08.847",
+      "summary": "Exposed dangerous function lead to privilege escalation via gRPC server."
     },
     {
-      "id": "CVE-2026-94277",
-      "title": "CVE-2026-94277",
+      "id": "CVE-2026-25262",
+      "title": "CVE-2026-25262",
       "source": "NIST NVD",
-      "date": "2026-09-21T10:17:17.570",
-      "summary": "MISP's galaxy matrix statistics view (app/View/Users/statistics_galaxymatrix.ctp) renders the galaxy name directly into HTML output via sprintf() without any HTML encoding. An authenticated user holding the perm_galaxy_editor permission can create or modify a galaxy whose name contains arbitrary HTML or JavaScript markup. Because the value is interpolated verbatim into the page, any user who subsequently opens the galaxy matrix statistics page will have the embedded script executed in their browser context. This enables session hijacking, credential theft, data exfiltration, or the performance of arbitrary actions on behalf of the victim within the MISP application.\n\nVersion affected: <2.5.47"
+      "date": "2026-09-22T10:17:08.973",
+      "summary": "Memory corruption while processing a crafted ELF file in the Primary Bootloader."
     },
     {
-      "id": "CVE-2026-77021",
-      "title": "CVE-2026-77021",
+      "id": "CVE-2026-25264",
+      "title": "CVE-2026-25264",
       "source": "NIST NVD",
-      "date": "2026-09-21T11:17:12.200",
-      "summary": "Improper handling of highly compressed data (data amplification) in Checkmk <2.5.0p14, <2.4.0p37, <2.3.0p51 and 2.2.0 (EOL) allows an attacker who controls a host registered for push mode to exhaust the memory of the agent receiver by sending a small zlib compressed payload that decompresses to an arbitrary size."
+      "date": "2026-09-22T10:17:09.110",
+      "summary": "Privilege escalation due to weak configuration during package extraction process."
     },
     {
-      "id": "CVE-2026-92612",
-      "title": "CVE-2026-92612",
+      "id": "CVE-2026-25265",
+      "title": "CVE-2026-25265",
       "source": "NIST NVD",
-      "date": "2026-09-21T11:17:12.590",
-      "summary": "In Eclipse iceoryx2 versions greater than v0.8.0, the StaticString exposes its contents as mutable bytes through safe APIs, while String::as_str() converts those bytes into a Rust string slice without validating UTF-8. An application can therefore create an invalid &str and trigger undefined behavior using entirely safe Rust."
+      "date": "2026-09-22T10:17:09.243",
+      "summary": "Privilege escalation due to weak configuration while temporary file handling."
     },
     {
-      "id": "CVE-2026-16651",
-      "title": "CVE-2026-16651",
+      "id": "CVE-2026-90882",
+      "title": "CVE-2026-90882",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:10.167",
-      "summary": "temporalio/sqlparser can panic when Parse, ParseStrictDDL, or ParseNext processes a MySQL version comment whose contents are empty or consist only of one to five decimal digits. ExtractMysqlComment does not check the -1 result returned by strings.IndexFunc before using it as a slice boundary. The resulting Go runtime panic propagates unless the caller recovers it on the parsing goroutine, so applications that parse attacker-controlled SQL can terminate. Temporal Server exposes the affected parser through ListWorkers. When that API is enabled, an authenticated caller with namespace read permission can submit a malformed query that terminates the receiving Matching process. Repeated requests can sustain a denial of service. The issue affects availability only; no confidentiality or integrity impact was identified."
+      "date": "2026-09-22T10:17:10.000",
+      "summary": "The open-vsx.org deployment returned Access-Control-Allow-Origin reflecting the requesting origin together with Access-Control-Allow-Credentials: true on the authenticated /user/ endpoints. A page on any origin could therefore issue credentialed requests to the service in a logged-in user's browser and read the responses.\n\n\n\nThis exposed /user (login name, avatar, homepage, tokens URL), /user/tokens, /user/namespaces, /user/extensions, /user/search/{name} and /user/namespace/{name}/members, and — because /user/csrf was readable the same way — allowed the CSRF protection on write endpoints to be defeated. Chaining the two, an attacker page could call /user/token/create and exfiltrate a personal access token carrying publish and delete rights over the victim's namespaces.\n\n\n\nThe headers were emitted by the CDN/edge layer, not by the application: the Open VSX software sets allowCredentials(true) in exactly one place, against a single exact origin derived from ovsx.webui.url, and defines no CORS mapping on /user/ beyond it. No configuration of the software produces origin reflection with credentials."
     },
     {
-      "id": "CVE-2026-16652",
-      "title": "CVE-2026-16652",
+      "id": "CVE-2026-94117",
+      "title": "CVE-2026-94117",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:10.400",
-      "summary": "Temporal Server did not bound the work performed while searching for a Schedule's next action time. An authenticated caller with namespace write permission could create or update a Schedule that combines a fine-grained cadence with an exclusion calendar that rejects every candidate time, causing the server to evaluate excluded candidates without a per-search work budget. This can consume excessive CPU in Frontend and Schedule worker components. A persisted specification can also cause its backing Schedule Workflow to repeatedly fail and retry, allowing CPU consumption to continue without additional requests until the Schedule is deleted or its backing Workflow is terminated. Repeated or parallel exploitation can deny service. The issue affects availability only; it does not expose or modify Workflow data."
+      "date": "2026-09-22T10:17:10.167",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in DevItems HashBar – WordPress Notification Bar allows Blind SQL Injection.\n\nThis issue affects HashBar – WordPress Notification Bar: from n/a through 2.0.3."
     },
     {
-      "id": "CVE-2026-65651",
-      "title": "CVE-2026-65651",
+      "id": "CVE-2026-90990",
+      "title": "CVE-2026-90990",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:15.553",
-      "summary": "temporalio/sqlparser accepts SQL containing deeply nested unary expressions and can return a correspondingly deep abstract syntax tree without enforcing an applicable nesting limit. The library's String and Walk operations recursively traverse that tree. An application that parses attacker-controlled SQL and later formats or walks the returned tree can encounter a runtime-fatal Go stack overflow that terminates the process; Go panic recovery cannot contain this condition. Temporal Server passes caller-controlled query input through the affected parser in archival, visibility, and worker-query paths. In affected validation paths, the Server recursively formats an invalid expression while constructing an error. In a supported authenticated deployment, a caller with namespace read permission can terminate the receiving Frontend or Matching process. The dynamically confirmed ListWorkers route additionally requires at least one retained worker heartbeat. Repeated requests can sustain a denial of service. The issue affects availability only; no confidentiality or integrity impact was identified."
+      "date": "2026-09-22T11:17:25.960",
+      "summary": "Improper neutralization of newlines in filter values in the monitoring host and service list APIs in Checkmk <2.5.0p14 allows an authenticated user to inject additional Livestatus query headers, bypassing object visibility restrictions in count queries to infer information about hosts and services outside their contact groups and occupying web server and Livestatus workers for an attacker-controlled duration."
     },
     {
-      "id": "CVE-2026-65652",
-      "title": "CVE-2026-65652",
+      "id": "CVE-2026-92882",
+      "title": "CVE-2026-92882",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:15.800",
-      "summary": "github.com/temporalio/tchannel-go did not validate the one-byte checksum-type field in inbound TChannel call frames. A network peer that can reach a listener can complete the standard initialization handshake and send a call request with an unsupported checksum type. The parser uses that value as an index into a four-entry checksum pool, causing an unrecovered Go panic on the connection read goroutine and terminating the hosting process. This allows remote denial of service against applications that expose the listener to untrusted peers. The impact is limited to availability; no confidentiality or integrity impact was identified."
+      "date": "2026-09-22T11:17:26.497",
+      "summary": "Insufficiently protected credentials in the host and folder configuration endpoints of the REST API in Checkmk <2.5.0p15, <2.4.0p37, <2.3.0p51 and 2.2.0 (EOL) allows an authenticated user who may view a host's configuration to read stored SNMP community strings, SNMPv3 auth and privacy pass phrases and IPMI passwords in clear text from GET responses, although the setup GUI never displays these values."
     },
     {
-      "id": "CVE-2026-65653",
-      "title": "CVE-2026-65653",
+      "id": "CVE-2026-95623",
+      "title": "CVE-2026-95623",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:15.973",
-      "summary": "github.com/temporalio/tchannel-go did not reject TChannel call fragments containing checksum metadata but no length-prefixed argument chunks. The fragment reader left its chunk slice empty and then unconditionally selected the first element. A network peer can supply such a malformed call fragment, including as a direct initial call request after completing the standard initialization handshake. On that inbound path, the resulting unrecovered Go slice-bounds panic occurs on a library-created dispatch goroutine and terminates the hosting process. This allows remote denial of service against applications that expose the listener to untrusted peers. The impact is limited to availability; no confidentiality or integrity impact was identified."
+      "date": "2026-09-22T11:17:27.357",
+      "summary": "The Tauri HTTP plugin validates requested URLs against the application's configured scope allowlist only once, on the initial request. When the remote server responds with an HTTP 3xx redirect, reqwest follows the redirect internally without re-checking the new target URL against the scope. This allows an attacker who controls an allowed URL (or finds an open redirect on an allowed host) to reach disallowed destinations such as cloud metadata endpoints, localhost services, or internal network hosts."
     },
     {
-      "id": "CVE-2026-65654",
-      "title": "CVE-2026-65654",
+      "id": "CVE-2026-63272",
+      "title": "CVE-2026-63272",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:16.133",
-      "summary": "github.com/temporalio/ringpop-go enforces configured LabelOptions limits when an application changes the local node's labels, but affected versions do not apply those limits to label maps received in SWIM membership changes. A network peer that can reach a live Ringpop TChannel listener can repeatedly submit changes for distinct member addresses containing label keys, values, or counts that exceed the receiver's configured limits. Accepted labels are retained in the member list and disseminated to peers, allowing memory and gossip-bandwidth consumption to exceed configured bounds and potentially making the hosting process unavailable. The fix validates peer-supplied label maps before they are retained or disseminated. Availability only; no confidentiality or integrity impact was identified."
+      "date": "2026-09-22T12:17:11.853",
+      "summary": "LibreOffice can import WMF graphics, which may be embedded in documents. A heap buffer overflow existed when importing a text record that carries its own character advance widths. The count of advance values and the length of the text were read separately from the file and were not required to agree, so drawing the text walked the advance array by character position and ran past its end when the array was the shorter of the two. In fixed versions an advance array shorter than its text is ignored."
     },
     {
-      "id": "CVE-2026-87858",
-      "title": "CVE-2026-87858",
+      "id": "CVE-2026-63273",
+      "title": "CVE-2026-63273",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:22.230",
-      "summary": "Temporal Server decided whether a Workflow completion callback was internal by reading a caller-supplied HTTP header. An authenticated caller holding only write permission in a single namespace could attach a completion callback whose URL host matched the configured callback address allowlist, whose URL path was any Temporal HTTP API route, and whose header map contained a non-empty header named source. When the History service delivered that callback, the non-empty source header caused it to re-target the request at the local frontend client and rewrite only the scheme and host, preserving the caller's path, query, and request body. Where an internal frontend is deployed with its HTTP API enabled, that client resolves to the internal frontend, which authorizes every request as a system administrator without requiring authentication information. The result is that the server performs an attacker-chosen state-changing HTTP POST against its own administrative API on the caller's behalf, in namespaces where the caller has no permission. The caller never needs network access to the internal frontend, because the History service makes the request. Confirmed effects include terminating W"
+      "date": "2026-09-22T12:17:13.007",
+      "summary": "LibreOffice Draw can import PDF documents. A heap buffer overflow existed when importing an encrypted document. The length of the decryption key was taken from the document's own encryption dictionary and was used to fill a fixed size key buffer without being checked against it, so a length larger than that buffer wrote past its end. In fixed versions a declared key length larger than the buffer is rejected."
     },
     {
-      "id": "CVE-2026-89139",
-      "title": "CVE-2026-89139",
+      "id": "CVE-2026-63274",
+      "title": "CVE-2026-63274",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:24.440",
-      "summary": "Temporal Server compiles a Worker Controller Instance module into its Worker Service, and that module registers a compute provider named subprocess whose function is to launch a worker by running a command on the machine hosting the Worker Service. The program name and the argument vector that provider executes are taken from the compute provider configuration supplied in the caller's request rather than from operator configuration. An authenticated caller holding only a write role in a single namespace can therefore configure a worker deployment version so that the Worker Service executes a command of the caller's choosing on its own host, under the account the server process runs as. Execution is immediate rather than deferred: the configuration handler invokes every provider using the invoke strategy directly after validating the submitted specification, so no scaling decision, task arrival, or unusual request sequence is required. Because the Worker Service process holds the persistence credentials for every namespace in the cluster and the cluster's TLS material, the consequence reaches beyond the caller's namespace to the cluster as a whole. The provider is present in the off"
+      "date": "2026-09-22T12:17:13.147",
+      "summary": "LibreOffice Draw can import PDF documents. A heap buffer overflow existed when importing a stream object. The length of the stream was taken from the object's own dictionary and was not checked against the number of bytes actually present, so copying the stream read and wrote past the end of the buffer holding it. In fixed versions the declared length is clamped to the bytes actually read."
     },
     {
-      "id": "CVE-2026-91863",
-      "title": "CVE-2026-91863",
+      "id": "CVE-2026-63275",
+      "title": "CVE-2026-63275",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:24.697",
-      "summary": "A specially crafted WS-Policy document with deeply nested policy elements can bypass Neethi's nesting-depth limit and exhaust the thread stack, crashing the parser (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
+      "date": "2026-09-22T12:17:13.287",
+      "summary": "LibreOffice can read CFF fonts, which may be embedded in documents. A stack buffer overflow existed when reading the hints of a glyph. The number of hints was checked against the wrong bound, so a glyph declaring more hints than the array can hold wrote past its end. In fixed versions the hint count is checked against the capacity the array really has."
     },
     {
-      "id": "CVE-2026-91864",
-      "title": "CVE-2026-91864",
+      "id": "CVE-2026-63276",
+      "title": "CVE-2026-63276",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:24.807",
-      "summary": "A specially crafted WS-Policy document can pack unlimited content inside a policy assertion, which Neethi copies into memory without counting it against its size limits, exhausting the heap (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
+      "date": "2026-09-22T12:17:13.547",
+      "summary": "LibreOffice converts CFF fonts to Type 1 when it subsets a font, which happens when a document is exported to PDF, and CFF fonts may be embedded in documents. A stack buffer overflow existed in that conversion. The converted operators were written into a fixed size buffer with no check that they still fit, so a glyph emitting many operators wrote past the end of the buffer. In fixed versions the remaining capacity is tracked and the conversion stops when it is used up."
     },
     {
-      "id": "CVE-2026-91865",
-      "title": "CVE-2026-91865",
+      "id": "CVE-2026-63278",
+      "title": "CVE-2026-63278",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:24.903",
-      "summary": "A small WS-Policy document using repeated policy references can force Neethi to re-expand the same references exponentially during normalization, consuming huge amounts of CPU and memory (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
+      "date": "2026-09-22T12:17:13.720",
+      "summary": "URLs could be constructed which expanded environment variable or INI file values, so potentially sensitive information could be exfiltrated to a remote server on opening a document containing such links. The check added for CVE-2024-12426 did not recognise every way of naming the package content provider, so a URL that named it differently still reached the expansion. In fixed versions the package content provider is matched when the URL is checked."
     },
     {
-      "id": "CVE-2026-91866",
-      "title": "CVE-2026-91866",
+      "id": "CVE-2026-63279",
+      "title": "CVE-2026-63279",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:25.000",
-      "summary": "A specially crafted pair of WS-Policy documents can force Neethi's policy-intersection to do exponential amounts of work, pinning the CPU for a long time (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
+      "date": "2026-09-22T12:17:13.850",
+      "summary": "LibreOffice can import PICT images, which may be embedded in documents. An out of bounds read existed when importing an image that uses a colour palette. The palette index held in the image data was used without being checked against the number of entries the palette has, so an index past the last entry read memory outside the palette. In fixed versions the palette index is limited to the entries present."
     },
     {
-      "id": "CVE-2026-91867",
-      "title": "CVE-2026-91867",
+      "id": "CVE-2026-74849",
+      "title": "CVE-2026-74849",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:25.107",
-      "summary": "When Neethi fetches a remote policy reference, it only limits the time per read, not the whole transfer, so a server that trickles bytes slowly can keep the fetch alive indefinitely and tie up the calling thread (denial of service).\nUsers are recommended to upgrade to version 3.2.4, which fixes this issue."
+      "date": "2026-09-22T12:17:14.007",
+      "summary": "Zohocorp ManageEngine ADSelfService Plus versions before build 7001 are vulnerable to a remote code execution vulnerability in the GINA client."
     },
     {
-      "id": "CVE-2026-94210",
-      "title": "CVE-2026-94210",
+      "id": "CVE-2026-87119",
+      "title": "CVE-2026-87119",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:27.177",
-      "summary": "A flaw has been found in Hyve5 Leantime up to 3.9.8. Affected by this vulnerability is the function getAllGrouped of the file app/Domain/Tickets/Services/Tickets.php of the component Kanban Board. This manipulation causes cross site scripting. The attack is possible to be carried out remotely. The exploit has been published and may be used. Patch name: a30a6837b4071ac05a4f58d0e1baa2c62aa8695e. To fix this issue, it is recommended to deploy a patch."
+      "date": "2026-09-22T12:17:14.150",
+      "summary": "Authentication Bypass by Capture-replay in ZenHive mpp allows an attacker holding a captured subscription activation credential to charge the payer repeatedly.\n\nThe payer signs a Tempo KeyAuthorization over the chain id, key type, key id, expiry, limits and scopes only, with nothing tying it to the challenge that prompted it. MPP.Methods.Tempo.KeyAuthorization.verify/3 in lib/mpp/methods/tempo/key_authorization.ex pins each of those signed fields against the subscription request, and the access key it pins is a static per-endpoint server key, so one signed authorization verifies against every challenge the server issues for the same subscription terms. MPP.Methods.Tempo.Subscription.activate/4 deduplicates activations by challenge id, so presenting the captured credential under a fresh challenge produces a different dedup key, claim_activation succeeds, and the subscription transaction is built and broadcast again. Each replay charges the payer's wallet a new first-period settlement and re-authorizes the server key, bounded only by the subscription expiry and the chain's own semantics for re-installing an existing key.\n\nThis issue affects mpp: from 0.14.0 before 0.16.2."
     },
     {
-      "id": "CVE-2026-94368",
-      "title": "CVE-2026-94368",
+      "id": "CVE-2026-89420",
+      "title": "CVE-2026-89420",
       "source": "NIST NVD",
-      "date": "2026-09-21T12:17:29.010",
-      "summary": "A flaw was found in the signature verification logic of noobaa-core, the core component of the NooBaa Multicloud Object Gateway. The issue occurs when the service processes S3 presigned URLs using Signature Version 4 (SigV4). Due to improper validation, the service fails to reject requests containing unsigned x-amz- headers, instead simply dropping them from the signature calculation. This allows an attacker who possesses a valid presigned PUT URL to add an unsigned x-amz-copy-source header, effectively converting a simple upload into a CopyObject operation. This can lead to unauthorized access and copying of any data the original signer is permitted to reach across the entire storage system."
+      "date": "2026-09-22T12:17:14.370",
+      "summary": "Improper Validation of Specified Quantity in Input in ZenHive mpp allows a client holding an open payment channel to obtain paid resources without being charged.\n\nMPP.Session.Actions.accept_voucher/3 in lib/mpp/session/actions.ex treats a voucher whose cumulativeAmount equals the channel's already-accepted cumulative amount as an idempotent success, returning the channel unchanged without calling maybe_spend/2. The credential verifies, the protected resource is served, and spent and units stay where they were. Because the server issues a fresh challenge per request and the credential replay store keys on challenge id and payload, the same signed voucher can be re-presented under every new challenge, so one paid voucher yields an unbounded number of paid units. The path is reachable from any method built on MPP.Session.Method through the Plug, MCP, JSON-RPC and WebSocket transports.\n\nThis issue affects mpp: from 0.14.0 before 0.16.2."
     },
     {
-      "id": "CVE-2026-84285",
-      "title": "CVE-2026-84285",
+      "id": "CVE-2026-95270",
+      "title": "CVE-2026-95270",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:10.830",
-      "summary": "An OS Command Injection vulnerability affecting Tuleap Enterprise Edition from 17.3 through 17.5 could allow an attacker to execute arbitrary commands on the server."
+      "date": "2026-09-22T12:17:14.557",
+      "summary": "A flaw has been found in dgtlmoon changedetection.io up to 0.60.7. The affected element is the function check_password of the file changedetectionio/flask_app.py of the component Hash Comparison. This manipulation of the argument Password causes observable timing discrepancy. The attack is possible to be carried out remotely. A high degree of complexity is needed for the attack. The exploitability is described as difficult. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94211",
-      "title": "CVE-2026-94211",
+      "id": "CVE-2026-75791",
+      "title": "CVE-2026-75791",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:11.953",
-      "summary": "A vulnerability has been found in Hyve5 Leantime up to 3.9.8. Affected by this issue is some unknown functionality of the file /app/Domain/Dashboard/Templates/show.blade.php of the component Project Dashboard. Such manipulation leads to cross site scripting. The attack may be performed from remote. The exploit has been disclosed to the public and may be used. \"EDIT perm\" needed to plant; fires cross-user for anyone viewing the project dashboard since the poisoned label name is echoed raw. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-22T13:17:11.170",
+      "summary": "Zohocorp ManageEngine ADSelfService Plus versions before build 7001 are vulnerable to an authentication bypass vulnerability in the REST API."
     },
     {
-      "id": "CVE-2026-94214",
-      "title": "CVE-2026-94214",
+      "id": "CVE-2026-93616",
+      "title": "CVE-2026-93616",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:12.170",
-      "summary": "A vulnerability was found in ST Engineering iDirect Evolution and Velocity WebServer Evolution up to 20260717. This affects an unknown part of the file /login.html of the component Management Service. Performing a manipulation of the argument Host results in open redirect. It is possible to initiate the attack remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-22T13:17:11.963",
+      "summary": "A directory traversal and file upload vulnerability allows an unauthenticated attacker to upload and execute arbitrary scripts on Check Point Management Server."
     },
     {
-      "id": "CVE-2026-94216",
-      "title": "CVE-2026-94216",
+      "id": "CVE-2026-95271",
+      "title": "CVE-2026-95271",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:12.360",
-      "summary": "A vulnerability was determined in ST Engineering iDirect Evolution and Velocity WebServer Evolution up to 20260717. This vulnerability affects the function authorize of the file /usr/sbin/webserver of the component HTTP Header Handler. Executing a manipulation of the argument Success can lead to open redirect. It is possible to launch the attack remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-22T13:17:12.767",
+      "summary": "A vulnerability has been found in dgtlmoon changedetection.io up to 0.60.7. The impacted element is the function check_authentication of the file changedetectionio/flask_app.py of the component Authentication Hook. Such manipulation leads to improper authentication. The attack may be performed from remote. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94372",
-      "title": "CVE-2026-94372",
+      "id": "CVE-2026-95272",
+      "title": "CVE-2026-95272",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:12.540",
-      "summary": "MISP contains a stored cross-site scripting (XSS) vulnerability in the default theme's Galaxies index page. When a MISP instance detects unknown custom or default galaxy clusters during synchronization, it renders sample tag names in an informational notice directed at site administrators. In the default theme, these sample tag names were inserted into the HTML output without HTML-entity encoding. A user with tag-editor privileges could craft a malicious misp-galaxy tag containing arbitrary script. When a site administrator subsequently viewed the Galaxies index page, the crafted tag content was interpreted as executable markup in the administrator's browser session, enabling the attacker to read session data, perform actions on behalf of the administrator, or otherwise compromise the administrator's browser context. The Overmind theme already applied HTML escaping to the same values and was not affected. The vulnerability requires the attacker to possess tag-editor-level access to create the crafted tag and requires the victim (a site administrator) to view the Galaxies index page in the default theme. The impact is limited to the administrator's browser session and does not direc"
+      "date": "2026-09-22T13:17:12.950",
+      "summary": "A vulnerability was found in dgtlmoon changedetection.io up to 0.60.7. This affects the function static_content of the file changedetectionio/flask_app.py of the component Screenshot Handler. Performing a manipulation of the argument filename results in path traversal. It is possible to initiate the attack remotely. The attack is considered to have high complexity. The exploitability is reported as difficult. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94373",
-      "title": "CVE-2026-94373",
+      "id": "CVE-2026-95273",
+      "title": "CVE-2026-95273",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:12.757",
-      "summary": "MISP contains a DOM-based cross-site scripting (XSS) vulnerability in the contextual menu JavaScript component. The ContextualMenu class populates HTML <option> elements by assigning user-controllable values to the innerHTML property. Because innerHTML parses and renders HTML markup, any untrusted string supplied as the option text (value.text or value) is interpreted as live DOM content rather than plain text. An attacker who can influence the data rendered in the contextual menu can inject arbitrary HTML or JavaScript that executes in the victim's browser within the MISP application origin. This may allow session hijacking, data exfiltration, or unauthorized actions performed on behalf of the authenticated user.\n\nVersion affected: <2.5.47"
+      "date": "2026-09-22T13:17:13.123",
+      "summary": "A vulnerability was determined in dgtlmoon changedetection.io up to 0.60.7. This impacts the function static_content of the file changedetectionio/flask_app.py of the component visual_selector_data. Executing a manipulation of the argument filename can lead to path traversal. It is possible to launch the attack remotely. The exploit has been publicly disclosed and may be utilized. Distinct from CVE-2026-25527, which fixed a different parameter (group) in the same function. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94374",
-      "title": "CVE-2026-94374",
+      "id": "CVE-2026-95619",
+      "title": "CVE-2026-95619",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:12.953",
-      "summary": "MISP contains an insecure direct object reference vulnerability in the processModuleResultsData method of the Event model. When processing module results, the code iterates over EventReport entries supplied in the resolved data and saves each one. Unlike the adjacent attribute and object processing loops, the report loop did not unset the client-supplied 'id' field before calling save(). Because the MISP EventReport model's create() method does not strip the id field, an authenticated user with permission to submit module results could include an 'id' value referencing an existing report belonging to a different event. Upon save(), the ORM would update that existing row rather than insert a new one, allowing the attacker to \n\n - read the content of another event's report by reparenting it into their own event\n - overwrite the report's fields with attacker-controlled data\n - change the report's event_id to redirect ownership. \n\n\n\n\nThis constitutes an authorization bypass through a user-controlled key, enabling cross-event data disclosure and integrity compromise. The vulnerability requires an authenticated session with the ability to invoke module result processing on an event.\n\nVer"
+      "date": "2026-09-22T13:17:13.300",
+      "summary": "A flaw was found in libstdc++. An integer overflow can occur when processing large inputs to the aligned operator new in the C++ library. This vulnerability could lead to an undersized memory allocation, potentially causing memory corruption or application instability."
     },
     {
-      "id": "CVE-2026-94379",
-      "title": "CVE-2026-94379",
+      "id": "CVE-2026-95658",
+      "title": "CVE-2026-95658",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:13.200",
-      "summary": "The login() function in MISP's UsersController.php contained insufficient HTTP method validation for several security-critical code paths. The original code used an allowlist approach, checking only for specific HTTP methods (POST and PUT) before enforcing bruteforce protection, email one-time-password (OTP) verification, and login-failure logging. Because the checks were not exhaustive, an unauthenticated attacker could issue login requests using other HTTP methods and bypass all three security controls simultaneously. Specifically: \n\n - the bruteforce blocklisting check and attempt counter were skipped, allowing unlimited credential-guessing attempts without being rate-limited or blocked\n -  the email OTP two-factor authentication step was skipped, defeating the second factor of authentication\n - login-failure events were neither logged nor counted, removing the audit trail and the mechanism that would normally trigger a blocklist entry.\n\n\n\n\nThe security impact is the effective disabling of brute-force protection and multi-factor authentication for any attacker who can craft an HTTP request with a non-POST/PUT method to the login endpoint, potentially leading to credential compro"
+      "date": "2026-09-22T13:17:13.577",
+      "summary": "MISP's WorkflowsController exposed the moduleStatelessExecution action in the Security component's unlockedActions list. In CakePHP, listing an action in unlockedActions disables both the CSRF token check and the field hash validation for that action. Because moduleStatelessExecution executes a workflow module's exec() method with caller-supplied input and parameters, the absence of CSRF protection allowed an attacker to craft a cross-site form post (or equivalent cross-origin request) that, when submitted by an authenticated site administrator, would cause the administrator's browser to invoke the action on the MISP instance. \n\nThe attacker could select any workflow module to execute, including action modules that write blocklist and warninglist entries, and supply arbitrary input and parameters of their choosing. This constitutes a cross-site request forgery (CSRF) vulnerability with high integrity impact on the MISP instance's security-related data. \n\nThe vulnerability was identified during an internal security review and was not externally reported. The fix is included in MISP v2.5.47."
     },
     {
-      "id": "CVE-2026-94381",
-      "title": "CVE-2026-94381",
+      "id": "CVE-2026-95659",
+      "title": "CVE-2026-95659",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:13.360",
-      "summary": "MISP has a security issue that can let a user gain more access than their API key is supposed to allow.\n\nA read-only API key should only let someone view information. However, after logging in with such a key, a specific MISP function could accidentally restore the user’s normal account permissions. This means someone with a read-only API key could potentially gain write, delete, or even administrator access if their underlying account has those permissions.\n\nExploiting the issue requires a valid read-only API key and a single request to the affected function.\n\nThe main impact is that MISP’s API key restrictions can be bypassed, allowing actions that the API key was specifically meant to prevent.\n\n\n\n\nVersion affected: <2.5.47"
+      "date": "2026-09-22T13:17:13.797",
+      "summary": "MISP contains a reflected cross-site scripting (XSS) vulnerability in the AnalystDataController::viewForObject action. The method accepted a parent object type parameter from the URL without validation and passed it to the Overmind-themed AnalystData thread view element, where it was interpolated into two translated strings and rendered into the HTML response without output encoding. An authenticated attacker who can induce a victim to navigate to a crafted URL can inject arbitrary JavaScript that executes in the victim's browser within the MISP application context. This may allow the attacker to read session data, manipulate the page, or perform actions on behalf of the victim. \n\nThe vulnerability requires the victim to be authenticated to MISP and to actively visit the attacker-supplied URL. The affected component is the AnalystData controller and the Overmind theme's AnalystData thread element.\n\nVersion affected: <2.5.47"
     },
     {
-      "id": "CVE-2026-94383",
-      "title": "CVE-2026-94383",
+      "id": "CVE-2026-95661",
+      "title": "CVE-2026-95661",
       "source": "NIST NVD",
-      "date": "2026-09-21T13:17:13.560",
-      "summary": "The MISP blocklist workflow module accepted a user-supplied blocklist filename parameter without validating the file extension. The only sanitization applied was basename() to strip path components and a check for empty or dot values. A site administrator could specify a filename with an arbitrary extension that would be placed in the MISP export directory. If the underlying web server is configured to interpret and execute scripts from that directory, the resulting file could be invoked, leading to arbitrary code execution in the context of the web server process.\n\nThe vulnerability requires the attacker to hold site-administrator privileges within MISP, as the blocklist workflow module is restricted to that role. No additional user interaction is required beyond triggering the workflow action with a crafted filename parameter. The impact is full compromise of the MISP server's confidentiality, integrity, and availability, as arbitrary script execution grants the attacker the same privileges as the web server user.\n\nVersion affected: <2.5.47"
+      "date": "2026-09-22T13:17:14.050",
+      "summary": "MISP contains a reflected cross-site scripting (XSS) vulnerability in the attribute histogram view. The $selectedTypes variable, which is derived from the URL path segment , was interpolated directly into a JavaScript array literal inside an onClick HTML attribute without any encoding or escaping. An attacker who can cause an authenticated MISP user to visit a crafted URL containing a malicious type value can execute arbitrary JavaScript in the victim's browser within the MISP application origin.\n\nSuccessful exploitation allows the attacker to read session cookies, perform actions on behalf of the victim, or exfiltrate sensitive data accessible from the MISP interface. \n\nThe vulnerability requires the victim to be authenticated and to actively navigate to the attacker-supplied URL."
     },
     {
-      "id": "CVE-2025-71419",
-      "title": "CVE-2025-71419",
+      "id": "CVE-2026-12718",
+      "title": "CVE-2026-12718",
       "source": "NIST NVD",
-      "date": "2026-09-21T14:17:14.303",
-      "summary": "UVdesk core-framework before 1.1.7 contains a stored cross-site scripting vulnerability in the SwiftMailer configuration identifier parameter of the createMailerConfiguration action. Attackers with ROLE_AGENT can inject malicious script into the identifier field, which is persisted and executed when other members access the configuration update page."
+      "date": "2026-09-22T14:17:12.490",
+      "summary": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Karel Electronic Industry and Trade Inc. KarelIPS allows Blind SQL Injection.\n\nThis issue affects KarelIPS: through 22092026.\nNOTE: The vendor was contacted and it was learned that the product is not supported."
     }
   ]
 }
