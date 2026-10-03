@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-10-02T08:41:07.790066+00:00",
+  "generated_at": "2026-10-03T08:20:11.078254+00:00",
   "items": [
+    {
+      "id": "CVE-2026-102490",
+      "title": "CVE-2026-102490 - Zammad GmbH Zammad Improper Privilege Management Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-02",
+      "vendor": "Zammad GmbH",
+      "product": "Zammad",
+      "summary": "Zammad GmbH Zammad contains an improper privilege management vulnerability that can allow the local zammad user to escalate privileges to root. This vulnerability can be chained with CVE-2026-102489.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-05"
+    },
+    {
+      "id": "CVE-2026-102489",
+      "title": "CVE-2026-102489 - Zammad GmbH Zammad Session Fixation Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-02",
+      "vendor": "Zammad GmbH",
+      "product": "Zammad",
+      "summary": "Zammad GmbH Zammad contains a session fixation vulnerability that can lead to remote code execution as the zammad user. This vulnerability can be chained with CVE-2026-102490.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-05"
+    },
     {
       "id": "CVE-2026-104286",
       "title": "CVE-2026-104286 - Fortinet FortiMail Path Traversal Vulnerability",
@@ -860,306 +882,284 @@
       "due": "2026-07-30"
     },
     {
-      "id": "CVE-2026-16232",
-      "title": "CVE-2026-16232 - Check Point SmartConsole Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-07-22",
-      "vendor": "Check Point",
-      "product": "SmartConsole",
-      "summary": "Check Point SmartConsole contains an improper authentication vulnerability which could allow an unauthenticated remote attacker to obtain an application login token and use it to authenticate with full administrative privileges.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-25"
-    },
-    {
-      "id": "CVE-2026-50522",
-      "title": "CVE-2026-50522 - Microsoft SharePoint Deserialization of Untrusted Data Vulnerability ",
-      "source": "CISA KEV",
-      "date": "2026-07-22",
-      "vendor": "Microsoft",
-      "product": "SharePoint",
-      "summary": "Microsoft SharePoint contains a deserialization of untrusted data vulnerability which could allow an unauthorized attacker to execute code over a network.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-25"
-    },
-    {
-      "id": "CVE-2026-6082",
-      "title": "CVE-2026-6082",
+      "id": "CVE-2026-100312",
+      "title": "CVE-2026-100312",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.210",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '/inventory/configuration/payment-methods' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T09:16:37.087",
+      "summary": "A security flaw has been discovered in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. The impacted element is an unknown function of the file /updateguest.php. Performing a manipulation of the argument gname/editassid results in sql injection. It is possible to initiate the attack remotely. The exploit has been released to the public and may be used for attacks. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-6083",
-      "title": "CVE-2026-6083",
+      "id": "CVE-2026-98163",
+      "title": "CVE-2026-98163",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.363",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '\n/inventory/configuration/pricing-tiers' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T09:16:38.303",
+      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ncgroup: Avoid iteration of dying tasks with zero refcount\n\nThe commit 260fbcb92bbea (\"cgroup: Move dying_tasks cleanup from\ncgroup_task_release() to cgroup_task_free()\") extended the lifetime of\ntasks on the dying_tasks list.\nThe iterators have provision to go through dying_tasks because of\ndying threadgroup leaders or explicit CSS_TASK_ITER_WITH_DEAD, however,\nit was expected that such tasks can obtain a new reference (that is\npossible before cgroup_task_release()/put_task_struct_rcu_user()).\nThe tasks after cgroup_task_release() and before cgroup_task_free()\nare subject to race when they may or may not have ->usage count > 0.\n\nThe race window is between css_task_iter_next() invocations\nwhen css_set_lock is released and we may arrive at a new ->task_pos.\nThe iterator should not attempt to resurrect tasks whose ->usage count\ndropped to zero. (When that happens, __put_task_struct_rcu_cb() is\nalready imminent and the returned task_struct would could be used\nafter free.)\n\nAs for the fix, we cannot simply check the signal->live count of a task\non the dying list because that won't distinguish regular zombies waiting\nto"
     },
     {
-      "id": "CVE-2026-6084",
-      "title": "CVE-2026-6084",
+      "id": "CVE-2026-100313",
+      "title": "CVE-2026-100313",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.487",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '/inventory/configuration/variants' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T12:17:33.267",
+      "summary": "A weakness has been identified in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. This affects an unknown function of the file updatequery.php. Executing a manipulation of the argument queryx can lead to cross site scripting. It is possible to launch the attack remotely. The exploit has been made available to the public and could be used for attacks. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-6085",
-      "title": "CVE-2026-6085",
+      "id": "CVE-2026-100314",
+      "title": "CVE-2026-100314",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.610",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '/inventory/configuration/serial-number-types' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T12:17:35.227",
+      "summary": "A security vulnerability has been detected in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. This impacts an unknown function of the file updatedetailsfromstudent.php. The manipulation of the argument eno leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed publicly and may be used. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-6086",
-      "title": "CVE-2026-6086",
+      "id": "CVE-2026-100315",
+      "title": "CVE-2026-100315",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.733",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '/inventory/configuration/serial-number-types' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T13:16:36.050",
+      "summary": "A vulnerability was detected in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. Affected is an unknown function of the file mydetailsfaculty.php. The manipulation of the argument myfid results in sql injection. The attack can be launched remotely. The exploit is now public and may be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-6087",
-      "title": "CVE-2026-6087",
+      "id": "CVE-2026-100600",
+      "title": "CVE-2026-100600",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.853",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '/inventory/configuration/categories' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T14:16:39.420",
+      "summary": "ClawHub (the openclaw/clawhub application/backend) does not bind anonymous HTTP API requests to a trusted caller identity, so all direct anonymous API requests share a single default quota allowance. A remote, unauthenticated caller can drain that shared allowance and thereby deny or degrade API access for unrelated visitors. In addition, when the TRUST_FORWARDED_IPS option is enabled without an authenticated edge/proxy, clients can supply arbitrary forwarded IP headers to select quota identities of their choosing and evade rate limiting. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. It is fixed in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650 (PR #3684), where direct anonymous calls are redirected to the public API origin without consuming quota and forged identity assertions return HTTP 401. The npm CLI and OpenClaw runtime are separate products and are not affected."
     },
     {
-      "id": "CVE-2026-6088",
-      "title": "CVE-2026-6088",
+      "id": "CVE-2026-100601",
+      "title": "CVE-2026-100601",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:05.973",
-      "summary": "Stored Cross-Site Scripting (XSS) vulnerability in StockAgile API and management panel. The vulnerability is present on the server side in REST endpoint '/inventory/configuration/categories' that allow the injection and persistence of malicious JavaScript code through parameters such as ‘code’, ‘name’, and other text fields. The scripts that are entered are not filtered or validated correctly before being displayed on the web panel that authenticated users can access. Exploiting this vulnerability could allow a remote, previously authenticated attacker to execute arbitrary JavaScript code."
+      "date": "2026-09-26T14:16:40.040",
+      "summary": "ClawHub (openclaw/clawhub) application/backend contains a server-side request forgery vulnerability in the public profile preview's image fetching. The preview accepts a user-supplied image URL and checks the textual hostname against private-address patterns, but does not validate or pin the resolved network destination, so a public-looking hostname can resolve to an internal address or change resolution between validation and connection (DNS rebinding). A maintainer-run local harness demonstrated an outbound connection to an owner-controlled loopback listener; access to production internal services, credential disclosure, and code execution were not demonstrated. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. Fixed by PR #3683, included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650, which was deployed to clawhub.ai on 2026-09-11; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
     },
     {
-      "id": "CVE-2026-80514",
-      "title": "CVE-2026-80514",
+      "id": "CVE-2026-100602",
+      "title": "CVE-2026-100602",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.093",
-      "summary": "The wpForo Forum WordPress plugin from 3.0.0 before 3.1.6 does not verify the source of client-supplied IP address headers before using them to key its per-visitor rate limit on paid AI requests, allowing unauthenticated attackers to bypass the limit by spoofing the header and exhaust the site owner's metered AI credits."
+      "date": "2026-09-26T14:16:40.187",
+      "summary": "ClawHub (openclaw/clawhub application/backend) contains a missing authorization check in the changelog preview feature. A signed-in caller can invoke the public skills:generateChangelogPreview action for a skill they are not authorized to access; the previous version is read without the file-read authorization enforced on normal content access, and up to 8,000 characters of quarantined content may be submitted to the AI provider and reflected in the preview returned to the caller, disclosing restricted skill content. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. It is fixed by PR #3682, included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650, which was deployed to clawhub.ai on 2026-09-11; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
     },
     {
-      "id": "CVE-2026-86837",
-      "title": "CVE-2026-86837",
+      "id": "CVE-2026-100603",
+      "title": "CVE-2026-100603",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.210",
-      "summary": "The Bookly WordPress plugin before 28.3 does not properly verify a customer's identity before updating their stored details, allowing unauthenticated attackers who know a customer's primary identifier to overwrite that customer's stored personal information such as name, email and address."
+      "date": "2026-09-26T14:16:40.330",
+      "summary": "ClawHub (openclaw/clawhub) application/backend contains a flaw in the skill report moderation flow: four distinct ordinary authenticated accounts can report a visible skill and trigger automatic hiding (moderationStatus: hidden) of that skill from the catalog without any moderator decision. Because the reporter quota counts only reports filed against visible targets, the same accounts can repeat the process against additional skills; official skills are not exempt. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. The fix (PR #3681) is included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
     },
     {
-      "id": "CVE-2026-88848",
-      "title": "CVE-2026-88848",
+      "id": "CVE-2026-100604",
+      "title": "CVE-2026-100604",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.323",
-      "summary": "The MasterStudy LMS WordPress plugin from 1.9 before 3.7.50 does not verify that a course a member asks to enrol in is covered by their membership plan, nor that the plan identifier submitted with the request is one they actually hold, allowing any member to enrol themselves into restricted paid courses outside their plan and beyond the number of courses it entitles them to."
+      "date": "2026-09-26T14:16:40.473",
+      "summary": "ClawHub (openclaw/clawhub) contains an incorrect authorization vulnerability in the ClawHub application/backend: an organization-owned skill retains the ownerUserId of its original publisher, and transfer and lifecycle authorization checks trust that historical user before requiring current organization privileges. An authenticated user who originally published an organization skill can therefore transfer, delete, or restore that skill — taking control of its trusted name and history — even after their organization privileges have been revoked or downgraded. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. It is fixed by PR #3680, included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650, which was deployed to clawhub.ai on 2026-09-11; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
     },
     {
-      "id": "CVE-2026-92550",
-      "title": "CVE-2026-92550",
+      "id": "CVE-2026-100605",
+      "title": "CVE-2026-100605",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.447",
-      "summary": "A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.\n\nThis issue affects Apache Qpid Broker-J: through 10.1.0.\n\nUsers are recommended to upgrade to version 10.1.1, which fixes the issue."
+      "date": "2026-09-26T14:16:40.620",
+      "summary": "Flowise through 3.1.4 contains missing route-level RBAC checks on chat message endpoints that allow low-privileged API keys to read and delete chat history. Attackers with valid but low-privileged API keys can access GET and DELETE chat message routes without required flow permissions to read chat histories, prompts, model responses, and delete messages."
     },
     {
-      "id": "CVE-2026-92560",
-      "title": "CVE-2026-92560",
+      "id": "CVE-2026-100606",
+      "title": "CVE-2026-100606",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.587",
-      "summary": "A pre-authentication attacker could leverage type size/count handling to cause excessive allocation leading to potential denial of service.\n\nThis issue affects Apache Qpid Broker-J: through 10.1.0.\n\nUsers are recommended to upgrade to version 10.1.1, which fixes the issue."
+      "date": "2026-09-26T14:16:40.820",
+      "summary": "Flowise through 3.1.4 (Enterprise/platform mode with SSO enabled) contains an authentication bypass in the SSO login path. When an SSO callback arrives with an email matching a user whose status is INVITED, verifyAndLogin (SSOBase.ts:80-94) copies the user record from the database — including the server-stored single-use invitation tempToken — into the data passed to AccountService.register(). The register handler's token lookup, email match, and expiry checks therefore pass trivially against the server's own token instead of a caller-supplied one, and the account and its organization membership are flipped to ACTIVE. As a result, anyone able to authenticate at any configured SSO provider using a pending invitee's email address as the email claim can take over that invitation and obtain the invited user's access to the organization without ever possessing the emailed invitation token, for as long as the invitation is valid (24 hours by default). At the time of the advisory no patched version was available."
     },
     {
-      "id": "CVE-2026-92564",
-      "title": "CVE-2026-92564",
+      "id": "CVE-2026-100607",
+      "title": "CVE-2026-100607",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.717",
-      "summary": "A pre-authentication attacker could leverage type nesting to cause a StackOverflowError potentially leading to denial of service.\n\nThis issue affects Apache Qpid Broker-J: through 10.1.0.\n\nUsers are recommended to upgrade to version 10.1.1, which fixes the issue."
+      "date": "2026-09-26T14:16:40.983",
+      "summary": "Flowise through 3.1.4 resolves SSO and local-password users solely by email without storing provider or subject identifier bindings, allowing attackers to authenticate as any existing user by claiming their email at any configured SSO provider. Attackers can gain complete account access including chatflows, credentials, and API keys by authenticating through a different SSO provider or local password than the victim's original registration method."
     },
     {
-      "id": "CVE-2026-92573",
-      "title": "CVE-2026-92573",
+      "id": "CVE-2026-100608",
+      "title": "CVE-2026-100608",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:06.837",
-      "summary": "Improper handling of compressed data in the shared GZIP decompressor used for AMQP 0-8/0-9/0-9-1 and AMQP 0-10 message delivery, message conversion and HTTP management JSON rendering allows authenticated message producers to exhaust memory and disrupt broker availability via processing without a decompressed-output limit.\n\nThis issue affects Apache Qpid Broker-J: through 10.1.0.\n\nUsers are recommended to upgrade to version 10.1.1, which fixes the issue."
+      "date": "2026-09-26T14:16:41.140",
+      "summary": "Flowise through 3.1.4 does not enforce authorization on the BullMQ admin dashboard. When the server runs in queue mode with the dashboard enabled and not in cloud mode (MODE=queue, ENABLE_BULLMQ_DASHBOARD=true, and !isCloud()), the /admin/queues mount is protected only by the verifyTokenForBullMQDashboard middleware, which validates the JWT but performs no role, permission, or workspace/organization scoping check; the mount also lies outside /api/v1/* so the global API gate does not apply. As a result, any authenticated user — including the lowest-privileged member of any tenant — can reach the full Bull-Board UI and view all queues and job payloads across the entire instance, including chat inputs and overrideConfig (which may carry credentials and prompts), chatflow.flowData graph definitions with custom function source code, credential IDs and system prompts, chatIds, files, and the originating orgId/workspaceId. The dashboard's write actions (retry, remove, promote, clean) are likewise usable across tenants. No patched version is available as of the advisory."
     },
     {
-      "id": "CVE-2026-97863",
-      "title": "CVE-2026-97863",
+      "id": "CVE-2026-100609",
+      "title": "CVE-2026-100609",
       "source": "NIST NVD",
-      "date": "2026-09-25T09:17:08.003",
-      "summary": "The cisco_firesight_manager_ACL_rule_export module in misp-modules generates a shell script (.sh) that authenticates to and calls the Cisco fireSIGHT Manager API. The module interpolates configuration values (IP address, login, password, domain ID, policy ID) and MISP attribute values (destination IPs, URLs, event info comments) directly into single-quoted shell string assignments without any escaping or sanitization. Because the values are placed inside single-quoted shell strings, any value containing a single-quote character (e.g., a crafted ip-dst or url attribute value submitted to MISP) breaks out of the quoting context, allowing an attacker to inject arbitrary shell commands into the exported script. A security analyst who subsequently executes the generated .sh file unmodified would run the injected commands with their own privileges, potentially exposing fireSIGHT Manager credentials, modifying ACL rules, or compromising the analyst workstation. Additionally, the module contained a secondary defect where the variable 'config' was only assigned inside a conditional block but referenced unconditionally afterward, causing a NameError (denial of service) when the request paylo"
+      "date": "2026-09-26T14:16:41.297",
+      "summary": "Flowise (npm packages `flowise` and `flowise-components`) through 3.1.4 looks up credentials by ID without filtering on the requesting user's workspace (findOneBy({ id: credentialId }) with no workspaceId condition) in several code paths: getAllOpenaiAssistants/getSingleOpenaiAssistant (GET /api/v1/openai-assistants and /api/v1/openai-assistants/:id), uploadFilesToAssistant (POST /api/v1/openai-assistants-file/upload/), deleteAssistant (DELETE /api/v1/assistants/:id, reachable by first importing a poisoned assistant row via POST /api/v1/export-import/import), and the shared helper used by getVoices (GET /api/v1/text-to-speech/voices). An authenticated user of one workspace can supply a credential UUID belonging to another workspace, causing the server to decrypt and use that workspace's OpenAI or ElevenLabs API key on the attacker's behalf. No patched version was available at the time of publication."
     },
     {
-      "id": "CVE-2026-92106",
-      "title": "CVE-2026-92106",
+      "id": "CVE-2026-100610",
+      "title": "CVE-2026-100610",
       "source": "NIST NVD",
-      "date": "2026-09-25T10:17:08.263",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in dashbitco lazy_html allows mutation XSS via a parse and serialize round-trip of attacker-supplied HTML.\n\nLazyHTML.to_html/2 and LazyHTML.Tree.to_html/2 decide whether to escape an element's text from its tag name alone. A style or script element inside SVG or MathML foreign content is parsed with character references decoded, but is serialized as an HTML raw-text element, so its text is emitted unescaped. Encoded markup such as &lt;/style&gt;&lt;img src=x onerror=...&gt; inside <svg><style> therefore closes the element on re-parse and becomes live markup. Applications that parse untrusted HTML with lazy_html, filter the document or tree, and serialize it for display are affected, since the payload is a plain text node that no element or attribute filter sees.\n\nThis issue affects lazy_html: from 0.1.0 before 0.1.13."
+      "date": "2026-09-26T14:16:41.460",
+      "summary": "Flowise through 3.1.4 exposes GET /api/v1/upsert-history/:id and PATCH /api/v1/upsert-history without route-level permission checks, and the backing service performs no workspace or ownership validation. getAllUpsertHistory() returns UpsertHistory rows selected solely by an attacker-supplied chatflowid, and patchDeleteUpsertHistory() deletes rows by an attacker-supplied array of record UUIDs. As a result, any authenticated low-privilege user or valid API key can read or delete document-store upsert history belonging to other users and other workspaces whenever the target chatflowId (which is exposed publicly in /chatbot/<chatflowId> share links) or row ids are known. The retrievable flowData and result fields contain embedding, record-manager and vector-store node configuration, including per-node paramValues. No patched version is available."
     },
     {
-      "id": "CVE-2026-97898",
-      "title": "CVE-2026-97898",
+      "id": "CVE-2026-100611",
+      "title": "CVE-2026-100611",
       "source": "NIST NVD",
-      "date": "2026-09-25T10:17:08.907",
-      "summary": "Insecure Direct Object Reference / missing object-level authorization in the Akia keyless entry cloud service. The unlock action is relying on a client-supplied room/door identifier that is not properly authorized server-side against the authenticated guest's booking. An authenticated guest could unlock rooms other than their own, resulting in unauthorized physical access to guest rooms at an affected property.\n\n\n\n\nAs of 19th September 2026 the service is no more vulnerable to this attack (feedback received by the reporter). \n\n\n\n\nThe attack is remote but the effect is local to an affected property."
+      "date": "2026-09-26T14:16:41.610",
+      "summary": "Capgo (capgo.app backend, versions ≤ 12.261.0) improperly restricts which roles the apikey_manager organization role may bind to newly created API keys. When an authenticated user holding only apikey_manager (permissions org.manage_apikeys and org.read) calls POST /apikey with a JWT session, the only checks applied are the org.manage_apikeys permission, a fixed deny-list of assignable role names (APIKEY_MANAGER_DENIED_ASSIGNABLE_ROLES in public/apikey/scope.ts), and a priority-rank comparison in createRoleBindingForPrincipal (private/role_bindings.ts). No check verifies that the caller actually holds the permissions conferred by the role being assigned. Because the deny-list omits the deploy roles app_developer, app_uploader, channel_developer and channel_uploader, and apikey_manager is seeded with priority_rank 78 — higher than those roles' ranks (68, 66, 58, 57) — the rank check also passes. As a result, an apikey_manager who cannot upload bundles or promote channels can mint an API key bound to a deploy role and use it to push arbitrary OTA JavaScript updates to all end users of the organization's apps. As of the advisory publication no patched version was available."
     },
     {
-      "id": "CVE-2026-27867",
-      "title": "CVE-2026-27867",
+      "id": "CVE-2026-100612",
+      "title": "CVE-2026-100612",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:01.203",
-      "summary": "An attacker with access via network to the Regesta Smart HD-PLC of the provider Teldat (in this case, registration action is required) who has the vulnerable firmware version could inject\na specific payload via the parameter \"cmdcookie\" withing the /upgrade/index.html resulting in to a Cross-Site Scripting (XSS). This issue affects Regesta Smart HD-PLC - TLDPH16D2: \n11.02.06.00.02"
+      "date": "2026-09-26T14:16:41.753",
+      "summary": "Capgo (capgo.app) through version 12.261.0 contains an incomplete access-control fix for the public.sso_providers table. Migration 20260826100000_sso_providers_block_direct_active_insert.sql installs a BEFORE UPDATE guard (enforce_sso_provider_client_update_guard()) that freezes only the dns_verified_at, domain, status and enforce_sso columns; provider_id (as well as metadata_url and attribute_mapping) is left writable. Because the table is granted ALL to the anon and authenticated roles with no column-level restriction, and PostgreSQL row-level security policies such as allow_org_admins_update_sso_providers constrain only which row may be updated and not which columns, a user holding the org_admin tier permission org.update_settings can PATCH provider_id over PostgREST to an identity provider under their control. Since provider_id is the trust anchor binding an email domain to an authorized IdP, the attacker can then authenticate through their own IdP while asserting the org owner's email; the server-side provider match succeeds and the merge routine attaches the attacker's SSO identity to the existing owner account, nulls its password, and deletes its other identities and session"
     },
     {
-      "id": "CVE-2026-97228",
-      "title": "CVE-2026-97228",
+      "id": "CVE-2026-100613",
+      "title": "CVE-2026-100613",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.163",
-      "summary": "Rapid7 Bulk Export MCP versions 0.2.5 through 0.6.1 suffer from a GraphQL query injection issue in the export-status component (`get_export_status` in `src/export_manager.py`), whereby the `export_id` value — an unvalidated MCP tool argument reaching the function via the `check_rapid7_export_status` and `download_rapid7_export` tools — is interpolated directly into the GraphQL query string. A crafted `export_id` containing quote and brace characters can terminate the intended `export(id: \"...\")` selection early and append attacker-controlled root-level selections (for example, schema introspection), producing a single well-formed GraphQL document that is then sent to the Rapid7 export API under the operator's own API key.\n\nNotably, this issue does not grant an existing actor any access they do not already have: every injected query executes within the operator's own already-authenticated API scope, using the operator's own valid API key, and cannot cross a tenant or account boundary. A directly-malicious operator gains nothing they could not already do by calling the API directly; the realistic exposure is limited to a compromised or careless upstream MCP client, or indirect prompt"
+      "date": "2026-09-26T14:16:41.903",
+      "summary": "capgo.app is an over-the-air (OTA) update platform for Capacitor apps. In all versions up to and including the current release (no patch available at time of publication), the `transfer_app()` database function transfers an app, its channels, versions and related records to a destination organization without deleting or revalidating existing rows in `channel_permission_overrides`. As a result, a user who legitimately held a channel permission override while a member of the source organization retains that override after the transfer, even though they have no membership and no RBAC binding in the destination organization. Using their own authenticated JWT against the PostgREST API, such a former member can modify the destination-owned channel to point at a different bundle, causing the /updates endpoint to serve an attacker-selected application version to devices. The previously proposed fix for GHSA-626c-p6fq-3whq (PR #3093), which validates organization membership when an override is created or updated, does not remove overrides that became stale as a result of an app transfer."
     },
     {
-      "id": "CVE-2026-97522",
-      "title": "CVE-2026-97522",
+      "id": "CVE-2026-100614",
+      "title": "CVE-2026-100614",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.297",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nmptcp: fix bad accounting in __mptcp_subflow_push_pending()\n\nIf __subflow_push_pending() errors out we should avoid updating the\ncopied byte counters, to avoid mismatch push call later on."
+      "date": "2026-09-26T14:16:42.050",
+      "summary": "Capgo before 12.244.1 contains a cross-tenant integrity vulnerability in the metadata-cleaning worker that trusts image object keys from mutable database rows without validating ownership. An authenticated attacker can place a victim tenant's image key in a row they control, causing the service-role worker to download and re-upload that object with sanitized metadata. Attackers can silently modify metadata in cross-tenant image objects by supplying known victim keys during authorized row updates, bypassing storage access controls through the confused-deputy metadata worker."
     },
     {
-      "id": "CVE-2026-97523",
-      "title": "CVE-2026-97523",
+      "id": "CVE-2026-100615",
+      "title": "CVE-2026-100615",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.407",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nmptcp: close race between scheduler and state change\n\nThe mptcp scheduler may race with subflow sockets state change: data\ntransmission on the selected socket may fail and a later release could\ntry to use mss_now reset to 0 for a divide operation.\n\nAddress the issue by explicitly checking for the critical scenario."
+      "date": "2026-09-26T14:16:42.193",
+      "summary": "Cap-go capgo.app before 12.267.1 fails to validate target API key privilege during rotation, allowing an apikey_manager to rotate a higher-privileged org_super_admin sibling key and recover its plaintext credential. Attackers with apikey_manager role can enumerate same-owner API keys, rotate a stronger sibling through the PUT endpoint, and obtain the replacement plaintext secret to authenticate as the higher-privileged principal."
     },
     {
-      "id": "CVE-2026-97524",
-      "title": "CVE-2026-97524",
+      "id": "CVE-2026-100616",
+      "title": "CVE-2026-100616",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.520",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nmptcp: avoid unneeded actions on subflow reset\n\nOnce in a blue moon, the mptcp receive path can recursively call\nmptcp_data_ready() via state change under unlucky error conditions, and\nthen try to hold the data lock again.\n\nBreak the recursion loop explicitly checking for the exceptional\ncondition.\n\nAdd a new flag instead of using an existing one like 'closing', to exit\nearly in subflow_state_change(), and explicitly flush the RX queue at\nreset time.\n\nThis avoids unneeded processing to check for available data -- calling\nget_mapping_status() and more on a dying subflow -- but also in error\nreporting and worker scheduling.\n\nNote that we must consume the currently peeked skb before invoking\nmptcp_dss_corruption to avoid consuming it again after the eventual\nreset has freed it."
+      "date": "2026-09-26T14:16:42.333",
+      "summary": "capgo.app is an over-the-air update platform for Capacitor apps. In all versions prior to a fix, the row-level security UPDATE policy on the public.orgs table permits an organization admin (a user holding org.update_settings) to update the entire row, including the internal billing pointer column customer_id. The official organization update endpoint (supabase/functions/_backend/public/organization/put.ts) allowlists only a small set of editable settings fields and excludes customer_id, and the private Stripe billing route separately requires the org.update_billing permission. By sending an update directly to Supabase PostgREST, an authenticated org admin without org.update_billing can null or corrupt the organization's Stripe customer pointer, causing plan and billing checks that trust orgs.customer_id to fail and moving the organization from a valid paid plan state to unpaid/no-plan behavior. At the time of the advisory no patched version was available."
     },
     {
-      "id": "CVE-2026-97525",
-      "title": "CVE-2026-97525",
+      "id": "CVE-2026-100617",
+      "title": "CVE-2026-100617",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.647",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nx86/mm/pat: Allocate split page tables as kernel page tables\n\nA PTE is allocated directly without going through the standard page table\nallocation routines (such as pte_alloc_one_kernel()) when the CPA code\nsplits a large page (__split_large_page()).\n\nThis means the page table constructor is never called nor is the page table\nmarked as a kernel page table.\n\nThe former results in the folio associated with the page table not being\nmarked as a page table (__pagetable_ctor() is never called thus neither is\n__folio_set_pgtable()) nor are statistics updated to reflect\nit (lruvec_stat_add_folio() is never called).\n\nThe latter issue of failing to mark the page table as a kernel page\ntable (ptdesc_set_kernel() is never called) is far more problematic.\n\nSince commit:\n\n  5ba2f0a15564 (\"mm: introduce deferred freeing for kernel page tables\")\n\nkernel page table freeing has been batched and since the\nsubsequent commit:\n\n  e37d5a2d60a3 (\"iommu/sva: invalidate stale IOTLB entries for kernel address space\")\n\nIOTLB cache entries for kernel page tables have been invalidated upon\nbeing freed.\n\nSince split page tables are freed withou"
+      "date": "2026-09-26T14:16:42.467",
+      "summary": "Cap-go capgo.app fails to validate that principals in channel_permission_overrides belong to the organization, allowing authenticated app/org admins to grant channel permissions to non-member users. Attackers with admin privileges can insert override rows with arbitrary external user UUIDs to grant channel-scoped permissions such as channel.promote_bundle to users outside the organization."
     },
     {
-      "id": "CVE-2026-97526",
-      "title": "CVE-2026-97526",
+      "id": "CVE-2026-100618",
+      "title": "CVE-2026-100618",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.767",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ns390/pai: Support CPU hotplug for PMU PAI\n\nThe command 'perf stat -e pai_crypto/CRYPTO_ALL/ -- <command>'\ncrashes the kernel when CPUs are hotplug added during that run.\n\nRoot cause is the missing allocation of per-CPU data structures\nfor that new CPU. The allocation is dynamic and the first\nevent that has task context creates such a structure for\neach online CPU. This is not sufficient. CPUs may be offline\nduring event creation and can be set online during the\nperf run time. For example commands\n\n # echo 0 > /sys/devices/system/cpu/cpu1/online\n # perf stat -e cycles -i -- stress-ng -t10s --matrix X\n # sleep 1\n # echo 1 > /sys/devices/system/cpu/cpu1/online\n\nCurrently without a CPU hotplug handler, that new CPU has no\nper-CPU data infrastructure. The scheduler runs PMU call back\nfunction pai_add() to install the PMU support for that CPU before\nthe task is being scheduled on that new CPU.\nIn pai_add() instructions\n\n    mp = this_cpu_ptr(pai_root[idx].mapptr);\n    cpump = mp->mapptr;\n\nreturn a NULL pointer and the result is a kernel panic as variable\ncpump is used inside that function.\n\nAdd CPU hotplug support for C"
+      "date": "2026-09-26T14:16:42.600",
+      "summary": "Capgo (capgo.app) is affected by an authorization flaw in the app icon update path. The PUT /app/:id endpoint accepts a user-controlled `icon` value, normalizes it, and stores it in public.apps.icon_url without verifying that the image path belongs to the target app's own image namespace (e.g. org/{owner_org}/{app_id}/...). Updating apps.icon_url fires the on_app_update trigger, whose worker reads record.icon_url and calls cleanStoredImageMetadata(), which runs with service-role credentials (supabaseAdmin()) and downloads and re-uploads the referenced storage object with upsert: true. As a result, an authenticated holder of an app-limited write API key can cause the privileged worker to rewrite an out-of-scope private image object (for example an organization logo) that the key cannot read or write directly under Supabase Storage RLS. All versions are affected; no patched version was available at the time of the advisory."
     },
     {
-      "id": "CVE-2026-97527",
-      "title": "CVE-2026-97527",
+      "id": "CVE-2026-100619",
+      "title": "CVE-2026-100619",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.873",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Serialize NVMe unsol ctx list with a per-fcport lock\n\nThe fcport->unsol_ctx_head list is modified from several contexts without\na common lock. Entries are added in qla2xxx_process_purls_iocb() from the\nresponse queue ISR (under the qpair qp_lock), while they are removed from\nqla2xxx_process_purls_pkt() (DPC/purex worker), qla_nvme_xmt_ls_rsp()\n(NVMe-FC transport callback) and qla_nvme_release_lsrsp_cmd_kref() (SRB\ncompletion). The qpair qp_lock cannot serialize this per-fcport list since\nmultiqueue adapters add entries through different qpairs, so a concurrent\nadd and delete (or two concurrent deletes) can corrupt the list pointers.\n\nIntroduce a dedicated per-fcport spinlock, unsol_ctx_lock, initialized in\nqla2x00_alloc_fcport(), and take it around every list_add_tail()/list_del()\non unsol_ctx_head. The add nests under the existing qp_lock; no delete path\ntakes qp_lock, so the lock order is consistent and deadlock free."
+      "date": "2026-09-26T14:16:42.740",
+      "summary": "Capgo (capgo.app) blocks direct user inserts into the public.manifest table with a RESTRICTIVE row-level security policy, but that restriction can be bypassed indirectly. A principal holding an app-scoped upload/write/all API key (upload+ rights) or an authenticated user with write+ rights on an app can update public.app_versions.manifest on a version whose storage_provider is 'r2-direct', which is not covered by the bundle content-lock check. The on_version_update async worker trusts record.manifest and, using the service-role Supabase client, inserts the attacker-controlled file_name, file_hash, and s3_path into public.manifest before clearing app_versions.manifest. When a channel points to the crafted version, the /updates endpoint returns the service-role-created manifest entry as a client-facing download_url, enabling OTA manifest poisoning through a trusted async worker path. All versions are affected; no patch was available at the time of publication."
     },
     {
-      "id": "CVE-2026-97528",
-      "title": "CVE-2026-97528",
+      "id": "CVE-2026-100620",
+      "title": "CVE-2026-100620",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:02.980",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Unlink NVMe unsol ctx before freeing on LS reject error\n\nqla_nvme_xmt_ls_rsp() obtains uctx, which was linked into\nfcport->unsol_ctx_head by qla2xxx_process_purls_iocb() and is still linked\nwhen the NVMe transport calls back to transmit the LS response. On the\nerror (out:) path the function frees uctx with kfree() but never removes\nit from the list. This leaves a freed node in fcport->unsol_ctx_head: the\nnext list_add_tail() for that fcport writes through the freed node, and a\nsubsequent list_del() can corrupt the list or panic.\n\nUnlink uctx with list_del() before kfree() on the error path, matching the\nother free sites in qla_nvme_release_lsrsp_cmd_kref() and\nqla2xxx_process_purls_pkt(). qla2x00_rel_sp() in the failure path only\nreturns the SRB to its pool and does not invoke sp->put_fn, so the out:\npath is the sole free and uctx is always still linked there."
+      "date": "2026-09-26T14:16:42.877",
+      "summary": "Capgo CLI (npm package @capgo/cli) through 7.98.2 is affected by an over-permissioned service account in its Android onboarding flow. When onboarding via Google OAuth, the CLI invites the generated Google Play service account with the account-wide Play Console permission CAN_MANAGE_DRAFT_APPS_GLOBAL (passed as developerAccountPermissions in the Android Publisher API User create request), even though the user-facing flow states the service account is invited into a single confirmed app with release-only permissions. As a result, anyone who obtains the generated service account key (PLAY_CONFIG_JSON) can create, edit, and delete draft apps across the entire Google Play developer account rather than being limited to the selected package. No patched version was available at the time of publication."
     },
     {
-      "id": "CVE-2026-97529",
-      "title": "CVE-2026-97529",
+      "id": "CVE-2026-100621",
+      "title": "CVE-2026-100621",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.087",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Validate BSG request_len before reading vendor_cmd[]\n\nThe FC BSG transport allocates job->request via memdup_user() using the\nexact user-supplied request_len. For FC_BSG_HST_VENDOR,\nfc_bsg_host_dispatch() only guarantees request_len covers msgcode and\nvendor_id; it does not account for the vendor_cmd[] flexible array.\n\nqla2xxx then reads the command selector vendor_cmd[0] and, in several\nsub-handlers, vendor_cmd[1]/[2] or structures overlaid on the vendor\ncommand area without verifying request_len. A caller holding\nCAP_SYS_RAWIO can submit a short request whose vendor_id matches the\nhost, triggering out-of-bounds heap reads (KASAN-detectable, and able to\nmis-select a command or panic).\n\nAdd a central guard in qla2x00_process_vendor_specific() so the selector\nis always in bounds, restrict the early vendor_cmd[0] read in\nqla24xx_bsg_request() to sufficiently long vendor messages, and add\nrequest_len checks to the sub-handlers that read further:\nqla24xx_proc_fcp_prio_cfg_cmd(), qla2x00_process_loopback(),\nqla84xx_reset(), qla84xx_updatefw(), qla2x00_read_optrom(),\nqla2x00_update_optrom(), qlafx00_mgmt_"
+      "date": "2026-09-26T14:16:43.017",
+      "summary": "Capgo (capgo.app) contains an incomplete access-control/content-lock enforcement issue affecting all versions; no patch is available at the time of publication. The `enforce_encrypted_bundle_trigger` / `check_encrypted_bundle_on_insert` content lock in supabase/schemas/prod.sql exempts `app_versions` rows whose previous `storage_provider` is `r2-direct`, so delivery-critical columns (name, app_id, session_key, key_id, storage_provider, r2_path, external_url, checksum, manifest, native_packages) remain mutable while a row is in that state. Separately, the channel/version join used by the `/updates` endpoint (supabase/functions/_backend/utils/pg.ts) filters only deleted versions and does not exclude `r2-direct` versions, so such rows remain OTA-selectable. An attacker holding a Capgo API key with bundle write/upload permission can create or keep a bundle version in the `r2-direct` state, assign it to a channel, and then modify these fields via direct PostgREST requests, causing altered bundle metadata (for example checksum and session_key) to be served to devices through `/updates`. This bypasses the post-upload content immutability hardening added for a previous app_versions metadat"
     },
     {
-      "id": "CVE-2026-97530",
-      "title": "CVE-2026-97530",
+      "id": "CVE-2026-100622",
+      "title": "CVE-2026-100622",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.200",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix soft lockup polling continuation IOCB signature\n\nqla27xx_copy_multiple_pkt() and qla27xx_copy_fpin_pkt() poll\nrsp_q->ring_ptr->signature for RESPONSE_PROCESSED (0xDEADDEAD) to decide\nwhether the next continuation IOCB has arrived, spinning on cpu_relax()\nwithout advancing the ring or decrementing the entry count while it has\nnot. response_t::signature lives at byte offset 60, but a continuation\nIOCB (sts_cont_entry_t / struct sts_cont_entry_ext) carries raw FC frame\npayload at that offset (data[56..59]). A received frame whose payload\nbytes happen to equal 0xDEADDEAD is therefore misread as \"not yet\narrived\", and the loop spins forever in interrupt/DPC context, causing a\nCPU soft lockup.\n\nThe poll is also unnecessary: callers of qla27xx_copy_multiple_pkt()\n(PT_LS4_UNSOL and the NVMe purls path) already gate on\nqla_chk_cont_iocb_avail(), which guarantees all entry_count IOCBs are\npresent before copying begins. The sibling helper\n__qla_copy_purex_to_buffer() already drops the signature poll and relies\non the entry_type == STATUS_CONT_TYPE guard instead.\n\nRemove the signature busy-wait from both he"
+      "date": "2026-09-26T14:16:43.157",
+      "summary": "capgo.app through 12.129.0 fails to verify deletion status when serving cached bundle artifacts from the public file read endpoint. Unauthenticated attackers can download deleted bundles using cached URLs and trigger restoration of deleted objects into R2 storage on cache hits."
     },
     {
-      "id": "CVE-2026-97531",
-      "title": "CVE-2026-97531",
+      "id": "CVE-2026-100623",
+      "title": "CVE-2026-100623",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.307",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Skip vport under deletion in report ID acquisition\n\nqla24xx_report_id_acquisition() format-1 handling walks ha->vp_list under\nvport_slock, takes a vref_count on the matching vport and calls\nqla_update_host_map() to register its port id.\n\nA vport teardown via qla24xx_vport_delete() sets VPORT_DELETE, then\nqla24xx_disable_vp() removes the vport from the host_map btree and zeroes\nvha->d_id (RESET_AL_PA). The vport is only unlinked from vp_list later,\nin qla24xx_deallocate_vp_id(), which clears vp_map[idx] (RESET_VP_IDX)\nbut does not touch host_map. In the window in between, report ID\nacquisition can still find the vport on vp_list and call\nqla_update_host_map(); with d_id already zeroed it takes the\nbtree_insert32() path and re-inserts the dying vport into host_map.\nNothing cleans that entry afterwards, so once scsi_host_put() frees the\nvha a later host_map lookup dereferences freed memory.\n\nSkip a vport that has VPORT_DELETE set before taking the reference, so it\nis neither re-registered nor scheduled for DPC re-registration. This\nmirrors the existing guard in qla2x00_alert_all_vps()."
+      "date": "2026-09-26T14:16:43.293",
+      "summary": "Capgo (capgo.app) exposes the legacy membership table public.org_users directly through Supabase PostgREST. The table's row-level security policies \"Allow org admin to insert\" and \"Allow org admin to update\" only verify that the caller has admin rights in the target organization (public.check_min_rights('admin', ...)); they do not require a pending invitation in tmp_users, acceptance of an invite token via /private/accept_invitation, any action by the target user, or the membership/role-consistency and anti-escalation checks enforced by the RBAC role-binding path. As a result, an authenticated user who is an admin of an organization can INSERT or UPDATE org_users rows directly to add any existing public.users account as an active member of that organization with user_right=\"admin\", bypassing the invitation and role-assignment workflow entirely. In testing, an account with no prior access to the organization or its apps could, after such a direct insert, read the organization and app and pass check_min_rights. All versions are affected and no patch was available at the time of publication."
     },
     {
-      "id": "CVE-2026-97532",
-      "title": "CVE-2026-97532",
+      "id": "CVE-2026-100624",
+      "title": "CVE-2026-100624",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.413",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Null out freed pointers in qla2x00_mem_alloc() error path\n\nWhen qla2x00_mem_alloc() fails, qla2x00_probe_one() jumps to\nprobe_hw_failed and calls qla2x00_mem_free(). Several error labels in\nqla2x00_mem_alloc() freed adapter members (elsrej.c, purex_dma_pool,\nflt, sfp_data, loop_id_map, async_pd, sf_init_cb, ex_init_cb, npiv_info)\nbut left the pointers dangling. qla2x00_mem_free() then freed them a\nsecond time. Worse, for the dma_pool members it issued\ndma_pool_free(ha->s_dma_pool, ...) after s_dma_pool had already been\ndestroyed and set to NULL at fail_s_dma_pool, dereferencing a NULL pool.\n\nClear each freed pointer (and its DMA handle) in the error labels so the\nsubsequent qla2x00_mem_free() skips them."
+      "date": "2026-09-26T14:16:43.430",
+      "summary": "Capgo.app before 12.264.5 does not enforce upload expiry or build lifecycle state in the /build/upload/:jobId TUS proxy endpoint. When a native build request is created, an upload_expires_at timestamp (one hour) and a 'pending' status are stored in build_requests, but the upload proxy loads only app_id, owner_org, builder_job_id, and upload_path and checks only the app.build_native permission before forwarding POST, PATCH, and HEAD requests to the internal builder. As a result, an authenticated caller holding app.build_native permission for the app can continue writing to the build upload session after the stored expiry has passed or after the build has moved beyond the upload phase, unless the separate builder service independently rejects the request. The issue is fixed in 12.264.5."
     },
     {
-      "id": "CVE-2026-97533",
-      "title": "CVE-2026-97533",
+      "id": "CVE-2026-100625",
+      "title": "CVE-2026-100625",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.520",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nx86/mm/pat: Acquire init_mm read lock on attribute changes to avoid UAF\n\nA previous commit protected against races between ptdump and CPA collapse,\nhowever one still exists between attribute changes and collapse as reported\nby Denis V. Lunev (linked).\n\nWhen an attribute change arises, a lockless page table walker obtains a PTE\nentry, which is later written to via set_pte_atomic():\n\n  ...\n  -> change_page_attr_set_clr()\n  -> __change_page_attr_set_clr()\n  -> __change_page_attr()\n\t-> _lookup_address_cpa()\n\t-> lookup_address_in_pgd_attr()\n\t-> [ lockless page table walker ]\n  -> set_pte_atomic()\n\nThere is nothing preventing a concurrent CPA collapse which can free the\nPTE that was retrieved here, resulting in a use-after-free.\n\nWith the mmap write lock taken on init_mm over CPA collapse, resolve this\nrace by acquiring an mmap read lock on init_mm over\n__change_page_attr_set_clr().\n\nThis locks across the whole operation over which the walk and the PTE\nentry write occurs, solving the race.\n\nIt is safe to do this here, as no spinlocks are held upon entry to\n__change_page_attr_set_clr().\n\nHowever, the lock must not be hel"
+      "date": "2026-09-26T14:16:43.567",
+      "summary": "Capgo (capgo.app) exposes a native build TUS upload proxy (supabase/functions/_backend/public/build/upload.ts) that authorizes a caller against a single build job identified by the supplied builder_job_id and validates only that job's stored upload_path, but then forwards the user-controlled TUS resource suffix taken from /build/upload/:jobId/* to the builder service while injecting Capgo's privileged builder API key. Because the forwarded suffix is never bound to the authorized job's upload_path or upload_session_key, a caller holding a valid 'all' or 'write' Capgo API key with app.build_native permission for one application can use its authorized proxy path for job A to write to the TUS upload resource of another job B, provided that resource suffix is known or exposed, corrupting that build's artifacts. All versions are affected; no patch was available at the time of advisory publication."
     },
     {
-      "id": "CVE-2026-97534",
-      "title": "CVE-2026-97534",
+      "id": "CVE-2026-100626",
+      "title": "CVE-2026-100626",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.643",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nf2fs: accurately adjust free_sections during free_segment_range\n\nIn free_segment_range(), MAIN_SECS(sbi) is temporarily reduced by `secs`\nto restrict block allocation to the safe remaining main area while valid\nblocks in the truncated range are evacuated by GC.\n\nHowever, FREE_I(sbi)->free_sections tracks the total number of free\nsections across the whole filesystem. If any sections within the\ntruncated range were already free upon entering free_segment_range(),\nfailing to deduct them from free_sections causes the filesystem to\noverestimate available free sections in the active, reduced main area.\nThis leads to inconsistent free section accounting during GC data\nmigration and can trigger unexpected allocation failures or assertion\nerrors when space is tight.\n\nFix this by calculating the number of already-free sections in the\ntruncated range, deducting them from free_sections upon entering\nfree_segment_range(), and restoring them on exit."
+      "date": "2026-09-26T14:16:43.703",
+      "summary": "capgo through 12.128.2 contains an insecure direct object reference vulnerability in the PUT /app/:appId endpoint that accepts attacker-controlled icon storage paths. Authenticated users can supply arbitrary paths in the private images bucket and obtain service-role-signed URLs valid for 7 days to read cross-tenant objects including user avatars, organization logos, and app icons without authorization."
     },
     {
-      "id": "CVE-2026-97535",
-      "title": "CVE-2026-97535",
+      "id": "CVE-2026-100627",
+      "title": "CVE-2026-100627",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.757",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Bound VP index against VP_CTRL IOCB bitmap size\n\nThe VP control IOCB selects its target virtual port by setting one bit\nin vp_idx_map, a fixed 16-byte (128-bit) array in both\nvp_ctrl_entry_24xx and vp_ctrl_entry_24xx_ext. qla25xx_ctrlvp_iocb()\ncomputes map = (vp_index - 1) / 8 and writes vce->vp_idx_map[map]\nwithout checking that map stays within the array.\n\nmax_npiv_vports is taken from firmware and only sanitized to a\nMIN_MULTI_ID_FABRIC-aligned boundary, so it can legitimately be 191 or\n255, and qla24xx_control_vp() only rejects vp_index >= max_npiv_vports.\nA vp_index above 128 therefore yields map >= 16 and an out-of-bounds\nwrite of up to 16 bytes past vp_idx_map, corrupting the trailing IOCB\nfields (or the adjacent request-ring slot on the 64-byte layout).\n\nReject a vp_index that cannot be represented in the IOCB bitmap in\nqla24xx_control_vp(), and add a defensive ARRAY_SIZE() guard in\nqla25xx_ctrlvp_iocb() before the write. Adapters that report the usual\n63 or 127 NPIV vports are unaffected."
+      "date": "2026-09-26T14:16:43.837",
+      "summary": "Capgo (Cap-go/capgo.app) server backend Supabase functions contain an incorrect authorization flaw in the API-key bundle promotion path. The PUT /bundle endpoint, available to \"all\" and \"write\" API keys, dispatches to setChannel, which authorizes with checkPermission(c, 'channel.promote_bundle', { appId: body.app_id }) and omits the request's channel_id. Because the omitted scope field is passed to rbac_check_permission_direct as SQL NULL, and channel-scope override evaluation is gated on p_channel_id IS NOT NULL, per-channel allow/deny overrides are never evaluated. A principal holding app-level channel.promote_bundle (granted by default to the app_developer and app_uploader roles) can therefore promote a bundle to a channel for which an explicit per-channel deny override exists, updating public.channels.version for the supplied channel_id; the target channel is only validated after authorization. The issue is confirmed on main at commit de66fa51e7ff2f50283cc1455c3d80ab3eb0ae43 and likely earlier versions; no patched version is known at the time of publication."
     },
     {
-      "id": "CVE-2026-97536",
-      "title": "CVE-2026-97536",
+      "id": "CVE-2026-100628",
+      "title": "CVE-2026-100628",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.863",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix use-after-free of qpair work on queue teardown\n\nThe response queue MSI-X handler qla2xxx_msix_rsp_q() schedules\nqla_do_work() via queue_work(ha->wq, &qpair->q_work). qla_do_work()\ndereferences the qpair (vha, rsp) and takes qpair->qp_lock.\n\nDuring teardown, qla2xxx_delete_qpair() deletes the response queue, which\ncalls free_irq() in qla25xx_free_rsp_que(), and then frees the queue and\nthe qpair. free_irq() waits for running hardirq handlers but does not\ncancel work already placed on ha->wq. A still-pending q_work then runs\nqla_do_work() against the freed qpair and response queue, causing a\nuse-after-free. This is especially likely during full adapter teardown,\nwhere destroy_workqueue(ha->wq) forces pending work to run after the queue\npairs have been freed.\n\nFlush the work item with cancel_work_sync() in qla25xx_free_rsp_que()\nafter free_irq() has released the interrupt (so no new work can be\nqueued) and before the response queue and qpair memory are freed (so the\nflushed handler still sees valid memory). Guard on rsp->qpair and ha->wq\nto match the INIT_WORK() condition and avoid operating on an\n"
+      "date": "2026-09-26T14:16:43.977",
+      "summary": "capgo.app before 12.128.12 fails to enforce an organization's API key expiration policy when creating app-scoped API keys. In the POST /apikey endpoint, requests that supply app_id but omit org_id, limited_to_orgs, and expires_at resolve the target app and scope the key to it, but never add the app's owner organization to the list of organization IDs passed to validateExpirationAgainstOrgPolicies; because that list is empty, the validation returns early. As a result, an authenticated organization member can create a non-expiring app-scoped API key even when the owning organization has require_apikey_expiration enabled and a max_apikey_expiration_days limit configured. The issue is fixed in version 12.128.12."
     },
     {
-      "id": "CVE-2026-97537",
-      "title": "CVE-2026-97537",
+      "id": "CVE-2026-100629",
+      "title": "CVE-2026-100629",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:03.973",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nscsi: qla2xxx: Fix queue teardown NULL dma_free and bitmap locking\n\nqla25xx_free_req_que() and qla25xx_free_rsp_que() have two pre-existing\nbugs exposed on the error path of qla25xx_create_{req,rsp}_que():\n\n 1. When dma_alloc_coherent() fails during queue creation, the error\n    path calls the free function with req->ring / rsp->ring still NULL\n    (from kzalloc).  The unconditional dma_free_coherent() with a NULL\n    cpu_addr is undefined behavior and can panic.\n\n 2. The free functions clear req_qid_map / rsp_qid_map under vport_lock,\n    but the create functions protect the same bitmaps with mq_lock.\n    This provides no mutual exclusion.  Additionally, the create error\n    path clears the bit and releases mq_lock before calling the free\n    function, creating a window where another thread can allocate the\n    same que_id and have its ha->req_q_map entry clobbered by the\n    subsequent lockless NULL assignment in the free function.\n\nFix by:\n\n - Guarding dma_free_coherent() with a NULL check on the ring pointer.\n\n - Using mq_lock (the lock held by all creators) in the free functions\n   to atomically NULL the map "
+      "date": "2026-09-26T14:16:44.117",
+      "summary": "Capgo (capgo.app backend) before 12.127.5 contains an authorization flaw in the PATCH /private/role_bindings/:binding_id endpoint. The handler verifies that the newly assigned role's priority rank does not exceed the caller's own rank, but — unlike the DELETE handler — it never checks the rank of the role currently bound to the target binding. An authenticated user holding the org_admin role (rank 90) can therefore change an org_super_admin binding (rank 95) to a lower-privileged role such as org_member (rank 75). Because the prevent_last_super_admin_binding_delete database trigger fires only BEFORE DELETE and not on UPDATE, an org_admin can demote every org_super_admin, leaving the organization with no super administrator. The issue is fixed in 12.127.5."
     },
     {
-      "id": "CVE-2026-97538",
-      "title": "CVE-2026-97538",
+      "id": "CVE-2026-100630",
+      "title": "CVE-2026-100630",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:04.080",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nhwmon: (asus_rog_ryujin) Validate HID report lengths\n\nrog_ryujin_raw_event() parses response headers and payload fields without\nfirst checking that they are present in the received report. A short report\ncan therefore make the driver consume uninitialized bytes from the HID\ntransport buffer and expose them as sensor values through sysfs.\n\nValidate the response header and the fields used by each response type\nbefore parsing them."
+      "date": "2026-09-26T14:16:44.260",
+      "summary": "AVideo contains a stored cross-site scripting vulnerability in the video trailer1 field rendered unsanitized within an inline onclick JavaScript string. Attackers with video upload permission can store HTML entity-encoded payloads that bypass isValidURL() validation and are decoded by the browser to break out of the JavaScript string, executing arbitrary code in any visitor's session including administrators."
     },
     {
-      "id": "CVE-2026-97539",
-      "title": "CVE-2026-97539",
+      "id": "CVE-2026-100631",
+      "title": "CVE-2026-100631",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:04.197",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nusb: xusbatm: don't rely on id table pointer arithmetic\n\nThe current code is broken when dynamic ID is involved; in such cases\nusb_device_id parameter of probe lives on the heap and the pointer\narithmetic will get an index that is wildly out of bound. xusbatm\ninitialize the USB device IDs dynamically so it can just use driver_info\ntoo.\n\nEven with conversion, xusbatm still cannot support dynamic IDs, so also set\nno_dynamic_id."
+      "date": "2026-09-26T14:16:44.397",
+      "summary": "Parse Server is an open source backend server. In versions prior to 8.6.90 and in versions from 9.0.0 prior to 9.10.1-alpha.9, the device token deduplication logic for installation records does not validate the type of client-supplied installation fields before using them to build database queries. An unauthenticated remote attacker who knows only the public application ID can submit non-string values in these fields to inject query operators, causing the deduplication cleanup — which runs with elevated privileges before class-level permissions are evaluated — to delete every device registration in the application or an attacker-chosen subset of them. No account, session token, master key, or user interaction is required. Deleted registrations cannot be recovered on the server, so push notifications cannot be delivered until every client re-registers. Any deployment that exposes the REST API to clients and uses push notifications is affected in its default configuration. Versions 8.6.90 and 9.10.1-alpha.9 fix the issue by rejecting non-string values with a client error and by scoping the deduplication cleanup to the calling application. No workaround other than upgrading is availab"
     },
     {
-      "id": "CVE-2026-97540",
-      "title": "CVE-2026-97540",
+      "id": "CVE-2026-100632",
+      "title": "CVE-2026-100632",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:04.310",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nnet: usb: pegasus: don't rely on id table pointer arithmetic\n\nThe current code is broken when dynamic ID is involved; in such cases\nusb_device_id parameter of probe lives on the heap and the pointer\narithmetic will get an index that is wildly out of bound. Instead of\nkeeping a side table for additional information, use driver_info field of\nthe usb_device_id.\n\nThe dynamic ID parsing code needs to be updated for this; convert it to\njust write to the reserved entry for dynamic ID and remove the weird loop."
+      "date": "2026-09-26T14:16:44.540",
+      "summary": "Parse Server is an open-source backend server. In versions >= 9.0.0 and < 9.10.1-alpha.8, and in versions < 8.6.89, LiveQuery evaluates the protectedFields class-level permission against an incompletely resolved caller identity: the subscriber's roles are not resolved, and when a subscription does not supply its own session token the event payload is redacted against an anonymous identity even though the read was authorized against the connected user. As a result, field masks defined for a role, for authenticated users, or for a specific user are not applied, so an authenticated subscriber can receive field values that the REST API correctly withholds and can use a masked field to filter or watch a subscription. Only classes with LiveQuery enabled that define protectedFields under a role:, authenticated, or per-user group are affected; masks under the public (*) group are applied correctly. The issue is fixed in 9.10.1-alpha.8 and 8.6.89. As a workaround, additionally define the affected field masks under the public (*) group, or disable LiveQuery for classes whose class-level permissions rely on role-scoped, authenticated, or per-user protectedFields groups."
     },
     {
-      "id": "CVE-2026-97541",
-      "title": "CVE-2026-97541",
+      "id": "CVE-2026-100633",
+      "title": "CVE-2026-100633",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:04.423",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nwifi: ath9k_htc: don't store usb_device_id\n\nusb_device_id is not guaranteed to live longer than probe due to presence\nof dynamic ID. All information apart from driver_data can be easily\nretrieved from usb_device, so just store driver_data."
+      "date": "2026-09-26T14:16:44.687",
+      "summary": "SiYuan is a self-hosted personal knowledge management system. In versions 3.8.0 through 3.8.3, the MCP file tool's sensitive-path guard (util.IsForbiddenAbsPath(), invoked from resolvePath()) is applied only to the allowed root of recursive operations and not to each resolved descendant path — an incomplete fix for GHSA-c8r8-95hg-mp34. An authenticated administrator using the in-app Agent or the external MCP server can therefore bypass the protected-workspace-file denylist: file.grep can return matching lines from non-hidden protected descendants (for example conf/conf.json, TLS keys, data/snippets/conf.json, data/templates/, data/.siyuan/publishAccess.json, notebook .siyuan internals, or the kernel log), file.copy can copy protected descendants to an ordinary path where file.read can then retrieve them, and unzip can overwrite protected descendants using ordinary, lexically contained ZIP member names. Because file.grep is globally classified as a safe action, it receives no per-call confirmation, and the confirmation cards for file.copy and unzip show only the allowed root arguments. This issue is fixed in version 3.8.4. Suggested title: SiYuan 3.8.0 through 3.8.3 Sensitive-Path G"
     },
     {
-      "id": "CVE-2026-97542",
-      "title": "CVE-2026-97542",
+      "id": "CVE-2026-100634",
+      "title": "CVE-2026-100634",
       "source": "NIST NVD",
-      "date": "2026-09-25T11:17:04.540",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nxfs: bail out on bitmap errors in xrep_agfl_fill\n\nLOLLM also points out that the xagb_bitmap_set call in xrep_agfl_fill\ncan fail, but we don't check the result of xagb_bitmap_walk, so we\nsilently drop the error and proceed with inconsistent incore data.\nThat shouldn't be allowed."
+      "date": "2026-09-26T14:16:44.843",
+      "summary": "SiYuan before v3.8.4 does not validate the sender or restrict recipients in the 'siyuan-send-windows' IPC handler of the Electron main process (app/electron/main.js). The handler ignores event.sender and forwards any received payload to every BrowserWindow returned by BrowserWindow.getAllWindows(), including windows belonging to other opened workspaces. A renderer connected to an attacker-controlled remote kernel can therefore send {cmd: \"lockscreenByMode\"} and have it delivered across the workspace boundary; a sibling workspace window whose lockScreenMode is set to 1 invokes lockScreen(). Repeated messages allow the remote workspace to repeatedly lock unrelated local workspace windows, causing a limited denial of service. No confidentiality, integrity, or code-execution impact was observed."
     }
   ]
 }
