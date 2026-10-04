@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-03T08:20:11.078254+00:00",
+  "generated_at": "2026-10-04T08:35:11.598404+00:00",
   "items": [
     {
       "id": "CVE-2026-102490",
@@ -882,284 +882,284 @@
       "due": "2026-07-30"
     },
     {
-      "id": "CVE-2026-100312",
-      "title": "CVE-2026-100312",
+      "id": "CVE-2026-94418",
+      "title": "CVE-2026-94418",
       "source": "NIST NVD",
-      "date": "2026-09-26T09:16:37.087",
-      "summary": "A security flaw has been discovered in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. The impacted element is an unknown function of the file /updateguest.php. Performing a manipulation of the argument gname/editassid results in sql injection. It is possible to initiate the attack remotely. The exploit has been released to the public and may be used for attacks. This product is using a rolling release to provide continious delivery. Therefore, no version details for affected nor updated releases are available. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-27T09:16:36.260",
+      "summary": "Under WOLFSSL_SMALL_CERT_VERIFY, ProcessPeerCertParse() runs the certificate signature check separately from the parse to keep peak memory down, then merges the two results, but it merged the signature result back only when the parse returned 0, so any parse error hid it. ParseCertRelative() reaches its validity-date, name-constraint and critical-extension checks only after ConfirmSignature() has passed, so splitting the signature check out inverts the precedence that makes \"override date errors\" a sound policy, and ASN_SIG_CONFIRM_E is never surfaced anywhere. The attacker needs no key material from the real PKI and no CA compromise: a self-made certificate carrying the expected subject name, the trusted CA's subject as its issuer, arbitrary bytes where the signature goes, a validity window in the past and the attacker's own key pair is sufficient. Affected builds define WOLFSSL_SMALL_CERT_VERIFY, which is off by default, is not set implicitly by any platform or preset header, and is not reachable from any CMake option; the autotools routes are --enable-lowresource, --enable-leantls, --enable-tinytls13=cert and --enable-tinytls13=mutualauth, and examples/configs/user_settings_embe"
     },
     {
-      "id": "CVE-2026-98163",
-      "title": "CVE-2026-98163",
+      "id": "CVE-2026-94419",
+      "title": "CVE-2026-94419",
       "source": "NIST NVD",
-      "date": "2026-09-26T09:16:38.303",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ncgroup: Avoid iteration of dying tasks with zero refcount\n\nThe commit 260fbcb92bbea (\"cgroup: Move dying_tasks cleanup from\ncgroup_task_release() to cgroup_task_free()\") extended the lifetime of\ntasks on the dying_tasks list.\nThe iterators have provision to go through dying_tasks because of\ndying threadgroup leaders or explicit CSS_TASK_ITER_WITH_DEAD, however,\nit was expected that such tasks can obtain a new reference (that is\npossible before cgroup_task_release()/put_task_struct_rcu_user()).\nThe tasks after cgroup_task_release() and before cgroup_task_free()\nare subject to race when they may or may not have ->usage count > 0.\n\nThe race window is between css_task_iter_next() invocations\nwhen css_set_lock is released and we may arrive at a new ->task_pos.\nThe iterator should not attempt to resurrect tasks whose ->usage count\ndropped to zero. (When that happens, __put_task_struct_rcu_cb() is\nalready imminent and the returned task_struct would could be used\nafter free.)\n\nAs for the fix, we cannot simply check the signal->live count of a task\non the dying list because that won't distinguish regular zombies waiting\nto"
+      "date": "2026-09-27T09:16:36.493",
+      "summary": "Without NO_SESSION_CACHE_REF, wolfSSL_get_session() does not return a session object but a ClientSession reference of the form {row, index, hash(sessionID)} into the process-global SessionCache, and ClientSessionToSession() validates it against that hash alone. Because the TLS 1.2 session ID is chosen by the server and sent in clear, AddSessionToCache() matches any other server's session on the same ID and overwrites the client-side entry with that server's master secret, cipher suite and version, while the handle continues to resolve; nothing on the write path compares the peer, the application's server ID or the WOLFSSL_CTX. Resuming through the handle then produces an abbreviated handshake in which no Certificate message is sent, so neither chain verification nor wolfSSL_check_domain_name() runs, and the attacker is accepted as the original server for the whole of that connection. Affected builds are those leaving NO_SESSION_CACHE_REF, NO_SESSION_CACHE, NO_CLIENT_CACHE and TITAN_SESSION_CACHE all undefined, which includes a plain ./configure, --enable-opensslextra and --enable-opensslall; fifteen integration options define NO_SESSION_CACHE_REF and are therefore not affected, amo"
     },
     {
-      "id": "CVE-2026-100313",
-      "title": "CVE-2026-100313",
+      "id": "CVE-2026-15442",
+      "title": "CVE-2026-15442",
       "source": "NIST NVD",
-      "date": "2026-09-26T12:17:33.267",
-      "summary": "A weakness has been identified in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. This affects an unknown function of the file updatequery.php. Executing a manipulation of the argument queryx can lead to cross site scripting. It is possible to launch the attack remotely. The exploit has been made available to the public and could be used for attacks. This product takes the approach of rolling releases to provide continious delivery. Therefore, version details for affected and updated releases are not available. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-27T10:16:56.893",
+      "summary": "In all builds that make use of (D)TLS, including default builds, there is a series of conditional states during the TLS shutdown which could lead to a heap-use-after free. If an application ended up getting a partial wolfSSL_read() which is sometimes caused by a small user buffer  passed in, then called wolfSSL_shutdown for a bidirectional close and attempted to wolfSSL_read() again while the peer continues trying to send data during the shutdown it would lead to a state where a potential heap-use-after free happened."
     },
     {
-      "id": "CVE-2026-100314",
-      "title": "CVE-2026-100314",
+      "id": "CVE-2026-89102",
+      "title": "CVE-2026-89102",
       "source": "NIST NVD",
-      "date": "2026-09-26T12:17:35.227",
-      "summary": "A security vulnerability has been detected in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. This impacts an unknown function of the file updatedetailsfromstudent.php. The manipulation of the argument eno leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed publicly and may be used. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-27T10:16:58.767",
+      "summary": "In wolfSSL versions 5.7.2 through 5.9.2 there is a client-side implementation flaw in RFC 6961, multiple OCSP response stapling, which can lead to certificate forgery. When a wolfSSL client enables OCSP stapling with the HAVE_CERTIFICATE_STATUS_REQUEST_V2 feature and calls wolfSSL_UseOCSPStaplingV2(ssl, WOLFSSL_CSR2_OCSP_MULTI, options), the client accepts any certificate in the peer's chain as a certificate authority without verifying that the certificate is actually authorized to act as one. This means that an attacker who possesses any certificate that chains to a CA trusted by the client (along with its private key) can forge certificates for arbitrary identities that will be accepted as valid by the client. The end entity certificate of the server is stored in the persistent trust store, affecting subsequent connections that reuse the context even when OCSP multi usage is not employed. Found by internal wolfSSL testing."
     },
     {
-      "id": "CVE-2026-100315",
-      "title": "CVE-2026-100315",
+      "id": "CVE-2026-89133",
+      "title": "CVE-2026-89133",
       "source": "NIST NVD",
-      "date": "2026-09-26T13:16:36.050",
-      "summary": "A vulnerability was detected in mathurvishal CloudClassroom-PHP-Project up to 5dadec098bfbbf3300d60c3494db3fb95b66e7be. Affected is an unknown function of the file mydetailsfaculty.php. The manipulation of the argument myfid results in sql injection. The attack can be launched remotely. The exploit is now public and may be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-27T10:16:58.900",
+      "summary": "wolfSSL versions 5.9.2 and earlier contain a flaw in the X.509 certificate validation logic where it fails to properly enforce NameConstraints extensions when there is an unconstrained CA tier between a name-constrained intermediate CA and the leaf certificate. wolfSSL incorrectly accepted certificates for hostnames they shouldn't be allowed to cover, due to a chain-walking state-machine bug that resets the validation state when encountering an intermediate without NameConstraints, thereby bypassing cryptographic delegation controls. This defect exists in the default build configuration that makes use of certificates where name constraint extensions are used. Thanks to Jack Lloyd, PathDiff, and Ben Smyth for reporting the issue."
     },
     {
-      "id": "CVE-2026-100600",
-      "title": "CVE-2026-100600",
+      "id": "CVE-2026-89134",
+      "title": "CVE-2026-89134",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:39.420",
-      "summary": "ClawHub (the openclaw/clawhub application/backend) does not bind anonymous HTTP API requests to a trusted caller identity, so all direct anonymous API requests share a single default quota allowance. A remote, unauthenticated caller can drain that shared allowance and thereby deny or degrade API access for unrelated visitors. In addition, when the TRUST_FORWARDED_IPS option is enabled without an authenticated edge/proxy, clients can supply arbitrary forwarded IP headers to select quota identities of their choosing and evade rate limiting. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. It is fixed in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650 (PR #3684), where direct anonymous calls are redirected to the public API origin without consuming quota and forged identity assertions return HTTP 401. The npm CLI and OpenClaw runtime are separate products and are not affected."
+      "date": "2026-09-27T10:16:59.030",
+      "summary": "A certificate with no dNSName SAN but another SAN type present (e.g. registeredID or iPAddress) bypassed the Subject CN dNSName name-constraint check. The CN-as-DNS fallback was gated on cert->subjectCN != NULL && cert->altNames == NULL && !cert->isCA instead of \"no dNSName SAN\", so an out-of-scope CN was accepted. This incomplete fix from CVE-2026-6731, leading to the name-constraint check issue, was introduced in wolfSSL version 5.9.2."
     },
     {
-      "id": "CVE-2026-100601",
-      "title": "CVE-2026-100601",
+      "id": "CVE-2026-89135",
+      "title": "CVE-2026-89135",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.040",
-      "summary": "ClawHub (openclaw/clawhub) application/backend contains a server-side request forgery vulnerability in the public profile preview's image fetching. The preview accepts a user-supplied image URL and checks the textual hostname against private-address patterns, but does not validate or pin the resolved network destination, so a public-looking hostname can resolve to an internal address or change resolution between validation and connection (DNS rebinding). A maintainer-run local harness demonstrated an outbound connection to an owner-controlled loopback listener; access to production internal services, credential disclosure, and code execution were not demonstrated. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. Fixed by PR #3683, included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650, which was deployed to clawhub.ai on 2026-09-11; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
+      "date": "2026-09-27T10:16:59.157",
+      "summary": "A failed X509_verify_cert call permanently plants an unverified attacker CA in the shared CertManager, bypassing certificate validation in every type-blind sibling consumer (native TLS, OCSP, CRL, direct CM verify). This affects version 5.8.4 through 5.9.2 of wolfSSL with the macros (OPENSSL_EXTRA && !NO_CERTS && !WOLFCRYPT_ONLY) defined or built with --enable-opensslextra and the application is specifically making calls to the X509_verify_cert function."
     },
     {
-      "id": "CVE-2026-100602",
-      "title": "CVE-2026-100602",
+      "id": "CVE-2026-89136",
+      "title": "CVE-2026-89136",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.187",
-      "summary": "ClawHub (openclaw/clawhub application/backend) contains a missing authorization check in the changelog preview feature. A signed-in caller can invoke the public skills:generateChangelogPreview action for a skill they are not authorized to access; the previous version is read without the file-read authorization enforced on normal content access, and up to 8,000 characters of quarantined content may be submitted to the AI provider and reflected in the preview returned to the caller, disclosing restricted skill content. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. It is fixed by PR #3682, included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650, which was deployed to clawhub.ai on 2026-09-11; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
+      "date": "2026-09-27T10:16:59.287",
+      "summary": "When using RPK (Raw Public Key), the client side of a TLS 1.2, 1.3 and DTLS 1.2 connection could accept an unsolicited server_cert_type=RawPublicKey which allowed a malicious or misbehaving server to bypass authentication. RPK is off by default and only enabled in --enable-rpk OR --enable-all OR --enable-distro AKA HAVE_RPK builds."
     },
     {
-      "id": "CVE-2026-100603",
-      "title": "CVE-2026-100603",
+      "id": "CVE-2026-93302",
+      "title": "CVE-2026-93302",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.330",
-      "summary": "ClawHub (openclaw/clawhub) application/backend contains a flaw in the skill report moderation flow: four distinct ordinary authenticated accounts can report a visible skill and trigger automatic hiding (moderationStatus: hidden) of that skill from the catalog without any moderator decision. Because the reporter quota counts only reports filed against visible targets, the same accounts can repeat the process against additional skills; official skills are not exempt. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. The fix (PR #3681) is included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
+      "date": "2026-09-27T10:16:59.417",
+      "summary": "MatchTrustedPeer ignores the public key used, leading to forged CA clones passing verification. Affected builds are any that enable the macro WOLFSSL_TRUST_PEER_CERT and load CA certificates with wolfSSL_CTX_trust_peer_cert() or wolfSSL_trust_peer_cert(). The peer must know the certificates being loaded to either of those APIs to take advantage of the issue. When OPENSSL_COMPATIBLE_DEFAULTS is also defined this widens the affected API to include all CA certificate loading. Both macros are defined when using autoconf builds such as (nginx, haproxy, stunnel, wpas, apache httpd, hitch, bind, rsyslog, ffmpeg, all, distro). When the certificate is listed as a trusted peer certificate the issue previously allowed for a malicious (D)TLS server to bypass authentication once knowing which CA’s the client would accept. This also affects mutual authentication cases where the client knows which CA’s the server has loaded. If building with any of these configurations and using (D)TLS where the loaded CA’s could be known and authentication of the peer is desired, users should either: update to the latest wolfSSL version, apply the fix patch, or use the configure flag --disable-openssl-compatible"
     },
     {
-      "id": "CVE-2026-100604",
-      "title": "CVE-2026-100604",
+      "id": "CVE-2026-93304",
+      "title": "CVE-2026-93304",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.473",
-      "summary": "ClawHub (openclaw/clawhub) contains an incorrect authorization vulnerability in the ClawHub application/backend: an organization-owned skill retains the ownerUserId of its original publisher, and transfer and lifecycle authorization checks trust that historical user before requiring current organization privileges. An authenticated user who originally published an organization skill can therefore transfer, delete, or restore that skill — taking control of its trusted name and history — even after their organization privileges have been revoked or downgraded. The issue was confirmed at revision cbfee7343ddc867316dd9b3de6fa8856730f9f41; the complete historical affected range was not established. It is fixed by PR #3680, included in revision 8c2de6c506bb4efabe3f0c2ffb8370b9e23d4650, which was deployed to clawhub.ai on 2026-09-11; self-hosted deployments should update to that revision or a later descendant. The npm CLI and OpenClaw runtime are separate products and are not affected."
+      "date": "2026-09-27T10:16:59.563",
+      "summary": "A (D)TLS 1.2 client can accept a ChangeCipherSpec message before it has sent its ClientKeyExchange. No master secret has been derived at that point, so the client installs read keys derived from a known (deterministic) key and checks the server's Finished against that same key. An out-of-order ChangeCipherSpec can therefore be used by an attacker to complete the handshake in place of the server and send data the client accepts as authentic. The client's own traffic still uses correctly derived keys, so the attacker cannot read it, and the genuine server never completes the handshake. DTLS 1.2 clients are exposed because a datagram read can deliver the out-of-order records on its own. TLS 1.2 clients are exposed when the application supplies received bytes with wolfSSL_inject() or enables read ahead. For certificate suites, the attacker must be in a man-in-the-middle position. For PSK (Pre Shared Key) connections, any fake server can succeed without knowing the PSK."
     },
     {
-      "id": "CVE-2026-100605",
-      "title": "CVE-2026-100605",
+      "id": "CVE-2026-94417",
+      "title": "CVE-2026-94417",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.620",
-      "summary": "Flowise through 3.1.4 contains missing route-level RBAC checks on chat message endpoints that allow low-privileged API keys to read and delete chat history. Attackers with valid but low-privileged API keys can access GET and DELETE chat message routes without required flow permissions to read chat histories, prompts, model responses, and delete messages."
+      "date": "2026-09-27T10:16:59.700",
+      "summary": "When an application enables both OCSP and CRL revocation checking on one WOLFSSL_CTX or certificate manager, wolfSSL skips the CRL check for any peer certificate that carries no Authority Information Access OCSP URL, and accepts a certificate the loaded CRL lists as revoked. The soft-fail policy for a missing responder collapses the OCSP result onto success before the code decides whether the CRL fallback is still needed, so \"no responder exists\" becomes indistinguishable from \"the responder answered good\". Affected builds define both HAVE_OCSP and HAVE_CRL: --enable-ocsp --enable-crl directly, and implicitly --enable-all, --enable-distro, --enable-curl, --enable-nginx, --enable-haproxy, --enable-stunnel, --enable-lighty, --enable-wpas, --enable-strongswan, --enable-mosquitto, --enable-jni, --enable-openvpn and --enable-krb. An application is affected only if it calls both wolfSSL_CTX_EnableOCSP() (or wolfSSL_EnableOCSP() / wolfSSL_CertManagerEnableOCSP()) and wolfSSL_CTX_EnableCRL() (or the equivalents) with a CRL loaded; an application that uses OCSP stapling alone through wolfSSL_CTX_EnableOCSPStapling() is not affected, because that sets up a separate OCSP instance. The defect "
     },
     {
-      "id": "CVE-2026-100606",
-      "title": "CVE-2026-100606",
+      "id": "CVE-2026-100747",
+      "title": "CVE-2026-100747",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.820",
-      "summary": "Flowise through 3.1.4 (Enterprise/platform mode with SSO enabled) contains an authentication bypass in the SSO login path. When an SSO callback arrives with an email matching a user whose status is INVITED, verifyAndLogin (SSOBase.ts:80-94) copies the user record from the database — including the server-stored single-use invitation tempToken — into the data passed to AccountService.register(). The register handler's token lookup, email match, and expiry checks therefore pass trivially against the server's own token instead of a caller-supplied one, and the account and its organization membership are flipped to ACTIVE. As a result, anyone able to authenticate at any configured SSO provider using a pending invitee's email address as the email claim can take over that invitation and obtain the invited user's access to the organization without ever possessing the emailed invitation token, for as long as the invitation is valid (24 hours by default). At the time of the advisory no patched version was available."
+      "date": "2026-09-27T12:17:10.557",
+      "summary": "Joomla Extension - svenbluege.de - CSRF in image upload in Event Gallery extension < 6.5.0 - Due to lack of an CSRF token check, a third-party site can upload files to an event and overwrite existing files with the same name."
     },
     {
-      "id": "CVE-2026-100607",
-      "title": "CVE-2026-100607",
+      "id": "CVE-2026-100748",
+      "title": "CVE-2026-100748",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:40.983",
-      "summary": "Flowise through 3.1.4 resolves SSO and local-password users solely by email without storing provider or subject identifier bindings, allowing attackers to authenticate as any existing user by claiming their email at any configured SSO provider. Attackers can gain complete account access including chatflows, credentials, and API keys by authenticating through a different SSO provider or local password than the victim's original registration method."
+      "date": "2026-09-27T12:17:11.710",
+      "summary": "Joomla Extension - svenbluege.de - CSRF in various cart actions in Event Gallery extension < 6.5.0"
     },
     {
-      "id": "CVE-2026-100608",
-      "title": "CVE-2026-100608",
+      "id": "CVE-2026-100749",
+      "title": "CVE-2026-100749",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:41.140",
-      "summary": "Flowise through 3.1.4 does not enforce authorization on the BullMQ admin dashboard. When the server runs in queue mode with the dashboard enabled and not in cloud mode (MODE=queue, ENABLE_BULLMQ_DASHBOARD=true, and !isCloud()), the /admin/queues mount is protected only by the verifyTokenForBullMQDashboard middleware, which validates the JWT but performs no role, permission, or workspace/organization scoping check; the mount also lies outside /api/v1/* so the global API gate does not apply. As a result, any authenticated user — including the lowest-privileged member of any tenant — can reach the full Bull-Board UI and view all queues and job payloads across the entire instance, including chat inputs and overrideConfig (which may carry credentials and prompts), chatflow.flowData graph definitions with custom function source code, credential IDs and system prompts, chatIds, files, and the originating orgId/workspaceId. The dashboard's write actions (retry, remove, promote, clean) are likewise usable across tenants. No patched version is available as of the advisory."
+      "date": "2026-09-27T12:17:11.840",
+      "summary": "Joomla Extension - svenbluege.de - CSRF in backend cleanup actions in Event Gallery extension < 6.5.0 - Only orphaned file entries and shopping carts that are older than 30 days will be deleted."
     },
     {
-      "id": "CVE-2026-100609",
-      "title": "CVE-2026-100609",
+      "id": "CVE-2026-97164",
+      "title": "CVE-2026-97164",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:41.297",
-      "summary": "Flowise (npm packages `flowise` and `flowise-components`) through 3.1.4 looks up credentials by ID without filtering on the requesting user's workspace (findOneBy({ id: credentialId }) with no workspaceId condition) in several code paths: getAllOpenaiAssistants/getSingleOpenaiAssistant (GET /api/v1/openai-assistants and /api/v1/openai-assistants/:id), uploadFilesToAssistant (POST /api/v1/openai-assistants-file/upload/), deleteAssistant (DELETE /api/v1/assistants/:id, reachable by first importing a poisoned assistant row via POST /api/v1/export-import/import), and the shared helper used by getVoices (GET /api/v1/text-to-speech/voices). An authenticated user of one workspace can supply a credential UUID belonging to another workspace, causing the server to decrypt and use that workspace's OpenAI or ElevenLabs API key on the attacker's behalf. No patched version was available at the time of publication."
+      "date": "2026-09-27T12:17:11.987",
+      "summary": "Joomla Extension - svenbluege.de - Authenticated arbitrary path deletion in `clear cache` task in Event Gallery extension < 6.5.0 - Using the `images` parameter of the `cache.process` task, you can recursively delete any directories that the web server is authorized to write to."
     },
     {
-      "id": "CVE-2026-100610",
-      "title": "CVE-2026-100610",
+      "id": "CVE-2026-97165",
+      "title": "CVE-2026-97165",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:41.460",
-      "summary": "Flowise through 3.1.4 exposes GET /api/v1/upsert-history/:id and PATCH /api/v1/upsert-history without route-level permission checks, and the backing service performs no workspace or ownership validation. getAllUpsertHistory() returns UpsertHistory rows selected solely by an attacker-supplied chatflowid, and patchDeleteUpsertHistory() deletes rows by an attacker-supplied array of record UUIDs. As a result, any authenticated low-privilege user or valid API key can read or delete document-store upsert history belonging to other users and other workspaces whenever the target chatflowId (which is exposed publicly in /chatbot/<chatflowId> share links) or row ids are known. The retrievable flowData and result fields contain embedding, record-manager and vector-store node configuration, including per-node paramValues. No patched version is available."
+      "date": "2026-09-27T12:17:12.127",
+      "summary": "Joomla Extension - svenbluege.de - Reflected XSS and open redirect in Event Gallery extension < 6.5.0 - The “return” parameter is base64-decoded and written to the “Back” link without being validated."
     },
     {
-      "id": "CVE-2026-100611",
-      "title": "CVE-2026-100611",
+      "id": "CVE-2026-100866",
+      "title": "CVE-2026-100866",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:41.610",
-      "summary": "Capgo (capgo.app backend, versions ≤ 12.261.0) improperly restricts which roles the apikey_manager organization role may bind to newly created API keys. When an authenticated user holding only apikey_manager (permissions org.manage_apikeys and org.read) calls POST /apikey with a JWT session, the only checks applied are the org.manage_apikeys permission, a fixed deny-list of assignable role names (APIKEY_MANAGER_DENIED_ASSIGNABLE_ROLES in public/apikey/scope.ts), and a priority-rank comparison in createRoleBindingForPrincipal (private/role_bindings.ts). No check verifies that the caller actually holds the permissions conferred by the role being assigned. Because the deny-list omits the deploy roles app_developer, app_uploader, channel_developer and channel_uploader, and apikey_manager is seeded with priority_rank 78 — higher than those roles' ranks (68, 66, 58, 57) — the rank check also passes. As a result, an apikey_manager who cannot upload bundles or promote channels can mint an API key bound to a deploy role and use it to push arbitrary OTA JavaScript updates to all end users of the organization's apps. As of the advisory publication no patched version was available."
+      "date": "2026-09-27T13:16:36.583",
+      "summary": "onefetch through 2.28.1 writes repository information field values to the terminal without removing control characters, allowing terminal escape sequence injection. Attackers can embed ANSI/OSC escape sequences in project manifest version and name fields to manipulate terminal output, rewrite window titles, hide text, or trigger emulator-specific behavior when victims run onefetch."
     },
     {
-      "id": "CVE-2026-100612",
-      "title": "CVE-2026-100612",
+      "id": "CVE-2026-100867",
+      "title": "CVE-2026-100867",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:41.753",
-      "summary": "Capgo (capgo.app) through version 12.261.0 contains an incomplete access-control fix for the public.sso_providers table. Migration 20260826100000_sso_providers_block_direct_active_insert.sql installs a BEFORE UPDATE guard (enforce_sso_provider_client_update_guard()) that freezes only the dns_verified_at, domain, status and enforce_sso columns; provider_id (as well as metadata_url and attribute_mapping) is left writable. Because the table is granted ALL to the anon and authenticated roles with no column-level restriction, and PostgreSQL row-level security policies such as allow_org_admins_update_sso_providers constrain only which row may be updated and not which columns, a user holding the org_admin tier permission org.update_settings can PATCH provider_id over PostgREST to an identity provider under their control. Since provider_id is the trust anchor binding an email domain to an authorized IdP, the attacker can then authenticate through their own IdP while asserting the org owner's email; the server-side provider match succeeds and the merge routine attaches the attacker's SSO identity to the existing owner account, nulls its password, and deletes its other identities and session"
+      "date": "2026-09-27T13:16:37.810",
+      "summary": "spaceship-prompt through 4.22.5 fails to sanitize control characters from project manifest version fields before rendering them in the zsh prompt. Attackers can embed ANSI/OSC escape sequences in version fields of package manifests to manipulate terminal output, rewrite window titles, or spoof displayed text when victims enter the directory."
     },
     {
-      "id": "CVE-2026-100613",
-      "title": "CVE-2026-100613",
+      "id": "CVE-2026-100868",
+      "title": "CVE-2026-100868",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:41.903",
-      "summary": "capgo.app is an over-the-air (OTA) update platform for Capacitor apps. In all versions up to and including the current release (no patch available at time of publication), the `transfer_app()` database function transfers an app, its channels, versions and related records to a destination organization without deleting or revalidating existing rows in `channel_permission_overrides`. As a result, a user who legitimately held a channel permission override while a member of the source organization retains that override after the transfer, even though they have no membership and no RBAC binding in the destination organization. Using their own authenticated JWT against the PostgREST API, such a former member can modify the destination-owned channel to point at a different bundle, causing the /updates endpoint to serve an attacker-selected application version to devices. The previously proposed fix for GHSA-626c-p6fq-3whq (PR #3093), which validates organization membership when an override is created or updated, does not remove overrides that became stale as a result of an app transfer."
+      "date": "2026-09-27T13:16:37.960",
+      "summary": "Penpot before 2.18.0 binds the MCP server plugin WebSocket bridge to all network interfaces without authentication in single-user mode. Unauthenticated attackers on adjacent networks can connect to the WebSocket port to impersonate the Penpot browser plugin, intercept task payloads, and return forged results to the MCP client."
     },
     {
-      "id": "CVE-2026-100614",
-      "title": "CVE-2026-100614",
+      "id": "CVE-2026-100869",
+      "title": "CVE-2026-100869",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.050",
-      "summary": "Capgo before 12.244.1 contains a cross-tenant integrity vulnerability in the metadata-cleaning worker that trusts image object keys from mutable database rows without validating ownership. An authenticated attacker can place a victim tenant's image key in a row they control, causing the service-role worker to download and re-upload that object with sanitized metadata. Attackers can silently modify metadata in cross-tenant image objects by supplying known victim keys during authorized row updates, bypassing storage access controls through the confused-deputy metadata worker."
+      "date": "2026-09-27T13:16:38.100",
+      "summary": "Sylius versions before 2.1.16 and 2.2.9 fail to restrict payment request actions in the Shop API endpoint, allowing customers to trigger refunds on completed orders. Attackers with order tokens can submit arbitrary payment actions like refunds that payment gateways execute while Sylius maintains order as paid, causing financial loss."
     },
     {
-      "id": "CVE-2026-100615",
-      "title": "CVE-2026-100615",
+      "id": "CVE-2026-100870",
+      "title": "CVE-2026-100870",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.193",
-      "summary": "Cap-go capgo.app before 12.267.1 fails to validate target API key privilege during rotation, allowing an apikey_manager to rotate a higher-privileged org_super_admin sibling key and recover its plaintext credential. Attackers with apikey_manager role can enumerate same-owner API keys, rotate a stronger sibling through the PUT endpoint, and obtain the replacement plaintext secret to authenticate as the higher-privileged principal."
+      "date": "2026-09-27T13:16:38.240",
+      "summary": "Sylius versions before 1.12.25, 1.13.17, 1.14.20, 2.1.16, and 2.2.9 build administrator password-reset links using the request Host header without validation, allowing unauthenticated attackers to redirect reset tokens to attacker-controlled domains. Attackers can request password resets for known administrator email addresses with forged Host headers to intercept valid reset tokens and take over administrator accounts."
     },
     {
-      "id": "CVE-2026-100616",
-      "title": "CVE-2026-100616",
+      "id": "CVE-2026-100871",
+      "title": "CVE-2026-100871",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.333",
-      "summary": "capgo.app is an over-the-air update platform for Capacitor apps. In all versions prior to a fix, the row-level security UPDATE policy on the public.orgs table permits an organization admin (a user holding org.update_settings) to update the entire row, including the internal billing pointer column customer_id. The official organization update endpoint (supabase/functions/_backend/public/organization/put.ts) allowlists only a small set of editable settings fields and excludes customer_id, and the private Stripe billing route separately requires the org.update_billing permission. By sending an update directly to Supabase PostgREST, an authenticated org admin without org.update_billing can null or corrupt the organization's Stripe customer pointer, causing plan and billing checks that trust orgs.customer_id to fail and moving the organization from a valid paid plan state to unpaid/no-plan behavior. At the time of the advisory no patched version was available."
+      "date": "2026-09-27T13:16:38.380",
+      "summary": "Sylius versions before 1.12.25, 1.13.17, 1.14.20, 2.1.16, and 2.2.9 fail to include firewall identification in JWT tokens issued by separate Admin and Shop API endpoints. Attackers can register a shop customer account using an administrator's email address and obtain a token that the Admin API resolves to that administrator, granting full administrative access."
     },
     {
-      "id": "CVE-2026-100617",
-      "title": "CVE-2026-100617",
+      "id": "CVE-2026-100872",
+      "title": "CVE-2026-100872",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.467",
-      "summary": "Cap-go capgo.app fails to validate that principals in channel_permission_overrides belong to the organization, allowing authenticated app/org admins to grant channel permissions to non-member users. Attackers with admin privileges can insert override rows with arbitrary external user UUIDs to grant channel-scoped permissions such as channel.promote_bundle to users outside the organization."
+      "date": "2026-09-27T13:16:38.523",
+      "summary": "Sylius versions before 2.1.16 and 2.2.9 fail to validate payment amounts during cart recalculation, allowing unauthenticated attackers to modify order totals after gateway transaction initiation. Attackers can pay a small amount, enlarge the order after gateway capture, and have the system mark the inflated order as fully paid while the gateway captured only the original amount."
     },
     {
-      "id": "CVE-2026-100618",
-      "title": "CVE-2026-100618",
+      "id": "CVE-2026-101032",
+      "title": "CVE-2026-101032",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.600",
-      "summary": "Capgo (capgo.app) is affected by an authorization flaw in the app icon update path. The PUT /app/:id endpoint accepts a user-controlled `icon` value, normalizes it, and stores it in public.apps.icon_url without verifying that the image path belongs to the target app's own image namespace (e.g. org/{owner_org}/{app_id}/...). Updating apps.icon_url fires the on_app_update trigger, whose worker reads record.icon_url and calls cleanStoredImageMetadata(), which runs with service-role credentials (supabaseAdmin()) and downloads and re-uploads the referenced storage object with upsert: true. As a result, an authenticated holder of an app-limited write API key can cause the privileged worker to rewrite an out-of-scope private image object (for example an organization logo) that the key cannot read or write directly under Supabase Storage RLS. All versions are affected; no patched version was available at the time of the advisory."
+      "date": "2026-09-27T14:16:28.190",
+      "summary": "navi through 2.24.0 fails to properly escape cheatsheet variable values when substituting them into shell commands. Attackers can inject shell metacharacters through crafted file names in suggestion command directories to execute arbitrary commands with victim privileges."
     },
     {
-      "id": "CVE-2026-100619",
-      "title": "CVE-2026-100619",
+      "id": "CVE-2026-101033",
+      "title": "CVE-2026-101033",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.740",
-      "summary": "Capgo (capgo.app) blocks direct user inserts into the public.manifest table with a RESTRICTIVE row-level security policy, but that restriction can be bypassed indirectly. A principal holding an app-scoped upload/write/all API key (upload+ rights) or an authenticated user with write+ rights on an app can update public.app_versions.manifest on a version whose storage_provider is 'r2-direct', which is not covered by the bundle content-lock check. The on_version_update async worker trusts record.manifest and, using the service-role Supabase client, inserts the attacker-controlled file_name, file_hash, and s3_path into public.manifest before clearing app_versions.manifest. When a channel points to the crafted version, the /updates endpoint returns the service-role-created manifest entry as a client-facing download_url, enabling OTA manifest poisoning through a trusted async worker path. All versions are affected; no patch was available at the time of publication."
+      "date": "2026-09-27T14:16:29.273",
+      "summary": "KitchenOwl through 0.7.10 fails to verify that category IDs belong to the caller's household in expense and item operations. Authenticated attackers can enumerate category IDs from other households to read their category names, budgets, and colors, breaking household isolation."
     },
     {
-      "id": "CVE-2026-100620",
-      "title": "CVE-2026-100620",
+      "id": "CVE-2026-101041",
+      "title": "CVE-2026-101041",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:42.877",
-      "summary": "Capgo CLI (npm package @capgo/cli) through 7.98.2 is affected by an over-permissioned service account in its Android onboarding flow. When onboarding via Google OAuth, the CLI invites the generated Google Play service account with the account-wide Play Console permission CAN_MANAGE_DRAFT_APPS_GLOBAL (passed as developerAccountPermissions in the Android Publisher API User create request), even though the user-facing flow states the service account is invited into a single confirmed app with release-only permissions. As a result, anyone who obtains the generated service account key (PLAY_CONFIG_JSON) can create, edit, and delete draft apps across the entire Google Play developer account rather than being limited to the selected package. No patched version was available at the time of publication."
+      "date": "2026-09-27T15:16:27.190",
+      "summary": "The account recovery (password reset) functionality in the vulnerability-lookup web application contains a time-of-check-to-time-of-use (TOCTOU) race condition in the consumption of single-use recovery tokens. The original implementation verified the token nonce against the stored digest and then consumed (cleared) it in separate database operations. Two concurrent HTTP requests presenting the same valid recovery token could both pass the verification check before either transaction committed, allowing both to set their own password on the target account. The last transaction to commit overwrites the first, enabling an attacker who possesses a valid recovery token to replace the legitimate user's password with one of their choosing.\n\nA secondary defect in the same endpoint (confirm_account) allowed a valid recovery link to be used to set an empty or trivially short password (e.g., three characters). The view handler performed only a manual equality comparison between the two password fields and never invoked the form's validation logic, bypassing the intended minimum-length and complexity constraints.\n\nThe affected component is the user account recovery endpoint (/user/confirm_acco"
     },
     {
-      "id": "CVE-2026-100621",
-      "title": "CVE-2026-100621",
+      "id": "CVE-2026-101042",
+      "title": "CVE-2026-101042",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.017",
-      "summary": "Capgo (capgo.app) contains an incomplete access-control/content-lock enforcement issue affecting all versions; no patch is available at the time of publication. The `enforce_encrypted_bundle_trigger` / `check_encrypted_bundle_on_insert` content lock in supabase/schemas/prod.sql exempts `app_versions` rows whose previous `storage_provider` is `r2-direct`, so delivery-critical columns (name, app_id, session_key, key_id, storage_provider, r2_path, external_url, checksum, manifest, native_packages) remain mutable while a row is in that state. Separately, the channel/version join used by the `/updates` endpoint (supabase/functions/_backend/utils/pg.ts) filters only deleted versions and does not exclude `r2-direct` versions, so such rows remain OTA-selectable. An attacker holding a Capgo API key with bundle write/upload permission can create or keep a bundle version in the `r2-direct` state, assign it to a channel, and then modify these fields via direct PostgREST requests, causing altered bundle metadata (for example checksum and session_key) to be served to devices through `/updates`. This bypasses the post-upload content immutability hardening added for a previous app_versions metadat"
+      "date": "2026-09-27T17:16:55.820",
+      "summary": "Parse Server is an open-source backend server. In versions >= 9.0.0 < 9.10.1-alpha.10 and >= 8.0.2 < 8.6.91, the code-based authentication adapters (GitHub, Google Play Games, Instagram, LINE, LinkedIn, Microsoft, QQ, Spotify, WeChat, Weibo) verify the client's authorization code with the external provider on signup and on provider linking, but not when authentication data is supplied together with a username and password on the login endpoint. As a result, a low-privileged authenticated user can attach an arbitrary, unverified provider identity to their own account without the provider ever being contacted, spoofing an external identity toward application logic that trusts the linked provider ID. An attacker can also pre-hijack accounts: by claiming the provider ID of a victim who has not yet linked that provider, the victim's later legitimate sign-in with that provider resolves to the attacker's account. Only deployments configuring one of the affected code-based auth adapters are impacted. Versions 9.10.1-alpha.10 and 8.6.91 fix the issue by running the adapter's credential verification on the login and challenge endpoints and rejecting a provider identity already linked to anot"
     },
     {
-      "id": "CVE-2026-100622",
-      "title": "CVE-2026-100622",
+      "id": "CVE-2026-101049",
+      "title": "CVE-2026-101049",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.157",
-      "summary": "capgo.app through 12.129.0 fails to verify deletion status when serving cached bundle artifacts from the public file read endpoint. Unauthenticated attackers can download deleted bundles using cached URLs and trigger restoration of deleted objects into R2 storage on cache hits."
+      "date": "2026-09-27T17:16:55.967",
+      "summary": "Heym before 0.0.53 fails to verify Slack request signatures when trigger nodes lack credential IDs or have empty signing secrets. Remote unauthenticated attackers can send forged Slack events to known webhook URLs to trigger workflows with the owner's credentials."
     },
     {
-      "id": "CVE-2026-100623",
-      "title": "CVE-2026-100623",
+      "id": "CVE-2026-101050",
+      "title": "CVE-2026-101050",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.293",
-      "summary": "Capgo (capgo.app) exposes the legacy membership table public.org_users directly through Supabase PostgREST. The table's row-level security policies \"Allow org admin to insert\" and \"Allow org admin to update\" only verify that the caller has admin rights in the target organization (public.check_min_rights('admin', ...)); they do not require a pending invitation in tmp_users, acceptance of an invite token via /private/accept_invitation, any action by the target user, or the membership/role-consistency and anti-escalation checks enforced by the RBAC role-binding path. As a result, an authenticated user who is an admin of an organization can INSERT or UPDATE org_users rows directly to add any existing public.users account as an active member of that organization with user_right=\"admin\", bypassing the invitation and role-assignment workflow entirely. In testing, an account with no prior access to the organization or its apps could, after such a direct insert, read the organization and app and pass check_min_rights. All versions are affected and no patch was available at the time of publication."
+      "date": "2026-09-27T17:16:56.100",
+      "summary": "Heym before 0.0.53 fails to verify the X-Telegram-Bot-Api-Secret-Token header on Telegram webhook endpoints when credential_id is absent or secret_token is empty. Remote unauthenticated attackers can post forged Telegram updates to trigger workflows with the owner's configured credentials and execute actions on attacker-supplied input."
     },
     {
-      "id": "CVE-2026-100624",
-      "title": "CVE-2026-100624",
+      "id": "CVE-2026-88771",
+      "title": "CVE-2026-88771",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.430",
-      "summary": "Capgo.app before 12.264.5 does not enforce upload expiry or build lifecycle state in the /build/upload/:jobId TUS proxy endpoint. When a native build request is created, an upload_expires_at timestamp (one hour) and a 'pending' status are stored in build_requests, but the upload proxy loads only app_id, owner_org, builder_job_id, and upload_path and checks only the app.build_native permission before forwarding POST, PATCH, and HEAD requests to the internal builder. As a result, an authenticated caller holding app.build_native permission for the app can continue writing to the build upload session after the stored expiry has passed or after the build has moved beyond the upload phase, unless the separate builder service independently rejects the request. The issue is fixed in 12.264.5."
+      "date": "2026-09-27T17:16:56.260",
+      "summary": "Improper input validation vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to an unauthenticated attacker to execute arbitrary commands."
     },
     {
-      "id": "CVE-2026-100625",
-      "title": "CVE-2026-100625",
+      "id": "CVE-2026-88772",
+      "title": "CVE-2026-88772",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.567",
-      "summary": "Capgo (capgo.app) exposes a native build TUS upload proxy (supabase/functions/_backend/public/build/upload.ts) that authorizes a caller against a single build job identified by the supplied builder_job_id and validates only that job's stored upload_path, but then forwards the user-controlled TUS resource suffix taken from /build/upload/:jobId/* to the builder service while injecting Capgo's privileged builder API key. Because the forwarded suffix is never bound to the authorized job's upload_path or upload_session_key, a caller holding a valid 'all' or 'write' Capgo API key with app.build_native permission for one application can use its authorized proxy path for job A to write to the TUS upload resource of another job B, provided that resource suffix is known or exposed, corrupting that build's artifacts. All versions are affected; no patch was available at the time of advisory publication."
+      "date": "2026-09-27T17:16:56.390",
+      "summary": "Vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to Remote Code Execution or Denial of Service"
     },
     {
-      "id": "CVE-2026-100626",
-      "title": "CVE-2026-100626",
+      "id": "CVE-2026-88773",
+      "title": "CVE-2026-88773",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.703",
-      "summary": "capgo through 12.128.2 contains an insecure direct object reference vulnerability in the PUT /app/:appId endpoint that accepts attacker-controlled icon storage paths. Authenticated users can supply arbitrary paths in the private images bucket and obtain service-role-signed URLs valid for 7 days to read cross-tenant objects including user avatars, organization logos, and app icons without authorization."
+      "date": "2026-09-27T17:16:56.507",
+      "summary": "Inconsistent interpretation of HTTP requests ('HTTP Request/Response smuggling') vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1-37.279 and NDcPP; Gateway: before 14.1-73.37 FIPS and before 13.1-64.23."
     },
     {
-      "id": "CVE-2026-100627",
-      "title": "CVE-2026-100627",
+      "id": "CVE-2026-88774",
+      "title": "CVE-2026-88774",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.837",
-      "summary": "Capgo (Cap-go/capgo.app) server backend Supabase functions contain an incorrect authorization flaw in the API-key bundle promotion path. The PUT /bundle endpoint, available to \"all\" and \"write\" API keys, dispatches to setChannel, which authorizes with checkPermission(c, 'channel.promote_bundle', { appId: body.app_id }) and omits the request's channel_id. Because the omitted scope field is passed to rbac_check_permission_direct as SQL NULL, and channel-scope override evaluation is gated on p_channel_id IS NOT NULL, per-channel allow/deny overrides are never evaluated. A principal holding app-level channel.promote_bundle (granted by default to the app_developer and app_uploader roles) can therefore promote a bundle to a channel for which an explicit per-channel deny override exists, updating public.channels.version for the supplied channel_id; the target channel is only validated after authorization. The issue is confirmed on main at commit de66fa51e7ff2f50283cc1455c3d80ab3eb0ae43 and likely earlier versions; no patched version is known at the time of publication."
+      "date": "2026-09-27T17:16:56.633",
+      "summary": "Vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to a feature policy bypass due to improper HTTP URL based expression usage."
     },
     {
-      "id": "CVE-2026-100628",
-      "title": "CVE-2026-100628",
+      "id": "CVE-2026-88775",
+      "title": "CVE-2026-88775",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:43.977",
-      "summary": "capgo.app before 12.128.12 fails to enforce an organization's API key expiration policy when creating app-scoped API keys. In the POST /apikey endpoint, requests that supply app_id but omit org_id, limited_to_orgs, and expires_at resolve the target app and scope the key to it, but never add the app's owner organization to the list of organization IDs passed to validateExpirationAgainstOrgPolicies; because that list is empty, the validation returns early. As a result, an authenticated organization member can create a non-expiring app-scoped API key even when the owning organization has require_apikey_expiration enabled and a max_apikey_expiration_days limit configured. The issue is fixed in version 12.128.12."
+      "date": "2026-09-27T17:16:56.750",
+      "summary": "Memory overflow vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading Memory overflow vulnerability leading to unpredictable or erroneous behavior or Denial of Service"
     },
     {
-      "id": "CVE-2026-100629",
-      "title": "CVE-2026-100629",
+      "id": "CVE-2026-88776",
+      "title": "CVE-2026-88776",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:44.117",
-      "summary": "Capgo (capgo.app backend) before 12.127.5 contains an authorization flaw in the PATCH /private/role_bindings/:binding_id endpoint. The handler verifies that the newly assigned role's priority rank does not exceed the caller's own rank, but — unlike the DELETE handler — it never checks the rank of the role currently bound to the target binding. An authenticated user holding the org_admin role (rank 90) can therefore change an org_super_admin binding (rank 95) to a lower-privileged role such as org_member (rank 75). Because the prevent_last_super_admin_binding_delete database trigger fires only BEFORE DELETE and not on UPDATE, an org_admin can demote every org_super_admin, leaving the organization with no super administrator. The issue is fixed in 12.127.5."
+      "date": "2026-09-27T17:16:56.870",
+      "summary": "Memory overflow vulnerability vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23  leading to unpredictable or erroneous behavior or Denial of Service"
     },
     {
-      "id": "CVE-2026-100630",
-      "title": "CVE-2026-100630",
+      "id": "CVE-2026-88777",
+      "title": "CVE-2026-88777",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:44.260",
-      "summary": "AVideo contains a stored cross-site scripting vulnerability in the video trailer1 field rendered unsanitized within an inline onclick JavaScript string. Attackers with video upload permission can store HTML entity-encoded payloads that bypass isValidURL() validation and are decoded by the browser to break out of the JavaScript string, executing arbitrary code in any visitor's session including administrators."
+      "date": "2026-09-27T17:16:56.990",
+      "summary": "Memory overflow vulnerability vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23  leading to unpredictable or erroneous behavior or Denial of Service"
     },
     {
-      "id": "CVE-2026-100631",
-      "title": "CVE-2026-100631",
+      "id": "CVE-2026-88778",
+      "title": "CVE-2026-88778",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:44.397",
-      "summary": "Parse Server is an open source backend server. In versions prior to 8.6.90 and in versions from 9.0.0 prior to 9.10.1-alpha.9, the device token deduplication logic for installation records does not validate the type of client-supplied installation fields before using them to build database queries. An unauthenticated remote attacker who knows only the public application ID can submit non-string values in these fields to inject query operators, causing the deduplication cleanup — which runs with elevated privileges before class-level permissions are evaluated — to delete every device registration in the application or an attacker-chosen subset of them. No account, session token, master key, or user interaction is required. Deleted registrations cannot be recovered on the server, so push notifications cannot be delivered until every client re-registers. Any deployment that exposes the REST API to clients and uses push notifications is affected in its default configuration. Versions 8.6.90 and 9.10.1-alpha.9 fix the issue by rejecting non-string values with a client error and by scoping the deduplication cleanup to the calling application. No workaround other than upgrading is availab"
+      "date": "2026-09-27T17:16:57.110",
+      "summary": "Predictable exact value from previous values vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23."
     },
     {
-      "id": "CVE-2026-100632",
-      "title": "CVE-2026-100632",
+      "id": "CVE-2026-101043",
+      "title": "CVE-2026-101043",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:44.540",
-      "summary": "Parse Server is an open-source backend server. In versions >= 9.0.0 and < 9.10.1-alpha.8, and in versions < 8.6.89, LiveQuery evaluates the protectedFields class-level permission against an incompletely resolved caller identity: the subscriber's roles are not resolved, and when a subscription does not supply its own session token the event payload is redacted against an anonymous identity even though the read was authorized against the connected user. As a result, field masks defined for a role, for authenticated users, or for a specific user are not applied, so an authenticated subscriber can receive field values that the REST API correctly withholds and can use a masked field to filter or watch a subscription. Only classes with LiveQuery enabled that define protectedFields under a role:, authenticated, or per-user group are affected; masks under the public (*) group are applied correctly. The issue is fixed in 9.10.1-alpha.8 and 8.6.89. As a workaround, additionally define the affected field masks under the public (*) group, or disable LiveQuery for classes whose class-level permissions rely on role-scoped, authenticated, or per-user protectedFields groups."
+      "date": "2026-09-27T18:16:29.700",
+      "summary": "pnpm versions 11.0.0 before 11.11.0 and 10.7.0 before 10.34.5 expand ${VAR} environment-variable placeholders in the httpProxy, httpsProxy, and noProxy settings read from a project's pnpm-workspace.yaml. Because the manifest is repository-controlled and the proxy keys were omitted from the request-destination key set that otherwise suppresses placeholder expansion for untrusted manifests (as already done for registry, pnprServer, registries and namedRegistries), an attacker who controls a repository's pnpm-workspace.yaml can cause a victim who clones the repository and runs a pnpm command (e.g. pnpm install) to expand environment secrets such as NPM_TOKEN or GITHUB_TOKEN into a proxy hostname or userinfo and route install traffic — and the corresponding DNS lookups — through an attacker-controlled host. The exfiltration occurs during configuration loading, before any lifecycle script executes. Fixed in pnpm 11.11.0 and 10.34.5."
     },
     {
-      "id": "CVE-2026-100633",
-      "title": "CVE-2026-100633",
+      "id": "CVE-2026-101044",
+      "title": "CVE-2026-101044",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:44.687",
-      "summary": "SiYuan is a self-hosted personal knowledge management system. In versions 3.8.0 through 3.8.3, the MCP file tool's sensitive-path guard (util.IsForbiddenAbsPath(), invoked from resolvePath()) is applied only to the allowed root of recursive operations and not to each resolved descendant path — an incomplete fix for GHSA-c8r8-95hg-mp34. An authenticated administrator using the in-app Agent or the external MCP server can therefore bypass the protected-workspace-file denylist: file.grep can return matching lines from non-hidden protected descendants (for example conf/conf.json, TLS keys, data/snippets/conf.json, data/templates/, data/.siyuan/publishAccess.json, notebook .siyuan internals, or the kernel log), file.copy can copy protected descendants to an ordinary path where file.read can then retrieve them, and unzip can overwrite protected descendants using ordinary, lexically contained ZIP member names. Because file.grep is globally classified as a safe action, it receives no per-call confirmation, and the confirmation cards for file.copy and unzip show only the allowed root arguments. This issue is fixed in version 3.8.4. Suggested title: SiYuan 3.8.0 through 3.8.3 Sensitive-Path G"
+      "date": "2026-09-27T18:16:30.753",
+      "summary": "pacquet, the Rust package-manager component shipped in the pnpm npm package versions >=12.0.0-alpha.0 and <12.0.0-alpha.5, does not validate dependency alias/name paths taken from a lockfile before using them in install-time filesystem joins. When a user installs a project with an attacker-supplied lockfile using --trust-lockfile or a frozen lockfile, alias entries containing path traversal segments (for example '../../escaped-link') are used when creating dependency and package links, bin destinations, hoisted entries, and virtual-store slots, allowing symlinks and directories to be created outside the intended project and node_modules boundary. Version 12.0.0-alpha.5 validates dependency names and every virtual-store slot path with a shared safe-join containment helper before any filesystem materialization, rejecting traversal, absolute, platform-specific, and reserved names with ERR_PNPM_INVALID_DEPENDENCY_NAME."
     },
     {
-      "id": "CVE-2026-100634",
-      "title": "CVE-2026-100634",
+      "id": "CVE-2026-101045",
+      "title": "CVE-2026-101045",
       "source": "NIST NVD",
-      "date": "2026-09-26T14:16:44.843",
-      "summary": "SiYuan before v3.8.4 does not validate the sender or restrict recipients in the 'siyuan-send-windows' IPC handler of the Electron main process (app/electron/main.js). The handler ignores event.sender and forwards any received payload to every BrowserWindow returned by BrowserWindow.getAllWindows(), including windows belonging to other opened workspaces. A renderer connected to an attacker-controlled remote kernel can therefore send {cmd: \"lockscreenByMode\"} and have it delivered across the workspace boundary; a sibling workspace window whose lockScreenMode is set to 1 invokes lockScreen(). Repeated messages allow the remote workspace to repeatedly lock unrelated local workspace windows, causing a limited denial of service. No confidentiality, integrity, or code-execution impact was observed."
+      "date": "2026-09-27T18:16:30.897",
+      "summary": "Fleet-maintained app install and uninstall scripts for macOS are generated from Homebrew cask metadata. In manifests generated before 2026-08-19, the script generator escaped this metadata at some interpolation sites but not all of them, so cask metadata containing shell metacharacters (for example $(...) command substitution) could be carried into scripts that execute as root on managed macOS hosts. An attacker who could land crafted metadata in an upstream Homebrew cask — without needing any Fleet credentials — could achieve arbitrary command execution as root on managed macOS hosts that install or uninstall the affected Fleet-maintained app; exploitation required the crafted metadata to pass both upstream Homebrew cask review and Fleet's review of the automated ingestion pull request. The fix (fleetdm/fleet#51324) landed in Fleet's ingestion pipeline on 2026-08-19 so that all manifests generated on or after that date escape cask metadata at every interpolation site; because manifests are generated centrally and distributed as pre-built content, remediation applied to all deployments with no customer action, and the code fix is included in Fleet v4.92.0."
     }
   ]
 }
