@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-10-04T08:35:11.598404+00:00",
+  "generated_at": "2026-10-05T09:15:36.681295+00:00",
   "items": [
+    {
+      "id": "CVE-2026-88779",
+      "title": "CVE-2026-88779 - Citrix NetScaler Improper Restriction of Operations within the Bounds of a Memory Buffer Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-04",
+      "vendor": "Citrix",
+      "product": "NetScaler",
+      "summary": "Citrix NetScaler ADC (formerly Citrix ADC) and Citrix NetScaler Gateway (formerly Citrix Gateway) contain an improper restriction of operations within the bounds of a memory buffer vulnerability that could allow for a denial of service.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-07"
+    },
     {
       "id": "CVE-2026-102490",
       "title": "CVE-2026-102490 - Zammad GmbH Zammad Improper Privilege Management Vulnerability",
@@ -871,295 +882,284 @@
       "due": "2026-08-10"
     },
     {
-      "id": "CVE-2026-16812",
-      "title": "CVE-2026-16812 - Arista VeloCloud Orchestrator On-Prem OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-07-27",
-      "vendor": "Arista",
-      "product": "VeloCloud Orchestrator",
-      "summary": "Arista VeloCloud Orchestrator On-Prem contains an OS command injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-07-30"
+      "id": "CVE-2026-101014",
+      "title": "CVE-2026-101014",
+      "source": "NIST NVD",
+      "date": "2026-09-28T09:17:03.893",
+      "summary": "A vulnerability was detected in Trusted Domain Project OpenDMARC up to 1.4.2. Affected by this vulnerability is the function opendmarc_util_cleanup in the library libopendmarc/opendmarc_util.c of the component DMARC Record Parser. Performing a manipulation results in off-by-one. The attack may be initiated remotely. The exploit is now public and may be used. The patch is named b3b1da9264bc80324094a27c71e7369bdedc62ae. To fix this issue, it is recommended to deploy a patch."
     },
     {
-      "id": "CVE-2026-94418",
-      "title": "CVE-2026-94418",
+      "id": "CVE-2026-101015",
+      "title": "CVE-2026-101015",
       "source": "NIST NVD",
-      "date": "2026-09-27T09:16:36.260",
-      "summary": "Under WOLFSSL_SMALL_CERT_VERIFY, ProcessPeerCertParse() runs the certificate signature check separately from the parse to keep peak memory down, then merges the two results, but it merged the signature result back only when the parse returned 0, so any parse error hid it. ParseCertRelative() reaches its validity-date, name-constraint and critical-extension checks only after ConfirmSignature() has passed, so splitting the signature check out inverts the precedence that makes \"override date errors\" a sound policy, and ASN_SIG_CONFIRM_E is never surfaced anywhere. The attacker needs no key material from the real PKI and no CA compromise: a self-made certificate carrying the expected subject name, the trusted CA's subject as its issuer, arbitrary bytes where the signature goes, a validity window in the past and the attacker's own key pair is sufficient. Affected builds define WOLFSSL_SMALL_CERT_VERIFY, which is off by default, is not set implicitly by any platform or preset header, and is not reachable from any CMake option; the autotools routes are --enable-lowresource, --enable-leantls, --enable-tinytls13=cert and --enable-tinytls13=mutualauth, and examples/configs/user_settings_embe"
+      "date": "2026-09-28T09:17:05.180",
+      "summary": "A flaw has been found in Trusted Domain Project OpenDMARC up to 1.4.2. Affected by this issue is some unknown functionality of the file policy.c of the component Domain Handler. Executing a manipulation can lead to improper validation of unsafe equivalence in input. The attack may be launched remotely. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-94419",
-      "title": "CVE-2026-94419",
+      "id": "CVE-2026-101016",
+      "title": "CVE-2026-101016",
       "source": "NIST NVD",
-      "date": "2026-09-27T09:16:36.493",
-      "summary": "Without NO_SESSION_CACHE_REF, wolfSSL_get_session() does not return a session object but a ClientSession reference of the form {row, index, hash(sessionID)} into the process-global SessionCache, and ClientSessionToSession() validates it against that hash alone. Because the TLS 1.2 session ID is chosen by the server and sent in clear, AddSessionToCache() matches any other server's session on the same ID and overwrites the client-side entry with that server's master secret, cipher suite and version, while the handle continues to resolve; nothing on the write path compares the peer, the application's server ID or the WOLFSSL_CTX. Resuming through the handle then produces an abbreviated handshake in which no Certificate message is sent, so neither chain verification nor wolfSSL_check_domain_name() runs, and the attacker is accepted as the original server for the whole of that connection. Affected builds are those leaving NO_SESSION_CACHE_REF, NO_SESSION_CACHE, NO_CLIENT_CACHE and TITAN_SESSION_CACHE all undefined, which includes a plain ./configure, --enable-opensslextra and --enable-opensslall; fifteen integration options define NO_SESSION_CACHE_REF and are therefore not affected, amo"
+      "date": "2026-09-28T09:17:05.340",
+      "summary": "A vulnerability has been found in Trusted Domain Project OpenDMARC up to 1.4.2. This affects the function opendmarc_policy_parse_dmarc in the library libopendmarc/opendmarc_policy.c. The manipulation of the argument fo/rf/ri/pct/sp/adkim/aspf/rua/ruf leads to handling of exceptional conditions. Remote exploitation of the attack is possible. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-15442",
-      "title": "CVE-2026-15442",
+      "id": "CVE-2026-101017",
+      "title": "CVE-2026-101017",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:56.893",
-      "summary": "In all builds that make use of (D)TLS, including default builds, there is a series of conditional states during the TLS shutdown which could lead to a heap-use-after free. If an application ended up getting a partial wolfSSL_read() which is sometimes caused by a small user buffer  passed in, then called wolfSSL_shutdown for a bidirectional close and attempted to wolfSSL_read() again while the peer continues trying to send data during the shutdown it would lead to a state where a potential heap-use-after free happened."
+      "date": "2026-09-28T09:17:05.503",
+      "summary": "A vulnerability was found in Trusted Domain Project OpenDMARC up to 1.4.2. This vulnerability affects the function strcasecmp in the library libopendmarc/opendmarc_policy.c. The manipulation results in handling of exceptional conditions. The attack can be executed remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-89102",
-      "title": "CVE-2026-89102",
+      "id": "CVE-2026-82915",
+      "title": "CVE-2026-82915",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:58.767",
-      "summary": "In wolfSSL versions 5.7.2 through 5.9.2 there is a client-side implementation flaw in RFC 6961, multiple OCSP response stapling, which can lead to certificate forgery. When a wolfSSL client enables OCSP stapling with the HAVE_CERTIFICATE_STATUS_REQUEST_V2 feature and calls wolfSSL_UseOCSPStaplingV2(ssl, WOLFSSL_CSR2_OCSP_MULTI, options), the client accepts any certificate in the peer's chain as a certificate authority without verifying that the certificate is actually authorized to act as one. This means that an attacker who possesses any certificate that chains to a CA trusted by the client (along with its private key) can forge certificates for arbitrary identities that will be accepted as valid by the client. The end entity certificate of the server is stored in the persistent trust store, affecting subsequent connections that reuse the context even when OCSP multi usage is not employed. Found by internal wolfSSL testing."
+      "date": "2026-09-28T09:17:07.130",
+      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Bimser Solution Software Trade Inc. EBA Plus Document and Workflow Management System allows Path Traversal.\n\nThis issue affects eBA Plus Document and Workflow Management System: from 6.7.141 before 10.0.11."
     },
     {
-      "id": "CVE-2026-89133",
-      "title": "CVE-2026-89133",
+      "id": "CVE-2026-82969",
+      "title": "CVE-2026-82969",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:58.900",
-      "summary": "wolfSSL versions 5.9.2 and earlier contain a flaw in the X.509 certificate validation logic where it fails to properly enforce NameConstraints extensions when there is an unconstrained CA tier between a name-constrained intermediate CA and the leaf certificate. wolfSSL incorrectly accepted certificates for hostnames they shouldn't be allowed to cover, due to a chain-walking state-machine bug that resets the validation state when encountering an intermediate without NameConstraints, thereby bypassing cryptographic delegation controls. This defect exists in the default build configuration that makes use of certificates where name constraint extensions are used. Thanks to Jack Lloyd, PathDiff, and Ben Smyth for reporting the issue."
+      "date": "2026-09-28T09:17:07.267",
+      "summary": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Bimser Solution Software Trade Inc. EBA Plus Document and Workflow Management System allows Stored XSS.\n\nThis issue affects eBA Plus Document and Workflow Management System: from 6.7.141 before 10.0.11."
     },
     {
-      "id": "CVE-2026-89134",
-      "title": "CVE-2026-89134",
+      "id": "CVE-2026-85134",
+      "title": "CVE-2026-85134",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:59.030",
-      "summary": "A certificate with no dNSName SAN but another SAN type present (e.g. registeredID or iPAddress) bypassed the Subject CN dNSName name-constraint check. The CN-as-DNS fallback was gated on cert->subjectCN != NULL && cert->altNames == NULL && !cert->isCA instead of \"no dNSName SAN\", so an out-of-scope CN was accepted. This incomplete fix from CVE-2026-6731, leading to the name-constraint check issue, was introduced in wolfSSL version 5.9.2."
+      "date": "2026-09-28T09:17:07.380",
+      "summary": "Unrestricted upload of file with dangerous type vulnerability in Bimser Solution Software Trade Inc. EBA Plus Document and Workflow Management System allows Upload a Web Shell to a Web Server.\n\nThis issue affects eBA Plus Document and Workflow Management System: from 6.7.141 before 10.0.11."
     },
     {
-      "id": "CVE-2026-89135",
-      "title": "CVE-2026-89135",
+      "id": "CVE-2026-86507",
+      "title": "CVE-2026-86507",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:59.157",
-      "summary": "A failed X509_verify_cert call permanently plants an unverified attacker CA in the shared CertManager, bypassing certificate validation in every type-blind sibling consumer (native TLS, OCSP, CRL, direct CM verify). This affects version 5.8.4 through 5.9.2 of wolfSSL with the macros (OPENSSL_EXTRA && !NO_CERTS && !WOLFCRYPT_ONLY) defined or built with --enable-opensslextra and the application is specifically making calls to the X509_verify_cert function."
+      "date": "2026-09-28T09:17:07.520",
+      "summary": "Improper neutralization of input in Apache Roller 6.1.5 allows an anonymous remote attacker to store a crafted comment-author URL that can execute script in the session of a weblog moderator or global administrator when the comment management page is viewed. This affects sites that permit comments on at least one weblog and whose moderator subsequently reviews the submitted comment; no non-default server setting is required. Users are recommended to upgrade to Apache Roller 6.1.6 or later."
     },
     {
-      "id": "CVE-2026-89136",
-      "title": "CVE-2026-89136",
+      "id": "CVE-2026-86530",
+      "title": "CVE-2026-86530",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:59.287",
-      "summary": "When using RPK (Raw Public Key), the client side of a TLS 1.2, 1.3 and DTLS 1.2 connection could accept an unsolicited server_cert_type=RawPublicKey which allowed a malicious or misbehaving server to bypass authentication. RPK is off by default and only enabled in --enable-rpk OR --enable-all OR --enable-distro AKA HAVE_RPK builds."
+      "date": "2026-09-28T09:17:07.653",
+      "summary": "BUFFALO Wi-Fi products handle some web form input improperly to assemble command line strings internally. An administrative user may send a crafted HTTP request and execute an arbitrary OS command."
     },
     {
-      "id": "CVE-2026-93302",
-      "title": "CVE-2026-93302",
+      "id": "CVE-2026-94282",
+      "title": "CVE-2026-94282",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:59.417",
-      "summary": "MatchTrustedPeer ignores the public key used, leading to forged CA clones passing verification. Affected builds are any that enable the macro WOLFSSL_TRUST_PEER_CERT and load CA certificates with wolfSSL_CTX_trust_peer_cert() or wolfSSL_trust_peer_cert(). The peer must know the certificates being loaded to either of those APIs to take advantage of the issue. When OPENSSL_COMPATIBLE_DEFAULTS is also defined this widens the affected API to include all CA certificate loading. Both macros are defined when using autoconf builds such as (nginx, haproxy, stunnel, wpas, apache httpd, hitch, bind, rsyslog, ffmpeg, all, distro). When the certificate is listed as a trusted peer certificate the issue previously allowed for a malicious (D)TLS server to bypass authentication once knowing which CA’s the client would accept. This also affects mutual authentication cases where the client knows which CA’s the server has loaded. If building with any of these configurations and using (D)TLS where the loaded CA’s could be known and authentication of the peer is desired, users should either: update to the latest wolfSSL version, apply the fix patch, or use the configure flag --disable-openssl-compatible"
+      "date": "2026-09-28T09:17:08.003",
+      "summary": "An out-of-bounds read in libXi's XI2 enter/leave/focus cookie conversion in libXi before 1.8.4 could be used by malicious X server to crash an attached X client."
     },
     {
-      "id": "CVE-2026-93304",
-      "title": "CVE-2026-93304",
+      "id": "CVE-2026-94283",
+      "title": "CVE-2026-94283",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:59.563",
-      "summary": "A (D)TLS 1.2 client can accept a ChangeCipherSpec message before it has sent its ClientKeyExchange. No master secret has been derived at that point, so the client installs read keys derived from a known (deterministic) key and checks the server's Finished against that same key. An out-of-order ChangeCipherSpec can therefore be used by an attacker to complete the handshake in place of the server and send data the client accepts as authentic. The client's own traffic still uses correctly derived keys, so the attacker cannot read it, and the genuine server never completes the handshake. DTLS 1.2 clients are exposed because a datagram read can deliver the out-of-order records on its own. TLS 1.2 clients are exposed when the application supplies received bytes with wolfSSL_inject() or enables read ahead. For certificate suites, the attacker must be in a man-in-the-middle position. For PSK (Pre Shared Key) connections, any fake server can succeed without knowing the PSK."
+      "date": "2026-09-28T09:17:08.133",
+      "summary": "An out-of-bounds read vulnerability in libX11's XIM (X Input Method) attribute parser in libX11 before 1.8.14 could be used by malicious X servers to crash attached X clients."
     },
     {
-      "id": "CVE-2026-94417",
-      "title": "CVE-2026-94417",
+      "id": "CVE-2026-94284",
+      "title": "CVE-2026-94284",
       "source": "NIST NVD",
-      "date": "2026-09-27T10:16:59.700",
-      "summary": "When an application enables both OCSP and CRL revocation checking on one WOLFSSL_CTX or certificate manager, wolfSSL skips the CRL check for any peer certificate that carries no Authority Information Access OCSP URL, and accepts a certificate the loaded CRL lists as revoked. The soft-fail policy for a missing responder collapses the OCSP result onto success before the code decides whether the CRL fallback is still needed, so \"no responder exists\" becomes indistinguishable from \"the responder answered good\". Affected builds define both HAVE_OCSP and HAVE_CRL: --enable-ocsp --enable-crl directly, and implicitly --enable-all, --enable-distro, --enable-curl, --enable-nginx, --enable-haproxy, --enable-stunnel, --enable-lighty, --enable-wpas, --enable-strongswan, --enable-mosquitto, --enable-jni, --enable-openvpn and --enable-krb. An application is affected only if it calls both wolfSSL_CTX_EnableOCSP() (or wolfSSL_EnableOCSP() / wolfSSL_CertManagerEnableOCSP()) and wolfSSL_CTX_EnableCRL() (or the equivalents) with a CRL loaded; an application that uses OCSP stapling alone through wolfSSL_CTX_EnableOCSPStapling() is not affected, because that sets up a separate OCSP instance. The defect "
+      "date": "2026-09-28T09:17:08.247",
+      "summary": "An out-of-bounds read vulnerability in libX11's XIM trigger-key registration parser in libX11 before 1.8.14 could be used by malicious X servers to crash attached X clients."
     },
     {
-      "id": "CVE-2026-100747",
-      "title": "CVE-2026-100747",
+      "id": "CVE-2026-94285",
+      "title": "CVE-2026-94285",
       "source": "NIST NVD",
-      "date": "2026-09-27T12:17:10.557",
-      "summary": "Joomla Extension - svenbluege.de - CSRF in image upload in Event Gallery extension < 6.5.0 - Due to lack of an CSRF token check, a third-party site can upload files to an event and overwrite existing files with the same name."
+      "date": "2026-09-28T09:17:08.353",
+      "summary": "An out-of-bounds read in libX11's byte-oriented codeset parser in libX11 before 1.8.14 could be used by malicious X servers to crash attached X clients."
     },
     {
-      "id": "CVE-2026-100748",
-      "title": "CVE-2026-100748",
+      "id": "CVE-2026-94286",
+      "title": "CVE-2026-94286",
       "source": "NIST NVD",
-      "date": "2026-09-27T12:17:11.710",
-      "summary": "Joomla Extension - svenbluege.de - CSRF in various cart actions in Event Gallery extension < 6.5.0"
+      "date": "2026-09-28T09:17:08.463",
+      "summary": "An out-of-bounds read in libXtst's RECORD reply parser in libXtst before 1.2.6 could be used by malicious X servers to crash attached X clients."
     },
     {
-      "id": "CVE-2026-100749",
-      "title": "CVE-2026-100749",
+      "id": "CVE-2026-94287",
+      "title": "CVE-2026-94287",
       "source": "NIST NVD",
-      "date": "2026-09-27T12:17:11.840",
-      "summary": "Joomla Extension - svenbluege.de - CSRF in backend cleanup actions in Event Gallery extension < 6.5.0 - Only orphaned file entries and shopping carts that are older than 30 days will be deleted."
+      "date": "2026-09-28T09:17:08.577",
+      "summary": "A denial of service via unsigned underflow in libXpm's write path in libXpm before 3.5.19 could be used by local attackers to cause unbounded CPU usage and memory exhaustion."
     },
     {
-      "id": "CVE-2026-97164",
-      "title": "CVE-2026-97164",
+      "id": "CVE-2026-95104",
+      "title": "CVE-2026-95104",
       "source": "NIST NVD",
-      "date": "2026-09-27T12:17:11.987",
-      "summary": "Joomla Extension - svenbluege.de - Authenticated arbitrary path deletion in `clear cache` task in Event Gallery extension < 6.5.0 - Using the `images` parameter of the `cache.process` task, you can recursively delete any directories that the web server is authorized to write to."
+      "date": "2026-09-28T09:17:08.697",
+      "summary": "Stack-based buffer overflow vulnerability exists in BUFFALO Wi-Fi products. A non-authenticated crafted HTTP request may cause a denial-of-service (DoS) condition."
     },
     {
-      "id": "CVE-2026-97165",
-      "title": "CVE-2026-97165",
+      "id": "CVE-2026-101018",
+      "title": "CVE-2026-101018",
       "source": "NIST NVD",
-      "date": "2026-09-27T12:17:12.127",
-      "summary": "Joomla Extension - svenbluege.de - Reflected XSS and open redirect in Event Gallery extension < 6.5.0 - The “return” parameter is base64-decoded and written to the “Back” link without being validated."
+      "date": "2026-09-28T10:16:42.137",
+      "summary": "A vulnerability was determined in dayrui XunruiCMS up to 4.7.2. This issue affects the function group_all_edit of the file dayrui/App/Member/Controllers/Admin/Home.php of the component Group Editing. This manipulation of the argument groupid causes sql injection. The attack is possible to be carried out remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-100866",
-      "title": "CVE-2026-100866",
+      "id": "CVE-2026-101035",
+      "title": "CVE-2026-101035",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:36.583",
-      "summary": "onefetch through 2.28.1 writes repository information field values to the terminal without removing control characters, allowing terminal escape sequence injection. Attackers can embed ANSI/OSC escape sequences in project manifest version and name fields to manipulate terminal output, rewrite window titles, hide text, or trigger emulator-specific behavior when victims run onefetch."
+      "date": "2026-09-28T10:16:42.453",
+      "summary": "A flaw has been found in aligungr UERANSIM up to 3.3.0. This affects the function DecodePlainMmMessage in the library src/lib/nas/encode.cpp of the component nr-gnb. Executing a manipulation can lead to uncaught exception. The attack can be launched remotely. The exploit has been published and may be used. This patch is called 1ae9bf2062b57595dbcbc4bc1d0a0ccf06815bac. It is best practice to apply a patch to resolve this issue."
     },
     {
-      "id": "CVE-2026-100867",
-      "title": "CVE-2026-100867",
+      "id": "CVE-2026-101036",
+      "title": "CVE-2026-101036",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:37.810",
-      "summary": "spaceship-prompt through 4.22.5 fails to sanitize control characters from project manifest version fields before rendering them in the zsh prompt. Attackers can embed ANSI/OSC escape sequences in version fields of package manifests to manipulate terminal output, rewrite window titles, or spoof displayed text when victims enter the directory."
+      "date": "2026-09-28T10:16:42.630",
+      "summary": "A vulnerability has been found in FLB-Music FLB-Music-Player 1.1.8/1.1.9/1.2.0/1.2.1. This impacts the function path.join of the file /src/main/core/createParsedTrack.ts. The manipulation leads to path traversal. The attack must be carried out locally. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-100868",
-      "title": "CVE-2026-100868",
+      "id": "CVE-2026-101037",
+      "title": "CVE-2026-101037",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:37.960",
-      "summary": "Penpot before 2.18.0 binds the MCP server plugin WebSocket bridge to all network interfaces without authentication in single-user mode. Unauthenticated attackers on adjacent networks can connect to the WebSocket port to impersonate the Penpot browser plugin, intercept task payloads, and return forged results to the MCP client."
+      "date": "2026-09-28T10:16:42.793",
+      "summary": "A vulnerability was found in FAST FAC1200R 5.0_20201119_1.0.2. Affected is the function parse_advertisement_frame of the component devdiscover Service. The manipulation results in stack-based buffer overflow. The attack may be launched remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-100869",
-      "title": "CVE-2026-100869",
+      "id": "CVE-2026-7170",
+      "title": "CVE-2026-7170",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:38.100",
-      "summary": "Sylius versions before 2.1.16 and 2.2.9 fail to restrict payment request actions in the Shop API endpoint, allowing customers to trigger refunds on completed orders. Attackers with order tokens can submit arbitrary payment actions like refunds that payment gateways execute while Sylius maintains order as paid, causing financial loss."
+      "date": "2026-09-28T10:16:45.487",
+      "summary": "Stored Cross-Site Scripting (XSS) in TPVEnlanube affecting the following endpoint and parameter:\n\n  *  CVE-2026-7170: parameter 'vendor_store_name' in the endpoint  '/administrator/index.php?pshop_mode=admin&page=store.store_add&option=com_virtuemart&vendor_id=[ID]'.\n\n\n\n\nSuccessful exploitation of this vulnerability could allow an authenticated attacker to inject malicious code and execute it in users' browsers without their consent."
     },
     {
-      "id": "CVE-2026-100870",
-      "title": "CVE-2026-100870",
+      "id": "CVE-2026-7171",
+      "title": "CVE-2026-7171",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:38.240",
-      "summary": "Sylius versions before 1.12.25, 1.13.17, 1.14.20, 2.1.16, and 2.2.9 build administrator password-reset links using the request Host header without validation, allowing unauthenticated attackers to redirect reset tokens to attacker-controlled domains. Attackers can request password resets for known administrator email addresses with forged Host headers to intercept valid reset tokens and take over administrator accounts."
+      "date": "2026-09-28T10:16:45.637",
+      "summary": "Stored Cross-Site Scripting (XSS) in TPVEnlanube affecting the following endpoint and parameter:\n\n  *  CVE-2026-7171: parameter 'Apellido 1' in the endpoint  '/administrator/index.php?page=admin.user_add&user_id=45&option=com_virtuemart'.\n\n\nSuccessful exploitation of this vulnerability could allow an authenticated attacker to inject malicious code and execute it in users' browsers without their consent."
     },
     {
-      "id": "CVE-2026-100871",
-      "title": "CVE-2026-100871",
+      "id": "CVE-2026-7172",
+      "title": "CVE-2026-7172",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:38.380",
-      "summary": "Sylius versions before 1.12.25, 1.13.17, 1.14.20, 2.1.16, and 2.2.9 fail to include firewall identification in JWT tokens issued by separate Admin and Shop API endpoints. Attackers can register a shop customer account using an administrator's email address and obtain a token that the Admin API resolves to that administrator, granting full administrative access."
+      "date": "2026-09-28T10:16:45.763",
+      "summary": "Stored Cross-Site Scripting (XSS) in TPVEnlanube affecting the following endpoint and parameter:\n\n  *  CVE-2026-7172: parameter 'Nombre Completo' in the endpoint  '/administrator/index.php?option=com_virtuemart&page=admin.user_list'.\n\n\n\n\nSuccessful exploitation of this vulnerability could allow an authenticated attacker to inject malicious code and execute it in users' browsers without their consent."
     },
     {
-      "id": "CVE-2026-100872",
-      "title": "CVE-2026-100872",
+      "id": "CVE-2026-90979",
+      "title": "CVE-2026-90979",
       "source": "NIST NVD",
-      "date": "2026-09-27T13:16:38.523",
-      "summary": "Sylius versions before 2.1.16 and 2.2.9 fail to validate payment amounts during cart recalculation, allowing unauthenticated attackers to modify order totals after gateway transaction initiation. Attackers can pay a small amount, enlarge the order after gateway capture, and have the system mark the inflated order as fully paid while the gateway captured only the original amount."
+      "date": "2026-09-28T10:16:45.990",
+      "summary": "LDAPCache and LDAPBackingEngine build LDAP search filters for user lookup and role lookup by textually substituting the placeholders %u, %dn, and %fqdn (drawn from the login name, the resolved user DN, and its fully qualified namespace form) into administrator-configured filter templates (userFilter, roleFilter). Before the fix, the only sanitization applied to the substituted value was double backslashed:\n\nfilter = filter.replaceAll(Pattern.quote(\"%u\"), Matcher.quoteReplacement(user));\n\nfilter = filter.replace(\"\\\\\", \"\\\\\\\\\");\n\n\n\n\nThis does not escape the other characters RFC 4515 requires escaping in an LDAP search filter: *, (, ), and NUL. A login name containing any of these can change the structure of the resulting filter rather than being matched as a literal value (e.g. a crafted username can turn an equality match into a wildcard match, or close/reopen filter clauses), widening what the search returns and potentially causing a login or role lookup to match an LDAP entry other than the intended one, over-granting roles, and depending on deployment-specific filter templates, potentially affecting which account a login resolved to.\n\n\n\n\nIt's not exploitable through every entry po"
     },
     {
-      "id": "CVE-2026-101032",
-      "title": "CVE-2026-101032",
+      "id": "CVE-2026-101038",
+      "title": "CVE-2026-101038",
       "source": "NIST NVD",
-      "date": "2026-09-27T14:16:28.190",
-      "summary": "navi through 2.24.0 fails to properly escape cheatsheet variable values when substituting them into shell commands. Attackers can inject shell metacharacters through crafted file names in suggestion command directories to execute arbitrary commands with victim privileges."
+      "date": "2026-09-28T11:16:43.423",
+      "summary": "A vulnerability was determined in FAST FAC1200R 5.0_20201119_1.0.2. Affected by this vulnerability is the function MmtAtePrase of the component MmtAtePrase Parser. This manipulation causes stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-101033",
-      "title": "CVE-2026-101033",
+      "id": "CVE-2026-101039",
+      "title": "CVE-2026-101039",
       "source": "NIST NVD",
-      "date": "2026-09-27T14:16:29.273",
-      "summary": "KitchenOwl through 0.7.10 fails to verify that category IDs belong to the caller's household in expense and item operations. Authenticated attackers can enumerate category IDs from other households to read their category names, budgets, and colors, breaking household isolation."
+      "date": "2026-09-28T11:16:43.600",
+      "summary": "A vulnerability was identified in FAST FAC1900R 20190827_2.0.2. Affected by this issue is the function copy_msg_element of the component devdiscover Service. Such manipulation leads to stack-based buffer overflow. The attack can be executed remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-101041",
-      "title": "CVE-2026-101041",
+      "id": "CVE-2026-101040",
+      "title": "CVE-2026-101040",
       "source": "NIST NVD",
-      "date": "2026-09-27T15:16:27.190",
-      "summary": "The account recovery (password reset) functionality in the vulnerability-lookup web application contains a time-of-check-to-time-of-use (TOCTOU) race condition in the consumption of single-use recovery tokens. The original implementation verified the token nonce against the stored digest and then consumed (cleared) it in separate database operations. Two concurrent HTTP requests presenting the same valid recovery token could both pass the verification check before either transaction committed, allowing both to set their own password on the target account. The last transaction to commit overwrites the first, enabling an attacker who possesses a valid recovery token to replace the legitimate user's password with one of their choosing.\n\nA secondary defect in the same endpoint (confirm_account) allowed a valid recovery link to be used to set an empty or trivially short password (e.g., three characters). The view handler performed only a manual equality comparison between the two password fields and never invoked the form's validation logic, bypassing the intended minimum-length and complexity constraints.\n\nThe affected component is the user account recovery endpoint (/user/confirm_acco"
+      "date": "2026-09-28T11:16:43.773",
+      "summary": "A security flaw has been discovered in Ricoh SP 330DN, SP 221, SP C252SF and Aficio SP 3500SF up to 20260813. This affects an unknown part of the component HTTP Multipart Form-Data Parser. Performing a manipulation results in denial of service. The attack is possible to be carried out remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-101042",
-      "title": "CVE-2026-101042",
+      "id": "CVE-2026-12267",
+      "title": "CVE-2026-12267",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:55.820",
-      "summary": "Parse Server is an open-source backend server. In versions >= 9.0.0 < 9.10.1-alpha.10 and >= 8.0.2 < 8.6.91, the code-based authentication adapters (GitHub, Google Play Games, Instagram, LINE, LinkedIn, Microsoft, QQ, Spotify, WeChat, Weibo) verify the client's authorization code with the external provider on signup and on provider linking, but not when authentication data is supplied together with a username and password on the login endpoint. As a result, a low-privileged authenticated user can attach an arbitrary, unverified provider identity to their own account without the provider ever being contacted, spoofing an external identity toward application logic that trusts the linked provider ID. An attacker can also pre-hijack accounts: by claiming the provider ID of a victim who has not yet linked that provider, the victim's later legitimate sign-in with that provider resolves to the attacker's account. Only deployments configuring one of the affected code-based auth adapters are impacted. Versions 9.10.1-alpha.10 and 8.6.91 fix the issue by running the adapter's credential verification on the login and challenge endpoints and rejecting a provider identity already linked to anot"
+      "date": "2026-09-28T11:16:43.943",
+      "summary": "ManageEngine DDI Central versions below 6201 are vulnerable to Command injection in Windows DNS Query Resolution Policy name field leading to remote code execution."
     },
     {
-      "id": "CVE-2026-101049",
-      "title": "CVE-2026-101049",
+      "id": "CVE-2026-12268",
+      "title": "CVE-2026-12268",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:55.967",
-      "summary": "Heym before 0.0.53 fails to verify Slack request signatures when trigger nodes lack credential IDs or have empty signing secrets. Remote unauthenticated attackers can send forged Slack events to known webhook URLs to trigger workflows with the owner's credentials."
+      "date": "2026-09-28T11:16:44.063",
+      "summary": "ManageEngine DDI Central versions below 6201 are vulnerable to PowerShell command injection in Windows DNS SPF/TXT record push leading to remote code execution."
     },
     {
-      "id": "CVE-2026-101050",
-      "title": "CVE-2026-101050",
+      "id": "CVE-2026-12269",
+      "title": "CVE-2026-12269",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.100",
-      "summary": "Heym before 0.0.53 fails to verify the X-Telegram-Bot-Api-Secret-Token header on Telegram webhook endpoints when credential_id is absent or secret_token is empty. Remote unauthenticated attackers can post forged Telegram updates to trigger workflows with the owner's configured credentials and execute actions on attacker-supplied input."
+      "date": "2026-09-28T11:16:44.177",
+      "summary": "Zohocorp ManageEngine DDI Central 6.2.0 build below 6201 had a Keepalived configuration injection vulnerability in the HA configuration workflow. This issue could allow an authenticated operator-level user to modify the Keepalived configuration and potentially execute commands as root on the DDI Central host."
     },
     {
-      "id": "CVE-2026-88771",
-      "title": "CVE-2026-88771",
+      "id": "CVE-2026-19759",
+      "title": "CVE-2026-19759",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.260",
-      "summary": "Improper input validation vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to an unauthenticated attacker to execute arbitrary commands."
+      "date": "2026-09-28T11:16:45.337",
+      "summary": "An Incorrect Authorization vulnerability in the task configuration in Google Cloud Application Integration versions prior to 2026-06-17 on Google Cloud Platform allows an authenticated Google Cloud user to execute arbitrary internal RPCs from inside Google's production network under a privileged identity using an internal-only task type.\n\n\nThis vulnerability was patched on 17 June 2026, and no customer action is needed."
     },
     {
-      "id": "CVE-2026-88772",
-      "title": "CVE-2026-88772",
+      "id": "CVE-2026-81375",
+      "title": "CVE-2026-81375",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.390",
-      "summary": "Vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to Remote Code Execution or Denial of Service"
+      "date": "2026-09-28T11:16:47.860",
+      "summary": "A Confused Deputy vulnerability in the EmailTask component in Google Cloud Application Integration versions prior to 2026-06-30 on Google Cloud Platform allows an authenticated attacker to read and exfiltrate arbitrary Google-internal files via a crafted attachment file path.\n\n\nThis vulnerability was patched on 30 June 2026, and no customer action is needed."
     },
     {
-      "id": "CVE-2026-88773",
-      "title": "CVE-2026-88773",
+      "id": "CVE-2026-81867",
+      "title": "CVE-2026-81867",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.507",
-      "summary": "Inconsistent interpretation of HTTP requests ('HTTP Request/Response smuggling') vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1-37.279 and NDcPP; Gateway: before 14.1-73.37 FIPS and before 13.1-64.23."
+      "date": "2026-09-28T11:16:48.070",
+      "summary": "A Deserialization of Untrusted Data vulnerability in the JavaScript Task in Google Cloud Application Integration versions prior to 2026-06-28 on Google Cloud Platform allows an authenticated user with standard permissions to run arbitrary code on the shared production servers using a specially crafted script bypassing param guards.\n\n\nThis vulnerability was patched on 28 June 2026, and no customer action is needed."
     },
     {
-      "id": "CVE-2026-88774",
-      "title": "CVE-2026-88774",
+      "id": "CVE-2026-91006",
+      "title": "CVE-2026-91006",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.633",
-      "summary": "Vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading to a feature policy bypass due to improper HTTP URL based expression usage."
+      "date": "2026-09-28T11:16:48.200",
+      "summary": "Apache Karaf's instance-management service (InstanceServiceImpl) builds the command line used to launch a child Karaf JVM by string concatenation, then executes it through /bin/sh (Unix) or cscript (Windows). The caller-supplied javaOpts value is spliced into that string unquoted. A javaOpts value containing shell metacharacters (;, |, `, $(...)) is interpreted by the shell instead of being passed to the JVM as an option, giving arbitrary OS command execution as the Karaf process user.\n\n\nReachable via the shell commands instance:create, instance:start, instance:restart, instance:change-opts, and the equivalent InstanceMBean JMX operations (createInstance, startInstance, changeJavaOpts, cloneInstance).\n\nMitigation   *  Set karaf.secured.command.compulsory.roles=admin in etc/system.properties to close the fail-open gap for all unconfigured command scopes.\n  *  Restrict which principals can reach instance:* commands and InstancesMBean via etc/users.properties role assignments.\n  *  Treat javaOpts passed to instance:create/instance:start/instance:change-opts/InstancesMBean as untrusted input only from fully-trusted operators."
     },
     {
-      "id": "CVE-2026-88775",
-      "title": "CVE-2026-88775",
+      "id": "CVE-2026-101052",
+      "title": "CVE-2026-101052",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.750",
-      "summary": "Memory overflow vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23 leading Memory overflow vulnerability leading to unpredictable or erroneous behavior or Denial of Service"
+      "date": "2026-09-28T12:17:35.977",
+      "summary": "A security vulnerability has been detected in refly-ai refly up to 1.1.0. This issue affects some unknown processing of the file apps/api/src/modules/config/app.config.ts of the component JWT Token Handler. The manipulation with the input test leads to hard-coded credentials. It is possible to initiate the attack remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-88776",
-      "title": "CVE-2026-88776",
+      "id": "CVE-2026-101053",
+      "title": "CVE-2026-101053",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.870",
-      "summary": "Memory overflow vulnerability vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23  leading to unpredictable or erroneous behavior or Denial of Service"
+      "date": "2026-09-28T12:17:36.230",
+      "summary": "A vulnerability was determined in Thinkware U3000 up to 1.02.04. This impacts the function PUT_FILE of the file /tmp/wpa_supplicant.conf of the component TCP Service. Executing a manipulation of the argument path can lead to improper access controls. The attack may be launched remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-88777",
-      "title": "CVE-2026-88777",
+      "id": "CVE-2026-101054",
+      "title": "CVE-2026-101054",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:56.990",
-      "summary": "Memory overflow vulnerability vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23  leading to unpredictable or erroneous behavior or Denial of Service"
+      "date": "2026-09-28T12:17:36.420",
+      "summary": "A vulnerability was identified in Thinkware U3000 up to 1.02.04. Affected is the function get_file of the file /tmp/wpa_supplicant.conf of the component TCP Service. The manipulation leads to improper access controls. Remote exploitation of the attack is possible. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-88778",
-      "title": "CVE-2026-88778",
+      "id": "CVE-2026-12264",
+      "title": "CVE-2026-12264",
       "source": "NIST NVD",
-      "date": "2026-09-27T17:16:57.110",
-      "summary": "Predictable exact value from previous values vulnerability in Citrix NetScaler ADC and Citrix NetScaler Gateway.\n\nThis issue affects ADC: before 14.1-73.37, before 13.1-64.23, before 14.1-73.37 FIPS, and before 13.1.37.279 FIPS and NDcPP; Gateway: before 14.1-73.37 and before 13.1-64.23."
+      "date": "2026-09-28T12:17:36.597",
+      "summary": "Zohocorp ManageEngine DDI Central versions before 6201 are vulnerable to Arbitrary file write via HA Failover Config sync upload leading to remote code execution."
     },
     {
-      "id": "CVE-2026-101043",
-      "title": "CVE-2026-101043",
+      "id": "CVE-2026-19444",
+      "title": "CVE-2026-19444",
       "source": "NIST NVD",
-      "date": "2026-09-27T18:16:29.700",
-      "summary": "pnpm versions 11.0.0 before 11.11.0 and 10.7.0 before 10.34.5 expand ${VAR} environment-variable placeholders in the httpProxy, httpsProxy, and noProxy settings read from a project's pnpm-workspace.yaml. Because the manifest is repository-controlled and the proxy keys were omitted from the request-destination key set that otherwise suppresses placeholder expansion for untrusted manifests (as already done for registry, pnprServer, registries and namedRegistries), an attacker who controls a repository's pnpm-workspace.yaml can cause a victim who clones the repository and runs a pnpm command (e.g. pnpm install) to expand environment secrets such as NPM_TOKEN or GITHUB_TOKEN into a proxy hostname or userinfo and route install traffic — and the corresponding DNS lookups — through an attacker-controlled host. The exfiltration occurs during configuration loading, before any lifecycle script executes. Fixed in pnpm 11.11.0 and 10.34.5."
+      "date": "2026-09-28T12:17:36.723",
+      "summary": "A path traversal vulnerability was discovered in the Kubernetes kubectl client's kubectl cp command on Windows. When copying files from a container, kubectl runs tar inside the container to build a tar archive, transfers it over the network, and unpacks it on the local machine. If the tar binary in the container is malicious, it can execute arbitrary code and emit unexpected output, allowing an attacker who controls container contents to write files to arbitrary paths on the user's local machine when kubectl cp is invoked, limited only by the system permissions of the local user. This issue only affects kubectl clients running on Windows."
     },
     {
-      "id": "CVE-2026-101044",
-      "title": "CVE-2026-101044",
+      "id": "CVE-2026-78424",
+      "title": "CVE-2026-78424",
       "source": "NIST NVD",
-      "date": "2026-09-27T18:16:30.753",
-      "summary": "pacquet, the Rust package-manager component shipped in the pnpm npm package versions >=12.0.0-alpha.0 and <12.0.0-alpha.5, does not validate dependency alias/name paths taken from a lockfile before using them in install-time filesystem joins. When a user installs a project with an attacker-supplied lockfile using --trust-lockfile or a frozen lockfile, alias entries containing path traversal segments (for example '../../escaped-link') are used when creating dependency and package links, bin destinations, hoisted entries, and virtual-store slots, allowing symlinks and directories to be created outside the intended project and node_modules boundary. Version 12.0.0-alpha.5 validates dependency names and every virtual-store slot path with a shared safe-join containment helper before any filesystem materialization, rejecting traversal, absolute, platform-specific, and reserved names with ERR_PNPM_INVALID_DEPENDENCY_NAME."
-    },
-    {
-      "id": "CVE-2026-101045",
-      "title": "CVE-2026-101045",
-      "source": "NIST NVD",
-      "date": "2026-09-27T18:16:30.897",
-      "summary": "Fleet-maintained app install and uninstall scripts for macOS are generated from Homebrew cask metadata. In manifests generated before 2026-08-19, the script generator escaped this metadata at some interpolation sites but not all of them, so cask metadata containing shell metacharacters (for example $(...) command substitution) could be carried into scripts that execute as root on managed macOS hosts. An attacker who could land crafted metadata in an upstream Homebrew cask — without needing any Fleet credentials — could achieve arbitrary command execution as root on managed macOS hosts that install or uninstall the affected Fleet-maintained app; exploitation required the crafted metadata to pass both upstream Homebrew cask review and Fleet's review of the automated ingestion pull request. The fix (fleetdm/fleet#51324) landed in Fleet's ingestion pipeline on 2026-08-19 so that all manifests generated on or after that date escape cask metadata at every interpolation site; because manifests are generated centrally and distributed as pre-built content, remediation applied to all deployments with no customer action, and the code fix is included in Fleet v4.92.0."
+      "date": "2026-09-28T12:17:40.897",
+      "summary": "Improper parameter handling in NeuVector allows any authenticated user who holds the namespaced Runtime Policies (write) permission or anyone with access to NeuVector’s internal gRPC certificate key pair the ability to inject OS commands in the privileged enforcer container, which can lead to the complete compromise of the worker node. This affects NeuVector 5.4 before 5.4.11, NeuVector 5.5 before 5.5.4, NeuVector 5.6 before 5.6.2 and potentially older versions."
     }
   ]
 }
