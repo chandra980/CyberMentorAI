@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-05T09:15:36.681295+00:00",
+  "generated_at": "2026-10-06T09:08:05.719793+00:00",
   "items": [
     {
       "id": "CVE-2026-88779",
@@ -882,284 +882,284 @@
       "due": "2026-08-10"
     },
     {
-      "id": "CVE-2026-101014",
-      "title": "CVE-2026-101014",
+      "id": "CVE-2026-91012",
+      "title": "CVE-2026-91012",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:03.893",
-      "summary": "A vulnerability was detected in Trusted Domain Project OpenDMARC up to 1.4.2. Affected by this vulnerability is the function opendmarc_util_cleanup in the library libopendmarc/opendmarc_util.c of the component DMARC Record Parser. Performing a manipulation results in off-by-one. The attack may be initiated remotely. The exploit is now public and may be used. The patch is named b3b1da9264bc80324094a27c71e7369bdedc62ae. To fix this issue, it is recommended to deploy a patch."
+      "date": "2026-09-29T09:17:09.087",
+      "summary": "org.apache.karaf.config.core.impl.ConfigRepositoryImpl#update(pid, properties),\nwhich backs the \"config\" MBean and the config:* shell commands, derives the file\nit writes a configuration to from caller-supplied input without checking that\nthe result stays inside ${karaf.etc}:\n\n  *  if the submitted property map contains a felix.fileinstall.filename entry, that value is turned directly into a File (getCfgFileFromProperty), so it can point to any absolute path the Karaf process can write to;\n  *  otherwise the configuration PID is concatenated verbatim into the target file name (generateConfigFilename(): new File(karaf.etc, pid + \".cfg\")), so a PID containing \"..\" segments resolves outside ${karaf.etc}. createFactoryConfiguration() has the same issue via the factory PID/alias.\n\n\nBoth code paths are reachable by any caller holding the \"manager\" role under Karaf's shipped command/JMX ACL (org.apache.karaf.command.acl.conf.cfg: \"update = manager\"). Such a user can therefore write attacker-controlled content to any file the Karaf process can write, including files the same ACL otherwise reserves to \"admin\" (etc/users.properties, etc/*.acl.*.cfg, etc/org.apache.karaf.management.cfg, and s"
     },
     {
-      "id": "CVE-2026-101015",
-      "title": "CVE-2026-101015",
+      "id": "CVE-2026-91048",
+      "title": "CVE-2026-91048",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:05.180",
-      "summary": "A flaw has been found in Trusted Domain Project OpenDMARC up to 1.4.2. Affected by this issue is some unknown functionality of the file policy.c of the component Domain Handler. Executing a manipulation can lead to improper validation of unsafe equivalence in input. The attack may be launched remotely. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T09:17:10.193",
+      "summary": "The jdbc shell command scope shipped no org.apache.karaf.command.acl.jdbc.cfg. Karaf's command guard (SecuredSessionFactoryImpl) treats a command with no matching ACL rule as allowed, so any authenticated shell session (including one holding only the viewer role) could run every jdbc:* command. jdbc:ds-create stores a fully attacker-controlled JDBC URL into a pax-jdbc-config factory Configuration with no validation. pax-jdbc-config reactively turns that into a live DataSource. Several JDBC drivers run code or SQL at connection time based on URL parameters (e.g. H2 INIT=RUNSCRIPT), so a viewer-level shell user could reach arbitrary code execution, bypassing the admin-role gate that already protects shell:exec. This is a privilege-escalation-to-RCE chain, not merely an \"admin misconfiguration\".\n\n\nThe same applies to jms:* shell commands."
     },
     {
-      "id": "CVE-2026-101016",
-      "title": "CVE-2026-101016",
+      "id": "CVE-2026-91085",
+      "title": "CVE-2026-91085",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:05.340",
-      "summary": "A vulnerability has been found in Trusted Domain Project OpenDMARC up to 1.4.2. This affects the function opendmarc_policy_parse_dmarc in the library libopendmarc/opendmarc_policy.c. The manipulation of the argument fo/rf/ri/pct/sp/adkim/aspf/rua/ruf leads to handling of exceptional conditions. Remote exploitation of the attack is possible. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T09:17:10.347",
+      "summary": "Apache Karaf's shell/SSH command security is enforced by per-scope ACL configuration files (etc/org.apache.karaf.command.acl.<scope>.cfg). SecuredSessionFactoryImpl.checkSecurity() resolves the roles required for an invocation and, when no ACL rule matches the command, fails open: ACLConfigurationParser.Specificity.NO_MATCH sets passCheck = true. The safety valve for this, karaf.secured.command.compulsory.roles, ships commented out in etc/system.properties, so an unmatched command is allowed for any authenticated user.\n\n\nThe shipped org.apache.karaf.command.acl.config ACL (assemblies/features/standard/src/main/feature/feature.xml, mirrored into instance/.../etc/org.apache.karaf.command.acl.config.cfg) has no install entry. It restricts delete to admin, restricts edit/property-*/update on the jmx.acl.*, org.apache.karaf.command.acl.* and org.apache.karaf.service.acl.* PIDs to admin, and allows manager for everything else, but config:install was simply unmatched, and therefore allowed for any authenticated user, including one holding only the viewer role.\n\n\n\n\nconfig:install <url> <finalname> fetches url and writes it into ${karaf.etc} as finalname. It calls PathUtils.checkWithin() to"
     },
     {
-      "id": "CVE-2026-101017",
-      "title": "CVE-2026-101017",
+      "id": "CVE-2026-92142",
+      "title": "CVE-2026-92142",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:05.503",
-      "summary": "A vulnerability was found in Trusted Domain Project OpenDMARC up to 1.4.2. This vulnerability affects the function strcasecmp in the library libopendmarc/opendmarc_policy.c. The manipulation results in handling of exceptional conditions. The attack can be executed remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T09:17:10.497",
+      "summary": "Apache Karaf exposes a JMX MBeanServer guarded by KarafMBeanServerGuard, which enforces role-based access control (RBAC) on MBean operations invoked over the remote JMX connector (RMI registry/server, enabled by default on ports 1099 and 44444). The guard is implemented as a java.lang.reflect.Proxy around the MBeanServer, and only forwards a fixed list of operation names to the RBAC check, defined in MBeanInvocationHandler#guarded:\n\n\n  private final List<String> guarded = Collections.unmodifiableList( Arrays.asList(\"invoke\", \"getAttribute\", \"getAttributes\", \"setAttribute\", \"setAttributes\"));\n\n\n\n\nThe MBean lifecycle operations MBeanServer#createMBean, #registerMBean and #unregisterMBean are not in this list. Calls to these methods are forwarded directly to the underlying MBeanServer with no role check at all, regardless of the roles configured in etc/jmx.acl.*.cfg.\n\n\n\n\nAs a result, any user who can authenticate to the JMX endpoint, including a user holding only the least-privileged \"viewer\" role, can call createMBean() to instantiate an arbitrary class as a MBean, and unregisterMBean() to remove it again afterwards, with no authorization check and no audit log entry (logging in Kara"
     },
     {
-      "id": "CVE-2026-82915",
-      "title": "CVE-2026-82915",
+      "id": "CVE-2026-96428",
+      "title": "CVE-2026-96428",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:07.130",
-      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Bimser Solution Software Trade Inc. EBA Plus Document and Workflow Management System allows Path Traversal.\n\nThis issue affects eBA Plus Document and Workflow Management System: from 6.7.141 before 10.0.11."
+      "date": "2026-09-29T09:17:10.687",
+      "summary": "SQL Injection in the /WebAgenda/SMBAjaxAutoComplete.do API endpoint of Flowring Agentflow 4.0 version before 2025/08/08 allows remote attackers to execute arbitrary SQL commands via the words parameter."
     },
     {
-      "id": "CVE-2026-82969",
-      "title": "CVE-2026-82969",
+      "id": "CVE-2026-96429",
+      "title": "CVE-2026-96429",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:07.267",
-      "summary": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Bimser Solution Software Trade Inc. EBA Plus Document and Workflow Management System allows Stored XSS.\n\nThis issue affects eBA Plus Document and Workflow Management System: from 6.7.141 before 10.0.11."
+      "date": "2026-09-29T09:17:10.917",
+      "summary": "SQL Injection in the /WebAgenda/SMBAjaxConfigProcess.do API\nendpoint of Flowring Agentflow 4.0 version before 2025/08/08 allows\nremote attackers to execute arbitrary SQL commands via the id parameter."
     },
     {
-      "id": "CVE-2026-85134",
-      "title": "CVE-2026-85134",
+      "id": "CVE-2026-96430",
+      "title": "CVE-2026-96430",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:07.380",
-      "summary": "Unrestricted upload of file with dangerous type vulnerability in Bimser Solution Software Trade Inc. EBA Plus Document and Workflow Management System allows Upload a Web Shell to a Web Server.\n\nThis issue affects eBA Plus Document and Workflow Management System: from 6.7.141 before 10.0.11."
+      "date": "2026-09-29T09:17:11.047",
+      "summary": "Exposed Dangerous Method or Function in the\n/WebAgenda/SQLWin.do API endpoint of Flowring Agentflow 4.0 version Before 2026/08/28 allows remote\nauthenticated users to execute arbitrary SQL commands via the sql parameter."
     },
     {
-      "id": "CVE-2026-86507",
-      "title": "CVE-2026-86507",
+      "id": "CVE-2026-96431",
+      "title": "CVE-2026-96431",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:07.520",
-      "summary": "Improper neutralization of input in Apache Roller 6.1.5 allows an anonymous remote attacker to store a crafted comment-author URL that can execute script in the session of a weblog moderator or global administrator when the comment management page is viewed. This affects sites that permit comments on at least one weblog and whose moderator subsequently reviews the submitted comment; no non-default server setting is required. Users are recommended to upgrade to Apache Roller 6.1.6 or later."
+      "date": "2026-09-29T09:17:11.183",
+      "summary": "Unrestricted Upload of File with Dangerous Type in the\n/WebAgenda/download/uploadFile.jsp API endpoint of Flowring Agentflow 4.0 version\nbefore 2023/03/24 allows remote authenticated users to execute arbitrary\nsystem commands via a malicious file."
     },
     {
-      "id": "CVE-2026-86530",
-      "title": "CVE-2026-86530",
+      "id": "CVE-2026-96440",
+      "title": "CVE-2026-96440",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:07.653",
-      "summary": "BUFFALO Wi-Fi products handle some web form input improperly to assemble command line strings internally. An administrative user may send a crafted HTTP request and execute an arbitrary OS command."
+      "date": "2026-09-29T09:17:11.317",
+      "summary": "Improper Limitation of a Pathname to a Restricted\nDirectory（Path Traversal） in the /WebAgenda/download/uploadFile.jsp\nAPI endpoint of Flowring Agentflow 4.0 version before 2023/03/24 allows remote\nauthenticated users to write files to arbitrary locations outside the intended\nupload directory via the path parameter."
     },
     {
-      "id": "CVE-2026-94282",
-      "title": "CVE-2026-94282",
+      "id": "CVE-2026-102473",
+      "title": "CVE-2026-102473",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.003",
-      "summary": "An out-of-bounds read in libXi's XI2 enter/leave/focus cookie conversion in libXi before 1.8.4 could be used by malicious X server to crash an attached X client."
+      "date": "2026-09-29T10:17:10.383",
+      "summary": "A flaw was found in dash. When built without libc fnmatch, the internal pmatch() matcher implements * by unbounded recursion over candidate positions. A local user who can plant filenames, or otherwise feed that matcher, can make a short multi-star pattern such as *.*.*.*.*.tar.gz consume excessive CPU."
     },
     {
-      "id": "CVE-2026-94283",
-      "title": "CVE-2026-94283",
+      "id": "CVE-2026-102474",
+      "title": "CVE-2026-102474",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.133",
-      "summary": "An out-of-bounds read vulnerability in libX11's XIM (X Input Method) attribute parser in libX11 before 1.8.14 could be used by malicious X servers to crash attached X clients."
+      "date": "2026-09-29T10:17:10.707",
+      "summary": "A flaw was found in dash. The printf builtin reserves four bytes before converting a Unicode \\u or \\U escape, but the multi-byte token can need five or six bytes. A local user who can supply such an escape to dash printf or echo %b, including through dash -c and a positional argument, can write one or two bytes past that reservation."
     },
     {
-      "id": "CVE-2026-94284",
-      "title": "CVE-2026-94284",
+      "id": "CVE-2026-10518",
+      "title": "CVE-2026-10518",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.247",
-      "summary": "An out-of-bounds read vulnerability in libX11's XIM trigger-key registration parser in libX11 before 1.8.14 could be used by malicious X servers to crash attached X clients."
+      "date": "2026-09-29T10:17:10.863",
+      "summary": "GitLab has remediated an issue in GitLab EE affecting all versions from 17.9 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an authenticated user with guest-level permissions to read private security policy content they were not authorized to access due to improper authorization enforcement."
     },
     {
-      "id": "CVE-2026-94285",
-      "title": "CVE-2026-94285",
+      "id": "CVE-2026-11796",
+      "title": "CVE-2026-11796",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.353",
-      "summary": "An out-of-bounds read in libX11's byte-oriented codeset parser in libX11 before 1.8.14 could be used by malicious X servers to crash attached X clients."
+      "date": "2026-09-29T10:17:11.037",
+      "summary": "Asset Suite allows unauthenticated users to access PropertiesReloadServlet, CacheFlushServlet, MetadataCacheFlushServlet and ResourceBundleReloadServlet, which could result in denial-of-service conditions affecting application availability. These servlets are designed to perform specific functions within production environment depending on how the Asset Suite application is configured."
     },
     {
-      "id": "CVE-2026-94286",
-      "title": "CVE-2026-94286",
+      "id": "CVE-2026-15390",
+      "title": "CVE-2026-15390",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.463",
-      "summary": "An out-of-bounds read in libXtst's RECORD reply parser in libXtst before 1.2.6 could be used by malicious X servers to crash attached X clients."
+      "date": "2026-09-29T10:17:11.237",
+      "summary": "Das U-Boot with CONFIG_IP_DEFRAG=y parameter fails to clear IP reassembly state after delivering a complete datagram. An attacker who can deliver fragmented IP traffic can execute arbitrary code by sending duplicated last-fragment IP packets.\n\n\nThis issue was fixed in commit b1aec609bb5e0d08c25c888c91935287ab4ee5fa in version 2026.07."
     },
     {
-      "id": "CVE-2026-94287",
-      "title": "CVE-2026-94287",
+      "id": "CVE-2026-19547",
+      "title": "CVE-2026-19547",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.577",
-      "summary": "A denial of service via unsigned underflow in libXpm's write path in libXpm before 3.5.19 could be used by local attackers to cause unbounded CPU usage and memory exhaustion."
+      "date": "2026-09-29T10:17:11.410",
+      "summary": "Ghostscript for Windows is vulnerable to local privilege escalation through PostScript resource file hijacking. Due to the application searching for PostScript resource files in predictable paths under C:\\\\gs\\\\ that do not exist by default on Windows installations, combined with Windows default ACLs allowing any authenticated user to create directories at the root of C:\\\\, an attacker who is an authenticated local user can create the expected directory structure and plant a malicious PostScript file. When any user or service subsequently runs Ghostscript, the planted file is automatically loaded and executed with the full privileges of the Ghostscript process. This results in full compromise of Ghostscript process context, as well as running arbitrary code on the machine with Ghostscript process privileges.\n\n\nThis issue was fixed in version 10.08.0."
     },
     {
-      "id": "CVE-2026-95104",
-      "title": "CVE-2026-95104",
+      "id": "CVE-2026-4523",
+      "title": "CVE-2026-4523",
       "source": "NIST NVD",
-      "date": "2026-09-28T09:17:08.697",
-      "summary": "Stack-based buffer overflow vulnerability exists in BUFFALO Wi-Fi products. A non-authenticated crafted HTTP request may cause a denial-of-service (DoS) condition."
+      "date": "2026-09-29T10:17:11.613",
+      "summary": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 15.11 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an unauthenticated user to read CI/CD job trace contents containing sensitive variable values due to improper authorization enforcement in the GraphQL API."
     },
     {
-      "id": "CVE-2026-101018",
-      "title": "CVE-2026-101018",
+      "id": "CVE-2026-76718",
+      "title": "CVE-2026-76718",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:42.137",
-      "summary": "A vulnerability was determined in dayrui XunruiCMS up to 4.7.2. This issue affects the function group_all_edit of the file dayrui/App/Member/Controllers/Admin/Home.php of the component Group Editing. This manipulation of the argument groupid causes sql injection. The attack is possible to be carried out remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:11.773",
+      "summary": "A potential security vulnerability in HPE OneView can be exploited to allow remote session hijacking or other unauthorized actions."
     },
     {
-      "id": "CVE-2026-101035",
-      "title": "CVE-2026-101035",
+      "id": "CVE-2026-76719",
+      "title": "CVE-2026-76719",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:42.453",
-      "summary": "A flaw has been found in aligungr UERANSIM up to 3.3.0. This affects the function DecodePlainMmMessage in the library src/lib/nas/encode.cpp of the component nr-gnb. Executing a manipulation can lead to uncaught exception. The attack can be launched remotely. The exploit has been published and may be used. This patch is called 1ae9bf2062b57595dbcbc4bc1d0a0ccf06815bac. It is best practice to apply a patch to resolve this issue."
+      "date": "2026-09-29T10:17:11.920",
+      "summary": "A security vulnerability in HPE OneView may be exploited remotely to perform session hijacking, data theft or other unauthorized actions."
     },
     {
-      "id": "CVE-2026-101036",
-      "title": "CVE-2026-101036",
+      "id": "CVE-2026-76720",
+      "title": "CVE-2026-76720",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:42.630",
-      "summary": "A vulnerability has been found in FLB-Music FLB-Music-Player 1.1.8/1.1.9/1.2.0/1.2.1. This impacts the function path.join of the file /src/main/core/createParsedTrack.ts. The manipulation leads to path traversal. The attack must be carried out locally. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:12.060",
+      "summary": "A vulnerability in HPE OneView can be remotely exploited to cause a URL redirect."
     },
     {
-      "id": "CVE-2026-101037",
-      "title": "CVE-2026-101037",
+      "id": "CVE-2026-7395",
+      "title": "CVE-2026-7395",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:42.793",
-      "summary": "A vulnerability was found in FAST FAC1200R 5.0_20201119_1.0.2. Affected is the function parse_advertisement_frame of the component devdiscover Service. The manipulation results in stack-based buffer overflow. The attack may be launched remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:12.203",
+      "summary": "Asset Suite allows unauthenticated users to access HTTPPublishAdapterTestServlet that can be used for configuration file upload, leading to information disclosure and integrity compromise. The HTTPPublishAdapterTestServlet is specifically meant for testing purposes to be used in a non-production environment."
     },
     {
-      "id": "CVE-2026-7170",
-      "title": "CVE-2026-7170",
+      "id": "CVE-2026-81862",
+      "title": "CVE-2026-81862",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:45.487",
-      "summary": "Stored Cross-Site Scripting (XSS) in TPVEnlanube affecting the following endpoint and parameter:\n\n  *  CVE-2026-7170: parameter 'vendor_store_name' in the endpoint  '/administrator/index.php?pshop_mode=admin&page=store.store_add&option=com_virtuemart&vendor_id=[ID]'.\n\n\n\n\nSuccessful exploitation of this vulnerability could allow an authenticated attacker to inject malicious code and execute it in users' browsers without their consent."
+      "date": "2026-09-29T10:17:12.367",
+      "summary": "Apache Airflow's Teradata provider embedded cloud storage credentials directly into SQL statements. `S3ToTeradataOperator` and `AzureBlobStorageToTeradataOperator` interpolate the source bucket's credentials as plain string literals into the `CREATE MULTISET TABLE ... LOCATION` statement whenever the bucket is private and no `teradata_authorization_name` is configured — which is the default credential path for both operators. The statement is then logged and executed, so the credentials reach two places outside the operator's control.\n\nThe two operators expose different credentials through different channels, and deployments should check both. `S3ToTeradataOperator` takes its values from `s3_hook.get_credentials()`, which under an instance profile or IRSA returns runtime AWS credentials that were never registered with Airflow's secrets masker — and the STS session token is runtime-generated and therefore unmasked even when an AWS connection is configured. Those credentials appear **in the Airflow task log**, readable by any user with log-view permission on the Dag. `AzureBlobStorageToTeradataOperator` takes its storage account key from the connection, so the masker usually redacts "
     },
     {
-      "id": "CVE-2026-7171",
-      "title": "CVE-2026-7171",
+      "id": "CVE-2026-81914",
+      "title": "CVE-2026-81914",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:45.637",
-      "summary": "Stored Cross-Site Scripting (XSS) in TPVEnlanube affecting the following endpoint and parameter:\n\n  *  CVE-2026-7171: parameter 'Apellido 1' in the endpoint  '/administrator/index.php?page=admin.user_add&user_id=45&option=com_virtuemart'.\n\n\nSuccessful exploitation of this vulnerability could allow an authenticated attacker to inject malicious code and execute it in users' browsers without their consent."
+      "date": "2026-09-29T10:17:12.530",
+      "summary": "Apache Airflow's Google provider built Google Drive search expressions by interpolating file and folder names directly into single-quoted string literals, without escaping the quote character that delimits them. A name containing an apostrophe therefore terminated the literal early and appended clauses of the attacker's choosing to the query.\n\nThe names are frequently not written by the Dag author. In a wildcard `gcs_to_gdrive` transfer they come from the source bucket listing, so anyone able to create objects in that bucket controls them — typically an external data producer or an ingest-only service account, a different trust principal from the Dag author. An injected clause can broaden the match and so steer which file or folder the hook resolves: an upload can be directed into a folder the attacker named, and, because downloads select the most recently modified match, a download can return a file they placed rather than the one the Dag asked for.\n\nAffects deployments passing externally-sourced names to the Google Drive hook, including wildcard `gcs_to_gdrive` transfers from buckets writable by less-trusted principals. Users are advised to upgrade to `apache-airflow-providers-go"
     },
     {
-      "id": "CVE-2026-7172",
-      "title": "CVE-2026-7172",
+      "id": "CVE-2026-81930",
+      "title": "CVE-2026-81930",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:45.763",
-      "summary": "Stored Cross-Site Scripting (XSS) in TPVEnlanube affecting the following endpoint and parameter:\n\n  *  CVE-2026-7172: parameter 'Nombre Completo' in the endpoint  '/administrator/index.php?option=com_virtuemart&page=admin.user_list'.\n\n\n\n\nSuccessful exploitation of this vulnerability could allow an authenticated attacker to inject malicious code and execute it in users' browsers without their consent."
+      "date": "2026-09-29T10:17:12.673",
+      "summary": "Apache Airflow's Snowflake provider did not validate the connection's `account` and `region` fields before interpolating them into request URLs. The SQL API endpoint is built as `https://{account}.snowflakecomputing.com/api/v2/statements`, so an `account` value containing `/`, `?` or `#` demotes the intended domain to a path, query or fragment and leaves the attacker in control of the request host.\n\nThe provider sends that request with an `Authorization: Bearer` header carrying a JWT minted from the connection's private key, or the configured OAuth or programmatic access token. A user who can edit the Snowflake connection but cannot read its secrets — Airflow gives connection-configuration users write-only access to stored credentials, and a `private_key_file` lives on the worker rather than in the connection — can therefore cause a valid token for the account to be delivered to a host of their choosing and replay it against the genuine Snowflake endpoint. No Dag-authoring ability is required: the attacker edits the connection and waits for an existing Dag to use it. The same unvalidated value was also used to build the OAuth token-request URL and the Cortex Agent base URL.\n\nAffect"
     },
     {
-      "id": "CVE-2026-90979",
-      "title": "CVE-2026-90979",
+      "id": "CVE-2026-84739",
+      "title": "CVE-2026-84739",
       "source": "NIST NVD",
-      "date": "2026-09-28T10:16:45.990",
-      "summary": "LDAPCache and LDAPBackingEngine build LDAP search filters for user lookup and role lookup by textually substituting the placeholders %u, %dn, and %fqdn (drawn from the login name, the resolved user DN, and its fully qualified namespace form) into administrator-configured filter templates (userFilter, roleFilter). Before the fix, the only sanitization applied to the substituted value was double backslashed:\n\nfilter = filter.replaceAll(Pattern.quote(\"%u\"), Matcher.quoteReplacement(user));\n\nfilter = filter.replace(\"\\\\\", \"\\\\\\\\\");\n\n\n\n\nThis does not escape the other characters RFC 4515 requires escaping in an LDAP search filter: *, (, ), and NUL. A login name containing any of these can change the structure of the resulting filter rather than being matched as a literal value (e.g. a crafted username can turn an equality match into a wildcard match, or close/reopen filter clauses), widening what the search returns and potentially causing a login or role lookup to match an LDAP entry other than the intended one, over-granting roles, and depending on deployment-specific filter templates, potentially affecting which account a login resolved to.\n\n\n\n\nIt's not exploitable through every entry po"
+      "date": "2026-09-29T10:17:12.820",
+      "summary": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 13.11 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an authenticated user to execute arbitrary JavaScript in the context of another user's browser session due to improper sanitization of path components in the merge request diff viewer."
     },
     {
-      "id": "CVE-2026-101038",
-      "title": "CVE-2026-101038",
+      "id": "CVE-2026-86843",
+      "title": "CVE-2026-86843",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:43.423",
-      "summary": "A vulnerability was determined in FAST FAC1200R 5.0_20201119_1.0.2. Affected by this vulnerability is the function MmtAtePrase of the component MmtAtePrase Parser. This manipulation causes stack-based buffer overflow. Remote exploitation of the attack is possible. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:12.963",
+      "summary": "The Apache Airflow Teradata provider's compute-cluster example Dag declared every one of its Dag Params as unconstrained free text and templated them straight into the compute-cluster operators, which interpolate those values into Teradata DDL. A user who is permitted to trigger that Dag - a lower-trust role than the Dag author, and one that needs no Teradata credentials of its own - could therefore supply SQL fragments that execute under the connection the task runs as, and could additionally redirect the task at any other connection defined in the deployment, because the connection id was itself a free-text Param. Only deployments that run this example Dag, or a Dag copied from it, are affected; the provider's operator code is unchanged. Users of apache-airflow-providers-teradata are recommended to upgrade to version 3.7.0 or later, whose example constrains the Params to validated identifiers and a closed value set and removes connection selection and free-form option strings from trigger-time input. Upgrading does not change a Dag already copied from the example; users who copied it should apply the same constraints to their copy."
     },
     {
-      "id": "CVE-2026-101039",
-      "title": "CVE-2026-101039",
+      "id": "CVE-2026-8065",
+      "title": "CVE-2026-8065",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:43.600",
-      "summary": "A vulnerability was identified in FAST FAC1900R 20190827_2.0.2. Affected by this issue is the function copy_msg_element of the component devdiscover Service. Such manipulation leads to stack-based buffer overflow. The attack can be executed remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:13.110",
+      "summary": "An authentication bypass vulnerability in the firmware update endpoint of Hitachi Energy RTU500 end-of-life versions allows an unauthenticated attacker to upload arbitrary firmware through a crafted POST request. Successful exploitation could allow the attacker to modify device functionality or compromise the integrity or availability of the device."
     },
     {
-      "id": "CVE-2026-101040",
-      "title": "CVE-2026-101040",
+      "id": "CVE-2026-8066",
+      "title": "CVE-2026-8066",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:43.773",
-      "summary": "A security flaw has been discovered in Ricoh SP 330DN, SP 221, SP C252SF and Aficio SP 3500SF up to 20260813. This affects an unknown part of the component HTTP Multipart Form-Data Parser. Performing a manipulation results in denial of service. The attack is possible to be carried out remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:13.250",
+      "summary": "A directory traversal vulnerability in the file upload functionality of Hitachi Energy RTU500 end-of-life versions allows an unauthenticated attacker to write or overwrite arbitrary files on the device file system. Depending on the files affected, successful exploitation could result in unauthorized modification of device data or disruption of the device’s intended operation."
     },
     {
-      "id": "CVE-2026-12267",
-      "title": "CVE-2026-12267",
+      "id": "CVE-2026-8067",
+      "title": "CVE-2026-8067",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:43.943",
-      "summary": "ManageEngine DDI Central versions below 6201 are vulnerable to Command injection in Windows DNS Query Resolution Policy name field leading to remote code execution."
+      "date": "2026-09-29T10:17:13.397",
+      "summary": "An improper authorization vulnerability in the end-of-life versions of RTU500’s web application allows an authenticated user to trigger the RTU500 to reboot through the reset endpoint. Successful exploitation could cause temporary device unavailability and disruption of its intended operation."
     },
     {
-      "id": "CVE-2026-12268",
-      "title": "CVE-2026-12268",
+      "id": "CVE-2026-8937",
+      "title": "CVE-2026-8937",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:44.063",
-      "summary": "ManageEngine DDI Central versions below 6201 are vulnerable to PowerShell command injection in Windows DNS SPF/TXT record push leading to remote code execution."
+      "date": "2026-09-29T10:17:13.540",
+      "summary": "GitLab has remediated an issue in GitLab CE/EE affecting all versions from 19.0 before 19.2.7, 19.3 before 19.3.3, and 19.4 before 19.4.1 that under certain conditions could have allowed an authenticated user to read private child issue contents, including titles and descriptions, from projects they had no access to, due to missing authorization checks on linked work items within visible epics."
     },
     {
-      "id": "CVE-2026-12269",
-      "title": "CVE-2026-12269",
+      "id": "CVE-2026-95386",
+      "title": "CVE-2026-95386",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:44.177",
-      "summary": "Zohocorp ManageEngine DDI Central 6.2.0 build below 6201 had a Keepalived configuration injection vulnerability in the HA configuration workflow. This issue could allow an authenticated operator-level user to modify the Keepalived configuration and potentially execute commands as root on the DDI Central host."
+      "date": "2026-09-29T10:17:14.560",
+      "summary": "TTL file parser infinite loop in 4.6.0 to 4.6.8 allows denial of service"
     },
     {
-      "id": "CVE-2026-19759",
-      "title": "CVE-2026-19759",
+      "id": "CVE-2026-95387",
+      "title": "CVE-2026-95387",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:45.337",
-      "summary": "An Incorrect Authorization vulnerability in the task configuration in Google Cloud Application Integration versions prior to 2026-06-17 on Google Cloud Platform allows an authenticated Google Cloud user to execute arbitrary internal RPCs from inside Google's production network under a privileged identity using an internal-only task type.\n\n\nThis vulnerability was patched on 17 June 2026, and no customer action is needed."
+      "date": "2026-09-29T10:17:14.713",
+      "summary": "SPDY protocol dissector crash in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-81375",
-      "title": "CVE-2026-81375",
+      "id": "CVE-2026-95388",
+      "title": "CVE-2026-95388",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:47.860",
-      "summary": "A Confused Deputy vulnerability in the EmailTask component in Google Cloud Application Integration versions prior to 2026-06-30 on Google Cloud Platform allows an authenticated attacker to read and exfiltrate arbitrary Google-internal files via a crafted attachment file path.\n\n\nThis vulnerability was patched on 30 June 2026, and no customer action is needed."
+      "date": "2026-09-29T10:17:14.867",
+      "summary": "Sharkd utility crash in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-81867",
-      "title": "CVE-2026-81867",
+      "id": "CVE-2026-95389",
+      "title": "CVE-2026-95389",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:48.070",
-      "summary": "A Deserialization of Untrusted Data vulnerability in the JavaScript Task in Google Cloud Application Integration versions prior to 2026-06-28 on Google Cloud Platform allows an authenticated user with standard permissions to run arbitrary code on the shared production servers using a specially crafted script bypassing param guards.\n\n\nThis vulnerability was patched on 28 June 2026, and no customer action is needed."
+      "date": "2026-09-29T10:17:15.010",
+      "summary": "SCTP protocol dissector crash in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-91006",
-      "title": "CVE-2026-91006",
+      "id": "CVE-2026-95390",
+      "title": "CVE-2026-95390",
       "source": "NIST NVD",
-      "date": "2026-09-28T11:16:48.200",
-      "summary": "Apache Karaf's instance-management service (InstanceServiceImpl) builds the command line used to launch a child Karaf JVM by string concatenation, then executes it through /bin/sh (Unix) or cscript (Windows). The caller-supplied javaOpts value is spliced into that string unquoted. A javaOpts value containing shell metacharacters (;, |, `, $(...)) is interpreted by the shell instead of being passed to the JVM as an option, giving arbitrary OS command execution as the Karaf process user.\n\n\nReachable via the shell commands instance:create, instance:start, instance:restart, instance:change-opts, and the equivalent InstanceMBean JMX operations (createInstance, startInstance, changeJavaOpts, cloneInstance).\n\nMitigation   *  Set karaf.secured.command.compulsory.roles=admin in etc/system.properties to close the fail-open gap for all unconfigured command scopes.\n  *  Restrict which principals can reach instance:* commands and InstancesMBean via etc/users.properties role assignments.\n  *  Treat javaOpts passed to instance:create/instance:start/instance:change-opts/InstancesMBean as untrusted input only from fully-trusted operators."
+      "date": "2026-09-29T10:17:15.160",
+      "summary": "PEAK CAN TRC file parser crash in 4.6.0 to 4.6.8 allows denial of service"
     },
     {
-      "id": "CVE-2026-101052",
-      "title": "CVE-2026-101052",
+      "id": "CVE-2026-95391",
+      "title": "CVE-2026-95391",
       "source": "NIST NVD",
-      "date": "2026-09-28T12:17:35.977",
-      "summary": "A security vulnerability has been detected in refly-ai refly up to 1.1.0. This issue affects some unknown processing of the file apps/api/src/modules/config/app.config.ts of the component JWT Token Handler. The manipulation with the input test leads to hard-coded credentials. It is possible to initiate the attack remotely. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:15.310",
+      "summary": "ZigBee ZCL protocol dissector crash in 4.6.0 to 4.6.8 allows denial of service"
     },
     {
-      "id": "CVE-2026-101053",
-      "title": "CVE-2026-101053",
+      "id": "CVE-2026-95392",
+      "title": "CVE-2026-95392",
       "source": "NIST NVD",
-      "date": "2026-09-28T12:17:36.230",
-      "summary": "A vulnerability was determined in Thinkware U3000 up to 1.02.04. This impacts the function PUT_FILE of the file /tmp/wpa_supplicant.conf of the component TCP Service. Executing a manipulation of the argument path can lead to improper access controls. The attack may be launched remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:15.457",
+      "summary": "MBIM protocol dissector crash in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-101054",
-      "title": "CVE-2026-101054",
+      "id": "CVE-2026-95393",
+      "title": "CVE-2026-95393",
       "source": "NIST NVD",
-      "date": "2026-09-28T12:17:36.420",
-      "summary": "A vulnerability was identified in Thinkware U3000 up to 1.02.04. Affected is the function get_file of the file /tmp/wpa_supplicant.conf of the component TCP Service. The manipulation leads to improper access controls. Remote exploitation of the attack is possible. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-09-29T10:17:15.610",
+      "summary": "CSN.1 protocol dissector crash in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-12264",
-      "title": "CVE-2026-12264",
+      "id": "CVE-2026-95394",
+      "title": "CVE-2026-95394",
       "source": "NIST NVD",
-      "date": "2026-09-28T12:17:36.597",
-      "summary": "Zohocorp ManageEngine DDI Central versions before 6201 are vulnerable to Arbitrary file write via HA Failover Config sync upload leading to remote code execution."
+      "date": "2026-09-29T10:17:15.757",
+      "summary": "Microsoft Network Monitor file parser large loop in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-19444",
-      "title": "CVE-2026-19444",
+      "id": "CVE-2026-95395",
+      "title": "CVE-2026-95395",
       "source": "NIST NVD",
-      "date": "2026-09-28T12:17:36.723",
-      "summary": "A path traversal vulnerability was discovered in the Kubernetes kubectl client's kubectl cp command on Windows. When copying files from a container, kubectl runs tar inside the container to build a tar archive, transfers it over the network, and unpacks it on the local machine. If the tar binary in the container is malicious, it can execute arbitrary code and emit unexpected output, allowing an attacker who controls container contents to write files to arbitrary paths on the user's local machine when kubectl cp is invoked, limited only by the system permissions of the local user. This issue only affects kubectl clients running on Windows."
+      "date": "2026-09-29T10:17:15.900",
+      "summary": "IEEE C37.118 Synchrophasor protocol dissector memory leak in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     },
     {
-      "id": "CVE-2026-78424",
-      "title": "CVE-2026-78424",
+      "id": "CVE-2026-96415",
+      "title": "CVE-2026-96415",
       "source": "NIST NVD",
-      "date": "2026-09-28T12:17:40.897",
-      "summary": "Improper parameter handling in NeuVector allows any authenticated user who holds the namespaced Runtime Policies (write) permission or anyone with access to NeuVector’s internal gRPC certificate key pair the ability to inject OS commands in the privileged enforcer container, which can lead to the complete compromise of the worker node. This affects NeuVector 5.4 before 5.4.11, NeuVector 5.5 before 5.5.4, NeuVector 5.6 before 5.6.2 and potentially older versions."
+      "date": "2026-09-29T10:17:16.047",
+      "summary": "Catapult DCT2000 protocol dissector crash in 4.6.0 to 4.6.8 and 4.4.0 to 4.4.18 allows denial of service"
     }
   ]
 }
