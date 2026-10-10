@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-09T09:19:48.373116+00:00",
+  "generated_at": "2026-10-10T08:41:00.284321+00:00",
   "items": [
     {
       "id": "CVE-2015-5477",
@@ -882,284 +882,284 @@
       "due": "2026-08-07"
     },
     {
-      "id": "CVE-2026-102731",
-      "title": "CVE-2026-102731",
+      "id": "CVE-2026-18040",
+      "title": "CVE-2026-18040",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:04.530",
-      "summary": "Memory allocation with excessive size value vulnerability in Apache Directory LDAP API.\n\n\n\nA malicious peer (or a MITM) can send a small BER-encoded response causing a large memory allocation before any data is received. This can lead to an OutOfMemoryError and denial of service.\n\n\n\nThe client JVM OOMs (OutOfMemoryError bypasses the DecoderException handlers) or pins the large allocation per connection while the attacker stalls.\n\n\n\nA handful of connections exhausts any heap. The same bytes from an unauthenticated pre-bind client hit any embedding server that did not set MAX_PDU_SIZE_ATTR.\n\n\n\nThis issue affects Apache Directory LDAP API: from 1.2.0 before 1.2.9.\n\n\n\nUsers are recommended to upgrade to version 1.2.9, which fixes the issue."
+      "date": "2026-10-03T09:17:04.360",
+      "summary": "In Bouncy Castle for Java before 1.86, HQC leaked secret-derived data through two side channels: its GF(2^8) arithmetic used lookup tables indexed by field elements, making the cache line touched a function of the operand, and its fixed-weight support sampler left its duplicate scan as soon as a collision was found and stored accepted positions at a secret index. Both run on secret inputs during encapsulation and decapsulation, and the sampler re-expands the secret key from its seed on every decapsulation, so an attacker able to observe cache behaviour or decapsulation timing can recover information about the HQC private key. The field arithmetic is now table-free and the sampler branch-free within a batch of candidates, with output and randomness consumption unchanged."
     },
     {
-      "id": "CVE-2026-103552",
-      "title": "CVE-2026-103552",
+      "id": "CVE-2026-71883",
+      "title": "CVE-2026-71883",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:06.303",
-      "summary": "Stack Overflow vulnerability in Apache Directory LDAP API.\n\n\n\nBefore binding, a client can send a deeply nested search filter that overflows the stack in the server's decoder.\n\n\n\nThis issue affects Apache Directory LDAP API: from 1.2.0 before 1.2.9.\n\n\n\nUsers are recommended to upgrade to version 1.2.9, which fixes the issue."
+      "date": "2026-10-03T09:17:04.570",
+      "summary": "In Bouncy Castle for Java LTS before 2.73.13, the one-shot native packet ciphers for AES-CBC, CCM, CFB, CTR, GCM and GCM-SIV released the caller's key, IV and additional authenticated data arrays with JNI's ReleaseByteArrayElements in mode 0, which commits the native copy back into the Java array. Those arrays are read-only to the native code, and on a JVM that returns a copy rather than a pin the copy still holds the input bytes as they were read. The output buffer is taken through a separate critical region and committed first, so where an application passed the same Java array as both an input and the destination - encrypting in place over KeyParameter.getKey(), for example - the later mode-0 release of the key wrote the unchanged key bytes over the ciphertext that had just been produced. The call still returned the correct output length, so an application encrypting in place over its own key array was handed the raw AES key where it expected ciphertext, with nothing in the API to indicate it, and would transmit or store the key in place of the message. The read-only input arrays are now released with JNI_ABORT, freeing the native copy without copying it back, and mode 0 is rese"
     },
     {
-      "id": "CVE-2026-103877",
-      "title": "CVE-2026-103877",
+      "id": "CVE-2026-71885",
+      "title": "CVE-2026-71885",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:06.437",
-      "summary": "Deserialization of Untrusted Data vulnerability in Apache Directory LDAP API.\n\n\n\nA rogue/compromised LDAP server (or pre-TLS MITM) can answer a client's loadSchema() subschema search with a schema object that contains a serialized Java class, allowing some potential RCE. \n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue."
+      "date": "2026-10-03T09:17:04.730",
+      "summary": "In Bouncy Castle for Java before 1.86, the Messaging Layer Security (MLS, RFC 9420) implementation did not bind an X.509 credential to a LeafNode's signature_key. LeafNode.verify() checked a leaf's signature against the signature_key carried in the leaf itself, while the credential's X.509 certificate chain was stored but never parsed or validated, so the end-entity certificate's public key was never required to match signature_key as RFC 9420 sec. 5.3 requires. A party could therefore present another party's certificate as its credential while signing the leaf, and the enclosing KeyPackage, with an unrelated key, and be accepted under that other party's identity through KeyPackage.verify() and the Group leaf-validation path. In a deployment that admits external commits without an independent credential-admission check, an unauthenticated attacker could be admitted under a victim's X.509 identity, evict the victim (resynchronization compares whole credentials rather than signing keys), derive the current epoch, decrypt subsequent group messages, and send messages accepted as the victim. TreeKEM.LeafNode now requires the end-entity certificate's subject public key, in the cipher sui"
     },
     {
-      "id": "CVE-2026-103878",
-      "title": "CVE-2026-103878",
+      "id": "CVE-2026-71886",
+      "title": "CVE-2026-71886",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:06.570",
-      "summary": "Cleartext transmission of sensitive information vulnerability in Apache Directory LDAP API.\n\n\n\nA StartTLS extended operation started after a Search request has been sent can lead to receive data in plain text before the TLS Handshake has been completed.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue."
+      "date": "2026-10-03T09:17:04.897",
+      "summary": "In Bouncy Castle for Java before 1.86, the high-level OpenPGP certificate API accepted a third-party certification or trust delegation from any component key of the issuing certificate, without requiring that component to have been granted the authority to certify. OpenPGPCertificate.getCertificationBy() and getDelegationBy() resolve a third-party signature by matching its issuer key identifier against every key of the third-party certificate, then verify the issuing component's binding chain and the signature itself; nothing checked that the issuing component carried the RFC 9580 sec. 5.2.3.29 certification key flag (CERTIFY_OTHER) when the signature was created. A subkey bound only with SIGN_DATA - the online signing subkey of exactly the offline-primary arrangement those key flags exist to express - could therefore issue a positive User ID certification over an attacker-controlled identity, or a full-trust depth-one direct-key delegation of introducer trust, and the API returned it as a valid signature chain attributed to the third-party certificate. An application treating getCertificationBy(...).isValid() or getDelegationBy(...) as an identity or trusted-introducer decision wo"
     },
     {
-      "id": "CVE-2026-103880",
-      "title": "CVE-2026-103880",
+      "id": "CVE-2026-71887",
+      "title": "CVE-2026-71887",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:06.700",
-      "summary": "Asymmetric Resource Consumption vulnerability in Apache Directory LDAP API.\n\n\n\nStoring a password using the bcrypt algorithm with a high force like 30 in a LDAP server that supports this algorithm will cause the server CPU to  run for hours checking the credentials. A bounded cost should be enforced to avoid a server DOS.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue."
+      "date": "2026-10-03T09:17:05.067",
+      "summary": "In Bouncy Castle for Java before 1.86, the high-level OpenPGP API accepted a data signature made by a signing subkey whose Subkey Binding signature carried no embedded Primary Key Binding (cross-certification) signature, in the case where that binding omits a Key Flags subpacket. RFC 9580 sec. 5.2.1.8 and sec. 10.1.3 require the embedded Primary Key Binding signature on any subkey that can issue signatures; it is the subkey's own statement that it belongs to the primary key it is bound under. OpenPGPCertificate resolved the subkey's key flags two different ways. isSigningKey() goes through getKeyFlags() and getApplyingSubpacket(), which falls back to the primary key's direct-key or primary User ID self-signature when the binding signature omits the subpacket, so the subkey inherited the primary's SIGN_DATA and counted as signing-capable; verifyEmbeddedPrimaryKeyBinding(), which enforces the requirement, reads the binding signature's own hashed subpackets, found no SIGN_DATA there, and returned early as a non-signing key without ever demanding the back signature. The same subkey was therefore signing-capable - so its signatures were attributed to the certificate and OpenPGPSignature"
     },
     {
-      "id": "CVE-2026-103885",
-      "title": "CVE-2026-103885",
+      "id": "CVE-2026-71888",
+      "title": "CVE-2026-71888",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:06.833",
-      "summary": "Asymmetric Resource Consumption vulnerability in Apache Directory LDAP API.\n\n\n\nA LDAP server using the LDAP API (like Apache DS) may consume 100% of a CPU core indefinitely when processing some badly crafted Telephone Numbers.\n\n\n\nThis issue affects Apache Directory LDAP API: from 2.1.0 before 2.1.9.\n\n\n\nUsers are recommended to upgrade to version 2.1.9, which fixes the issue."
+      "date": "2026-10-03T09:17:05.250",
+      "summary": "In Bouncy Castle for Java before 1.86, the streaming CMS AuthenticatedData parser accepted a message whose digestAlgorithm and authAttrs fields disagreed about whether authenticated attributes were present. RFC 5652 sec. 9.1 pairs the two, requiring that authAttrs be present whenever digestAlgorithm is, and sec. 9.2 makes the MAC cover the DER encoding of authAttrs when they are present and the eContent OCTET STRING directly when they are not. CMSAuthenticatedDataParser has to choose between those two in its constructor, before it can reach authAttrs, which comes later in the SEQUENCE, so it chose on digestAlgorithm alone: for a message with digestAlgorithm absent but authAttrs present it verified the content MAC and then returned the attributes through getAuthAttrs() as though they had been authenticated, when the MAC had never covered them. An attacker able to modify a message in transit could insert an authenticated attribute, such as an RFC 2634 ESSSecurityLabel, into an otherwise valid message while holding neither the key-encryption key nor the content-MAC key, and an application taking an authorization, routing or labelling decision from those attributes would act on attacke"
     },
     {
-      "id": "CVE-2026-104403",
-      "title": "CVE-2026-104403",
+      "id": "CVE-2026-71889",
+      "title": "CVE-2026-71889",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:06.947",
-      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in ThimPress LearnPress allows Exploiting Incorrectly Configured Access Control Security Levels.\n\nThis issue affects LearnPress: from n/a through 4.4.9."
+      "date": "2026-10-03T09:17:05.437",
+      "summary": "In Bouncy Castle for Java before 1.86, neither copy of PKIXCertPathReviewer - org.bouncycastle.pkix.jcajce.PKIXCertPathReviewer nor the legacy org.bouncycastle.x509.PKIXCertPathReviewer - applied X.509 name constraints to the end-entity certificate. checkNameConstraints walked the path with a loop bound of index greater than zero, which is the bound the CA-only steps require, but index zero is the target certificate under the standard CertPath ordering, so the permitted and excluded subtree checks of RFC 5280 sec. 6.1.3 (b) and (c) never ran against the leaf's subject DN or its subjectAltName. A chain whose leaf violated a NameConstraints extension imposed by its own issuing CA therefore reported isValidCertPath() true with an empty error list, while CertPathValidator.getInstance(\"PKIX\", \"BC\"), which shares no code with the reviewer, rejected the identical chain against the identical trust anchor. An application using the reviewer to make the trust decision rather than for diagnostics alongside a real validation accepted a certificate the constrained CA was never authorised to issue. Both copies now check every certificate in the path including the target, waive the sec. 4.2.1.10 s"
     },
     {
-      "id": "CVE-2026-59659",
-      "title": "CVE-2026-59659",
+      "id": "CVE-2026-71890",
+      "title": "CVE-2026-71890",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:07.230",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomZonaGeo” parameter is affected – endpoint “/es/geozones/update/149979”."
+      "date": "2026-10-03T09:17:05.607",
+      "summary": "In Bouncy Castle for Java before 1.86, validation of an MLS (RFC 9420) external commit's proposal list, org.bouncycastle.mls.protocol.Group.validateExternalCachedProposals, counted the proposals by type and bounded the removed leaf index but never established that the removed leaf had anything to do with the joiner. RFC 9420 sec. 12.2 permits at most one Remove proposal in an external commit, with which the joiner removes an old version of themselves, and requires that where one is present the LeafNode in the commit's path field meet the criteria it would have to meet in an Update for the removed leaf, in particular that its credential present identifiers acceptable for the removed participant. The ordinary proposal-list validator's self-remove rule is deliberately not applied on this path, because a resync commit legitimately removes a leaf the joiner owns, but nothing was put in its place. Any party holding the group's public GroupInfo, which is precisely what an external joiner is meant to be given, could therefore commit a Remove naming any member's LeafIndex and have every member apply it, evicting that member and taking over their slot in the ratchet tree. The credential chec"
     },
     {
-      "id": "CVE-2026-59660",
-      "title": "CVE-2026-59660",
+      "id": "CVE-2026-71891",
+      "title": "CVE-2026-71891",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:07.417",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomTransportista” parameter is affected – endpoint “/es/carriers/update”."
+      "date": "2026-10-03T09:17:05.763",
+      "summary": "In Bouncy Castle for Java before 1.86, BLS12_381BasicScheme.keyValidate, and so BLSPublicKeyParameters and every BasicScheme, MessageAugmentation and ProofOfPossession verify and aggregateVerify that gate on it, accepted a public key built on a foreign ECCurve that merely shares BLS12-381's field characteristic. The prime-order subgroup check trusts a point's own curve to name its cofactor, since ECPoint.satisfiesOrder returns true outright when the curve's cofactor is one, so a point on a curve with a different equation and a cofactor forged to one passed keyValidate despite not being a G1 point at all. In BC's pairing implementation such a point contributes the identity in the target group, so an aggregate signature verified against a set of public keys including it is accepted even though it contains no signature for that key and message pair, admitting a phantom signer. keyValidate now first confirms that the point's curve carries exactly the canonical G1 field, equation, order and cofactor before any subgroup check. The issue is reachable only where an application constructs an ECPoint on an explicit, non-canonical curve and accepts it as an authority-bearing key; the standard"
     },
     {
-      "id": "CVE-2026-59661",
-      "title": "CVE-2026-59661",
+      "id": "CVE-2026-71892",
+      "title": "CVE-2026-71892",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:07.563",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomRuta” parameter is affected – endpoint “/es/routes/update/693”."
+      "date": "2026-10-03T09:17:05.913",
+      "summary": "In Bouncy Castle for Java before 1.86, the opt-in key-size validation on CMS key-transport recipients, org.bouncycastle.cms.jcajce.JceKeyTransRecipient.setKeySizeValidation(true), never ran for a message using RFC 9709 content-encryption key derivation (id-alg-cek-hkdf-sha256). The branch that should have selected the actual content-encryption algorithm carried in the key derivation AlgorithmIdentifier's parameters compared the encrypted-key byte array against the id-alg-cek-hkdf-sha256 object identifier, a comparison between a byte array and an ASN1ObjectIdentifier that is false for every possible input, so the check fell through to a key-size lookup on the outer wrapper OID. That OID identifies a key-derivation construction rather than a cipher and has no registered key size, so the size comparison was skipped entirely. A key-transport EnvelopedData or AuthEnvelopedData whose transported, HKDF-derived content-encryption key did not match the key size of the advertised content-encryption algorithm was therefore accepted even with validation explicitly enabled, silently defeating the only mechanism the API offers for enforcing recovered key size. The recipient now dispatches on the"
     },
     {
-      "id": "CVE-2026-59662",
-      "title": "CVE-2026-59662",
+      "id": "CVE-2026-85515",
+      "title": "CVE-2026-85515",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:07.713",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomCompetidor” parameter is affected – endpoint “/es/competitors/store”."
+      "date": "2026-10-03T09:17:06.073",
+      "summary": "In Bouncy Castle for Java before 1.86, a truncated OpenPGP encrypted message was accepted with no error reported, and on the SEIPD version 1 path with no integrity check performed at all. RFC 9580 sec. 13.7 permits an implementation to release the cleartext of the fully authenticated chunks when streaming but requires it to indicate a clear error as soon as the truncation is detected, and to report suspect integrity when it discovers malleable ciphertext. The truncation was detected and then discarded: when a message is truncated but the length field of the enclosing packet is left unchanged, BCPGInputStream.PartialInputStream raises an EOFException for the missing ciphertext, and BCPGInputStream.nextPacketTag() reports an EOFException as a clean end of message, so the packet stream above it stopped as though no packets remained. On the AEAD path (SEIPD version 2 and the version 5 AEAD packet), when the literal data packet ended on an AEAD chunk boundary and the consumer read in increments smaller than one chunk, the look-ahead for the packet after the literal triggered the truncated chunk read, so BcAEADUtil and JceAEADUtil never reached the trailing message tag of sec. 5.13.2 tha"
     },
     {
-      "id": "CVE-2026-59663",
-      "title": "CVE-2026-59663",
+      "id": "CVE-2026-97873",
+      "title": "CVE-2026-97873",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:07.850",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomDelegacion” parameter is affected – endpoint “/es/delegations/store”."
+      "date": "2026-10-03T09:17:06.280",
+      "summary": "In Bouncy Castle for Java before 1.86, the raw JCA provider's legacy PBES1 (PKCS#5 scheme 1) and PKCS#12 PBE families ran their password-based key derivation with an iteration count taken from untrusted input without bounding it, so a small input could dictate an arbitrary amount of work before anything could be verified. The AlgorithmParameters implementations (PKCS12PBE and its object identifier aliases, and PBKDF1) accepted any count from an encoded PKCS12PBEParams or PBEParameter, narrowing a value beyond the int range with intValue(), and every Cipher, Mac and SecretKeyFactory in these families derived with whatever count it was given, including one decoded by another provider's AlgorithmParameters, as when javax.crypto.EncryptedPrivateKeyInfo.getKeySpec() decrypts a PKCS#12 PBE-protected private key with BC. Both the parameter parse and the derivations now reject a negative or over-limit count under the org.bouncycastle.pbe.max_iteration_count property (default 10,000,000) that already bounded PBKDF2 (CVE-2026-17508), and the parse rejects a count beyond the int range rather than narrowing it. This issue also affects Bouncy Castle for Java LTS before 2.73.13."
     },
     {
-      "id": "CVE-2026-59664",
-      "title": "CVE-2026-59664",
+      "id": "CVE-2026-104983",
+      "title": "CVE-2026-104983",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:07.997",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomServicioPrestado” parameter is affected – endpoint “/es/providedservices/store”."
+      "date": "2026-10-03T11:17:33.473",
+      "summary": "A vulnerability has been found in Linux Mint Xreader up to 4.6.9. Impacted is the function g_file_get_child of the file shell/ev-window.c of the component PDF Attachment Saving Handler. Such manipulation of the argument attachment leads to path traversal. The attack may be performed from remote. The exploit has been disclosed to the public and may be used. One of the project maintainers closed this issue as \"completed\", because \"EPUB support was removed from Xreader and reimplemented in Xepub\". Code analysis indicates that this might be a misunderstanding of the situation."
     },
     {
-      "id": "CVE-2026-59665",
-      "title": "CVE-2026-59665",
+      "id": "CVE-2026-105105",
+      "title": "CVE-2026-105105",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:08.143",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomMotivo” parameter is affected – endpoint “/es/lostmotives/store”."
+      "date": "2026-10-03T12:16:57.183",
+      "summary": "CWE-306: Missing Authentication for Critical Function in the ait.core.server telemetry and command broker (ait-server) in NASA-AMMOS AIT-Core through 3.1.1 allows an unauthenticated remote attacker with network access to the ZeroMQ message bus to inject spacecraft command data, exfiltrate command and telemetry traffic, inject forged telemetry, or disrupt the command and telemetry bus. The ait-server ZeroMQ broker binds its XSUB and XPUB sockets to all network interfaces by default without authentication or transport security. An attacker able to reach TCP port 5559 can publish messages onto internal topics, including the __commands__ command topic. With the shipped default configuration, command messages are forwarded through command_stream and emitted on the command-uplink UDP path. An attacker able to reach TCP port 5560 can subscribe to command and telemetry traffic on the ground bus. AIT-Core 3.1.2 changes the default ZeroMQ bind addresses to loopback."
     },
     {
-      "id": "CVE-2026-59672",
-      "title": "CVE-2026-59672",
+      "id": "CVE-2026-105112",
+      "title": "CVE-2026-105112",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:08.287",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomGrupoEmpresarial” parameter is affected – endpoint \"/es/corporategroups/update/246”."
+      "date": "2026-10-03T14:16:37.677",
+      "summary": "Nezha from 1.8.0 before 2.3.13 contains a lock-order inversion in UpdateGroup and DeleteGroup that allows authenticated non-admin users to deadlock the alerting subsystem. Attackers can concurrently call the notification-group and batch-delete endpoints with oversized id lists to widen the race and close an ABBA cycle, permanently killing alert delivery until restart."
     },
     {
-      "id": "CVE-2026-59673",
-      "title": "CVE-2026-59673",
+      "id": "CVE-2026-105113",
+      "title": "CVE-2026-105113",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:08.427",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomTipoCli” parameter is affected – endpoint “/es/clientypes/update/109441”."
+      "date": "2026-10-03T14:16:37.823",
+      "summary": "Nezha Dashboard from 1.8.0 before 2.3.13 contains an improper locking vulnerability where a non-deferred mutex unlock leaks on a nil-map panic path. Any authenticated non-admin member can issue four notification API calls to permanently deadlock the alerting subsystem, then exhaust memory with blocking requests."
     },
     {
-      "id": "CVE-2026-80298",
-      "title": "CVE-2026-80298",
+      "id": "CVE-2026-105114",
+      "title": "CVE-2026-105114",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:08.567",
-      "summary": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in HAVELSAN Inc. Sef - AI Chatbot Platform allows SQL Injection.\n\nThis issue affects Sef - AI Chatbot Platform: before 2.1. NOTE: The vendor was contacted and it was learned that the product is not supported."
+      "date": "2026-10-03T14:16:37.963",
+      "summary": "OpenAM before 16.1.3 contains a reflected cross-site scripting vulnerability that allows unauthenticated attackers to inject script by supplying crafted parameters rendered unencoded on the OAuth2 authorization error page. Attackers can lure victims to a crafted /oauth2/authorize link with repeated parameters to run JavaScript in the OpenAM origin, acting within existing sessions or redirecting to phishing pages."
     },
     {
-      "id": "CVE-2026-85492",
-      "title": "CVE-2026-85492",
+      "id": "CVE-2026-105115",
+      "title": "CVE-2026-105115",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:08.707",
-      "summary": "The All in One SEO – AI SEO Plugin to Boost SEO Rankings & Traffic (Schema, Local SEO, Sitemap & SEO Insights) plugin for WordPress is vulnerable to DOM-Based Cross-Site Scripting via URL Pathname in all versions up to, and including, 5.0.1.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user visits a crafted URL. Exploitation requires the victim to hold the aioseo_manage_seo capability and to open the SEO Preview panel in the WordPress admin toolbar while visiting a page with a malicious payload embedded in the URL pathname."
+      "date": "2026-10-03T14:16:38.110",
+      "summary": "OpenAM before 16.1.3 contains an unauthenticated arbitrary class instantiation vulnerability in the legacy JAX-RPC SOAP interface that allows remote attackers to load classes without authentication. Attackers can send SOAP requests to /jaxrpc/* with an unverified session identifier and a chosen class name, crashing the server, probing the classpath, or potentially reaching code execution via gadget chains."
     },
     {
-      "id": "CVE-2026-87920",
-      "title": "CVE-2026-87920",
+      "id": "CVE-2026-105116",
+      "title": "CVE-2026-105116",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:08.857",
-      "summary": "The W3 Total Cache plugin for WordPress is vulnerable to Stored Cross-Site Scripting via Comment Content via Output-Buffer Regex Rewrite in all versions up to, and including, 2.10.6 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is only exploitable when the 'Remove query strings from static resources' option is enabled in W3 Total Cache, as mutate_url() must strip the '?' delimiter and everything following it — including the closing quote of the outer attribute — to break the attribute boundary."
+      "date": "2026-10-03T14:16:38.257",
+      "summary": "OpenAM before 16.1.3 contains a latent cross-site scripting defect that places the SAML message, relay state and target URL unencoded into the load-balancer cookie bounce auto-submit page. If reachable with cookieHashRedirectEnabled set, crafted requests could execute script in the OpenAM origin, though an unrelated HTTP 500 failure prevents exploitation in released versions."
     },
     {
-      "id": "CVE-2026-94180",
-      "title": "CVE-2026-94180",
+      "id": "CVE-2026-105117",
+      "title": "CVE-2026-105117",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.010",
-      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in Monetizemore Advanced Ads allows Retrieve Embedded Sensitive Data.\n\nThis issue affects Advanced Ads: from n/a through 2.0.26."
+      "date": "2026-10-03T14:16:38.413",
+      "summary": "OpenAM before 16.1.3 contains an email content injection vulnerability that allows unauthenticated attackers to control notification email wording via the forgotPassword and register actions on /json/{realm}/users. Attackers can supply subject and message fields to send phishing mail from the organisation's configured From address, or abuse register as a relay to arbitrary recipients."
     },
     {
-      "id": "CVE-2026-94405",
-      "title": "CVE-2026-94405",
+      "id": "CVE-2026-105118",
+      "title": "CVE-2026-105118",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.170",
-      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in Shahjada Download Manager allows Retrieve Embedded Sensitive Data.\n\nThis issue affects Download Manager: from n/a through 3.3.71."
+      "date": "2026-10-03T14:16:38.563",
+      "summary": "OpenAM before 16.1.3 contains an open redirect vulnerability that allows unauthenticated attackers to redirect users by supplying an unverified id_token_hint to the /oauth2/connect/endSession endpoint. Attackers can name any realm client in a forged hint to redirect victims to any registered post-logout URI, enabling phishing that borrows the OpenAM host's trust."
     },
     {
-      "id": "CVE-2026-94541",
-      "title": "CVE-2026-94541",
+      "id": "CVE-2026-105119",
+      "title": "CVE-2026-105119",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.313",
-      "summary": "The WPMobile.App – Android and iOS App Builder plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 11.82 This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to exfiltrate password-reset URLs for arbitrary users, including administrators, mirrored into the push queue by the mail-to-push feature, and use those URLs to take over the targeted accounts. This exploit chain requires the plugin's mail-to-push feature (wpmobile_auto_mail=1) to be enabled, as that setting is what causes outbound WordPress password-reset emails — including the reset URL and key — to be mirrored into the push row queue where they become accessible to the attacker."
+      "date": "2026-10-03T14:16:38.710",
+      "summary": "OpenAM before 16.1.3 applies its OAuth2 Provider PKCE enforcement only to authorization requests whose response_type is exactly code, so codes issued through OpenID Connect hybrid flows (code token, code id_token, code token id_token) carry no bound challenge. An attacker who intercepts such a code can redeem it for a public client's tokens with any non-empty code_verifier."
     },
     {
-      "id": "CVE-2026-94634",
-      "title": "CVE-2026-94634",
+      "id": "CVE-2026-105120",
+      "title": "CVE-2026-105120",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.467",
-      "summary": "Allocation of resources without limits or throttling, Initialization of a resource with an insecure default vulnerability in Apache Thrift Python bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-03T14:16:38.853",
+      "summary": "OpenAM before 16.1.3 contains an authorization bypass vulnerability in the sessions REST endpoint query operation that allows realm administrators to list sessions of every realm. Attackers holding delegated RealmAdmin privileges can supply a _queryFilter naming another realm to disclose usernames, universal IDs, and session handles across tenant boundaries."
     },
     {
-      "id": "CVE-2026-94635",
-      "title": "CVE-2026-94635",
+      "id": "CVE-2026-105121",
+      "title": "CVE-2026-105121",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.630",
-      "summary": "Allocation of resources without limits or throttling, Improper handling of length parameter inconsistency vulnerability in Apache Thrift Lua bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-03T14:16:38.997",
+      "summary": "OpenAM before 16.1.3 contains an improper authorization vulnerability that allows delegated administrators to destroy sessions outside their realms because realm checks use the requester's realm. Authenticated accounts holding the iplanet-am-session-destroy-sessions attribute can supply a target session identifier or handle to forcibly log out users in any realm."
     },
     {
-      "id": "CVE-2026-94639",
-      "title": "CVE-2026-94639",
+      "id": "CVE-2026-105122",
+      "title": "CVE-2026-105122",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.783",
-      "summary": "improper handling of exceptional conditions, Allocation of resources without limits or throttling, Uncaught exception vulnerability in Apache Thrift Java bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-03T14:16:39.140",
+      "summary": "OpenAM before 16.1.3 contains a server-side request forgery vulnerability that allows attackers able to register or modify OAuth 2.0 clients to make OpenAM fetch internal resources via an unvalidated jwks_uri. Attackers can trigger unauthenticated fetches through client-authentication and ID-token validation to probe internal hosts, metadata endpoints or local files, or exhaust request threads for denial of service."
     },
     {
-      "id": "CVE-2026-95662",
-      "title": "CVE-2026-95662",
+      "id": "CVE-2026-103065",
+      "title": "CVE-2026-103065",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:09.937",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomCompetidor” parameter is affected – endpoint “/es/competitors/store”."
+      "date": "2026-10-03T15:16:35.300",
+      "summary": "Improper Validation of Specified Quantity in Input vulnerability in Themeum Kirki kirki allows Accessing Functionality Not Properly Constrained by ACLs.This issue affects Kirki: from n/a through 6.3.1."
     },
     {
-      "id": "CVE-2026-97652",
-      "title": "CVE-2026-97652",
+      "id": "CVE-2026-103342",
+      "title": "CVE-2026-103342",
       "source": "NIST NVD",
-      "date": "2026-10-02T10:17:10.163",
-      "summary": "The WP Statistics – Simple, privacy-friendly Google Analytics alternative plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via REQUEST_URI Query-Parameter Key in all versions up to, and including, 14.16.14 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link."
+      "date": "2026-10-03T15:16:36.087",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Unlimited Elements Unlimited Elements For Elementor (Free Widgets, Addons, Templates) unlimited-elements-for-elementor allows Reflected XSS.This issue affects Unlimited Elements For Elementor (Free Widgets, Addons, Templates): from n/a through 2.0.20."
     },
     {
-      "id": "CVE-2026-104606",
-      "title": "CVE-2026-104606",
+      "id": "CVE-2026-96451",
+      "title": "CVE-2026-96451",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:26.037",
-      "summary": "A security flaw has been discovered in itsourcecode Online Admission System Project 1.0. The impacted element is an unknown function of the file confirm.php. The manipulation of the argument ID results in sql injection. The attack may be launched remotely. The exploit has been released to the public and may be used for attacks."
+      "date": "2026-10-03T16:16:46.920",
+      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in Ultimate Member Ultimate Member ultimate-member allows Privilege Escalation.This issue affects Ultimate Member: from n/a through 2.13.1."
     },
     {
-      "id": "CVE-2026-59666",
-      "title": "CVE-2026-59666",
+      "id": "CVE-2026-105123",
+      "title": "CVE-2026-105123",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:34.503",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomOrigen” parameter is affected – endpoint “/es/origins/store”."
+      "date": "2026-10-04T00:16:35.703",
+      "summary": "W (vincent-peugnet/wcms) through 3.18.0 contains a remote code execution vulnerability that allows authenticated editors to write arbitrary files by abusing the unvalidated path in POST /api/v0/media/upload/[*:path]. Attackers can upload .php files executed by the web server, use encoded ../ sequences to write outside the media directory, and delete arbitrary files via DELETE /api/v0/media/[*:path]."
     },
     {
-      "id": "CVE-2026-59667",
-      "title": "CVE-2026-59667",
+      "id": "CVE-2026-105124",
+      "title": "CVE-2026-105124",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:34.633",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomTamano” parameter is affected – endpoint “/es/companysizemployees/update”."
+      "date": "2026-10-04T00:16:35.853",
+      "summary": "W (vincent-peugnet/wcms) through 3.18.0 contains a stored cross-site scripting vulnerability that allows unauthenticated attackers to inject scripts via the login user field and visitor comment website field. Attackers can submit failed logins rendered unescaped in the adminlog.php log viewer, or comment URLs echoed into href attributes in editrightbar.php, executing script with administrator or editor privileges."
     },
     {
-      "id": "CVE-2026-59668",
-      "title": "CVE-2026-59668",
+      "id": "CVE-2026-105125",
+      "title": "CVE-2026-105125",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:34.797",
-      "summary": "Cross-Site Scripting vulnerability in the Repasat application. Successful exploitation of this vulnerability could allow an attacker to trick a user into executing arbitrary code in the victim’s browser. The “nomTamano” parameter is affected – endpoint “/es/companysizebills/store”."
+      "date": "2026-10-04T00:16:35.990",
+      "summary": "LaraDashboard before 1.4.8 contains a path traversal vulnerability that allows unauthenticated attackers to read JSON files by manipulating the {lang} route segment. On Windows hosts, attackers can send URL-encoded backslash sequences like ..%5C to escape resources/lang and read composer.json or other application JSON files."
     },
     {
-      "id": "CVE-2026-85483",
-      "title": "CVE-2026-85483",
+      "id": "CVE-2026-105126",
+      "title": "CVE-2026-105126",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:35.740",
-      "summary": "Use of uninitialized resource, Return of wrong status code vulnerability in Apache Thrift c_glib bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T00:16:36.217",
+      "summary": "LaraDashboard before 1.4.8 contains an improper privilege management vulnerability that allows authenticated Admin users to escalate to Superadmin by editing or renaming roles. Attackers with role.edit can rename their role to Superadmin or grant user.login_as permissions to take over accounts and reach core upgrade and module installation functions for code execution."
     },
     {
-      "id": "CVE-2026-85493",
-      "title": "CVE-2026-85493",
+      "id": "CVE-2026-105127",
+      "title": "CVE-2026-105127",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:35.877",
-      "summary": "Uncontrolled Recursion vulnerability in Apache Thrift Dart and Java ME bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T00:16:36.397",
+      "summary": "LaraDashboard 1.4.2 before 1.4.8 applies advanced email validation to unauthenticated forgot-password and reset-password requests, triggering DNS lookups and paid AbstractAPI verification calls. Unauthenticated attackers can submit arbitrary addresses to exhaust the verification quota, making validation fail open for all public forms, and probe domain resolution."
     },
     {
-      "id": "CVE-2026-85494",
-      "title": "CVE-2026-85494",
+      "id": "CVE-2026-105128",
+      "title": "CVE-2026-105128",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:36.010",
-      "summary": "Improper handling of length parameter inconsistency, Uncaught exception, Inefficient Algorithmic Complexity, Memory allocation with excessive size value, Initialization of a resource with an insecure default vulnerability in Apache Thrift Python, Ruby, Erlang, Lua, Dart, JavaME, Perl, PHP and D language bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T00:16:36.563",
+      "summary": "LaraDashboard before 1.4.8 contains an open redirect vulnerability that allows remote attackers to redirect users by supplying an unvalidated redirect_url parameter to EmailTemplateController builder and builderEdit. Attackers can send crafted builder links to logged-in users with email template permissions so saving a template navigates them to attacker-controlled phishing sites."
     },
     {
-      "id": "CVE-2026-86325",
-      "title": "CVE-2026-86325",
+      "id": "CVE-2026-105129",
+      "title": "CVE-2026-105129",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:36.173",
-      "summary": "A stack-based buffer overflow vulnerability exists in protocol gateways' account management interface. The vulnerability is caused by insufficient length validation of the `account_name` parameter when processing account management requests. An attacker authenticated as a read-only user to the web management interface could supply a specially crafted account name that exceeds the size of the internal stack buffer, resulting in corruption of program execution flow. Successful exploitation could allow an attacker to read sensitive information from device memory, including credentials, modify arbitrary memory contents, and disrupt device availability."
+      "date": "2026-10-04T00:16:36.730",
+      "summary": "LaraDashboard before 1.4.8 contains an incorrect authorization vulnerability that allows authenticated users with only settings.view permission to read stored secrets through the settings API. Attackers can query GET /api/settings or /api/settings/{option_name} to retrieve plaintext AI provider API keys, mail credentials, passwords and tokens."
     },
     {
-      "id": "CVE-2026-86326",
-      "title": "CVE-2026-86326",
+      "id": "CVE-2026-105130",
+      "title": "CVE-2026-105130",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:36.330",
-      "summary": "An improper verification of cryptographic signature vulnerability exists in protocol gateways because the device does not properly verify the cryptographic authenticity of firmware images before installation. An attacker with high privileges and access to the firmware update interface could provide a specially crafted or modified firmware image, causing it to be installed on the device. Successful exploitation could allow the attacker to execute unauthorized code, compromise the integrity and availability of the device, and persist malicious modifications across subsequent firmware updates."
+      "date": "2026-10-04T00:16:36.893",
+      "summary": "LaraDashboard from 1.4.0 before 1.4.8 contains a race condition vulnerability in RegisterController::register that allows unauthenticated attackers to bypass the per-IP daily registration limit. Attackers can send many concurrent registration requests from one IP so all pass RegistrationGuardService::hasExceededIpLimit before recordRegistration runs, creating accounts in bulk and defeating anti-automation controls."
     },
     {
-      "id": "CVE-2026-91135",
-      "title": "CVE-2026-91135",
+      "id": "CVE-2026-105096",
+      "title": "CVE-2026-105096",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:37.277",
-      "summary": "Heap-based buffer overflow vulnerability in Apache Thrift C++ THeaderTransport.\n\n\n\nWhen an application enables the ZLIB transform for the frames it sends, THeaderTransport::transform() copies the compressed frame into the write buffer without making sure it fits. Data that does not compress, such as content a remote peer supplied, grows under compression, so the copy writes past the end of the heap buffer by an amount that grows with the size of the frame, and for large frames it also reads past the end of the transform buffer.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T02:16:28.740",
+      "summary": "A vulnerability was determined in Omega Solution CoinEx Crypto 2025. This affects an unknown function of the file /customer/ of the component Customer Profile API. Executing a manipulation of the argument ID can lead to authorization bypass. The attack may be launched remotely. The exploit has been publicly disclosed and may be utilized. The product web site does not exist anymore. Maybe the product got retired and/or replaced. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-91137",
-      "title": "CVE-2026-91137",
+      "id": "CVE-2026-105131",
+      "title": "CVE-2026-105131",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:37.413",
-      "summary": "Improper validation of specified quantity in input, Allocation of resources without limits or throttling, Excessive Iteration vulnerability in Apache Thrift PHP bindings.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T02:16:33.600",
+      "summary": "ezBookkeeping 1.2.0 before 2.0.1 contains a privilege escalation vulnerability that allows attackers holding an API token to obtain a full session token via /api/v1/tokens/refresh.json. Because TokenRefreshHandler never checks token type, attackers can exchange short-lived or IP-restricted API tokens for 30-day normal session tokens that bypass API token expiry and allowlists."
     },
     {
-      "id": "CVE-2026-93925",
-      "title": "CVE-2026-93925",
+      "id": "CVE-2026-105097",
+      "title": "CVE-2026-105097",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:37.817",
-      "summary": "Stack-based buffer overflow, Incorrect bitwise shift of integer vulnerability in Apache Thrift C++ THeaderProtocol.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T03:16:49.460",
+      "summary": "A vulnerability was identified in Omega Solution CoinEx Crypto 2025. This impacts an unknown function of the file /customer-currency/ of the component Customer Information API. The manipulation of the argument ID leads to authorization bypass. Remote exploitation of the attack is possible. The exploit is publicly available and might be used. The product web site does not exist anymore. Maybe the product got retired and/or replaced. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-93926",
-      "title": "CVE-2026-93926",
+      "id": "CVE-2026-105098",
+      "title": "CVE-2026-105098",
       "source": "NIST NVD",
-      "date": "2026-10-02T11:17:37.960",
-      "summary": "Missing release of memory after effective lifetime, Missing release of resource after effective lifetime vulnerability in Apache Thrift THeaderTransport.\n\n\n\nThis issue affects Apache Thrift: before 0.25.0.\n\n\n\nUsers are recommended to upgrade to version 0.25.0, which fixes the issue."
+      "date": "2026-10-04T04:16:36.140",
+      "summary": "A security flaw has been discovered in Omega Solution CoinEx Crypto 2025. Affected is an unknown function of the file /ticket/customer of the component Support Ticket API. The manipulation of the argument status/page/count results in information disclosure. The attack can be executed remotely. The exploit has been released to the public and may be used for attacks. The product web site does not exist anymore. Maybe the product got retired and/or replaced. The vendor was contacted early about this disclosure but did not respond in any way."
     }
   ]
 }
