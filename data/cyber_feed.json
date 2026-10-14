@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-10-13T09:34:39.345858+00:00",
+  "generated_at": "2026-10-14T07:48:42.484160+00:00",
   "items": [
+    {
+      "id": "CVE-2026-104935",
+      "title": "CVE-2026-104935 - Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-13",
+      "vendor": "Ivanti",
+      "product": "Connect Secure",
+      "summary": "Ivanti Connect Secure contains an authentication bypass by spoofing vulnerability that allows a remote unauthenticated attacker to execute arbitrary commands.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-16"
+    },
+    {
+      "id": "CVE-2026-96951",
+      "title": "CVE-2026-96951 - Microsoft Windows Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-13",
+      "vendor": "Microsoft",
+      "product": "Windows",
+      "summary": "Microsoft Windows Shell contains a command injection vulnerability that allows an unauthorized attacker to bypass a security feature over a network.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-16"
+    },
     {
       "id": "CVE-2015-5477",
       "title": "CVE-2015-5477 -  ISC BIND Data Processing Errors Vulnerability",
@@ -860,306 +882,284 @@
       "due": "2026-08-10"
     },
     {
-      "id": "CVE-2026-63077",
-      "title": "CVE-2026-63077 - JetBrains TeamCity Deserialization of Untrusted Data Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-05",
-      "vendor": "JetBrains",
-      "product": "TeamCity",
-      "summary": "JetBrains TeamCity contains a deserialization of untrusted data vulnerability that could allow unauthenticated remote code execution via the agent polling protocol.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-08"
-    },
-    {
-      "id": "CVE-2026-18556",
-      "title": "CVE-2026-18556 - N-able N-central Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-04",
-      "vendor": "N-able",
-      "product": "N-central",
-      "summary": "N-able N-central contains an authentication bypass using an alternate path or channel that allows for authentication bypass.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-07"
-    },
-    {
-      "id": "CVE-2026-80327",
-      "title": "CVE-2026-80327",
+      "id": "CVE-2026-107121",
+      "title": "CVE-2026-107121",
       "source": "NIST NVD",
-      "date": "2026-10-06T10:16:52.117",
-      "summary": "An open redirect vulnerability exists in the PingGateway Fragment Filter feature. This issue affects PingGateway versions 7.1.0 and later, 2023.2.0 through 2024.11.1, and 2025.3.0 through 2025.11.1. It is fixed in versions 2024.11.2, 2025.11.2, and 2026.3.0 (and later)."
+      "date": "2026-10-07T08:16:57.053",
+      "summary": "A flaw was found in the SMTP email configuration handling of the keycloak-services component. When the STARTTLS option is enabled, Keycloak fails to strictly enforce an encrypted connection, allowing it to fall back to unencrypted communication if the encryption request is tampered with. An attacker who can intercept network traffic can exploit this to capture sensitive email credentials and message content in plain text."
     },
     {
-      "id": "CVE-2026-84854",
-      "title": "CVE-2026-84854",
+      "id": "CVE-2025-64391",
+      "title": "CVE-2025-64391",
       "source": "NIST NVD",
-      "date": "2026-10-06T10:16:54.230",
-      "summary": "In the WibuKey driver for Windows below Version 6.72, insufficient validation of user input when calculating the size of a kernel buffer could cause small amounts of data to be written outside the intended kernel buffer. This can lead to a system crash. Under unfavorable circumstances, adjacent kernel memory may be modified."
+      "date": "2026-10-07T09:17:03.467",
+      "summary": "This vulnerability in Veeam Agent for Microsoft Windows allows a low-privileged local user to make the agent write files to arbitrary locations when an administrator installs it."
     },
     {
-      "id": "CVE-2026-103831",
-      "title": "CVE-2026-103831",
+      "id": "CVE-2025-64392",
+      "title": "CVE-2025-64392",
       "source": "NIST NVD",
-      "date": "2026-10-06T11:17:13.783",
-      "summary": "CVE-2026-103831: Insecure deserialization vulnerability in the Psr16CacheAdapter component of the TrueLayer Magento 2 Plugin, due to the use of PHP's native unserialize() function without restrictions on the classes allowed when retrieving data stored in the cache. An attacker who already has the ability to write manipulated data to the cache backend used by Magento—such as Redis or Memcached—could inject specially crafted PHP objects and trigger their deserialization, potentially leading to arbitrary code execution via gadget strings available in the application environment. Exploitation therefore requires a prerequisite condition that allows writing to the cache infrastructure, either through access to the local file system or to a cache infrastructure accessible from the Magento environment."
+      "date": "2026-10-07T09:17:04.150",
+      "summary": "This vulnerability in Veeam Backup Enterprise Manager allows an attacker to execute script in the browser of a portal user who opens a crafted link."
     },
     {
-      "id": "CVE-2026-105985",
-      "title": "CVE-2026-105985",
+      "id": "CVE-2025-64393",
+      "title": "CVE-2025-64393",
       "source": "NIST NVD",
-      "date": "2026-10-06T11:17:16.857",
-      "summary": "Craft CMS 5.10.13.2 contains an authenticated remote code execution vulnerability in the Control Panel action app/render-components.\n\n\n\nAny authenticated user with basic Control Panel access can submit request-controlled component classes and property overrides. By first overriding an EntryType object’s uiLabelFormat and then rendering an Entry that resolves the same request-cached entry type, an attacker can cause arbitrary Twig supplied in the request to be evaluated by renderObjectTemplate().\n\n\n\nThis render path is not sandboxed. A Twig string callable can therefore reach PHP functions such as system(), resulting in operating-system command execution with the privileges of the PHP/web-server process.\n\n\n\nThe issue was reproduced with an active non-admin Craft Team user with no optional permissions enabled. No access to entry-editing, Settings, utility, user-management, project-config, filesystem, Kubernetes, or environment variables was required."
+      "date": "2026-10-07T09:17:04.273",
+      "summary": "This vulnerability in Veeam Backup & Replication allows a Backup Viewer to execute arbitrary code as SYSTEM on the backup server."
     },
     {
-      "id": "CVE-2026-75818",
-      "title": "CVE-2026-75818",
+      "id": "CVE-2026-102781",
+      "title": "CVE-2026-102781",
       "source": "NIST NVD",
-      "date": "2026-10-06T11:17:29.730",
-      "summary": "GNU Aspell prezip-bin contains a heap-based buffer overflow vulnerability in the decompressor in prog/prezip.c. The decompressor does not properly check buffer space, so a crafted compressed file can cause out-of-bounds read and write operations on the heap. An attacker who convinces a user to process a malicious compressed file with prezip-bin can trigger memory corruption, leading to a processs crash.\n\n\n\nThis issue was fixed in commit 15b188437f9e0192d4ac4472ad66a4e2f62a782f which will be released in version 0.60.8.3."
+      "date": "2026-10-07T09:17:04.397",
+      "summary": "Joomla Extension - ordasoft.com - Unauthenticated Destructive CRUD in OrdaSoft Touch Slider < 5.4.6 - modOsTouchSliderHelper::getAjax(), wired through Joomla’s core com_ajax dispatcher, is the single handler behind every data-management operation this module exposes. No call to JFactory::getUser(), authorise(), or a CSRF token check exists anywhere in the handler. Two confirmed impact paths: an unauthenticated GET deletes any slider image by guessable sequential IDs, and an unauthenticated multipart upload with a zip file renames and replaces the entire #__os_touch_slider/#__os_touch_slider_text tables site-wide with attacker-supplied content, with no task parameter even required for the second path."
     },
     {
-      "id": "CVE-2026-75819",
-      "title": "CVE-2026-75819",
+      "id": "CVE-2026-102782",
+      "title": "CVE-2026-102782",
       "source": "NIST NVD",
-      "date": "2026-10-06T11:17:29.883",
-      "summary": "GNU Aspell contains an out-of-bounds read vulnerability in ReadOnlyDict::load() in readonly_ws.cpp. When loading a binary .rws dictionary file, it uses offset fields from the file header as byte indices into a heap buffer without validating their bounds. An attacker can trigger this by convincing a user to run aspell with a crafted dictionary file supplied through --master, --dict-dir, or configuration options, leading to heap memory disclosure or a denial of service via application crash.\n\n\n\nThis issue was fixed in commit 941953b25031bc9104e83f58e138a664b8dedc3f which will be released in version 0.60.8.3."
+      "date": "2026-10-07T09:17:04.527",
+      "summary": "Joomla Extension - ordasoft.com - Unauthenticated SQL injection in OrdaSoft Simple Membership < 7.4.0 - site/simplemembership.php dispatches task=checkLoginPass with no authentication or access control check of any kind. The handler reads a login request parameter through Joomla’s generic, non-sanitizing input filter, which strips HTML/script tags but never touches quotes or SQL syntax, and concatenates it directly into a query string with no escaping or parameterization:"
     },
     {
-      "id": "CVE-2026-75820",
-      "title": "CVE-2026-75820",
+      "id": "CVE-2026-103416",
+      "title": "CVE-2026-103416",
       "source": "NIST NVD",
-      "date": "2026-10-06T11:17:30.020",
-      "summary": "GNU Aspell contains an integer truncation vulnerability in the WritableDict::add() function in modules/speller/default/writable.cpp. When loading a personal wordlist, the word length is stored as a single byte, causing truncation for words whose length is a multiple of 256. This leads to heap corruption. An attacker can exploit this by convincing a user to run aspell with a crafted personal wordlist containing such a word, resulting in denial of service.\n\n\n\nThis issue was fixed in commit 782ce94e4dc71eaec4ee1bd945eb3b9c47c5387d which will be released in version 0.60.8.3."
+      "date": "2026-10-07T09:17:04.647",
+      "summary": "Out-of-bounds write via the TLS 1.3 handshake message cache in NetX Duo in Eclipse ThreadX NetX Duo 6.5.1.202602 allows a handshake message larger than the cache writes past it and on into the rest of the session control block, which holds pointers. A malicious or compromised server can make a TLS 1.3 client produce such a message before certificate authentication completes, so no server certificate is needed to reach it."
     },
     {
-      "id": "CVE-2026-105918",
-      "title": "CVE-2026-105918",
+      "id": "CVE-2026-107102",
+      "title": "CVE-2026-107102",
       "source": "NIST NVD",
-      "date": "2026-10-06T12:16:47.287",
-      "summary": "A vulnerability has been found in Kusalkasilva Learning-Management-System up to ffeb873f8803f1e9664384ff75000c7da45466d2. Impacted is the function mysql_error of the file login.php of the component Login Endpoint. The manipulation of the argument username/password leads to sql injection. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. Continious delivery with rolling releases is used by this product. Therefore, no version details of affected nor updated releases are available. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-10-07T09:17:04.780",
+      "summary": "This vulnerability exists in the ERP system due to improper validation of payment callback parameters and inadequate authentication controls in API endpoint. An unauthenticated remote attacker could exploit this vulnerability by manipulating the parameter to cause the application to establish an authenticated session for an arbitrary user without valid payment verification.\n\nSuccessful exploitation of this vulnerability could allow the attacker to bypass authentication and gain unauthorized access to other user accounts on the targeted system."
     },
     {
-      "id": "CVE-2026-56596",
-      "title": "CVE-2026-56596",
+      "id": "CVE-2026-107103",
+      "title": "CVE-2026-107103",
       "source": "NIST NVD",
-      "date": "2026-10-06T12:16:49.327",
-      "summary": "HCL BigFix Service Management is affected by an Improper Input Validation vulnerability, which could allow an attacker to supply unexpected or malformed data, enabling processing errors, business logic bypasses, and unintended application behavior."
+      "date": "2026-10-07T09:17:04.913",
+      "summary": "This vulnerability exists in the ERP system due to insufficient validation and parameterization of user supplied input in an API endpoint. An unauthenticated remote attacker could exploit this vulnerability by supplying specially crafted input to the vulnerable endpoint.\n\nSuccessful exploitation of this vulnerability could allow the attacker to perform SQL injection attacks on the targeted system."
     },
     {
-      "id": "CVE-2026-105834",
-      "title": "CVE-2026-105834",
+      "id": "CVE-2026-107104",
+      "title": "CVE-2026-107104",
       "source": "NIST NVD",
-      "date": "2026-10-06T13:16:46.597",
-      "summary": "Rundeck before 6.2.0 contains a path traversal vulnerability that allows users holding only the project configure ACL to read arbitrary server files by setting resources.source.N.config.file to any absolute path. Attackers can retrieve file contents through editProjectNodeSourceFile or the apiSourceGetContent endpoint to obtain database passwords, LDAP bind credentials, and other projects' data."
+      "date": "2026-10-07T09:17:05.037",
+      "summary": "This vulnerability exists in the ERP system due to unsafe deserialization of user controlled data in the affected functionality. An unauthenticated remote attacker could exploit this vulnerability by supplying specially crafted data to the vulnerable functionality of the targeted system. \n\nSuccessful exploitation of this vulnerability could allow the attacker to execute arbitrary code, manipulate application data or perform other unintended actions on the targeted system."
     },
     {
-      "id": "CVE-2026-105835",
-      "title": "CVE-2026-105835",
+      "id": "CVE-2026-15894",
+      "title": "CVE-2026-15894",
       "source": "NIST NVD",
-      "date": "2026-10-06T13:16:46.760",
-      "summary": "PLANKA 2.2.0 through 2.2.1 fails to limit incorrect TOTP codes submitted to POST /api/access-tokens/verify-totp, allowing attackers to brute force two-factor authentication codes. Attackers who know a user's password can reuse the ten-minute pending token to guess six-digit codes until one succeeds, obtaining a full access token."
+      "date": "2026-10-07T09:17:05.157",
+      "summary": "The Bluetooth Mesh On-Demand Private Proxy solicitation handler in subsys/bluetooth/mesh/solicitation.c copies a received Solicitation PDU into a fixed 17-byte stack buffer without bounding the source length. In sol_pdu_decrypt(), out is allocated as NET_BUF_SIMPLE(17) and then filled with net_buf_simple_add_mem(out, in->data, in->len); net_buf_simple_add() guards its tailroom only with __ASSERT_NO_MSG, which is compiled out in production builds, so when in->len > 17 the underlying memcpy writes attacker-controlled bytes past the 17-byte stack buffer. The copy occurs before any decryption or authentication, so no key material is required to trigger it.\n\nThe oversized length arises because the mesh scan callback in subsys/bluetooth/mesh/adv.c calls net_buf_simple_restore() before dispatching to bt_mesh_sol_recv(), leaving buf->len covering the entire remaining advertising payload rather than just the Solicitation Service Data. After the parser locates the Service Data AD and consumes the Identification Type byte, the remaining buf->len is the 17-octet Network PDU plus any trailing advertising bytes, and prior to this fix there was no maximum-length check (only a minimum). An attacke"
     },
     {
-      "id": "CVE-2026-105836",
-      "title": "CVE-2026-105836",
+      "id": "CVE-2026-19186",
+      "title": "CVE-2026-19186",
       "source": "NIST NVD",
-      "date": "2026-10-06T13:16:46.913",
-      "summary": "QloApps through 1.7.0 contains an authorization bypass vulnerability in AdminProductsController::ajaxProcessBulkUpdateRooms that allows hotel-restricted back-office employees to modify rooms of other hotels. Attackers can submit foreign room IDs in the id_rooms parameter to change status, floor, comments, or inactive dates, disrupting availability and bookings."
+      "date": "2026-10-07T09:17:05.290",
+      "summary": "ieee802154_decipher_data_frame() in subsys/net/l2/ieee802154/ieee802154_frame.c computed payload_len = net_pkt_get_len(pkt) - ll_hdr_len - authtag_len without first checking that the received frame is at least ll_hdr_len + authtag_len bytes long. All three variables are uint8_t, so a frame whose payload is shorter than the configured authentication tag makes the subtraction wrap around to a large value (up to 255).\n\nThe wrapped length is passed unchanged to ieee802154_decrypt_auth() and on to the CCM operation as cipher_pkt.in_len/out_buf_max, with apkt->tag pointing at frame + ll_hdr_len + payload_len. Because the receive buffer is allocated to the exact length of the frame received from the radio driver, the crypto layer then reads several hundred bytes past the end of the packet buffer and writes the same number of decrypted bytes back over it in place. The frame's authentication tag is only verified after this processing has taken place, so no key material, association or prior authentication is needed — a single crafted short frame from any device in radio range is sufficient. Frame validation in ieee802154_validate_frame() does not prevent it: a data frame is accepted with a "
     },
     {
-      "id": "CVE-2026-105919",
-      "title": "CVE-2026-105919",
+      "id": "CVE-2026-58068",
+      "title": "CVE-2026-58068",
       "source": "NIST NVD",
-      "date": "2026-10-06T13:16:47.120",
-      "summary": "A vulnerability was found in Kusalkasilva Learning-Management-System up to ffeb873f8803f1e9664384ff75000c7da45466d2. The affected element is the function mysql_query of the file admin/login.php of the component Administrator Login Endpoint. The manipulation of the argument username/password results in sql injection. The attack can be launched remotely. The exploit has been made public and could be used. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-10-07T09:17:05.430",
+      "summary": "This vulnerability in Veeam Agent for Microsoft Windows allows any local user to terminate arbitrary processes on the system."
     },
     {
-      "id": "CVE-2026-106016",
-      "title": "CVE-2026-106016",
+      "id": "CVE-2026-58069",
+      "title": "CVE-2026-58069",
       "source": "NIST NVD",
-      "date": "2026-10-06T13:16:47.290",
-      "summary": "Mitigation bypass in the File Handling component. This vulnerability was fixed in Firefox 157.0.1."
+      "date": "2026-10-07T09:17:05.550",
+      "summary": "This vulnerability in Veeam Backup & Replication allows an authenticated Cloud Connect tenant to read arbitrary files on the service provider host."
     },
     {
-      "id": "CVE-2026-82531",
-      "title": "CVE-2026-82531",
+      "id": "CVE-2026-5703",
+      "title": "CVE-2026-5703",
       "source": "NIST NVD",
-      "date": "2026-10-06T13:16:50.180",
-      "summary": "Smarty before 4.5.8 and 5.x before 5.8.5 contains a code injection vulnerability where the top-level nocache_hash is never restored during extends:/multi-component template inheritance, leaving it null. Attackers can supply assigned data containing a forged SmartyNocache marker that is copied verbatim into the regenerated PHP cache file, executing arbitrary PHP on include for remote code execution."
+      "date": "2026-10-07T09:17:05.673",
+      "summary": "Path traversal vulnerability in the Satel Iberia SenNet Datalogger Serie 200, specifically in the web portal provided by the device, which allows an authenticated user to read any file or list any directory accessible to the system user running the web server. This is possible by modifying the URL to include a path traversal payload. Successful exploitation of this vulnerability could allow an attacker to access critical system files containing confidential information."
     },
     {
-      "id": "CVE-2025-15591",
-      "title": "CVE-2025-15591",
+      "id": "CVE-2026-89417",
+      "title": "CVE-2026-89417",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:34.087",
-      "summary": "Cross-site Scripting (XSS) in the Forums feature of OpenText Content Management Content Server could allow a bad actor to inject malicious code into a Forums web page."
+      "date": "2026-10-07T09:17:05.817",
+      "summary": "The OMGF | GDPR/DSGVO Compliant, Faster Google Fonts. Easy. plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 's' Search Parameter via comments-atom Feed in all versions up to, and including, 6.3.10 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Successful exploitation requires that the front-end server serves the retained .tmp file without a Content-Type or X-Content-Type-Options header, enabling MIME-sniffing browsers such as Chromium to execute the injected script — a condition present by default on many Apache and nginx/php-fpm deployments."
     },
     {
-      "id": "CVE-2026-105788",
-      "title": "CVE-2026-105788",
+      "id": "CVE-2026-90466",
+      "title": "CVE-2026-90466",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:40.077",
-      "summary": "Microsoft UFO is an open-source framework for intelligent automation across devices and platforms. Prior to 3.0.10, the type_text and launch_app tools in ufo/client/mcp/http_servers/mobile_mcp_server.py pass the authenticated caller-controlled text and package_name parameters into adb shell command argument positions without comprehensive validation. The adb client joins those arguments into a remote command string that the Android shell reparses, allowing shell metacharacters to execute additional commands on an authorized connected device as the Android shell user. Exploitation requires a valid Mobile MCP API key and a reachable device authorized for ADB, and it does not establish host operating-system execution, Android root execution, or access beyond the Android shell-user privileges. This issue is fixed in version 3.0.10."
+      "date": "2026-10-07T09:17:05.987",
+      "summary": "Path traversal of 'trusted_jar_paths' in Impala 4.5.2 allows an attacker-controlled JAR to be loaded via a relative path where the prefix matches a path specified in 'trusted_jar_paths'.\n\n\n\n\nThe startup flag 'trusted_jar_paths' references URIs for loading files from local or remote filesystems. Path traversal can't override the schema, but can result in loading a JAR that has been uploaded to a different location in that filesystem via Impala DDLs such as CREATE DATA SOURCE and CREATE TABLE. Path traversal can only be used if a trusted path exists, so this attack requires 'trusted_jar_paths' have a non-empty value configured by the Impala admin.\n\n\n\n\nUsers are recommended to upgrade to version 4.5.3, which fixes this issue."
     },
     {
-      "id": "CVE-2026-105789",
-      "title": "CVE-2026-105789",
+      "id": "CVE-2026-93026",
+      "title": "CVE-2026-93026",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:40.270",
-      "summary": "Microsoft UFO is an open-source framework for intelligent automation across devices and platforms. Prior to 3.0.9, the execute_command tool in ufo/client/mcp/http_servers/linux_mcp_server.py treats sort and uniq as read-only commands while the free-form command parameter can select their file-output forms. An authenticated caller can use sort -o or the optional second uniq operand to create or overwrite files writable by the UFO server process without shell metacharacters, because the allowed binary opens the destination itself and the argument policy does not reject the operation. This can corrupt configuration or other writable data and disrupt the service, but the demonstrated primitive does not directly disclose files or establish arbitrary code execution. This issue is fixed in version 3.0.9."
+      "date": "2026-10-07T09:17:06.107",
+      "summary": "This vulnerability in Veeam Backup & Replication allows a Backup Viewer to modify the Enterprise Manager master key and stored antivirus update credentials."
     },
     {
-      "id": "CVE-2026-105790",
-      "title": "CVE-2026-105790",
+      "id": "CVE-2026-93684",
+      "title": "CVE-2026-93684",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:40.490",
-      "summary": "Microsoft UFO is an open-source framework for intelligent automation across devices and platforms. Prior to 3.0.9, authenticated device registration through /api/devices can supply a permitted attacker-controlled WebSocket endpoint while aip/transport/websocket.py applies pinned_addresses only to the initial destination. The pinned websockets.connect() client follows cross-origin redirects and opens a new TCP connection before Galaxy performs its post-handshake peer-IP validation, allowing WebSocket upgrade requests to internal hosts reachable from the server. The confirmed impact is the internal connection and handshake request, and does not establish arbitrary HTTP methods, response-body disclosure, a completed AIP session, or cloud metadata access. This issue is fixed in version 3.0.9."
+      "date": "2026-10-07T09:17:06.223",
+      "summary": "An SQL user using Impala up to and including version 4.5.2 with only SELECT permission can put JavaScript in a table alias and make it run in another user's browser when that user opens the query plan in Impala's Web UI. This is stored XSS (CWE-79). Users are recommended to upgrade to version 4.5.3."
     },
     {
-      "id": "CVE-2026-105837",
-      "title": "CVE-2026-105837",
+      "id": "CVE-2026-97720",
+      "title": "CVE-2026-97720",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:40.763",
-      "summary": "libmikmod before 3.3.14 contains an integer overflow vulnerability in DSM_Load() in load_dsm.c that allows attackers to trigger heap buffer overflow via crafted track counts. Attackers can supply a DSM module whose numchn and numpat product wraps a 16-bit value, overwriting heap memory to cause crashes or potential code execution."
+      "date": "2026-10-07T09:17:06.333",
+      "summary": "Incorrect implementation of JWT/OAuth authentication in Impala executors in Apache Impala versions up to and including 4.5.2 which allows attacked to access resources served by the executor's webserver when that webserver is configured to accept JWT/OAuth tokens.  Bearer token (JWT) signatures are not validated resulting in the webserver accepting any valid JWT.\nUsers are recommended to either disable JWT/OAuth auth for Impala executors or upgrade to version 4.5.3, which fixes this issue."
     },
     {
-      "id": "CVE-2026-105838",
-      "title": "CVE-2026-105838",
+      "id": "CVE-2026-103075",
+      "title": "CVE-2026-103075",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:40.953",
-      "summary": "libmikmod before 3.3.14 contains a heap out-of-bounds read vulnerability in the Impulse Tracker loader load_it.c that allows attackers to read adjacent heap memory via oversized patterns. Attackers can supply a crafted IT module with more than 200 pattern rows, causing IT_ConvertTrack() to read past the itpat buffer and crash applications."
+      "date": "2026-10-07T10:17:25.020",
+      "summary": "Missing Authorization vulnerability in WPMU DEV Hustle wordpress-popup allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Hustle: from n/a through 7.8.14.2."
     },
     {
-      "id": "CVE-2026-105839",
-      "title": "CVE-2026-105839",
+      "id": "CVE-2026-104390",
+      "title": "CVE-2026-104390",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:41.133",
-      "summary": "libmikmod before 3.3.14 contains an integer overflow in the Oktalyzer loader OKT_doPBOD() that allows attackers to cause heap buffer overflow via crafted track counts. Attackers can supply an OKT module whose SLEN chunk wraps the 16-bit numtrk value, causing PBOD writes past allocated track pointers for crashes or code execution."
+      "date": "2026-10-07T10:17:26.150",
+      "summary": "Missing Authorization vulnerability in Arraytics Booktics booktics allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Booktics: from n/a through 1.0.27."
     },
     {
-      "id": "CVE-2026-105840",
-      "title": "CVE-2026-105840",
+      "id": "CVE-2026-104391",
+      "title": "CVE-2026-104391",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:41.300",
-      "summary": "lrzsz before 0.13.0 contains a path traversal vulnerability in the lrz receive utility's restricted mode that allows malicious ZMODEM senders to write files outside the current directory using absolute pathnames. Because checkpath() in src/lrz.c only rejects '../' sequences unless built with --enable-pubdir, attackers can send files named with absolute paths to overwrite any file writable by the receiving user."
+      "date": "2026-10-07T10:17:26.293",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in ExpressTech Quiz And Survey Master quiz-master-next allows Stored XSS.This issue affects Quiz And Survey Master: from n/a through 11.2.7."
     },
     {
-      "id": "CVE-2026-105841",
-      "title": "CVE-2026-105841",
+      "id": "CVE-2026-104393",
+      "title": "CVE-2026-104393",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:41.460",
-      "summary": "lrzsz before 0.13.0 contains an OS command injection vulnerability in the lrz receive utility's pipe mode that allows remote senders to execute commands by supplying crafted filenames. When lrz runs under a suffixed name such as lrztar, procheader() in src/lrz.c passes the unescaped ZMODEM/YMODEM filename to popen(), so shell metacharacters execute as the receiving user."
+      "date": "2026-10-07T10:17:26.430",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in weDevs Happy Addons for Elementor happy-elementor-addons allows Stored XSS.This issue affects Happy Addons for Elementor: from n/a through 3.50.0."
     },
     {
-      "id": "CVE-2026-105842",
-      "title": "CVE-2026-105842",
+      "id": "CVE-2026-105192",
+      "title": "CVE-2026-105192",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:41.620",
-      "summary": "lrzsz before 0.13.0 contains a heap-based buffer overflow vulnerability in procheader() of the lrz receive utility when copying overlong sender-supplied filenames into Pathname. Malicious ZMODEM senders can supply filenames up to 8192 bytes, overflowing the buffer via sprintf() in pipe mode or strcpy() to corrupt heap memory and crash lrz."
+      "date": "2026-10-07T10:17:32.647",
+      "summary": "LMCache multiprocess mode, also called distributed mode, opens an unauthenticated ZeroMQ ROUTER so worker processes can register and share KV cache blocks. Messages on that socket are msgpack. Extension code 1 is passed to DeviceIPCWrapper.Deserialize, which calls pickle.loads, while the server is still decoding request arguments and before the handler runs. A single unauthenticated ZMQ DEALER message to the transport port (default 5555) therefore executes code as the user the LMCache process runs as. Official container images run that process as root. The transport binds to localhost unless the operator sets a routable address with --host, which is how multi-node deployments let peers connect."
     },
     {
-      "id": "CVE-2026-105920",
-      "title": "CVE-2026-105920",
+      "id": "CVE-2026-105871",
+      "title": "CVE-2026-105871",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:41.873",
-      "summary": "A vulnerability was determined in Kusalkasilva Learning-Management-System up to ffeb873f8803f1e9664384ff75000c7da45466d2. The impacted element is an unknown function of the file student_signup.php of the component Student Registration Endpoint. This manipulation causes sql injection. The attack may be initiated remotely. The exploit has been publicly disclosed and may be utilized. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-10-07T10:17:34.920",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in BdThemes Element Pack Elementor Addons bdthemes-element-pack-lite allows Stored XSS.This issue affects Element Pack Elementor Addons: from n/a through 8.8.6."
     },
     {
-      "id": "CVE-2026-106026",
-      "title": "CVE-2026-106026",
+      "id": "CVE-2026-105873",
+      "title": "CVE-2026-105873",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:42.083",
-      "summary": "tftp-hpa 5.4 before 6.0 contains an out-of-bounds read vulnerability in rewrite_string() in tftpd/remap.c that walks heap memory during jump label searches. Unauthenticated remote attackers can send read or write requests whose filename matches a remap jump rule to crash the forked in.tftpd request handler."
+      "date": "2026-10-07T10:17:35.053",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in BdThemes Element Pack Elementor Addons bdthemes-element-pack-lite allows Stored XSS.This issue affects Element Pack Elementor Addons: from n/a through 8.8.6."
     },
     {
-      "id": "CVE-2026-106037",
-      "title": "CVE-2026-106037",
+      "id": "CVE-2026-105875",
+      "title": "CVE-2026-105875",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:42.257",
-      "summary": "Mooncake through 0.3.13.post1 contains a missing authentication vulnerability in the Store REST service, which binds to 0.0.0.0 without authentication on any route. Unauthenticated attackers can call routes such as /api/get, /api/put, /api/remove_all and /api/mount to read cached KV data with user prompts, inject or delete objects, and mount attacker-described segments."
+      "date": "2026-10-07T10:17:35.187",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in BdThemes Prime Slider – Addons For Elementor bdthemes-prime-slider-lite allows Stored XSS.This issue affects Prime Slider – Addons For Elementor: from n/a through 4.6.2."
     },
     {
-      "id": "CVE-2026-106038",
-      "title": "CVE-2026-106038",
+      "id": "CVE-2026-105876",
+      "title": "CVE-2026-105876",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:42.420",
-      "summary": "Mooncake Store master through 0.3.13.post1 contains a missing authentication vulnerability that allows unauthenticated attackers to force-delete any object via Remove, RemoveByRegex, RemoveAll and BatchRemove on the coro_rpc port. Attackers can send forged requests with the force flag set to bypass lease checks, wipe keys matching any regex, or clear the entire store, causing cache loss and request failures."
+      "date": "2026-10-07T10:17:35.320",
+      "summary": "Missing Authorization vulnerability in WP Chill Modula Image Gallery modula-best-grid-gallery allows Retrieve Embedded Sensitive Data.This issue affects Modula Image Gallery: from n/a through 3.0.11."
     },
     {
-      "id": "CVE-2026-106039",
-      "title": "CVE-2026-106039",
+      "id": "CVE-2026-105884",
+      "title": "CVE-2026-105884",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:43.660",
-      "summary": "Mooncake Store master through 0.3.13.post1 contains a missing authorization vulnerability that allows unauthenticated attackers to create, steal, and falsely complete replication tasks via the coro_rpc port. Attackers can invoke CreateCopyTask, CreateMoveTask, FetchTasks, and MarkTaskToComplete with victim client UUIDs disclosed by QueryTask to hijack task queues and record replication that never occurred."
+      "date": "2026-10-07T10:17:35.450",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Media Rocket Lazy Load rocket-lazy-load allows Stored XSS.This issue affects Rocket Lazy Load: from n/a through 2.4.0."
     },
     {
-      "id": "CVE-2026-106040",
-      "title": "CVE-2026-106040",
+      "id": "CVE-2026-27434",
+      "title": "CVE-2026-27434",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:43.833",
-      "summary": "Mooncake Store master through 0.3.13.post1 contains a missing authorization vulnerability that allows unauthenticated attackers to erase any object's disk replica via EvictDiskReplica and BatchEvictDiskReplica. Attackers reaching the coro_rpc master port can evict DISK replicas across all tenants, deleting objects whose only remaining replica is on disk."
+      "date": "2026-10-07T10:17:35.607",
+      "summary": "Missing Authorization vulnerability in sc Internet Vivoo WP Rentals wprentals allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WP Rentals: from n/a through 3.14.2."
     },
     {
-      "id": "CVE-2026-106041",
-      "title": "CVE-2026-106041",
+      "id": "CVE-2026-42720",
+      "title": "CVE-2026-42720",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:43.983",
-      "summary": "Mooncake Store master through 0.3.13.post1 contains a missing authorization vulnerability that allows unauthenticated attackers to inject completed LOCAL_DISK replicas through the NotifyOffloadSuccess RPC. Attackers can mount a local disk segment with a self-chosen client UUID, then attach replicas pointing at attacker-controlled endpoints to serve poisoned disk-tier reads and fake key existence."
+      "date": "2026-10-07T10:17:35.743",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Sarah Giles Dynamic User Directory dynamic-user-directory allows Blind SQL Injection.This issue affects Dynamic User Directory: from n/a through 2.4."
     },
     {
-      "id": "CVE-2026-12380",
-      "title": "CVE-2026-12380",
+      "id": "CVE-2026-42721",
+      "title": "CVE-2026-42721",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:44.150",
-      "summary": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Akıllı Ticaret Software Technologies Ltd. Co. E-Commerce Pack allows Reflected XSS.\n\nThis issue affects E-Commerce Pack: through 2026-10-06. NOTE: The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-07T10:17:35.870",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in SERVIT Software Solutions affiliate-toolkit affiliate-toolkit-starter allows Blind SQL Injection.This issue affects affiliate-toolkit: from n/a through 3.9.1."
     },
     {
-      "id": "CVE-2026-34498",
-      "title": "CVE-2026-34498",
+      "id": "CVE-2026-78243",
+      "title": "CVE-2026-78243",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:45.280",
-      "summary": "Improper input validation vulnerability in Johnson Controls Illustra Standard - L4L China on Windows allows OS Command Injection.\n\nThis issue affects Illustra Standard - L4L China: before 6.0.0.66394."
+      "date": "2026-10-07T10:17:36.017",
+      "summary": "Apache YuniKorn 1.8.0 and later, if configured with the LDAP group resolver, crashes due to an out of bounds read processing group membership entries.If the LDAP server returns a group membership entry, memberOf attribute, for a user specified in the pod the server crashes if a membership record does not start with \"CN=\".\n\n\n\n\nThis only affects install that have the non default LDAP group provider configured. \n\n\nUsers are recommended to upgrade to version 1.10.0, which fixes this issue."
     },
     {
-      "id": "CVE-2026-77050",
-      "title": "CVE-2026-77050",
+      "id": "CVE-2026-92393",
+      "title": "CVE-2026-92393",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:46.017",
-      "summary": "An issue was discovered in Django 6.1 before 6.1.2, 6.0 before 6.0.9, and 5.2 before 5.2.18.\n`django.utils.translation.get_supported_language_variant()` is subject to\r\na potential denial-of-service attack when processing many distinct, very long\r\nlanguage codes, which are retained as keys in an in-memory cache and\r\nconsume process memory.\nEarlier, unsupported Django series (such as 5.1.x, 5.0.x, and 4.2.x) were not evaluated and may also be affected.\nDjango would like to thank Gleb Lizunov for reporting this issue."
+      "date": "2026-10-07T10:17:42.247",
+      "summary": "Apache YuniKorn 1.9.0 and earlier does not implement label and user annotation checks for workload UPDATE action bypassing all checks. Workloads in YuniKorn are defined as the following Kubernetes objects: \"deployments\", \"replicasets\", \"statefulsets\", \"daemonsets\", \"jobs\", \"cronjobs\". The CREATE action correctly enforces the checks for all object types.\n\n\nThe bypass allows any user to specify an arbitrary user info annotation. The same bypass also allows changing the application ID for the workload. The combination of the two applied in one UPDATE could allow access to a queue that the user normally would not have access to. Quota usage for the queue might be impacted if the application runs in the incorrect queue. User based quota enforcement is also based on the user annotation. User quota tracking could be side stepped even if the application runs in the correct queue.\n\n\n\n\nUsers are recommended to upgrade to version 1.10.0, which fixes this issue."
     },
     {
-      "id": "CVE-2026-77178",
-      "title": "CVE-2026-77178",
+      "id": "CVE-2026-97146",
+      "title": "CVE-2026-97146",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:46.250",
-      "summary": "Oracle VM VirtualBox before 7.2.8 allows guest OS users to cause an out-of-bounds write in the host OS in pcnetReceiveNoSync in DevPCNet.cpp in the PCNet (Am79C970A) network device model."
+      "date": "2026-10-07T10:17:43.693",
+      "summary": "Apache YuniKorn 1.9.0 and earlier allows bypassing the check for the user annotation by setting a secondary label on the pod. If the pod has the label 'app=yunikorn' the checks limiting the user annotation content are not run. The label is used to identify the YuniKorn application itself in the deployments.\n\n\nThe bypass allows any user to specify an arbitrary user info annotation. The arbitrary user information could allow access to a queue that the user normally would not have access to. Quota usage for the queue might be impacted if the application runs in the incorrect queue. User based quota enforcement is also based on the user annotation. User quota tracking could be side stepped even if the application runs in the correct queue.\n\n\n\n\nUsers are recommended to upgrade to version 1.10.0, which fixes this issue."
     },
     {
-      "id": "CVE-2026-82924",
-      "title": "CVE-2026-82924",
+      "id": "CVE-2026-97294",
+      "title": "CVE-2026-97294",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:46.417",
-      "summary": "Improper Control of Interaction Frequency vulnerability in Pusula Communication, IT, and Internet Industry and Trade Co. Ltd. Expert Mail allows Brute Force.\n\nThis issue affects Expert Mail: through 2026-09-18."
+      "date": "2026-10-07T10:17:44.860",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Stored XSS.This issue affects Media LIbrary Assistant: from n/a through 3.41."
     },
     {
-      "id": "CVE-2026-84429",
-      "title": "CVE-2026-84429",
+      "id": "CVE-2026-103668",
+      "title": "CVE-2026-103668",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:46.910",
-      "summary": "An issue was discovered in Django 6.1 before 6.1.2, 6.0 before 6.0.9, and 5.2 before 5.2.18.\n`django.utils.http.parse_header_parameters()` was subject to a potential denial-of-service attack due to quadratic time complexity when parsing a value with many separators inside a quoted parameter. An unauthenticated request could reach this parsing through headers such as `Accept` or `Content-Type`, for instance via the content negotiation performed by `HttpRequest.accepts()`. The per-call length limit does not bound the combined size of repeated headers.\nEarlier, unsupported Django series (such as 5.1.x, 5.0.x, and 4.2.x) were not evaluated and may also be affected.\nDjango would like to thank Jisung Chae for reporting this issue."
+      "date": "2026-10-07T11:17:09.357",
+      "summary": "An SQL Injection vulnerability exists in the Site Search function of Movable Type, which may allow an unauthenticated attacker to execute an arbitrary SQL query on the affected product."
     },
     {
-      "id": "CVE-2026-85523",
-      "title": "CVE-2026-85523",
+      "id": "CVE-2026-42713",
+      "title": "CVE-2026-42713",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:47.240",
-      "summary": "Improper neutralization of special elements used in an OS command ('OS command injection') vulnerability in Felisify Information Technologies Industry and Trade Inc. SambaBox allows OS Command Injection.\n\nThis issue affects SambaBox: before 5.4.1."
+      "date": "2026-10-07T11:17:19.093",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Gopiplus Post title marquee scroll post-title-marquee-scroll allows Blind SQL Injection.This issue affects Post title marquee scroll: from n/a through 9.9."
     },
     {
-      "id": "CVE-2026-87890",
-      "title": "CVE-2026-87890",
+      "id": "CVE-2026-42714",
+      "title": "CVE-2026-42714",
       "source": "NIST NVD",
-      "date": "2026-10-06T14:17:47.380",
-      "summary": "An issue was discovered in Django 6.1 before 6.1.2, 6.0 before 6.0.9, and 5.2 before 5.2.18.\nAn incomplete fix for CVE-2026-15307 in Django spatial lookups allows an attacker who can supply `bytes` values to cause the Django process to make network requests via a crafted VRT document referencing an external raster source.\nEarlier, unsupported Django series (such as 5.1.x, 5.0.x, and 4.2.x) were not evaluated and may also be affected.\nDjango would like to thank sicksec for reporting this issue."
+      "date": "2026-10-07T11:17:19.237",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Piggly Dev Pix por Piggly (para Woocommerce) pix-por-piggly allows Blind SQL Injection.This issue affects Pix por Piggly (para Woocommerce): from n/a through 2.1.2."
     }
   ]
 }
