@@ -1,6 +1,50 @@
 {
-  "generated_at": "2026-10-14T07:48:42.484160+00:00",
+  "generated_at": "2026-10-15T07:34:59.625215+00:00",
   "items": [
+    {
+      "id": "CVE-2026-105134",
+      "title": "CVE-2026-105134 - Ahsay AhsayCBS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-14",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "summary": "Ahsay AhsayCBS contains a command injection vulnerability that could allow a remote attacker to execute operating system commands via manipulation of the random parameter in the Replication Receiver component’s /rps/api/json/UpdateReceivers.do endpoint. This vulnerability can be chained with CVE-2026-105133.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-17"
+    },
+    {
+      "id": "CVE-2026-76519",
+      "title": "CVE-2026-76519 - Cisco Secure Email Gateway Relative Path Traversal Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-14",
+      "vendor": "Cisco",
+      "product": "Secure Email Gateway",
+      "summary": "Cisco Secure Email Gateway contains a relative path traversal vulnerability that could allow an unauthenticated, remote attacker to write arbitrary files on the underlying operating system.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-17"
+    },
+    {
+      "id": "CVE-2026-105133",
+      "title": "CVE-2026-105133 - Ahsay AhsayCBS Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-14",
+      "vendor": "Ahsay",
+      "product": "AhsayCBS",
+      "summary": "Ahsay AhsayCBS contains an improper authentication vulnerability that could allow a remote attacker to bypass authentication via manipulation of the random parameter in the API component’s checkSysPwd function. This vulnerability can be chained with CVE-2026-105134.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-17"
+    },
+    {
+      "id": "CVE-2026-0322",
+      "title": "CVE-2026-0322 - Palo Alto Networks PAN-OS Code Injection Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-14",
+      "vendor": "Palo Alto Networks",
+      "product": "PAN-OS",
+      "summary": "Palo Alto Networks PAN-OS contains a code injection vulnerability that could allow an authenticated attacker with network access to execute arbitrary code with root privileges on the firewall.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-17"
+    },
     {
       "id": "CVE-2026-104935",
       "title": "CVE-2026-104935 - Ivanti Connect Secure Authentication Bypass by Spoofing Vulnerability",
@@ -838,328 +882,284 @@
       "due": "2026-08-20"
     },
     {
-      "id": "CVE-2026-20349",
-      "title": "CVE-2026-20349 - Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) Heap Inspection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-11",
-      "vendor": "Cisco",
-      "product": "Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) ",
-      "summary": "Cisco Secure Firewall Adaptive Security Appliance (ASA) and Secure Firewall Threat Defense (FTD) contain a heap inspection vulnerability that could allow an unauthenticated, remote attacker to cause the device to reload unexpectedly, resulting in a denial of service (DoS) condition.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-14"
-    },
-    {
-      "id": "CVE-2026-68820",
-      "title": "CVE-2026-68820 - Microsoft Windows Ancillary Function Driver for WinSock Use-After-Free Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-11",
-      "vendor": "Microsoft",
-      "product": "Windows Ancillary Function Driver for WinSock ",
-      "summary": "Microsoft Windows Ancillary Function Driver for WinSock contains a use-after-free vulnerability that allows an authorized attacker to elevate privileges locally.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-25"
-    },
-    {
-      "id": "CVE-2026-72898",
-      "title": "CVE-2026-72898 - Metabase SQL Injection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-11",
-      "vendor": "Metabase",
-      "product": "Metabase",
-      "summary": "Metabase contains a SQL Injection vulnerability that allows an unauthenticated remote attacker to inject arbitrary SQL into the Metabase application database, which can give them administrator access to the instance. From there, the attacker could change the application configuration, steal stored credentials for the connected databases, read any data accessible through those connections, and export data.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-14"
-    },
-    {
-      "id": "CVE-2026-8037",
-      "title": "CVE-2026-8037 - Progress LoadMaster Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-07",
-      "vendor": "Progress",
-      "product": "LoadMaster",
-      "summary": "Progress LoadMaster contains a command injection vulnerability that allows an un-authenticated attacker to execute arbitrary commands on the LoadMaster appliance by exploiting unsanitized input in multiple command endpoints.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-10"
-    },
-    {
-      "id": "CVE-2026-107121",
-      "title": "CVE-2026-107121",
+      "id": "CVE-2026-107466",
+      "title": "CVE-2026-107466",
       "source": "NIST NVD",
-      "date": "2026-10-07T08:16:57.053",
-      "summary": "A flaw was found in the SMTP email configuration handling of the keycloak-services component. When the STARTTLS option is enabled, Keycloak fails to strictly enforce an encrypted connection, allowing it to fall back to unencrypted communication if the encryption request is tampered with. An attacker who can intercept network traffic can exploit this to capture sensitive email credentials and message content in plain text."
+      "date": "2026-10-08T08:16:34.193",
+      "summary": "A flaw was found in flatpak-builder. This vulnerability allows an attacker to cause information disclosure by convincing a user or continuous integration (CI) system to process a crafted build manifest. By specifying local file Uniform Resource Identifiers (URIs) within source download definitions, the builder bypasses directory confinement checks. As a result, sensitive host files accessible to the build process can be read and incorporated into the build artifacts."
     },
     {
-      "id": "CVE-2025-64391",
-      "title": "CVE-2025-64391",
+      "id": "CVE-2026-93699",
+      "title": "CVE-2026-93699",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:03.467",
-      "summary": "This vulnerability in Veeam Agent for Microsoft Windows allows a low-privileged local user to make the agent write files to arbitrary locations when an administrator installs it."
+      "date": "2026-10-08T08:16:34.367",
+      "summary": "Argument injection in WP Toolkit for cPanel allows local users to execute arbitrary code as other accounts on the same server."
     },
     {
-      "id": "CVE-2025-64392",
-      "title": "CVE-2025-64392",
+      "id": "CVE-2026-105110",
+      "title": "CVE-2026-105110",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.150",
-      "summary": "This vulnerability in Veeam Backup Enterprise Manager allows an attacker to execute script in the browser of a portal user who opens a crafted link."
+      "date": "2026-10-08T09:16:40.930",
+      "summary": "OS Command Injection in the login.xgi CGI endpoint in Iskratel Innbox GPON ONT devices allows an unauthenticated remote attacker to execute arbitrary commands as root via the CLI parameter."
     },
     {
-      "id": "CVE-2025-64393",
-      "title": "CVE-2025-64393",
+      "id": "CVE-2026-12260",
+      "title": "CVE-2026-12260",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.273",
-      "summary": "This vulnerability in Veeam Backup & Replication allows a Backup Viewer to execute arbitrary code as SYSTEM on the backup server."
+      "date": "2026-10-08T09:16:41.087",
+      "summary": "SQL injection in the NetBoard CRM demo platform; specifically, the vulnerable component is the ‘user-name’ POST parameter in the ‘/module/auth/recovery.php’ endpoint. The parameter is vulnerable to blind attacks based on Boolean, error, time-based and UNION techniques. Exploitation allows attackers to extract confidential information (such as the version and type of backend used), alter data or further compromise the CRM environment."
     },
     {
-      "id": "CVE-2026-102781",
-      "title": "CVE-2026-102781",
+      "id": "CVE-2026-4894",
+      "title": "CVE-2026-4894",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.397",
-      "summary": "Joomla Extension - ordasoft.com - Unauthenticated Destructive CRUD in OrdaSoft Touch Slider < 5.4.6 - modOsTouchSliderHelper::getAjax(), wired through Joomla’s core com_ajax dispatcher, is the single handler behind every data-management operation this module exposes. No call to JFactory::getUser(), authorise(), or a CSRF token check exists anywhere in the handler. Two confirmed impact paths: an unauthenticated GET deletes any slider image by guessable sequential IDs, and an unauthenticated multipart upload with a zip file renames and replaces the entire #__os_touch_slider/#__os_touch_slider_text tables site-wide with attacker-supplied content, with no task parameter even required for the second path."
+      "date": "2026-10-08T09:16:41.477",
+      "summary": "A vulnerability has been identified regarding insufficient validation in the Frappe Cloud/ERPNext authentication process, which allows multiple email addresses to be accepted by manipulating the email field in the /api/method/press.api.account.signup endpoint. The vulnerability occurs when an unauthenticated remote attacker adds more than one email address.\nThe service processes the entire value as a valid list of recipients and sends the OTP code to all addresses without proper validation of all added emails (only one of them needs to be valid). Exploiting this vulnerability would allow an attacker to:\n\n  *  Obtain the authentication OTP;\n  *  Impersonate someone else in the registration process;\n  *  Register accounts using other people's email addresses without access to the mailbox;\n  *  Indirectly confirm the existence of already registered email addresses."
     },
     {
-      "id": "CVE-2026-102782",
-      "title": "CVE-2026-102782",
+      "id": "CVE-2026-66082",
+      "title": "CVE-2026-66082",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.527",
-      "summary": "Joomla Extension - ordasoft.com - Unauthenticated SQL injection in OrdaSoft Simple Membership < 7.4.0 - site/simplemembership.php dispatches task=checkLoginPass with no authentication or access control check of any kind. The handler reads a login request parameter through Joomla’s generic, non-sanitizing input filter, which strips HTML/script tags but never touches quotes or SQL syntax, and concatenates it directly into a query string with no escaping or parameterization:"
+      "date": "2026-10-08T09:16:41.637",
+      "summary": "An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to perform unauthorized operations on workflow schedules, workflow definitions, and task instances in other projects.\n\n\n\nThe affected endpoints check permissions against the supplied projectCode but fail to verify that the target resource belongs to that project. An authenticated user with the required permissions in one project can supply that project's code together with a resource identifier from another project, bypassing the target project's access restrictions.\n\n\n\nThe affected endpoints include:\n\n  *  \n\nPOST /projects/{projectCode}/schedules/{id}/online and /offline: Activate or deactivate workflow schedules in another project.\n\n\n  *  \n\nPOST /projects/{projectCode}/workflow-definition/{code}/release: Change the ONLINE/OFFLINE state of workflow definitions in another project.\n\n\n\n\n\n\nSuccessful exploitation allows users to alter workflow availability and interfere with task execution in projects they are not authorized to access.\n\n\n\nThis issue affects Apache DolphinScheduler: before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue."
     },
     {
-      "id": "CVE-2026-103416",
-      "title": "CVE-2026-103416",
+      "id": "CVE-2026-66084",
+      "title": "CVE-2026-66084",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.647",
-      "summary": "Out-of-bounds write via the TLS 1.3 handshake message cache in NetX Duo in Eclipse ThreadX NetX Duo 6.5.1.202602 allows a handshake message larger than the cache writes past it and on into the rest of the session control block, which holds pointers. A malicious or compromised server can make a TLS 1.3 client produce such a message before certificate authentication completes, so no server certificate is needed to reach it."
+      "date": "2026-10-08T09:16:41.783",
+      "summary": "An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to modify task definitions in projects they are not authorized to access through the /dolphinscheduler/projects/{projectCode}/task-definition/{code}/with-upstream endpoint.\n\n\n\nThe endpoint fails to verify that the task definition identified by code belongs to the project specified by projectCode. An authenticated user can supply the code of a project they are authorized to access together with a task definition code from another project, bypassing project access restrictions and modifying the target task definition and its upstream dependencies.\n\n\n\nThis vulnerability can compromise workflow integrity and disrupt task execution in unauthorized projects.This issue affects Apache DolphinScheduler: before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue."
     },
     {
-      "id": "CVE-2026-107102",
-      "title": "CVE-2026-107102",
+      "id": "CVE-2026-66087",
+      "title": "CVE-2026-66087",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.780",
-      "summary": "This vulnerability exists in the ERP system due to improper validation of payment callback parameters and inadequate authentication controls in API endpoint. An unauthenticated remote attacker could exploit this vulnerability by manipulating the parameter to cause the application to establish an authenticated session for an arbitrary user without valid payment verification.\n\nSuccessful exploitation of this vulnerability could allow the attacker to bypass authentication and gain unauthorized access to other user accounts on the targeted system."
+      "date": "2026-10-08T09:16:41.910",
+      "summary": "An authorization bypass vulnerability in Apache DolphinScheduler allows authenticated users to operate task instance in projects they are not authorized to access through the \n\n\n\n\n\n  *  /dolphinscheduler/projects/{projectCode}/task-instances/{taskInstanceId}/stop\n  *  /dolphinscheduler/projects/{projectCode}/task-instances/{taskInstanceId}/savepoint\n\n\n\n\n\n\n\n\nThis issue affects Apache DolphinScheduler: before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue."
     },
     {
-      "id": "CVE-2026-107103",
-      "title": "CVE-2026-107103",
+      "id": "CVE-2026-71183",
+      "title": "CVE-2026-71183",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:04.913",
-      "summary": "This vulnerability exists in the ERP system due to insufficient validation and parameterization of user supplied input in an API endpoint. An unauthenticated remote attacker could exploit this vulnerability by supplying specially crafted input to the vulnerable endpoint.\n\nSuccessful exploitation of this vulnerability could allow the attacker to perform SQL injection attacks on the targeted system."
+      "date": "2026-10-08T09:16:42.037",
+      "summary": "An authorization vulnerability in Apache DolphinScheduler allows authenticated users to obtain information about data sources they are not authorized to access through the /unauth-datasource and /authed-datasource endpoints.\n\n\n\nThese endpoints fail to enforce the required data source access controls and return sensitive connection information, including data source passwords. As a result, an authenticated user without permission to access a data source can retrieve its connection details and credentials.\n\n\n\nSuccessful exploitation exposes sensitive data source information and may enable unauthorized access to the underlying databases using the disclosed credentials.\n\n\n\nThis issue affects Apache DolphinScheduler: before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue."
     },
     {
-      "id": "CVE-2026-107104",
-      "title": "CVE-2026-107104",
+      "id": "CVE-2026-71895",
+      "title": "CVE-2026-71895",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.037",
-      "summary": "This vulnerability exists in the ERP system due to unsafe deserialization of user controlled data in the affected functionality. An unauthenticated remote attacker could exploit this vulnerability by supplying specially crafted data to the vulnerable functionality of the targeted system. \n\nSuccessful exploitation of this vulnerability could allow the attacker to execute arbitrary code, manipulate application data or perform other unintended actions on the targeted system."
+      "date": "2026-10-08T09:16:42.167",
+      "summary": "An authorization vulnerability in Apache DolphinScheduler allows authenticated non-admin users to retrieve Kubernetes configuration data intended for administrator-managed cluster configuration. The exposed kubeconfig data contains credentials that may allow users to authenticate directly to the Kubernetes API outside DolphinScheduler.\n\n\n\nThe impact depends on the permissions granted to the disclosed credentials. If the kubeconfig provides cluster-admin or broadly privileged service-account access, an attacker may read Kubernetes Secrets, create pods, and establish persistent access to the cluster.\n\n\n\nThis issue affects Apache DolphinScheduler: from 3.2.0 before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue."
     },
     {
-      "id": "CVE-2026-15894",
-      "title": "CVE-2026-15894",
+      "id": "CVE-2026-71896",
+      "title": "CVE-2026-71896",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.157",
-      "summary": "The Bluetooth Mesh On-Demand Private Proxy solicitation handler in subsys/bluetooth/mesh/solicitation.c copies a received Solicitation PDU into a fixed 17-byte stack buffer without bounding the source length. In sol_pdu_decrypt(), out is allocated as NET_BUF_SIMPLE(17) and then filled with net_buf_simple_add_mem(out, in->data, in->len); net_buf_simple_add() guards its tailroom only with __ASSERT_NO_MSG, which is compiled out in production builds, so when in->len > 17 the underlying memcpy writes attacker-controlled bytes past the 17-byte stack buffer. The copy occurs before any decryption or authentication, so no key material is required to trigger it.\n\nThe oversized length arises because the mesh scan callback in subsys/bluetooth/mesh/adv.c calls net_buf_simple_restore() before dispatching to bt_mesh_sol_recv(), leaving buf->len covering the entire remaining advertising payload rather than just the Solicitation Service Data. After the parser locates the Service Data AD and consumes the Identification Type byte, the remaining buf->len is the 17-octet Network PDU plus any trailing advertising bytes, and prior to this fix there was no maximum-length check (only a minimum). An attacke"
+      "date": "2026-10-08T09:16:42.287",
+      "summary": "An authorization vulnerability in Apache DolphinScheduler allows authenticated users to retrieve other users' account information through the /dolphinscheduler/users/list-all endpoint without the required permissions.\n\n\n\nThe endpoint fails to enforce the necessary authorization checks before returning user account information. As a result, an authenticated user can access account information they are not authorized to view.\n\n\n\nSuccessful exploitation may expose sensitive user information and facilitate account enumeration.\n\n\n\nThis issue affects Apache DolphinScheduler: before 3.4.3.\n\n\n\nUsers are recommended to upgrade to version 3.4.3, which fixes the issue."
     },
     {
-      "id": "CVE-2026-19186",
-      "title": "CVE-2026-19186",
+      "id": "CVE-2026-89191",
+      "title": "CVE-2026-89191",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.290",
-      "summary": "ieee802154_decipher_data_frame() in subsys/net/l2/ieee802154/ieee802154_frame.c computed payload_len = net_pkt_get_len(pkt) - ll_hdr_len - authtag_len without first checking that the received frame is at least ll_hdr_len + authtag_len bytes long. All three variables are uint8_t, so a frame whose payload is shorter than the configured authentication tag makes the subtraction wrap around to a large value (up to 255).\n\nThe wrapped length is passed unchanged to ieee802154_decrypt_auth() and on to the CCM operation as cipher_pkt.in_len/out_buf_max, with apkt->tag pointing at frame + ll_hdr_len + payload_len. Because the receive buffer is allocated to the exact length of the frame received from the radio driver, the crypto layer then reads several hundred bytes past the end of the packet buffer and writes the same number of decrypted bytes back over it in place. The frame's authentication tag is only verified after this processing has taken place, so no key material, association or prior authentication is needed — a single crafted short frame from any device in radio range is sufficient. Frame validation in ieee802154_validate_frame() does not prevent it: a data frame is accepted with a "
+      "date": "2026-10-08T09:16:42.413",
+      "summary": "Unsanitised input in\nthe \"template name\" field of SQLView KRIS's Workflow Template feature\nis rendered in \"onclick\" attributes on the main dashboard without\nproper server-side sanitisation, allowing an attacker with administrative\naccess to inject and store malicious scripts that execute in the browsers of\naffected users."
     },
     {
-      "id": "CVE-2026-58068",
-      "title": "CVE-2026-58068",
+      "id": "CVE-2026-107503",
+      "title": "CVE-2026-107503",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.430",
-      "summary": "This vulnerability in Veeam Agent for Microsoft Windows allows any local user to terminate arbitrary processes on the system."
+      "date": "2026-10-08T10:17:08.457",
+      "summary": "Unvalidated environments URL allows OAuth authorization code + PKCE verifier theft and account takeover via injected OIDC authority in Ditto Explorer in Eclipse Ditto Ditto Explorer [3.6.0,3.9.7] allows a craft link set an attacker-controlled OIDC authority with autoSso enabled. The UI then automatically starts a login at the genuine identity provider but exchanges the returned authorization code together with its PKCE code_verifier at an attacker-controlled token endpoint. This lets the attacker redeem the code for the victim's access and refresh tokens. Alternatively, an attacker-controlled api_uri causes the UI to send the victim's bearer token or Basic credentials to the attacker. Because the configuration is persisted, later visits to the UI without the crafted link repeat the token theft."
     },
     {
-      "id": "CVE-2026-58069",
-      "title": "CVE-2026-58069",
+      "id": "CVE-2026-107510",
+      "title": "CVE-2026-107510",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.550",
-      "summary": "This vulnerability in Veeam Backup & Replication allows an authenticated Cloud Connect tenant to read arbitrary files on the service provider host."
+      "date": "2026-10-08T10:17:09.553",
+      "summary": "An authenticated high privilege user can inject arguments in troubleshooting commands resulting in privilege escalation."
     },
     {
-      "id": "CVE-2026-5703",
-      "title": "CVE-2026-5703",
+      "id": "CVE-2026-103010",
+      "title": "CVE-2026-103010",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.673",
-      "summary": "Path traversal vulnerability in the Satel Iberia SenNet Datalogger Serie 200, specifically in the web portal provided by the device, which allows an authenticated user to read any file or list any directory accessible to the system user running the web server. This is possible by modifying the URL to include a path traversal payload. Successful exploitation of this vulnerability could allow an attacker to access critical system files containing confidential information."
+      "date": "2026-10-08T11:16:42.117",
+      "summary": "Heap-based buffer overflow in the legacy Blowfish decryption routine (BlowFishEncryptor::DecryptFromString) in Progressive Robot hMailServer 6.0.0 through 6.3.3 on Windows allows a local interactive user with no hMailServer credentials to write bytes of their choosing past the end of a 255-byte heap buffer in the hMailServer service process, which runs as LocalSystem by default. The user does this by passing a long hexadecimal string to the COM method Utilities.BlowfishDecrypt, which checked no authentication. The routine converted hexadecimal input of any length into a fixed 255-byte buffer before decrypting it in place. The result is a denial of service (service crash), and possibly code execution with the privileges of the service account."
     },
     {
-      "id": "CVE-2026-89417",
-      "title": "CVE-2026-89417",
+      "id": "CVE-2026-103011",
+      "title": "CVE-2026-103011",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.817",
-      "summary": "The OMGF | GDPR/DSGVO Compliant, Faster Google Fonts. Easy. plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 's' Search Parameter via comments-atom Feed in all versions up to, and including, 6.3.10 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Successful exploitation requires that the front-end server serves the retained .tmp file without a Content-Type or X-Content-Type-Options header, enabling MIME-sniffing browsers such as Chromium to execute the injected script — a condition present by default on many Apache and nginx/php-fpm deployments."
+      "date": "2026-10-08T11:16:42.270",
+      "summary": "Heap-based buffer overflow in the legacy Blowfish encryption routine (BlowFishEncryptor::Encode, called by EncryptToString) in Progressive Robot hMailServer 6.0.0 through 6.3.5 allows an authenticated mailbox user to cause a denial of service (service crash), and possibly other unspecified impact. In 6.3.4 and 6.3.5, where the self-service REST API is enabled (it is off by default), the user does this remotely by adding a fetch account whose password is 129 to 247 characters long and not a multiple of 8, and then requesting their personal data export (GET /api/v1/me/export.zip), which encrypts that password with the legacy scheme. The same flaw is reachable on Windows by any local interactive user with no hMailServer credentials, through the COM method Utilities.BlowfishEncrypt, which checked no authentication. It is also reachable by every stored-secret write when ProtectStoredSecretsWithDPAPI is set to 0. For such a length, the routine's padding loop writes up to 7 zero bytes 2 to 232 bytes past the end of its 255-byte heap buffer. The ciphertext it returns is still correct."
     },
     {
-      "id": "CVE-2026-90466",
-      "title": "CVE-2026-90466",
+      "id": "CVE-2026-103517",
+      "title": "CVE-2026-103517",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:05.987",
-      "summary": "Path traversal of 'trusted_jar_paths' in Impala 4.5.2 allows an attacker-controlled JAR to be loaded via a relative path where the prefix matches a path specified in 'trusted_jar_paths'.\n\n\n\n\nThe startup flag 'trusted_jar_paths' references URIs for loading files from local or remote filesystems. Path traversal can't override the schema, but can result in loading a JAR that has been uploaded to a different location in that filesystem via Impala DDLs such as CREATE DATA SOURCE and CREATE TABLE. Path traversal can only be used if a trusted path exists, so this attack requires 'trusted_jar_paths' have a non-empty value configured by the Impala admin.\n\n\n\n\nUsers are recommended to upgrade to version 4.5.3, which fixes this issue."
+      "date": "2026-10-08T11:16:42.613",
+      "summary": "The Airwallex Online Payments Gateway WordPress plugin before 1.36.0 does not verify that an incoming payment notification genuinely comes from the payment provider when no webhook secret has been configured, allowing unauthenticated attackers to forge one and mark orders as paid without paying."
     },
     {
-      "id": "CVE-2026-93026",
-      "title": "CVE-2026-93026",
+      "id": "CVE-2026-103647",
+      "title": "CVE-2026-103647",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:06.107",
-      "summary": "This vulnerability in Veeam Backup & Replication allows a Backup Viewer to modify the Enterprise Manager master key and stored antivirus update credentials."
+      "date": "2026-10-08T11:16:42.950",
+      "summary": "Cross-site scripting in the webmail of Progressive Robot hMailServer 6.3.2 through 6.3.5 allows a remote attacker who can send a user an encrypted message to run script in the webmail's origin with that user's session. When the webmail decrypted an S/MIME message (from 6.3.2) or an OpenPGP message (from 6.3.4) in the browser, it offered each decrypted attachment as a blob URL of the media type the message declared for it. A click saved the file, but if the user opened the attachment in a new tab, a part declared as text/html was rendered as a document of the webmail's origin and its script could read the mailbox, send mail and change the account through the REST API. The webmail is served only when the REST API is enabled, which it is not by default."
     },
     {
-      "id": "CVE-2026-93684",
-      "title": "CVE-2026-93684",
+      "id": "CVE-2026-103649",
+      "title": "CVE-2026-103649",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:06.223",
-      "summary": "An SQL user using Impala up to and including version 4.5.2 with only SELECT permission can put JavaScript in a table alias and make it run in another user's browser when that user opens the query plan in Impala's Web UI. This is stored XSS (CWE-79). Users are recommended to upgrade to version 4.5.3."
+      "date": "2026-10-08T11:16:43.093",
+      "summary": "Missing network timeouts in the Linux builds of Progressive Robot hMailServer 6.3.0 through 6.3.5 allow a remote attacker to hold server threads indefinitely and so stop outbound mail delivery (denial of service). The server set its socket timeouts in the form Windows takes, which Linux refuses, and its HTTPS clients read without a deadline, so a peer that accepts a connection and then sends nothing held the waiting thread for as long as the connection stayed open. The MTA-STS policy fetch, enabled by default, is made during outbound delivery to mta-sts.<recipient domain>, so anyone who can make the server deliver mail to a domain they control - for example as the envelope sender of a message that bounces - can hold delivery threads until outbound delivery stops. The same flaw affects the DANE TLSA query, the OAuth2 token request, the ACME client, and the ManageSieve and metrics listeners, which a silent client stops from serving anyone else. Windows builds are not affected."
     },
     {
-      "id": "CVE-2026-97720",
-      "title": "CVE-2026-97720",
+      "id": "CVE-2026-104658",
+      "title": "CVE-2026-104658",
       "source": "NIST NVD",
-      "date": "2026-10-07T09:17:06.333",
-      "summary": "Incorrect implementation of JWT/OAuth authentication in Impala executors in Apache Impala versions up to and including 4.5.2 which allows attacked to access resources served by the executor's webserver when that webserver is configured to accept JWT/OAuth tokens.  Bearer token (JWT) signatures are not validated resulting in the webserver accepting any valid JWT.\nUsers are recommended to either disable JWT/OAuth auth for Impala executors or upgrade to version 4.5.3, which fixes this issue."
+      "date": "2026-10-08T11:16:43.870",
+      "summary": "The Linux live-update apply helper (hmailserver-update) of Progressive Robot hMailServer 6.3.4 and 6.3.5 runs as root on a request file written by the unprivileged hmailserver service account, and took from that request the program used to verify an AppImage update's signature and the systemd unit to stop before reading the service account's files. An attacker who already runs code as the hmailserver service account, for example through another flaw in the mail server, can therefore have arbitrary code executed as root, on any Linux installation where the live update's path unit is active - the default for the project's .deb and .rpm packages - and on AppImage installations run under that unit."
     },
     {
-      "id": "CVE-2026-103075",
-      "title": "CVE-2026-103075",
+      "id": "CVE-2026-104659",
+      "title": "CVE-2026-104659",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:25.020",
-      "summary": "Missing Authorization vulnerability in WPMU DEV Hustle wordpress-popup allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Hustle: from n/a through 7.8.14.2."
+      "date": "2026-10-08T11:16:44.013",
+      "summary": "Missing Host header validation and missing throttling of failed administrator sign-ins in the REST API listener of Progressive Robot hMailServer 6.0.0 through 6.3.5 allow a remote attacker to brute-force the server administrator's password through the administrator's own browser by DNS rebinding. The listener, which is off by default and bound to the loopback when enabled, answered requests whatever their Host header named, and a failed sign-in with the administrator's password from the loopback was neither auto-banned nor delayed. A web page whose host name the attacker rebinds to 127.0.0.1, opened in a browser on the server, can therefore send authenticated requests to the listener, read the answers and try administrator passwords at full speed until one is accepted, giving the attacker full administrative control of the mail server."
     },
     {
-      "id": "CVE-2026-104390",
-      "title": "CVE-2026-104390",
+      "id": "CVE-2026-104660",
+      "title": "CVE-2026-104660",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:26.150",
-      "summary": "Missing Authorization vulnerability in Arraytics Booktics booktics allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Booktics: from n/a through 1.0.27."
+      "date": "2026-10-08T11:16:44.160",
+      "summary": "Missing authorization on COM objects in Progressive Robot hMailServer 6.0.0 through 6.3.5 (Windows only) lets a local interactive user with no hMailServer credential read and write arbitrary files as the service account and queue mail as any sender. The service registers its COM classes with no DCOM access or launch permission and calls CoInitializeSecurity with no security descriptor, so any user logged on at the console or over Remote Desktop can activate the classes in the running service; a hMailServer.Message, its Attachments and Attachment, and a hMailServer.FetchAccount created this way carry a credential that never authenticated. Attachments.Add(path) and Attachment.SaveAs(path) performed no authorization check, and Message.Save/Copy and FetchAccount.AccountID/Save performed none either up to 6.3.3 and from 6.3.4 treated a holder with no credential as the server's own event-script host. Because the service does not impersonate the COM caller, Attachments.Add reads any file the service account can read and returns it, Attachment.SaveAs writes attacker-chosen bytes to any path it can write (on a LocalSystem installation, code execution as SYSTEM), Message.Save queues outbound"
     },
     {
-      "id": "CVE-2026-104391",
-      "title": "CVE-2026-104391",
+      "id": "CVE-2026-104671",
+      "title": "CVE-2026-104671",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:26.293",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in ExpressTech Quiz And Survey Master quiz-master-next allows Stored XSS.This issue affects Quiz And Survey Master: from n/a through 11.2.7."
+      "date": "2026-10-08T11:16:44.303",
+      "summary": "The TutorStarter WordPress theme before 4.0.4 does not respect the site's user registration setting in one of its AJAX registration handlers, allowing unauthenticated visitors to create WordPress user accounts even when user registration is disabled."
     },
     {
-      "id": "CVE-2026-104393",
-      "title": "CVE-2026-104393",
+      "id": "CVE-2026-104704",
+      "title": "CVE-2026-104704",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:26.430",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in weDevs Happy Addons for Elementor happy-elementor-addons allows Stored XSS.This issue affects Happy Addons for Elementor: from n/a through 3.50.0."
+      "date": "2026-10-08T11:16:44.457",
+      "summary": "Progressive Robot hMailServer 6.0.0 through 6.3.5 does not enforce TLS for outbound SMTP delivery to a mail exchanger whose DNSSEC-validated TLSA records contain no DANE-EE (usage 3) record, contrary to RFC 7672 section 2.2. The server used only DANE-EE records and treated a validated TLSA record set consisting of DANE-TA (usage 2) or otherwise unusable records as if no records were published, so delivery to such a host fell back to opportunistic TLS. An attacker with an active position on the network path between the server and the recipient's mail exchanger can suppress or break the STARTTLS negotiation and cause messages to be delivered in cleartext, where they can be read and modified."
     },
     {
-      "id": "CVE-2026-105192",
-      "title": "CVE-2026-105192",
+      "id": "CVE-2026-105190",
+      "title": "CVE-2026-105190",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:32.647",
-      "summary": "LMCache multiprocess mode, also called distributed mode, opens an unauthenticated ZeroMQ ROUTER so worker processes can register and share KV cache blocks. Messages on that socket are msgpack. Extension code 1 is passed to DeviceIPCWrapper.Deserialize, which calls pickle.loads, while the server is still decoding request arguments and before the handler runs. A single unauthenticated ZMQ DEALER message to the transport port (default 5555) therefore executes code as the user the LMCache process runs as. Official container images run that process as root. The transport binds to localhost unless the operator sets a routable address with --host, which is how multi-node deployments let peers connect."
+      "date": "2026-10-08T11:16:44.607",
+      "summary": "The Easy Digital Downloads WordPress plugin before 3.7.1 does not consult the site's user registration setting before creating a WordPress account, allowing unauthenticated users to create an account and receive a logged-in session even when registration is disabled. The created account receives the site's default role."
     },
     {
-      "id": "CVE-2026-105871",
-      "title": "CVE-2026-105871",
+      "id": "CVE-2026-93509",
+      "title": "CVE-2026-93509",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:34.920",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in BdThemes Element Pack Elementor Addons bdthemes-element-pack-lite allows Stored XSS.This issue affects Element Pack Elementor Addons: from n/a through 8.8.6."
+      "date": "2026-10-08T11:16:47.217",
+      "summary": "The Wallet System for WooCommerce WordPress plugin before 2.8.0 does not validate that a wallet transfer amount is positive, and computes the sender's new balance from a stale snapshot taken before crediting the recipient, allowing an authenticated attacker with Subscriber-level access to mint wallet funds for themselves or drain a specific victim's balance into their own account."
     },
     {
-      "id": "CVE-2026-105873",
-      "title": "CVE-2026-105873",
+      "id": "CVE-2026-107275",
+      "title": "CVE-2026-107275",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.053",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in BdThemes Element Pack Elementor Addons bdthemes-element-pack-lite allows Stored XSS.This issue affects Element Pack Elementor Addons: from n/a through 8.8.6."
+      "date": "2026-10-08T12:17:14.553",
+      "summary": "@fastify/jwt is a JSON Web Token plugin for the Fastify web framework. In versions before 10.2.3, a time span passed to expiresIn, notBefore, or maxAge that the plugin's parser cannot read, such as a compound span, a month unit, an ISO 8601 duration, a decimal comma, or a value with surrounding whitespace, is silently dropped instead of refused. On the signing path this produces a token with no expiration claim that never expires, and on the verification path a configured maxAge stops being enforced, so a token that should be rejected for age is accepted. The issue is fixed in @fastify/jwt 10.2.3, and users should upgrade to 10.2.3 or later. As a workaround, pass these options as a number of seconds, or verify that any time-span string parses to a finite value before relying on it."
     },
     {
-      "id": "CVE-2026-105875",
-      "title": "CVE-2026-105875",
+      "id": "CVE-2026-107570",
+      "title": "CVE-2026-107570",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.187",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in BdThemes Prime Slider – Addons For Elementor bdthemes-prime-slider-lite allows Stored XSS.This issue affects Prime Slider – Addons For Elementor: from n/a through 4.6.2."
+      "date": "2026-10-08T12:17:14.717",
+      "summary": "heap OOB write in convert_file_from_to() via a crafted Content-Type header allows attacker to OOB write when email is used as a template."
     },
     {
-      "id": "CVE-2026-105876",
-      "title": "CVE-2026-105876",
+      "id": "CVE-2026-107572",
+      "title": "CVE-2026-107572",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.320",
-      "summary": "Missing Authorization vulnerability in WP Chill Modula Image Gallery modula-best-grid-gallery allows Retrieve Embedded Sensitive Data.This issue affects Modula Image Gallery: from n/a through 3.0.11."
+      "date": "2026-10-08T12:17:14.870",
+      "summary": "Inefficient complexity in the Sieve filter evaluation of Progressive Robot hMailServer 6.2.24 through 6.3.5 allows an authenticated account holder to make the mail services unavailable with their own filter. A ':matches' pattern was matched by a backtracking descent whose time grew with the matched value's length raised to the number of wildcards, so a pattern such as '*a*a*a*b' over 800 characters took 44 seconds; and 'deleteheader' erased the fields it removed one at a time, so removing many fields of one name over a message's header cost O(N^2) (80,000 fields took 18.8 seconds). Sieve filters run on the small, shared delivery thread pool, so an account holder whose active script does this, fed a few messages they can send themselves, empties the pool and stops delivery for the whole server. The script is the account holder's own and cannot be set for another user."
     },
     {
-      "id": "CVE-2026-105884",
-      "title": "CVE-2026-105884",
+      "id": "CVE-2026-107573",
+      "title": "CVE-2026-107573",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.450",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Media Rocket Lazy Load rocket-lazy-load allows Stored XSS.This issue affects Rocket Lazy Load: from n/a through 2.4.0."
+      "date": "2026-10-08T12:17:15.027",
+      "summary": "Incorrect default permissions in the Windows installer of Progressive Robot hMailServer 6.0.0 through 6.3.5 allow a local authenticated user to read the mail server's data. The installer created the data, log, temp, database and event folders and the hMailServer.INI configuration file with the permissions inherited from the installation folder, by default under Program Files, which give the local Users group read access. Any user who can sign in to the computer could read every stored message, the logs, the built-in database with the accounts' password hashes whenever the service is stopped, and the configuration file, including the database password, which is sealed only with the machine's DPAPI key and can be unsealed by any local account; with an external database that password gives full control of it. The Linux AppImage of 6.3.0 through 6.3.5 likewise created its per-user data folders readable by other local users."
     },
     {
-      "id": "CVE-2026-27434",
-      "title": "CVE-2026-27434",
+      "id": "CVE-2026-107574",
+      "title": "CVE-2026-107574",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.607",
-      "summary": "Missing Authorization vulnerability in sc Internet Vivoo WP Rentals wprentals allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WP Rentals: from n/a through 3.14.2."
+      "date": "2026-10-08T12:17:15.177",
+      "summary": "Inefficient algorithmic complexity in the JSON reader of Progressive Robot hMailServer allows a remote unauthenticated attacker to make the mail services unavailable. Reading a JSON object kept the first of each duplicated member name by searching the members already read, so an object of N distinct member names cost O(N^2): 1 MB took 8.9 seconds and 4 MB took 300 seconds against the affected code. A remote attacker reaches the reader without an account by mailing a crafted TLS-RPT report (up to 16 MB after decompression) to a hosted domain's published report mailbox, which is read on a delivery thread; a few such reports hold every delivery thread (ten by default), so the server delivers no mail, local or outbound, for over an hour per report. A signed-in account reaches the same 16 MB body through the webmail's own REST routes, holding the REST API's own worker threads. Where no report mailbox is configured, the unauthenticated REST sign-in routes that read a JSON body are capped at 64 KB and are not affected."
     },
     {
-      "id": "CVE-2026-42720",
-      "title": "CVE-2026-42720",
+      "id": "CVE-2026-107575",
+      "title": "CVE-2026-107575",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.743",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Sarah Giles Dynamic User Directory dynamic-user-directory allows Blind SQL Injection.This issue affects Dynamic User Directory: from n/a through 2.4."
+      "date": "2026-10-08T12:17:15.333",
+      "summary": "Inefficient algorithmic complexity in the SPF macro expansion of Progressive Robot hMailServer 6.3.4 and 6.3.5 allows a remote unauthenticated attacker to consume worker-thread time by publishing a crafted SPF record. RFC 7208 section 7.1 requires a name too long to look up to lose whole labels from the left; the server did this by removing one label at a time and copying the rest of the name each time, so the work grew with the square of the expansion. An attacker who publishes an SPF record for a domain they control, with a mechanism whose domain-spec expands through macros to a name far longer than 253 characters, makes the SPF check of a message from that domain take several seconds. The expansion is bounded by SPF's own per-term and per-macro limits, so the loss of availability is partial."
     },
     {
-      "id": "CVE-2026-42721",
-      "title": "CVE-2026-42721",
+      "id": "CVE-2026-107576",
+      "title": "CVE-2026-107576",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:35.870",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in SERVIT Software Solutions affiliate-toolkit affiliate-toolkit-starter allows Blind SQL Injection.This issue affects affiliate-toolkit: from n/a through 3.9.1."
+      "date": "2026-10-08T12:17:15.487",
+      "summary": "Inefficient algorithmic complexity in the inbound DKIM and ARC signature verification of Progressive Robot hMailServer 6.0.0 through 6.3.5 allows a remote unauthenticated attacker to make the mail services unavailable by sending a message. Building the canonical header and choosing the header fields named in a signature's h= tag took time growing with the square of the message's header: the 'simple' canonicalisation prepended each continuation line of a folded field to the lines already gathered, and both canonicalisations searched the gathered fields from the bottom for each h= name and erased the match from the middle of the list. A message whose header holds very many fields, or a field folded over very many lines, with a DKIM-Signature the attacker signs for a domain they control, keeps a worker thread busy for tens of seconds per signature; up to ten signatures are evaluated per message by each of the DKIM and DMARC tests, on the threads that serve delivery and SMTP."
     },
     {
-      "id": "CVE-2026-78243",
-      "title": "CVE-2026-78243",
+      "id": "CVE-2026-107577",
+      "title": "CVE-2026-107577",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:36.017",
-      "summary": "Apache YuniKorn 1.8.0 and later, if configured with the LDAP group resolver, crashes due to an out of bounds read processing group membership entries.If the LDAP server returns a group membership entry, memberOf attribute, for a user specified in the pod the server crashes if a membership record does not start with \"CN=\".\n\n\n\n\nThis only affects install that have the non default LDAP group provider configured. \n\n\nUsers are recommended to upgrade to version 1.10.0, which fixes this issue."
+      "date": "2026-10-08T12:17:15.630",
+      "summary": "Inefficient algorithmic complexity and a non-terminating loop in the MIME processing of received messages in Progressive Robot hMailServer 6.0.0 through 6.3.5 allow a remote unauthenticated attacker to make the mail services unavailable by sending a message. Removing a MIME header parameter whose value is empty and directly followed by a semicolon (for example a Content-Disposition with 'filename=a.bat; filename=;') entered a loop that never terminates, holding a worker thread at full load until the server is restarted; this is reached when the attachment blocker renames a blocked attachment or a filename is set over the REST API. Separately, decoding a header field that holds many RFC 2047 encoded words of an encoding other than base64 or quoted-printable, removing a parameter with many RFC 2231 continuations, and deleting many header fields of one name each took time growing with the square of the message, on the small thread pools that serve IMAP, SMTP and POP3 connections, delivery and the REST API."
     },
     {
-      "id": "CVE-2026-92393",
-      "title": "CVE-2026-92393",
+      "id": "CVE-2026-107578",
+      "title": "CVE-2026-107578",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:42.247",
-      "summary": "Apache YuniKorn 1.9.0 and earlier does not implement label and user annotation checks for workload UPDATE action bypassing all checks. Workloads in YuniKorn are defined as the following Kubernetes objects: \"deployments\", \"replicasets\", \"statefulsets\", \"daemonsets\", \"jobs\", \"cronjobs\". The CREATE action correctly enforces the checks for all object types.\n\n\nThe bypass allows any user to specify an arbitrary user info annotation. The same bypass also allows changing the application ID for the workload. The combination of the two applied in one UPDATE could allow access to a queue that the user normally would not have access to. Quota usage for the queue might be impacted if the application runs in the incorrect queue. User based quota enforcement is also based on the user annotation. User quota tracking could be side stepped even if the application runs in the correct queue.\n\n\n\n\nUsers are recommended to upgrade to version 1.10.0, which fixes this issue."
+      "date": "2026-10-08T12:17:15.787",
+      "summary": "Improper link resolution and external control of file paths in the administrative command-line operations of hMailServer.exe in Progressive Robot hMailServer 6.3.4 and 6.3.5 allow a local attacker who already runs code as the low-privilege service account to escalate privilege. On Windows, operations run with administrator rights by the installer, DBSetup, the Control Panel or an administrator wrote log entries and crash records into the log folder, created, deleted and changed the permissions of the self-signed certificate and private key in the data folder, and rewrote message files in the data folder, all by path in folders the service account (NT SERVICE\\hMailServer, the default for new installations since 6.3.4) can modify, following junctions and mount points; and the store-maintenance operations reached files by names taken from the database, which the service account can write, including names outside the data folder. On Linux, the store-maintenance and object-storage operations run as root followed symbolic links the service account (the packaged hmailserver user, which owns the data folder) planted in it, so a root-run operation read, wrote or removed the link's target as"
     },
     {
-      "id": "CVE-2026-97146",
-      "title": "CVE-2026-97146",
+      "id": "CVE-2026-107579",
+      "title": "CVE-2026-107579",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:43.693",
-      "summary": "Apache YuniKorn 1.9.0 and earlier allows bypassing the check for the user annotation by setting a secondary label on the pod. If the pod has the label 'app=yunikorn' the checks limiting the user annotation content are not run. The label is used to identify the YuniKorn application itself in the deployments.\n\n\nThe bypass allows any user to specify an arbitrary user info annotation. The arbitrary user information could allow access to a queue that the user normally would not have access to. Quota usage for the queue might be impacted if the application runs in the incorrect queue. User based quota enforcement is also based on the user annotation. User quota tracking could be side stepped even if the application runs in the correct queue.\n\n\n\n\nUsers are recommended to upgrade to version 1.10.0, which fixes this issue."
+      "date": "2026-10-08T12:17:15.940",
+      "summary": "Inefficient algorithmic complexity in the bounce and complaint processing of Progressive Robot hMailServer 6.3.4 and 6.3.5 allows a remote unauthenticated attacker to stop mail delivery by sending messages, when bounce processing or complaint processing is enabled or a mailing list is managed by the server (none is by default). The readers of incoming delivery status notifications (RFC 3464) and abuse feedback reports (RFC 5965) removed the blank lines at the start of the returned headers part two bytes at a time, copying the rest of the part each time, so their work grew with the square of the number of blank lines. A message shaped like such a report, whose headers part begins with a very large number of blank lines within the reader's 2 MB limit, keeps a delivery thread busy for over a minute while it is delivered, and a few such messages a minute keep every delivery thread busy."
     },
     {
-      "id": "CVE-2026-97294",
-      "title": "CVE-2026-97294",
+      "id": "CVE-2026-107580",
+      "title": "CVE-2026-107580",
       "source": "NIST NVD",
-      "date": "2026-10-07T10:17:44.860",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Stored XSS.This issue affects Media LIbrary Assistant: from n/a through 3.41."
+      "date": "2026-10-08T12:17:16.123",
+      "summary": "Inefficient algorithmic complexity in the decoding of message header fields in Progressive Robot hMailServer 6.0.0 through 6.3.5 allows a remote unauthenticated attacker to make the IMAP, SMTP and POP3 services, or the webmail, unavailable by sending a message. The server unfolded a decoded header value by finding each line break from the end of the value and removing it, moving the rest of the value each time, so its work grew with the square of the number of line breaks, and an RFC 2047 encoded word may decode to any number of them. A received message whose Subject or other header field holds such a value keeps a worker thread busy for minutes or longer each time the value is read: when the recipient's IMAP client searches, sorts or threads the folder by a header, when the webmail lists the folder, and, where configured, when a rule tests a header, a spam tag is added to the Subject or an abuse report is read during delivery. The IMAP worker threads are shared with SMTP and POP3, so a few such messages stop those services responding. The server's reading of a message header from its file also searched everything read so far after each 4,000 bytes, costing seconds for a header of "
     },
     {
-      "id": "CVE-2026-103668",
-      "title": "CVE-2026-103668",
+      "id": "CVE-2026-107581",
+      "title": "CVE-2026-107581",
       "source": "NIST NVD",
-      "date": "2026-10-07T11:17:09.357",
-      "summary": "An SQL Injection vulnerability exists in the Site Search function of Movable Type, which may allow an unauthenticated attacker to execute an arbitrary SQL query on the affected product."
+      "date": "2026-10-08T12:17:16.320",
+      "summary": "Progressive Robot hMailServer 6.0.0 through 6.3.5 processes several IMAP commands from a signed-in account in time quadratic in the command's length or in the number of elements it names, and can be made to hold memory out of proportion to a command. The FETCH data-item parser normalised a BODY[] section with a case-insensitive string replacement that copied the whole item per occurrence and split the item list by repeatedly copying the remainder of the command; the server's case-insensitive search compared a needle afresh at every position, so a long SEARCH TEXT key over a message cost the product of the two lengths; SEARCH message sets and the saved-result marker ($), SORT criteria, HEADER.FIELDS name lists and UID ranges were each read once per message rather than once per command; and a FETCH naming a message's sections very many times read and held every section in memory before sending any. An IMAP command may continue past one line through non-synchronizing literals, so one command can reach about eleven megabytes. The IMAP worker threads are a small pool shared with SMTP and POP3, so a signed-in user sending such commands can make the IMAP, SMTP and POP3 services stop respo"
     },
     {
-      "id": "CVE-2026-42713",
-      "title": "CVE-2026-42713",
+      "id": "CVE-2026-107582",
+      "title": "CVE-2026-107582",
       "source": "NIST NVD",
-      "date": "2026-10-07T11:17:19.093",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Gopiplus Post title marquee scroll post-title-marquee-scroll allows Blind SQL Injection.This issue affects Post title marquee scroll: from n/a through 9.9."
+      "date": "2026-10-08T12:17:16.480",
+      "summary": "Inefficient algorithmic complexity in the REST API (6.3.3 through 6.3.5) and the IMAP PREVIEW response (6.2.22 through 6.3.5) of Progressive Robot hMailServer allows a remote unauthenticated attacker to make the webmail, the administration console and the REST API unavailable by sending a message. To show a snippet of each message in a folder's message list, the server decoded the character entity references of a message that has an HTML part and no text part with a string replacement whose work grew with the square of their number. A received HTML-only message holding a very large number of entity references therefore keeps one of the listener's four worker threads busy for minutes or longer each time the recipient's webmail lists the folder, without the message being opened, so that a few such listings leave the HTTP listener unable to answer anybody. The IMAP PREVIEW response read such text the same way, holding an IMAP thread for each client that asks for the preview of such a message. The flaw is in the server's shared string class, whose replace and remove both ran in quadratic time."
     },
     {
-      "id": "CVE-2026-42714",
-      "title": "CVE-2026-42714",
+      "id": "CVE-2026-107583",
+      "title": "CVE-2026-107583",
       "source": "NIST NVD",
-      "date": "2026-10-07T11:17:19.237",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Piggly Dev Pix por Piggly (para Woocommerce) pix-por-piggly allows Blind SQL Injection.This issue affects Pix por Piggly (para Woocommerce): from n/a through 2.1.2."
+      "date": "2026-10-08T12:17:16.633",
+      "summary": "Inefficient algorithmic complexity in the webmail's message view of the REST API in Progressive Robot hMailServer 6.3.2 through 6.3.5 allows a remote unauthenticated attacker to make the webmail, the administration console and the REST API unavailable by sending a message. The route that renders a received message's HTML replaced each reference to an embedded image in place, with work that grew with the square of the number of references, and wrote the image out for every reference while counting it against its size limit only once. A message whose HTML refers to one small embedded image a very large number of times, opened in the webmail by its recipient, therefore keeps one of the listener's four worker threads busy for minutes and makes it build a document of gigabytes, so that a few such messages leave the HTTP listener unable to answer anybody."
     }
   ]
 }
