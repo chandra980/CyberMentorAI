@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-18T07:18:28.593439+00:00",
+  "generated_at": "2026-10-19T07:56:21.621459+00:00",
   "items": [
     {
       "id": "CVE-2026-102764",
@@ -882,284 +882,284 @@
       "due": "2026-08-21"
     },
     {
-      "id": "CVE-2026-108542",
-      "title": "CVE-2026-108542",
+      "id": "CVE-2026-103356",
+      "title": "CVE-2026-103356",
       "source": "NIST NVD",
-      "date": "2026-10-11T08:16:33.540",
-      "summary": "A vulnerability was found in 021is elvix-sdk up to 0.10.1. Affected by this vulnerability is an unknown functionality of the file src/mcp/index.ts of the component MCP Request Handler. The manipulation of the argument path results in server-side request forgery. The attack can be executed remotely. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:18.023",
+      "summary": "Missing Authorization vulnerability in VillaTheme TMDS tmds-dropshipping-for-temu-and-woo allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects TMDS: from n/a through 1.0.15."
     },
     {
-      "id": "CVE-2026-108543",
-      "title": "CVE-2026-108543",
+      "id": "CVE-2026-106605",
+      "title": "CVE-2026-106605",
       "source": "NIST NVD",
-      "date": "2026-10-11T08:16:33.723",
-      "summary": "A vulnerability was determined in ag2ai ag2 up to 0.13.4. Affected by this issue is the function os.path.join of the component UserProxyAgent. This manipulation of the argument filename causes path traversal. The attack is possible to be carried out remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:18.180",
+      "summary": "Improper Validation of Specified Quantity in Input vulnerability in WP Desk Flexible Quantity – Measurement Price Calculator for WooCommerce flexible-quantity-measurement-price-calculator-for-woocommerce allows Input Data Manipulation.This issue affects Flexible Quantity – Measurement Price Calculator for WooCommerce: from n/a through 2.3.22."
     },
     {
-      "id": "CVE-2026-108544",
-      "title": "CVE-2026-108544",
+      "id": "CVE-2026-107427",
+      "title": "CVE-2026-107427",
       "source": "NIST NVD",
-      "date": "2026-10-11T08:16:33.913",
-      "summary": "A vulnerability was identified in Lippu Docx Reader Office Viewer App up to 1.4.5 on Android. This affects the function word.office.docxviewer.document.docx.reader.ViewTxt. Such manipulation of the argument _display_name leads to path traversal. The attack may be performed from remote."
+      "date": "2026-10-12T08:17:18.317",
+      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in NOUS Ouvert Utile et Simple Event post event-post allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Event post: from n/a through 6.1.1."
     },
     {
-      "id": "CVE-2026-108566",
-      "title": "CVE-2026-108566",
+      "id": "CVE-2026-107429",
+      "title": "CVE-2026-107429",
       "source": "NIST NVD",
-      "date": "2026-10-11T10:16:38.727",
-      "summary": "A vulnerability has been found in InstantSoft icms2 up to 2.18.2. This issue affects the function index of the file templates/default/controllers/messages/index.tpl.php of the component Private Message Handler. Such manipulation of the argument nickname leads to cross site scripting. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. The name of the patch is 3a1ec8fcb073a46d06a2ab83bc2bf68225834281. It is best practice to apply a patch to resolve this issue."
+      "date": "2026-10-12T08:17:18.447",
+      "summary": "Improper Validation of Specified Quantity in Input vulnerability in VideoWhisper.com Paid Videochat Turnkey Site ppv-live-webcams allows Input Data Manipulation.This issue affects Paid Videochat Turnkey Site: from n/a through 7.5.12."
     },
     {
-      "id": "CVE-2026-108567",
-      "title": "CVE-2026-108567",
+      "id": "CVE-2026-107430",
+      "title": "CVE-2026-107430",
       "source": "NIST NVD",
-      "date": "2026-10-11T10:16:40.173",
-      "summary": "A vulnerability was found in InstantSoft icms2 up to 2.18.2. Impacted is the function files_delete_file of the file system/fields/image.php of the component Image Handler. Performing a manipulation of the argument size results in path traversal. The attack may be initiated remotely. The exploit has been made public and could be used. The patch is named 03d70937f1ff97031523222808726994b8b79379. It is recommended to apply a patch to fix this issue."
+      "date": "2026-10-12T08:17:18.577",
+      "summary": "Missing Authorization vulnerability in VideoWhisper.com VideoWhisper Site Manager for ChatGPT, Claude, Codex videowhisper-site-manager allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects VideoWhisper Site Manager for ChatGPT, Claude, Codex: from n/a through 1.2.10."
     },
     {
-      "id": "CVE-2026-108568",
-      "title": "CVE-2026-108568",
+      "id": "CVE-2026-107432",
+      "title": "CVE-2026-107432",
       "source": "NIST NVD",
-      "date": "2026-10-11T10:16:40.340",
-      "summary": "A vulnerability was determined in InstantSoft icms2 up to 2.18.2. The affected element is the function validatePaypalOrder of the file system/controllers/billing/actions/paypal.php of the component Billing Module. Executing a manipulation of the argument bid/sig can lead to insufficient verification of data authenticity. The attack may be launched remotely. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:18.703",
+      "summary": "Missing Authorization vulnerability in NOUS Ouvert Utile et Simple Event post event-post allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Event post: from n/a through 6.1.1."
     },
     {
-      "id": "CVE-2026-108569",
-      "title": "CVE-2026-108569",
+      "id": "CVE-2026-108810",
+      "title": "CVE-2026-108810",
       "source": "NIST NVD",
-      "date": "2026-10-11T11:16:58.727",
-      "summary": "A vulnerability was identified in Furion .NET Framework up to 4.9.9.92. The impacted element is the function String.Replace of the file framework/Furion/Templates/Extensions/StringRenderExtensions.cs. The manipulation of the argument Name leads to sql injection. Remote exploitation of the attack is possible. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:18.837",
+      "summary": "A security flaw has been discovered in tsi-coop tsi-dpdp-cms 0.5.0/0.5.1/0.5.2. Impacted is an unknown function of the component JSON Schema Validation. The manipulation of the argument _func results in information disclosure. The attack can be executed remotely. The exploit has been released to the public and may be used for attacks. Upgrading to version 0.5.3 is recommended to address this issue. You should upgrade the affected component. The vendor was contacted early, responded in a very professional manner and quickly released a fixed version of the affected product."
     },
     {
-      "id": "CVE-2026-108570",
-      "title": "CVE-2026-108570",
+      "id": "CVE-2026-108811",
+      "title": "CVE-2026-108811",
       "source": "NIST NVD",
-      "date": "2026-10-11T11:16:59.980",
-      "summary": "A security flaw has been discovered in Furion .NET Framework up to 4.9.9.95. This affects the function RunCompile of the file framework/Furion/ViewEngine/Engines/ViewEngine.cs of the component View Engine. The manipulation of the argument content results in improper neutralization of special elements used in a template engine. The attack can be executed remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:19.020",
+      "summary": "A weakness has been identified in WMCMS 4.446.1257. The affected element is an unknown function of the file /index.php. This manipulation of the argument path/file causes information disclosure. The attack is possible to be carried out remotely. The exploit has been made available to the public and could be used for attacks."
     },
     {
-      "id": "CVE-2026-108571",
-      "title": "CVE-2026-108571",
+      "id": "CVE-2026-108812",
+      "title": "CVE-2026-108812",
       "source": "NIST NVD",
-      "date": "2026-10-11T11:17:00.197",
-      "summary": "A weakness has been identified in Xinhu Rainrock RockOA up to 2.7.6. This impacts the function kqjcmdModel::returnchuli of the file webmain/task/openapi/openkqjAction.php of the component Openkqj Action. This manipulation of the argument ID causes sql injection. The attack is possible to be carried out remotely. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:19.187",
+      "summary": "A security vulnerability has been detected in SEMCMS up to 5.0. The impacted element is an unknown function of the file /admin/SEMCMS_User.php?Class=Deleted&CF=user. Such manipulation leads to improper authorization. The attack may be performed from remote. The exploit has been disclosed publicly and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-108572",
-      "title": "CVE-2026-108572",
+      "id": "CVE-2026-108813",
+      "title": "CVE-2026-108813",
       "source": "NIST NVD",
-      "date": "2026-10-11T11:17:00.370",
-      "summary": "A security vulnerability has been detected in Casdoor up to 3.164.0/4.10.0. Affected is the function CasP3ProxyValidate of the file controllers/cas.go of the component Proxy Validation. Such manipulation of the argument pgtUrl leads to server-side request forgery. The attack may be performed from remote. The exploit has been disclosed publicly and may be used. Upgrading to version 4.11.0 is able to address this issue. The name of the patch is 03c6c9aaa2eda5b085ce128ce0d60b34094efbd9/ada08ecd10cbf158f593dee23a8bab63efecf995. It is advisable to upgrade the affected component."
+      "date": "2026-10-12T08:17:19.380",
+      "summary": "A vulnerability was detected in SEMCMS up to 5.0. This affects an unknown function of the file SEMCMS_Download.php. Performing a manipulation results in sql injection. It is possible to initiate the attack remotely. The exploit is now public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-108573",
-      "title": "CVE-2026-108573",
+      "id": "CVE-2026-108814",
+      "title": "CVE-2026-108814",
       "source": "NIST NVD",
-      "date": "2026-10-11T12:16:52.783",
-      "summary": "A vulnerability was detected in Open Asset Import Library Assimp up to 6.0.5. Affected by this vulnerability is the function IOStreamBuffer::getNextBlock of the component PLY File Handler. Performing a manipulation results in out-of-bounds read. It is possible to initiate the attack remotely. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T08:17:19.593",
+      "summary": "A flaw has been found in SEMCMS up to 5.0. This impacts an unknown function of the file SEMCMS_Banner.php. Executing a manipulation can lead to sql injection. It is possible to launch the attack remotely. The exploit has been published and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-108574",
-      "title": "CVE-2026-108574",
+      "id": "CVE-2023-25996",
+      "title": "CVE-2023-25996",
       "source": "NIST NVD",
-      "date": "2026-10-11T12:16:52.990",
-      "summary": "A flaw has been found in BerriAI LiteLLM up to 1.95.0. Affected by this issue is the function ui_view_session_spend_logs of the file litellm/proxy/spend_tracking/spend_management_endpoints.py of the component Spend Tracking. Executing a manipulation of the argument session_id can lead to authorization bypass. It is possible to launch the attack remotely. The exploit has been published and may be used. Upgrading to version 1.96.0 can resolve this issue. This patch is called 722d9ffa4f6c5ae15702ab9ab2c5f6bf1688308b. The affected component should be upgraded."
+      "date": "2026-10-12T09:16:41.257",
+      "summary": "Insertion of Sensitive Information Into Sent Data vulnerability in Pluggabl LLC. Booster Elite for WooCommerce booster-elite-for-woocommerce allows Retrieve Embedded Sensitive Data.This issue affects Booster Elite for WooCommerce: from n/a before 8.4.0."
     },
     {
-      "id": "CVE-2026-108575",
-      "title": "CVE-2026-108575",
+      "id": "CVE-2026-104710",
+      "title": "CVE-2026-104710",
       "source": "NIST NVD",
-      "date": "2026-10-11T12:16:53.210",
-      "summary": "A vulnerability has been found in BerriAI LiteLLM up to 1.94.0. This affects the function get_secret of the file secret_managers/main.py of the component Secret Resolution. The manipulation of the argument api_key leads to improper authorization. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T09:16:41.740",
+      "summary": "Rejected reason: Duplicate of CVE-2026-71364, which was publicly disclosed and fixed in Red Hat Ansible Automation Platform on 2026-08-24. No separate identifier is required."
     },
     {
-      "id": "CVE-2026-108576",
-      "title": "CVE-2026-108576",
+      "id": "CVE-2026-107423",
+      "title": "CVE-2026-107423",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:13.067",
-      "summary": "A vulnerability was found in TOZED X300 up to 6.01.3. This vulnerability affects the function process_ping of the component IPPingDiagnostics Handler. The manipulation of the argument Host results in os command injection. The attack can be launched remotely. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T09:16:41.917",
+      "summary": "Missing Authorization vulnerability in WP User Manager WP User Manager wp-user-manager allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WP User Manager: from n/a through 2.9.22."
     },
     {
-      "id": "CVE-2026-108577",
-      "title": "CVE-2026-108577",
+      "id": "CVE-2026-107863",
+      "title": "CVE-2026-107863",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:13.230",
-      "summary": "A vulnerability was determined in Konstanty Bialkowski libmodplug up to 0.8.9.1. This issue affects the function abc_add_gchord of the file src/load_abc.cpp of the component ABC Music Format Parser. This manipulation causes resource consumption. The attack may be initiated remotely. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T09:16:42.050",
+      "summary": "Missing Authorization vulnerability in Codection Products Restricted Users for WooCommerce woo-products-restricted-users allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Products Restricted Users for WooCommerce: from n/a through 0.7."
     },
     {
-      "id": "CVE-2026-108578",
-      "title": "CVE-2026-108578",
+      "id": "CVE-2026-107864",
+      "title": "CVE-2026-107864",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:13.397",
-      "summary": "A vulnerability was identified in Neterbit NW-431F 20250715. Impacted is an unknown function of the file /sms.json of the component Embedded Web Server. Such manipulation leads to information disclosure. The attack may be launched remotely. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-12T09:16:42.183",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Igor Funa Ad Inserter ad-inserter allows Stored XSS.This issue affects Ad Inserter: from n/a through 2.8.18."
     },
     {
-      "id": "CVE-2026-108584",
-      "title": "CVE-2026-108584",
+      "id": "CVE-2026-107865",
+      "title": "CVE-2026-107865",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:13.557",
-      "summary": "A security flaw has been discovered in FunnyWolf Viper up to 3.1.11. The affected element is an unknown function of the file /root/viper/.git/config. Performing a manipulation results in hard-coded credentials. Remote exploitation of the attack is possible. The exploit has been released to the public and may be used for attacks."
+      "date": "2026-10-12T09:16:42.313",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetMenu jet-menu allows Stored XSS.This issue affects JetMenu: from n/a through 3.0.5."
     },
     {
-      "id": "CVE-2026-108710",
-      "title": "CVE-2026-108710",
+      "id": "CVE-2026-107866",
+      "title": "CVE-2026-107866",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:13.720",
-      "summary": "NornicDB through 1.4.1 contains a missing authorization vulnerability that allows authenticated users to bypass per-database read restrictions on the /nornicdb/search and /nornicdb/similar endpoints. Viewer-role users allowlisted for a database but denied read can submit search queries or node IDs to retrieve node IDs, labels and full property maps."
+      "date": "2026-10-12T09:16:42.447",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetElements For Elementor jet-elements allows Stored XSS.This issue affects JetElements For Elementor: from n/a through 2.9.2.3."
     },
     {
-      "id": "CVE-2026-108711",
-      "title": "CVE-2026-108711",
+      "id": "CVE-2026-107869",
+      "title": "CVE-2026-107869",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:13.877",
-      "summary": "Plastic Labs Honcho through 3.3.0 contains an incorrect authorization vulnerability that allows peer- or session-scoped API key holders to read workspace data because get_or_create_workspace checks only the workspace claim. Attackers can submit their parent workspace name to the POST /v3/workspaces endpoint to retrieve workspace metadata and configuration, including custom_instructions, reserved for workspace or admin keys."
+      "date": "2026-10-12T09:16:42.577",
+      "summary": "Missing Authorization vulnerability in WP Desk Flexible Subscriptions flexible-subscriptions allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Flexible Subscriptions: from n/a through 1.8.4."
     },
     {
-      "id": "CVE-2026-108712",
-      "title": "CVE-2026-108712",
+      "id": "CVE-2026-108168",
+      "title": "CVE-2026-108168",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:14.047",
-      "summary": "SuiteCRM through 7.15.2 and 8.10.2 contains a missing authorization vulnerability in the DetailUserRole entry point that allows authenticated non-admin users to view other users' ACL data. Attackers can supply another non-admin user's id in the record parameter to read that user's assigned roles and per-module ACL action matrix."
+      "date": "2026-10-12T09:16:42.707",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in DLX Plugins Custom Query Blocks post-type-archive-mapping allows Stored XSS.This issue affects Custom Query Blocks: from n/a through 5.6.0."
     },
     {
-      "id": "CVE-2026-108713",
-      "title": "CVE-2026-108713",
+      "id": "CVE-2026-108815",
+      "title": "CVE-2026-108815",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:14.293",
-      "summary": "SuiteCRM through 7.15.2 and 8.x through 8.10.2 contains a missing authorization vulnerability that allows authenticated users to create and modify EmailMarketing records via the setCampaignMarketingAndTemplate entry point. Low-privileged users denied Campaigns access can post marketingId, campaignId, and templateId to reattach marketing messages or swap the template EmailMan sends in campaign emails."
+      "date": "2026-10-12T09:16:42.847",
+      "summary": "A vulnerability has been found in idcCMS 1.70. Affected is an unknown function of the file admin/member_deal.php. The manipulation leads to cross site scripting. The attack can be initiated remotely. The exploit has been disclosed to the public and may be used."
     },
     {
-      "id": "CVE-2026-108714",
-      "title": "CVE-2026-108714",
+      "id": "CVE-2026-108816",
+      "title": "CVE-2026-108816",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:14.430",
-      "summary": "MCP Kotlin SDK through 0.15.0 contains an uncontrolled memory allocation vulnerability that allows remote clients to exhaust server memory because Application.mcpWebSocket installs Ktor WebSockets without a maxFrameSize limit. Attackers can send small frame headers declaring payloads near 2 GiB over one or a few connections, forcing huge heap allocations and causing denial of service."
+      "date": "2026-10-12T09:16:43.037",
+      "summary": "A vulnerability was found in agno-agi agno up to 3.0.6. Affected by this vulnerability is the function run_python_code of the file python.py of the component PythonTools. The manipulation of the argument code results in code injection. The attack can be launched remotely. The exploit has been made public and could be used. The project was informed of the problem early through an issue report but has not responded yet."
     },
     {
-      "id": "CVE-2026-108715",
-      "title": "CVE-2026-108715",
+      "id": "CVE-2026-108817",
+      "title": "CVE-2026-108817",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:14.577",
-      "summary": "LibreNMS through 26.9.1.1 contains an authorization bypass vulnerability in includes/html/graphs/smokeping/auth.inc.php that checks the src probe device instead of the rendered target device. Restricted users permitted on a probe device can request smokeping_in or smokeping_out graphs with arbitrary device ids to view latency data and enumerate device names."
+      "date": "2026-10-12T09:16:43.243",
+      "summary": "A vulnerability was determined in agno-agi agno up to 3.0.9. Affected by this issue is the function agno.CodingTools.run_shell in the library libs/agno/agno/tools/coding.py of the component CodingTools. This manipulation of the argument command causes os command injection. The attack may be initiated remotely. The exploit has been publicly disclosed and may be utilized. Upgrading to version 3.0.10 can resolve this issue. Patch name: ed64fab5be63d2b15faddc2ef7c733176daa14aa. You should upgrade the affected component."
     },
     {
-      "id": "CVE-2026-108716",
-      "title": "CVE-2026-108716",
+      "id": "CVE-2026-108818",
+      "title": "CVE-2026-108818",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:14.720",
-      "summary": "mcp-remote 0.8.0 through 0.14.3 contains a cleartext transmission vulnerability in authorizeWithDeviceCode that sends client secrets and receives tokens without enforcing HTTPS endpoints. When discovered device authorization and token endpoints are non-loopback http URLs, on-path network attackers can capture the client secret plus issued access and refresh tokens."
+      "date": "2026-10-12T09:16:43.473",
+      "summary": "A vulnerability was identified in agno-agi agno up to 2.7.3/3.0.6. This affects the function get_authentication_dependency of the file auth.py. Such manipulation of the argument security_key leads to missing authentication. The attack may be launched remotely. The exploit is publicly available and might be used. The project was informed of the problem early through an issue report but has not responded yet."
     },
     {
-      "id": "CVE-2026-108717",
-      "title": "CVE-2026-108717",
+      "id": "CVE-2026-1907",
+      "title": "CVE-2026-1907",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:14.870",
-      "summary": "Combodo iTop 3.1.0 through 3.3.0 contains a missing authorization vulnerability in LinkSetController.php that allows authenticated console users to bypass profile grants by supplying arbitrary class and key parameters. Attackers can invoke the linkset delete, detach and get-remote-object routes to delete objects, clear external keys, and read object attributes without permission."
+      "date": "2026-10-12T09:16:43.683",
+      "summary": "A SQL Injection (SQLi) affects the Kong Gateway (Enterprise and Open Source) clustering communication logic when operating in Hybrid Mode. The issue can be triggered by sending specially crafted RPC requests to the Control Plane (CP), leading to potential unauthorized database access. Leveraging the issue requires network access to the Control Plane’s clustering port and a valid client certificate and key."
     },
     {
-      "id": "CVE-2026-108718",
-      "title": "CVE-2026-108718",
+      "id": "CVE-2026-108819",
+      "title": "CVE-2026-108819",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:15.020",
-      "summary": "Rill 0.77.0 through 0.90.5 contains a missing authorization vulnerability in the admin OAuth server that issues authorization codes to dynamically registered clients without user consent. Attackers can register a client with the long_lived_access_token scope and lure a user to an authorization link, obtaining a non-expiring API token with the user's full permissions."
+      "date": "2026-10-12T10:16:43.393",
+      "summary": "A security flaw has been discovered in agno-agi agno up to 3.0.6/3.1.1. This vulnerability affects the function exec of the component Agent Orchestration Layer. Performing a manipulation of the argument code results in dynamically-managed code resources. Remote exploitation of the attack is possible. The exploit has been released to the public and may be used for attacks. The pull request to fix this issue awaits acceptance."
     },
     {
-      "id": "CVE-2026-108719",
-      "title": "CVE-2026-108719",
+      "id": "CVE-2026-108820",
+      "title": "CVE-2026-108820",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:15.163",
-      "summary": "LLMGateway through 1.20.0 contains a blind server-side request forgery vulnerability that allows API key holders to reach internal hosts via the video-generation callback_url extension. Attackers can supply loopback, private, or cloud-metadata URLs that deliverWebhook POSTs to without the assertSafeWebhookTarget check, reaching internal services from the worker's network."
+      "date": "2026-10-12T10:16:43.783",
+      "summary": "A weakness has been identified in agno-agi agno up to 3.0.6/3.1.1. This issue affects the function member_agent.run in the library libs/agno/agno/team/_default_tools.py of the component Delegation Feature. Executing a manipulation can lead to execution with unnecessary privileges. The attack can be executed remotely. The exploit has been made available to the public and could be used for attacks. The pull request to fix this issue awaits acceptance."
     },
     {
-      "id": "CVE-2026-108720",
-      "title": "CVE-2026-108720",
+      "id": "CVE-2026-108821",
+      "title": "CVE-2026-108821",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:15.307",
-      "summary": "phpIPAM through 1.8.3 contains a missing authorization vulnerability that allows authenticated low-privilege users to view restricted subnets and addresses because customer, location and NAT pages skip Subnets::check_permission. Attackers can open customer objects.php, single-location.php or nat_details.php to read IP addresses, CIDRs, hostnames and MAC addresses from sections they cannot access."
+      "date": "2026-10-12T10:16:43.983",
+      "summary": "A security vulnerability has been detected in Tencent WeKnora up to 0.8.1. Impacted is the function validateSubquery of the file internal/utils/inject.go of the component SQL Validator. The manipulation leads to sql injection. The attack is possible to be carried out remotely. The exploit has been disclosed publicly and may be used. Upgrading to version 0.8.2 is recommended to address this issue. The identifier of the patch is d7ccd5ba517cc3968e6d5000a2ab0f4b51ef1dda. It is recommended to upgrade the affected component."
     },
     {
-      "id": "CVE-2026-108721",
-      "title": "CVE-2026-108721",
+      "id": "CVE-2026-108822",
+      "title": "CVE-2026-108822",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:15.470",
-      "summary": "Open Computer Use through 1.0.0 on macOS contains an improper case sensitivity handling vulnerability that allows local MCP callers to bypass the password-manager denylist using case-variant bundle identifiers. Attackers, including prompt-injected model turns, can pass identifiers like com.1Password.1Password to get_app_state and action tools to read accessibility trees, capture screenshots, and drive unlocked password manager interfaces."
+      "date": "2026-10-12T10:16:44.170",
+      "summary": "A vulnerability was detected in Kamailio up to 6.0.7/6.1.3. The affected element is the function isup_get_calling_party of the file src/modules/sipt/ss7_parser.c of the component sipt Module. The manipulation of the argument length results in buffer overflow. The attack may be performed from remote. Upgrading to version 6.0.8 and 6.1.4 is sufficient to fix this issue. The patch is identified as 3667bebf8d0bea07ed16218fd921d07db87aeb21. Upgrading the affected component is advised."
     },
     {
-      "id": "CVE-2026-108722",
-      "title": "CVE-2026-108722",
+      "id": "CVE-2026-108979",
+      "title": "CVE-2026-108979",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:15.673",
-      "summary": "open-computer-use through commit 610bac8 contains a stored cross-site scripting vulnerability in Logger.write_log_file in os_computer_use/logging.py, which writes transcript text into log.html without HTML escaping. Attackers controlling sandbox content, such as web pages or files appearing in run_command output, can inject script that runs when operators open the log, exfiltrating transcript contents."
+      "date": "2026-10-12T10:16:44.340",
+      "summary": "Rejected reason: ** REJECT ** DO NOT USE THIS CANDIDATE NUMBER. Reason: This candidate was issued in error. Notes: All references and descriptions in this candidate have been removed to prevent accidental usage."
     },
     {
-      "id": "CVE-2026-108723",
-      "title": "CVE-2026-108723",
+      "id": "CVE-2026-103902",
+      "title": "CVE-2026-103902",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:15.840",
-      "summary": "answer-me-with-html through 0.5.0 contains a link following vulnerability in the am CLI code block src= embedding, where localPath() checks only path text without resolving symlinks. Attackers can ship a repository with a symlink pointing outside the checkout so am render embeds readable external files into generated HTML, disclosing them when shared."
+      "date": "2026-10-12T11:17:08.617",
+      "summary": "Improper verification of cryptographic signature vulnerability in DigiDoc libdigidocpp, DigiDoc DigiDoc4, DigiDoc DigiDoc Android, and DigiDoc DigiDoc iOS. The vulnerability allows an attacker to create forged digital signatures\n that are displayed a valid by affected DigiDoc software.This issue affects libdigidocpp: from 4.0.0 before 4.5.0; DigiDoc4: from 4.6.0 before 4.11.0; DigiDoc Android: from 2.7.0 before 3.1.0; DigiDoc iOS: from 2.7.0 before 3.1.0."
     },
     {
-      "id": "CVE-2026-108724",
-      "title": "CVE-2026-108724",
+      "id": "CVE-2026-103903",
+      "title": "CVE-2026-103903",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:16.000",
-      "summary": "Sylius through 2.3.0 contains an authorization bypass vulnerability that allows unauthenticated attackers to read unmoderated and rejected product reviews because the AcceptedExtension filter is not applied to the item operation. Attackers can enumerate sequential ids on GET /api/v2/shop/product-reviews/{id} to retrieve review titles, ratings, comments, timestamps and author first names, bypassing merchant moderation."
+      "date": "2026-10-12T11:17:09.517",
+      "summary": "An incorrect authorization vulnerability in the WinBox\nauthentication flow of MikroTik RouterOS allows a remote authenticated attacker\nwith credentials for a low-privilege account permitted to use WinBox to obtain\nthe authorization policy of a different existing account. The stage-one EC-SRP\nchallenge and proof are verified using the attacker's account, while the\nindependently supplied stage-two username is used to install the target\naccount's privileges. By specifying a higher-privilege account such as admin, a\nlow-privilege user can obtain a full administrative session without knowing the\ntarget account's password and can use that session to increase the privileges\nof the attacker's own account."
     },
     {
-      "id": "CVE-2026-108725",
-      "title": "CVE-2026-108725",
+      "id": "CVE-2026-105407",
+      "title": "CVE-2026-105407",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:16.137",
-      "summary": "Cheshire Cat AI core through 2.0.23 contains a stored cross-site scripting vulnerability in the uploads plugin that allows authenticated users to upload HTML files via POST /uploads without type restrictions. Attackers can send the public GET /uploads/{path} URL to a signed-in victim, executing script in the application origin with the victim's access_token cookie, including administrators."
+      "date": "2026-10-12T11:17:09.673",
+      "summary": "An OS Command Injection vulnerability affecting Tuleap Enterprise Edition from 17.0 through 17.5 could allow an attacker to execute arbitrary commands on the server."
     },
     {
-      "id": "CVE-2026-108726",
-      "title": "CVE-2026-108726",
+      "id": "CVE-2026-105408",
+      "title": "CVE-2026-105408",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:16.277",
-      "summary": "GLPI through 12.0.0 contains a missing authorization vulnerability in ajax/map.php that allows authenticated low-privileged users to search itemtypes they cannot view by omitting the canView() check. Attackers can submit crafted itemtype and search criteria for types like Contact, Supplier, Contract and Budget to obtain match counts, titles and coordinates within their entities."
+      "date": "2026-10-12T11:17:09.807",
+      "summary": "A Stored Cross-site Scripting (XSS) vulnerability affecting Tuleap Enterprise Edition from 17.0 through 17.5 could allow an attacker to execute arbitrary script code in user's browser session."
     },
     {
-      "id": "CVE-2026-108727",
-      "title": "CVE-2026-108727",
+      "id": "CVE-2026-105409",
+      "title": "CVE-2026-105409",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:16.440",
-      "summary": "EdgeEver through 1.108.0 contains a missing authorization vulnerability in the Hono API memo-template routes that allows holders of scoped API tokens to bypass token scope restrictions because template handlers never call requireScopes. Attackers with a token lacking write:memos can save a template and invoke POST /api/v1/templates/:id/use to create memos, and list, modify, or delete templates in the token owner's workspace."
+      "date": "2026-10-12T11:17:09.937",
+      "summary": "A Stored Cross-site Scripting (XSS) vulnerability affecting Tuleap Enterprise Edition from 17.0 through 17.5 could allow an attacker to execute arbitrary script code in user's browser session."
     },
     {
-      "id": "CVE-2026-108728",
-      "title": "CVE-2026-108728",
+      "id": "CVE-2026-105410",
+      "title": "CVE-2026-105410",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:16.590",
-      "summary": "Flyte 2.0.1 through 2.0.51 contains a cleartext secret storage vulnerability that allows users with Pod read access to obtain secrets by reading init container environment variables. The embedded secret manager webhook writes base64-encoded FILE-mounted secret values into the SECRETS environment variable, letting principals without Secret store access decode them from the Pod spec."
+      "date": "2026-10-12T11:17:10.063",
+      "summary": "A Stored Cross-site Scripting (XSS) vulnerability affecting Tuleap Enterprise Edition from 17.0 through 17.5 could allow an attacker to execute arbitrary script code in user's browser session."
     },
     {
-      "id": "CVE-2026-108729",
-      "title": "CVE-2026-108729",
+      "id": "CVE-2026-105411",
+      "title": "CVE-2026-105411",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:16.750",
-      "summary": "Corteza through 2024.9.10 contains an incorrect authorization vulnerability in compose attachment endpoints that allows unauthenticated attackers to download private attachments by setting the URL kind segment to page, icon, or namespace. Attackers who know a private record or module attachment id can request the original or preview route without a token or signature to retrieve files across namespace and record permission boundaries."
+      "date": "2026-10-12T11:17:10.187",
+      "summary": "An Authorization Bypass Through User-Controlled Key vulnerability affecting Tuleap Enterprise Edition from 17.0 through 17.5 could allow an attacker with tracker administration rights on one tracker to update or delete fields of all the trackers on the instance."
     },
     {
-      "id": "CVE-2026-108730",
-      "title": "CVE-2026-108730",
+      "id": "CVE-2026-105412",
+      "title": "CVE-2026-105412",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:17.067",
-      "summary": "Raven 2.0.0 through 3.0.0 contains a missing authorization vulnerability in legacy methods in raven/api/raven_message.py that skip the workspace membership check. Authenticated non-members can call get_messages_with_dates or get_all_files_shared_in_channel with predictable channel IDs to read Public channel history and Open/Public channel file metadata across workspaces."
+      "date": "2026-10-12T11:17:10.317",
+      "summary": "An SQL Injection vulnerability affecting Tuleap Enterprise Edition 17.5 could allow an attacker to have read access the Tuleap database."
     },
     {
-      "id": "CVE-2026-108731",
-      "title": "CVE-2026-108731",
+      "id": "CVE-2026-108824",
+      "title": "CVE-2026-108824",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:17.207",
-      "summary": "Raven 2.0.0 through 3.0.0 contains a missing authorization vulnerability that allows authenticated users to join invite-only Public workspaces by ignoring the can_only_join_via_invite setting. Attackers with the Raven User role can call the join_workspace method to become persistent members, reading and posting in Public and Open channels."
+      "date": "2026-10-12T11:17:10.447",
+      "summary": "A flaw has been found in DataEase up to 3.0.0. The impacted element is the function Utils.buildCalcField of the file io/dataease/engine/utils/Utils.java. This manipulation of the argument calculated field causes sql injection. It is possible to initiate the attack remotely. The exploit has been published and may be used. Patch name: 8509e218e6c1f0080eee9e379f269b2104785ef7. It is recommended to apply a patch to fix this issue."
     },
     {
-      "id": "CVE-2026-108732",
-      "title": "CVE-2026-108732",
+      "id": "CVE-2026-108825",
+      "title": "CVE-2026-108825",
       "source": "NIST NVD",
-      "date": "2026-10-11T13:17:17.350",
-      "summary": "Frappe HR (hrms) before 16.11.0, including all 14.x and 15.x releases through 15.64.3, contains a missing authorization vulnerability in the whitelisted get_account_and_amount method that lets authenticated users read payroll amounts. Attackers without HR roles can call the method over /api/method with enumerable Salary Slip or claim document names to disclose other employees' net pay and loan, advance, and claim balances."
+      "date": "2026-10-12T11:17:10.690",
+      "summary": "A vulnerability has been found in yangzongzhuan RuoYi up to 4.8.3. This affects the function checkRoleAllowed of the file /system/role/authDataScope. Such manipulation of the argument roleKey leads to improper privilege management. It is possible to launch the attack remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
     }
   ]
 }
