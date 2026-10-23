@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-10-22T07:45:58.581115+00:00",
+  "generated_at": "2026-10-23T07:43:55.854959+00:00",
   "items": [
     {
       "id": "CVE-2026-106931",
@@ -882,284 +882,284 @@
       "due": "2026-08-27"
     },
     {
-      "id": "CVE-2026-101309",
-      "title": "CVE-2026-101309",
+      "id": "CVE-2026-100106",
+      "title": "CVE-2026-100106",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.197",
-      "summary": "The xHCI (USB 3) device model did not validate or save the event ring size provided by the guest.  The size was re-read from guest memory on each use, and Transfer Request Block (TRB) fields were loaded without protection against concurrent modification by the guest.  This race condition could be triggered by a guest running malicious, privileged code.\n\nA malicious guest can crash the bhyve process or potentially execute arbitrary code in the host userspace context running the virtual machine, subject to bhyve's Capsicum sandbox."
+      "date": "2026-10-16T08:17:11.207",
+      "summary": "The FiboSearch – Ajax Search for WooCommerce plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'purchased_plan' parameter in all versions up to, and including, 1.34.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that the site owner has previously completed the standard Freemius opt-in flow; once that condition is met, any Subscriber can reach the vulnerable handler simply by loading /wp-admin/profile.php with the requisite query parameters."
     },
     {
-      "id": "CVE-2026-101310",
-      "title": "CVE-2026-101310",
+      "id": "CVE-2026-100108",
+      "title": "CVE-2026-100108",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.313",
-      "summary": "The HDA audio device model did not check for zero-length Buffer Descriptor List (BDL) entries when starting a stream.  A zero-length entry caused an out-of-bounds read or write during DMA transfer processing.  BDL fields were also subject to modification by the guest after validation.\n\nA malicious guest can crash the bhyve process or potentially execute arbitrary code in the host userspace context running the virtual machine, subject to bhyve's Capsicum sandbox."
+      "date": "2026-10-16T08:17:12.320",
+      "summary": "The Social Share Buttons plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'form (containing share_url)' parameter in all versions up to, and including, 1.30 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that the 7-day review-nag timer has elapsed since the attacker's first wp-admin visit, as the nonce needed to reach the save-network handler is only rendered in the DOM once that timer has passed."
     },
     {
-      "id": "CVE-2026-101311",
-      "title": "CVE-2026-101311",
+      "id": "CVE-2026-16251",
+      "title": "CVE-2026-16251",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.423",
-      "summary": "The framebuffer device model's maximum resolution constants were duplicated between the framebuffer and RFB modules and had gotten out of sync.  Additionally, writes to the framebuffer BAR could set arbitrary width and height values without validation, and the framebuffer BAR I/O and RFB rendering threads were not synchronized.\n\nA malicious guest can crash the bhyve process or potentially execute arbitrary code in the host userspace context running the virtual machine, subject to bhyve's Capsicum sandbox."
+      "date": "2026-10-16T08:17:12.527",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to limit the size of remote image responses buffered in memory during local image proxy direct fetches, which allows a remote attacker to cause memory exhaustion on the server via a crafted oversized image response.. Mattermost Advisory ID: MMSA-2026-00726"
     },
     {
-      "id": "CVE-2026-102465",
-      "title": "CVE-2026-102465",
+      "id": "CVE-2026-16453",
+      "title": "CVE-2026-16453",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.540",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the Vert.x Redis client RESP parser pre-allocates arrays to a length declared by the server without enforcing an upper bound. A malicious or compromised Redis server, or an attacker in a man-in-the-middle position, can send a crafted RESP response declaring an extremely large array, push, or attribute length, causing the client to attempt a massive heap allocation. The resulting OutOfMemoryError crashes the Vert.x event loop thread, denying service to all connections and verticles sharing that loop.\n\n\n\nThe impacted component is io.vertx:vertx-mysql-client."
+      "date": "2026-10-16T08:17:12.640",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to verify the integrity of the SAML RelayState POST parameter which allows an authenticated SAML user to join any team, including invite-only teams, via forging the team_id or invite_id fields in the RelayState.. Mattermost Advisory ID: MMSA-2026-00727"
     },
     {
-      "id": "CVE-2026-102467",
-      "title": "CVE-2026-102467",
+      "id": "CVE-2026-18223",
+      "title": "CVE-2026-18223",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.670",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the WebSocket implementation does not define a maximum number of bytes allocation when decompressing frames or messages. This can be used to implement DDOS attacks with a zip bomb.\n\n\n\nThe impacted component is io.vertx:vertx-core."
+      "date": "2026-10-16T08:17:12.753",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to validate the invited recipient's email address when redeeming team and guest invitation tokens, which allows an authenticated attacker to join a team or gain unauthorized access to private channels via a forwarded or leaked invitation link.. Mattermost Advisory ID: MMSA-2026-00747"
     },
     {
-      "id": "CVE-2026-102475",
-      "title": "CVE-2026-102475",
+      "id": "CVE-2026-18256",
+      "title": "CVE-2026-18256",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.797",
-      "summary": "In Eclipse Vert.x versions [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the HTTP proxy provides a body transformer interceptor that relies on a max buffered bytes limit to ensure a bounded buffer for each request. This can be used to force a server to indefinitely allocate heap. This vulnerability requires to use an intercepting body transformer.\n\n\n\nThe impacted component is io.vertx:vertx-http-proxy."
+      "date": "2026-10-16T08:17:12.863",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to properly restrict private teams from public team search results, which allows an authenticated user without permission to list private teams to disclose the ID, name, and display name of private teams via a modified team search request. Mattermost Advisory ID: MMSA-2026-00748"
     },
     {
-      "id": "CVE-2026-108092",
-      "title": "CVE-2026-108092",
+      "id": "CVE-2026-18560",
+      "title": "CVE-2026-18560",
       "source": "NIST NVD",
-      "date": "2026-10-15T08:16:36.920",
-      "summary": "The Blog2Social – Social Media Auto Post & Scheduler plugin for WordPress is vulnerable to Insecure Direct Object Reference in all versions up to, and including, 9.1.4. This is due to the b2s_ship_item and b2s_ship_item_reload_url AJAX handlers lacking per-object authorization on the postId parameter. This makes it possible for authenticated attackers with Contributor-level access and above to read the title and content of any post, including private and pending posts belonging to other users."
+      "date": "2026-10-16T08:17:12.967",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to validate user’s permissions before other validations which allows non-content reviewers to infer a post’s flagged status via direct API call.. Mattermost Advisory ID: MMSA-2026-00754"
     },
     {
-      "id": "CVE-2023-32198",
-      "title": "CVE-2023-32198",
+      "id": "CVE-2026-18799",
+      "title": "CVE-2026-18799",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:13.847",
-      "summary": "A vulnerability has been identified in Steve where by default it was using an insecure option that did not validate the certificate presented by the remote server while performing a TLS connection. This could allow the execution of a man-in-the-middle (MitM) attack against services using Steve."
+      "date": "2026-10-16T08:17:13.073",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to restrict Slack import account binding to system administrator-initiated imports which allows an authenticated attacker with team admin privileges to force-add existing Mattermost users to their team and forge posts attributed to those users' identities via a crafted Slack export containing target users' email addresses.. Mattermost Advisory ID: MMSA-2026-00757"
     },
     {
-      "id": "CVE-2024-22031",
-      "title": "CVE-2024-22031",
+      "id": "CVE-2026-19076",
+      "title": "CVE-2026-19076",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:14.023",
-      "summary": "A vulnerability has been identified within Rancher where a user with the ability to create a project, on a certain cluster, can create a project with the same name as an existing project in a different cluster. This results in the user gaining access to the other project in the different cluster, resulting in a privilege escalation. This happens because the namespace used on the local cluster to store related resources (PRTBs and secrets) is the name of the project."
+      "date": "2026-10-16T08:17:13.177",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to reject OAuth application sessions in the account type switch endpoint, which allows an attacker with a valid OAuth bearer token for a target user to permanently take over that user's SSO-backed account by setting an attacker-controlled password and detaching the account from its identity provider via a crafted request to POST /api/v4/users/login/switch.. Mattermost Advisory ID: MMSA-2026-00758"
     },
     {
-      "id": "CVE-2025-23390",
-      "title": "CVE-2025-23390",
+      "id": "CVE-2026-19600",
+      "title": "CVE-2026-19600",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:14.190",
-      "summary": "A vulnerability has been identified within Fleet where, by default, Fleet will automatically trust a remote server’s certificate when connecting through SSH if the certificate isn’t set in the `known_hosts` file. This could allow the execution of a man-in-the-middle (MitM) attack against Fleet. In case the server that is being connected to has a trusted entry in the known_hosts file, then Fleet will correctly check the authenticity of the presented certificate."
+      "date": "2026-10-16T08:17:13.283",
+      "summary": "Mattermost versions 11.9.x <= 11.9.1, 11.8.x <= 11.8.5, 11.7.x <= 11.7.10, 11.10.x <= 11.10.1 fail to sanitize authentication tokens before writing them to server log entries, which allows an attacker with access to server logs to obtain valid session tokens or OAuth access tokens and impersonate authenticated users via the debug-level Mattermost server log.. Mattermost Advisory ID: MMSA-2026-00763"
     },
     {
-      "id": "CVE-2026-101287",
-      "title": "CVE-2026-101287",
+      "id": "CVE-2026-19621",
+      "title": "CVE-2026-19621",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:14.367",
-      "summary": "Authentication bypass vulnerability in Stela, versions prior to 1.60.1, due to the use of a cookie named “authProcess” without validating its integrity. The application stores the user identifier (userId) and the status of the authentication process (validSteps) in this cookie and relies on these values—which can be modified by the client—to complete the login process.\n\n\n\nA remote attacker, without valid credentials or interaction from other users, could manipulate the cookie to bypass authentication checks and impersonate any account, including one with SUPER_ADMIN privileges. This would allow the attacker to obtain a valid JWT token with administrative privileges and compromise the confidentiality and integrity of the application."
+      "date": "2026-10-16T08:17:13.390",
+      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to strip action integration secrets from post payloads before broadcasting post-deletion web socket events and returning thread API responses, which allows an authenticated channel member to obtain server-side webhook URLs and authentication context from interactive-message posts via the post_deleted websocket event or the threads REST API.. Mattermost Advisory ID: MMSA-2026-00766"
     },
     {
-      "id": "CVE-2026-101290",
-      "title": "CVE-2026-101290",
+      "id": "CVE-2026-75903",
+      "title": "CVE-2026-75903",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:14.727",
-      "summary": "A remote attacker may send a specially crafted network packet that causes the\naffected application to perform an out-of-bounds memory read due to insufficient validation of\npacket length. This may result in an application crash and a denial-of-service condition."
+      "date": "2026-10-16T08:17:13.513",
+      "summary": "The Vulnity Security plugin for WordPress is vulnerable to authentication bypass in all versions up to, and including, 1.4.3 This is due to insufficient protection of the delegated-login pairing credential file on Nginx-based installations, where the plugin's generated server configuration snippet guards the wrong directory path. This makes it possible for unauthenticated attackers to retrieve the stored credentials, forge signed REST API requests, and log in as an administrator."
     },
     {
-      "id": "CVE-2026-102461",
-      "title": "CVE-2026-102461",
+      "id": "CVE-2026-87111",
+      "title": "CVE-2026-87111",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:14.887",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the uniqueItems keyword validation uses an O(n²) pairwise comparison loop with no short-circuit or size limit. A remote unauthenticated attacker can submit a moderately-sized JSON array that consumes disproportionate CPU time, leading to denial of service.\n\n\n\nThe impacted component is io.vertx:vertx-json-schema.\n\n\n\nThe following Vert.x modules depend on vertx-json-schema and are also affected:\n\n\n\nio.vertx:vertx-web-openapi-router io.vertx:vertx-web-validation io.vertx:vertx-openapi"
+      "date": "2026-10-16T08:17:13.650",
+      "summary": "The User Registration PRO – Custom Registration Form, Login Form, and User Profile WordPress Plugin plugin for WordPress is vulnerable to Stored Cross-Site Scripting via HTTP Referer Header in all versions up to, and including, 6.2.9 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is present only in the premium build of the plugin and is not present in the free WordPress.org distribution. The nonce required to call the vulnerable AJAX endpoint is localized into the page source of every front-end page for anonymous visitors, making it fully obtainable by unauthenticated attackers."
     },
     {
-      "id": "CVE-2026-102462",
-      "title": "CVE-2026-102462",
+      "id": "CVE-2026-96870",
+      "title": "CVE-2026-96870",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.020",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the TDS message decoder in the Vert.x MSSQL client (vertx-mssql-client) aggregates inbound TDS packets into a composite direct-memory buffer without any cumulative size limit. A malicious, compromised, or man-in-the-middle SQL Server can send a continuous stream of TDS packets without setting the END_OF_MESSAGE status flag, causing unbounded direct-memory allocation on the client and leading to an out-of-memory crash. This occurs before authentication completes.\n\n\n\nThe impacted component is io.vertx:vertx-mssql-client."
+      "date": "2026-10-16T08:17:13.783",
+      "summary": "The SureDash – Community, Courses & Member Dashboard plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'display_name' parameter in all versions up to, and including, 1.12.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The exploit is triggered when any user hovers over a comment's like counter on a community page, as the plugin's tooltip handler assigns the attacker-controlled data-tooltip-description attribute value directly to innerHTML, re-parsing the browser-decoded entity payload as live HTML."
     },
     {
-      "id": "CVE-2026-102463",
-      "title": "CVE-2026-102463",
+      "id": "CVE-2026-101300",
+      "title": "CVE-2026-101300",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.143",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the binary array decoder in vertx-pg-client (DataTypeCodec.binaryDecodeArray) allocates a Java array sized by a server-declared 32-bit dimension count with no upper bound. A malicious or compromised PostgreSQL server, or an on-path attacker intercepting an unencrypted connection, can send a crafted DataRow message with an excessively large array dimension value, causing the client to attempt a multi-gigabyte heap allocation and crash with an OutOfMemoryError.\n\n\n\nThe impacted component is io.vertx:vertx-pg-client."
+      "date": "2026-10-16T09:17:03.703",
+      "summary": "Server-Side Request Forgery (SSRF) reported in the ticket sales chart PDF export functionality of Wegow. According to the report, an authenticated user with a promoter account can manipulate the <svg> parameter of the POST request generated by selecting Download PDF. The content is processed by the export.highcharts.com service, which sends HTTP requests to attacker-controlled external resources and embeds their responses in the generated PDF. The reported behavior allows the export service to be used as an intermediary for these requests."
     },
     {
-      "id": "CVE-2026-102464",
-      "title": "CVE-2026-102464",
+      "id": "CVE-2026-104003",
+      "title": "CVE-2026-104003",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.283",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the Eclipse Vert.x MQTT (vertx-mqtt) MqttClient stores every inbound QoS 2 PUBLISH message received from the broker in an internal map (qos2inbound) while awaiting the corresponding PUBREL packet to complete the QoS 2 handshake. This map has no size limit; the maxInflightQueue option is enforced only on the outbound publish path and does not constrain inbound message retention.\n\n\n\nA malicious or compromised MQTT broker can exploit this by sending QoS 2 PUBLISH messages with distinct packet identifiers and withholding the PUBREL responses. Each incomplete handshake causes the client to retain the full publish message (topic, payload, and metadata) indefinitely, leading to unbounded memory growth in the Vert.x process. This can degrade the MQTT-consuming application or cause out-of-memory termination.\n\n\n\nThe impacted component is io.vertx:vertx-mqtt."
+      "date": "2026-10-16T09:17:03.843",
+      "summary": "The WP User Avatar / ProfilePress plugin for WordPress is vulnerable to Arbitrary Shortcode Execution in versions up to, and including, 4.17.5. This is due to the get_user_profile_structure() function assembling the front-end profile buffer — which includes raw comment excerpts inlined by author_comment_query() — and passing the entire buffer to do_shortcode() after only a narrow neutralization pass (ppress_neutralize_buffer_shortcodes) that blocks pp-custom-html and bracket fragments containing HTML delimiters but leaves any other well-formed shortcode intact. This makes it possible for authenticated attackers, with Subscriber-level access and above, to inject arbitrary shortcodes (from any active plugin or theme) with attacker-chosen attributes by posting a comment whose body contains the shortcode markup; the shortcode is then executed server-side when any visitor loads the target's front-end profile Comments tab, letting the attacker reach capability-gated or data-returning shortcodes and inject raw HTML markup into a publicly viewable page."
     },
     {
-      "id": "CVE-2026-102466",
-      "title": "CVE-2026-102466",
+      "id": "CVE-2026-104726",
+      "title": "CVE-2026-104726",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.427",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the Vert.x MySQL client (vertx-mysql-client) pre-allocates an array for column definitions based on a server-declared column count with no upper-bound validation. A malicious or compromised MySQL server, or an attacker with man-in-the-middle positioning, can send a crafted result set packet with an extremely large column count, causing the client to attempt a massive heap allocation. The resulting OutOfMemoryError crashes the Netty event loop thread, causing a complete denial of service for all connections and verticles in the Vert.x application.\n\n\n\nThe impacted component is io.vertx:vertx-mysql-client."
+      "date": "2026-10-16T09:17:03.980",
+      "summary": "The Name Directory plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'dir' Shortcode Attribute in all versions up to, and including, 1.34.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-102469",
-      "title": "CVE-2026-102469",
+      "id": "CVE-2026-109224",
+      "title": "CVE-2026-109224",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.573",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the Vert.x DB2 client (vertx-db2-client) contains DRDA protocol handling code that deserializes User Defined Type (UDT) column data using a bare ObjectInputStream.readObject() call with no ObjectInputFilter or class allowlist.\n\n\n\nThis code path is triggered when a DRDA server sends a result set with a column tagged as UDT (FDOCA protocol LID 0x50). However, DB2 does not support this type of UDT. The FDOCA 0x50 type is never sent by a legitimate DB2 server.\n\n\n\nNevertheless, a malicious or man-in-the-middle DRDA server could craft a response with a 0x50-tagged column, causing the client to deserialize arbitrary attacker-controlled bytes on the Vert.x event loop before any application code can inspect or reject the data. If a Java deserialization gadget chain is present on the application's classpath, this enables remote code execution. Without a gadget chain, denial of service is possible via crafted object graphs. TLS is disabled by default, making man-in-the-middle exploitation feasible.\n\n\n\nThe impacted component is io.vertx:vertx-db2-client."
+      "date": "2026-10-16T09:17:04.113",
+      "summary": "The SureCart – Ecommerce Made Easy For Selling Physical Products, Digital Downloads, Subscriptions, Donations, & Payments plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'comment' parameter in all versions up to, and including, 4.9.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Successful execution requires the affected comment to appear on a post that loads the surecart-components runtime (e.g. via a [sc_buy_button] shortcode) and contains no sc-checkout element, as these conditions trigger the innerHTML sink in sc-cart-loader."
     },
     {
-      "id": "CVE-2026-102477",
-      "title": "CVE-2026-102477",
+      "id": "CVE-2026-111311",
+      "title": "CVE-2026-111311",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.720",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], a gRPC endpoint does have a configurable per message maximum size in bytes, however the maximum size applies to the received bytes. When applied to a compressed message, this only applies to the compressed size and not the actual size of the uncompressed content. This can be used to force a gRPC endpoint to allocate more bytes than the value defined by the configuration, making the endpoint vulnerable to compression bomb attacks.\n\n\n\nThe impacted component is io.vertx:vertx-gprc-server."
+      "date": "2026-10-16T09:17:04.250",
+      "summary": "The DoubleScale | All-in-One CRM – Sales, Multi-Channel Marketing, Newsletter, Booking, Helpdesk, Automation, MCP & More plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 1.5.1 via the store_upload function. This is due to a fail-open extension allow-list in extension_is_allowed() that returns true when wp_check_filetype() yields an empty type for unrecognized extensions such as .php, combined with magic-byte-only MIME detection and no capability check beyond is_user_logged_in(). This makes it possible for authenticated attackers, with subscriber-level access and above, to upload files that may be executable, which makes remote code execution possible. Exploitation requires the Helpdesk module to be enabled, as the vulnerable REST endpoint is only registered when that module is active."
     },
     {
-      "id": "CVE-2026-103223",
-      "title": "CVE-2026-103223",
+      "id": "CVE-2026-111472",
+      "title": "CVE-2026-111472",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.853",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the PostgreSQL message decoder reads the 4-byte message length field from the PostgreSQL wire protocol without any maximum validation. A malicious, compromised, or man-in-the-middle PostgreSQL server can send a message header with the length field set to an extremely large value (up to Integer.MAX_VALUE), causing the decoder to accumulate subsequent TCP data into a composite buffer without bound, leading to unbounded memory allocation on the client and an out-of-memory crash. This occurs before authentication completes.\n\n\n\nThe impacted component is io.vertx:vertx-pg-client."
+      "date": "2026-10-16T09:17:04.410",
+      "summary": "An SQL injection vulnerability has been discovered in TSG Profleet. The vulnerability could allow an attacker to retrieve, create, update and delete data from the database by sending a GET request using the ‘Identificación’ parameter of the ‘/cgi-bin/index.php’ endpoint."
     },
     {
-      "id": "CVE-2026-103224",
-      "title": "CVE-2026-103224",
+      "id": "CVE-2026-14177",
+      "title": "CVE-2026-14177",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:15.990",
-      "summary": "In Eclipse Vert.x versions [4.0.0, 4.5.34] or [5.0.0,5.0.12] or [5.1.0,5.1.9] or [5.2.0, 5.2.0], the MySQL message decoder aggregates inbound multi-packet payloads into a composite direct-memory buffer without any cumulative size limit. A malicious, compromised, or man-in-the-middle MySQL server can send a continuous stream of packets with the maximum payload length (0xFFFFFF), preventing the end-of-message condition from being reached, causing unbounded direct-memory allocation on the client and leading to an out-of-memory crash. This occurs before authentication completes.\n\n\n\nThe impacted component is io.vertx:vertx-mysql-client."
+      "date": "2026-10-16T09:17:04.533",
+      "summary": "Observable response discrepancy vulnerability in IKAS Technology Inc. Ikas E-Commerce Infrastructure allows Account Footprinting.\n\nThis issue affects ikas E-Commerce Infrastructure: through 2026-07-13."
     },
     {
-      "id": "CVE-2026-104617",
-      "title": "CVE-2026-104617",
+      "id": "CVE-2026-15219",
+      "title": "CVE-2026-15219",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:16.113",
-      "summary": "There are two invocations of `qrencode` to display a QR code for scanning. These invocations leak the private data $pin / $key via /proc accessible for arbitrary low-privileged users in the system."
+      "date": "2026-10-16T09:17:04.663",
+      "summary": "Authorization bypass through User-Controlled key vulnerability in SFM Software Technologies Inc. Costifier allows Exploitation of Trusted Identifiers.\n\nThis issue affects Costifier: through 2026-10-16.  NOTE: The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-104618",
-      "title": "CVE-2026-104618",
+      "id": "CVE-2026-15575",
+      "title": "CVE-2026-15575",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:16.263",
-      "summary": "On request the `sdbootutil` script creates a world-readable debug log in /var/log/sdbootutil.log. The log file is created world-readable, however, which means that arbitrary low-privileged users in the system will be able to extract secrets from it."
+      "date": "2026-10-16T09:17:04.790",
+      "summary": "Active debug code vulnerability in SFM Software Technologies Inc. Costifier allows Exploit Non-Production Interfaces.\n\nThis issue affects Costifier: through 2026-10-16. NOTE: The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-105271",
-      "title": "CVE-2026-105271",
+      "id": "CVE-2026-92766",
+      "title": "CVE-2026-92766",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:16.410",
-      "summary": "\"ゲオアプリ\" provided by GEO CORPORATION contains an issue with cleartext storage of sensitive information, which may allow an attacker to obtain the password of a user of the affected application."
+      "date": "2026-10-16T09:17:04.963",
+      "summary": "The Vitepos – Point of Sale (POS) for WooCommerce plugin for WordPress is vulnerable to generic SQL Injection via the 'src_by' parameter in all versions up to, and including, 3.5.1 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. This makes it possible for unauthenticated attackers, or authenticated attackers holding any POS role (such as vtpos-cashier), to exploit the vulnerability, as the /vitepos/v1/vendor/list REST route's permission callback requires only a POS role assignment rather than any elevated WordPress capability."
     },
     {
-      "id": "CVE-2026-109855",
-      "title": "CVE-2026-109855",
+      "id": "CVE-2026-93681",
+      "title": "CVE-2026-93681",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:16.573",
-      "summary": "undici is an HTTP client library for Node.js. In versions 8.11.0 and 8.11.1, its experimental WebSocket client, which is enabled by default when HTTP/2 is allowed, mishandles a failed WebSocket handshake over HTTP/2: the request is already marked completed, so the abort becomes a no-op and the underlying HTTP/2 stream is left open with no error listener. When a malicious server then destroys the connection, the orphaned stream emits an unhandled error and the Node.js process exits. A remote, unauthenticated server can therefore crash any client that opens a WebSocket to it over HTTP/2, resulting in a denial of service. The issue is fixed in undici 8.11.2, and users should upgrade to 8.11.2 or later. As a workaround, set allowH2 to false to disable HTTP/2 for WebSocket connections, or avoid opening WebSocket connections to untrusted servers."
+      "date": "2026-10-16T09:17:05.107",
+      "summary": "The Tutor LMS – eLearning and online course solution plugin for WordPress is vulnerable to Stored Cross-Site Scripting via display_name Parameter in all versions up to, and including, 4.1.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that a Legal Consent record exists for the attacker's user account, causing the View Logs button to appear in the wp-admin/users.php Consent Logs column."
     },
     {
-      "id": "CVE-2026-16436",
-      "title": "CVE-2026-16436",
+      "id": "CVE-2026-106030",
+      "title": "CVE-2026-106030",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:16.717",
-      "summary": "Weak Password Recovery Mechanism for Forgotten Password vulnerability in Mitsubishi Electric GENESIS versions 11.03 and prior, GENESIS64 versions 10.97.3 and prior, ICONICS Suite versions 10.97.3 and prior, Hyper Historian versions 10.97.3 and prior, AnalytiX versions 10.97.3 and prior, MobileHMI 10.97.3 and prior, IoTWorX 10.97.3 and prior, MC Works64 all versions, GENESIS32 all versions, BizViz all versions, Mitsubishi Electric Iconics Digital Solutions GENESIS versions 11.03 and prior, GENESIS64 versions 10.97.3 and prior, ICONICS Suite versions 10.97.3 and prior, Hyper Historian versions 10.97.3 and prior, AnalytiX versions 10.97.3 and prior, MobileHMI 10.97.3 and prior, IoTWorX 10.97.3 and prior, GENESIS32 all versions, and BizViz all versions allows a remote attacker to unlock the system by obtaining the challenge response by some means. The challenge response used to unlock the system is common to all users and fixed. As a result, the attacker may disclose, tamper with, destroy, or delete internal information, or cause the affected system to enter a denial-of-service (DoS) condition."
+      "date": "2026-10-16T10:18:03.327",
+      "summary": "NordVPN for Windows allows local attackers to stop unprotected Windows system services and change their startup type to Manual via named pipes. The NordVPN user-mode application allows a low-privileged attacker to act as a trusted process and connect to the named pipe \"\\\\.\\pipe\\nord-security\\v1\\NordVpnService\\Server\". The attacker can then invoke the \"ISettingsGrpc.StopService\" and \"ISettingsGrpc.ChangeServiceStartType\" methods with an arbitrary service name, allowing them to stop any unprotected Windows service and change its startup type. This leads to denial of service of critical system services. Services protected by Windows (PPL processes, Windows Tamper Protection), such as Windows Defender, cannot be stopped or reconfigured.\n\n\nThis issue was fixed in version 8.12"
     },
     {
-      "id": "CVE-2026-16437",
-      "title": "CVE-2026-16437",
+      "id": "CVE-2026-107649",
+      "title": "CVE-2026-107649",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:16.910",
-      "summary": "Weak Password Recovery Mechanism for Forgotten Password vulnerability in Mitsubishi Electric GENESIS versions 11.03 and prior, GENESIS64 versions 10.97.3 and prior, ICONICS Suite versions 10.97.3 and prior, Hyper Historian versions 10.97.3 and prior, AnalytiX versions 10.97.3 and prior, MobileHMI 10.97.3 and prior, IoTWorX 10.97.3 and prior, MC Works64 all versions, GENESIS32 all versions, BizViz all versions, Mitsubishi Electric Iconics Digital Solutions GENESIS versions 11.03 and prior, GENESIS64 versions 10.97.3 and prior, ICONICS Suite versions 10.97.3 and prior, Hyper Historian versions 10.97.3 and prior, AnalytiX versions 10.97.3 and prior, MobileHMI 10.97.3 and prior, IoTWorX 10.97.3 and prior, GENESIS32 all versions, and BizViz all versions allows an authenticated local user with administrative privileges to unlock the system by tampering with the management file that stores the challenge response. Administrators are able to read and write the management file. But the management file is protected by Windows. As a result, the attacker may disclose, tamper with, destroy, or delete internal information, or cause the affected system to enter a denial-of-service (DoS) condition."
+      "date": "2026-10-16T10:18:04.307",
+      "summary": "The Events Made Easy plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'event[location_name]' parameter in all versions up to, and including, 3.2.22 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is only exploitable when both the guest event submission feature (eme_fs[guest_submit]) and forced location creation (eme_fs[force_location_creation]) are explicitly enabled by a site administrator, as both settings default to off."
     },
     {
-      "id": "CVE-2026-16438",
-      "title": "CVE-2026-16438",
+      "id": "CVE-2026-110703",
+      "title": "CVE-2026-110703",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:17.087",
-      "summary": "Incorrect Privilege Assignment vulnerability in Mitsubishi Electric GENESIS64 versions 10.97.3 and prior, ICONICS Suite versions 10.97.3 and prior, Hyper Historian versions 10.97.3 and prior, AnalytiX versions 10.97.3 and prior, MobileHMI 10.97.3 and prior, MC Works64 all versions, Mitsubishi Electric Iconics Digital Solutions GENESIS64 versions 10.97.3 and prior, ICONICS Suite versions 10.97.3 and prior, Hyper Historian versions 10.97.3 and prior, AnalytiX versions 10.97.3 and prior, and MobileHMI 10.97.3 and prior allows an attacker who can log in using the same administrator account for the affected products to launch and operate DCOM objects locally or remotely. During installation, the installers of the affected products unnecessarily grant default DCOM permissions to the administrator account of the affected products. Users with that administrator accounts can locally or remotely launch and operate DCOM objects that should require UAC elevation. As a result, the attacker may disclose, tamper with, destroy, or delete internal information, or cause the affected system to enter a denial-of-service (DoS) condition."
+      "date": "2026-10-16T10:18:05.447",
+      "summary": "The GeoDirectory – WP Business Directory Plugin and Classified Listings Directory plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'post_content' parameter in all versions up to, and including, 2.8.191 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This requires the attacker to own a published listing, as the ownership check in GeoDir_Post_Data::can_edit() limits who can store the payload; however, because ajax_save_post() re-applies the existing post_status, edits to an already-published listing bypass re-moderation and remain live immediately."
     },
     {
-      "id": "CVE-2026-18661",
-      "title": "CVE-2026-18661",
+      "id": "CVE-2026-14452",
+      "title": "CVE-2026-14452",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:17.270",
-      "summary": "In Eclipse Jetty, across various versions of `jetty-annotations`, and `jetty-eeN-annotations`, the Jakarta Spec authoritative url-pattern rules for mixed `@ServletSecurity` annotation, and `web.xml` defined `security-constraint` on the same `url-pattern` were not being applied if the `web.xml` had more than 1 `url-pattern` for a servlet, and had a `security-constraint` applying to only some of those `url-pattern` definitions."
+      "date": "2026-10-16T10:18:05.653",
+      "summary": "Improper validation of the reset_url parameter of the Setup in-page search in Checkmk <2.5.0p15, <2.4.0p38, <2.3.0p51 and 2.2.0 (EOL) allows an attacker to execute arbitrary script in the session of an authenticated user with Setup access, or to redirect that user to an arbitrary external site, by tricking the user into opening a crafted URL and clicking the Reset button or submitting an empty search."
     },
     {
-      "id": "CVE-2026-35088",
-      "title": "CVE-2026-35088",
+      "id": "CVE-2026-96768",
+      "title": "CVE-2026-96768",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:17.417",
-      "summary": "Slican telephone exchanges use symmetric encryption for TCP/IP communication. Secret key is hardcoded in multiple binary files. An attacker who has access to these files can decrypt the communication.\n\nThis issue was fixed in IPx series version 6.62.0100.\n\nThe issue STILL EXISTS in End-Of-Life telephone exchanges:\n- CCT-1668 (CCT1CPU)\n- MAC-6400\n- CXS-0424\nThese products were discontinued in 2011 and 2012 and and will not receive updates. These products require a hardware update in order to receive a software update. The vendor recommends that users of these devices contact the their service department directly to determine the options for upgrading."
+      "date": "2026-10-16T10:18:05.863",
+      "summary": "The GoSMTP Pro plugin for WordPress is vulnerable to Stored Cross-Site Scripting via Comment Content via Email Log Body in all versions up to, and including, 1.2.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The exploit is made possible because WordPress comment kses does not strip entity-encoded tag delimiters, allowing the payload to pass moderation as safe text before being decoded into live HTML by core email notification functions and written verbatim into the plugin's email log database table."
     },
     {
-      "id": "CVE-2026-63314",
-      "title": "CVE-2026-63314",
+      "id": "CVE-2026-109118",
+      "title": "CVE-2026-109118",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:17.713",
-      "summary": "WebCTI service for Slican IPx telephone exchanges is vulnerable to SQL Injection in /webcti/admin_json.php enpoint. Improper neutralization of input allows an authenticated attacker to execute SQL Injection attacks.\n\n\nThis issue was fixed in IPx series version 6.62.0100."
+      "date": "2026-10-16T11:17:00.793",
+      "summary": "Improper path containment check in ikus060 rdiffweb 7.1.1 allows an authenticated user to cause the browse, restore, history and delete operations to resolve to a path outside the repository being operated on, via a percent-encoded traversal sequence (%2e%2e) in the request path, because the containment check uses a string prefix comparison (startswith) instead of a filesystem path boundary check. The target must be a sibling path whose name begins with the repository path, and the user already hold permissions on it; the issue can mislead a user into operating on, or deleting, data other than the repository displayed"
     },
     {
-      "id": "CVE-2026-63315",
-      "title": "CVE-2026-63315",
+      "id": "CVE-2026-109119",
+      "title": "CVE-2026-109119",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:17.857",
-      "summary": "WebCTI service for Slican IPx telephone exchanges stores temporary subscriber password in plaintext. An attacker with access to the database can obtain the user's password and log in to the subscriber's account.\n\n\n\nThis issue was fixed in IPx series version 6.62.0100."
+      "date": "2026-10-16T11:17:00.927",
+      "summary": "Improper Privilege Management in the user management API endpoint (/api/users/{username_or_id}) in Rdiffweb allows authenticated users to elevate their privileges to administrator by modifying the role parameter in a POST request."
     },
     {
-      "id": "CVE-2026-72528",
-      "title": "CVE-2026-72528",
+      "id": "CVE-2026-105959",
+      "title": "CVE-2026-105959",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:17.993",
-      "summary": "\"Handmade Marketplace App - Creema\" provided by CREEMA LTD. contains an open redirect vulnerability. When accessing a specially crafted URL, a website set up by the attacker may be displayed within the app's screen of a user. As a result, the user may become a victim of a phishing attack."
+      "date": "2026-10-16T12:16:31.733",
+      "summary": "A flaw was found in spice-server. The GLZ encoder dictionary restore path truncates a size_t allocation size to int when calling the malloc callback, allowing a malicious authenticated SPICE client during VM live migration to trigger a massive heap buffer overflow by sending a crafted max_encoders value in migration data."
     },
     {
-      "id": "CVE-2026-75559",
-      "title": "CVE-2026-75559",
+      "id": "CVE-2026-107648",
+      "title": "CVE-2026-107648",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:18.147",
-      "summary": "The smartphone application \"Vehicle Inspection Certificate Viewer\" contains a vulnerability in which sensitive information may be included in data transmitted by the application, potentially leading to the exposure of API integration credentials such as an access ID and access key."
+      "date": "2026-10-16T12:16:32.053",
+      "summary": "The WP Sessions Time Monitoring Full Automatic plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'action (also function, plugin, post_type, post_status, ids, loggedout, and POST post_title)' parameter in all versions up to, and including, 1.1.5 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-76182",
-      "title": "CVE-2026-76182",
+      "id": "CVE-2026-109930",
+      "title": "CVE-2026-109930",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:18.300",
-      "summary": "In Eclipse Jetty, `TryPathsHandler` and `TryFilesFilter` can be configured to forward requests to template URIs such as `index?p=$path`, where `$path` is the request path in context.\n\n\n\nHowever, URI paths may contain characters that are reserved in URI queries so that a path of `/s&a=1` when applied to the template becomes `index?p=/s&a=1`, which is interpreted as 2 query parameters: `p=/s` and `a=1`, rather than just one query parameter `p` whose value is `/s&a=1`."
+      "date": "2026-10-16T12:16:32.273",
+      "summary": "The MAIO WordPress plugin before 7.3.22 does not properly restrict access to its analytics data, treating a credential value shipped verbatim in its own public source as a valid API key, which allows unauthenticated attackers to retrieve the stored crawl-analytics log, including each recorded visitor's IP address, user agent and referer."
     },
     {
-      "id": "CVE-2026-76184",
-      "title": "CVE-2026-76184",
+      "id": "CVE-2026-110029",
+      "title": "CVE-2026-110029",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:18.443",
-      "summary": "In Eclipse Jetty, HttpClient may receive a redirect of the form:\n\n\n\n```\n\n\n\n/secure/../evil\n\n\n\n```\n\n\n\nIf an attacker is able to control the redirects, then HttpClient matches authentication credentials against `/secure` rather than normalizing the path to `/evil`, and will therefore follow the redirect sending the `Authorization` header for `/secure` to `/evil`.\n\n\n\nThis also mean that the attacker must have an evil application deployed on the same domain as the target."
+      "date": "2026-10-16T12:16:32.387",
+      "summary": "The Squeeze WordPress plugin before 1.8.1 does not perform a capability check on one of its AJAX actions, allowing authenticated users with a role as low as Subscriber to revert any attachment to its backup copy and to permanently delete that backup and the plugin's generated WebP derivatives, regardless of ownership."
     },
     {
-      "id": "CVE-2026-77711",
-      "title": "CVE-2026-77711",
+      "id": "CVE-2026-111390",
+      "title": "CVE-2026-111390",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:18.573",
-      "summary": "When Jetty's `HttpClient` make a request to a server through a forward proxy, the server may reply with a 407 (Proxy Authentication Required).\n\n\n\nThe client mistakenly interprets the 407 as coming from the proxy, so it re-sends the request with the `Proxy-Authentication` header, which arrives to the server, that now has access to the proxy credentials."
+      "date": "2026-10-16T12:16:33.050",
+      "summary": "Erupt through 2.3.0 contains an HQL injection vulnerability that allows authenticated users to bypass tree-scoped data filters by injecting unescaped quotes into the linkTreeVal parameter of POST /erupt-api/data/table/{erupt}. Attackers holding query permission on entities with String-keyed linkTree targets can append always-true OR clauses or boolean subqueries to read data from other mapped entities."
     },
     {
-      "id": "CVE-2026-79823",
-      "title": "CVE-2026-79823",
+      "id": "CVE-2026-111391",
+      "title": "CVE-2026-111391",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:18.707",
-      "summary": "HPE NonStop EMS Distributor is vulnerable to buffer overflow condition that may result in undesirable behavior."
+      "date": "2026-10-16T12:16:33.197",
+      "summary": "SGLang 0.5.10 through 0.5.22 contains a code injection vulnerability in _evaluate_filter() that allows remote attackers to execute Python code by escaping the eval() sandbox through re.search __globals__. Attackers can send a crafted filter expression to the unauthenticated /dumper/configure endpoint when DUMPER_SERVER_PORT is set, running code in the scheduler process on the next forward pass."
     },
     {
-      "id": "CVE-2026-96614",
-      "title": "CVE-2026-96614",
+      "id": "CVE-2026-105958",
+      "title": "CVE-2026-105958",
       "source": "NIST NVD",
-      "date": "2026-10-15T09:17:18.833",
-      "summary": "\"ゲオアプリ\" provided by GEO CORPORATION is vulnerable to improper authorization in handler for a custom URL scheme. An attacker may be able to cause the application's in-app browser to access an arbitrary website, potentially leading to phishing attacks or disclosure of a service's session ID."
+      "date": "2026-10-16T13:16:53.480",
+      "summary": "A flaw was found in spice-server. Multiple migration data handlers use client-supplied offsets from SPICE_MSGC_MIGRATE_DATA messages without bounds validation, allowing a malicious authenticated SPICE client during VM live migration to read arbitrary heap memory or trigger heap corruption via out-of-bounds read and write operations on the message buffer."
     },
     {
-      "id": "CVE-2026-18659",
-      "title": "CVE-2026-18659",
+      "id": "CVE-2026-107564",
+      "title": "CVE-2026-107564",
       "source": "NIST NVD",
-      "date": "2026-10-15T10:17:11.943",
-      "summary": "In Eclipse Jetty, across various versions of `jetty-security`, and `jetty-eeN-security`, and `jetty-eeN-servlet`, the Jakarta Spec constraints defined as `http-method-omission` can be bypassed by using substrings of the defined HTTP Methods."
+      "date": "2026-10-16T13:16:54.013",
+      "summary": "An unauthenticated remote attacker may use an allocation of resources without limits or throttling weakness in the affected product to cause high CPU load leading to a denial of service."
     }
   ]
 }
