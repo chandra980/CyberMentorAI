@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-10-23T07:43:55.854959+00:00",
+  "generated_at": "2026-10-24T07:26:06.063863+00:00",
   "items": [
+    {
+      "id": "CVE-2026-114625",
+      "title": "CVE-2026-114625 - Arista VeloCloud Orchestrator SQL Injection Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-23",
+      "vendor": "Arista",
+      "product": "VeloCloud Orchestrator",
+      "summary": "Arista VeloCloud Orchestrator on-prem contains a SQL injection vulnerability that may allow a remote attacker to access privileged internal functionality and impact the VCO host. Successful exploitation may compromise the confidentiality, integrity, and availability of the orchestrator and data managed by the orchestrator.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-26"
+    },
+    {
+      "id": "CVE-2026-110447",
+      "title": "CVE-2026-110447 - Collabora Online – Built-in CODE Server OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-23",
+      "vendor": "Collabora",
+      "product": "Collabora Online – Built-in CODE Server",
+      "summary": "Collabora Collabora Online – Built-in CODE Server when used within the NextCloud platform contains an OS command injection vulnerability that allows for remote code execution when the CODE server isn't running.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-10-26"
+    },
     {
       "id": "CVE-2026-106931",
       "title": "CVE-2026-106931 - EG Secure Solutions SiteGuard Server Edition OS Command Injection Vulnerability",
@@ -860,306 +882,284 @@
       "due": "2026-08-29"
     },
     {
-      "id": "CVE-2026-60004",
-      "title": "CVE-2026-60004 - Gitea Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-25",
-      "vendor": "Gitea",
-      "product": "Gitea",
-      "summary": "Gitea contains a code injection vulnerability that allows an attacker with repository write access to send a malicious patch to the diffpatch API endpoint to plant an executable Git hook and run shell commands as the Gitea service account.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-28"
-    },
-    {
-      "id": "CVE-2026-21962",
-      "title": "CVE-2026-21962 - Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in Improper Access Control Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-24",
-      "vendor": "Oracle",
-      "product": "HTTP Server and Oracle Weblogic Server Proxy Plug-in",
-      "summary": "Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in contain an improper access control vulnerability that can result in unauthorized creation, deletion or modification access to critical data as well as unauthorized access to critical data or complete access to all Oracle HTTP Server and Oracle Weblogic Server Proxy Plug-in accessible data.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-27"
-    },
-    {
-      "id": "CVE-2026-100106",
-      "title": "CVE-2026-100106",
+      "id": "CVE-2026-100316",
+      "title": "CVE-2026-100316",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:11.207",
-      "summary": "The FiboSearch – Ajax Search for WooCommerce plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'purchased_plan' parameter in all versions up to, and including, 1.34.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that the site owner has previously completed the standard Freemius opt-in flow; once that condition is met, any Subscriber can reach the vulnerable handler simply by loading /wp-admin/profile.php with the requisite query parameters."
+      "date": "2026-10-17T08:16:26.950",
+      "summary": "The European VAT Compliance Assistant for WooCommerce plugin for WordPress is vulnerable to Stored Cross-Site Scripting via CF-IPCountry Header in all versions up to, and including, 1.36.10 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The malicious header value is persisted verbatim into order post-meta during a guest checkout, meaning no account or authentication is required to plant the payload."
     },
     {
-      "id": "CVE-2026-100108",
-      "title": "CVE-2026-100108",
+      "id": "CVE-2026-109983",
+      "title": "CVE-2026-109983",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:12.320",
-      "summary": "The Social Share Buttons plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'form (containing share_url)' parameter in all versions up to, and including, 1.30 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that the 7-day review-nag timer has elapsed since the attacker's first wp-admin visit, as the nonce needed to reach the save-network handler is only rendered in the DOM once that timer has passed."
+      "date": "2026-10-17T08:16:28.020",
+      "summary": "The YMC Filter plugin for WordPress is vulnerable to Stored DOM-Based Cross-Site Scripting via the 'post_title' parameter in all versions up to, and including, 3.12.19 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with author-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The autocomplete REST endpoint is registered with a permission callback that unconditionally returns true, meaning any site visitor — including unauthenticated users — can trigger the payload simply by typing in the YMC filter search box, while only Author-level access is required to store it."
     },
     {
-      "id": "CVE-2026-16251",
-      "title": "CVE-2026-16251",
+      "id": "CVE-2026-110253",
+      "title": "CVE-2026-110253",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:12.527",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to limit the size of remote image responses buffered in memory during local image proxy direct fetches, which allows a remote attacker to cause memory exhaustion on the server via a crafted oversized image response.. Mattermost Advisory ID: MMSA-2026-00726"
+      "date": "2026-10-17T08:16:28.167",
+      "summary": "The weForms – Easy Drag & Drop Contact Form Builder For WordPress plugin for WordPress is vulnerable to limited media file deletion due to insufficient file path validation in the weforms_delete_entry_attachments function in all versions up to, and including, 1.6.28 This makes it possible for unauthenticated attackers to delete arbitrary media files on the server. This requires an administrator to permanently delete the poisoned form entry, a routine moderation action for spam-looking submissions that an attacker can prompt through social engineering."
     },
     {
-      "id": "CVE-2026-16453",
-      "title": "CVE-2026-16453",
+      "id": "CVE-2026-111110",
+      "title": "CVE-2026-111110",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:12.640",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to verify the integrity of the SAML RelayState POST parameter which allows an authenticated SAML user to join any team, including invite-only teams, via forging the team_id or invite_id fields in the RelayState.. Mattermost Advisory ID: MMSA-2026-00727"
+      "date": "2026-10-17T08:16:28.310",
+      "summary": "The Payment forms, Buy now buttons, and Invoicing System | GetPaid plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'mmdwqzpoxadd' parameter in all versions up to, and including, 2.8.61 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The required nonce (getpaid_form_nonce) is publicly emitted to all visitors via wp_localize_script as WPInv.formNonce, meaning no authentication or prior nonce leak is needed; the stored payload fires when an administrator views the affected invoice's Payment Form Details metabox."
     },
     {
-      "id": "CVE-2026-18223",
-      "title": "CVE-2026-18223",
+      "id": "CVE-2026-110889",
+      "title": "CVE-2026-110889",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:12.753",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to validate the invited recipient's email address when redeeming team and guest invitation tokens, which allows an authenticated attacker to join a team or gain unauthorized access to private channels via a forwarded or leaked invitation link.. Mattermost Advisory ID: MMSA-2026-00747"
+      "date": "2026-10-17T11:16:32.017",
+      "summary": "Generation of Error Message Containing Sensitive Information vulnerability in Gantry Gantry 5 Framework gantry5 allows Retrieve Embedded Sensitive Data.This issue affects Gantry 5 Framework: from n/a through 5.6.4."
     },
     {
-      "id": "CVE-2026-18256",
-      "title": "CVE-2026-18256",
+      "id": "CVE-2026-109701",
+      "title": "CVE-2026-109701",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:12.863",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to properly restrict private teams from public team search results, which allows an authenticated user without permission to list private teams to disclose the ID, name, and display name of private teams via a modified team search request. Mattermost Advisory ID: MMSA-2026-00748"
+      "date": "2026-10-17T17:16:28.973",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in PAYCOMET PAYCOMET for WooCommerce paytpv-for-woocommerce allows Reflected XSS.This issue affects PAYCOMET for WooCommerce: from n/a through 5.45."
     },
     {
-      "id": "CVE-2026-18560",
-      "title": "CVE-2026-18560",
+      "id": "CVE-2024-58398",
+      "title": "CVE-2024-58398",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:12.967",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to validate user’s permissions before other validations which allows non-content reviewers to infer a post’s flagged status via direct API call.. Mattermost Advisory ID: MMSA-2026-00754"
+      "date": "2026-10-17T19:16:27.860",
+      "summary": "Coder 2.3.1 before 2.14.4, 2.15.x before 2.15.3, and 2.16.0 before 2.16.1 contains an open redirect vulnerability in the login page because the redirect query parameter is improperly sanitized. Attackers can craft a Coder login URL that, when clicked by a logged-in user, redirects the victim to an attacker-controlled website for phishing."
     },
     {
-      "id": "CVE-2026-18799",
-      "title": "CVE-2026-18799",
+      "id": "CVE-2025-71435",
+      "title": "CVE-2025-71435",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.073",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to restrict Slack import account binding to system administrator-initiated imports which allows an authenticated attacker with team admin privileges to force-add existing Mattermost users to their team and forge posts attributed to those users' identities via a crafted Slack export containing target users' email addresses.. Mattermost Advisory ID: MMSA-2026-00757"
+      "date": "2026-10-17T19:16:28.683",
+      "summary": "Coder before 2.23.0 contains a session expiration bypass vulnerability that allows authenticated users to retain access after OIDC token expiry when no refresh token is issued. Users can keep their APIKey cookie active through regular use, extending it every 24 hours to access Coder indefinitely after losing OIDC authorization."
     },
     {
-      "id": "CVE-2026-19076",
-      "title": "CVE-2026-19076",
+      "id": "CVE-2026-110882",
+      "title": "CVE-2026-110882",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.177",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to reject OAuth application sessions in the account type switch endpoint, which allows an attacker with a valid OAuth bearer token for a target user to permanently take over that user's SSO-backed account by setting an attacker-controlled password and detaching the account from its identity provider via a crafted request to POST /api/v4/users/login/switch.. Mattermost Advisory ID: MMSA-2026-00758"
+      "date": "2026-10-17T19:16:28.830",
+      "summary": "Missing Authorization vulnerability in Cozy Vision Technologies Pvt. Ltd. SMS Alert Order Notifications sms-alert allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects SMS Alert Order Notifications: from n/a through 4.0.1."
     },
     {
-      "id": "CVE-2026-19600",
-      "title": "CVE-2026-19600",
+      "id": "CVE-2026-111880",
+      "title": "CVE-2026-111880",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.283",
-      "summary": "Mattermost versions 11.9.x <= 11.9.1, 11.8.x <= 11.8.5, 11.7.x <= 11.7.10, 11.10.x <= 11.10.1 fail to sanitize authentication tokens before writing them to server log entries, which allows an attacker with access to server logs to obtain valid session tokens or OAuth access tokens and impersonate authenticated users via the debug-level Mattermost server log.. Mattermost Advisory ID: MMSA-2026-00763"
+      "date": "2026-10-17T19:16:28.960",
+      "summary": "FreeRDP versions from 2.0.0 before 3.32.0 contain a heap out-of-bounds write in the server hash-callback NTLM path that fails to validate the MIC offset. Unauthenticated attackers can send a crafted AUTHENTICATE_MESSAGE with a backward session-key offset and MIC offset to write 16 zero bytes beyond the allocation."
     },
     {
-      "id": "CVE-2026-19621",
-      "title": "CVE-2026-19621",
+      "id": "CVE-2026-111881",
+      "title": "CVE-2026-111881",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.390",
-      "summary": "Mattermost versions 11.10.x <= 11.10.0, 11.7.x <= 11.7.9, 11.9.x <= 11.9.1, 11.8.x <= 11.8.5 fail to strip action integration secrets from post payloads before broadcasting post-deletion web socket events and returning thread API responses, which allows an authenticated channel member to obtain server-side webhook URLs and authentication context from interactive-message posts via the post_deleted websocket event or the threads REST API.. Mattermost Advisory ID: MMSA-2026-00766"
+      "date": "2026-10-17T19:16:29.103",
+      "summary": "FreeRDP from 3.14.1 before 3.32.0 contains an integer underflow in the WinPR BMP writer, where a mismatched stride calculation passes SIZE_MAX - 3 to Stream_Zero for sub-byte images. A malicious RDP clipboard peer can return a crafted 1-bpp BMP processed by clipboard_synthesize_image_format_to_bmp for CF_DIB/CF_DIBV5, crashing the client or causing an out-of-bounds write."
     },
     {
-      "id": "CVE-2026-75903",
-      "title": "CVE-2026-75903",
+      "id": "CVE-2026-111882",
+      "title": "CVE-2026-111882",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.513",
-      "summary": "The Vulnity Security plugin for WordPress is vulnerable to authentication bypass in all versions up to, and including, 1.4.3 This is due to insufficient protection of the delegated-login pairing credential file on Nginx-based installations, where the plugin's generated server configuration snippet guards the wrong directory path. This makes it possible for unauthenticated attackers to retrieve the stored credentials, forge signed REST API requests, and log in as an administrator."
+      "date": "2026-10-17T19:16:29.240",
+      "summary": "phpMyFAQ 3.2.0-alpha before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains an authentication bypass vulnerability that allows IdP-authenticated users to skip TOTP two-factor authentication through the Keycloak and Entra ID SSO callbacks. Attackers holding a valid or phished IdP identity linked to a 2FA-enabled account can complete the OIDC flow and obtain a fully authenticated session, including administrator accounts."
     },
     {
-      "id": "CVE-2026-87111",
-      "title": "CVE-2026-87111",
+      "id": "CVE-2026-111884",
+      "title": "CVE-2026-111884",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.650",
-      "summary": "The User Registration PRO – Custom Registration Form, Login Form, and User Profile WordPress Plugin plugin for WordPress is vulnerable to Stored Cross-Site Scripting via HTTP Referer Header in all versions up to, and including, 6.2.9 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is present only in the premium build of the plugin and is not present in the free WordPress.org distribution. The nonce required to call the vulnerable AJAX endpoint is localized into the page source of every front-end page for anonymous visitors, making it fully obtainable by unauthenticated attackers."
+      "date": "2026-10-17T19:16:29.450",
+      "summary": "phpMyFAQ before 4.1.9 and 4.2.0-alpha before 4.2.0-beta does not require the current password when changing an account e-mail in the user control panel (UserController::updateData, api/user/data/update), checking only the session and CSRF token. An attacker with a hijacked session can set the e-mail to their own mailbox and use the password-reset flow to take over non-2FA accounts, including superadmin."
     },
     {
-      "id": "CVE-2026-96870",
-      "title": "CVE-2026-96870",
+      "id": "CVE-2026-111885",
+      "title": "CVE-2026-111885",
       "source": "NIST NVD",
-      "date": "2026-10-16T08:17:13.783",
-      "summary": "The SureDash – Community, Courses & Member Dashboard plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'display_name' parameter in all versions up to, and including, 1.12.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The exploit is triggered when any user hovers over a comment's like counter on a community page, as the plugin's tooltip handler assigns the attacker-controlled data-tooltip-description attribute value directly to innerHTML, re-parsing the browser-decoded entity payload as live HTML."
+      "date": "2026-10-17T19:16:29.610",
+      "summary": "phpMyFAQ from 4.2.0-alpha before 4.2.0-beta contains a missing authorization vulnerability in GroupController::deleteGroup() that omits privilege-level checks on target groups. Authenticated non-SuperAdmin administrators holding GROUP_DELETE can send a crafted groupId to /admin/api/group/delete to permanently destroy higher-privileged groups and strip members' inherited rights."
     },
     {
-      "id": "CVE-2026-101300",
-      "title": "CVE-2026-101300",
+      "id": "CVE-2026-111886",
+      "title": "CVE-2026-111886",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:03.703",
-      "summary": "Server-Side Request Forgery (SSRF) reported in the ticket sales chart PDF export functionality of Wegow. According to the report, an authenticated user with a promoter account can manipulate the <svg> parameter of the POST request generated by selecting Download PDF. The content is processed by the export.highcharts.com service, which sends HTTP requests to attacker-controlled external resources and embeds their responses in the generated PDF. The reported behavior allows the export service to be used as an intermediary for these requests."
+      "date": "2026-10-17T19:16:29.770",
+      "summary": "phpMyFAQ from 4.2.0-alpha.2 before 4.2.0-beta lacks brute-force lockout in the removeTwofactorConfig() 2FA removal endpoint, allowing authenticated attackers to guess TOTP codes without limit. Attackers holding a hijacked session and CSRF token can repeatedly POST guesses to /api/user/remove-twofactor to permanently disable the victim's 2FA."
     },
     {
-      "id": "CVE-2026-104003",
-      "title": "CVE-2026-104003",
+      "id": "CVE-2026-111887",
+      "title": "CVE-2026-111887",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:03.843",
-      "summary": "The WP User Avatar / ProfilePress plugin for WordPress is vulnerable to Arbitrary Shortcode Execution in versions up to, and including, 4.17.5. This is due to the get_user_profile_structure() function assembling the front-end profile buffer — which includes raw comment excerpts inlined by author_comment_query() — and passing the entire buffer to do_shortcode() after only a narrow neutralization pass (ppress_neutralize_buffer_shortcodes) that blocks pp-custom-html and bracket fragments containing HTML delimiters but leaves any other well-formed shortcode intact. This makes it possible for authenticated attackers, with Subscriber-level access and above, to inject arbitrary shortcodes (from any active plugin or theme) with attacker-chosen attributes by posting a comment whose body contains the shortcode markup; the shortcode is then executed server-side when any visitor loads the target's front-end profile Comments tab, letting the attacker reach capability-gated or data-returning shortcodes and inject raw HTML markup into a publicly viewable page."
+      "date": "2026-10-17T19:16:29.930",
+      "summary": "phpMyFAQ before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains an account enumeration vulnerability that allows unauthenticated attackers to confirm registered display names and emails via a distinct HTTP 409 response. Attackers can submit guest comments to the comment create endpoint with candidate user and mail values to link names to emails for targeted phishing."
     },
     {
-      "id": "CVE-2026-104726",
-      "title": "CVE-2026-104726",
+      "id": "CVE-2026-111888",
+      "title": "CVE-2026-111888",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:03.980",
-      "summary": "The Name Directory plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'dir' Shortcode Attribute in all versions up to, and including, 1.34.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+      "date": "2026-10-17T19:16:30.080",
+      "summary": "phpMyFAQ from 4.0.0 before 4.1.9 contains an incorrect authorization vulnerability that allows delegated admins lacking the editnews right to modify news by calling PUT /admin/api/news/update, which checks NEWS_DELETE instead of NEWS_EDIT. Attackers holding addnews and delnews can read the update-news CSRF token from their own cookie and rewrite any news item's header, body, author, link and active flag shown on the public front page."
     },
     {
-      "id": "CVE-2026-109224",
-      "title": "CVE-2026-109224",
+      "id": "CVE-2026-111889",
+      "title": "CVE-2026-111889",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.113",
-      "summary": "The SureCart – Ecommerce Made Easy For Selling Physical Products, Digital Downloads, Subscriptions, Donations, & Payments plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'comment' parameter in all versions up to, and including, 4.9.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Successful execution requires the affected comment to appear on a post that loads the surecart-components runtime (e.g. via a [sc_buy_button] shortcode) and contains no sc-checkout element, as these conditions trigger the innerHTML sink in sc-cart-loader."
+      "date": "2026-10-17T19:16:30.237",
+      "summary": "phpMyFAQ from 4.1.0 before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains a missing authorization vulnerability in the admin dashboard that allows authenticated users without admin rights to view restricted data. Attackers with any activated account can request /admin/index.php/ to read unpublished FAQ questions, admin edit URLs, recent user identities, and site statistics."
     },
     {
-      "id": "CVE-2026-111311",
-      "title": "CVE-2026-111311",
+      "id": "CVE-2026-111890",
+      "title": "CVE-2026-111890",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.250",
-      "summary": "The DoubleScale | All-in-One CRM – Sales, Multi-Channel Marketing, Newsletter, Booking, Helpdesk, Automation, MCP & More plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 1.5.1 via the store_upload function. This is due to a fail-open extension allow-list in extension_is_allowed() that returns true when wp_check_filetype() yields an empty type for unrecognized extensions such as .php, combined with magic-byte-only MIME detection and no capability check beyond is_user_logged_in(). This makes it possible for authenticated attackers, with subscriber-level access and above, to upload files that may be executable, which makes remote code execution possible. Exploitation requires the Helpdesk module to be enabled, as the vulnerable REST endpoint is only registered when that module is active."
+      "date": "2026-10-17T19:16:30.393",
+      "summary": "phpMyFAQ from 4.2.0-alpha.2 before 4.2.0-beta contains a privilege escalation vulnerability in UserController::updateUserRights that drops per-right language restrictions when rights are re-granted. Administrators holding USER_EDIT can submit language-scoped rights to the update-rights API, including for themselves, to gain unrestricted FAQ create, edit, and publish access across all languages."
     },
     {
-      "id": "CVE-2026-111472",
-      "title": "CVE-2026-111472",
+      "id": "CVE-2026-111891",
+      "title": "CVE-2026-111891",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.410",
-      "summary": "An SQL injection vulnerability has been discovered in TSG Profleet. The vulnerability could allow an attacker to retrieve, create, update and delete data from the database by sending a GET request using the ‘Identificación’ parameter of the ‘/cgi-bin/index.php’ endpoint."
+      "date": "2026-10-17T19:16:30.550",
+      "summary": "phpMyFAQ from 4.2.0-alpha.2 before 4.2.0-beta contains a privilege escalation vulnerability in the group permission API, whose updatePermissions and updateMembers endpoints check held rights without regard to language or category scope and write unrestricted group grants. Non-superadmin administrators holding GROUP_EDIT can grant a group a right they hold only in a narrow scope and self-join it via updateMembers, gaining unrestricted FAQ create, edit, and publish access across all languages and categories."
     },
     {
-      "id": "CVE-2026-14177",
-      "title": "CVE-2026-14177",
+      "id": "CVE-2026-111892",
+      "title": "CVE-2026-111892",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.533",
-      "summary": "Observable response discrepancy vulnerability in IKAS Technology Inc. Ikas E-Commerce Infrastructure allows Account Footprinting.\n\nThis issue affects ikas E-Commerce Infrastructure: through 2026-07-13."
+      "date": "2026-10-17T19:16:30.703",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta lacks effective rate limiting on the unauthenticated user/password/update and user/password/reset endpoints. Unauthenticated attackers can send unlimited reset requests to flood a registered user's inbox with reset emails, exhausting mailer and server resources."
     },
     {
-      "id": "CVE-2026-15219",
-      "title": "CVE-2026-15219",
+      "id": "CVE-2026-111893",
+      "title": "CVE-2026-111893",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.663",
-      "summary": "Authorization bypass through User-Controlled key vulnerability in SFM Software Technologies Inc. Costifier allows Exploitation of Trusted Identifiers.\n\nThis issue affects Costifier: through 2026-10-16.  NOTE: The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-17T19:16:30.860",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains a privilege escalation vulnerability in GroupController::saveCategoryRestrictions() that lets delegated administrators assign categories outside their own scope. Category-restricted administrators can POST to /admin/api/group/category-restrictions with out-of-scope or empty categoryIds to grant groups unrestricted category access."
     },
     {
-      "id": "CVE-2026-15575",
-      "title": "CVE-2026-15575",
+      "id": "CVE-2026-111894",
+      "title": "CVE-2026-111894",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.790",
-      "summary": "Active debug code vulnerability in SFM Software Technologies Inc. Costifier allows Exploit Non-Production Interfaces.\n\nThis issue affects Costifier: through 2026-10-16. NOTE: The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-17T19:16:31.017",
+      "summary": "phpMyFAQ 3.2.1 before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains a stored cross-site scripting vulnerability that allows authenticated content authors to inject JavaScript by embedding iframes with data:text/html sources in FAQ or News content. Attackers can bypass the hostless media-host allowlist in FaqHelper::cleanUpContent(), which is rendered via Twig's raw filter, to run phishing interfaces or top-frame redirects for viewers."
     },
     {
-      "id": "CVE-2026-92766",
-      "title": "CVE-2026-92766",
+      "id": "CVE-2026-111895",
+      "title": "CVE-2026-111895",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:04.963",
-      "summary": "The Vitepos – Point of Sale (POS) for WooCommerce plugin for WordPress is vulnerable to generic SQL Injection via the 'src_by' parameter in all versions up to, and including, 3.5.1 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. This makes it possible for unauthenticated attackers, or authenticated attackers holding any POS role (such as vtpos-cashier), to exploit the vulnerability, as the /vitepos/v1/vendor/list REST route's permission callback requires only a POS role assignment rather than any elevated WordPress capability."
+      "date": "2026-10-17T19:16:31.177",
+      "summary": "phpMyFAQ 3.2.0 before 4.0.0 and 4.0.2 before 4.2.0-beta contains an authentication bypass in its Microsoft Entra ID login flow, which links users by the mutable preferred_username claim and whose AuthEntraId::create() ignores the duplicate-login exception while continuing with the existing local account. Attackers controlling an Entra identity in the configured tenant with a matching preferred_username can take over that local account, including super-admin accounts."
     },
     {
-      "id": "CVE-2026-93681",
-      "title": "CVE-2026-93681",
+      "id": "CVE-2026-111896",
+      "title": "CVE-2026-111896",
       "source": "NIST NVD",
-      "date": "2026-10-16T09:17:05.107",
-      "summary": "The Tutor LMS – eLearning and online course solution plugin for WordPress is vulnerable to Stored Cross-Site Scripting via display_name Parameter in all versions up to, and including, 4.1.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that a Legal Consent record exists for the attacker's user account, causing the View Logs button to appear in the wp-admin/users.php Consent Logs column."
+      "date": "2026-10-17T19:16:31.337",
+      "summary": "phpMyFAQ from 4.2.0-alpha before 4.2.0-beta contains a stored cross-site scripting vulnerability in SvgSanitizer that allows FAQ editors to store executable SVG files. Attackers can split script tags around removed tokens like processing instructions so single-pass removal reassembles them, executing script in the application origin when victims open the file."
     },
     {
-      "id": "CVE-2026-106030",
-      "title": "CVE-2026-106030",
+      "id": "CVE-2026-111897",
+      "title": "CVE-2026-111897",
       "source": "NIST NVD",
-      "date": "2026-10-16T10:18:03.327",
-      "summary": "NordVPN for Windows allows local attackers to stop unprotected Windows system services and change their startup type to Manual via named pipes. The NordVPN user-mode application allows a low-privileged attacker to act as a trusted process and connect to the named pipe \"\\\\.\\pipe\\nord-security\\v1\\NordVpnService\\Server\". The attacker can then invoke the \"ISettingsGrpc.StopService\" and \"ISettingsGrpc.ChangeServiceStartType\" methods with an arbitrary service name, allowing them to stop any unprotected Windows service and change its startup type. This leads to denial of service of critical system services. Services protected by Windows (PPL processes, Windows Tamper Protection), such as Windows Defender, cannot be stopped or reconfigured.\n\n\nThis issue was fixed in version 8.12"
+      "date": "2026-10-17T19:16:31.487",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains an authorization bypass vulnerability that allows category-restricted editors to manage attachments of FAQs outside their categories by supplying arbitrary record IDs. Attackers in medium permission mode can send upload or delete requests with a target record_id or attachment ID to tamper with or remove files on unauthorized FAQs."
     },
     {
-      "id": "CVE-2026-107649",
-      "title": "CVE-2026-107649",
+      "id": "CVE-2026-111898",
+      "title": "CVE-2026-111898",
       "source": "NIST NVD",
-      "date": "2026-10-16T10:18:04.307",
-      "summary": "The Events Made Easy plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'event[location_name]' parameter in all versions up to, and including, 3.2.22 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is only exploitable when both the guest event submission feature (eme_fs[guest_submit]) and forced location creation (eme_fs[force_location_creation]) are explicitly enabled by a site administrator, as both settings default to off."
+      "date": "2026-10-17T19:16:31.647",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains an authentication bypass vulnerability that allows Keycloak users to take over local accounts by matching preferred_username or email. Attackers controlling a Keycloak identity with a colliding username or unverified email can log in through /auth/keycloak/authorize to bind their subject and gain superadmin privileges."
     },
     {
-      "id": "CVE-2026-110703",
-      "title": "CVE-2026-110703",
+      "id": "CVE-2026-111900",
+      "title": "CVE-2026-111900",
       "source": "NIST NVD",
-      "date": "2026-10-16T10:18:05.447",
-      "summary": "The GeoDirectory – WP Business Directory Plugin and Classified Listings Directory plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'post_content' parameter in all versions up to, and including, 2.8.191 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This requires the attacker to own a published listing, as the ownership check in GeoDir_Post_Data::can_edit() limits who can store the payload; however, because ajax_save_post() re-applies the existing post_status, edits to an already-published listing bypass re-moderation and remain live immediately."
+      "date": "2026-10-17T19:16:31.800",
+      "summary": "phpMyFAQ before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains an improper authorization vulnerability in attachment.php that fails to verify whether an attachment's parent FAQ is published or visible to the requester. Authenticated users with the dlattachment permission can request index.php?action=attachment&id=<ID> to download complete attachment files belonging to draft FAQs."
     },
     {
-      "id": "CVE-2026-14452",
-      "title": "CVE-2026-14452",
+      "id": "CVE-2026-111901",
+      "title": "CVE-2026-111901",
       "source": "NIST NVD",
-      "date": "2026-10-16T10:18:05.653",
-      "summary": "Improper validation of the reset_url parameter of the Setup in-page search in Checkmk <2.5.0p15, <2.4.0p38, <2.3.0p51 and 2.2.0 (EOL) allows an attacker to execute arbitrary script in the session of an authenticated user with Setup access, or to redirect that user to an arbitrary external site, by tricking the user into opening a crafted URL and clicking the Reset button or submitting an empty search."
+      "date": "2026-10-17T19:16:31.953",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains an uncontrolled resource consumption vulnerability in the unauthenticated faqs and search API endpoints. Attackers can send concurrent GET requests that load and process all database records into PHP memory, exhausting CPU and memory to crash the server."
     },
     {
-      "id": "CVE-2026-96768",
-      "title": "CVE-2026-96768",
+      "id": "CVE-2026-111902",
+      "title": "CVE-2026-111902",
       "source": "NIST NVD",
-      "date": "2026-10-16T10:18:05.863",
-      "summary": "The GoSMTP Pro plugin for WordPress is vulnerable to Stored Cross-Site Scripting via Comment Content via Email Log Body in all versions up to, and including, 1.2.3 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The exploit is made possible because WordPress comment kses does not strip entity-encoded tag delimiters, allowing the payload to pass moderation as safe text before being decoded into live HTML by core email notification functions and written verbatim into the plugin's email log database table."
+      "date": "2026-10-17T19:16:32.103",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains an authorization bypass vulnerability in isFaqAccessibleForUser() that treats a missing FAQ translation as visible to unauthenticated users. Attackers can send a mismatched Accept-Language header to the comments and attachments API endpoints to read comments and attachment listings of unpublished or ACL-restricted FAQs."
     },
     {
-      "id": "CVE-2026-109118",
-      "title": "CVE-2026-109118",
+      "id": "CVE-2026-111903",
+      "title": "CVE-2026-111903",
       "source": "NIST NVD",
-      "date": "2026-10-16T11:17:00.793",
-      "summary": "Improper path containment check in ikus060 rdiffweb 7.1.1 allows an authenticated user to cause the browse, restore, history and delete operations to resolve to a path outside the repository being operated on, via a percent-encoded traversal sequence (%2e%2e) in the request path, because the containment check uses a string prefix comparison (startswith) instead of a filesystem path boundary check. The target must be a sibling path whose name begins with the repository path, and the user already hold permissions on it; the issue can mislead a user into operating on, or deleting, data other than the repository displayed"
+      "date": "2026-10-17T19:16:32.253",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains a stored cross-site scripting vulnerability in SvgSanitizer that allows users with FAQ_EDIT permission to bypass sanitization using XML DTD custom entities. Attackers can upload an SVG defining an entity that expands to javascript in an anchor href, executing script when viewers click it to hijack admin sessions."
     },
     {
-      "id": "CVE-2026-109119",
-      "title": "CVE-2026-109119",
+      "id": "CVE-2026-111904",
+      "title": "CVE-2026-111904",
       "source": "NIST NVD",
-      "date": "2026-10-16T11:17:00.927",
-      "summary": "Improper Privilege Management in the user management API endpoint (/api/users/{username_or_id}) in Rdiffweb allows authenticated users to elevate their privileges to administrator by modifying the role parameter in a POST request."
+      "date": "2026-10-17T19:16:32.407",
+      "summary": "phpMyFAQ 4.2.0-alpha before 4.2.0-beta contains an information disclosure vulnerability that allows unauthenticated attackers to read hidden open questions due to an inverted api.onlyPublicQuestions check in OpenQuestionController. Attackers can send GET requests to the /api/v4.0/open-questions endpoint to retrieve non-public moderation or internal questions and their associated usernames."
     },
     {
-      "id": "CVE-2026-105959",
-      "title": "CVE-2026-105959",
+      "id": "CVE-2026-111905",
+      "title": "CVE-2026-111905",
       "source": "NIST NVD",
-      "date": "2026-10-16T12:16:31.733",
-      "summary": "A flaw was found in spice-server. The GLZ encoder dictionary restore path truncates a size_t allocation size to int when calling the malloc callback, allowing a malicious authenticated SPICE client during VM live migration to trigger a massive heap buffer overflow by sending a crafted max_encoders value in migration data."
+      "date": "2026-10-17T19:16:32.563",
+      "summary": "phpMyFAQ 3.2.0 before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains an insecure direct object reference vulnerability in GET /admin/api/user/data/{userId}, which returns any user's full faquserdata row, including the live TOTP secret, without a SuperAdmin or protected-target check. Delegated administrators with user-management rights can read a SuperAdmin's TOTP secret and generate valid codes to bypass two-factor authentication."
     },
     {
-      "id": "CVE-2026-107648",
-      "title": "CVE-2026-107648",
+      "id": "CVE-2026-111906",
+      "title": "CVE-2026-111906",
       "source": "NIST NVD",
-      "date": "2026-10-16T12:16:32.053",
-      "summary": "The WP Sessions Time Monitoring Full Automatic plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'action (also function, plugin, post_type, post_status, ids, loggedout, and POST post_title)' parameter in all versions up to, and including, 1.1.5 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+      "date": "2026-10-17T19:16:32.723",
+      "summary": "phpMyFAQ before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains a cross-site request forgery vulnerability in the Elasticsearch and OpenSearch administration API endpoints, which do not validate a CSRF token for the create, drop, and import actions. Attackers can lure a user with CONFIGURATION_EDIT permission to a malicious page that triggers these actions, deleting search indexes, forcing re-indexing, or exhausting resources."
     },
     {
-      "id": "CVE-2026-109930",
-      "title": "CVE-2026-109930",
+      "id": "CVE-2026-111907",
+      "title": "CVE-2026-111907",
       "source": "NIST NVD",
-      "date": "2026-10-16T12:16:32.273",
-      "summary": "The MAIO WordPress plugin before 7.3.22 does not properly restrict access to its analytics data, treating a credential value shipped verbatim in its own public source as a valid API key, which allows unauthenticated attackers to retrieve the stored crawl-analytics log, including each recorded visitor's IP address, user agent and referer."
+      "date": "2026-10-17T19:16:32.883",
+      "summary": "phpMyFAQ 4.0.0 before 4.1.9 contains a cross-site request forgery vulnerability in the POST /admin/api/update-database endpoint, which executes database migrations without validating a CSRF token. Attackers can lure a logged-in user with the CONFIGURATION_EDIT permission into submitting a crafted cross-site request, triggering migrations that may impact database integrity or availability."
     },
     {
-      "id": "CVE-2026-110029",
-      "title": "CVE-2026-110029",
+      "id": "CVE-2026-111908",
+      "title": "CVE-2026-111908",
       "source": "NIST NVD",
-      "date": "2026-10-16T12:16:32.387",
-      "summary": "The Squeeze WordPress plugin before 1.8.1 does not perform a capability check on one of its AJAX actions, allowing authenticated users with a role as low as Subscriber to revert any attachment to its backup copy and to permanently delete that backup and the plugin's generated WebP derivatives, regardless of ownership."
+      "date": "2026-10-17T19:16:33.043",
+      "summary": "phpMyFAQ 4.0.0 before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains a broken object-level authorization vulnerability in the PUT /api/v3.1/faq/update endpoint, which checks only the global edit_faq permission and does not verify access to the target FAQ. Authenticated users with edit_faq permission can supply the ID of a restricted FAQ they cannot view to modify its content, bypass moderation, and change its publication state."
     },
     {
-      "id": "CVE-2026-111390",
-      "title": "CVE-2026-111390",
+      "id": "CVE-2026-111909",
+      "title": "CVE-2026-111909",
       "source": "NIST NVD",
-      "date": "2026-10-16T12:16:33.050",
-      "summary": "Erupt through 2.3.0 contains an HQL injection vulnerability that allows authenticated users to bypass tree-scoped data filters by injecting unescaped quotes into the linkTreeVal parameter of POST /erupt-api/data/table/{erupt}. Attackers holding query permission on entities with String-keyed linkTree targets can append always-true OR clauses or boolean subqueries to read data from other mapped entities."
+      "date": "2026-10-17T19:16:33.190",
+      "summary": "phpMyFAQ before 4.1.9 contains a missing authorization vulnerability in the deleteUser() API that allows authenticated non-superadmin users with delete_user permission to delete superadmin accounts. Attackers can send a DELETE request to /admin/api/user/delete with a superadmin's userId other than 1, removing administrative access and accountability."
     },
     {
-      "id": "CVE-2026-111391",
-      "title": "CVE-2026-111391",
+      "id": "CVE-2026-111910",
+      "title": "CVE-2026-111910",
       "source": "NIST NVD",
-      "date": "2026-10-16T12:16:33.197",
-      "summary": "SGLang 0.5.10 through 0.5.22 contains a code injection vulnerability in _evaluate_filter() that allows remote attackers to execute Python code by escaping the eval() sandbox through re.search __globals__. Attackers can send a crafted filter expression to the unauthenticated /dumper/configure endpoint when DUMPER_SERVER_PORT is set, running code in the scheduler process on the next forward pass."
+      "date": "2026-10-17T19:16:33.343",
+      "summary": "phpMyFAQ before 4.1.9 and 4.2.0-alpha before 4.2.0-beta contains an authorization bypass vulnerability in attachment.php that allows attackers to download attachments of restricted FAQs by bypassing per-record permission checks. Low-privileged users with the dlattachment right, or anonymous users when allowDownloadsForGuests is enabled, can request attachment IDs to retrieve confidential files from restricted FAQs."
     },
     {
-      "id": "CVE-2026-105958",
-      "title": "CVE-2026-105958",
+      "id": "CVE-2026-111911",
+      "title": "CVE-2026-111911",
       "source": "NIST NVD",
-      "date": "2026-10-16T13:16:53.480",
-      "summary": "A flaw was found in spice-server. Multiple migration data handlers use client-supplied offsets from SPICE_MSGC_MIGRATE_DATA messages without bounds validation, allowing a malicious authenticated SPICE client during VM live migration to read arbitrary heap memory or trigger heap corruption via out-of-bounds read and write operations on the message buffer."
+      "date": "2026-10-17T19:16:33.500",
+      "summary": "phpMyFAQ 4.0.0 before 4.1.9 contains an authentication bypass vulnerability where WebAuthn registration endpoints attach credentials to any account without authentication or challenge validation. Attackers can stage a victim username, submit a forged fmt=none attestation to register a passkey, then log in bypassing passwords and TOTP for account takeover."
     },
     {
-      "id": "CVE-2026-107564",
-      "title": "CVE-2026-107564",
+      "id": "CVE-2026-111912",
+      "title": "CVE-2026-111912",
       "source": "NIST NVD",
-      "date": "2026-10-16T13:16:54.013",
-      "summary": "An unauthenticated remote attacker may use an allocation of resources without limits or throttling weakness in the affected product to cause high CPU load leading to a denial of service."
+      "date": "2026-10-17T19:16:33.687",
+      "summary": "Admidio from 5.0.0 before 5.0.16 contains an insecure direct object reference vulnerability in ForumService::saveTopic() that allows authenticated members to modify other users' forum topics. Attackers can replace the topic_uuid parameter in their own topic_save request, reusing their CSRF token, to overwrite the victim topic's title and first post."
     }
   ]
 }
