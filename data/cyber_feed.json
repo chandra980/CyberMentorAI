@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-10-27T08:03:09.912193+00:00",
+  "generated_at": "2026-10-28T08:44:46.043520+00:00",
   "items": [
+    {
+      "id": "CVE-2026-48356",
+      "title": "CVE-2026-48356 - Adobe Commerce and Magento Unrestricted Upload of File with Dangerous Type Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-27",
+      "vendor": "Adobe",
+      "product": "Commerce and Magento",
+      "summary": "Adobe Commerce and Magento contain an unrestricted upload of file with dangerous type vulnerability that could result in arbitrary code execution in the context of the current user, potentially gaining elevated access or control over the victim's account or session.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-10"
+    },
+    {
+      "id": "CVE-2026-111497",
+      "title": "CVE-2026-111497 - Google Brotli Unchecked Return Value Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-10-27",
+      "vendor": "Google",
+      "product": "Brotli",
+      "summary": "Google Brotli contains an unchecked return value vulnerability that allows a remote unauthenticated attacker to corrupt adjacent decoder state memory, disclose sensitive memory contents, cause a denial of service, or potentially execute arbitrary code using a crafted Brotli-compressed stream.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-10"
+    },
     {
       "id": "CVE-2026-109618",
       "title": "CVE-2026-109618 - PHP Memory Corruption Vulnerability",
@@ -860,306 +882,284 @@
       "due": "2026-09-09"
     },
     {
-      "id": "CVE-2015-5287",
-      "title": "CVE-2015-5287 - Red Hat Automatic Bug Reporting Tool Privilege Escalation Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-26",
-      "vendor": "Red Hat",
-      "product": "Automatic Bug Reporting Tool",
-      "summary": "Red Hat Automatic Bug Reporting Tool (ABRT) contains a privilege escalation vulnerability that could allow local users with certain permissions to gain privileges via a symlink attack on a file with a predictable name. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-09"
-    },
-    {
-      "id": "CVE-2022-0995",
-      "title": "CVE-2022-0995 - Linux Kernel Out-of-Bounds Write Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-26",
-      "vendor": "Linux",
-      "product": "Kernel",
-      "summary": "Linux Kernel contains an out-of-bounds memory write vulnerability which could allow a local user to gain privileged access or cause a denial of service on the system.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-08-29"
-    },
-    {
-      "id": "CVE-2024-2323",
-      "title": "CVE-2024-2323",
+      "id": "CVE-2026-101138",
+      "title": "CVE-2026-101138",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:40.983",
-      "summary": "The RemoteUserStoreManagerService does not sufficiently validate password change attempts when the password history validation feature is enabled. This oversight allows an attacker to repeatedly attempt password guesses for a user account without being adequately restricted.\n\nExploiting this vulnerability enables an attacker to discover a user's password through brute force, leading to account impersonation. The success rate of such an attack is influenced by the complexity of the targeted user's password, with simpler passwords increasing the likelihood of compromise."
+      "date": "2026-10-21T09:17:05.760",
+      "summary": "The CMP – Coming Soon & Maintenance WordPress plugin before 4.1.21 does not correctly apply maintenance mode to pages added to its page whitelist by manually entered URL pattern, allowing unauthenticated visitors to view the content of those pages while maintenance mode is active."
     },
     {
-      "id": "CVE-2026-111090",
-      "title": "CVE-2026-111090",
+      "id": "CVE-2026-103301",
+      "title": "CVE-2026-103301",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:42.373",
-      "summary": "A logic error exists in the signature verification routine resulting in acceptance of unauthenticated update and license files.It is necessary to use only the MyStormshield servers to retrieve update files or licenses, or to use automatic verification via SNS."
+      "date": "2026-10-21T09:17:05.883",
+      "summary": "The Payment Gateway for Telcell WordPress plugin before 2.0.5 does not verify the authenticity of incoming payment notifications, because the secret used to sign them is empty by default, allowing unauthenticated attackers to forge a valid notification and mark arbitrary WooCommerce orders as paid. The same handler also marks an attacker-chosen order as failed when given an invalid signature."
     },
     {
-      "id": "CVE-2026-112177",
-      "title": "CVE-2026-112177",
+      "id": "CVE-2026-104641",
+      "title": "CVE-2026-104641",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:42.507",
-      "summary": "A flaw was found in Ghostscript as shipped with Red Hat Enterprise Linux 8. The correction for CVE-2019-14869 was omitted during the rebase from version 9.25 to 9.27, leaving privileged .forceput operations in the .charkeys procedure insufficiently protected. Processing a specially crafted PostScript file may allow an attacker to bypass -dSAFER restrictions and access files outside the permitted paths or execute commands with the permissions of the Ghostscript process."
+      "date": "2026-10-21T09:17:05.987",
+      "summary": "The Simple Shopping Cart WordPress plugin before 5.3.3 does not verify that a PayPal payment notification is for a payment received by the site owner's PayPal account in its default configuration, allowing unauthenticated attackers to have their orders marked as paid using a payment made to an account they control."
     },
     {
-      "id": "CVE-2026-113405",
-      "title": "CVE-2026-113405",
+      "id": "CVE-2026-104642",
+      "title": "CVE-2026-104642",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:42.867",
-      "summary": "BA-Workflow developed by YS-infoware has a SQL Injection vulnerability. Authenticated remote attackers can inject arbitrary SQL statements to read, modify, and delete database contents."
+      "date": "2026-10-21T09:17:06.093",
+      "summary": "The Simple Shopping Cart WordPress plugin before 5.3.3 does not verify submitted product prices against a value only the site owner can set, allowing users with the Contributor role and above to register attacker-chosen prices for existing products, which any visitor can then use to add those products to the cart at that price."
     },
     {
-      "id": "CVE-2026-113406",
-      "title": "CVE-2026-113406",
+      "id": "CVE-2026-105256",
+      "title": "CVE-2026-105256",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:43.000",
-      "summary": "BA-Workflow developed by YS-infoware has a SQL Injection vulnerability. Authenticated remote attackers can inject arbitrary SQL statements to read, modify, and delete database contents."
+      "date": "2026-10-21T09:17:06.197",
+      "summary": "The LatePoint WordPress plugin before 5.7.5 does not validate the client-supplied value that determines how much is charged for a booking against the amounts the service and site actually allow, allowing an unauthenticated visitor to make the amount due resolve to zero and obtain a confirmed appointment and a recorded order without completing any payment."
     },
     {
-      "id": "CVE-2026-113407",
-      "title": "CVE-2026-113407",
+      "id": "CVE-2026-107447",
+      "title": "CVE-2026-107447",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:43.130",
-      "summary": "BA-Workflow developed by YS-infoware has a SQL Injection vulnerability. Authenticated remote attackers can inject arbitrary SQL statements to read, modify, and delete database contents."
+      "date": "2026-10-21T09:17:06.307",
+      "summary": "The Contest Gallery WordPress plugin before 34.0.1 does not reliably validate the visitor identity used to enforce its one-vote-per-entry restriction, trusting a client-supplied request header and an unbound client-generated token, which allows unauthenticated users to bypass the restriction and cast multiple votes for the same contest entry, inflating its vote total."
     },
     {
-      "id": "CVE-2026-43834",
-      "title": "CVE-2026-43834",
+      "id": "CVE-2026-109125",
+      "title": "CVE-2026-109125",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:44.083",
-      "summary": "A stack-based buffer overflow vulnerability in the logs settings functionality could allow an authenticated attacker to achieve code execution."
+      "date": "2026-10-21T09:17:06.417",
+      "summary": "In NLnet Labs Unbound up to and including version 1.26.1, an observable  cache-level side-channel can be exposed with 'unwanted-reply-threshold > 0' configurations (not a default configuration). If a response-like UDP datagram reaches the upstream source port currently used by a recursive query, but its TXID does not match any pending query, Unbound counts the packet as an unwanted reply. When the accumulated count reaches the configured threshold, Unbound clears the worker's RRset cache and message cache. This cache clear action does not destroy the current upstream UDP pending query. Therefore, an external observer can distinguish whether a candidate port matches the current upstream source port by checking whether an existing cached item has been cleared. This is a cache side-channel vulnerability that can be used to probe the upstream source port. Although the attack is not feasible on default configurations and the suggested value (10 million) makes it an ureliable attack on a public resolver, in scenarios where the attacker can keep a concurrent query window alive, the attacker can first filter the source port and then perform birthday-style guessing against the TXID, making "
     },
     {
-      "id": "CVE-2026-43835",
-      "title": "CVE-2026-43835",
+      "id": "CVE-2026-110938",
+      "title": "CVE-2026-110938",
       "source": "NIST NVD",
-      "date": "2026-10-20T08:16:44.207",
-      "summary": "A vulnerability in the firmware upgrade functionality could allow an authenticated attacker to upload a forged firmware upgrade file, potentially compromising the device permanently."
+      "date": "2026-10-21T09:17:06.717",
+      "summary": "In Eclipse OpenJ9 versions up to 0.63.0, the JITServer component is vulnerable to denial of service due to improper boundary checks during protocol message and reply handling. An unauthenticated remote attacker or malicious JITServer can transmit malformed network payloads that cause out-of-bounds heap reads, immediately crashing the JITServer daemon or client JVM process via a segmentation fault (SIGSEGV)."
     },
     {
-      "id": "CVE-2026-101201",
-      "title": "CVE-2026-101201",
+      "id": "CVE-2026-114236",
+      "title": "CVE-2026-114236",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:08.397",
-      "summary": "A malformed header in the binary file fed to QBinaryJson::fromBinaryData() can cause undefined behaviour because of out-of-bounds read."
+      "date": "2026-10-21T09:17:06.840",
+      "summary": "storage/pkg/archive.ApplyLayer and ApplyUncompressedLayer may, when processing corrupt or malicious inputs, leak a file descriptor; unbounded repeated calls can exhaust the process’ file descriptor\nlimit"
     },
     {
-      "id": "CVE-2026-113465",
-      "title": "CVE-2026-113465",
+      "id": "CVE-2026-14556",
+      "title": "CVE-2026-14556",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:09.473",
-      "summary": "It is possible to execute a DOM-based Cross-Site Scripting attack against Stormshield’s web administration panel.\n\n\n\nTo exploit this vulnerability, an attacker would need to craft a URL containing a malicious script payload within a specific parameter and lure an authenticated administrator into visiting that link."
+      "date": "2026-10-21T09:17:07.173",
+      "summary": "The HappyForms WordPress plugin before 1.26.15 does not sanitise or escape a user-controlled referral value before embedding it in the form notification email, allowing unauthenticated attackers to inject arbitrary HTML into the emails site administrators receive."
     },
     {
-      "id": "CVE-2026-113469",
-      "title": "CVE-2026-113469",
+      "id": "CVE-2026-35501",
+      "title": "CVE-2026-35501",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:09.587",
-      "summary": "A failure has been identified in the SNS during dynamic data files signature check.\n\n\n\nA logic error in the signature verification routine resulting in acceptance of unauthenticated dynamic data update during Autoupdate routine."
+      "date": "2026-10-21T09:17:07.373",
+      "summary": "When NLnet Labs Unbound 1.0.1 up to and including version 1.26.1 is configured with both a root trust anchor and an additional 'trust-anchor:' for an island-of-security zone whose parent is provably insecure under the root chain, a malicious actor with a forged NSEC reply with the SOA bit cleared can trick Unbound to treat the configured trust island as insecure. This happens because the DNSSEC validator in Unbound accepts and caches the NSEC insecure response bypassing the RRSIG validation that the validator was supposed to do. The acceptance of the NSEC record at the trust anchor apex was allowed due to and old fix for type DS and NSEC queries from clients when trust anchor for that name existed."
     },
     {
-      "id": "CVE-2026-11959",
-      "title": "CVE-2026-11959",
+      "id": "CVE-2026-50106",
+      "title": "CVE-2026-50106",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:09.700",
-      "summary": "Stored Cross-Site Scripting (XSS) in FacturaScripts, version 2025.61, caused by a lack of adequate validation or sanitisation of user input in the ‘city’ and ‘province’ fields in the ‘ListAlmacen’ endpoint. Successful exploitation of this vulnerability could allow an attacker to execute arbitrary JavaScript code in the victim’s browser (the application user) or to escalate privileges from a normal user to an administrator by executing specially crafted JavaScript code, thereby compromising the system’s confidentiality or hijacking the session (even with httpOnly cookies by extracting CSRF tokens)."
+      "date": "2026-10-21T09:17:07.497",
+      "summary": "When NLnet Labs Unbound up to and including version 1.26.1 is configured with both a root trust anchor and an additional 'trust-anchor:' for an island-of-security zone whose parent is provably insecure under the root chain, a malicious actor who can deliver one forged NXDOMAIN response for a name inside the island, with the NSEC/SOA RRSIG 'SignerName' set to the insecure parent, tricks Unbound's validator to use the root trust anchor instead, and consecutively the insecure parent, thus causing that record to be treated as insecure and denying existence for records in the trust island."
     },
     {
-      "id": "CVE-2026-11960",
-      "title": "CVE-2026-11960",
+      "id": "CVE-2026-70386",
+      "title": "CVE-2026-70386",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:09.830",
-      "summary": "Enumeration of unauthenticated users in FacturaScripts, version 2025.61. The application returns different responses when attempting to log in with a valid username compared to an invalid one. An unauthenticated attacker could systematically identify valid usernames by examining variations in the application’s responses, such as changes in response time, discrepancies between error messages or differences in HTTP status codes. A successful exploit allows the attacker to compile a list of valid user accounts. This list could be used to carry out targeted brute-force attacks, password spraying, credential stuffing or social engineering campaigns against the confirmed accounts."
+      "date": "2026-10-21T09:17:07.787",
+      "summary": "Improper neutralization of special elements used in an OS command ('OS command injection') and Missing Authorization vulnerability in OnePlus OxygenOS on Android. Any locally installed Android application, with no permissions declared \nand no user interaction beyond launching it, can execute arbitrary shell\n commands as uid 0 in the u:r:dumpstate:s0 SELinux domain. Two defects \ncombine: (a) OnePlus's atlasservice binder interface accepts \nsetEvent(String8 name, String8 value) from any caller without \nauthorization, and (b) one event handler \n(OplusAtlasLogWriter::handleEvent, matching event name \natlas_event_multimedia_audio_dumpsys) copies the caller-supplied value \ninto the system property oplus.audio.dumpinfo.type and starts the root \ninit service audiodumpinfo, which passes that property value unsanitized\n to system(). This issue affects OxygenOS: from 16.1.0 before 16.1.10.500, from 16.0.0 before 16.0.5.1200, and from 15.0.0 before 15.0.0.2000."
     },
     {
-      "id": "CVE-2026-43836",
-      "title": "CVE-2026-43836",
+      "id": "CVE-2026-70387",
+      "title": "CVE-2026-70387",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:09.957",
-      "summary": "A vulnerability could allow an attacker to forge a packet to execute arbitrary commands with maximum privileges."
+      "date": "2026-10-21T09:17:07.930",
+      "summary": "Exposed dangerous method or function and Incorrect Authorization vulnerability in OnePlus OxygenOS on Android. The olc2 logging HAL exposes a binder method that fork()'s and calls execl(\"/vendor/bin/sh\", \"sh\", \"-c\", cmd, NULL) with a caller-supplied command string. The only authorization check is getCallingUid() == 0. Because SELinux policy grants binder access to this HAL to a wide client attribute, any uid-0 process in any of those domains (including dumpstate, which is reachable from an unprivileged app via Vulnerability 1) obtains arbitrary command execution. The spawned shell lands in u:r:vendor_qti_init_shell:s0 SELinux context via a policy type_transition, a domain holding all Linux capabilities. This issue affects OxygenOS: from 16.1.0 before 16.1.10.500, from 16.0.0 before 16.0.5.1200, and from 15.0.0 before 15.0.0.2000."
     },
     {
-      "id": "CVE-2026-43837",
-      "title": "CVE-2026-43837",
+      "id": "CVE-2026-85683",
+      "title": "CVE-2026-85683",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.070",
-      "summary": "A buffer overflow vulnerability in the password verification functionality could allow an attacker with guest authentication to achieve code execution."
+      "date": "2026-10-21T09:17:08.057",
+      "summary": "The Jane Menu WordPress plugin before 1.5.1 does not have any capability or nonce checks on one of its form handlers, which is reachable by unauthenticated users, allowing them to bind any published page to a remote document of their choosing. The plugin then fetches that document and outputs its head and body into the page without escaping, so an unauthenticated attacker can run arbitrary JavaScript in the browser of any visitor to that page, including an administrator."
     },
     {
-      "id": "CVE-2026-43838",
-      "title": "CVE-2026-43838",
+      "id": "CVE-2026-96405",
+      "title": "CVE-2026-96405",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.173",
-      "summary": "A stack-based buffer overflow vulnerability in the login functionality could allow an attacker to achieve code execution."
+      "date": "2026-10-21T09:17:08.357",
+      "summary": "NLnet Labs Unbound up to and including version 1.26.1 limits compression-pointer traversal for each individual domain-name operation but has no aggregate inbound decompression-work budget. Many chained compression pointers in a message results in a lot of CPU usage following them. A malicious actor with recursive-query access and control of an ordinarily delegated authority that serves specially crafted replies can exploit the vulnerability and degrade Unbound's general performance."
     },
     {
-      "id": "CVE-2026-43839",
-      "title": "CVE-2026-43839",
+      "id": "CVE-2026-97206",
+      "title": "CVE-2026-97206",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.277",
-      "summary": "A NULL pointer dereference vulnerability in the logs management functionality could allow an unauthenticated attacker to crash the service."
+      "date": "2026-10-21T09:17:08.473",
+      "summary": "NLnet Labs Unbound, 1.22.0 up to and including version 1.26.1, contains a DNS-over-QUIC (DoQ) lifetime bug reachable by a remote DoQ client under multi-threaded operation. A client-triggered QUIC path migration can enter stream/connection cleanup while a mesh reply still retains a pointer to the DoQ stream. Cleanup frees the DoQ stream and when the pending mesh reply later completes it dereferences a stale pointer leading to a crash."
     },
     {
-      "id": "CVE-2026-43840",
-      "title": "CVE-2026-43840",
+      "id": "CVE-2026-105923",
+      "title": "CVE-2026-105923",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.383",
-      "summary": "A NULL pointer dereference vulnerability in the license manager service could allow an unauthenticated attacker to crash the service via the on_disconnected callback function."
+      "date": "2026-10-21T10:16:54.917",
+      "summary": "A malicious SVG can trigger an integer overflow which in turn triggers a null-pointer dereference in VectorImage QML Type."
     },
     {
-      "id": "CVE-2026-43841",
-      "title": "CVE-2026-43841",
+      "id": "CVE-2026-110369",
+      "title": "CVE-2026-110369",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.490",
-      "summary": "A NULL pointer dereference vulnerability in the license manager service could allow an unauthenticated attacker to crash the service via the rpc_rx_fsm function."
+      "date": "2026-10-21T10:16:55.200",
+      "summary": "Deserialization of Untrusted Data vulnerability in GS Plugins WordPress Team Members – GS Plugins gs-team-members allows Object Injection.This issue affects WordPress Team Members – GS Plugins: from n/a through 2.8.2."
     },
     {
-      "id": "CVE-2026-43842",
-      "title": "CVE-2026-43842",
+      "id": "CVE-2026-110370",
+      "title": "CVE-2026-110370",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.593",
-      "summary": "A NULL pointer dereference vulnerability in the license manager service could allow an unauthenticated attacker to crash the service via the rpc_rx_fsm function when msglen is set to 0."
+      "date": "2026-10-21T10:16:55.380",
+      "summary": "Deserialization of Untrusted Data vulnerability in GS Plugins GS Pins for Pinterest gs-pinterest-portfolio allows Object Injection.This issue affects GS Pins for Pinterest: from n/a through 1.9.2."
     },
     {
-      "id": "CVE-2026-43843",
-      "title": "CVE-2026-43843",
+      "id": "CVE-2026-110884",
+      "title": "CVE-2026-110884",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.697",
-      "summary": "An integer overflow vulnerability in the license manager service could allow an unauthenticated attacker to crash the service."
+      "date": "2026-10-21T10:16:55.520",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in geekontheroad Live Summary for Gravity Forms live-summary-for-gravity-forms allows Reflected XSS.This issue affects Live Summary for Gravity Forms: from n/a through 1.2.10."
     },
     {
-      "id": "CVE-2026-43844",
-      "title": "CVE-2026-43844",
+      "id": "CVE-2026-41114",
+      "title": "CVE-2026-41114",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.800",
-      "summary": "A vulnerability in the proprietary protocol could allow an attacker to bypass the authentication mechanism."
+      "date": "2026-10-21T11:17:07.727",
+      "summary": "Uncontrolled Resource Consumption vulnerability in Apache IoTDB JDBC driver.\n\n\n\nThis issue affects Apache IoTDB JDBC driver: from 1.3.3 before 2.0.11.\n\n\n\nUsers are recommended to upgrade to version 2.0.11, which fixes the issue."
     },
     {
-      "id": "CVE-2026-43845",
-      "title": "CVE-2026-43845",
+      "id": "CVE-2026-58663",
+      "title": "CVE-2026-58663",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:10.907",
-      "summary": "A vulnerability in the password reset mechanism could allow an attacker to bypass the authentication mechanism."
+      "date": "2026-10-21T11:17:07.950",
+      "summary": "An authentication bypass vulnerability exists in Apache IoTDB's Thrift RPC service\n\n\n\nThis issue affects Apache IoTDB: from 2.0.0 before 2.0.11.\n\n\n\nUsers are recommended to upgrade to version 2.0.11, which fixes the issue."
     },
     {
-      "id": "CVE-2026-43846",
-      "title": "CVE-2026-43846",
+      "id": "CVE-2026-87095",
+      "title": "CVE-2026-87095",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:11.010",
-      "summary": "A stack-based buffer overflow vulnerability in a non-functional feature could allow an authenticated attacker to achieve code execution."
+      "date": "2026-10-21T11:17:09.463",
+      "summary": "Sensitive information disclosure and manipulation due to improper authorization checks. The following products are affected: Acronis Cyber Infrastructure (ACI) before build 6.0.1-112, Acronis Cyber Infrastructure (ACI) before build 6.1.1-64, Acronis Cyber Infrastructure (ACI) before build 6.2.1-71."
     },
     {
-      "id": "CVE-2026-43847",
-      "title": "CVE-2026-43847",
+      "id": "CVE-2026-87096",
+      "title": "CVE-2026-87096",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:11.117",
-      "summary": "A vulnerability in the proprietary protocol could allow an attacker to brute force the administrator password without restrictions, even when the SafeEnhancement feature is enabled."
+      "date": "2026-10-21T11:17:09.600",
+      "summary": "Sensitive information disclosure and manipulation due to improper authorization checks. The following products are affected: Acronis Cyber Infrastructure (ACI) before build 6.0.1-112, Acronis Cyber Infrastructure (ACI) before build 6.1.1-64, Acronis Cyber Infrastructure (ACI) before build 6.2.1-71."
     },
     {
-      "id": "CVE-2026-43848",
-      "title": "CVE-2026-43848",
+      "id": "CVE-2026-114242",
+      "title": "CVE-2026-114242",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:11.223",
-      "summary": "A vulnerability in the bulk port configuration functionality could allow an unauthenticated attacker to crash the service."
+      "date": "2026-10-21T12:17:19.560",
+      "summary": "A vulnerability was identified in dhikshitha29 Insurance-Management-System 91de5edda5baa109ad8e9baf03ce6a3ceda84183/125362cc21dca20d74091a4913a5096bb58dd837. Affected is the function mysqli_query of the file /Admin/View/editPlan.php. Such manipulation of the argument Plan_no/Name leads to sql injection. The attack can be executed remotely. The exploit is publicly available and might be used. This product implements a rolling release for ongoing delivery, which means version information for affected or updated releases is unavailable. The project was informed of the problem early through an issue report but has not responded yet."
     },
     {
-      "id": "CVE-2026-92287",
-      "title": "CVE-2026-92287",
+      "id": "CVE-2026-48830",
+      "title": "CVE-2026-48830",
       "source": "NIST NVD",
-      "date": "2026-10-20T09:17:12.063",
-      "summary": "Pass-through of unvalidated KMS URLs to KMS clients in Apache C++ Parquet and PyArrow versions 4.0.0 to 25.0.1.\n\n\n\n\nThis affects users who read Parquet files and configure Parquet decryption properties with a KmsClient implementation.\n\n\n\n\nOn the reader side, the KMS URL can be application-controlled (specified in the KmsConnectionConfig) or file-controlled.\nIf the user does not leverage application control for this parameter, a file-controlled KMS URL is forwarded to a pluggable KmsClient implementation. \nIf the KMS implementation does not perform host validation and makes use of the provided KMS URL, a KMS token can be sent to a malicious host set by an attacker in the file. \n\n\n\n\nUsers are recommended to upgrade to version 26.0.0, which disables this behavior by default and requires that users opt-in to it by enabling the read_kms_url flag in the DecryptionConfiguration. Users of affected versions are recommended to either specify the KMS URL in the KmsConnectionConfig when reading files, or ensure any KmsClient implementations validate received KMS URLs. Users that opt-in to file-controlled KMS URLs in version 26.0.0 and later must ensure KmsClients validate KMS URLs."
+      "date": "2026-10-21T12:17:20.910",
+      "summary": "Improper authentication in Apache bRPC through 1.17.0 allows a remote unauthenticated attacker to bypass authentication for protected non-builtin HTTP endpoints by first sending a builtin HTTP request on the same HTTP/1.1 keep-alive connection.\n\nWhen ServerOptions.auth is enabled and builtin HTTP services are exposed on the public listener, a builtin request received as the first message on a socket may cause the connection to be treated as authenticated for later requests on that socket. Users are recommended to upgrade to version 1.18.0, which fixes this issue, or apply this PR separately:  https://github.com/apache/brpc/pull/3308"
     },
     {
-      "id": "CVE-2026-111844",
-      "title": "CVE-2026-111844",
+      "id": "CVE-2026-54425",
+      "title": "CVE-2026-54425",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:01.850",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Brizy Brizy brizy allows Stored XSS.This issue affects Brizy: 2.8.23."
+      "date": "2026-10-21T12:17:21.053",
+      "summary": "Uncontrolled recursion in the HTTP/2 HPACK decoder in Apache bRPC before 1.18.0 allows remote attackers to cause denial of service by sending a crafted HTTP/2 header block containing many consecutive Dynamic Table Size Update entries. Each update was decoded by recursively invoking the HPACK decoder, which could exhaust the thread stack before a header field or end of input was reached.\n\nRoot Cause:\nThe bRPC HPACK decoder recursively decoded the next entry after processing a Dynamic Table Size Update. The decoder did not bound the recursion depth, so a long sequence of update entries could consume excessive stack space.\n\nAffected Scenarios:\nUse bRPC with the built-in HTTP/2 implementation to accept HTTP/2 traffic from an untrusted network.\n\nHow to Fix:\n1. Upgrade bRPC to version 1.18.0, which fixes this issue.\n2. Apply this patch:  https://github.com/apache/brpc/pull/3343 \n\nNote:\nThe fix changes HPACK Dynamic Table Size Update decoding to use iterative parsing instead of recursive parsing."
     },
     {
-      "id": "CVE-2026-112064",
-      "title": "CVE-2026-112064",
+      "id": "CVE-2026-54426",
+      "title": "CVE-2026-54426",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:03.467",
-      "summary": "The backend module for reviewing the consent history accepted sorting, grouping and index options from the request and used them in a database query without validation. Only the filter conditions of that query were bound as parameters. A backend user with access to the history or statistics functions could use this to read arbitrary data from the database, including password hashes of backend and frontend users."
+      "date": "2026-10-21T12:17:21.180",
+      "summary": "Uncontrolled recursion in the Redis reply parser in Apache bRPC < 1.18.0 allows a remote Redis server peer to crash a bRPC Redis client process by returning a deeply nested RESP array reply. The parser recursed once for each nested array level without enforcing a depth limit. The fix adds a configurable Redis reply depth limit with default value 128 and rejects replies exceeding that limit. \n\nAffected Scenarios:\nApplications using bRPC as a Redis client with ChannelOptions.protocol=\"redis\" and receiving replies from an untrusted or faulty Redis server peer.\n\nHow to Fix:\n1. Upgrade Apache bRPC to 1.18.0.\n2. Apply the patch from PR  https://github.com/apache/brpc/pull/3344 .\n\nNote:\nAfter applying the fix, Redis replies with array nesting deeper than redis_max_reply_depth are rejected."
     },
     {
-      "id": "CVE-2026-112065",
-      "title": "CVE-2026-112065",
+      "id": "CVE-2026-54427",
+      "title": "CVE-2026-54427",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:03.630",
-      "summary": "The routes that provide consent history and statistics data did not check whether the backend user had access to the module or to the requested page. Any authenticated backend user, regardless of permissions, could therefore retrieve consent data of any site in the installation."
+      "date": "2026-10-21T12:17:21.290",
+      "summary": "Uncontrolled recursion in the AMF parser in Apache bRPC < 1.18.0 allows a remote RTMP peer to crash a bRPC process by sending deeply nested AMF objects or arrays. The parser recursively processed nested AMF containers without enforcing a depth limit, which could exhaust the native stack.\n\nAffected Scenarios:\nApplications using bRPC RTMP support and parsing AMF data from an untrusted RTMP peer. This includes RTMP servers parsing client command messages, RTMP clients parsing server responses or status messages, and either side parsing inbound AMF script data such as metadata or cue points. Direct callers of ReadAMFObject or ReadAMFArray on untrusted input are also affected.\n\nHow to Fix:\n1. Upgrade Apache bRPC to 1.18.0.\n2. Apply the patch from PR  https://github.com/apache/brpc/pull/3344 .\n\nNote:\nThe fix introduces a configurable AMF nesting depth limit with default value 128. AMF objects or arrays deeper than amf_max_depth are rejected after applying the fix."
     },
     {
-      "id": "CVE-2026-112066",
-      "title": "CVE-2026-112066",
+      "id": "CVE-2026-56386",
+      "title": "CVE-2026-56386",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:03.757",
-      "summary": "The JSON import of the cookie consent configuration did not respect the backend user's permissions. Non-admin backend users with access to the module could import a configuration that adds arbitrary scripts to the frontend of the website."
+      "date": "2026-10-21T12:17:21.410",
+      "summary": "Integer underflow and out-of-bounds read in the HTTP/2 server DATA frame parser in Apache bRPC allows an unauthenticated remote attacker to cause denial of service by sending a malformed DATA frame with the PADDED flag set and a zero-length payload.\n\nRoot Cause:\nThe HTTP/2 DATA frame handler computed the fragment size from the attacker-controlled payload length and, when the PADDED flag was present, decremented the fragment size before ensuring that the frame contained the mandatory pad length byte. A zero-length padded DATA frame could therefore underflow the unsigned fragment size and read the pad length byte past the end of the frame buffer.\n\nAffected Scenarios:\nApache bRPC servers that accept HTTP/2 traffic are affected when a remote client can send crafted HTTP/2 frames to the server. HTTP/2 may be reached through cleartext h2c detection on an HTTP port or through TLS ALPN negotiation.\n\nHow to Fix:\n(Choose one of the following options)\n1. Upgrade Apache bRPC to version 1.18.0, which fixes this issue.\n2. Apply this patch:  https://github.com/apache/brpc/pull/3325 \n\nNote:\nThe fix validates that a padded DATA frame has enough payload bytes for the pad length field before decremen"
     },
     {
-      "id": "CVE-2026-112067",
-      "title": "CVE-2026-112067",
+      "id": "CVE-2026-56387",
+      "title": "CVE-2026-56387",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:03.883",
-      "summary": "The extension hides the correct answer to each CAPTCHA inside the image data of the CAPTCHA itself. Anyone who can request a CAPTCHA image can read the answer from it and submit it, so automated clients can pass the challenge. This applies to the default configuration, because the audio feature that causes the answer to be embedded is enabled by default. Forms that rely on the CAPTCHA as their only protection against automated submissions are exposed to abuse by bots."
+      "date": "2026-10-21T12:17:21.547",
+      "summary": "The RTMP AMF parser in Apache bRPC accepts AMF string lengths and array counts directly from untrusted input. A remote unauthenticated attacker who can reach a bRPC server with RTMP enabled can send a small AMF payload with an excessive declared long string length or array count, causing excessive memory allocation or resource consumption before the parser rejects the incomplete payload.\n\nRoot Cause:\nThe AMF long string parser resized the destination string to the declared 32-bit length before validating that the stream contained that many bytes. ECMA array and strict array parsers also accepted 32-bit element counts without a configurable upper bound.\n\nAffected Scenarios:\nDeployments that enable the bRPC RTMP server component and accept RTMP traffic from untrusted clients. Direct uses of the AMF parser on untrusted data are also affected.\n\nHow to Fix:\n1. Upgrade bRPC to version 1.18.0, which fixes this issue.\n2. Apply this patch:  https://github.com/apache/brpc/pull/3353 \n\nNote:\nThe fix introduces configurable AMF parsing limits. The default maximum string size is 64 MiB and the default maximum array element count is 1,048,576. Payloads above these limits are rejected. The limits "
     },
     {
-      "id": "CVE-2026-112068",
-      "title": "CVE-2026-112068",
+      "id": "CVE-2026-56388",
+      "title": "CVE-2026-56388",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.010",
-      "summary": "The backend module does not check whether a backend user has access to the requested site. Users with access to the module can therefore open the analytics dashboard of any site."
+      "date": "2026-10-21T12:17:21.680",
+      "summary": "The Redis server command parser in Apache bRPC accepts an empty RESP array as a command header. A remote unauthenticated attacker who can reach a bRPC server with Redis service enabled can send an empty array header followed by a bulk string, causing an out-of-bounds write in the parser and crashing the process.\n\nRoot Cause:\nRedisCommandParser::ConsumeImpl rejected negative RESP array counts but accepted zero. It resized the command argument vector to zero elements and continued parsing. When a following bulk string was parsed, the only index guard was a CHECK. In configurations where fatal logs do not abort immediately, execution could continue and write to _args[0] even though the vector was empty.\n\nAffected Scenarios:\nDeployments that enable ServerOptions.redis_service and accept Redis protocol traffic from untrusted clients. The issue is reached during parsing before command handling or authentication.\n\nHow to Fix:\n1. Upgrade bRPC to version 1.18.0, which fixes this issue.\n2. Apply this patch:  https://github.com/apache/brpc/pull/3354 \n\nNote:\nThe fix rejects empty RESP arrays as invalid Redis commands and replaces the internal index CHECK with an explicit parse error so malform"
     },
     {
-      "id": "CVE-2026-112069",
-      "title": "CVE-2026-112069",
+      "id": "CVE-2026-58064",
+      "title": "CVE-2026-58064",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.140",
-      "summary": "The extension no longer applied its access protection to files in file storages that use a non-default relative base path. These files were served directly by the web server, without any authentication or permission check. The issue is only exploitable when the extension is used on a website running TYPO3 14.3."
+      "date": "2026-10-21T12:17:21.803",
+      "summary": "The Redis protocol implementation in Apache bRPC allowed inline command parsing to allocate and copy the full connection buffer before a complete CRLF-terminated command was available. A remote attacker with access to a Redis-protocol bRPC service could send long inline inputs without a terminating CRLF to increase memory usage and CPU copy overhead, potentially causing denial of service.\n\n\nRoot Cause:\nThe Redis inline command parser allocated memory based on the current input buffer size and copied the entire buffer before determining the current inline command boundary. The existing redis_max_allocation_size limit was applied to RESP bulk strings and arrays, but not effectively to the inline command path before allocation.\n\n\nAffected Scenarios:\nUse Apache bRPC server with Redis protocol enabled and reachable by untrusted clients.\n\n\nHow to Fix:\n1. Upgrade Apache bRPC to version 1.18.0, which fixes this issue.\n2. Apply the patch from PR  https://github.com/apache/brpc/pull/3363 .\n\n\nNote:\nThe fix applies redis_max_allocation_size to Redis inline command lines and scans for CRLF before allocating parser arena memory. Inline command lines exceeding this limit are rejected."
     },
     {
-      "id": "CVE-2026-112070",
-      "title": "CVE-2026-112070",
+      "id": "CVE-2026-59229",
+      "title": "CVE-2026-59229",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.270",
-      "summary": "The AJAX routes of the extension do not check whether a backend user has access to the related module or dashboard widget. Any backend user can therefore retrieve analytics data of the sites they have page access to."
+      "date": "2026-10-21T12:17:21.920",
+      "summary": "The Legacy Pipe receiver protocol (handshake / sendPipeData) uses a\nhardcoded SUPER_USER (root) identity when executing data loading and\ndeletion operations. A user with only SYSTEM-level privileges (such as\nUSE_PIPE or MAINTAIN) who does NOT have WRITE_DATA or DELETE_DATA\npermissions on target databases can send specially crafted PipeData\nmessages through the Legacy Pipe API, resulting in data loading/deletion\noperations executed as root — effectively bypassing IoTDB's permission\nmodel entirely.\n\n\n\nThis issue affects Apache IoTDB: from 2.0.0 before 2.0.11.\n\n\n\nUsers are recommended to upgrade to version 2.0.11, which fixes the issue."
     },
     {
-      "id": "CVE-2026-112071",
-      "title": "CVE-2026-112071",
+      "id": "CVE-2026-59562",
+      "title": "CVE-2026-59562",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.403",
-      "summary": "The order cancellation function accepts an order identifier from the request and acts on that order without checking that the caller owns it. Any site visitor can set orders that are still awaiting payment to \"canceled\". This requires a page that contains the shop's order plugin. Orders that are already paid are not affected."
+      "date": "2026-10-21T12:17:22.023",
+      "summary": "Missing authentication for critical function vulnerability in Apache IoTDB.\n\n\n\nThis issue affects Apache IoTDB: from 2.0.0 before 2.0.11.\n\n\n\nUsers are recommended to upgrade to version 2.0.11, which fixes the issue."
     },
     {
-      "id": "CVE-2026-112237",
-      "title": "CVE-2026-112237",
+      "id": "CVE-2026-61902",
+      "title": "CVE-2026-61902",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.530",
-      "summary": "The extension provides a public proxy endpoint that fetches a URL on behalf of the visitor. For one HTTP request method, the endpoint does not apply the authorization check that protects the other methods, so the URL it fetches is fully controlled by the requester. An unauthenticated attacker can make the server send requests to arbitrary internal or external hosts. The attacker receives the status code and selected response headers, which allows probing of internal hosts and ports. Response bodies are not disclosed."
+      "date": "2026-10-21T12:17:22.140",
+      "summary": "Apache bRPC versions before 1.18.0 do not consistently enforce the configured max_body_size limit in non-progressive HTTP/1 and HTTP/2 parsing and in memcache and couchbase response parsing.\n\nA remote unauthenticated peer can cause an affected process to buffer message data beyond the configured limit, which may lead to memory exhaustion and denial of service. \nUsers should upgrade to 1.18.0 or apply the patch from PR  https://github.com/apache/brpc/pull/3382 . The fix rejects oversized buffered HTTP bodies, returns HTTP 413 for HTTP/1 requests, resets oversized HTTP/2 streams, and rejects oversized memcache and couchbase responses from their declared lengths. Progressive HTTP reading remains supported because it uses bounded buffering."
     },
     {
-      "id": "CVE-2026-112238",
-      "title": "CVE-2026-112238",
+      "id": "CVE-2026-61916",
+      "title": "CVE-2026-61916",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.653",
-      "summary": "The file search of the extension builds its database conditions by wrapping the search term in quotes itself. Only the wildcard characters of the LIKE operator are escaped, quote characters are not. A crafted search term can therefore leave the intended string value and change the database query. This allows an attacker to read data from the database. The issue affects every searched field."
+      "date": "2026-10-21T12:17:22.280",
+      "summary": "Out-of-bounds reads in URL parsing and case-insensitive header lookup in Apache bRPC before version 1.18.0 on platforms where plain char is unsigned, such as ARM64, allow remote attackers to cause a process crash and denial of service by sending crafted input containing bytes with the high bit set.\n\nRoot Cause:\nTwo 256-entry lookup tables are accessed through pointers biased by 128 so that valid indices are in the range -128 to 127. Input bytes are promoted from plain char to int without first normalizing them to the signed-char range. On affected platforms, bytes in the range 0x80 to 0xFF therefore become indices 128 to 255 and read up to 127 bytes beyond the end of the underlying tables.\n\nAffected Scenarios:\nA remotely accessible bRPC HTTP server on an affected platform can reach the vulnerable URL lookup through an unauthenticated request URI containing a high-bit byte. The case-insensitive lookup is also reachable when untrusted header names are processed through APIs such as the HTTP/2 HPACK path. HTTP/1 header names containing high-bit bytes are rejected by the HTTP/1 parser before reaching the vulnerable lookup. Builds where plain char is signed, which commonly include x86_6"
     },
     {
-      "id": "CVE-2026-112239",
-      "title": "CVE-2026-112239",
+      "id": "CVE-2026-66392",
+      "title": "CVE-2026-66392",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.780",
-      "summary": "The extension provides a backend endpoint that writes a submitted value into a submitted field of a submitted page record. It neither checks the user's permissions nor limits which fields can be changed. Any authenticated backend user can therefore change any property of any page, including its access permissions and configuration, outside the scope granted to them."
+      "date": "2026-10-21T12:17:22.417",
+      "summary": "Apache bRPC versions before 1.18.0 validate the server certificate chain when client TLS peer verification is enabled, but do not bind the certificate to an expected DNS name or IP address. A network attacker who can redirect or intercept a connection and who possesses a certificate issued by a CA trusted by the client for another name may impersonate the requested TLS endpoint.\n\n\nAffected Scenarios:\nApplications use a bRPC client Channel to connect to an untrusted network with certificate verification enabled and trust a CA that can issue certificates for identities other than the intended endpoint.\n\n\nHow to Fix:\nUpgrade to Apache bRPC 1.18.0 and enable VERIFY_PEER with a positive verify_depth. HTTPS Channels automatically verify the certificate against the host in the Channel URL. Callers may set VerifyOptions::expected_peer_name explicitly when the certificate identity differs from the URL host. Alternatively, apply the patch from  https://github.com/apache/brpc/pull/3408 .\n\nNote:\nThe new option performs DNS SAN or IP SAN verification during the TLS handshake. Configurations that set expected_peer_name while peer verification is disabled are rejected."
     },
     {
-      "id": "CVE-2026-112240",
-      "title": "CVE-2026-112240",
+      "id": "CVE-2026-74755",
+      "title": "CVE-2026-74755",
       "source": "NIST NVD",
-      "date": "2026-10-20T10:17:04.907",
-      "summary": "The download link for files uploaded through a form relied on a token that could be predicted. The file name in the request was also not verified in a way that resisted guessing. An unauthenticated attacker could use this to access files uploaded by other visitors. In addition, the token was shown in plain text in the text version of the notification email."
+      "date": "2026-10-21T12:17:22.550",
+      "summary": "An integer underflow in the mcpack2pb component of Apache bRPC (version < 1.18.0) on all platforms allows remote attackers to crash a bRPC server by sending a request containing a string field with a zero value_size. The UnparsedValue::as_string() function computes `_size - 1` without validating `_size`; when value_size is 0 the expression underflows to SIZE_MAX, resize() throws std::length_error, and because the exception is not caught on the request parsing path the process aborts (SIGABRT).\n\nRoot Cause:\nIn src/mcpack2pb/parser.cpp, UnparsedValue::as_string() resizes the output string to `_size - 1`, where `_size` is the value_size of a string field taken directly from the network data. A value_size of 0 underflows the unsigned size_t, and the subsequent resize() throws an exception that is not caught.\n\nAffected Scenarios:\nbRPC servers that accept nshead frames wired to the ubrpc mcpack2 adaptor (for example the NsheadService + UbrpcMcpack2Adaptor deployment pattern) can be crashed by a single unauthenticated request. Stock open-source bRPC registers the ubrpc/nshead_mcpack protocols as client-only, so default server configurations are not affected.\n\nHow to Fix:\n1. Upgrade bRPC t"
     }
   ]
 }
