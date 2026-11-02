@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-01T09:25:35.588787+00:00",
+  "generated_at": "2026-11-02T09:41:33.364601+00:00",
   "items": [
     {
       "id": "CVE-2026-118527",
@@ -882,284 +882,284 @@
       "due": "2026-09-14"
     },
     {
-      "id": "CVE-2026-116066",
-      "title": "CVE-2026-116066",
+      "id": "CVE-2026-103377",
+      "title": "CVE-2026-103377",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:27.370",
-      "summary": "Firecrawl before 2.11.586 contains a server-side request forgery vulnerability in the Playwright service SSRF proxy that allows attackers to bypass isInternalHost checks via DNS rebinding. Attackers controlling DNS for a scrape target can return a public address during validation and a private address at connect time, retrieving cloud metadata and internal resources through the scrape API."
+      "date": "2026-10-26T10:16:50.867",
+      "summary": "A reflected Cross-Site Scripting (XSS) vulnerability has been identified in the web application of the Castile-La Mancha Regional Parliament’s video library. The application embeds user-supplied content into the page without properly sanitising it before it is rendered by the browser. Exploitation of this vulnerability could allow a remote attacker to execute arbitrary JavaScript code in the browser of a victim who interacts with the content crafted for the attack."
     },
     {
-      "id": "CVE-2026-116067",
-      "title": "CVE-2026-116067",
+      "id": "CVE-2026-110377",
+      "title": "CVE-2026-110377",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:28.997",
-      "summary": "Paisa before 0.7.8 contains a path traversal vulnerability in the GetFile, GetSheet, DeleteBackups, and DeleteSheetBackups handlers that lets unauthenticated attackers read files and delete backups through ../ sequences in file names. Attackers can send crafted names to the editor file and delete_backups endpoints to read any server-readable file and remove backup files outside the journal or sheets directory."
+      "date": "2026-10-26T10:16:51.060",
+      "summary": "Missing Authorization vulnerability in VillaTheme Bopo – WooCommerce Product Bundle Builder bopo-woo-product-bundle-builder allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Bopo – WooCommerce Product Bundle Builder: from n/a through 1.2.3."
     },
     {
-      "id": "CVE-2026-116068",
-      "title": "CVE-2026-116068",
+      "id": "CVE-2026-112250",
+      "title": "CVE-2026-112250",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:29.153",
-      "summary": "Dokploy through 0.30.10 contains an authorization bypass vulnerability that allows owners or admins of any organization to control other tenants' applications by supplying foreign applicationId values. Attackers can call procedures like saveEnvironment, updateTraefikConfig, deploy, or stop to overwrite environment variables and build secrets, repoint sources, and disrupt other tenants' applications."
+      "date": "2026-10-26T10:16:51.337",
+      "summary": "A vulnerability has been identified in\nBRAIN2 versions up to and including version 3.09. Under specific installation\nconditions, the password of a Windows service account may be written in\ncleartext to a setup log file. The issue occurs when Microsoft SQL Server\naccess is configured using Integrated Security and the Windows account intended\nto run the BRAIN2 MainService is specified during execution of the BRAIN2\ninstallation wizard. The setup log file is stored in the\ntemporary directory of the Windows administrator performing the installation.\nThis directory is not accessible to standard Windows users and can generally\nonly be accessed by users with administrative privileges. Successful exploitation could result in the\ndisclosure of credentials belonging to the configured BRAIN2 service account."
     },
     {
-      "id": "CVE-2026-116069",
-      "title": "CVE-2026-116069",
+      "id": "CVE-2026-112865",
+      "title": "CVE-2026-112865",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:29.330",
-      "summary": "NiubiGEO before 0.3.2 contains an unauthenticated server-side request forgery vulnerability that allows remote attackers to make the server fetch internal addresses by supplying a crafted domain value to POST /audit-plan. Attackers can submit IP literals, localhost, or private and link-local hosts to read loopback, internal-network, or cloud metadata responses returned in the plan's siteEvidence JSON."
+      "date": "2026-10-26T10:16:51.480",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows DOM-Based XSS.This issue affects Royal Elementor Addons: from n/a through 1.7.1069."
     },
     {
-      "id": "CVE-2026-116070",
-      "title": "CVE-2026-116070",
+      "id": "CVE-2026-114709",
+      "title": "CVE-2026-114709",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:29.480",
-      "summary": "Docker-Proxy through 5.1.9 contains a missing authentication vulnerability in the hubcmdui routes/config.js that allows unauthenticated attackers to read and overwrite configuration via /api/config. Attackers can retrieve the WeChat webhook URL and Telegram bot token, and overwrite menuItems links, proxyDomain, and the monitoring webhook destination receiving alerts."
+      "date": "2026-10-26T10:16:51.653",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Igor Funa Ad Inserter ad-inserter allows Reflected XSS.This issue affects Ad Inserter: from n/a through 2.8.18."
     },
     {
-      "id": "CVE-2026-116071",
-      "title": "CVE-2026-116071",
+      "id": "CVE-2026-115602",
+      "title": "CVE-2026-115602",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:29.623",
-      "summary": "rotki before 1.44.2 contains a weak key derivation vulnerability that allows attackers to brute-force backups because the premium sync key is a single unsalted SHA-256 of the user password. Attackers who obtain an uploaded backup blob can run GPU-parallel offline password guessing and decrypt the database containing exchange API keys, secrets, wallet addresses and transaction history."
+      "date": "2026-10-26T10:16:51.790",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Liquid Web / StellarWP Gutenberg Blocks by Kadence Blocks kadence-blocks allows Stored XSS.This issue affects Gutenberg Blocks by Kadence Blocks: from n/a through 3.8.0.1."
     },
     {
-      "id": "CVE-2026-116072",
-      "title": "CVE-2026-116072",
+      "id": "CVE-2026-115613",
+      "title": "CVE-2026-115613",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:29.763",
-      "summary": "Infinity for Reddit through 8.3.4 contains a login cross-site request forgery vulnerability that allows attackers to log victims into an attacker-controlled account because the exported LoginChromeCustomTabActivity redirect handler checks a hardcoded OAuth state value. Attackers can authorize the app's client ID with their own Reddit account, then deliver an infinity://localhost redirect containing their code and the constant state, causing the victim's posts, messages, and browsing to occur on the attacker's account."
+      "date": "2026-10-26T10:16:51.923",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Image Gallery block – Create and display photo gallery/photo album. 3d-image-gallery allows Stored XSS.This issue affects Image Gallery block – Create and display photo gallery/photo album.: from n/a through 2.4.1."
     },
     {
-      "id": "CVE-2026-116073",
-      "title": "CVE-2026-116073",
+      "id": "CVE-2026-115614",
+      "title": "CVE-2026-115614",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:29.920",
-      "summary": "Leon before commit 50df142 contains a path traversal vulnerability in getModelFileNameFromURL() that allows attackers to write files outside the models directory via percent-encoded separators. Attackers can trick a user into running '/download model' with a crafted URL containing encoded '../' sequences to write attacker-controlled content to arbitrary paths writable by Leon."
+      "date": "2026-10-26T10:16:52.060",
+      "summary": "Missing Authorization vulnerability in Magepeople inc. Booking and Rental Manager booking-and-rental-manager-for-woocommerce allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Booking and Rental Manager: from n/a through 2.8.2."
     },
     {
-      "id": "CVE-2026-116136",
-      "title": "CVE-2026-116136",
+      "id": "CVE-2026-115949",
+      "title": "CVE-2026-115949",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:30.080",
-      "summary": "ProjectSend 2.0.0 through 2.7.1 contains an incomplete authorization vulnerability in FileVersions::link() that allows staff users to share files without authorization by linking file versions. Attackers can link their file onto an intermediate revision or assign out-of-scope clients, causing moveAssignmentsToRoot() to expose protected original files to unauthorized clients."
+      "date": "2026-10-26T10:16:52.200",
+      "summary": "Missing Authorization vulnerability in WP Smart Widgets Better Post & Filter Widgets for Elementor better-post-filter-widgets-for-elementor allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Better Post & Filter Widgets for Elementor: from n/a through 1.9.1."
     },
     {
-      "id": "CVE-2026-116137",
-      "title": "CVE-2026-116137",
+      "id": "CVE-2026-115958",
+      "title": "CVE-2026-115958",
       "source": "NIST NVD",
-      "date": "2026-10-25T12:16:30.250",
-      "summary": "adm-zip through 0.6.1 contains a duplicate-entry validation bypass that allows attackers to evade the readEntries() check by using canonically equivalent entry names like './hello.txt' and 'hello.txt'. Attackers can craft ZIP archives where getEntry() or readAsText() validates benign content while extractAllTo() writes malicious content to the same path, bypassing integrity checks."
+      "date": "2026-10-26T10:16:52.337",
+      "summary": "Missing Authorization vulnerability in WP Discussion Board WP Discussion Board wp-discussion-board allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WP Discussion Board: from n/a through 2.6.0."
     },
     {
-      "id": "CVE-2026-116052",
-      "title": "CVE-2026-116052",
+      "id": "CVE-2026-116237",
+      "title": "CVE-2026-116237",
       "source": "NIST NVD",
-      "date": "2026-10-25T13:16:27.407",
-      "summary": "A security flaw has been discovered in LinkStackOrg LinkStack up to 4.8.8. The affected element is an unknown function. Performing a manipulation results in cross-site request forgery. Remote exploitation of the attack is possible. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-26T10:16:52.477",
+      "summary": "A vulnerability was found in Oray Pugongying X5 Pro 7.6.1. This affects an unknown part of the component Dnsmasq. Performing a manipulation results in crlf injection. Remote exploitation of the attack is possible. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-116053",
-      "title": "CVE-2026-116053",
+      "id": "CVE-2026-116253",
+      "title": "CVE-2026-116253",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:50.903",
-      "summary": "A weakness has been identified in dbcli mycli up to 2.29.4/2.30.1. The impacted element is the function source_special_command_is_safe of the file mycli/packages/special/source.py of the component Whitelist. Executing a manipulation can lead to os command injection. It is possible to launch the attack on the local host. The exploit has been made available to the public and could be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-26T10:16:52.693",
+      "summary": "A vulnerability was determined in DedeCMS 5.7.118. This vulnerability affects the function common.inc.php::_RunMagicQuotes of the file plus/ad_js.php of the component Advertisement Rendering. Executing a manipulation of the argument aid can lead to code injection. The attack can be executed remotely."
     },
     {
-      "id": "CVE-2026-116139",
-      "title": "CVE-2026-116139",
+      "id": "CVE-2026-116254",
+      "title": "CVE-2026-116254",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:51.610",
-      "summary": "WWBN AVideo 26.0 through 29.3.0 contains a stored cross-site scripting vulnerability that allows authenticated commenters to inject JavaScript because markDownToHTML() preserves event-handler attributes in leading HTML blocks. Attackers can post a comment starting with an img tag carrying an onerror handler, which bypasses the inline sanitizer and executes in viewers' browsers under the application origin."
+      "date": "2026-10-26T10:16:52.867",
+      "summary": "A vulnerability was identified in rathena FluxCP up to 98cd4b8fd83228c11b36fb3d097b8e0f7c105a8d. This issue affects the function verifyiprange of the file lib/Flux/PaymentNotifyRequest.php of the component PayPal IPN Handler. The manipulation of the argument X-Real-IP leads to origin validation error. The attack is possible to be carried out remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-116140",
-      "title": "CVE-2026-116140",
+      "id": "CVE-2026-116255",
+      "title": "CVE-2026-116255",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:51.783",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 incorrectly parses delegate invocations, which can allow an executable blocked in policy.xml to still run. An attacker who gets ImageMagick to process input that triggers a delegate invocation can bypass the administrator-defined policy and execute the blocked program."
+      "date": "2026-10-26T10:16:53.040",
+      "summary": "A vulnerability has been found in PGYER codefever up to 0c35e60f006f9d558cc33a159baf110659351990. Affected is the function _detail of the file application/controllers/doc.php of the component URI Sanitizer. The manipulation of the argument uri_string leads to path traversal. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The identifier of the patch is e4433eee96883a222403854e8ac38b3146774a07. Applying a patch is the recommended action to fix this issue."
     },
     {
-      "id": "CVE-2026-116141",
-      "title": "CVE-2026-116141",
+      "id": "CVE-2026-4316",
+      "title": "CVE-2026-4316",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:51.940",
-      "summary": "ImageMagick before 7.1.2-33 contains a policy bypass vulnerability in the UHDR decoder that allows attackers to evade image width and height limits because extent checks occur after decoding. Attackers can supply crafted UHDR images with oversized dimensions that are fully decoded before policy limits are enforced, causing excessive resource consumption."
+      "date": "2026-10-26T10:16:53.250",
+      "summary": "Reflected Cross-Site Scripting (XSS) in Gym Management Software IsMyGym by Zuinq Studio affecting the reservation endpoint where the 'ret' parameter is reflected in the HTTP response without any proper sanitization. Successfull explotation of this vulnerability could allow an attacker to inject arbitrary JavaScript code executed in the context of the victim’s browser."
     },
     {
-      "id": "CVE-2026-116142",
-      "title": "CVE-2026-116142",
+      "id": "CVE-2026-97254",
+      "title": "CVE-2026-97254",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.097",
-      "summary": "ImageMagick before 7.1.2-33 contains a heap buffer over-read vulnerability that allows attackers to read beyond allocated memory when printing a minimum-bounding-box. Attackers can supply a crafted image that triggers the over-read during minimum-bounding-box output, causing crashes or exposing adjacent heap memory."
+      "date": "2026-10-26T10:16:53.657",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows Stored XSS.This issue affects Royal Elementor Addons: from n/a through 1.7.1069."
     },
     {
-      "id": "CVE-2026-116143",
-      "title": "CVE-2026-116143",
+      "id": "CVE-2026-97255",
+      "title": "CVE-2026-97255",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.257",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a policy bypass in the PS, PDF and XPS decoders that allows the security policy's list length limit on scene selection to be circumvented. Attackers supplying a specific argument can cause ImageMagick to process more scenes than permitted, potentially exhausting resources."
+      "date": "2026-10-26T10:16:53.813",
+      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Royal Elementor Addons: from n/a through 1.7.1069."
     },
     {
-      "id": "CVE-2026-116144",
-      "title": "CVE-2026-116144",
+      "id": "CVE-2026-97295",
+      "title": "CVE-2026-97295",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.400",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains uncontrolled recursion in the MVG decoder that can lead to a stack overflow. Attackers can supply a crafted MVG file that, when read with specific arguments, exhausts the stack and crashes the process, causing a denial of service."
+      "date": "2026-10-26T10:16:53.963",
+      "summary": "Cross-Site Request Forgery (CSRF) vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Cross Site Request Forgery.This issue affects Media LIbrary Assistant: from n/a through 3.42."
     },
     {
-      "id": "CVE-2026-116145",
-      "title": "CVE-2026-116145",
+      "id": "CVE-2026-114707",
+      "title": "CVE-2026-114707",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.543",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-32 contains a security policy bypass caused by an incomplete fix for the policy bypass reported in GHSA-jjp4-3fwf-393j. An attacker able to supply input to ImageMagick can evade configured security policy restrictions, allowing operations the policy was intended to block."
+      "date": "2026-10-26T11:16:33.133",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetElements For Elementor jet-elements allows Stored XSS.This issue affects JetElements For Elementor: from n/a through 2.9.2.5."
     },
     {
-      "id": "CVE-2026-116146",
-      "title": "CVE-2026-116146",
+      "id": "CVE-2026-114708",
+      "title": "CVE-2026-114708",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.690",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a memory leak in the MSL decoder that fails to release allocated memory when processing a crafted MSL image. Attackers can supply crafted MSL files for processing to repeatedly leak memory, causing resource exhaustion and denial of service."
+      "date": "2026-10-26T11:16:33.273",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetSmartFilters jet-smart-filters allows Stored XSS.This issue affects JetSmartFilters: from n/a through 3.8.6.1."
     },
     {
-      "id": "CVE-2026-116147",
-      "title": "CVE-2026-116147",
+      "id": "CVE-2026-115594",
+      "title": "CVE-2026-115594",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.840",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a null pointer dereference in the DJVU decoder because the result of a memory allocation is not checked before use. Attackers can supply a DJVU image that, when processed under conditions where the allocation fails, crashes the process and causes a denial of service."
+      "date": "2026-10-26T11:16:34.783",
+      "summary": "Insertion of Sensitive Information Into Sent Data vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Retrieve Embedded Sensitive Data.This issue affects Media LIbrary Assistant: from n/a through 3.42."
     },
     {
-      "id": "CVE-2026-116148",
-      "title": "CVE-2026-116148",
+      "id": "CVE-2026-115595",
+      "title": "CVE-2026-115595",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:52.983",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains an injection vulnerability in the MVG encoder, which does not properly neutralize user-specified drawing options before writing them into generated MVG output. Attackers who can supply drawing options can inject arbitrary MVG drawing commands into the resulting MVG file."
+      "date": "2026-10-26T11:16:34.923",
+      "summary": "Missing Authorization vulnerability in Supsystic Contact Form by Supsystic contact-form-by-supsystic allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Contact Form by Supsystic: from n/a through 1.10.7."
     },
     {
-      "id": "CVE-2026-116149",
-      "title": "CVE-2026-116149",
+      "id": "CVE-2026-115608",
+      "title": "CVE-2026-115608",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.123",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a stack-based buffer overflow in the handling of bzip2 compressed images. Attackers can supply a crafted image using bzip2 compression to overwrite stack memory during decoding, causing crashes or memory corruption."
+      "date": "2026-10-26T11:16:35.190",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Crocoblock JetEngine jet-engine allows SQL Injection.This issue affects JetEngine: from n/a through 3.9.0."
     },
     {
-      "id": "CVE-2026-116150",
-      "title": "CVE-2026-116150",
+      "id": "CVE-2026-115948",
+      "title": "CVE-2026-115948",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.267",
-      "summary": "ImageMagick before 7.1.2-33 contains a memory leak vulnerability in the FPX encoder that allows attackers to exhaust memory by supplying a crafted image. Attackers can submit crafted images for FPX encoding to leak memory repeatedly, causing resource exhaustion and denial of service."
+      "date": "2026-10-26T11:16:35.550",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Blind SQL Injection.This issue affects Media LIbrary Assistant: from n/a through 3.42."
     },
     {
-      "id": "CVE-2026-116151",
-      "title": "CVE-2026-116151",
+      "id": "CVE-2026-115950",
+      "title": "CVE-2026-115950",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.423",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a memory leak in the JNG encoder that fails to release allocated memory when processing a crafted image. Attackers can supply crafted images that are encoded to JNG to leak memory, potentially causing resource exhaustion and a limited denial of service."
+      "date": "2026-10-26T11:16:35.797",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Smart Widgets Better Post & Filter Widgets for Elementor better-post-filter-widgets-for-elementor allows Stored XSS.This issue affects Better Post & Filter Widgets for Elementor: from n/a through 1.9.1."
     },
     {
-      "id": "CVE-2026-116152",
-      "title": "CVE-2026-116152",
+      "id": "CVE-2026-115951",
+      "title": "CVE-2026-115951",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.563",
-      "summary": "ImageMagick before 7.1.2-33 contains a memory leak vulnerability in the MAT decoder that fails to release allocated memory in a specific error path. Attackers can supply crafted MAT files that trigger this error path repeatedly, causing small memory leaks that gradually consume process memory."
+      "date": "2026-10-26T11:16:35.937",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Kevin Weber Lazy Load for Videos lazy-load-for-videos allows Stored XSS.This issue affects Lazy Load for Videos: from n/a through 2.18.11."
     },
     {
-      "id": "CVE-2026-116153",
-      "title": "CVE-2026-116153",
+      "id": "CVE-2026-115953",
+      "title": "CVE-2026-115953",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.713",
-      "summary": "ImageMagick before 7.1.2-33 contains a heap buffer overflow vulnerability on 32-bit systems that allows attackers to overwrite heap memory when convex-hull information is requested. Attackers can supply crafted images processed with convex-hull calculations to corrupt heap memory, causing crashes or potential code execution."
+      "date": "2026-10-26T11:16:36.070",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Dylan Kuhn  Geo Mashup geo-mashup allows Stored XSS.This issue affects  Geo Mashup: from n/a through 1.13.22."
     },
     {
-      "id": "CVE-2026-116154",
-      "title": "CVE-2026-116154",
+      "id": "CVE-2026-115954",
+      "title": "CVE-2026-115954",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.857",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a memory leak in its XML parsing code, where allocated memory is not released when parsing reaches the nesting depth limit. Attackers can supply crafted, deeply nested XML data to trigger the leak, causing memory exhaustion and denial of service."
+      "date": "2026-10-26T11:16:36.210",
+      "summary": "Missing Authorization vulnerability in Dylan Kuhn  Geo Mashup geo-mashup allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects  Geo Mashup: from n/a through 1.13.22."
     },
     {
-      "id": "CVE-2026-116155",
-      "title": "CVE-2026-116155",
+      "id": "CVE-2026-115955",
+      "title": "CVE-2026-115955",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:53.993",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a memory leak in the handling of XMP profiles by various decoders. Attackers can supply images with a crafted XMP profile that leak memory each time they are processed, leading to resource exhaustion and denial of service."
+      "date": "2026-10-26T11:16:36.343",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Advanced Post Block - Post Grid for WordPress block editor advanced-post-block allows Stored XSS.This issue affects Advanced Post Block - Post Grid for WordPress block editor: from n/a through 2.5.1."
     },
     {
-      "id": "CVE-2026-116156",
-      "title": "CVE-2026-116156",
+      "id": "CVE-2026-115956",
+      "title": "CVE-2026-115956",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.133",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a memory leak caused by a missing cleanup when the -set profile option is used. An attacker who induces a user to process images with the -set profile option can leak memory, potentially exhausting resources and causing a denial of service."
+      "date": "2026-10-26T11:16:36.477",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Panorama Viewer – 360 Degree Image + Video Viewer panorama allows Stored XSS.This issue affects Panorama Viewer – 360 Degree Image + Video Viewer: from n/a through 1.8.3."
     },
     {
-      "id": "CVE-2026-116157",
-      "title": "CVE-2026-116157",
+      "id": "CVE-2026-115959",
+      "title": "CVE-2026-115959",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.270",
-      "summary": "ImageMagick before 7.1.2-33 contains a memory leak vulnerability in PerlMagick that fails to free values returned when reading image properties. Attackers can repeatedly trigger property reads through five affected PerlMagick code locations to exhaust memory and cause denial of service."
+      "date": "2026-10-26T11:16:36.720",
+      "summary": "Missing Authorization vulnerability in WPExperts APIExperts Square for WooCommerce woosquare allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects APIExperts Square for WooCommerce: from n/a through 4.7.5."
     },
     {
-      "id": "CVE-2026-116158",
-      "title": "CVE-2026-116158",
+      "id": "CVE-2026-115960",
+      "title": "CVE-2026-115960",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.413",
-      "summary": "ImageMagick before 7.1.2-33 contains a memory leak vulnerability in the magick compare command caused by missing cleanup when an operation fails. Attackers can supply inputs that trigger repeated failed compare operations to exhaust memory and cause denial of service."
+      "date": "2026-10-26T11:16:36.857",
+      "summary": "Missing Authorization vulnerability in WPExperts APIExperts Square for WooCommerce woosquare allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects APIExperts Square for WooCommerce: from n/a through 4.7.5."
     },
     {
-      "id": "CVE-2026-116159",
-      "title": "CVE-2026-116159",
+      "id": "CVE-2026-115961",
+      "title": "CVE-2026-115961",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.557",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a memory leak in the handling of the -cdl (color decision list) option, where allocated memory is not cleaned up after use. Attackers can supply input that causes the -cdl option to be processed, repeatedly leaking memory and degrading availability through resource exhaustion."
+      "date": "2026-10-26T11:16:36.987",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins B Slider b-slider allows Stored XSS.This issue affects B Slider: from n/a through 2.2.2."
     },
     {
-      "id": "CVE-2026-116160",
-      "title": "CVE-2026-116160",
+      "id": "CVE-2026-116256",
+      "title": "CVE-2026-116256",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.703",
-      "summary": "ImageMagick before 6.9.13-58 and 7.x before 7.1.2-33 contains a heap-based buffer overflow in the X11 animate operation when processing crafted images. Attackers can supply a malicious image that, when a user runs an X11 animate operation on it, overwrites heap memory and can crash the application."
+      "date": "2026-10-26T11:16:37.130",
+      "summary": "A vulnerability was found in geesondog RhaPHP up to 7ae639ccf8dcb627faace096d030bd4cb4cfb905. Affected by this vulnerability is the function image of the file application/mp/controller/Show.php of the component Mp Module Media Proxy. The manipulation of the argument url results in server-side request forgery. The attack may be launched remotely. The exploit has been made public and could be used. This product operates on a rolling release basis, ensuring continuous delivery. Consequently, there are no version details for either affected or updated releases. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-116161",
-      "title": "CVE-2026-116161",
+      "id": "CVE-2026-116257",
+      "title": "CVE-2026-116257",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.843",
-      "summary": "Parse Server before 8.6.103 and 9.0.0 before 9.10.5-alpha.4 contains an information disclosure vulnerability in LiveQuery. Its subscription hash omits constraints next to a $or operator, including the _Session owner filter and beforeSubscribe constraints, so distinct subscriptions are grouped together. Authenticated clients subscribing with $or queries can receive other users' events, including session tokens usable for impersonation."
+      "date": "2026-10-26T11:16:37.327",
+      "summary": "A vulnerability was determined in BillaBear up to 2025.01.03. Affected by this issue is the function processInstall of the file src/BillaBear/Controller/InstallController.php of the component Installation Handler. This manipulation causes missing authentication. Remote exploitation of the attack is possible. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-116162",
-      "title": "CVE-2026-116162",
+      "id": "CVE-2026-116258",
+      "title": "CVE-2026-116258",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:54.980",
-      "summary": "Parse Server before 8.6.104 and 9.0.0 before 9.10.5-alpha.5 saves the entire login request with master privileges when issuing an SMS multi-factor authentication verification code. An SMS MFA-enrolled user can include extra fields in that request to modify master-key-restricted fields on their own account, such as the email-verification flag or beforeSave-protected values."
+      "date": "2026-10-26T11:16:37.500",
+      "summary": "A vulnerability was identified in libimobiledevice up to 1.4.0. This affects an unknown part of the file src/afc.c of the component AFC. Such manipulation leads to heap-based buffer overflow. The attack can be executed remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-116163",
-      "title": "CVE-2026-116163",
+      "id": "CVE-2026-116259",
+      "title": "CVE-2026-116259",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:55.110",
-      "summary": "Parse Server before 8.6.102 and 9.0.0 before 9.10.5-alpha.2 contains an authentication bypass because the validateSetUp, validateLogin, and validateUpdate methods of custom adapters subclassing AuthAdapter are never called, and an inherited default that accepts any authData is used instead. Attackers can supply arbitrary authData to sign up, link identities, log in as existing users, or skip custom additional authentication factors."
+      "date": "2026-10-26T11:16:37.670",
+      "summary": "A security flaw has been discovered in libimobiledevice up to 1.4.0. This vulnerability affects the function afc_get_device_info_key of the file src/afc.c of the component Device Info Handler. Performing a manipulation of the argument Value results in memory corruption. The attack requires a local approach. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
     },
     {
-      "id": "CVE-2026-116164",
-      "title": "CVE-2026-116164",
+      "id": "CVE-2026-116469",
+      "title": "CVE-2026-116469",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:55.257",
-      "summary": "Parse Server before 8.6.100 and 9.0.0 before 9.10.4-alpha.3 does not reject reserved internal field names in client object writes, allowing clients to store or clear internal fields. Attackers can write a reserved field that makes reads of an object fail on MongoDB, disrupting queries on that class for all users, or clear their own account lockout state and password history to bypass lockout and password policies."
+      "date": "2026-10-26T11:16:37.840",
+      "summary": "MISP Guard, a proxy-based security filter for MISP feed distribution, contains a case-sensitivity flaw in multiple policy enforcement checks. The functions check_required_taxonomy_exists, check_required_taxonomy_tags_allowed, check_blocked_attribute_categories, and check_blocked_analyst_data_sharing_groups_uuids performed case-sensitive string comparisons when matching event tags, attribute categories, and sharing-group UUIDs against configured allow/block lists.\n\nAn attacker with the ability to create or modify events in a MISP instance (or a connected instance that pushes events through the guard) could craft events using different letter case in taxonomy tag names, attribute categories, or sharing-group UUIDs to bypass the configured security policies. For example, if the policy requires the 'tlp' taxonomy with only 'tlp:clear' allowed, an event tagged 'TLP:AMBER' would not be recognized as belonging to the 'tlp' taxonomy and would therefore not be checked against the allowed-tags list, resulting in the event being forwarded to feed consumers. Similarly, a blocked attribute category such as 'Person' would not match a configured block entry of 'person', allowing the attribute to "
     },
     {
-      "id": "CVE-2026-116165",
-      "title": "CVE-2026-116165",
+      "id": "CVE-2026-89209",
+      "title": "CVE-2026-89209",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:55.387",
-      "summary": "Parse Server before 8.6.101 and 9.0.0 before 9.10.4-alpha.4 contains a missing authorization vulnerability on MongoDB deployments that lets clients without the master key delete the stored schema of any class. Unauthenticated attackers can send REST API delete requests targeting the internal _SCHEMA collection to remove field definitions, class-level permissions, and protected fields, exposing data to unauthorized reads and modifications."
+      "date": "2026-10-26T11:16:38.583",
+      "summary": "A vulnerability has been identified in Mendix SAML (Mendix 10 compatible) (All versions < V4.2.4), Mendix SAML (Mendix 11 compatible) (All versions < V4.2.4), Mendix SAML (Mendix 9 compatible) (All versions < V3.6.29). Affected versions of the module do not properly protect against SAML assertion replay in IdP-initiated authentication flows. This could allow unauthenticated remote attackers to gain unauthorized access to the application by replaying a valid SAML response."
     },
     {
-      "id": "CVE-2026-116166",
-      "title": "CVE-2026-116166",
+      "id": "CVE-2012-20006",
+      "title": "CVE-2012-20006",
       "source": "NIST NVD",
-      "date": "2026-10-25T14:16:55.517",
-      "summary": "SiYuan 3.6.0 before 3.8.7 accepts and persists the networkServeTLS setting but never enforces it, so the kernel port keeps serving full API access over plain HTTP alongside HTTPS. Network-adjacent attackers can sniff the cleartext login flow and session cookie, which lacks the Secure attribute while responses omit HSTS, to hijack kernel API sessions."
+      "date": "2026-10-26T12:17:01.153",
+      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
     }
   ]
 }
