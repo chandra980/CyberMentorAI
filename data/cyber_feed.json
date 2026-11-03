@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-02T09:41:33.364601+00:00",
+  "generated_at": "2026-11-03T09:44:54.744954+00:00",
   "items": [
     {
       "id": "CVE-2026-118527",
@@ -882,284 +882,284 @@
       "due": "2026-09-14"
     },
     {
-      "id": "CVE-2026-103377",
-      "title": "CVE-2026-103377",
+      "id": "CVE-2026-102787",
+      "title": "CVE-2026-102787",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:50.867",
-      "summary": "A reflected Cross-Site Scripting (XSS) vulnerability has been identified in the web application of the Castile-La Mancha Regional Parliament’s video library. The application embeds user-supplied content into the page without properly sanitising it before it is rendered by the browser. Exploitation of this vulnerability could allow a remote attacker to execute arbitrary JavaScript code in the browser of a victim who interacts with the content crafted for the attack."
+      "date": "2026-10-27T10:16:52.527",
+      "summary": "Joomla Extension - phoca.cz - CSRF in category management in Phoca Download 3.1.0 - 6.1.5"
     },
     {
-      "id": "CVE-2026-110377",
-      "title": "CVE-2026-110377",
+      "id": "CVE-2026-102788",
+      "title": "CVE-2026-102788",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:51.060",
-      "summary": "Missing Authorization vulnerability in VillaTheme Bopo – WooCommerce Product Bundle Builder bopo-woo-product-bundle-builder allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Bopo – WooCommerce Product Bundle Builder: from n/a through 1.2.3."
+      "date": "2026-10-27T10:16:53.780",
+      "summary": "Joomla Extension - balbooa.com - Unauthenticated SQL injection in Gridbox < 2.20.4.2 - On store product list pages, the value of the sort-by URL parameter is retrieved using a string filter and passed directly to GridboxHelper::getBlogPosts(). When the parameter does not match known sorting keys, it is prefixed with a table alias and inserted into the ORDER BY clause without checking against an allowlist"
     },
     {
-      "id": "CVE-2026-112250",
-      "title": "CVE-2026-112250",
+      "id": "CVE-2026-102789",
+      "title": "CVE-2026-102789",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:51.337",
-      "summary": "A vulnerability has been identified in\nBRAIN2 versions up to and including version 3.09. Under specific installation\nconditions, the password of a Windows service account may be written in\ncleartext to a setup log file. The issue occurs when Microsoft SQL Server\naccess is configured using Integrated Security and the Windows account intended\nto run the BRAIN2 MainService is specified during execution of the BRAIN2\ninstallation wizard. The setup log file is stored in the\ntemporary directory of the Windows administrator performing the installation.\nThis directory is not accessible to standard Windows users and can generally\nonly be accessed by users with administrative privileges. Successful exploitation could result in the\ndisclosure of credentials belonging to the configured BRAIN2 service account."
+      "date": "2026-10-27T10:16:53.907",
+      "summary": "Joomla Extension - balbooa.com - Missing Authorization Check on Editor Controller Task in Gridbox < 2.20.4.2 - EditorController::getBlogPosts() reads the order parameter and invokes getBlogPosts() . Unlike other tasks in this controller, it omits the GridboxHelper::checkUserEditLevel() check."
     },
     {
-      "id": "CVE-2026-112865",
-      "title": "CVE-2026-112865",
+      "id": "CVE-2026-107145",
+      "title": "CVE-2026-107145",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:51.480",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows DOM-Based XSS.This issue affects Royal Elementor Addons: from n/a through 1.7.1069."
+      "date": "2026-10-27T10:16:54.030",
+      "summary": "The twofactor_gauthenticator plugin for Roundcube is vulnerable to brute-forcing of the second-factor code. Due to the lack of rate limiting, an attacker who obtains user's password can submit arbitrary 6-digit codes, resulting in second-factor bypass and unauthorized access to the system.\n\n\n\n\nThis issue was fixed in commit 4640889."
     },
     {
-      "id": "CVE-2026-114709",
-      "title": "CVE-2026-114709",
+      "id": "CVE-2026-107146",
+      "title": "CVE-2026-107146",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:51.653",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Igor Funa Ad Inserter ad-inserter allows Reflected XSS.This issue affects Ad Inserter: from n/a through 2.8.18."
+      "date": "2026-10-27T10:16:54.167",
+      "summary": "The twofactor_gauthenticator plugin for Roundcube is vulnerable to session persistence after failed 2FA verification. Due to the lack of server-side session destruction, an attacker can ignore the logout redirect and keep the session alive. This may allow an attacker who obtains user's password to e.g. brute force the second-factor code.\n\n\n\n\nThis issue was fixed in commit 4640889."
     },
     {
-      "id": "CVE-2026-115602",
-      "title": "CVE-2026-115602",
+      "id": "CVE-2026-107147",
+      "title": "CVE-2026-107147",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:51.790",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Liquid Web / StellarWP Gutenberg Blocks by Kadence Blocks kadence-blocks allows Stored XSS.This issue affects Gutenberg Blocks by Kadence Blocks: from n/a through 3.8.0.1."
+      "date": "2026-10-27T10:16:54.290",
+      "summary": "The twofactor_gauthenticator plugin for Roundcube is vulnerable to 2fa authentication bypass by spoofed client address headers. Due to the lack of validation of the Client-IP and X-Forwarded-For headers, an attacker who obtains user's password can spoof a whitelisted IP address, resulting in the second factor being bypassed.\n\n\n\n\nThis issue was fixed in commit 4640889."
     },
     {
-      "id": "CVE-2026-115613",
-      "title": "CVE-2026-115613",
+      "id": "CVE-2026-117493",
+      "title": "CVE-2026-117493",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:51.923",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Image Gallery block – Create and display photo gallery/photo album. 3d-image-gallery allows Stored XSS.This issue affects Image Gallery block – Create and display photo gallery/photo album.: from n/a through 2.4.1."
+      "date": "2026-10-27T10:16:54.420",
+      "summary": "Stored cross-site scripting (XSS) in BloX widgets. The /api/dashboards/<id>/widgets/<id> API accepts HTML and JavaScript content in the ‘desc’ and ‘text’ parameters. The code entered is executed in the browser when the widget is rendered, which could compromise the confidentiality of the information accessible in that context."
     },
     {
-      "id": "CVE-2026-115614",
-      "title": "CVE-2026-115614",
+      "id": "CVE-2026-117494",
+      "title": "CVE-2026-117494",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:52.060",
-      "summary": "Missing Authorization vulnerability in Magepeople inc. Booking and Rental Manager booking-and-rental-manager-for-woocommerce allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Booking and Rental Manager: from n/a through 2.8.2."
+      "date": "2026-10-27T10:16:54.580",
+      "summary": "Cross-Site Scripting (XSS) in the processing of SVG images submitted to the /api/v2/ai/sessions API in the format data:image/svg+xml;base64. Script tags embedded in the SVG are processed when the content is rendered in the assistant window, allowing JavaScript to be executed and the displayed content to be altered."
     },
     {
-      "id": "CVE-2026-115949",
-      "title": "CVE-2026-115949",
+      "id": "CVE-2026-76932",
+      "title": "CVE-2026-76932",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:52.200",
-      "summary": "Missing Authorization vulnerability in WP Smart Widgets Better Post & Filter Widgets for Elementor better-post-filter-widgets-for-elementor allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Better Post & Filter Widgets for Elementor: from n/a through 1.9.1."
+      "date": "2026-10-27T10:16:54.730",
+      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-115958",
-      "title": "CVE-2026-115958",
+      "id": "CVE-2026-76933",
+      "title": "CVE-2026-76933",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:52.337",
-      "summary": "Missing Authorization vulnerability in WP Discussion Board WP Discussion Board wp-discussion-board allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WP Discussion Board: from n/a through 2.6.0."
+      "date": "2026-10-27T10:16:54.870",
+      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-116237",
-      "title": "CVE-2026-116237",
+      "id": "CVE-2026-76934",
+      "title": "CVE-2026-76934",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:52.477",
-      "summary": "A vulnerability was found in Oray Pugongying X5 Pro 7.6.1. This affects an unknown part of the component Dnsmasq. Performing a manipulation results in crlf injection. Remote exploitation of the attack is possible. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-27T10:16:54.990",
+      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-116253",
-      "title": "CVE-2026-116253",
+      "id": "CVE-2026-76935",
+      "title": "CVE-2026-76935",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:52.693",
-      "summary": "A vulnerability was determined in DedeCMS 5.7.118. This vulnerability affects the function common.inc.php::_RunMagicQuotes of the file plus/ad_js.php of the component Advertisement Rendering. Executing a manipulation of the argument aid can lead to code injection. The attack can be executed remotely."
+      "date": "2026-10-27T10:16:55.110",
+      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-116254",
-      "title": "CVE-2026-116254",
+      "id": "CVE-2026-76936",
+      "title": "CVE-2026-76936",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:52.867",
-      "summary": "A vulnerability was identified in rathena FluxCP up to 98cd4b8fd83228c11b36fb3d097b8e0f7c105a8d. This issue affects the function verifyiprange of the file lib/Flux/PaymentNotifyRequest.php of the component PayPal IPN Handler. The manipulation of the argument X-Real-IP leads to origin validation error. The attack is possible to be carried out remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-27T10:16:55.223",
+      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-116255",
-      "title": "CVE-2026-116255",
+      "id": "CVE-2026-76937",
+      "title": "CVE-2026-76937",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:53.040",
-      "summary": "A vulnerability has been found in PGYER codefever up to 0c35e60f006f9d558cc33a159baf110659351990. Affected is the function _detail of the file application/controllers/doc.php of the component URI Sanitizer. The manipulation of the argument uri_string leads to path traversal. The attack may be initiated remotely. The exploit has been disclosed to the public and may be used. This product uses a rolling release model to deliver continuous updates. As a result, specific version information for affected or updated releases is not available. The identifier of the patch is e4433eee96883a222403854e8ac38b3146774a07. Applying a patch is the recommended action to fix this issue."
+      "date": "2026-10-27T10:16:55.337",
+      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-4316",
-      "title": "CVE-2026-4316",
+      "id": "CVE-2026-76938",
+      "title": "CVE-2026-76938",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:53.250",
-      "summary": "Reflected Cross-Site Scripting (XSS) in Gym Management Software IsMyGym by Zuinq Studio affecting the reservation endpoint where the 'ret' parameter is reflected in the HTTP response without any proper sanitization. Successfull explotation of this vulnerability could allow an attacker to inject arbitrary JavaScript code executed in the context of the victim’s browser."
+      "date": "2026-10-27T10:16:55.450",
+      "summary": "Authentication Bypass Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-97254",
-      "title": "CVE-2026-97254",
+      "id": "CVE-2026-76939",
+      "title": "CVE-2026-76939",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:53.657",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows Stored XSS.This issue affects Royal Elementor Addons: from n/a through 1.7.1069."
+      "date": "2026-10-27T10:16:55.563",
+      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
     },
     {
-      "id": "CVE-2026-97255",
-      "title": "CVE-2026-97255",
+      "id": "CVE-2026-82116",
+      "title": "CVE-2026-82116",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:53.813",
-      "summary": "Authorization Bypass Through User-Controlled Key vulnerability in WProyal Royal Elementor Addons royal-elementor-addons allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Royal Elementor Addons: from n/a through 1.7.1069."
+      "date": "2026-10-27T10:16:55.680",
+      "summary": "Missing Authentication for Critical Function Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-97295",
-      "title": "CVE-2026-97295",
+      "id": "CVE-2026-82117",
+      "title": "CVE-2026-82117",
       "source": "NIST NVD",
-      "date": "2026-10-26T10:16:53.963",
-      "summary": "Cross-Site Request Forgery (CSRF) vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Cross Site Request Forgery.This issue affects Media LIbrary Assistant: from n/a through 3.42."
+      "date": "2026-10-27T10:16:55.797",
+      "summary": "Authentication Bypass by Spoofing Vulnerability in HiRDB.\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-114707",
-      "title": "CVE-2026-114707",
+      "id": "CVE-2026-82118",
+      "title": "CVE-2026-82118",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:33.133",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetElements For Elementor jet-elements allows Stored XSS.This issue affects JetElements For Elementor: from n/a through 2.9.2.5."
+      "date": "2026-10-27T10:16:55.917",
+      "summary": "Stack-based Buffer Overflow Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-114708",
-      "title": "CVE-2026-114708",
+      "id": "CVE-2026-82119",
+      "title": "CVE-2026-82119",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:33.273",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetSmartFilters jet-smart-filters allows Stored XSS.This issue affects JetSmartFilters: from n/a through 3.8.6.1."
+      "date": "2026-10-27T10:16:56.033",
+      "summary": "OS Command Injection Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-115594",
-      "title": "CVE-2026-115594",
+      "id": "CVE-2026-82120",
+      "title": "CVE-2026-82120",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:34.783",
-      "summary": "Insertion of Sensitive Information Into Sent Data vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Retrieve Embedded Sensitive Data.This issue affects Media LIbrary Assistant: from n/a through 3.42."
+      "date": "2026-10-27T10:16:56.147",
+      "summary": "Heap-based Buffer Overflow Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-115595",
-      "title": "CVE-2026-115595",
+      "id": "CVE-2026-82121",
+      "title": "CVE-2026-82121",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:34.923",
-      "summary": "Missing Authorization vulnerability in Supsystic Contact Form by Supsystic contact-form-by-supsystic allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Contact Form by Supsystic: from n/a through 1.10.7."
+      "date": "2026-10-27T10:16:56.263",
+      "summary": "Origin Validation Error Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-115608",
-      "title": "CVE-2026-115608",
+      "id": "CVE-2026-82122",
+      "title": "CVE-2026-82122",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:35.190",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in Crocoblock JetEngine jet-engine allows SQL Injection.This issue affects JetEngine: from n/a through 3.9.0."
+      "date": "2026-10-27T10:16:56.380",
+      "summary": "Stack-based Buffer Overflow Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
     },
     {
-      "id": "CVE-2026-115948",
-      "title": "CVE-2026-115948",
+      "id": "CVE-2026-85299",
+      "title": "CVE-2026-85299",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:35.550",
-      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Blind SQL Injection.This issue affects Media LIbrary Assistant: from n/a through 3.42."
+      "date": "2026-10-27T10:16:56.500",
+      "summary": "A Missing Authorization vulnerability in the disks.createSnapshot and regionDisks.createSnapshot APIs in Google Compute Engine versions prior to 2026-08-31 on Google Cloud Platform allows an authenticated attacker to exfiltrate cross-project disk data.\n\n\nThis vulnerability was patched on 31 August 2026, and no customer action is needed."
     },
     {
-      "id": "CVE-2026-115950",
-      "title": "CVE-2026-115950",
+      "id": "CVE-2026-86574",
+      "title": "CVE-2026-86574",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:35.797",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Smart Widgets Better Post & Filter Widgets for Elementor better-post-filter-widgets-for-elementor allows Stored XSS.This issue affects Better Post & Filter Widgets for Elementor: from n/a through 1.9.1."
+      "date": "2026-10-27T10:16:56.643",
+      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Base.\n\nThis issue affects JP1/Base: from 11-00 before 12-50-54."
     },
     {
-      "id": "CVE-2026-115951",
-      "title": "CVE-2026-115951",
+      "id": "CVE-2026-86575",
+      "title": "CVE-2026-86575",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:35.937",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Kevin Weber Lazy Load for Videos lazy-load-for-videos allows Stored XSS.This issue affects Lazy Load for Videos: from n/a through 2.18.11."
+      "date": "2026-10-27T10:16:56.760",
+      "summary": "Stack-based Buffer Overflow Vulnerability in JP1 Products.\n\nThis issue affects JP1/Integrated Management 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent Minimal Edition: from 13-00 before 13-50-31; JP1/Base: from 11-00 before 12-50-54."
     },
     {
-      "id": "CVE-2026-115953",
-      "title": "CVE-2026-115953",
+      "id": "CVE-2026-86576",
+      "title": "CVE-2026-86576",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.070",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Dylan Kuhn  Geo Mashup geo-mashup allows Stored XSS.This issue affects  Geo Mashup: from n/a through 1.13.22."
+      "date": "2026-10-27T10:16:56.880",
+      "summary": "Heap-based Buffer Overflow Vulnerability in JP1 Products.\n\nThis issue affects JP1/Integrated Management 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent Minimal Edition: from 13-00 before 13-50-31; JP1/Base: from 11-00 before 12-50-54."
     },
     {
-      "id": "CVE-2026-115954",
-      "title": "CVE-2026-115954",
+      "id": "CVE-2026-86577",
+      "title": "CVE-2026-86577",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.210",
-      "summary": "Missing Authorization vulnerability in Dylan Kuhn  Geo Mashup geo-mashup allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects  Geo Mashup: from n/a through 1.13.22."
+      "date": "2026-10-27T10:16:56.993",
+      "summary": "Out-of-bounds Write Vulnerability in JP1 Products.\n\nThis issue affects JP1/Integrated Management 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent Minimal Edition: from 13-00 before 13-50-31; JP1/Base: from 11-00 before 12-50-54."
     },
     {
-      "id": "CVE-2026-115955",
-      "title": "CVE-2026-115955",
+      "id": "CVE-2026-110737",
+      "title": "CVE-2026-110737",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.343",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Advanced Post Block - Post Grid for WordPress block editor advanced-post-block allows Stored XSS.This issue affects Advanced Post Block - Post Grid for WordPress block editor: from n/a through 2.5.1."
+      "date": "2026-10-27T11:17:27.020",
+      "summary": "The push endpoint of a Vaadin application that uses server push reflects the request Origin into the Access-Control-Allow-Origin response header and allows credentials, because Flow configures Atmosphere with DROP_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER set to false and its CorsInterceptor then echoes whatever Origin the request carries. A page on any origin can therefore make a cross origin request to that endpoint with the user's cookies and read the response, although reading anything useful also requires the push identifier of that session. Applications that do not use @Push are not affected, and neither is the WebSocket transport. The behaviour was introduced in January 2015 and is present in every Flow release and in Vaadin Framework from 7.1.0, which is when push was added.\n\n\nUsers of affected versions should apply the following mitigation or upgrade. Releases that have fixed this issue include:\n\nProduct version\nVaadin 14.14.0 - 14.14.7\nVaadin 23.6.0 - 23.6.16\nVaadin 24.4.0 - 24.4.25\nVaadin 24.5.0 - 24.5.15\nVaadin 24.6.0 - 24.6.13\nVaadin 24.7.0 - 24.7.16\nVaadin 24.8.0 - 24.8.17\nVaadin 24.9.0 - 24.9.23\nVaadin 24.10.0 - 24.10.11\nVaadin 25.0.0 - 25.0.13\nVaadin 25.1.0 - 25.1.13\nVaadi"
     },
     {
-      "id": "CVE-2026-115956",
-      "title": "CVE-2026-115956",
+      "id": "CVE-2026-111548",
+      "title": "CVE-2026-111548",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.477",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Panorama Viewer – 360 Degree Image + Video Viewer panorama allows Stored XSS.This issue affects Panorama Viewer – 360 Degree Image + Video Viewer: from n/a through 1.8.3."
+      "date": "2026-10-27T11:17:27.313",
+      "summary": "A stack-based buffer overflow vulnerability exists in the web management interface of affected Moxa wireless device servers. An authenticated remote attacker with low privileges could exploit insufficient bounds checking of user-supplied input, causing the web management service to become unresponsive. Restoring the service requires power cycling the affected device, while other device functions remain operational."
     },
     {
-      "id": "CVE-2026-115959",
-      "title": "CVE-2026-115959",
+      "id": "CVE-2026-116870",
+      "title": "CVE-2026-116870",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.720",
-      "summary": "Missing Authorization vulnerability in WPExperts APIExperts Square for WooCommerce woosquare allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects APIExperts Square for WooCommerce: from n/a through 4.7.5."
+      "date": "2026-10-27T11:17:28.610",
+      "summary": "In affected versions of Octopus Server, OIDC token issuer validation was performed inconsistently. This could result in a token issued from a suitably configured non legitimate issuer being accepted as a token belonging to a service account from a legitimate trusted issuer. Exploitation requires a service account with at least one OIDC identity configured. An attacker would also need to know or guess some details of that identity in order to be in a position to attempt exploitation."
     },
     {
-      "id": "CVE-2026-115960",
-      "title": "CVE-2026-115960",
+      "id": "CVE-2026-116871",
+      "title": "CVE-2026-116871",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.857",
-      "summary": "Missing Authorization vulnerability in WPExperts APIExperts Square for WooCommerce woosquare allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects APIExperts Square for WooCommerce: from n/a through 4.7.5."
+      "date": "2026-10-27T11:17:28.813",
+      "summary": "Semantic MediaWiki 3.0.0 before 7.3.1 contains an uncontrolled recursion vulnerability in LegacyParser::getSubqueryDescription() that processes nested query tokens before depth limits apply. Unauthenticated attackers can submit deeply nested query elements to the action=ask API to consume substantial CPU and memory, tying up request workers."
     },
     {
-      "id": "CVE-2026-115961",
-      "title": "CVE-2026-115961",
+      "id": "CVE-2026-116872",
+      "title": "CVE-2026-116872",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:36.987",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins B Slider b-slider allows Stored XSS.This issue affects B Slider: from n/a through 2.2.2."
+      "date": "2026-10-27T11:17:28.970",
+      "summary": "Semantic MediaWiki from 3.0.0 before 7.3.1 contains an algorithmic complexity vulnerability in TermParser::normalize_compact_form() that allows unauthenticated attackers to cause quadratic CPU consumption. Attackers can submit long search terms with many distinct in:(...) or has:(...) expressions to Special:Search to exhaust PHP search workers when the extended search engine is enabled."
     },
     {
-      "id": "CVE-2026-116256",
-      "title": "CVE-2026-116256",
+      "id": "CVE-2026-116873",
+      "title": "CVE-2026-116873",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:37.130",
-      "summary": "A vulnerability was found in geesondog RhaPHP up to 7ae639ccf8dcb627faace096d030bd4cb4cfb905. Affected by this vulnerability is the function image of the file application/mp/controller/Show.php of the component Mp Module Media Proxy. The manipulation of the argument url results in server-side request forgery. The attack may be launched remotely. The exploit has been made public and could be used. This product operates on a rolling release basis, ensuring continuous delivery. Consequently, there are no version details for either affected or updated releases. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-27T11:17:29.120",
+      "summary": "Semantic MediaWiki from 7.3.0 before 7.3.1 contains a missing authorization vulnerability in the smwtask API module that allows unauthenticated attackers to run queued jobs and force store updates. Attackers can use the public anonymous CSRF token with run-joblist to execute arbitrary job types in unbounded counts, or invoke update on sysop-protected pages, leaking page titles and exhausting resources."
     },
     {
-      "id": "CVE-2026-116257",
-      "title": "CVE-2026-116257",
+      "id": "CVE-2026-116874",
+      "title": "CVE-2026-116874",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:37.327",
-      "summary": "A vulnerability was determined in BillaBear up to 2025.01.03. Affected by this issue is the function processInstall of the file src/BillaBear/Controller/InstallController.php of the component Installation Handler. This manipulation causes missing authentication. Remote exploitation of the attack is possible. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-27T11:17:29.263",
+      "summary": "SemanticMediaWiki from 3.1.0 before 7.3.1 contains a reflected cross-site scripting vulnerability that allows unauthenticated attackers to inject scripts through the unescaped default parameter in JsonResultPrinter. Attackers can lure victims to a crafted Special:Ask link with a zero-result query and request_type=special_page, executing JavaScript in the wiki origin to steal sessions or CSRF tokens."
     },
     {
-      "id": "CVE-2026-116258",
-      "title": "CVE-2026-116258",
+      "id": "CVE-2026-116875",
+      "title": "CVE-2026-116875",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:37.500",
-      "summary": "A vulnerability was identified in libimobiledevice up to 1.4.0. This affects an unknown part of the file src/afc.c of the component AFC. Such manipulation leads to heap-based buffer overflow. The attack can be executed remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-27T11:17:29.407",
+      "summary": "SemanticMediaWiki from 3.0.0 before 7.3.1 contains a reflected cross-site scripting vulnerability in Special:Ask, which outputs separator parameters (sep, propsep, valuesep, delim, separator) without HTML escaping in list, category, DSV, and CSV result printers. Unauthenticated attackers can send victims crafted Special:Ask links using request_type=raw or request_type=special_page to execute JavaScript in the wiki's origin, stealing sessions or CSRF tokens."
     },
     {
-      "id": "CVE-2026-116259",
-      "title": "CVE-2026-116259",
+      "id": "CVE-2026-116876",
+      "title": "CVE-2026-116876",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:37.670",
-      "summary": "A security flaw has been discovered in libimobiledevice up to 1.4.0. This vulnerability affects the function afc_get_device_info_key of the file src/afc.c of the component Device Info Handler. Performing a manipulation of the argument Value results in memory corruption. The attack requires a local approach. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-10-27T11:17:29.543",
+      "summary": "Semantic MediaWiki from 2.5.0 before 7.3.1 contains an improper authorization vulnerability that allows ordinary editors to permanently protect pages by adding an Is edit protected annotation. When $smwgEditProtectionRight is enabled, EditProtectionUpdater applies indefinite edit and move restrictions without checking the author's rights, locking other editors and administrators out."
     },
     {
-      "id": "CVE-2026-116469",
-      "title": "CVE-2026-116469",
+      "id": "CVE-2026-116877",
+      "title": "CVE-2026-116877",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:37.840",
-      "summary": "MISP Guard, a proxy-based security filter for MISP feed distribution, contains a case-sensitivity flaw in multiple policy enforcement checks. The functions check_required_taxonomy_exists, check_required_taxonomy_tags_allowed, check_blocked_attribute_categories, and check_blocked_analyst_data_sharing_groups_uuids performed case-sensitive string comparisons when matching event tags, attribute categories, and sharing-group UUIDs against configured allow/block lists.\n\nAn attacker with the ability to create or modify events in a MISP instance (or a connected instance that pushes events through the guard) could craft events using different letter case in taxonomy tag names, attribute categories, or sharing-group UUIDs to bypass the configured security policies. For example, if the policy requires the 'tlp' taxonomy with only 'tlp:clear' allowed, an event tagged 'TLP:AMBER' would not be recognized as belonging to the 'tlp' taxonomy and would therefore not be checked against the allowed-tags list, resulting in the event being forwarded to feed consumers. Similarly, a blocked attribute category such as 'Person' would not match a configured block entry of 'person', allowing the attribute to "
+      "date": "2026-10-27T11:17:29.687",
+      "summary": "Semantic MediaWiki from 2.5.0 before 7.3.1 contains an uncontrolled resource consumption vulnerability that allows low-privilege editors to bypass smwgMaxNumRecurringEvents by supplying a large limit parameter. Attackers can save pages using #set_recurring_event without an end date to generate thousands or millions of date subobjects, exhausting CPU, memory, and database resources."
     },
     {
-      "id": "CVE-2026-89209",
-      "title": "CVE-2026-89209",
+      "id": "CVE-2026-116878",
+      "title": "CVE-2026-116878",
       "source": "NIST NVD",
-      "date": "2026-10-26T11:16:38.583",
-      "summary": "A vulnerability has been identified in Mendix SAML (Mendix 10 compatible) (All versions < V4.2.4), Mendix SAML (Mendix 11 compatible) (All versions < V4.2.4), Mendix SAML (Mendix 9 compatible) (All versions < V3.6.29). Affected versions of the module do not properly protect against SAML assertion replay in IdP-initiated authentication flows. This could allow unauthenticated remote attackers to gain unauthorized access to the application by replaying a valid SAML response."
+      "date": "2026-10-27T11:17:29.830",
+      "summary": "Semantic MediaWiki from 2.5.0 before 7.3.1 contains an uncontrolled resource consumption vulnerability that allows anonymous attackers to force quadratic computation by supplying a zero limit to Special:PropertyLabelSimilarity. Attackers can send repeated requests with limit=0 to bypass the SQL LIMIT and trigger pairwise similar_text() comparisons, exhausting PHP CPU, memory, and database connections."
     },
     {
-      "id": "CVE-2012-20006",
-      "title": "CVE-2012-20006",
+      "id": "CVE-2026-116879",
+      "title": "CVE-2026-116879",
       "source": "NIST NVD",
-      "date": "2026-10-26T12:17:01.153",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-10-27T11:17:29.970",
+      "summary": "Semantic MediaWiki from 7.3.0 before 7.3.1 contains a missing authorization vulnerability in the smwtask update task that allows users with edit rights to force semantic updates on arbitrary pages. Attackers can supply a serialized subject parameter for a restricted page to trigger forced reparsing, semantic-store writes, and resource-intensive dependency work."
     }
   ]
 }
