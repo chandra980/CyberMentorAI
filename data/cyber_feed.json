@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-11-03T09:44:54.744954+00:00",
+  "generated_at": "2026-11-04T09:30:45.441410+00:00",
   "items": [
+    {
+      "id": "CVE-2026-119977",
+      "title": "CVE-2026-119977 - WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-03",
+      "vendor": "WordPress",
+      "product": "WordPress Core",
+      "summary": "WordPress WordPress Core contains a time-of-check time-of-use (TOCTOU) race condition vulnerability that could allow unauthenticated attackers to execute code on the server during the upgrade window. This is due to predictable, web-accessible staging paths used during full-package core upgrades.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-06"
+    },
     {
       "id": "CVE-2026-118527",
       "title": "CVE-2026-118527 - Ivanti Connect Secure Generation of Predictable Numbers or Identifiers Vulnerability",
@@ -871,295 +882,284 @@
       "due": "2026-09-05"
     },
     {
-      "id": "CVE-2026-82078",
-      "title": "CVE-2026-82078 - PaperCut NG/MF Unsafe Reflection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-08-31",
-      "vendor": "PaperCut",
-      "product": "NG/MF",
-      "summary": "PaperCut NG/MF contains an unsafe reflection vulnerability that allows an attacker to manipulate system configuration parameters and execute arbitrary Java bytecode residing on the application classpath under the security context of the PaperCut server process. This vulnerability can be chained with CVE-2026-81578.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-14"
+      "id": "CVE-2026-105457",
+      "title": "CVE-2026-105457",
+      "source": "NIST NVD",
+      "date": "2026-10-28T10:17:07.100",
+      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in HAVELSAN Inc. Liman MYS allows Path Traversal.\n\nThis issue affects Liman MYS: before 2.3.5-1132."
     },
     {
-      "id": "CVE-2026-102787",
-      "title": "CVE-2026-102787",
+      "id": "CVE-2026-14571",
+      "title": "CVE-2026-14571",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:52.527",
-      "summary": "Joomla Extension - phoca.cz - CSRF in category management in Phoca Download 3.1.0 - 6.1.5"
+      "date": "2026-10-28T10:17:08.780",
+      "summary": "A Blind SQL Injection vulnerability in Futurum Software’s management software, caused by a lack of adequate validation and sanitisation of user-provided inputs in queries to the private area’s database, as well as by an incorrect WAF configuration. This weakness allows the protection mechanisms to be bypassed solely by sending manipulated HTTP requests. Successful exploitation of the vulnerability could allow an unauthenticated attacker to execute arbitrary queries against the database, extract its complete structure and gain access to sensitive customer information, including personally identifiable information (PII)."
     },
     {
-      "id": "CVE-2026-102788",
-      "title": "CVE-2026-102788",
+      "id": "CVE-2026-86379",
+      "title": "CVE-2026-86379",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:53.780",
-      "summary": "Joomla Extension - balbooa.com - Unauthenticated SQL injection in Gridbox < 2.20.4.2 - On store product list pages, the value of the sort-by URL parameter is retrieved using a string filter and passed directly to GridboxHelper::getBlogPosts(). When the parameter does not match known sorting keys, it is prefixed with a table alias and inserted into the ORDER BY clause without checking against an allowlist"
+      "date": "2026-10-28T10:17:09.003",
+      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Command execution."
     },
     {
-      "id": "CVE-2026-102789",
-      "title": "CVE-2026-102789",
+      "id": "CVE-2026-86380",
+      "title": "CVE-2026-86380",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:53.907",
-      "summary": "Joomla Extension - balbooa.com - Missing Authorization Check on Editor Controller Task in Gridbox < 2.20.4.2 - EditorController::getBlogPosts() reads the order parameter and invokes getBlogPosts() . Unlike other tasks in this controller, it omits the GridboxHelper::checkUserEditLevel() check."
+      "date": "2026-10-28T10:17:09.163",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Integer Overflow or Wraparound vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass."
     },
     {
-      "id": "CVE-2026-107145",
-      "title": "CVE-2026-107145",
+      "id": "CVE-2026-86383",
+      "title": "CVE-2026-86383",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.030",
-      "summary": "The twofactor_gauthenticator plugin for Roundcube is vulnerable to brute-forcing of the second-factor code. Due to the lack of rate limiting, an attacker who obtains user's password can submit arbitrary 6-digit codes, resulting in second-factor bypass and unauthorized access to the system.\n\n\n\n\nThis issue was fixed in commit 4640889."
+      "date": "2026-10-28T10:17:09.297",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Information disclosure."
     },
     {
-      "id": "CVE-2026-107146",
-      "title": "CVE-2026-107146",
+      "id": "CVE-2026-86384",
+      "title": "CVE-2026-86384",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.167",
-      "summary": "The twofactor_gauthenticator plugin for Roundcube is vulnerable to session persistence after failed 2FA verification. Due to the lack of server-side session destruction, an attacker can ignore the logout redirect and keep the session alive. This may allow an attacker who obtains user's password to e.g. brute force the second-factor code.\n\n\n\n\nThis issue was fixed in commit 4640889."
+      "date": "2026-10-28T10:17:09.433",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Use of Hard-coded Cryptographic Key vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to credential exposure. The credentials may be used to access the system with privileges of the compromised user."
     },
     {
-      "id": "CVE-2026-107147",
-      "title": "CVE-2026-107147",
+      "id": "CVE-2026-86385",
+      "title": "CVE-2026-86385",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.290",
-      "summary": "The twofactor_gauthenticator plugin for Roundcube is vulnerable to 2fa authentication bypass by spoofed client address headers. Due to the lack of validation of the Client-IP and X-Forwarded-For headers, an attacker who obtains user's password can spoof a whitelisted IP address, resulting in the second factor being bypassed.\n\n\n\n\nThis issue was fixed in commit 4640889."
+      "date": "2026-10-28T10:17:09.570",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, contain an Improper Check for Dropped Privileges vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to elevation of privileges."
     },
     {
-      "id": "CVE-2026-117493",
-      "title": "CVE-2026-117493",
+      "id": "CVE-2026-86386",
+      "title": "CVE-2026-86386",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.420",
-      "summary": "Stored cross-site scripting (XSS) in BloX widgets. The /api/dashboards/<id>/widgets/<id> API accepts HTML and JavaScript content in the ‘desc’ and ‘text’ parameters. The code entered is executed in the browser when the widget is rendered, which could compromise the confidentiality of the information accessible in that context."
+      "date": "2026-10-28T10:17:09.727",
+      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Information disclosure."
     },
     {
-      "id": "CVE-2026-117494",
-      "title": "CVE-2026-117494",
+      "id": "CVE-2026-86388",
+      "title": "CVE-2026-86388",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.580",
-      "summary": "Cross-Site Scripting (XSS) in the processing of SVG images submitted to the /api/v2/ai/sessions API in the format data:image/svg+xml;base64. Script tags embedded in the SVG are processed when the content is rendered in the assistant window, allowing JavaScript to be executed and the displayed content to be altered."
+      "date": "2026-10-28T10:17:10.007",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Filesystem access for attacker."
     },
     {
-      "id": "CVE-2026-76932",
-      "title": "CVE-2026-76932",
+      "id": "CVE-2026-86389",
+      "title": "CVE-2026-86389",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.730",
-      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
+      "date": "2026-10-28T10:17:10.150",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Integer Overflow or Wraparound vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Code execution."
     },
     {
-      "id": "CVE-2026-76933",
-      "title": "CVE-2026-76933",
+      "id": "CVE-2026-86390",
+      "title": "CVE-2026-86390",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.870",
-      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
+      "date": "2026-10-28T10:17:10.317",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access."
     },
     {
-      "id": "CVE-2026-76934",
-      "title": "CVE-2026-76934",
+      "id": "CVE-2026-86391",
+      "title": "CVE-2026-86391",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:54.990",
-      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
+      "date": "2026-10-28T10:17:10.450",
+      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Authentication Bypass by Spoofing vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Denial of service."
     },
     {
-      "id": "CVE-2026-76935",
-      "title": "CVE-2026-76935",
+      "id": "CVE-2026-86392",
+      "title": "CVE-2026-86392",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.110",
-      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
+      "date": "2026-10-28T10:17:10.583",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Heap-based Buffer Overflow vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Denial of service."
     },
     {
-      "id": "CVE-2026-76936",
-      "title": "CVE-2026-76936",
+      "id": "CVE-2026-86393",
+      "title": "CVE-2026-86393",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.223",
-      "summary": "Stack-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
+      "date": "2026-10-28T10:17:10.860",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Privilege Management vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges."
     },
     {
-      "id": "CVE-2026-76937",
-      "title": "CVE-2026-76937",
+      "id": "CVE-2026-86394",
+      "title": "CVE-2026-86394",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.337",
-      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
+      "date": "2026-10-28T10:17:10.990",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Command execution."
     },
     {
-      "id": "CVE-2026-76938",
-      "title": "CVE-2026-76938",
+      "id": "CVE-2026-92665",
+      "title": "CVE-2026-92665",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.450",
-      "summary": "Authentication Bypass Vulnerability in JP1/Automatic Job Management System 3.\n\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 10-00 before 13-50-31."
+      "date": "2026-10-28T10:17:11.130",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Allocation of Resources Without Limits or Throttling vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Denial of service."
     },
     {
-      "id": "CVE-2026-76939",
-      "title": "CVE-2026-76939",
+      "id": "CVE-2025-30414",
+      "title": "CVE-2025-30414",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.563",
-      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Automatic Job Management System 3.\n\nThis issue affects JP1/Automatic Job Management System 3 - Manager: from 11-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 11-00 before 13-50-31."
+      "date": "2026-10-28T11:17:12.427",
+      "summary": "Local privilege escalation due to improper authentication. The following products are affected: Acronis Cyber Protect Cloud Agent (Windows) before build 42569, Acronis Cyber Protect 17 (Windows) before build 42587."
     },
     {
-      "id": "CVE-2026-82116",
-      "title": "CVE-2026-82116",
+      "id": "CVE-2026-101272",
+      "title": "CVE-2026-101272",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.680",
-      "summary": "Missing Authentication for Critical Function Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:13.273",
+      "summary": "The mechanism binding files generated during a shredding process to the authentication method is not working correctly and the same session token is used for all token-based API users. This is similar to an issue fixed in 2026.7.1 but was missed while creating the fix. Since the files are referred to by randomly generated UUIDs and only exist for a day, there is virtually no risk, but it renders the added protection mechanism useless. As part of the fix, we have also improved hardening of some other related code areas."
     },
     {
-      "id": "CVE-2026-82117",
-      "title": "CVE-2026-82117",
+      "id": "CVE-2026-101273",
+      "title": "CVE-2026-101273",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.797",
-      "summary": "Authentication Bypass by Spoofing Vulnerability in HiRDB.\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:13.430",
+      "summary": "Some of our API endpoints allowed to create order payments referencing a gift card by using the auto-incremented internal ID. This ID was not checked and allowed creating payments that reference gift cards from different organizers and thereby obtaining their secret. The gift card is not charged in this case, but by then triggering a refund on the payment, one can increase the value of the gift card."
     },
     {
-      "id": "CVE-2026-82118",
-      "title": "CVE-2026-82118",
+      "id": "CVE-2026-101274",
+      "title": "CVE-2026-101274",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:55.917",
-      "summary": "Stack-based Buffer Overflow Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:13.577",
+      "summary": "When pretix is used as the identity provider in a Single-Sign-On (SSO) setup for customer accounts, the system did not properly validate the `response_type` requested in an authorization request against the configured grant type of the SSO client. This means that if an SSO client was configured to only allow the `code` response type, which requires knowledge of the client secret to use and would wrongfully send a response type like `id_token`, it would receive back a valid token. Exploiting this requires the attacker to run JavaScript on the page specified by `redirect_uri`, which must be from a list specified in the client configuration."
     },
     {
-      "id": "CVE-2026-82119",
-      "title": "CVE-2026-82119",
+      "id": "CVE-2026-103313",
+      "title": "CVE-2026-103313",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.033",
-      "summary": "OS Command Injection Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:13.717",
+      "summary": "The BitPay Gateway for WooCommerce WordPress plugin through 4.1.3 does not bind the payment provider's transaction confirmation to the order it completes, nor verify the confirmed amount, allowing an unauthenticated attacker who holds a single genuine low-value transaction to mark arbitrary higher-value orders as paid."
     },
     {
-      "id": "CVE-2026-82120",
-      "title": "CVE-2026-82120",
+      "id": "CVE-2026-103330",
+      "title": "CVE-2026-103330",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.147",
-      "summary": "Heap-based Buffer Overflow Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:13.857",
+      "summary": "The Sadad QA Payment WordPress plugin through 1.28 does not correctly verify the authenticity of incoming payment notifications, as the verification is keyed on a merchant secret that is empty by default and the rest of the signed data is attacker-controlled, allowing unauthenticated attackers to forge a valid confirmation and mark orders as paid without payment."
     },
     {
-      "id": "CVE-2026-82121",
-      "title": "CVE-2026-82121",
+      "id": "CVE-2026-103779",
+      "title": "CVE-2026-103779",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.263",
-      "summary": "Origin Validation Error Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:13.977",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Authentication vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass."
     },
     {
-      "id": "CVE-2026-82122",
-      "title": "CVE-2026-82122",
+      "id": "CVE-2026-103780",
+      "title": "CVE-2026-103780",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.380",
-      "summary": "Stack-based Buffer Overflow Vulnerability in HiRDB.\n\n\nThis issue affects HiRDB Server Version 10: from 10-00 before 10-12-01; HiRDB Server Version 9: from 09-00 through 09-66-22; HiRDB Server with Additional Function Version 9: from 09-00 through 09-66/V; HiRDB Server Version 9(32): from 09-02 through 09-66-22; HiRDB Server with Additional Function Version 9(32): from 09-00 through 09-66-/V."
+      "date": "2026-10-28T11:17:14.113",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Stack-based Buffer Overflow vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to command execution."
     },
     {
-      "id": "CVE-2026-85299",
-      "title": "CVE-2026-85299",
+      "id": "CVE-2026-103792",
+      "title": "CVE-2026-103792",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.500",
-      "summary": "A Missing Authorization vulnerability in the disks.createSnapshot and regionDisks.createSnapshot APIs in Google Compute Engine versions prior to 2026-08-31 on Google Cloud Platform allows an authenticated attacker to exfiltrate cross-project disk data.\n\n\nThis vulnerability was patched on 31 August 2026, and no customer action is needed."
+      "date": "2026-10-28T11:17:14.250",
+      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access to managed systems."
     },
     {
-      "id": "CVE-2026-86574",
-      "title": "CVE-2026-86574",
+      "id": "CVE-2026-103799",
+      "title": "CVE-2026-103799",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.643",
-      "summary": "Heap-based Buffer Overflow Vulnerability in JP1/Base.\n\nThis issue affects JP1/Base: from 11-00 before 12-50-54."
+      "date": "2026-10-28T11:17:14.390",
+      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to unauthorized system operation on managed systems."
     },
     {
-      "id": "CVE-2026-86575",
-      "title": "CVE-2026-86575",
+      "id": "CVE-2026-106648",
+      "title": "CVE-2026-106648",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.760",
-      "summary": "Stack-based Buffer Overflow Vulnerability in JP1 Products.\n\nThis issue affects JP1/Integrated Management 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent Minimal Edition: from 13-00 before 13-50-31; JP1/Base: from 11-00 before 12-50-54."
+      "date": "2026-10-28T11:17:14.527",
+      "summary": "The Royal Elementor Addons WordPress plugin before 1.7.1070 does not validate submitted form field values before substituting them into the recipient addresses of its form notification emails, allowing unauthenticated attackers to replace the recipient list and relay attacker-composed email from the site's own domain when a recipient field is configured to echo a submitted value."
     },
     {
-      "id": "CVE-2026-86576",
-      "title": "CVE-2026-86576",
+      "id": "CVE-2026-110508",
+      "title": "CVE-2026-110508",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.880",
-      "summary": "Heap-based Buffer Overflow Vulnerability in JP1 Products.\n\nThis issue affects JP1/Integrated Management 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent Minimal Edition: from 13-00 before 13-50-31; JP1/Base: from 11-00 before 12-50-54."
+      "date": "2026-10-28T11:17:14.680",
+      "summary": "The Essential Addons for Elementor WordPress plugin before 6.8.7 does not apply its administrator approval requirement to accounts registered through its email one-time-password flow, which could allow unauthenticated users to register and log in without being approved by an administrator when both features are enabled."
     },
     {
-      "id": "CVE-2026-86577",
-      "title": "CVE-2026-86577",
+      "id": "CVE-2026-110540",
+      "title": "CVE-2026-110540",
       "source": "NIST NVD",
-      "date": "2026-10-27T10:16:56.993",
-      "summary": "Out-of-bounds Write Vulnerability in JP1 Products.\n\nThis issue affects JP1/Integrated Management 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Manager: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent: from 13-00 before 13-50-31; JP1/Automatic Job Management System 3 - Agent Minimal Edition: from 13-00 before 13-50-31; JP1/Base: from 11-00 before 12-50-54."
+      "date": "2026-10-28T11:17:14.803",
+      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized operation."
     },
     {
-      "id": "CVE-2026-110737",
-      "title": "CVE-2026-110737",
+      "id": "CVE-2026-110541",
+      "title": "CVE-2026-110541",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:27.020",
-      "summary": "The push endpoint of a Vaadin application that uses server push reflects the request Origin into the Access-Control-Allow-Origin response header and allows credentials, because Flow configures Atmosphere with DROP_ACCESS_CONTROL_ALLOW_ORIGIN_HEADER set to false and its CorsInterceptor then echoes whatever Origin the request carries. A page on any origin can therefore make a cross origin request to that endpoint with the user's cookies and read the response, although reading anything useful also requires the push identifier of that session. Applications that do not use @Push are not affected, and neither is the WebSocket transport. The behaviour was introduced in January 2015 and is present in every Flow release and in Vaadin Framework from 7.1.0, which is when push was added.\n\n\nUsers of affected versions should apply the following mitigation or upgrade. Releases that have fixed this issue include:\n\nProduct version\nVaadin 14.14.0 - 14.14.7\nVaadin 23.6.0 - 23.6.16\nVaadin 24.4.0 - 24.4.25\nVaadin 24.5.0 - 24.5.15\nVaadin 24.6.0 - 24.6.13\nVaadin 24.7.0 - 24.7.16\nVaadin 24.8.0 - 24.8.17\nVaadin 24.9.0 - 24.9.23\nVaadin 24.10.0 - 24.10.11\nVaadin 25.0.0 - 25.0.13\nVaadin 25.1.0 - 25.1.13\nVaadi"
+      "date": "2026-10-28T11:17:14.937",
+      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to command execution."
     },
     {
-      "id": "CVE-2026-111548",
-      "title": "CVE-2026-111548",
+      "id": "CVE-2026-112197",
+      "title": "CVE-2026-112197",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:27.313",
-      "summary": "A stack-based buffer overflow vulnerability exists in the web management interface of affected Moxa wireless device servers. An authenticated remote attacker with low privileges could exploit insufficient bounds checking of user-supplied input, causing the web management service to become unresponsive. Restoring the service requires power cycling the affected device, while other device functions remain operational."
+      "date": "2026-10-28T11:17:15.073",
+      "summary": "Vulnerability due to a lack of authentication in critical functions of the NoviGest Desktop App's Java RMI service. An attacker with network access to the service can invoke remote methods without authentication, obtain sensitive credentials, and execute arbitrary SQL queries on PostgreSQL. The elevated privileges of the database account allow these capabilities to be chained together to execute operating system commands on the server, compromising its confidentiality, integrity, and availability."
     },
     {
-      "id": "CVE-2026-116870",
-      "title": "CVE-2026-116870",
+      "id": "CVE-2026-112198",
+      "title": "CVE-2026-112198",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:28.610",
-      "summary": "In affected versions of Octopus Server, OIDC token issuer validation was performed inconsistently. This could result in a token issued from a suitably configured non legitimate issuer being accepted as a token belonging to a service account from a legitimate trusted issuer. Exploitation requires a service account with at least one OIDC identity configured. An attacker would also need to know or guess some details of that identity in order to be in a position to attempt exploitation."
+      "date": "2026-10-28T11:17:15.220",
+      "summary": "XML External Entity (XXE) injection vulnerability in the SAFT import feature of the NoviGest Desktop App. The application processes user-controlled XML files using a JAXB Unmarshaller without properly disabling external entity resolution. An attacker with access to this functionality could provide a manipulated XML file to read local files accessible to the application process. If the application runs with elevated privileges, sensitive system files could be exposed."
     },
     {
-      "id": "CVE-2026-116871",
-      "title": "CVE-2026-116871",
+      "id": "CVE-2026-115223",
+      "title": "CVE-2026-115223",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:28.813",
-      "summary": "Semantic MediaWiki 3.0.0 before 7.3.1 contains an uncontrolled recursion vulnerability in LegacyParser::getSubqueryDescription() that processes nested query tokens before depth limits apply. Unauthenticated attackers can submit deeply nested query elements to the action=ask API to consume substantial CPU and memory, tying up request workers."
+      "date": "2026-10-28T11:17:15.800",
+      "summary": "The Smart Popup by Supsystic WordPress plugin before 2.0.2 does not prevent template-injection payloads from being stored in a popup text block and later evaluated by its template engine, because the filter meant to strip template delimiters runs before a decoding step that reconstructs them, allowing an authenticated administrator to execute arbitrary template expressions server-side and read PHP constants such as the site's database credentials and authentication keys."
     },
     {
-      "id": "CVE-2026-116872",
-      "title": "CVE-2026-116872",
+      "id": "CVE-2026-117692",
+      "title": "CVE-2026-117692",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:28.970",
-      "summary": "Semantic MediaWiki from 3.0.0 before 7.3.1 contains an algorithmic complexity vulnerability in TermParser::normalize_compact_form() that allows unauthenticated attackers to cause quadratic CPU consumption. Attackers can submit long search terms with many distinct in:(...) or has:(...) expressions to Special:Search to exhaust PHP search workers when the extended search engine is enabled."
+      "date": "2026-10-28T11:17:15.927",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     },
     {
-      "id": "CVE-2026-116873",
-      "title": "CVE-2026-116873",
+      "id": "CVE-2026-117693",
+      "title": "CVE-2026-117693",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.120",
-      "summary": "Semantic MediaWiki from 7.3.0 before 7.3.1 contains a missing authorization vulnerability in the smwtask API module that allows unauthenticated attackers to run queued jobs and force store updates. Attackers can use the public anonymous CSRF token with run-joblist to execute arbitrary job types in unbounded counts, or invoke update on sysop-protected pages, leaking page titles and exhausting resources."
+      "date": "2026-10-28T11:17:16.027",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     },
     {
-      "id": "CVE-2026-116874",
-      "title": "CVE-2026-116874",
+      "id": "CVE-2026-117694",
+      "title": "CVE-2026-117694",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.263",
-      "summary": "SemanticMediaWiki from 3.1.0 before 7.3.1 contains a reflected cross-site scripting vulnerability that allows unauthenticated attackers to inject scripts through the unescaped default parameter in JsonResultPrinter. Attackers can lure victims to a crafted Special:Ask link with a zero-result query and request_type=special_page, executing JavaScript in the wiki origin to steal sessions or CSRF tokens."
+      "date": "2026-10-28T11:17:16.083",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     },
     {
-      "id": "CVE-2026-116875",
-      "title": "CVE-2026-116875",
+      "id": "CVE-2026-117695",
+      "title": "CVE-2026-117695",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.407",
-      "summary": "SemanticMediaWiki from 3.0.0 before 7.3.1 contains a reflected cross-site scripting vulnerability in Special:Ask, which outputs separator parameters (sep, propsep, valuesep, delim, separator) without HTML escaping in list, category, DSV, and CSV result printers. Unauthenticated attackers can send victims crafted Special:Ask links using request_type=raw or request_type=special_page to execute JavaScript in the wiki's origin, stealing sessions or CSRF tokens."
+      "date": "2026-10-28T11:17:16.157",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     },
     {
-      "id": "CVE-2026-116876",
-      "title": "CVE-2026-116876",
+      "id": "CVE-2026-117696",
+      "title": "CVE-2026-117696",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.543",
-      "summary": "Semantic MediaWiki from 2.5.0 before 7.3.1 contains an improper authorization vulnerability that allows ordinary editors to permanently protect pages by adding an Is edit protected annotation. When $smwgEditProtectionRight is enabled, EditProtectionUpdater applies indefinite edit and move restrictions without checking the author's rights, locking other editors and administrators out."
+      "date": "2026-10-28T11:17:16.230",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     },
     {
-      "id": "CVE-2026-116877",
-      "title": "CVE-2026-116877",
+      "id": "CVE-2026-117697",
+      "title": "CVE-2026-117697",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.687",
-      "summary": "Semantic MediaWiki from 2.5.0 before 7.3.1 contains an uncontrolled resource consumption vulnerability that allows low-privilege editors to bypass smwgMaxNumRecurringEvents by supplying a large limit parameter. Attackers can save pages using #set_recurring_event without an end date to generate thousands or millions of date subobjects, exhausting CPU, memory, and database resources."
+      "date": "2026-10-28T11:17:16.307",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     },
     {
-      "id": "CVE-2026-116878",
-      "title": "CVE-2026-116878",
+      "id": "CVE-2026-117698",
+      "title": "CVE-2026-117698",
       "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.830",
-      "summary": "Semantic MediaWiki from 2.5.0 before 7.3.1 contains an uncontrolled resource consumption vulnerability that allows anonymous attackers to force quadratic computation by supplying a zero limit to Special:PropertyLabelSimilarity. Attackers can send repeated requests with limit=0 to bypass the SQL LIMIT and trigger pairwise similar_text() comparisons, exhausting PHP CPU, memory, and database connections."
-    },
-    {
-      "id": "CVE-2026-116879",
-      "title": "CVE-2026-116879",
-      "source": "NIST NVD",
-      "date": "2026-10-27T11:17:29.970",
-      "summary": "Semantic MediaWiki from 7.3.0 before 7.3.1 contains a missing authorization vulnerability in the smwtask update task that allows users with edit rights to force semantic updates on arbitrary pages. Attackers can supply a serialized subject parameter for a restricted page to trigger forced reparsing, semantic-store writes, and resource-intensive dependency work."
+      "date": "2026-10-28T11:17:16.370",
+      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
     }
   ]
 }
