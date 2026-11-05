@@ -1,6 +1,17 @@
 {
-  "generated_at": "2026-11-04T09:30:45.441410+00:00",
+  "generated_at": "2026-11-05T09:39:39.476119+00:00",
   "items": [
+    {
+      "id": "CVE-2024-27834",
+      "title": "CVE-2024-27834 - Apple Multiple Products Improper Authentication Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-04",
+      "vendor": "Apple",
+      "product": "Multiple Products",
+      "summary": "Apple iOS, iPadOS, macOS, Safari, tvOS and watchOS 10.5 contain an improper authentication vulnerability which could allow an attacker with arbitrary read and write capability to bypass pointer authentication.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-18"
+    },
     {
       "id": "CVE-2026-119977",
       "title": "CVE-2026-119977 - WordPress WordPress Core Time-of-check Time-of-use (TOCTOU) Race Condition Vulnerability",
@@ -871,295 +882,284 @@
       "due": "2026-09-05"
     },
     {
-      "id": "CVE-2026-83549",
-      "title": "CVE-2026-83549 - SonicWall SMA1000 Appliances OS Command Injection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-02",
-      "vendor": "SonicWall",
-      "product": "SMA1000 Appliances",
-      "summary": "SonicWall SMA1000 Appliances contains an OS command injection vulnerability that could enable a remote authenticated attacker as administrator to execute arbitrary OS commands, resulting in remote code execution.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-05"
+      "id": "CVE-2026-103485",
+      "title": "CVE-2026-103485",
+      "source": "NIST NVD",
+      "date": "2026-10-29T10:17:00.737",
+      "summary": "The Extensions for Leaflet Map plugin for WordPress is vulnerable to Stored DOM-Based Cross-Site Scripting via the 'feature.properties[<template-token>]' parameter in all versions up to, and including, 5.4 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that a site administrator has previously configured a public map using the [leaflet-map]+[leaflet-geojson]+[choropleth] shortcode combination whose GeoJSON src URL is one the attacker controls — for example, through compromise of an external data host, a subdomain takeover, or a site intentionally pointing at an attacker-hosted feed."
     },
     {
-      "id": "CVE-2026-105457",
-      "title": "CVE-2026-105457",
+      "id": "CVE-2026-103875",
+      "title": "CVE-2026-103875",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:07.100",
-      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in HAVELSAN Inc. Liman MYS allows Path Traversal.\n\nThis issue affects Liman MYS: before 2.3.5-1132."
+      "date": "2026-10-29T10:17:01.977",
+      "summary": "The Media Library Assistant plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the 'search-string' parameter in all versions up to, and including, 3.42 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link. Exploitation requires the targeted site to have a publicly accessible page containing an [mla_gallery] shortcode configured with a pagination output mode and an mla_link_href template that reflects a {+request:...+} token, along with enough attachments to trigger pagination."
     },
     {
-      "id": "CVE-2026-14571",
-      "title": "CVE-2026-14571",
+      "id": "CVE-2026-104727",
+      "title": "CVE-2026-104727",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:08.780",
-      "summary": "A Blind SQL Injection vulnerability in Futurum Software’s management software, caused by a lack of adequate validation and sanitisation of user-provided inputs in queries to the private area’s database, as well as by an incorrect WAF configuration. This weakness allows the protection mechanisms to be bypassed solely by sending manipulated HTTP requests. Successful exploitation of the vulnerability could allow an unauthenticated attacker to execute arbitrary queries against the database, extract its complete structure and gain access to sensitive customer information, including personally identifiable information (PII)."
+      "date": "2026-10-29T10:17:02.133",
+      "summary": "The Sequential Order Numbers for WooCommerce plugin for WordPress is vulnerable to Stored Cross-Site Scripting via 'condition' Post Meta Array Keys in all versions up to, and including, 3.6.5 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-86379",
-      "title": "CVE-2026-86379",
+      "id": "CVE-2026-107627",
+      "title": "CVE-2026-107627",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:09.003",
-      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Command execution."
+      "date": "2026-10-29T10:17:02.293",
+      "summary": "The Greenshift – animation and page builder blocks plugin for WordPress is vulnerable to Stored DOM-Based Cross-Site Scripting via the 'comment' parameter in all versions up to, and including, 13.2.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires an administrator to have published a page containing a Text Animated block with Content set to Blocks, a Latest Comments block with excerpts enabled nested inside it, and at least one Animated Texts value configured — conditions that cause the gs-textanimate script to be enqueued and process the comment excerpts."
     },
     {
-      "id": "CVE-2026-86380",
-      "title": "CVE-2026-86380",
+      "id": "CVE-2026-107629",
+      "title": "CVE-2026-107629",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:09.163",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Integer Overflow or Wraparound vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass."
+      "date": "2026-10-29T10:17:02.440",
+      "summary": "The Greenshift – animation and page builder blocks plugin for WordPress is vulnerable to Stored DOM-Based Cross-Site Scripting via the 'comment' parameter in all versions up to, and including, 13.2.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires the affected post page to include an Advanced HTML Element block with Split Text animation enabled wrapping a Latest Comments block that displays comment excerpts, as this configuration causes splittext.js to be enqueued and to process the comment content container."
     },
     {
-      "id": "CVE-2026-86383",
-      "title": "CVE-2026-86383",
+      "id": "CVE-2026-107743",
+      "title": "CVE-2026-107743",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:09.297",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Information disclosure."
+      "date": "2026-10-29T10:17:02.580",
+      "summary": "The Mapster WP Maps plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 2.0.5. This is due to the /wp-json/mapster-wp-maps/save-mapmaker REST route being registered with a permission_callback that unconditionally returns true (no capability check, no nonce), together with the mapster_write_config_to_acf() helper only sanitizing string config values with sanitize_text_field() — which strips HTML tags but leaves quote characters intact — and the mapster_wp_map shortcode renderer in mapster_wordpress_maps_shortcode_display() concatenating the stored loading_background_color value into a single-quoted inline style attribute without esc_attr(). This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-86384",
-      "title": "CVE-2026-86384",
+      "id": "CVE-2026-109215",
+      "title": "CVE-2026-109215",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:09.433",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Use of Hard-coded Cryptographic Key vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to credential exposure. The credentials may be used to access the system with privileges of the compromised user."
+      "date": "2026-10-29T10:17:02.727",
+      "summary": "The LiteSpeed Cache plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'bbp_reply_content' parameter in all versions up to, and including, 7.9.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires that an administrator has enabled Viewport Images (VPI) and configured a VPI filename that matches an image the attacker can embed in user-generated content — such as a bbPress topic where Subscriber-level Participants are permitted to post replies containing raw img tags."
     },
     {
-      "id": "CVE-2026-86385",
-      "title": "CVE-2026-86385",
+      "id": "CVE-2026-110707",
+      "title": "CVE-2026-110707",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:09.570",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, contain an Improper Check for Dropped Privileges vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to elevation of privileges."
+      "date": "2026-10-29T10:17:02.877",
+      "summary": "The RSS Aggregator by Feedzy – Feed to Post, Autoblogging, News & YouTube Video Feeds Aggregator plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'media:group/media:description (XML element in the imported feed)' parameter in all versions up to, and including, 5.2.12 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation requires an administrator to configure a Feed-to-Post import pointing at an attacker-controlled feed URL and trigger the import via the Run Now action or setup wizard, which is the plugin's standard configuration flow."
     },
     {
-      "id": "CVE-2026-86386",
-      "title": "CVE-2026-86386",
+      "id": "CVE-2026-111318",
+      "title": "CVE-2026-111318",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:09.727",
-      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Information disclosure."
+      "date": "2026-10-29T10:17:03.017",
+      "summary": "The HT Mega Addons for Elementor – Elementor Widgets & Template Builder plugin for WordPress is vulnerable to Stored DOM-Based Cross-Site Scripting via the 'href attribute of <a> inside .htmega-tab-nav' parameter in all versions up to, and including, 3.2.7 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Successful exploitation requires a co-installed plugin such as wpDiscuz with its rich editor enabled whose markup allowlist permits span[class] and a[href] storage, an HT Mega Tabs widget present on the same page as the comment section, and a victim user click on the injected anchor link."
     },
     {
-      "id": "CVE-2026-86388",
-      "title": "CVE-2026-86388",
+      "id": "CVE-2026-111417",
+      "title": "CVE-2026-111417",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.007",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Filesystem access for attacker."
+      "date": "2026-10-29T10:17:03.160",
+      "summary": "A broken access control vulnerability exists in the Foxit official website’s HTML-to-PDF conversion service due to the use of a shared token for submitted conversion documents. This may allow unauthorized users to access documents submitted by other users."
     },
     {
-      "id": "CVE-2026-86389",
-      "title": "CVE-2026-86389",
+      "id": "CVE-2026-111418",
+      "title": "CVE-2026-111418",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.150",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Integer Overflow or Wraparound vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Code execution."
+      "date": "2026-10-29T10:17:03.313",
+      "summary": "A server-side request forgery (SSRF) vulnerability exists in the Foxit official website’s HTML-to-PDF conversion service. Support for ZIP-formatted input can bypass restrictions on requests to internal IP addresses, potentially allowing discovery of internal network resources."
     },
     {
-      "id": "CVE-2026-86390",
-      "title": "CVE-2026-86390",
+      "id": "CVE-2026-111419",
+      "title": "CVE-2026-111419",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.317",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access."
+      "date": "2026-10-29T10:17:03.440",
+      "summary": "A sensitive information exposure vulnerability exists on the Foxit official website because JavaScript code contains third-party authorization information. This may allow unauthorized parties to obtain or misuse the exposed credentials."
     },
     {
-      "id": "CVE-2026-86391",
-      "title": "CVE-2026-86391",
+      "id": "CVE-2026-116763",
+      "title": "CVE-2026-116763",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.450",
-      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Authentication Bypass by Spoofing vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Denial of service."
+      "date": "2026-10-29T10:17:03.590",
+      "summary": "The LiteSpeed Cache plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'comment' parameter in all versions up to, and including, 7.9.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is only exploitable when the HTML Minify option (O_OPTM_HTML_MIN) is enabled and a companion plugin renders stored comment content into a raw-text context such as a JSON-LD script block on the same page."
     },
     {
-      "id": "CVE-2026-86392",
-      "title": "CVE-2026-86392",
+      "id": "CVE-2026-117611",
+      "title": "CVE-2026-117611",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.583",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Heap-based Buffer Overflow vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Denial of service."
+      "date": "2026-10-29T10:17:03.730",
+      "summary": "Improper certificate validation in Checkmk <2.5.0p18, <2.4.0p39, <2.3.0p52 and 2.2.0 (EOL): the Certificate Authority stores bundled with \"certifi\" and \"webpki-roots\" include a root CA that trusts eMudhra (emSign) intermediate certificates whose private keys are public."
     },
     {
-      "id": "CVE-2026-86393",
-      "title": "CVE-2026-86393",
+      "id": "CVE-2026-118192",
+      "title": "CVE-2026-118192",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.860",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Privilege Management vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges."
+      "date": "2026-10-29T10:17:03.997",
+      "summary": "The JoomSport – for Sports: Team & League, Football, Hockey & more plugin for WordPress is vulnerable to generic SQL Injection via the 'team_id' parameter in all versions up to, and including, 5.7.11 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with contributor-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. The vulnerable code path is reached when the season has no associated joomsport_tournament term, which is the default state for newly created seasons."
     },
     {
-      "id": "CVE-2026-86394",
-      "title": "CVE-2026-86394",
+      "id": "CVE-2026-88941",
+      "title": "CVE-2026-88941",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:10.990",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to Command execution."
+      "date": "2026-10-29T10:17:06.520",
+      "summary": "Kaspersky has fixed a vulnerability in the Network Agent for Windows module of Kaspersky Security Center. The vulnerability could potentially cause the Network Agent module of Kaspersky Security Center to malfunction. There are no evidence of the vulnerability exploitation in-the-wild."
     },
     {
-      "id": "CVE-2026-92665",
-      "title": "CVE-2026-92665",
+      "id": "CVE-2026-91152",
+      "title": "CVE-2026-91152",
       "source": "NIST NVD",
-      "date": "2026-10-28T10:17:11.130",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Allocation of Resources Without Limits or Throttling vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to Denial of service."
+      "date": "2026-10-29T10:17:06.693",
+      "summary": "The Everest Forms – Contact Form, Payment Form, Quiz, Survey & Custom Form Builder with AI plugin for WordPress is vulnerable to Reflected Cross-Site Scripting via the 'evf_toast_type' parameter in all versions up to, and including, 3.6.2 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that execute if they can successfully trick a user into performing an action such as clicking on a link. Exploitation requires the sibling evf_toast parameter to decode successfully via atob(), but this is a trivially attacker-controlled prerequisite."
     },
     {
-      "id": "CVE-2025-30414",
-      "title": "CVE-2025-30414",
+      "id": "CVE-2026-91153",
+      "title": "CVE-2026-91153",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:12.427",
-      "summary": "Local privilege escalation due to improper authentication. The following products are affected: Acronis Cyber Protect Cloud Agent (Windows) before build 42569, Acronis Cyber Protect 17 (Windows) before build 42587."
+      "date": "2026-10-29T10:17:06.840",
+      "summary": "The Everest Forms – Contact Form, Payment Form, Quiz, Survey & Custom Form Builder with AI plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 3.6.2 via the process. This makes it possible for unauthenticated attackers to extract arbitrary WordPress post meta values — including license keys, API tokens, SMTP credentials, and Stripe or AWS secrets stored on any post type — via form submission notification emails or stored entries. The submission nonce is publicly rendered in every embedded form and can additionally be minted anonymously via the nopriv everest_forms_get_form_update_nonce action, meaning no account or prior authentication of any kind is required to complete the exploit."
     },
     {
-      "id": "CVE-2026-101272",
-      "title": "CVE-2026-101272",
+      "id": "CVE-2026-105031",
+      "title": "CVE-2026-105031",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:13.273",
-      "summary": "The mechanism binding files generated during a shredding process to the authentication method is not working correctly and the same session token is used for all token-based API users. This is similar to an issue fixed in 2026.7.1 but was missed while creating the fix. Since the files are referred to by randomly generated UUIDs and only exist for a day, there is virtually no risk, but it renders the added protection mechanism useless. As part of the fix, we have also improved hardening of some other related code areas."
+      "date": "2026-10-29T11:17:24.290",
+      "summary": "When using the OpenSSL TLS implementation, both the pn_ssl_domain_set_trusted_ca_db() & pn_tls_config_set_trusted_certs() APIs added to rather than replaced the default system trust anchors. Leading to potentially trusting unexpected peer certificates.\n\n\n\nThis can be worked around by setting the SSL_CERT_FILE environment variable for the application to /dev/null.\n\n\n\nThis issue does not affect the Win32 SChannel TLS implementation.\n\n\n\nThis issue affects Apache Qpid Proton C: through 0.40.0.\n\n\n\nUsers are recommended to upgrade to version 0.41.1, which fixes the issue."
     },
     {
-      "id": "CVE-2026-101273",
-      "title": "CVE-2026-101273",
+      "id": "CVE-2026-105042",
+      "title": "CVE-2026-105042",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:13.430",
-      "summary": "Some of our API endpoints allowed to create order payments referencing a gift card by using the auto-incremented internal ID. This ID was not checked and allowed creating payments that reference gift cards from different organizers and thereby obtaining their secret. The gift card is not charged in this case, but by then triggering a refund on the payment, one can increase the value of the gift card."
+      "date": "2026-10-29T11:17:24.410",
+      "summary": "A message body that is deeply nested and decoded by pn_message_body() could overflow the stack and cause a crash.\n\n\n\nThis issue affects Apache Qpid Proton C: through 0.40.0.\n\n\n\nUsers are recommended to upgrade to version 0.41.1, which fixes the issue."
     },
     {
-      "id": "CVE-2026-101274",
-      "title": "CVE-2026-101274",
+      "id": "CVE-2026-112827",
+      "title": "CVE-2026-112827",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:13.577",
-      "summary": "When pretix is used as the identity provider in a Single-Sign-On (SSO) setup for customer accounts, the system did not properly validate the `response_type` requested in an authorization request against the configured grant type of the SSO client. This means that if an SSO client was configured to only allow the `code` response type, which requires knowledge of the client secret to use and would wrongfully send a response type like `id_token`, it would receive back a valid token. Exploiting this requires the attacker to run JavaScript on the page specified by `redirect_uri`, which must be from a list specified in the client configuration."
+      "date": "2026-10-29T11:17:27.473",
+      "summary": "Missing Authorization vulnerability in VillaTheme HANDMADE – Dropshipping for Etsy and WooCommerce handmade-dropshipping-for-etsy-and-woo allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects HANDMADE – Dropshipping for Etsy and WooCommerce: from n/a through 1.0.10."
     },
     {
-      "id": "CVE-2026-103313",
-      "title": "CVE-2026-103313",
+      "id": "CVE-2026-114193",
+      "title": "CVE-2026-114193",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:13.717",
-      "summary": "The BitPay Gateway for WooCommerce WordPress plugin through 4.1.3 does not bind the payment provider's transaction confirmation to the order it completes, nor verify the confirmed amount, allowing an unauthenticated attacker who holds a single genuine low-value transaction to mark arbitrary higher-value orders as paid."
+      "date": "2026-10-29T11:17:28.080",
+      "summary": "Missing Authorization vulnerability in Eyal Fitoussi GEO my WordPress geo-my-wp allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects GEO my WordPress: from n/a through 4.5.5.5."
     },
     {
-      "id": "CVE-2026-103330",
-      "title": "CVE-2026-103330",
+      "id": "CVE-2026-114230",
+      "title": "CVE-2026-114230",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:13.857",
-      "summary": "The Sadad QA Payment WordPress plugin through 1.28 does not correctly verify the authenticity of incoming payment notifications, as the verification is keyed on a merchant secret that is empty by default and the rest of the signed data is attacker-controlled, allowing unauthenticated attackers to forge a valid confirmation and mark orders as paid without payment."
+      "date": "2026-10-29T11:17:28.210",
+      "summary": "When dispatching SASL frames to authenticate the peer, Proton will also dispatch AMQP frames if they claim to be SASL frames. This allows authentication bypass. However there will be no user name set so the effects depend on how the application deals with this condition - which otherwise means that authentication has not completed yet.\n\n\n\nThis issue affects Apache Qpid Proton C: through 0.40.0.\n\n\n\nUsers are recommended to upgrade to version 0.41.1, which fixes the issue."
     },
     {
-      "id": "CVE-2026-103779",
-      "title": "CVE-2026-103779",
+      "id": "CVE-2026-115592",
+      "title": "CVE-2026-115592",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:13.977",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Authentication vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Protection mechanism bypass."
+      "date": "2026-10-29T11:17:29.937",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in OceanWP OceanWP oceanwp allows Reflected XSS.This issue affects OceanWP: from n/a through 4.2.7."
     },
     {
-      "id": "CVE-2026-103780",
-      "title": "CVE-2026-103780",
+      "id": "CVE-2026-115599",
+      "title": "CVE-2026-115599",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.113",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Stack-based Buffer Overflow vulnerability. An unauthenticated attacker with remote access could potentially exploit this vulnerability, leading to command execution."
+      "date": "2026-10-29T11:17:30.070",
+      "summary": "Missing Authorization vulnerability in ThimPress LearnPress learnpress allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects LearnPress: from n/a through 4.4.11."
     },
     {
-      "id": "CVE-2026-103792",
-      "title": "CVE-2026-103792",
+      "id": "CVE-2026-115611",
+      "title": "CVE-2026-115611",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.250",
-      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access to managed systems."
+      "date": "2026-10-29T11:17:30.207",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in PluginUs.Net TableOn posts-table-filterable allows Reflected XSS.This issue affects TableOn: from n/a through 1.0.7."
     },
     {
-      "id": "CVE-2026-103799",
-      "title": "CVE-2026-103799",
+      "id": "CVE-2026-115942",
+      "title": "CVE-2026-115942",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.390",
-      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to unauthorized system operation on managed systems."
+      "date": "2026-10-29T11:17:30.837",
+      "summary": "A misconfigured wildcard TLS certificate causes a stack read overflow.\n\n\n\nThis issue does not affect any wildcard certificate issued to the RFC9525 standard - the fix only accepts certificates that comply to this standard.\n\n\n\nThis issue affects Apache Qpid Proton C: through 0.40.0.\n\n\n\nUsers are recommended to upgrade to version 0.41.1, which fixes the issue."
     },
     {
-      "id": "CVE-2026-106648",
-      "title": "CVE-2026-106648",
+      "id": "CVE-2026-115962",
+      "title": "CVE-2026-115962",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.527",
-      "summary": "The Royal Elementor Addons WordPress plugin before 1.7.1070 does not validate submitted form field values before substituting them into the recipient addresses of its form notification emails, allowing unauthenticated attackers to replace the recipient list and relay attacker-composed email from the site's own domain when a recipient field is configured to echo a submitted value."
+      "date": "2026-10-29T11:17:30.967",
+      "summary": "Authentication Bypass by Spoofing vulnerability in myCred myCred mycred allows Identity Spoofing.This issue affects myCred: from n/a through 4.0.1."
     },
     {
-      "id": "CVE-2026-110508",
-      "title": "CVE-2026-110508",
+      "id": "CVE-2026-115963",
+      "title": "CVE-2026-115963",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.680",
-      "summary": "The Essential Addons for Elementor WordPress plugin before 6.8.7 does not apply its administrator approval requirement to accounts registered through its email one-time-password flow, which could allow unauthenticated users to register and log in without being approved by an administrator when both features are enabled."
+      "date": "2026-10-29T11:17:31.097",
+      "summary": "Missing Authorization vulnerability in VideoWhisper.com Broadcast Live Video videowhisper-live-streaming-integration allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Broadcast Live Video: from n/a through 7.3.9."
     },
     {
-      "id": "CVE-2026-110540",
-      "title": "CVE-2026-110540",
+      "id": "CVE-2026-115964",
+      "title": "CVE-2026-115964",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.803",
-      "summary": "Dell PowerProtect Data Domain Management Center, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized operation."
+      "date": "2026-10-29T11:17:31.220",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in StylemixThemes Motors motors-car-dealership-classified-listings allows Blind SQL Injection.This issue affects Motors: from n/a through 1.4.126."
     },
     {
-      "id": "CVE-2026-110541",
-      "title": "CVE-2026-110541",
+      "id": "CVE-2026-115965",
+      "title": "CVE-2026-115965",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:14.937",
-      "summary": "Dell PowerProtect Data Domain, Feature Release versions 7.7.1.0 through 8.8, LTS2024 release versions 7.13.1.0 through 7.13.1.80, LTS2025 release versions 8.3.1.0 through 8.3.1.40, LTS2026 release versions 8.6.1.0 through 8.6.1.20, contain an Improper Neutralization of Special Elements used in an OS Command ('OS Command Injection') vulnerability. A high privileged attacker with remote access could potentially exploit this vulnerability, leading to command execution."
+      "date": "2026-10-29T11:17:31.357",
+      "summary": "Improper Neutralization of Special Elements used in an SQL Command ('SQL Injection') vulnerability in BuddyPress BuddyPress buddypress allows Blind SQL Injection.This issue affects BuddyPress: from n/a through 14.5.2."
     },
     {
-      "id": "CVE-2026-112197",
-      "title": "CVE-2026-112197",
+      "id": "CVE-2026-115967",
+      "title": "CVE-2026-115967",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:15.073",
-      "summary": "Vulnerability due to a lack of authentication in critical functions of the NoviGest Desktop App's Java RMI service. An attacker with network access to the service can invoke remote methods without authentication, obtain sensitive credentials, and execute arbitrary SQL queries on PostgreSQL. The elevated privileges of the database account allow these capabilities to be chained together to execute operating system commands on the server, compromising its confidentiality, integrity, and availability."
+      "date": "2026-10-29T11:17:31.493",
+      "summary": "Weak Authentication vulnerability in Hamid Alinia Login with phone number login-with-phone-number allows Authentication Abuse.This issue affects Login with phone number: from n/a through 1.8.78."
     },
     {
-      "id": "CVE-2026-112198",
-      "title": "CVE-2026-112198",
+      "id": "CVE-2026-116409",
+      "title": "CVE-2026-116409",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:15.220",
-      "summary": "XML External Entity (XXE) injection vulnerability in the SAFT import feature of the NoviGest Desktop App. The application processes user-controlled XML files using a JAXB Unmarshaller without properly disabling external entity resolution. An attacker with access to this functionality could provide a manipulated XML file to read local files accessible to the application process. If the application runs with elevated privileges, sensitive system files could be exposed."
+      "date": "2026-10-29T11:17:31.630",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Swings Upsell Order Bump Offer for WooCommerce upsell-order-bump-offer-for-woocommerce allows Reflected XSS.This issue affects Upsell Order Bump Offer for WooCommerce: from n/a through 3.1.6."
     },
     {
-      "id": "CVE-2026-115223",
-      "title": "CVE-2026-115223",
+      "id": "CVE-2026-118984",
+      "title": "CVE-2026-118984",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:15.800",
-      "summary": "The Smart Popup by Supsystic WordPress plugin before 2.0.2 does not prevent template-injection payloads from being stored in a popup text block and later evaluated by its template engine, because the filter meant to strip template delimiters runs before a decoding step that reconstructs them, allowing an authenticated administrator to execute arbitrary template expressions server-side and read PHP constants such as the site's database credentials and authentication keys."
+      "date": "2026-10-29T11:17:32.257",
+      "summary": "OmniRoute 3.8.0 before 3.8.52 contains an unverified password change vulnerability that allows holders of manage- or admin-scoped API keys or oma_ access tokens to change the management password without the current password. Attackers can send POST requests to /api/settings/require-login to lock out the operator, take over dashboard login, or disable the login requirement entirely."
     },
     {
-      "id": "CVE-2026-117692",
-      "title": "CVE-2026-117692",
+      "id": "CVE-2026-118989",
+      "title": "CVE-2026-118989",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:15.927",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
+      "date": "2026-10-29T11:17:32.447",
+      "summary": "WebToffee Product Import Export for WooCommerce 2.5.1 before 2.6.8 contains a server-side request forgery vulnerability in download_remote_file that allows shop_manager users to reach internal services via redirects. Attackers can submit a .csv URL that returns an HTTP 302 redirect to an internal address, causing the server to fetch internal responses and return them as import data."
     },
     {
-      "id": "CVE-2026-117693",
-      "title": "CVE-2026-117693",
+      "id": "CVE-2026-33923",
+      "title": "CVE-2026-33923",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:16.027",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
+      "date": "2026-10-29T11:17:32.847",
+      "summary": "A signature verification vulnerability was discovered in the update installation functionality due to inconsistent validation of the update bundle contents. An attacker with administrative privileges can remotely supply a crafted update bundle that passes signature verification but runs an unsigned script when the bundle is installed. The script runs with root privileges, allowing the attacker to read or modify sensitive data, change the appliance configuration, or shut down the appliance."
     },
     {
-      "id": "CVE-2026-117694",
-      "title": "CVE-2026-117694",
+      "id": "CVE-2026-33924",
+      "title": "CVE-2026-33924",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:16.083",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
+      "date": "2026-10-29T11:17:33.010",
+      "summary": "Two OS command injection vulnerabilities were discovered in the update installation functionality due to insufficient validation of the update bundle contents. An attacker with administrative privileges can remotely supply a crafted update bundle that, when installed, causes arbitrary commands to be executed with root privileges, allowing the attacker to read or modify sensitive data, change the appliance configuration, or shut down the appliance."
     },
     {
-      "id": "CVE-2026-117695",
-      "title": "CVE-2026-117695",
+      "id": "CVE-2026-71569",
+      "title": "CVE-2026-71569",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:16.157",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
+      "date": "2026-10-29T11:17:34.093",
+      "summary": "Server-Side Request Forgery (SSRF) vulnerability in Apache Camel A2A component.\n\n\n\nThis issue affects Apache Camel: from 4.21.0 before 4.22.2.\n\n\n\nWebhookUrlValidator classified a push notification webhook host in two places that did not agree. A host written as an IP literal was matched against a list of string prefixes that named the IPv6 unique local range fc00::/7, while a host reached through a name was resolved and the resulting address classified with the InetAddress predicates isLoopbackAddress, isAnyLocalAddress, isLinkLocalAddress and isSiteLocalAddress. Those predicates do not cover the same ground as the prefix list: isSiteLocalAddress reports the deprecated fec0::/10 block and not the fc00::/7 unique local addresses that replaced it, and the JDK carries no predicate for them at all. The same address was therefore accepted or rejected depending on how it was written, and a webhook URL whose host name resolved into fc00::/7 passed a guard that refused the identical address given as a literal. PushNotificationDispatcher then sent the push notification to that address, together with any Authorization header carried in the same configuration, whose scheme and credentials the"
     },
     {
-      "id": "CVE-2026-117696",
-      "title": "CVE-2026-117696",
+      "id": "CVE-2026-103665",
+      "title": "CVE-2026-103665",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:16.230",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
+      "date": "2026-10-29T12:17:08.980",
+      "summary": "The installer for Yamaha LAN Monitor for Windows provided by Yamaha Corporation may insecurely load Dynamic Link Libraries (DLLs). When the installer is launched in a directory containing a specially crafted DLL file, the malicious DLL may be loaded, resulting in arbitrary code execution with administrative privileges."
     },
     {
-      "id": "CVE-2026-117697",
-      "title": "CVE-2026-117697",
+      "id": "CVE-2026-109216",
+      "title": "CVE-2026-109216",
       "source": "NIST NVD",
-      "date": "2026-10-28T11:17:16.307",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
-    },
-    {
-      "id": "CVE-2026-117698",
-      "title": "CVE-2026-117698",
-      "source": "NIST NVD",
-      "date": "2026-10-28T11:17:16.370",
-      "summary": "Rejected reason: Reserved in error; never associated with a vulnerability."
+      "date": "2026-10-29T12:17:09.640",
+      "summary": "The Meta Box – A Framework for Dynamic Websites plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'profile_background[<attacker-chosen key>]' parameter in all versions up to, and including, 5.15.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitability depends on a consuming plugin or theme built on Meta Box that exposes the background field to lower-privileged users and renders stored values via the rwmb_the_value()/format_single_value() pattern; the effective minimum privilege is whatever role that consumer permits, demonstrated at Subscriber level."
     }
   ]
 }
