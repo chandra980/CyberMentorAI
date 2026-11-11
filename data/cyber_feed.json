@@ -1,6 +1,72 @@
 {
-  "generated_at": "2026-11-10T10:06:25.959752+00:00",
+  "generated_at": "2026-11-11T09:37:18.557049+00:00",
   "items": [
+    {
+      "id": "CVE-2026-124194",
+      "title": "CVE-2026-124194 - Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-10",
+      "vendor": "Microsoft",
+      "product": "Office",
+      "summary": "Microsoft Office Outlook contains a missing user interaction for potentially unsafe action vulnerability that allows an unauthorized attacker to perform spoofing over a network.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-24"
+    },
+    {
+      "id": "CVE-2026-111793",
+      "title": "CVE-2026-111793 - Openwave Messaging Limited Webtop Media Transcoder Incorrect Resource Transfer Between Spheres Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-10",
+      "vendor": "Openwave Messaging Limited",
+      "product": "Webtop Media Transcoder",
+      "summary": "Openwave Messaging Limited Webtop Media Transcoder contains an incorrect resource transfer between spheres vulnerability that may allow an authenticated user to process and convert unintended document types if bypassing the Webmail experience.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-24"
+    },
+    {
+      "id": "CVE-2026-20320",
+      "title": "CVE-2026-20320 - Cisco BroadWorks Improper Restriction of XML External Entity Reference Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-10",
+      "vendor": "Cisco",
+      "product": "BroadWorks",
+      "summary": "Cisco BroadWorks contains an improper restriction of XML external entity reference vulnerability that could allow an unauthenticated, remote attacker to read sensitive configuration information on an affected system.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-24"
+    },
+    {
+      "id": "CVE-2026-111560",
+      "title": "CVE-2026-111560 - Barracuda Networks Multiple Products OS Command Injection Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-10",
+      "vendor": "Barracuda Networks",
+      "product": "Multiple Products",
+      "summary": "Barracuda Networks Email Security Gateway (ESG), Load Balancer, Application Delivery Controller (ADC), Message Archiver (BMA), WAF Control Center (WCC), Web Application Firewall (WAF), and Web Security Gateway (WSG) contain an OS command injection vulnerability. This vulnerability could allow an authenticated administrator to inject OS commands that execute with root privileges when the crafted timezone value is subsequently processed. This vulnerability can be chained with CVE-2026-116606",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-13"
+    },
+    {
+      "id": "CVE-2026-116606",
+      "title": "CVE-2026-116606 - Barracuda Networks Email Security Gateway (ESG) Authentication Bypass Using an Alternate Path or Channel Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-10",
+      "vendor": "Barracuda Networks",
+      "product": "Barracuda Email Security Gateway (ESG)",
+      "summary": "Barracuda Networks Email Security Gateway (ESG) contains an authentication bypass using an alternate path or channel that could allow an unauthenticated remote attacker to invoke a configuration-import function and restore a crafted, compatible backup archive, resulting in unauthorized modification of the appliance’s global configuration. This vulnerability can be chained with CVE-2026-111560.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-13"
+    },
+    {
+      "id": "CVE-2026-125350",
+      "title": "CVE-2026-125350 - Google Chromium Use-After-Free Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-10",
+      "vendor": "Google",
+      "product": "Chromium",
+      "summary": "Google Chromium contains a use-after-free vulnerability in the XML component that could allow a remote attacker to execute arbitrary code inside the sandbox via a specially crafted webpage. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-24"
+    },
     {
       "id": "CVE-2026-102895",
       "title": "CVE-2026-102895 - GPUStack Improper Authentication Vulnerability",
@@ -816,350 +882,284 @@
       "due": "2026-09-12"
     },
     {
-      "id": "CVE-2026-75650",
-      "title": "CVE-2026-75650 - Adobe Commerce and Magento Improper Neutralization of Special Elements Used in a Template Engine Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-08",
-      "vendor": "Adobe",
-      "product": "Commerce and Magento",
-      "summary": "Adobe Commerce and Magento Open Source contain an improper neutralization of special elements used in a template engine vulnerability that could allow an attacker to execute arbitrary code.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-11"
-    },
-    {
-      "id": "CVE-2026-81963",
-      "title": "CVE-2026-81963 - Microsoft Windows Link Following Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-08",
-      "vendor": "Microsoft",
-      "product": "Windows",
-      "summary": "Microsoft Windows Update Stack contains a link following vulnerability that allows a local attacker to escalate privileges locally up to SYSTEM.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-22"
-    },
-    {
-      "id": "CVE-2026-86218",
-      "title": "CVE-2026-86218 - N-able N-central Static Code Injection Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-08",
-      "vendor": "N-able",
-      "product": "N-central",
-      "summary": "N-able N-central contains a static code injection vulnerability that could allow for pre-authentication remote code execution.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-11"
-    },
-    {
-      "id": "CVE-2026-85880",
-      "title": "CVE-2026-85880 - Microsoft Windows Heap-Based Buffer Overflow Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-08",
-      "vendor": "Microsoft",
-      "product": "Windows",
-      "summary": "Microsoft Windows Advanced Local Procedure Call contains a heap-based buffer overflow vulnerability that allows an attacker to elevate privileges locally.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-22"
-    },
-    {
-      "id": "CVE-2026-85046",
-      "title": "CVE-2026-85046 - Google Chromium V8 Type Confusion Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-04",
-      "vendor": "Google",
-      "product": "Chromium V8",
-      "summary": "Google Chromium V8 contains a type confusion vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-18"
-    },
-    {
-      "id": "CVE-2026-59822",
-      "title": "CVE-2026-59822 - BerriAI LiteLLM Improper Authentication Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-02",
-      "vendor": "BerriAI",
-      "product": "LiteLLM",
-      "summary": "BerriAI LiteLLM contains an improper authentication vulnerability in the MCP Streamable HTTP endpoint that could allow an unauthenticated attacker to establish an authenticated MCP session using an arbitrary Bearer token.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-16"
-    },
-    {
-      "id": "CVE-2026-119641",
-      "title": "CVE-2026-119641",
+      "id": "CVE-2026-108949",
+      "title": "CVE-2026-108949",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:14.987",
-      "summary": "** UNSUPPORTED WHEN ASSIGNED ** Improper input validation vulnerability in Apache Oozie. An authenticated Oozie user can reconfigure another tenant's\nworkflow job and change its ownership.\n\n\n\nThis issue affects Apache Oozie: all versions.\n\n\n\nAs this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer."
+      "date": "2026-11-04T10:17:24.160",
+      "summary": "Denial of Service via OOM vulnerability in Apache ActiveMQ, ActiveMQ Broker.\n\n\n\nAn authenticated OpenWire client that sends a ConsumerInfo for a temporary queue/topic owned by another connection is rejected with InvalidDestinationException, but the rejected Subscription is left behind in the region's subscriptions map. Repeating the request leaks broker heap until OOM because the broker does not clean up the rejected subscriptions in the map.\n\n\n\nThis issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; ActiveMQ Broker: from 6.0.0 before 6.3.3, before 5.19.12.\n\n\n\nUsers are recommended to upgrade to version 6.4.0, 6.3.3, or 5.19.12, which fixes the issue."
     },
     {
-      "id": "CVE-2026-119724",
-      "title": "CVE-2026-119724",
+      "id": "CVE-2026-110021",
+      "title": "CVE-2026-110021",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:15.150",
-      "summary": "** UNSUPPORTED WHEN ASSIGNED ** Improper restriction of recursive entity references in DTDs ('XML entity expansion') vulnerability in Apache JClouds.\n\n\n\nThis issue affects Apache JClouds: all versions.\n\n\n\nAs this project is retired, we do not plan to release a version that fixes this issue. Users are recommended to find an alternative or restrict access to the instance to trusted users.\n\n\n\nNOTE: This vulnerability only affects products that are no longer supported by the maintainer."
+      "date": "2026-11-04T10:17:24.310",
+      "summary": "PLCnext Engineer checks GSDX manifest reference digests but does not cryptographically verify the XML `SignatureValue` over canonicalized `SignedInfo`. An unauthenticated local attacker can modify signed GSDML content, update its manifest digest, retain the public certificate data, and leave an invalid nonempty `SignatureValue`. PLCnext Engineer prior to 2026.6 reports the package as `Valid` and selects the modified device description for import under the default policy."
     },
     {
-      "id": "CVE-2026-119843",
-      "title": "CVE-2026-119843",
+      "id": "CVE-2026-110022",
+      "title": "CVE-2026-110022",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:16.113",
-      "summary": "A flaw was found in GStreamer's gst-plugins-good package. The FLV media demuxer does not properly validate buffer sizes and data availability when processing enhanced audio and video tags in malformed or truncated FLV streams. A remote attacker could exploit this vulnerability by providing a specially crafted FLV media file that, when opened or streamed by a GStreamer-based application, triggers an assertion failure or a process crash, leading to denial of service."
+      "date": "2026-11-04T10:17:24.473",
+      "summary": "The PFI plugin framework deploys executable assemblies (DLLs) from a signed plugin package into the local plugin repository and loads them via reflection, but the deployment routine processes archive entries that were never covered by the signature verification. An unauthenticated local attacker can replace an unsigned DLL outside the signed prefix in the archive passes verification and overwrites the legitimate signed assembly at the same destination path. The plugin loader then instantiates the attacker-supplied code without any additional integrity check resulting in a full compromise of the affected systems."
     },
     {
-      "id": "CVE-2026-120327",
-      "title": "CVE-2026-120327",
+      "id": "CVE-2026-110935",
+      "title": "CVE-2026-110935",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:17.363",
-      "summary": "The click tracking middleware accepts an arbitrary target URL and redirects to it. Attackers can misuse links to the website to redirect users to external sites."
+      "date": "2026-11-04T10:17:24.627",
+      "summary": "The PFI plugin framework deployment routine does not validate path components when extracting archive entries to the local plugin repository. Archive entries containing relative path segments such as '..' are not rejected, allowing an unauthenticated local attacker to write files outside the plugin repository to arbitrary locations accessible with the current user's permissions which could result in full system compromise."
     },
     {
-      "id": "CVE-2026-120328",
-      "title": "CVE-2026-120328",
+      "id": "CVE-2026-111036",
+      "title": "CVE-2026-111036",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:17.527",
-      "summary": "The click tracking middleware does not validate the authentication code of a recipient if the code is omitted. Unauthenticated attackers can retrieve personal data of newsletter recipients, which is inserted into links of sent mails."
+      "date": "2026-11-04T10:17:24.770",
+      "summary": "Server-side request forgery (SSRF) vulnerability in the Coupa Supplier Portal SaaS platform, specifically in the document conversion functionality available in the ‘Contracts > Templates’ section. The vulnerability is due to insufficient validation of references to external resources processed by the Aspose.Words for Java library during DOCX-to-PDF conversion. An authenticated attacker with permissions to modify templates could upload a specially crafted DOCX document containing references to external resources, which would cause the server-side application to access URLs controlled by the attacker, resources on the internal network, or local files. A successful exploit could lead to the disclosure of sensitive information, such as configuration files, system files, credentials, environment variables and endpoints for internal services."
     },
     {
-      "id": "CVE-2026-120329",
-      "title": "CVE-2026-120329",
+      "id": "CVE-2026-111037",
+      "title": "CVE-2026-111037",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:17.677",
-      "summary": "Saving the configuration of the mail backend module writes submitted settings to the page TSconfig without restricting them to the configuration options of the module. Backend users with access to the mail module can write arbitrary page TSconfig."
+      "date": "2026-11-04T10:17:24.927",
+      "summary": "A reflected Cross-Site Scripting (XSS) vulnerability in the Tenders module of the Coupa Supplier Portal SaaS platform. The vulnerability arises because the `list_item_function` parameter is reflected in the server’s response without proper output encoding or sanitisation, and is directly embedded within the context of a JavaScript event handler. An attacker with a low-privileged account could create a malicious URL containing JavaScript payloads which, when opened by a victim, would execute arbitrary scripts within the context of the victim’s browser. A successful exploit could allow the attacker to perform actions on the victim’s behalf, disclose accessible information or manipulate the user interface."
     },
     {
-      "id": "CVE-2026-120330",
-      "title": "CVE-2026-120330",
+      "id": "CVE-2026-111038",
+      "title": "CVE-2026-111038",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:17.820",
-      "summary": "Backend actions and ajax routes of the mail module do not check whether the backend user has access to the page of the requested mail or recipient group. Backend users with access to the mail module can view, change, send and export mails and recipient groups outside their web mounts, including the personal data of recipients."
+      "date": "2026-11-04T10:17:25.070",
+      "summary": "CSV formula injection vulnerability in the export functionality of the Coupa Supplier Portal SaaS platform. The vulnerability arises because certain user-controlled data, such as event names or templates within the Tenders module, are not properly validated or sanitised before being included in CSV files generated by the application. An attacker with low privileges can input specially crafted values that begin with characters interpreted as formulas by spreadsheet applications. When a victim downloads and opens the generated file in a compatible client, the content may be interpreted as a formula, potentially leading to unauthorised actions such as the execution of commands via mechanisms such as DDE, access to information, or interaction with system resources under the victim’s context."
     },
     {
-      "id": "CVE-2026-120331",
-      "title": "CVE-2026-120331",
+      "id": "CVE-2026-111040",
+      "title": "CVE-2026-111040",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:17.970",
-      "summary": "Content of external URL mails, their stylesheets and images to embed is fetched by the server without validating the target host. Backend users with access to the mail module can make the server send requests to hosts in the internal network."
+      "date": "2026-11-04T10:17:25.220",
+      "summary": "The platform allows persistent HTML injection into editable fields managed by TinyMCE. An authenticated attacker with low privileges can inject unsanitised HTML content which is stored in the database and subsequently rendered in other users’ browsers, affecting the display of content within the application."
     },
     {
-      "id": "CVE-2026-120332",
-      "title": "CVE-2026-120332",
+      "id": "CVE-2026-111821",
+      "title": "CVE-2026-111821",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:18.123",
-      "summary": "The HTML content of mails and tracked URLs are rendered unescaped in the backend module. Backend users with access to the mail module can inject arbitrary HTML and JavaScript, which is executed in the context of other backend users viewing the mail preview or report."
+      "date": "2026-11-04T10:17:25.363",
+      "summary": "Improper input validation vulnerability in Apache ActiveMQ, Apache ActiveMQ KahaDB.\n\n\n\nA user can create a durable subscription with a clientId and subscription name that have a combined length > 65,535 (while separately being shorter) on a broker using KahaDB which can cause the broker to shutdown and be unrecoverable. \n\n\n\nThis issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ KahaDB: from 6.0.0 before 6.3.3, before 5.19.12.\n\n\n\nUsers are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue."
     },
     {
-      "id": "CVE-2026-120333",
-      "title": "CVE-2026-120333",
+      "id": "CVE-2026-111822",
+      "title": "CVE-2026-111822",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:18.270",
-      "summary": "The actions linked in the emails of the extension (e.g. to confirm a registration or the deletion of an account) do not reject requests with a missing or invalid hash. Instead, the frontend user given in the request is used. Unauthenticated attackers can therefore perform these actions for arbitrary active frontend users. This allows them to retrieve the email address or username of all frontend users and to delete arbitrary frontend user accounts."
+      "date": "2026-11-04T10:17:25.500",
+      "summary": "Improper invalidation of cached authorizations vulnerability in Apache ActiveMQ, Apache ActiveMQ Runtime Config.\n\n\n\nAfter the runtime configuration plugin removes a principal's write grant on a destination, an authenticated connection opened before the change can keep sending to that destination, including through a new anonymous producer, while fresh connections and new explicit producers are denied.\n\n\n\nThis issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ Runtime Config: from 6.0.0 before 6.3.3, before 5.19.12.\n\n\n\nUsers are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue."
     },
     {
-      "id": "CVE-2026-77691",
-      "title": "CVE-2026-77691",
+      "id": "CVE-2026-115498",
+      "title": "CVE-2026-115498",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:18.890",
-      "summary": "ZohoCorp ManageEngine Key Manager Plus versions before 7151 allow authenticated users to enter malicious input when configuring a Microsoft CA"
+      "date": "2026-11-04T10:17:25.620",
+      "summary": "The Slim Jetpack plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'g<PAGE_ID>-website (Website contact-field)' parameter in all versions up to, and including, 2.7.0.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The nonce and authentication checks on form submission are only enforced for logged-in users, allowing unauthenticated visitors to store payloads via any page containing the [contact-form] shortcode."
     },
     {
-      "id": "CVE-2026-77777",
-      "title": "CVE-2026-77777",
+      "id": "CVE-2026-120422",
+      "title": "CVE-2026-120422",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:19.640",
-      "summary": "ManageEngine Key Manager Plus versions before 7151 are vulnerable to an improper access control issue that allow authenticated users to modify another user's ACME certificate deployment credentials."
+      "date": "2026-11-04T10:17:26.120",
+      "summary": "Sogou Input Method for Windows contains a vulnerability in the configuration retrieval mechanism of its SGTool.exe component. The application retrieves configuration data over unencrypted HTTP connections, allowing an attacker capable of manipulating network traffic to replace legitimate server responses with malicious configurations. An attacker can exploit this vulnerability to instruct SGTool.exe to download attacker-controlled files to arbitrary locations, including paths used by legitimate application components. This can result in arbitrary code execution when the downloaded files are subsequently executed or loaded by the application."
     },
     {
-      "id": "CVE-2026-77778",
-      "title": "CVE-2026-77778",
+      "id": "CVE-2026-120554",
+      "title": "CVE-2026-120554",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:19.773",
-      "summary": "ZohoCorp ManageEngine Key Manager Plus versions up to 7150 allow authenticated users to export certificates belonging to other users to their own registered key vaults."
+      "date": "2026-11-04T10:17:26.300",
+      "summary": "The Import and export users and customers plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 2.5.11 This is due to a non-atomic multi-option write sequence in the `ACUI_Cron::save_settings()` function, which persists `acui_cron_activated`, `acui_cron_configured_by`, `acui_cron_user_id`, and `acui_cron_path_to_file` before reaching the authorization gate that calls `wp_die()` when a non-promoter submits a role. This makes it possible for authenticated attackers holding a custom delegated role with `create_users` but without `promote_users` or `edit_users` to escalate their privileges to Administrator, provided a prior administrator cron-tab save exists and no successful save intervenes before the next unattended cron tick processes the attacker's repointed CSV file."
     },
     {
-      "id": "CVE-2026-89229",
-      "title": "CVE-2026-89229",
+      "id": "CVE-2026-93900",
+      "title": "CVE-2026-93900",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:19.913",
-      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') in the ShareActivity component of BlueLM Copilot (com.vivo.ai.copilot) allows a malicious application installed on the same device to write arbitrary files via a crafted ACTION_SEND intent with a ContentProvider-supplied file name containing '..' sequences."
+      "date": "2026-11-04T10:17:26.657",
+      "summary": "The Simple CAPTCHA with Cloudflare Turnstile plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'id' attribute of the [gravity-simple-turnstile] shortcode in versions up to, and including, 1.44.3 This is due to insufficient input sanitization and output escaping on the shortcode attribute in the cfturnstile_gravity_shortcode() function: the value is filtered only by esc_html() and sanitize_text_field() (neither of which touches parentheses or dots) and then emitted via esc_js() in a raw JavaScript expression context outside any string literal (esc_js only escapes quotes, backslashes, and newlines). This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-89292",
-      "title": "CVE-2026-89292",
+      "id": "CVE-2026-94459",
+      "title": "CVE-2026-94459",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:20.077",
-      "summary": "In Eclipse Mnestix Browser versions 1.6.0 up until but excluding 2.3.0 it was possible for an unauthenticated attacker to exfiltrate the MNESTIX_BACKEND_API_KEY for all configured Infrastructures."
+      "date": "2026-11-04T10:17:26.833",
+      "summary": "IRISPowerscan contain\ndefault user accounts with predictable credentials. An unauthenticated attacker\nwith access to an affected installation could use these credentials to\nauthenticate to the application and access functionality available to the\naffected accounts, potentially resulting in unauthorised access or modification\nof application data and configuration."
     },
     {
-      "id": "CVE-2026-89293",
-      "title": "CVE-2026-89293",
+      "id": "CVE-2026-94460",
+      "title": "CVE-2026-94460",
       "source": "NIST NVD",
-      "date": "2026-11-03T10:17:20.257",
-      "summary": "In Eclipse Mnestix Browser versions 1.2.0 up until but excluding 2.3.0 it was possible for an unauthenticated attacker to perform actions that are only allowed to be executed by an authorized Mnestix user, like changing the Infrastructure settings or calling the connected and authenticated Mnestix AAS Generator backend."
+      "date": "2026-11-04T10:17:26.987",
+      "summary": "IRISPowerscan contain an insecure default\nconfiguration where the built-in installation account is assigned elevated\nprivileges with a predictable password, which could allow an unauthenticated\nattacker to gain unauthorised access to privileged application functionality."
     },
     {
-      "id": "CVE-2026-114442",
-      "title": "CVE-2026-114442",
+      "id": "CVE-2026-95649",
+      "title": "CVE-2026-95649",
       "source": "NIST NVD",
-      "date": "2026-11-03T11:16:52.130",
-      "summary": "Apache HertzBeat versions 1.7.1, 1.7.2, 1.7.3, 1.8.0, and 1.9.0 have incomplete XPath expression validation in the HTTP collector XML parsing path. An authenticated user with permission to create monitor templates can supply XPath expressions through metrics.aliasFields that are evaluated without the validation applied to parseScript. When processing a crafted XML response, repeated evaluation may consume excessive CPU resources and impair collector availability. This is a follow-up to the incomplete fix for CVE-2026-24343. The fix is included in Apache HertzBeat 1.9.1. Users should upgrade to 1.9.1 or a later version."
+      "date": "2026-11-04T10:17:27.120",
+      "summary": "IRISPowerscan insufficiently restrict the use of\nuntrusted scripts. An authenticated user with access to script functionality\ncan import or modify scripts that are executed by the application, potentially\nresulting in arbitrary code execution in the security context of the Windows\nuser running IRISPowerscan."
     },
     {
-      "id": "CVE-2026-99243",
-      "title": "CVE-2026-99243",
+      "id": "CVE-2026-100235",
+      "title": "CVE-2026-100235",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:30.553",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-11-04T11:17:04.960",
+      "summary": "Incorrect authorization due to a time-of-check to time-of-use (TOCTOU) race condition in the setACL request handling of Apache ZooKeeper.\n\nWhen a node's ACL is changed via setACL, the pending change is not published to the server's outstanding change record for that node. Any request that is prepared (and authorized) after the setACL is submitted but before it commits is therefore checked against the previous, pre-revocation ACL, yet is applied to the data tree after the ACL change has taken effect. A client that currently holds a permission can use this window to perform operations requiring that permission through and after its revocation — for example, committing writes or deletes after losing write access, or re-granting itself full permissions, which persistently defeats the revocation. In deployments transitioning from the default OPEN_ACL_UNSAFE ACL to a restrictive ACL, any unauthenticated client can exploit this during the transition.\n\nThis issue affects Apache ZooKeeper up to and including 3.9.6. Users are recommended to upgrade to version 3.8.8 or 3.9.7, which fixes the issue."
     },
     {
-      "id": "CVE-2026-99244",
-      "title": "CVE-2026-99244",
+      "id": "CVE-2026-100252",
+      "title": "CVE-2026-100252",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:30.710",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\npid_namespace: prevent TIF_NOTIFY_SIGNAL from interrupting the reaper\n\nSince commit 7fea700e04bd (\"zap_pid_ns_processes: clear\nTIF_NOTIFY_SIGNAL along with TIF_SIGPENDING\") zap_pid_ns_processes()\nclears TIF_NOTIFY_SIGNAL before every kernel_wait4() call. Otherwise\nkernel_wait4() doesn't sleep and returns -ERESTARTSYS if\nsignal_pending() is true and the reaper busy-waits.\n\nBut clearing TIF_NOTIFY_SIGNAL doesn't fix it. It can get raised again.\nFor example, klp_send_signals() sets it raw against any task that hasn't\ntransitioned yet. And it keeps sending it until the livepatch finishes.\n\nThe sleep loop waiting for pid_allocated to drop has the same problem\nand it doesn't even clear anything. So a schedule() in\nTASK_INTERRUPTIBLE returns immediately.\n\nUse a no_notify_signal guard. signal_pending() will ignore\nTIF_NOTIFY_SIGNAL and the pid namespace reaper sleeps until a child\nexits or free_pid() wakes it."
+      "date": "2026-11-04T11:17:06.717",
+      "summary": "Improper Authorization vulnerability in Apache ZooKeeper.\n\nWhen SASL authentication is enabled on the client port, the server's SASL callback handler grants every authorization identity (authzid) that a client requests, without checking it against the principal the client authenticated as. The server then tries to replace the requested identity with a canonical form of the authenticated principal, derived from the zookeeper.security.auth_to_local rules. If no rule applies to the principal, canonicalization fails and the error is only logged. The client-requested authzid then becomes the session's SASL identity for all ACL checks.\n\nAn authenticated client whose principal is not covered by the auth_to_local rules can therefore claim any SASL identity. With the default rules, this includes any Kerberos principal from a realm other than the server's default realm, such as a principal from a cross-realm trusted realm. The client then gets the permissions granted to that identity in sasl ACLs. If the requested identity matches a configured zookeeper.superUser, it gets superuser access to the whole data tree.\n\nUsers are recommended to upgrade to version 3.8.8 or 3.9.7, which fixes the iss"
     },
     {
-      "id": "CVE-2026-99245",
-      "title": "CVE-2026-99245",
+      "id": "CVE-2026-100300",
+      "title": "CVE-2026-100300",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:30.877",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nKEYS: Fix key_reject_and_link() race with keyring restriction\n\nThe restrict_link check in key_reject_and_link() is done before taking\nthe keyring semaphore, racing with a concurrent keyring_restrict()\nthat installs the restriction while holding the semaphore in write\nmode.\n\nMove the check to after __key_link_lock(), so it is done under the\nsemaphore, matching the pattern used in __key_create_or_update()."
+      "date": "2026-11-04T11:17:06.873",
+      "summary": "Improper handling of exceptional conditions in the quota subsystem of Apache ZooKeeper allows an attacker able to write under the /zookeeper/quota subtree — unauthenticated on default deployments, where that subtree is world-writable — to crash the server's critical request-processing thread and render the on-disk data directory permanently unbootable.\n\nThis issue affects Apache ZooKeeper up to and including 3.9.6. Users are recommended to upgrade to version 3.8.8 or 3.9.7, which fixes the issue."
     },
     {
-      "id": "CVE-2026-99246",
-      "title": "CVE-2026-99246",
+      "id": "CVE-2026-100302",
+      "title": "CVE-2026-100302",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.030",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ntipc: protect node reset trace dump with node lock\n\nThe tipc_node_reset_links trace event asks tipc_node_dump() to walk the\nnode's link entries. Unlike the other node events that request link data,\nthis event runs without the node lock.\n\nThis permits bearer teardown to free a link while the trace callback is\ndumping it:\n\n  CPU 0                                CPU 1\n  trace_tipc_node_reset_links()\n    tipc_node_dump()\n      l = n->links[0].link\n                                       tipc_node_write_lock()\n                                       kfree(l)\n                                       n->links[0].link = NULL\n                                       tipc_node_write_unlock()\n      tipc_link_dump(l)\n\ntipc_link_dump() then dereferences the stale pointer. KASAN reported:\n\n  BUG: KASAN: slab-use-after-free in tipc_link_dump\n  Read of size 4 by task poc/115\n  Call Trace:\n   tipc_link_dump+0x10cb/0x16b0\n   tipc_node_dump+0x4bb/0x740\n   trace_event_raw_event_tipc_node_class+0x258/0x360\n   tipc_node_reset_links+0x14d/0x1a0\n   tipc_rcv+0x13f5/0x3030\n   tipc_udp_recv+0x4e3/0x670\n  Allocated by task 0:\n   tipc_link_create+0"
+      "date": "2026-11-04T11:17:07.023",
+      "summary": "Allocation of Resources Without Limits or Throttling in the multiRead request handler of Apache ZooKeeper allows a remote attacker to crash the server (denial of service) with a single small request.\n\nThe multiRead handler places no limit on the number of bundled read operations or on the cumulative size of the response it builds in memory. Because each operation's result is fully materialized and retained before serialization, a request that is small on the wire — within the jute.maxbuffer limit — but that references a large znode many times can force the server to allocate far more heap than the request size implies, exhausting the JVM heap and terminating the server with an OutOfMemoryError. Neither jute.maxbuffer nor largeRequestMaxBytes prevents this, as both bound only the inbound request, not the response.\n\nThis issue affects Apache ZooKeeper from 3.7.0 through 3.9.6. Users are recommended to upgrade to version 3.9.7, which enforces configurable limits on the multiRead operation count and cumulative response size."
     },
     {
-      "id": "CVE-2026-99247",
-      "title": "CVE-2026-99247",
+      "id": "CVE-2026-102703",
+      "title": "CVE-2026-102703",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.190",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ntracing: Do not initialize tracefs work if tracing is disabled\n\nIf trace buffer allocation fails during early boot (e.g.  in\nearly_trace_init() -> allocate_trace_buffers()), tracing_disabled is\nleft set to 1 and the global trace array events list remains\nuninitialized.\n\nLater during boot, tracer_init_tracefs() (invoked via fs_initcall)\nqueues tracerfs_init_work asynchronously without checking if tracing was\ndisabled.  When tracer_init_tracefs_work_func() runs, it calls\nevent_trace_init() and init_tracer_tracefs(&global_trace, NULL)\nunconditionally.  This leads to __find_event_file() dereferencing an\nuninitialized tr->events list, causing an early boot NULL pointer\ndereference Oops:\n\n  BUG: Kernel NULL pointer dereference on read at 0x00000010\n  Faulting instruction address: 0xc000000000485be0\n  Oops: Kernel access of bad area, sig: 7 [#1]\n  ...\n  NIP [c000000000485be0] __find_event_file+0x70/0x3c0\n  LR  [c000000000448874] init_tracer_tracefs+0x274/0xc80\n  Call Trace:\n   init_tracer_tracefs+0x274/0xc80\n   tracer_init_tracefs_work_func+0x50/0x320\n   process_one_work+0x1e8/0x5c0\n   worker_thread+0x1dc/0x3d0\n   kthrea"
+      "date": "2026-11-04T11:17:07.180",
+      "summary": "[This CNA information record relates to multiple CVEs; the\ntext explains which aspects/vulnerabilities correspond to which CVE.]\n\nA common access pattern is a batch of Grant Copy operations acting on\nadjacent address ranges in the same source or destination page.  For\nperformance reasons, Xen caches details internally to reuse already\nvalidated data.  The conditions on when to re-validate the internal data\nwere not correct in some cases:\n\n - Frame numbers and grant references could wrongly be mixed up.  This\n   is CVE-2026-102703.\n\n - Copying by frame number (rather than grant reference) is permitted\n   only when operating on the caller's own memory.  The check to enforce\n   this restriction was misplaced.  This is CVE-2026-102704."
     },
     {
-      "id": "CVE-2026-99248",
-      "title": "CVE-2026-99248",
+      "id": "CVE-2026-102704",
+      "title": "CVE-2026-102704",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.333",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ni2c: xiic: restore non-managed runtime PM to fix clk WARN flood\n\nThe devres conversion replaced manual pm_runtime_enable()/disable() with\ndevm_pm_runtime_set_active_enabled() and dropped the remove-time runtime\nPM teardown. The managed release tears runtime PM down in the wrong\norder: it calls pm_runtime_dont_use_autosuspend() before\npm_runtime_disable(), i.e. while runtime PM is still enabled, and devres\nis LIFO so the devm_clk_get_enabled() release runs afterwards.\n\nAt remove(), pm_runtime_put_sync() leaves the device active with the\nautosuspend timer armed. Clearing use_autosuspend then makes rpm_idle()\nsuspend immediately, and xiic_i2c_runtime_suspend() clk_disable()s the\nclock. The later devm_clk_get_enabled() release clk_disable_unprepare()s\nthe already-disabled clock, so clk_core_disable() WARNs (\"clkN already\ndisabled\") on every teardown.\n\nDrop the managed helper and restore the non-managed runtime PM setup and\nteardown, so runtime PM is enabled once in probe and disabled once in\nremove and the clock enable count stays balanced.\n\nOrder the remove teardown so runtime PM is disabled before the usage\ncount is"
+      "date": "2026-11-04T11:17:07.303",
+      "summary": "[This CNA information record relates to multiple CVEs; the\ntext explains which aspects/vulnerabilities correspond to which CVE.]\n\nA common access pattern is a batch of Grant Copy operations acting on\nadjacent address ranges in the same source or destination page.  For\nperformance reasons, Xen caches details internally to reuse already\nvalidated data.  The conditions on when to re-validate the internal data\nwere not correct in some cases:\n\n - Frame numbers and grant references could wrongly be mixed up.  This\n   is CVE-2026-102703.\n\n - Copying by frame number (rather than grant reference) is permitted\n   only when operating on the caller's own memory.  The check to enforce\n   this restriction was misplaced.  This is CVE-2026-102704."
     },
     {
-      "id": "CVE-2026-99249",
-      "title": "CVE-2026-99249",
+      "id": "CVE-2026-103582",
+      "title": "CVE-2026-103582",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.460",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\npid_namespace: make zap_pid_ns_processes() freezable\n\nWhen the init of a pid namespace exits, zap_pid_ns_processes() waits\nuntil all other pids in the namespace are freed. A tracer outside the\nnamespace that does not reap its traced zombies keeps those pids\nallocated, so this wait has no upper bound, and while it lasts every\nsuspend attempt fails:\n\n  Freezing user space processes failed after 20.006 seconds (2 tasks refusing to freeze, wq_busy=0):\n\nNeither wait is freezable. The first loop sleeps in do_wait(), which\nreturns -ERESTARTSYS on the freezer's fake signal; the loop then clears\nTIF_SIGPENDING and waits again without ever freezing. The final loop\nsleeps in TASK_INTERRUPTIBLE, and since nothing clears TIF_SIGPENDING\nthere, schedule() returns immediately after the first freeze attempt\nand the task spins until the wait ends.\n\nSleep in TASK_INTERRUPTIBLE | TASK_FREEZABLE in do_wait(), so that the\nfreezer can freeze tasks waiting there directly, and in TASK_IDLE |\nTASK_FREEZABLE in the final loop, like coredump_task_exit() does.\n\nThis was hit with Chromium-based browsers: crashpad ptrace-attaches the\nthreads of"
+      "date": "2026-11-04T11:17:13.637",
+      "summary": "Unbounded memory allocation and missing frame size validation in Apache NMS ActiveMQ (the .NET OpenWire client, package Apache.NMS.ActiveMQ) before 2.3.0.\n\n\n\nThe OpenWire unmarshalling code trusted the frame size and the length and count fields read from the network. It did not enforce a maximum frame size, and it did not check that decoded lengths fit within the frame being read. A malicious or compromised broker, or an attacker able to intercept and modify an unencrypted connection, could send a crafted OpenWire frame with an oversized or negative length. This could cause the client to attempt very large memory allocations, leading to excessive memory consumption, an OutOfMemoryException or an uncaught exception, and a denial of service of the client application.\n\n\n\nUsers are recommended to upgrade to version 2.3.0, which enforces a configurable maximum frame size and validates lengths against the size of the frame being read."
     },
     {
-      "id": "CVE-2026-99250",
-      "title": "CVE-2026-99250",
+      "id": "CVE-2026-108500",
+      "title": "CVE-2026-108500",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.603",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nprintk: Postpone kthread startup\n\nThere have been various bug reports related to SMP systems hanging\non boot. The reports vary but seem to have some overlap with regard\nto missed IPI's during SMP setup. The reports also show that\nreverting NBCON console usage allows the bugs to disappear.\n\nThe NBCON kthreads for console printing are started very early\nduring boot using early_initcall(). Since these kthreads are\nasynchronously enabling/disabling interrupts during early boot, they\nmay be interfering with early SMP setup on some hardware platforms.\n\nStarting the console printing kthreads later has shown to avoid the\nhanging on systems that could previously reproduce the issue.\n\nPostpone kthread starting until after all arch initcalls have\ncompleted."
+      "date": "2026-11-04T11:17:13.763",
+      "summary": "Input validation vulnerability in Apache ActiveMQ configured to use the LDAPAuthorizationMapPlugin allows an authenticated attacker to create or address a destination with a crafted name containing LDAP DN special characters (such as comma, plus, equals, backslash) can manipulate the LDAP search base used for ACL lookups.\n\n\n\nThis issue affects Apache ActiveMQ: from 6.3.0 before 6.3.3, from 5.19.0 before 5.19.12.\n\n\n\nUsers are recommended to upgrade to version 6.4.0, 6.3.3 or 5.19.12, which fixes the issue."
     },
     {
-      "id": "CVE-2026-99251",
-      "title": "CVE-2026-99251",
+      "id": "CVE-2026-108946",
+      "title": "CVE-2026-108946",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.740",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nDrivers: hv: Avoid infinite retry loop in init_vp_index()\n\nThere is a retry loop in init_vp_index() where the CPUs from a certain\nnode are stripped out if they have already been in the allocated cpumask\nor not in HK_TYPE_MANAGED_IRQ housekeeping cpumask. If there is no\nCPU left, the allocated cpumask is ignored and the process is retried\nagain. However, if the HK_TYPE_MANAGED_IRQ housekeeping cpumask turns\nout not to contain any CPU in that particular node, that will become an\ninfinite retry loop.  This particular problem was reported by sashiko\n[1]. This should rarely happen, but we still need to guard against this.\n\nFix this infinite loop problem by also skipping NUMA node that has no\nhousekeeping CPU in the inner while loop of init_vp_index(). Also update\nthe early abort check to check for the absence of online housekeeping\nCPUs instead of just the emptiness of the cpumask. As the outer for\nloop will only be reached if the housekeeping cpumask has at least one\nonline CPU, a NUMA node with housekeeping CPUs will eventually be found."
+      "date": "2026-11-04T11:17:13.890",
+      "summary": "Improper input validation vulnerability in Apache ActiveMQ, Apache ActiveMQ KahaDB.\n\n\n\nThe ActiveMQ broker resolves connection, session and consumer state from ids that are user provided and in some scenarios does not validate that they ids are bound to that user. This allows an authenticated client to spoof another user's ids. This allows:\n\n\n\n\n\n  *   an authenticated client consumes from another connection's temporary queue/topic by putting the victim's connection id in its own ConsumerId, bypassing the broker-side ownership check. \n  *  a duplicate ConsumerId registration is only logged, after which the attacker's RemoveInfo or disconnect tears down the victim's live subscription\n  *  a forged MessageAck for the victim's ConsumerId permanently deletes an in-flight, unacknowledged message.\n\n\n\n\n\n\n\n\nThis issue affects Apache ActiveMQ: from 6.0.0 before 6.3.3, before 5.19.12; Apache ActiveMQ KahaDB: from 6.0.0 before 6.3.3, before 5.19.12.\n\n\n\nUsers are recommended to upgrade to version 6.4.0, 6.3.3, or 5.19.12, which fixes the issue."
     },
     {
-      "id": "CVE-2026-99252",
-      "title": "CVE-2026-99252",
+      "id": "CVE-2026-115448",
+      "title": "CVE-2026-115448",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:31.890",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-11-04T11:17:14.017",
+      "summary": "Uncontrolled recursion in Apache ZooKeeper. The server serializes its data tree to a snapshot by recursing one stack frame per znode level, with no depth bound. A client permitted to create znodes (the default root ACL is open) can build a chain of nested znodes deep enough that taking a snapshot exhausts the JVM stack and kills the snapshot thread; sizes stay within jute.maxbuffer, so existing limits do not prevent it. This is a denial of service that becomes persistent: on restart the server rebuilds the deep tree from its transaction log and fails again while taking the startup snapshot, so it does not return to service, and recovery can entail data loss. The same log affects a leader and its followers, so it can spread across an ensemble.\n\nThis issue affects Apache ZooKeeper 3.8.0 through 3.8.7 and 3.9.0 through 3.9.6. Users are recommended to upgrade to 3.8.8 or 3.9.7, which fix the issue. As a workaround, use ACLs and authentication to restrict znode creation rather than relying on the default open root ACL."
     },
     {
-      "id": "CVE-2026-99253",
-      "title": "CVE-2026-99253",
+      "id": "CVE-2026-59263",
+      "title": "CVE-2026-59263",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.013",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nio_uring/cancel: rearm local work wake up before sleep\n\nio_uring_try_cancel_requests() sets ->cq_wait_nr to 1 so that the next\nio_req_local_work_add() wakes the cancelling task. The add that takes the\ncount to zero is the only one that wakes, later ones see a count <= 0 and\nreturn. io_uring_cancel_generic() however only becomes\nTASK_INTERRUPTIBLE much later, so the one wake up can be spent on a\nrunning task. That is fine as long as the entry of that add is still\nqueued, as the io_local_work_pending() check then skips the sleep. It is\nnot if the add was delayed after queueing its entry:\n\nCPU0 (submitter in exec or exit)      CPU1 (io_req_local_work_add)\n                                      mpscq_push(req A)\nio_uring_try_cancel_requests()\n  io_run_local_work()  // runs req A\nio_uring_try_cancel_requests()\n  atomic_set(&ctx->cq_wait_nr, 1)\n                                      atomic_read(&ctx->cq_wait_nr) == 1\n                                      count taken, wake_up_state()\n                                        // task is running, no-op\nprepare_to_wait(TASK_INTERRUPTIBLE)\nio_local_work_pending() == false\nschedu"
+      "date": "2026-11-04T11:17:16.393",
+      "summary": "A manipulated document opened in Apache OpenOffice 4.1.16 or earlier may allow substituted content to be displayed manipulating the user. Such documents are corrupt and should not be opened.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99254",
-      "title": "CVE-2026-99254",
+      "id": "CVE-2026-59264",
+      "title": "CVE-2026-59264",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.137",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nio_uring: don't flood a cancelling task with task_work\n\nio_ring_exit_work() asks each task which has used the ring to remove its\ntctx node, by task_work, and repeats that until the list is empty.\nio_tctx_exit_cb() doesn't touch the node while the task is in\nio_uring_cancel_generic(), which removes all the nodes at its end. So the\nwork item queues the callback again as soon as it has completed, for\nnothing.\n\nThat is more than a waste of time. task_work_run() only returns when it\nfinds the list empty. If the rings are released from inside the\ncancellation, because requests of other rings held the last references to\ntheir files, up to 64 work items keep sending callbacks to the one task\nwhich is running them. It never finds the list empty, never gets back to\nthe cancellation, the nodes stay, and so it goes on: a task with 60 pairs\nof rings which poll each other ran 280000 callbacks in 5 seconds, 20\nseconds after exit_group(). It ends when all the senders happen to be late\nat the same time. Until then the task keeps a CPU and the work items busy.\n\nAn exiting task can't be killed meanwhile. execve() cancels the request"
+      "date": "2026-11-04T11:17:16.577",
+      "summary": "The Windows installers of Apache OpenOffice 4.1.16 and earlier allow an already manipulated system to run external code with elevated access.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99255",
-      "title": "CVE-2026-99255",
+      "id": "CVE-2026-59268",
+      "title": "CVE-2026-59268",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.290",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nio_uring/io-wq: don't hide a link from cancellations\n\nA task that exits cancels its tracked requests and waits until they are\ngone. io_uring_cancel_generic() looks everywhere a request can be, and\ngoes to sleep if it found nothing to cancel. It is woken up each time\none of the requests of the task is completed by task work or freed.\n\nWhen io-wq is done with a request that has a link, there is a time in which\nthe next request of the link can't be found:\n\n  io_worker_handle_work()\n    io_assign_current_work(worker, NULL)\n    io_wq_free_work(work)\n      io_req_find_next()           // takes the link off the request\n      io_free_req()                // task work for the task\n    io_assign_current_work(worker, linked)\n      io_run_task_work()\n      cond_resched()\n      worker->cur_work = linked\n\nIt is not pending, it is not the current work of a worker, and it is not\nyet on the list that it is about to be parked on. If the pass that the\nexiting task makes because of io_free_req() falls into that time, it finds\nnothing and the task goes to sleep. The worker then runs the link, which\nIO_WQ_BIT_EXIT doesn't prevent for b"
+      "date": "2026-11-04T11:17:16.703",
+      "summary": "An out-of-bounds Write vulnerability in Apache OpenOffice versions through 4.1.16 could allow an attacker to craft a Microsoft Word document that would crash the program, or otherwise corrupt other memory areas.\n\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99256",
-      "title": "CVE-2026-99256",
+      "id": "CVE-2026-90624",
+      "title": "CVE-2026-90624",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.437",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ndm cache: fix issue with background work locking\n\ndm cache used a rw_semaphore for background_work_lock. Write locks on\nrw_semaphores have strict owner semantics, but there was no guarantee\nthat the process that locked background_work_lock was the same process\nthat unlocked it. This can be easily seen using a kernel compiled with\nCONFIG_DEBUG_RWSEMS. Given a dm cache device <cache>, run: 'dmsetup\nsuspend <cache> && dmsetup resume <cache>'. This will trigger a kernel\nwarning:\n\nDEBUG_RWSEMS_WARN_ON((rwsem_owner(sem) != current) && !rwsem_test_oflags(sem, RWSEM_NONSPINNABLE))\n\ntriggered by cache_resume(). To fix this, switch from a rw_semaphore to\na spinlock and a wait queue. dm cache already has a wait queue and\nassociated counter, migration_wait and nr_allocated_migrations, that was\ngetting woken up when background work was getting completed, but wasn't\nactually used by anything. This is replaced by the background_work queue\nand counter."
+      "date": "2026-11-04T11:17:18.970",
+      "summary": "An unchecked memory access in the PDF import code of Apache OpenOffice versions through 4.1.16 on allows a crafted PDF to execute an out-of-bounds memory write. This could crash the program or cause memory corruption.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99257",
-      "title": "CVE-2026-99257",
+      "id": "CVE-2026-90626",
+      "title": "CVE-2026-90626",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.590",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ngpio: shared: gracefully handle no-device lookup of shared GPIOs\n\nWe use platform lookup tables for shared GPIOs. This mechanism needs a\nstruct device to work so fwnode-based lookup with no device associated\ncurrently causes a NULL-pointer deference.\n\nAdding this functionality will require a larger rework and it has never\nworked anyway so add a check that allows the kernel to gracefully handle\nthis situation with an error ahead of implementing that functionality as\na new feature."
+      "date": "2026-11-04T11:17:19.097",
+      "summary": "An uncontrolled memory access in the PDF import code of Apache OpenOffice versions through 4.1.16 allows a crafted PDF to cause an out-of-bounds memory write, causing program crash or memory corruption.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99258",
-      "title": "CVE-2026-99258",
+      "id": "CVE-2026-90627",
+      "title": "CVE-2026-90627",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.713",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nx86/hyperv: Avoid using per-cpu output page in hv_apicid_to_vp_index()\n\nhv_apicid_to_vp_index() currently uses the per-cpu hypercall input\nand output pages. This function is called when running in VTL2 and\nwhen running in an SEV-SNP CoCo VM with no paravisor. In the former\ncase, the output page is allocated, but in the latter case it is\nnot, so the hypervisor stores the output VP index in memory that has\nnot been allocated by the guest.\n\nFix this by using the input page for both input and output. The\nhypercall has very small input and output, so sharing the same\npage for both is straightforward. An alternative fix is to\nallocate the per-cpu output page when running in an SEV-SNP CoCo\nguest, but this uses significantly more memory, particularly\nwith larger vCPUs counts."
+      "date": "2026-11-04T11:17:19.227",
+      "summary": "The flat file database driver in Apache Openoffice versions through 4.1.16 allows a crafted document to read the contents of any local file without asking the user.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99259",
-      "title": "CVE-2026-99259",
+      "id": "CVE-2026-90628",
+      "title": "CVE-2026-90628",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.847",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nsoc/tegra: pmc: Fix uninitialised clock rate\n\nFor legacy 32-bit Tegra devices, the warning in the\ntegra_pmc_enter_suspend_mode() function is being triggered because the\nearly_pmc->rate variable is never configured and hence, always 0. This\nissue started occurring after updating the PMC driver to create the PMC\ncontext dynamically which causes the 'rate' to be set in the new dynamic\ncontext, but missed updating the rate in the early PMC context.\n\nFix this by initialising the early_pmc->rate variable for 32-bit Tegra\ndevices when the rate for the PMC context is initialised.\n\n[treding@nvidia.com: move assignment to existing #ifdef block]"
+      "date": "2026-11-04T11:17:19.347",
+      "summary": "An uncontrolled memory access in the PDF export code of Apache OpenOffice versions through 4.1.16 allows a crafted CFF font to cause a stack overflow problem, causing program crash or memory corruption, or even running other code.\n\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99260",
-      "title": "CVE-2026-99260",
+      "id": "CVE-2026-90629",
+      "title": "CVE-2026-90629",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:32.970",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\nntfs: fix resident conversion in ntfs_new_attr_flags\n\nWhen setting sparse/compressed flags on a resident attribute, the\nfunction skipped the resident-to-non-resident conversion and\nterminated."
+      "date": "2026-11-04T11:17:19.470",
+      "summary": "An uncontrolled memory access in the WMF import code of Apache OpenOffice versions through 4.1.16 allows a crafted WMF file to cause an invalid memory access, causing program crash or memory corruption.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99261",
-      "title": "CVE-2026-99261",
+      "id": "CVE-2026-90631",
+      "title": "CVE-2026-90631",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:33.090",
-      "summary": "In the Linux kernel, the following vulnerability has been resolved:\n\ndrm/amdgpu: correct reservation fence slots for userq per-vm BOs eviction\n\nIt fixes both the move overflow and the eviction fence add for\nevicting these per-vm BOs."
+      "date": "2026-11-04T11:17:19.593",
+      "summary": "Apache OpenOffice documents can contain links. A missing Authorization vulnerability in Apache OpenOffice allowed an attacker to craft a document that would cause external links \nto be loaded without prompt, possibly transferring the contents of environment variables in the process.\n\n\n\nThis issue affects Apache OpenOffice: through 4.1.16.\n\n\n\nUsers are recommended to upgrade to version 4.1.17, which fixes the issue."
     },
     {
-      "id": "CVE-2026-99262",
-      "title": "CVE-2026-99262",
+      "id": "CVE-2026-90632",
+      "title": "CVE-2026-90632",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:33.210",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-11-04T11:17:19.717",
+      "summary": "Apache OpenOffice documents can include multimedia content (audio, video, etc.)\n\nA crafted document could exploit the GStreamer multimedia component of Apache OpenOffice version through 4.1.16 to load the contents of any local file, and include them when the document is saved or exported, for example as PDF.\n\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99263",
-      "title": "CVE-2026-99263",
+      "id": "CVE-2026-90634",
+      "title": "CVE-2026-90634",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:33.347",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-11-04T11:17:19.840",
+      "summary": "An uncontrolled memory access in the PDF import code of Apache OpenOffice versions through 4.1.16 allows a crafted PDF to cause an out-of-bounds memory write, causing program crash or memory corruption.\nUsers are recommended to upgrade to version 4.1.17, which fixes this issue."
     },
     {
-      "id": "CVE-2026-99264",
-      "title": "CVE-2026-99264",
+      "id": "CVE-2026-104799",
+      "title": "CVE-2026-104799",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:33.490",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-11-04T12:17:05.713",
+      "summary": "The Mobile builder plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.4.2 via the `wcfmmp_profile_settings()` REST handler exposed at `POST /mobile-builder/v1/wcfm-profile-settings`. This is due to a PHP loose-comparison logic flaw in the meta key allow-list check — `strpos( $key, 'mobile_builder' ) == 0` evaluates to `true` for any key that does *not* contain the substring `'mobile_builder'` because `strpos()` returns `false` on no match and `false == 0` is `true` in PHP — combined with a `permission_callback` (`user_permissions_check`) that grants access to any authenticated user by only verifying `$user->exists()`. This makes it possible for authenticated attackers, with Subscriber-level access and above, to pass an unsanitized `data` array via the `key` and `data` parameters directly to `update_user_meta()`, overwriting arbitrary user meta on their own account — including the `wp_capabilities` meta key — to grant themselves Administrator-level privileges."
     },
     {
-      "id": "CVE-2026-99265",
-      "title": "CVE-2026-99265",
+      "id": "CVE-2026-114456",
+      "title": "CVE-2026-114456",
       "source": "NIST NVD",
-      "date": "2026-11-03T12:17:33.627",
-      "summary": "Rejected reason: This CVE ID has been rejected or withdrawn by its CVE Numbering Authority."
+      "date": "2026-11-04T12:17:06.033",
+      "summary": "Multiple Snowflake client drivers implementing the `authenticator=externalbrowser` single sign-on flow could have allowed an attacker to interfere with a user's login attempt through weaknesses in the local loopback callback listener used to receive the identity provider's response. The listener reflected an arbitrary request's Origin header into its CORS response headers and accepted the first token-bearing request it received during the login window without verifying a CSRF state value bound to that specific login attempt. An attacker able to reach the listener during an active login might have leveraged this to submit a forged callback response, causing the authentication attempt to fail. The fix is available in Snowflake Connector for Python 4.8.0, Snowflake Go Driver v2.3.0, Snowflake JDBC Driver 4.4.0 (including the snowflake-jdbc-fips and snowflake-jdbc-thin artifacts), Snowflake Node.js Driver 3.4.0, Snowflake Connector for .NET 6.3.0, Snowflake ODBC Driver 4.0.0, Snowflake PHP PDO Driver 4.3.0, and libsnowflakeclient 2.11.1. Go v1 users must migrate to the latest major version of the module. Users must manually upgrade."
     }
   ]
 }
