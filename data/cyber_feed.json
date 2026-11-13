@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-12T09:58:12.036603+00:00",
+  "generated_at": "2026-11-13T09:46:33.394577+00:00",
   "items": [
     {
       "id": "CVE-2026-124194",
@@ -882,284 +882,284 @@
       "due": "2026-09-12"
     },
     {
-      "id": "CVE-2026-123036",
-      "title": "CVE-2026-123036",
+      "id": "CVE-2026-109977",
+      "title": "CVE-2026-109977",
       "source": "NIST NVD",
-      "date": "2026-11-05T10:16:38.220",
-      "summary": "A flaw was found in ansible-core. When a task marked `no_log: true` fails, the task result is censored before being emitted, but the `exception` field is retained because it is present in the PRESERVE allow-list in lib/ansible/_internal/_task.py, and the default stdout callback prints it through CallbackBase._handle_exception. As a result, sensitive values the operator explicitly asked to hide can be disclosed: module argument-validation errors echo the argument value, templating errors print an Origin source snippet (the failing line plus the two preceding lines of the variables file, exposing neighbouring secrets from an -e @secrets.yml file), and fail/assert messages are printed in full. Secret material supplied as extra variables or variables files can therefore leak to terminal output, CI logs, and the stdout logs of any automation wrapping ansible-playbook, even though every task touching the secrets is marked no_log: true. This is a regression introduced with the ansible-core 2.19 data-tagging/templating rework; the behaviour does not occur on 2.16, where the error text is correctly censored."
+      "date": "2026-11-06T10:16:34.457",
+      "summary": "The YaySMTP – WP Mail SMTP with Email Logs, Tracking & Reports plugin for WordPress is vulnerable to time-based SQL Injection via the 'params[searchKey]' parameter in all versions up to, and including, 2.7.8 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with administrator-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
     },
     {
-      "id": "CVE-2026-121489",
-      "title": "CVE-2026-121489",
+      "id": "CVE-2026-109994",
+      "title": "CVE-2026-109994",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:49.643",
-      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Apache Juneau.\n\nThe microservice DirectoryResource does not keep request paths inside its configured root directory. When an application enables the resource's view, upload or delete settings (all off by default), a client can read, write or delete files outside the root, anywhere the server process has access.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue."
+      "date": "2026-11-06T10:16:35.767",
+      "summary": "The Eventin – Events Calendar, Tickets, Registration, Booking & WooCommerce plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 4.1.29 via the 'id' parameter. This makes it possible for authenticated attackers, with subscriber-level access and above, to extract the email address and phone number of any WordPress user, including administrators, by supplying their user id in a query-string parameter while placing the authenticated user's own id in the URL path."
     },
     {
-      "id": "CVE-2026-123018",
-      "title": "CVE-2026-123018",
+      "id": "CVE-2026-110776",
+      "title": "CVE-2026-110776",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:49.940",
-      "summary": "A security flaw has been discovered in eosphoros-ai DB-GPT up to 0.8.2. This issue affects the function execute_code of the file code_utils.py of the component CodeAction. Performing a manipulation results in code injection. The attack can be initiated remotely. The exploit has been released to the public and may be used for attacks. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-11-06T10:16:35.950",
+      "summary": "The MDTF – Meta Data and Taxonomies Filter plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'vars' parameter in all versions up to, and including, 1.4.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This requires that a published page or post on the target site contains the [meta_data_filter_results] shortcode, which is the primary output feature of the plugin."
     },
     {
-      "id": "CVE-2026-123019",
-      "title": "CVE-2026-123019",
+      "id": "CVE-2026-115831",
+      "title": "CVE-2026-115831",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:50.193",
-      "summary": "A weakness has been identified in eosphoros-ai DB-GPT up to 0.8.2. Impacted is the function exec_module of the file hf_adapter.py of the component HuggingFace Adapter. Executing a manipulation of the argument trust_remote_code can lead to inclusion of functionality from untrusted control sphere. The attack can be launched remotely. The exploit has been made available to the public and could be used for attacks. The project was informed of the problem early through an issue report but has not responded yet."
+      "date": "2026-11-06T10:16:36.123",
+      "summary": "The VOD Infomaniak plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 1.5.15. This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for authenticated attackers, with subscriber-level access and above, to initiate unauthorized video imports using the site owner's Infomaniak API credentials, consume the site owner's VOD account quota, and insert arbitrary rows into the wp_vod_upload table causing public shortcodes to resolve to attacker-chosen video content. This action is explicitly reserved for Contributor-level and above by the plugin's own role-rights system, meaning subscriber access is intentionally forbidden by design — the AJAX handler simply omits the enforcement."
     },
     {
-      "id": "CVE-2026-73095",
-      "title": "CVE-2026-73095",
+      "id": "CVE-2026-116592",
+      "title": "CVE-2026-116592",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:50.617",
-      "summary": "Allocation of Resources Without Limits or Throttling vulnerability in Apache Juneau.\n\nThe MessagePack parser, which the REST server enables by default, sizes buffers from length values in the input. An unauthenticated client can send a few bytes that force a multi-gigabyte allocation and an OutOfMemoryError, causing denial of service. Related unbounded allocations in REST request handling (multipart uploads and request reader buffers) are fixed at the same time.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue."
+      "date": "2026-11-06T10:16:36.313",
+      "summary": "undici is an HTTP client for Node.js. In versions 7.30.1 and 8.12.2 through 8.12.3, when an originless Agent composes the redirect and shared cache interceptors, undici decides whether to store the final response under the original request key by inspecting only the final redirect hop, which bypasses the earlier fix for CVE-2026-109829 that compared only the initial and final origins. A redirect that bounces through an untrusted origin and returns to the trusted origin is still cached under the trusted key, an intermediate hop's Vary is dropped so a response that varies on Authorization or Cookie can be served to a different user, and an intermediate hop's no-cache or default-uncacheable status is ignored so a non-storable redirect is laundered into a cacheable entry. An attacker who controls a redirect target from a trusted URL can poison the cached entry for that URL or have a private, per-user response served to a later caller. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, compose the interceptors as cache then redirect, use per-origin dispatchers and cache stores, or disable shared caching on redirec"
     },
     {
-      "id": "CVE-2026-73098",
-      "title": "CVE-2026-73098",
+      "id": "CVE-2026-120222",
+      "title": "CVE-2026-120222",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:50.770",
-      "summary": "Improper control of dynamically-loaded code vulnerability in Apache Juneau.\n\nWhen Apache Juneau parses a value into a property of type java.lang.Class (including parameterized forms), the default class swap loaded the named class with initialization enabled, so input naming a class on the application classpath ran that class's static initializer. The impact depends on the classes present in the deployment.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue."
+      "date": "2026-11-06T10:16:36.497",
+      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, when the cache interceptor is composed with a downstream handler that throws during response processing (such as the built-in dump interceptor exceeding its maxSize, or the decompress interceptor rejecting more than five Content-Encoding values), a throw raised asynchronously while a cached response is replayed escapes as an uncaught exception or unhandled promise rejection and terminates the Node.js process. A malicious or compromised HTTP server can crash any such client by serving a cacheable response that triggers the throw on replay, including on a 304 revalidation of a stale entry, so the impact is availability only. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, avoid composing the cache interceptor with a response handler that throws during response processing until upgrading."
     },
     {
-      "id": "CVE-2026-73099",
-      "title": "CVE-2026-73099",
+      "id": "CVE-2026-120415",
+      "title": "CVE-2026-120415",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:50.917",
-      "summary": "Cross-Site Request Forgery (CSRF) vulnerability in Apache Juneau.\n\nThe REST server accepts a \"content\" query parameter that replaces the request body, and this is enabled by default on every HTTP method, including GET. A cross-site link can therefore deliver an attacker-chosen request body to an endpoint without a CORS preflight, defeating protections that rely on the HTTP method or content type instead of an anti-CSRF token.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue. Applications that do not use the content parameter can also set disableContentParam to true."
+      "date": "2026-11-06T10:16:36.633",
+      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, the redirect interceptor strips sensitive headers such as Authorization, Cookie, Proxy-Authorization, and Host when a request is redirected to a different origin, but when request headers are supplied as an array of name and value tuples (a valid documented input, for example from Object.entries), the redirect handler misreads them as a flat list so the header names never match and the sensitive headers are not removed. If a header-normalizing interceptor such as cache or deduplicate is composed outside the redirect interceptor, it then serializes the retained headers onto the cross-origin request, disclosing the caller's origin-bound credentials to the unrelated redirect destination. This is a representation-dependent bypass of the cross-origin header stripping added in CVE-2024-30260. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, supply request headers as a plain object or a flat name and value array rather than an array of tuples, or compose the redirect interceptor outside the normalizing interceptor."
     },
     {
-      "id": "CVE-2026-73100",
-      "title": "CVE-2026-73100",
+      "id": "CVE-2026-120423",
+      "title": "CVE-2026-120423",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:51.060",
-      "summary": "Insertion of Sensitive Information into Log File vulnerability in Apache Juneau.\n\nThe default REST server call logger records request headers for requests that end in a server error, without redacting them. Any client able to cause a server error gets headers such as Authorization, Cookie, Proxy-Authorization and X-API-Key written in cleartext to the application log, exposing them to anyone who can read the logs.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue."
+      "date": "2026-11-06T10:16:36.780",
+      "summary": "undici is an HTTP client for Node.js. In versions 7.15.0 through 7.30.1 and 8.0.0 through 8.12.3, fetch verifies Subresource Integrity metadata by splitting the integrity string on a single space, but the SRI grammar separates metadata by ASCII whitespace, which also includes the horizontal tab. An integrity value whose digest is preceded by a tab or other ASCII whitespace is parsed as a single unrecognized token and skipped, and when no recognized algorithm remains undici treats the integrity list as empty and accepts the response, so a server returning a body different from the pinned digest passes the check. An application that pins a response with a valid but whitespace-surrounded SRI value receives attacker-controlled bytes with no integrity error, and the attacker needs only to control the response body, not the integrity metadata. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, supply SRI integrity metadata without surrounding whitespace, using a single space to separate multiple digests."
     },
     {
-      "id": "CVE-2026-73101",
-      "title": "CVE-2026-73101",
+      "id": "CVE-2026-120474",
+      "title": "CVE-2026-120474",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:51.197",
-      "summary": "Generation of Error Message Containing Sensitive Information vulnerability in Apache Juneau.\n\nThe REST server sends the internal exception class and message to clients in a \"Thrown\" response header on every error response, and can include internal exception messages in the error body, even when stack-trace rendering is disabled. This reveals implementation details to remote clients.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue."
+      "date": "2026-11-06T10:16:36.913",
+      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, when the redirect interceptor and a shared response cache are used together, an authenticated request that is redirected to a same-origin target has the final response stored under the original request's cache key. That key omits the credential and carries no Vary header, so a later anonymous or different user can be served the first user's private response body. This results in cross-user disclosure of cached private responses. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later."
     },
     {
-      "id": "CVE-2026-73116",
-      "title": "CVE-2026-73116",
+      "id": "CVE-2026-120550",
+      "title": "CVE-2026-120550",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:51.333",
-      "summary": "Insufficiently Protected Credentials vulnerability in Apache Juneau.\n\nThe Apache Juneau RestClient followed HTTP redirects while keeping credential headers from the original request, so a server that redirected the client to a different host or port, or from HTTPS to HTTP, could receive headers such as Authorization, Cookie, Proxy-Authorization and X-API-Key.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue. The fix applies to HTTP clients created by the RestClient builder; applications that supply their own HttpClient must disable automatic redirects or strip credential headers on cross-origin redirects themselves."
+      "date": "2026-11-06T10:16:37.047",
+      "summary": "The WP User Manager – Registration Form, Login Form, User Profile Builder & Member Directory plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'name (REST users endpoint) -> wp_users.display_name' parameter in all versions up to, and including, 2.10.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The payload is stored via the WordPress core REST endpoint POST /wp-json/wp/v2/users/me, which bypasses the plugin's own wpum_sanitize_text sanitizer applied on its front-end account form, making the save-time sanitization ineffective as a mitigation."
     },
     {
-      "id": "CVE-2026-73117",
-      "title": "CVE-2026-73117",
+      "id": "CVE-2026-120659",
+      "title": "CVE-2026-120659",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:51.473",
-      "summary": "Improper Neutralization of CRLF Sequences in HTTP Headers ('HTTP Response Splitting') vulnerability in Apache Juneau.\n\nThe Apache Juneau REST server passed response header values and redirect targets to the servlet container unchecked. An application that sets a response header or redirect target from request data could let a remote client inject header lines (where the servlet container does not itself reject CR/LF) or redirect users to an arbitrary external site. The framework itself does not build headers or redirects from request data; exposure depends on application code.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue. Header values are now sanitized by default; applications that build redirect targets from request data must also switch from sendRedirect() to the new sendSafeRedirect()."
+      "date": "2026-11-06T10:16:37.220",
+      "summary": "The Redirection for Contact Form 7 plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 3.2.14 This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to write arbitrary post meta values to newly created lead posts and copy arbitrary server-side files with allowed MIME-type extensions into the plugin's uploads directory. Exploitation requires a published Contact Form 7 form configured with the Save Entry (Save Lead) action enabled on the target site."
     },
     {
-      "id": "CVE-2026-96677",
-      "title": "CVE-2026-96677",
+      "id": "CVE-2026-123087",
+      "title": "CVE-2026-123087",
       "source": "NIST NVD",
-      "date": "2026-11-05T12:17:51.620",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Apache Juneau.\n\nHTML document serialization does not HTML-encode variable substitutions in the page chrome (header, nav, aside, footer and similar fields). Applications whose chrome includes request-derived variables, such as request headers, form data or path values, reflect those values unencoded, allowing cross-site scripting. The default chrome does not use request variables, so only applications that add them are affected.\n\nThis issue affects Apache Juneau: through 9.2.0.\n\nUsers are recommended to upgrade to version 9.2.1, which fixes the issue."
+      "date": "2026-11-06T10:16:37.403",
+      "summary": "SQL injection vulnerability in Atmira’s SIREC. The server retrieves the value of a field from a JSON object containing user-supplied information and concatenates it into an SQL statement without properly sanitising the input. This allows the original query to be altered via malicious input, causing the database to return unexpected information."
     },
     {
-      "id": "CVE-2026-103863",
-      "title": "CVE-2026-103863",
+      "id": "CVE-2026-33379",
+      "title": "CVE-2026-33379",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:06.880",
-      "summary": "Improper neutralization of input during web page generation ('cross-site scripting') vulnerability in Apache Sling Engine. Content-Type, charset, and redirect changes from an included component evade the  protectheaders / checkcontenttype  enforcement through setHeader(), repeated calls to setContentType(), the charset APIs, Servlet 6.1 redirect overloads, and stale config - enabling stored XSS despite enabled protections.\n\n\n\nThis issue affects Apache Sling Engine before 3.0.4.\n\n\n\nUsers are recommended to upgrade to version 3.0.4, which fixes the issue."
+      "date": "2026-11-06T10:16:37.943",
+      "summary": "A user with any role, including Viewer or a service account with no permissions, can create, externally publish, and delete dashboard snapshots (missing authorization). Only Grafana OSS and Grafana Enterprise 12.4 are affected; earlier versions and Grafana 13 are not."
     },
     {
-      "id": "CVE-2026-103864",
-      "title": "CVE-2026-103864",
+      "id": "CVE-2026-87964",
+      "title": "CVE-2026-87964",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:07.017",
-      "summary": "Improper output neutralization for logs in Apache Sling Engine.\n\n\n\nThis issue affects Apache Sling Engine: before 3.0.4.\n\n\n\nUsers are recommended to upgrade to version 3.0.4, which fixes the issue."
+      "date": "2026-11-06T10:16:38.110",
+      "summary": "The Product Feed Manager for WooCommerce – CTX Feed – Support 220+ Shopping, AI & Social Channels plugin for WordPress is vulnerable to PHP Code Injection in all versions up to, and including, 8.0.26. This is due to insufficient sanitization of the `feedConfigCustom2` parameter — only `wp_unslash()` is applied before the value is stored verbatim via `update_option()`, and during feed generation the `Custom2Template::evaluate_return()` method passes the stored `{(return ...)}` template expressions directly to PHP's `eval()` function without any code-level sanitization. This makes it possible for authenticated attackers, with Shop Manager-level access and above, to inject and execute arbitrary PHP code on the server, escalating their privileges beyond what the role normally permits to full remote code execution and site takeover. The `ctxfeed_custom2_eval_enabled` option defaults to `true`, meaning no additional administrator configuration is required for this attack path to be exploitable out of the box."
     },
     {
-      "id": "CVE-2026-103866",
-      "title": "CVE-2026-103866",
+      "id": "CVE-2026-97642",
+      "title": "CVE-2026-97642",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:07.143",
-      "summary": "Inconsistent interpretation of HTTP requests ('HTTP Request/Response smuggling') vulnerability in Apache Sling Engine. The engine's query/form parser accepts non-standard percent-escapes, wrong charsets, and continues request processing on such errors.\n\n\n\nThis issue affects Apache Sling Engine: before 3.0.4.\n\n\n\nUsers are recommended to upgrade to version 3.0.4, which fixes the issue."
+      "date": "2026-11-06T10:16:38.320",
+      "summary": "The Wp Parsidate plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the calendar Gutenberg block's 'theme' attribute in versions up to, and including, 6.4. This is due to insufficient input sanitization and output escaping on the block attribute value which is concatenated directly into an HTML class attribute in the printCalendar() function without esc_attr(). This makes it possible for authenticated attackers, with Contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-123020",
-      "title": "CVE-2026-123020",
+      "id": "CVE-2026-113431",
+      "title": "CVE-2026-113431",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:07.280",
-      "summary": "A security vulnerability has been detected in eosphoros-ai DB-GPT up to 0.8.1. The affected element is the function FileBasedSkill.get_prompt of the file packages/dbgpt-core/src/dbgpt/agent/skill/claude_skill/__init__.py of the component Jinja2 Template Handler. The manipulation leads to improper neutralization of special elements used in a template engine. The attack may be initiated remotely. The exploit has been disclosed publicly and may be used. Upgrading to version 0.8.2 is sufficient to fix this issue. The identifier of the patch is a9e7a3c026d114fcfb4ffe3eaf78851a636ded16. It is suggested to upgrade the affected component."
+      "date": "2026-11-06T11:17:04.410",
+      "summary": "Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowlib allows an unauthenticated remote peer to exhaust the memory of an HTTP/2 endpoint via HPACK-indexed header fields.\n\ncow_http2_machine:headers_decode/4 in src/cow_http2_machine.erl decodes every HEADERS block with cow_hpack:decode/3. It bounds the compressed block size and the number of fields, but not the size of the decoded header list that RFC 9113 section 6.5.2 places under SETTINGS_MAX_HEADER_LIST_SIZE. A peer stores one header value of up to the dynamic table size (4096 bytes by default) and then references it with one-byte indexed fields, so about 100 bytes on the wire decode to a header list of about 390 KB. A consumer that copies the decoded values, as Cowboy does when cowboy_http2:headers_to_map/2 joins repeated cookie fields into one binary, allocates that amount for every stream. The total across streams and connections is not bounded.\n\nThis issue affects cowlib: from 2.7.0 before 2.22.0."
     },
     {
-      "id": "CVE-2026-123047",
-      "title": "CVE-2026-123047",
+      "id": "CVE-2026-115701",
+      "title": "CVE-2026-115701",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:07.493",
-      "summary": "In Eclipse BaSyx Helm Charts versions 3.0.0-rc.1 to 3.12.1 of the `basyx` chart, deployments with the bundled Keycloak enabled store the passwords of the Keycloak users that the chart creates in cleartext in a Kubernetes ConfigMap.\n\n\n\nThe template `keycloak-init-config.yaml` rendered `keycloak.initialization.users`, including each user's `credentials[].value`, as `users.json` into the persistent ConfigMap `<release>-basyx-keycloak-init-config`. By default this includes the bootstrap administrator user. That user holds the `admin` role and has a non-temporary password. A principal that can read ConfigMaps but not Secrets in the release namespace, such as a holder of the built-in Kubernetes `view` ClusterRole, can read the password from the ConfigMap and log in to Keycloak as this user. The resulting token carries the `admin` role, which the default BaSyx ABAC rules map to full rights on all BaSyx APIs in the deployment.\n\n\n\nThe bundled Keycloak is disabled by default. The issue is fixed in version 3.12.2 of the `basyx` chart, which moves the initialization users to the Keycloak credentials Secret. Affected users should upgrade and change the passwords of users that were created throu"
+      "date": "2026-11-06T11:17:05.223",
+      "summary": "Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowboy allows an unauthenticated remote attacker to exhaust connection process memory over HTTP/1.1.\n\nOnce a request has been received in full and its handler is still running, cowboy_http:parse/2 in src/cowboy_http.erl appends every further byte that arrives on the keep-alive connection to the connection buffer and returns to the receive loop without parsing it. The socket stays in active mode and no limit applies to this buffer: max_request_line_length, max_headers and the other parser limits only take effect once the handler returns and parsing resumes, and the only timer in this state is idle_timeout (default 60 seconds), which is reset on every received chunk. A client can therefore send an arbitrary amount of data on one connection for as long as the handler runs, and a few connections to an endpoint that holds requests open can drive the Erlang VM into out-of-memory conditions.\n\nThis issue affects cowboy: from 2.18.0 before 2.21.0."
     },
     {
-      "id": "CVE-2026-123119",
-      "title": "CVE-2026-123119",
+      "id": "CVE-2026-116630",
+      "title": "CVE-2026-116630",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:07.640",
-      "summary": "The Symfony HttpClient component NoPrivateNetworkHttpClient does not pin the checked IP address of cached hosts, allowing for DNS rebinding to bypass private network restrictions, resulting in enumeration of internal hosts and ports in Symfony versions prior to 5.4.56, 6.x prior to 6.4.50, 7.x prior to 7.4.23, and 8.x prior to 8.1.11.\n\nNoPrivateNetworkHttpClient resolves the host of each request and checks the IP before connecting. It caches the result per host, and passes the IP to the decorated client through the resolve option so that the client connects to the exact IP that was checked. The issue is that resolve was only passed on the first lookup of a host: on subsequent requests, the decorated client resolved the host again on its own.\n\nAn attacker who controls a host's DNS can exploit this with DNS rebinding by answering the first lookup with a public IP, and subsequent lookups with a private IP, so when an application sends several requests to that host through the same client, the later requests connect to the private IP. This happens, for example, when an application fetches several URLs of a repository provided by a user. The check of the primary_ip in the on_progress ca"
+      "date": "2026-11-06T11:17:05.497",
+      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, when an Agent composes the redirect and shared cache interceptors, a cached response that is revalidated with a conditional request can be validated by a 304 Not Modified from a different origin. When the origin that stored the response redirects the conditional revalidation request to another origin, the redirect handler strips origin-bound credential headers but not the cache-generated If-None-Match or If-Modified-Since validators, so the redirect destination receives the original origin's validator and undici treats its 304 as successful revalidation of the stored representation. As a result, a shared cache can serve the original origin's stored authenticated response, including one gated by Authorization, to a later unauthenticated caller. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, compose the interceptors as cache then redirect, use per-origin dispatchers and cache stores, or disable shared caching on redirect-capable requests."
     },
     {
-      "id": "CVE-2026-95652",
-      "title": "CVE-2026-95652",
+      "id": "CVE-2026-123276",
+      "title": "CVE-2026-123276",
       "source": "NIST NVD",
-      "date": "2026-11-05T13:17:08.437",
-      "summary": "Execution with unnecessary privileges vulnerability in TÜBİTAK BİLGEM Software Technologies Research Institute pardus-usb-formatter allows Privilege Abuse.\n\nThis issue affects pardus-usb-formatter: from 0.7.0 before 0.7.2."
+      "date": "2026-11-06T11:17:05.740",
+      "summary": "In JetBrains CLion before 2026.3, \n2026.2.4.1 code execution was possible in Safe Mode via a crafted GDB server debug profile"
     },
     {
-      "id": "CVE-2026-100168",
-      "title": "CVE-2026-100168",
+      "id": "CVE-2026-123277",
+      "title": "CVE-2026-123277",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:58.733",
-      "summary": "Direct Request ('Forced Browsing') in the Content Manager component in Apache OFBiz 24.09.07 on all platforms allows an authenticated user holding only view-only content permissions (OFBTOOLS_VIEW and CONTENTMGR_VIEW) to re-parent content associations they do not own or manage via a direct POST request to the moveContentJson endpoint, which performs no permission check, unlike the equivalent updateContent/createContentAssoc/removeContentAssoc services that require genericContentPermission UPDATE. Users are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:05.873",
+      "summary": "In JetBrains CLion before 2026.3, \n2026.2.4.1 missing authentication allowed local users to obtain the debug session environment on Linux"
     },
     {
-      "id": "CVE-2026-100228",
-      "title": "CVE-2026-100228",
+      "id": "CVE-2026-123278",
+      "title": "CVE-2026-123278",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:58.863",
-      "summary": "Improper Input Validation in Order Returns in Apache OFBiz 24.09.07 on all platforms allows an authenticated user without the ORDERMGR_CREATE permission to persist an arbitrary price on a return item via the createReturnItem service, bypassing the intended server-computed price ceiling. Users are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:06.010",
+      "summary": "In JetBrains IntelliJ IDEA before 2026.3 code execution was possible via the unauthenticated JDBC worker RMI endpoint"
     },
     {
-      "id": "CVE-2026-104720",
-      "title": "CVE-2026-104720",
+      "id": "CVE-2026-123279",
+      "title": "CVE-2026-123279",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.003",
-      "summary": "Improper Limitation of a Pathname to a Restricted Directory ('Path Traversal') vulnerability in Kobikom Telecommunications and Informatics Services Inc. Kobikom allows Path Traversal.\n\nThis issue affects Kobikom: before KobiPBX-FOP3-SEC-r1."
+      "date": "2026-11-06T11:17:06.140",
+      "summary": "In JetBrains Datalore before 2026.4 code execution was possible in a notebook's computation by view-only collaborators"
     },
     {
-      "id": "CVE-2026-105321",
-      "title": "CVE-2026-105321",
+      "id": "CVE-2026-123280",
+      "title": "CVE-2026-123280",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.153",
-      "summary": "Improper neutralization of special elements used in an SQL command ('SQL injection') vulnerability in Kobikom Telecommunications and Informatics Services Inc. Kobikom allows SQL Injection.\n\nThis issue affects Kobikom: before KobiPBX-FOP3-SEC-r1."
+      "date": "2026-11-06T11:17:06.270",
+      "summary": "In JetBrains Datalore before 2026.2.4 unauthenticated users could execute code via published interactive reports"
     },
     {
-      "id": "CVE-2026-105325",
-      "title": "CVE-2026-105325",
+      "id": "CVE-2026-123281",
+      "title": "CVE-2026-123281",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.297",
-      "summary": "Missing check for  ACCOUNTING_UPDATE /  ACCOUNTING_CREATE in accounting in allows user with only ACCOUNTING_VIEW permission to update/create PaymentApplication.\n\nAffected versions before : 24.09.08\n\nUsers are recommended to upgrade to version 24.09.08 which fixes this issue."
+      "date": "2026-11-06T11:17:06.390",
+      "summary": "In JetBrains Datalore before 2026.4 notebook code could execute commands in the sidecar container via the mount broker"
     },
     {
-      "id": "CVE-2026-105330",
-      "title": "CVE-2026-105330",
+      "id": "CVE-2026-123282",
+      "title": "CVE-2026-123282",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.423",
-      "summary": "Use of Hard-coded Cryptographic Key in JWT token authentication in Apache OFBiz 24.09.06 and 24.09.07 on all platforms allows an unauthenticated, network-reachable attacker to obtain full administrative access via a forged JWT signed with the factory-default security.token.key value that CVE-2026-31986 removed from newly generated configurations, on a deployment that upgraded from a release predating that fix while retaining its existing security.properties with security.internal.sso.enabled set to true. Users are recommended to upgrade to version 24.09.08. Upgrading alone does not replace an already-configured key: deployments that carried framework/security/config/security.properties forward from a release predating the CVE-2026-31986 fix must also run './gradlew rotateSecretKeys' after upgrading, since the existing generateSecretKeys task leaves an already-set value untouched."
+      "date": "2026-11-06T11:17:06.520",
+      "summary": "In JetBrains Datalore before 2026.4 missing expiration validation of account tokens allowed a new authenticated session"
     },
     {
-      "id": "CVE-2026-105461",
-      "title": "CVE-2026-105461",
+      "id": "CVE-2026-123283",
+      "title": "CVE-2026-123283",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.570",
-      "summary": "Missing check for  ORDERMGR_UPDATE in ordermgr allows user with only ORDERMGR_VIEW permission to update orders.\n\nAffected versions before : 24.09.08\n\nUsers are recommended to upgrade to version 24.09.08 which fixes this issue."
+      "date": "2026-11-06T11:17:06.650",
+      "summary": "In JetBrains Datalore before 2026.4 account takeover was possible via SSO sign-in to a pre-registered account"
     },
     {
-      "id": "CVE-2026-107912",
-      "title": "CVE-2026-107912",
+      "id": "CVE-2026-123284",
+      "title": "CVE-2026-123284",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.697",
-      "summary": "A flaw was found in the management interface of the Quarkus framework, specifically within the quarkus-vertx-http component. The issue occurs when the framework incorrectly combines the management root path with specific permission rules, leading to a situation where security policies are applied to the wrong internal paths. As a result, an attacker can bypass intended authorization checks and gain unauthorized access to sensitive management endpoints."
+      "date": "2026-11-06T11:17:06.773",
+      "summary": "In JetBrains Datalore before 2026.4 improper authorisation on workspace moves allowed view-only collaborators to modify shared content"
     },
     {
-      "id": "CVE-2026-109129",
-      "title": "CVE-2026-109129",
+      "id": "CVE-2026-123285",
+      "title": "CVE-2026-123285",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:16:59.943",
-      "summary": "Authorization Bypass Through User-Controlled Key in the Order Manager component in Apache OFBiz 24.09.07 on all platforms allows an authenticated user with only view-level order permissions to modify or create OrderPaymentPreference records belonging to orders outside their authorized scope via the updateOrderPaymentPreference service, by supplying an orderPaymentPreferenceId belonging to a different order.\nUsers are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:06.907",
+      "summary": "In JetBrains Datalore before 2026.3 command execution was possible in the database task container via JVM options injection"
     },
     {
-      "id": "CVE-2026-109837",
-      "title": "CVE-2026-109837",
+      "id": "CVE-2026-123286",
+      "title": "CVE-2026-123286",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.073",
-      "summary": "Authorization Bypass Through User-Controlled Key in Order Returns in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with low-privileged Order Manager access to associate another party's OrderItem with a ReturnItem on a ReturnHeader they control, via the createReturnItem service. Users are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.047",
+      "summary": "In JetBrains Datalore before 2026.4 improper authorisation allowed read the notebook owner's file storage session token"
     },
     {
-      "id": "CVE-2026-109856",
-      "title": "CVE-2026-109856",
+      "id": "CVE-2026-123287",
+      "title": "CVE-2026-123287",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.200",
-      "summary": "Direct Request ('Forced Browsing') to Financial Account services in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with any valid low-privilege account to create, modify, and cancel financial account transactions and balances without appropriate permission via direct requests to the createFinAccount, updateFinAccount, deleteFinAccount, createFinAccountTrans, createFinAccountRole, createFinAccountAuth, setFinAccountTransStatus, and depositWithdrawPayments services.\n\nUsers are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.177",
+      "summary": "In JetBrains Datalore before 2026.4 private notebook files could be downloaded without authentication via published interactive reports"
     },
     {
-      "id": "CVE-2026-109928",
-      "title": "CVE-2026-109928",
+      "id": "CVE-2026-123288",
+      "title": "CVE-2026-123288",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.333",
-      "summary": "Incorrect Implementation of Authentication Algorithm in the password-reset and login JWT validation in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an attacker who has obtained a user's password-reset token (via email interception, log exposure, or a man-in-the-middle on the mail transport) to authenticate as that user and obtain a full, unrestricted session, including administrative access if the targeted account is an administrator, by submitting the token directly to the login endpoint instead of the intended password-change flow. Users are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.310",
+      "summary": "In JetBrains Datalore before 2026.4 stored XSS in notebook charts was possible via Vega editor link"
     },
     {
-      "id": "CVE-2026-114229",
-      "title": "CVE-2026-114229",
+      "id": "CVE-2026-123289",
+      "title": "CVE-2026-123289",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.453",
-      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') in the Catalog image viewer in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an unauthenticated attacker to execute arbitrary JavaScript in the browser session of a logged-in back-office user via a crafted viewImage URL that the user opens from within the application.\nUsers are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.440",
+      "summary": "In JetBrains Datalore before 2026.4 improper authorisation allowed notebook viewers to modify files"
     },
     {
-      "id": "CVE-2026-114233",
-      "title": "CVE-2026-114233",
+      "id": "CVE-2026-123290",
+      "title": "CVE-2026-123290",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.610",
-      "summary": "Incorrect Privilege Assignment in the Order Manager in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user who holds only order view permissions (ORDERMGR_VIEW), without ORDERMGR_UPDATE or any role on the order, to modify approved orders, changing a ship group's shipping address and shipment method or appending items with an overridden price, via the updateShipGroupShipInfo and appendOrderItem services. Users are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.583",
+      "summary": "In JetBrains Datalore before 2026.4 hidden notebook code was exposed to unauthenticated users via the public interactive report content endpoint"
     },
     {
-      "id": "CVE-2026-114235",
-      "title": "CVE-2026-114235",
+      "id": "CVE-2026-123291",
+      "title": "CVE-2026-123291",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.740",
-      "summary": "Direct Request ('Forced Browsing') in the Order component in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with only view access to the Order Manager to modify the shipment tracking number of any order via a direct request to the updateTrackingNumber endpoint. Users are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.730",
+      "summary": "In JetBrains Datalore before 2026.4 improper owner validation allowed reading another workspace's issues and runs notebook"
     },
     {
-      "id": "CVE-2026-114271",
-      "title": "CVE-2026-114271",
+      "id": "CVE-2026-123292",
+      "title": "CVE-2026-123292",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:00.870",
-      "summary": "Authorization Bypass Through User-Controlled Key in the shopping list services in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated low-privileged user, such as a self-registered ecommerce customer, to modify another party's shopping list or take ownership of it, and thereby read its contents, via a request to the shopping list update endpoint that supplies the other party's shopping list ID.\n\nUsers are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:07.887",
+      "summary": "In JetBrains Datalore before 2026.4 aPI tokens and sessions of removed or banned users remained valid"
     },
     {
-      "id": "CVE-2026-114272",
-      "title": "CVE-2026-114272",
+      "id": "CVE-2026-123293",
+      "title": "CVE-2026-123293",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:01.017",
-      "summary": "Authorization Bypass Through User-Controlled Key in the content viewing component in Apache OFBiz 24.09 before 24.09.08 on all platforms allows an authenticated user with role-scoped content view permission to read the data of content they are not authorized to view via a ViewSimpleContent request that combines a contentId they can view with the dataResourceId of other content.\nUsers are recommended to upgrade to version 24.09.08, which fixes this issue."
+      "date": "2026-11-06T11:17:08.013",
+      "summary": "In JetBrains IntelliJ IDEA before 2026.3, \n2026.2.4 code execution was possible in untrusted projects  via the Terraform tool path setting"
     },
     {
-      "id": "CVE-2026-114277",
-      "title": "CVE-2026-114277",
+      "id": "CVE-2026-123294",
+      "title": "CVE-2026-123294",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:01.170",
-      "summary": "Authentication bypass by Assumed-Immutable data vulnerability in Apache OFBiz.\nApache OFBiz's optional Janrain Engage Social Login integration in the ecommerce component improperly binds authenticated external identities to local user accounts.\nThis issue affects Apache OFBiz: before 24.09.08.\nUsers are recommended to upgrade to version 24.09.08, which fixes the issue."
+      "date": "2026-11-06T11:17:08.140",
+      "summary": "In JetBrains Hub before 2026.2.52556 privilege escalation was possible by changing email authentication details during the verification flow"
     },
     {
-      "id": "CVE-2026-117691",
-      "title": "CVE-2026-117691",
+      "id": "CVE-2026-123295",
+      "title": "CVE-2026-123295",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:01.320",
-      "summary": "A flaw was found in the SAML HTTP-Redirect binding implementation of Keycloak. The issue occurs because the server processes percent-encoded parameter names (like %53AMLResponse) while the signature verification logic only checks literal parameter names. An attacker can use this discrepancy to provide a crafted, unsigned SAML message that the server processes instead of a legitimately signed one, leading to full account takeover of federated users."
+      "date": "2026-11-06T11:17:08.273",
+      "summary": "In JetBrains Hub before 2026.2.52519 enforced two-factor authentication could be disabled via the profile update endpoint"
     },
     {
-      "id": "CVE-2026-123022",
-      "title": "CVE-2026-123022",
+      "id": "CVE-2026-123296",
+      "title": "CVE-2026-123296",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:04.003",
-      "summary": "A vulnerability was detected in agentscope-ai AgentScope up to 2.0.11. The impacted element is the function subprocess.Popen of the file src/agentscope/mcp/_config.py of the component MCP Workspace API. The manipulation of the argument command results in os command injection. The attack may be launched remotely. The exploit is now public and may be used. The pull request to fix this issue awaits acceptance."
+      "date": "2026-11-06T11:17:08.400",
+      "summary": "In JetBrains Hub before 2026.2.52519 privilege escalation via forged email verification was possible"
     },
     {
-      "id": "CVE-2026-123023",
-      "title": "CVE-2026-123023",
+      "id": "CVE-2026-123297",
+      "title": "CVE-2026-123297",
       "source": "NIST NVD",
-      "date": "2026-11-05T14:17:04.237",
-      "summary": "A flaw has been found in agentscope-ai AgentScope up to 2.0.8. This affects the function check_permissions of the file src/agentscope/tool/_builtin/_bash.py of the component Bash Tool. This manipulation causes incorrect authorization. Remote exploitation of the attack is possible. The exploit has been published and may be used. Upgrading to version 2.0.9 mitigates this issue. Patch name: 6b43b13a46401e86abd3defeed9a8bfe5b37bc6d. It is recommended to upgrade the affected component."
+      "date": "2026-11-06T11:17:08.530",
+      "summary": "In JetBrains Hub before 2026.2.52519 two-factor authentication bypass was possible via the password reset flow"
     }
   ]
 }
