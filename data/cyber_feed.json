@@ -1,6 +1,28 @@
 {
-  "generated_at": "2026-11-13T09:46:33.394577+00:00",
+  "generated_at": "2026-11-14T09:07:58.868175+00:00",
   "items": [
+    {
+      "id": "CVE-2026-114713",
+      "title": "CVE-2026-114713 - UnrealIRCd Improper Neutralization of Delimiters Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-13",
+      "vendor": "UnrealIRCd",
+      "product": "UnrealIRCd",
+      "summary": "UnrealIRCd UnrealIRCd contains an improper neutralization of delimiters vulnerability that allows any user on a network with two or more linked servers to inject server-to-server commands that are executed with server authority.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-16"
+    },
+    {
+      "id": "CVE-2026-123039",
+      "title": "CVE-2026-123039 - Check Point Multiple Products Incorrect Permission Assignment for Critical Resource Vulnerability",
+      "source": "CISA KEV",
+      "date": "2026-11-13",
+      "vendor": "Check Point",
+      "product": "Multiple Products",
+      "summary": "Check Point Firewall, Multi-Domain Security Management Server, Scalable Platforms, Security Gateway, and Security Management Server contain an incorrect permissions assignment for critical resources vulnerability when the Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root.",
+      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
+      "due": "2026-11-16"
+    },
     {
       "id": "CVE-2026-124194",
       "title": "CVE-2026-124194 - Microsoft Office Outlook Missing User Interaction for Potentially Unsafe Action Vulnerability",
@@ -327,7 +349,7 @@
       "date": "2026-10-20",
       "vendor": "Plex",
       "product": "Media Server",
-      "summary": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656. ",
+      "summary": "Plex Media Server contains a server-side request forgery (SSRF) vulnerability which could allow an attacker using any X-Plex-Token value to include a full URL in the 'protocol' parameter and force the Plex server to POST to the attacker's chosen destination. This vulnerability can be chained with CVE-2026-96654, CVE-2026-96655, and CVE-2026-96656.",
       "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
       "due": "2026-11-03"
     },
@@ -443,7 +465,7 @@
     },
     {
       "id": "CVE-2015-5477",
-      "title": "CVE-2015-5477 -  ISC BIND Data Processing Errors Vulnerability",
+      "title": "CVE-2015-5477 - ISC BIND Data Processing Errors Vulnerability",
       "source": "CISA KEV",
       "date": "2026-10-08",
       "vendor": "ISC",
@@ -470,7 +492,7 @@
       "date": "2026-10-08",
       "vendor": "Strapi",
       "product": "Strapi",
-      "summary": "Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerability can be chained with CVE-2023-22621 to achieve remote code execution. ",
+      "summary": "Strapi contains a cleartext storage of sensitive information vulnerability that could allow attackers with access to the admin panel to discover sensitive user details via the query filter. The impacted product(s) could be end-of-life (EoL) and/or end-of-service (EoS). Users are advised to discontinue use and/or transition to a supported version. This vulnerability can be chained with CVE-2023-22621 to achieve remote code execution.",
       "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
       "due": "2026-10-11"
     },
@@ -619,23 +641,23 @@
     },
     {
       "id": "CVE-2026-5430",
-      "title": "CVE-2026-5430 - WSO2 Multiple Products Path Traversal Vulnerability ",
+      "title": "CVE-2026-5430 - WSO2 Multiple Products Path Traversal Vulnerability",
       "source": "CISA KEV",
       "date": "2026-09-24",
       "vendor": "WSO2",
       "product": "Multiple Products",
-      "summary": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution. ",
+      "summary": "WSO2 API Control Plane, API Manager, Traffic Manager & Universal Gateway contain a path traversal vulnerability that could allow for unrestricted file upload and lead to remote code execution.",
       "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
       "due": "2026-09-27"
     },
     {
       "id": "CVE-2026-71362",
-      "title": "CVE-2026-71362 - Adobe Commerce and Magento Incorrect Authorization Vulnerability ",
+      "title": "CVE-2026-71362 - Adobe Commerce and Magento Incorrect Authorization Vulnerability",
       "source": "CISA KEV",
       "date": "2026-09-24",
       "vendor": "Adobe",
-      "product": "Commerce and Magento ",
-      "summary": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction. ",
+      "product": "Commerce and Magento",
+      "summary": "Adobe Commerce and Magento contains an incorrect authorization vulnerability that could allow an attacker to leverage this vulnerability to gain elevated access to sensitive resources without any user interaction.",
       "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
       "due": "2026-09-27"
     },
@@ -860,306 +882,284 @@
       "due": "2026-09-12"
     },
     {
-      "id": "CVE-2026-87491",
-      "title": "CVE-2026-87491 - Google Chromium V8 Out of Bounds Write Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-09",
-      "vendor": "Google",
-      "product": "Chromium V8",
-      "summary": "Google Chromium V8 contains an out of bounds write vulnerability that allows a remote attacker to execute arbitrary code inside the sandbox via a crafted HTML page. This vulnerability could affect multiple web browsers that utilize Chromium, including, but not limited to, Google Chrome, Microsoft Edge, and Opera.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-23"
-    },
-    {
-      "id": "CVE-2026-20079",
-      "title": "CVE-2026-20079 - Cisco Firewall Management Center Authentication Bypass Using an Alternate Path or Channel Vulnerability",
-      "source": "CISA KEV",
-      "date": "2026-09-09",
-      "vendor": "Cisco",
-      "product": "Secure Firewall Management Center (FMC) and Security Cloud Control (SCC) Firewall Management",
-      "summary": "Cisco Secure Firewall Management Center (FMC) Software and Cisco Security Cloud Control (SCC) Firewall Management contain an authentication Bypass using an alternate path or channel vulnerability that could allow an unauthenticated, remote attacker to bypass authentication and execute script files on an affected device to obtain root access to the underlying operating system.",
-      "action": "Apply mitigations in accordance with vendor instructions, ensuring compliance with CISA’s BOD 26-04 Prioritizing Security Updates Based on Risk (see URL in Notes) guidance and CISA’s “Forensics Triage Requirements” (see URL in Notes). Follow applicable BOD 26-04 guidance for cloud services or discontinue use of the product if mitigations are unavailable. Stakeholders are responsible for evaluating each asset's internet exposure and ensuring adherence to BOD 26-04 patching guidelines.",
-      "due": "2026-09-12"
-    },
-    {
-      "id": "CVE-2026-109977",
-      "title": "CVE-2026-109977",
+      "id": "CVE-2026-104738",
+      "title": "CVE-2026-104738",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:34.457",
-      "summary": "The YaySMTP – WP Mail SMTP with Email Logs, Tracking & Reports plugin for WordPress is vulnerable to time-based SQL Injection via the 'params[searchKey]' parameter in all versions up to, and including, 2.7.8 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with administrator-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database."
+      "date": "2026-11-07T09:17:11.253",
+      "summary": "The Advanced Form Integration — Connect Forms to 300+ Apps plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 2.10.2 via deserialization of untrusted input . This makes it possible for unauthenticated attackers to inject a PHP Object. No known POP chain is present in the vulnerable software, which means this vulnerability has no impact unless another plugin or theme containing a POP chain is installed on the site. If a POP chain is present via an additional plugin or theme installed on the target system, it may allow the attacker to perform actions like delete arbitrary files, retrieve sensitive data, or execute code depending on the POP chain present. Exploitation requires that an administrator has previously configured at least one active NexForms integration (status=1) in the plugin's database table; in the free tier, only POST parameter keys containing the substrings 'name', 'email', 'first', or 'last' are routed to the vulnerable normalizer."
     },
     {
-      "id": "CVE-2026-109994",
-      "title": "CVE-2026-109994",
+      "id": "CVE-2026-119467",
+      "title": "CVE-2026-119467",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:35.767",
-      "summary": "The Eventin – Events Calendar, Tickets, Registration, Booking & WooCommerce plugin for WordPress is vulnerable to Sensitive Information Exposure in all versions up to, and including, 4.1.29 via the 'id' parameter. This makes it possible for authenticated attackers, with subscriber-level access and above, to extract the email address and phone number of any WordPress user, including administrators, by supplying their user id in a query-string parameter while placing the authenticated user's own id in the URL path."
+      "date": "2026-11-07T09:17:12.690",
+      "summary": "Missing Authorization vulnerability in WPVibes AnyWhere Elementor anywhere-elementor allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects AnyWhere Elementor: from n/a through 1.3.0."
     },
     {
-      "id": "CVE-2026-110776",
-      "title": "CVE-2026-110776",
+      "id": "CVE-2026-119489",
+      "title": "CVE-2026-119489",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:35.950",
-      "summary": "The MDTF – Meta Data and Taxonomies Filter plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'vars' parameter in all versions up to, and including, 1.4.1 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This requires that a published page or post on the target site contains the [meta_data_filter_results] shortcode, which is the primary output feature of the plugin."
+      "date": "2026-11-07T09:17:12.870",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Bootstrapped Ventures WP Recipe Maker wp-recipe-maker allows Stored XSS.This issue affects WP Recipe Maker: from n/a through 10.9.1."
     },
     {
-      "id": "CVE-2026-115831",
-      "title": "CVE-2026-115831",
+      "id": "CVE-2026-119510",
+      "title": "CVE-2026-119510",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:36.123",
-      "summary": "The VOD Infomaniak plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 1.5.15. This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for authenticated attackers, with subscriber-level access and above, to initiate unauthorized video imports using the site owner's Infomaniak API credentials, consume the site owner's VOD account quota, and insert arbitrary rows into the wp_vod_upload table causing public shortcodes to resolve to attacker-chosen video content. This action is explicitly reserved for Contributor-level and above by the plugin's own role-rights system, meaning subscriber access is intentionally forbidden by design — the AJAX handler simply omits the enforcement."
+      "date": "2026-11-07T09:17:13.080",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Saeed MC Woocommerce Wishlist smart-wishlist-for-more-convert allows Stored XSS.This issue affects MC Woocommerce Wishlist: from n/a through 2.0.3."
     },
     {
-      "id": "CVE-2026-116592",
-      "title": "CVE-2026-116592",
+      "id": "CVE-2026-120848",
+      "title": "CVE-2026-120848",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:36.313",
-      "summary": "undici is an HTTP client for Node.js. In versions 7.30.1 and 8.12.2 through 8.12.3, when an originless Agent composes the redirect and shared cache interceptors, undici decides whether to store the final response under the original request key by inspecting only the final redirect hop, which bypasses the earlier fix for CVE-2026-109829 that compared only the initial and final origins. A redirect that bounces through an untrusted origin and returns to the trusted origin is still cached under the trusted key, an intermediate hop's Vary is dropped so a response that varies on Authorization or Cookie can be served to a different user, and an intermediate hop's no-cache or default-uncacheable status is ignored so a non-storable redirect is laundered into a cacheable entry. An attacker who controls a redirect target from a trusted URL can poison the cached entry for that URL or have a private, per-user response served to a later caller. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, compose the interceptors as cache then redirect, use per-origin dispatchers and cache stores, or disable shared caching on redirec"
+      "date": "2026-11-07T09:17:13.277",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WC Lovers WCFM Marketplace wc-multivendor-marketplace allows Stored XSS.This issue affects WCFM Marketplace: from n/a through 3.8.3."
     },
     {
-      "id": "CVE-2026-120222",
-      "title": "CVE-2026-120222",
+      "id": "CVE-2026-120849",
+      "title": "CVE-2026-120849",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:36.497",
-      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, when the cache interceptor is composed with a downstream handler that throws during response processing (such as the built-in dump interceptor exceeding its maxSize, or the decompress interceptor rejecting more than five Content-Encoding values), a throw raised asynchronously while a cached response is replayed escapes as an uncaught exception or unhandled promise rejection and terminates the Node.js process. A malicious or compromised HTTP server can crash any such client by serving a cacheable response that triggers the throw on replay, including on a 304 revalidation of a stale entry, so the impact is availability only. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, avoid composing the cache interceptor with a response handler that throws during response processing until upgrading."
+      "date": "2026-11-07T09:17:13.450",
+      "summary": "Missing Authorization vulnerability in WC Lovers WCFM Marketplace wc-multivendor-marketplace allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WCFM Marketplace: from n/a through 3.8.3."
     },
     {
-      "id": "CVE-2026-120415",
-      "title": "CVE-2026-120415",
+      "id": "CVE-2026-121761",
+      "title": "CVE-2026-121761",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:36.633",
-      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, the redirect interceptor strips sensitive headers such as Authorization, Cookie, Proxy-Authorization, and Host when a request is redirected to a different origin, but when request headers are supplied as an array of name and value tuples (a valid documented input, for example from Object.entries), the redirect handler misreads them as a flat list so the header names never match and the sensitive headers are not removed. If a header-normalizing interceptor such as cache or deduplicate is composed outside the redirect interceptor, it then serializes the retained headers onto the cross-origin request, disclosing the caller's origin-bound credentials to the unrelated redirect destination. This is a representation-dependent bypass of the cross-origin header stripping added in CVE-2024-30260. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, supply request headers as a plain object or a flat name and value array rather than an array of tuples, or compose the redirect interceptor outside the normalizing interceptor."
+      "date": "2026-11-07T09:17:13.617",
+      "summary": "Missing Authorization vulnerability in Infomaniak Network VOD Infomaniak vod-infomaniak allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects VOD Infomaniak: from n/a through 1.5.15."
     },
     {
-      "id": "CVE-2026-120423",
-      "title": "CVE-2026-120423",
+      "id": "CVE-2026-121767",
+      "title": "CVE-2026-121767",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:36.780",
-      "summary": "undici is an HTTP client for Node.js. In versions 7.15.0 through 7.30.1 and 8.0.0 through 8.12.3, fetch verifies Subresource Integrity metadata by splitting the integrity string on a single space, but the SRI grammar separates metadata by ASCII whitespace, which also includes the horizontal tab. An integrity value whose digest is preceded by a tab or other ASCII whitespace is parsed as a single unrecognized token and skipped, and when no recognized algorithm remains undici treats the integrity list as empty and accepts the response, so a server returning a body different from the pinned digest passes the check. An application that pins a response with a valid but whitespace-surrounded SRI value receives attacker-controlled bytes with no integrity error, and the attacker needs only to control the response body, not the integrity metadata. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, supply SRI integrity metadata without surrounding whitespace, using a single space to separate multiple digests."
+      "date": "2026-11-07T09:17:13.797",
+      "summary": "Missing Authorization vulnerability in weDevs weDocs wedocs allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects weDocs: from n/a through 2.6.1."
     },
     {
-      "id": "CVE-2026-120474",
-      "title": "CVE-2026-120474",
+      "id": "CVE-2026-121768",
+      "title": "CVE-2026-121768",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:36.913",
-      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, when the redirect interceptor and a shared response cache are used together, an authenticated request that is redirected to a same-origin target has the final response stored under the original request's cache key. That key omits the credential and carries no Vary header, so a later anonymous or different user can be served the first user's private response body. This results in cross-user disclosure of cached private responses. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later."
+      "date": "2026-11-07T09:17:13.980",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Markus Wiesenhofer Contact Form 7 &#8211; Post Fields cf7-post-fields allows Stored XSS.This issue affects Contact Form 7 &#8211; Post Fields: from n/a through 2.6.0."
     },
     {
-      "id": "CVE-2026-120550",
-      "title": "CVE-2026-120550",
+      "id": "CVE-2026-121778",
+      "title": "CVE-2026-121778",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:37.047",
-      "summary": "The WP User Manager – Registration Form, Login Form, User Profile Builder & Member Directory plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'name (REST users endpoint) -> wp_users.display_name' parameter in all versions up to, and including, 2.10.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The payload is stored via the WordPress core REST endpoint POST /wp-json/wp/v2/users/me, which bypasses the plugin's own wpum_sanitize_text sanitizer applied on its front-end account form, making the save-time sanitization ineffective as a mitigation."
+      "date": "2026-11-07T09:17:14.160",
+      "summary": "Missing Authorization vulnerability in WP Lab WP-Lister Lite for Amazon wp-lister-for-amazon allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects WP-Lister Lite for Amazon: from n/a through 2.9.2."
     },
     {
-      "id": "CVE-2026-120659",
-      "title": "CVE-2026-120659",
+      "id": "CVE-2026-121779",
+      "title": "CVE-2026-121779",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:37.220",
-      "summary": "The Redirection for Contact Form 7 plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 3.2.14 This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for unauthenticated attackers to write arbitrary post meta values to newly created lead posts and copy arbitrary server-side files with allowed MIME-type extensions into the plugin's uploads directory. Exploitation requires a published Contact Form 7 form configured with the Save Entry (Save Lead) action enabled on the target site."
+      "date": "2026-11-07T09:17:14.333",
+      "summary": "Exposure of Sensitive System Information to an Unauthorized Control Sphere vulnerability in YITH YITH WooCommerce Subscription yith-woocommerce-subscription allows Retrieve Embedded Sensitive Data.This issue affects YITH WooCommerce Subscription: from n/a through 4.22.0."
     },
     {
-      "id": "CVE-2026-123087",
-      "title": "CVE-2026-123087",
+      "id": "CVE-2026-121781",
+      "title": "CVE-2026-121781",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:37.403",
-      "summary": "SQL injection vulnerability in Atmira’s SIREC. The server retrieves the value of a field from a JSON object containing user-supplied information and concatenates it into an SQL statement without properly sanitising the input. This allows the original query to be altered via malicious input, causing the database to return unexpected information."
+      "date": "2026-11-07T09:17:14.523",
+      "summary": "Missing Authorization vulnerability in WP ManageNinja LLC Fluent Booking fluent-booking allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Fluent Booking: from n/a through 2.5.0."
     },
     {
-      "id": "CVE-2026-33379",
-      "title": "CVE-2026-33379",
+      "id": "CVE-2026-122675",
+      "title": "CVE-2026-122675",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:37.943",
-      "summary": "A user with any role, including Viewer or a service account with no permissions, can create, externally publish, and delete dashboard snapshots (missing authorization). Only Grafana OSS and Grafana Enterprise 12.4 are affected; earlier versions and Grafana 13 are not."
+      "date": "2026-11-07T09:17:14.700",
+      "summary": "Cross-Site Request Forgery (CSRF) vulnerability in Wpmet Wp Social wp-social allows Cross Site Request Forgery.This issue affects Wp Social: from n/a through 3.2.3."
     },
     {
-      "id": "CVE-2026-87964",
-      "title": "CVE-2026-87964",
+      "id": "CVE-2026-123957",
+      "title": "CVE-2026-123957",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:38.110",
-      "summary": "The Product Feed Manager for WooCommerce – CTX Feed – Support 220+ Shopping, AI & Social Channels plugin for WordPress is vulnerable to PHP Code Injection in all versions up to, and including, 8.0.26. This is due to insufficient sanitization of the `feedConfigCustom2` parameter — only `wp_unslash()` is applied before the value is stored verbatim via `update_option()`, and during feed generation the `Custom2Template::evaluate_return()` method passes the stored `{(return ...)}` template expressions directly to PHP's `eval()` function without any code-level sanitization. This makes it possible for authenticated attackers, with Shop Manager-level access and above, to inject and execute arbitrary PHP code on the server, escalating their privileges beyond what the role normally permits to full remote code execution and site takeover. The `ctxfeed_custom2_eval_enabled` option defaults to `true`, meaning no additional administrator configuration is required for this attack path to be exploitable out of the box."
+      "date": "2026-11-07T09:17:14.890",
+      "summary": "A vulnerability was determined in TOTOLINK CA300-PoE 6.2c.884. Impacted is the function setIpQosRules of the file /cgi-bin/cstecgi.cgi. This manipulation of the argument ipStart causes buffer overflow. It is possible to initiate the attack remotely. The exploit has been publicly disclosed and may be utilized."
     },
     {
-      "id": "CVE-2026-97642",
-      "title": "CVE-2026-97642",
+      "id": "CVE-2026-123958",
+      "title": "CVE-2026-123958",
       "source": "NIST NVD",
-      "date": "2026-11-06T10:16:38.320",
-      "summary": "The Wp Parsidate plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the calendar Gutenberg block's 'theme' attribute in versions up to, and including, 6.4. This is due to insufficient input sanitization and output escaping on the block attribute value which is concatenated directly into an HTML class attribute in the printCalendar() function without esc_attr(). This makes it possible for authenticated attackers, with Contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
+      "date": "2026-11-07T09:17:15.177",
+      "summary": "A vulnerability was identified in TOTOLINK CA300-PoE 6.2c.884. The affected element is the function setLanConfig of the file /cgi-bin/cstecgi.cgi. Such manipulation of the argument lanDns/lanSecDns/langType leads to buffer overflow. It is possible to launch the attack remotely. The exploit is publicly available and might be used."
     },
     {
-      "id": "CVE-2026-113431",
-      "title": "CVE-2026-113431",
+      "id": "CVE-2026-124274",
+      "title": "CVE-2026-124274",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:04.410",
-      "summary": "Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowlib allows an unauthenticated remote peer to exhaust the memory of an HTTP/2 endpoint via HPACK-indexed header fields.\n\ncow_http2_machine:headers_decode/4 in src/cow_http2_machine.erl decodes every HEADERS block with cow_hpack:decode/3. It bounds the compressed block size and the number of fields, but not the size of the decoded header list that RFC 9113 section 6.5.2 places under SETTINGS_MAX_HEADER_LIST_SIZE. A peer stores one header value of up to the dynamic table size (4096 bytes by default) and then references it with one-byte indexed fields, so about 100 bytes on the wire decode to a header list of about 390 KB. A consumer that copies the decoded values, as Cowboy does when cowboy_http2:headers_to_map/2 joins repeated cookie fields into one binary, allocates that amount for every stream. The total across streams and connections is not bounded.\n\nThis issue affects cowlib: from 2.7.0 before 2.22.0."
+      "date": "2026-11-07T09:17:15.430",
+      "summary": "Missing Authorization vulnerability in myCred myCred mycred allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects myCred: from n/a through 4.0.2."
     },
     {
-      "id": "CVE-2026-115701",
-      "title": "CVE-2026-115701",
+      "id": "CVE-2026-39733",
+      "title": "CVE-2026-39733",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:05.223",
-      "summary": "Allocation of Resources Without Limits or Throttling vulnerability in ninenines cowboy allows an unauthenticated remote attacker to exhaust connection process memory over HTTP/1.1.\n\nOnce a request has been received in full and its handler is still running, cowboy_http:parse/2 in src/cowboy_http.erl appends every further byte that arrives on the keep-alive connection to the connection buffer and returns to the receive loop without parsing it. The socket stays in active mode and no limit applies to this buffer: max_request_line_length, max_headers and the other parser limits only take effect once the handler returns and parsing resumes, and the only timer in this state is idle_timeout (default 60 seconds), which is reset on every received chunk. A client can therefore send an arbitrary amount of data on one connection for as long as the handler runs, and a few connections to an endpoint that holds requests open can drive the Erlang VM into out-of-memory conditions.\n\nThis issue affects cowboy: from 2.18.0 before 2.21.0."
+      "date": "2026-11-07T09:17:15.680",
+      "summary": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in properfraction ProfilePress wp-user-avatar allows Code Injection.This issue affects ProfilePress: from n/a through 4.17.7."
     },
     {
-      "id": "CVE-2026-116630",
-      "title": "CVE-2026-116630",
+      "id": "CVE-2026-52713",
+      "title": "CVE-2026-52713",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:05.497",
-      "summary": "undici is an HTTP client for Node.js. In versions 7.0.0 through 7.30.1 and 8.0.0 through 8.12.3, when an Agent composes the redirect and shared cache interceptors, a cached response that is revalidated with a conditional request can be validated by a 304 Not Modified from a different origin. When the origin that stored the response redirects the conditional revalidation request to another origin, the redirect handler strips origin-bound credential headers but not the cache-generated If-None-Match or If-Modified-Since validators, so the redirect destination receives the original origin's validator and undici treats its 304 as successful revalidation of the stored representation. As a result, a shared cache can serve the original origin's stored authenticated response, including one gated by Authorization, to a later unauthenticated caller. The issue is fixed in undici 7.30.2 and 8.12.4, and users should upgrade to one of those versions or later. As a workaround, compose the interceptors as cache then redirect, use per-origin dispatchers and cache stores, or disable shared caching on redirect-capable requests."
+      "date": "2026-11-07T09:17:15.870",
+      "summary": "Missing Authorization vulnerability in ThimPress LearnPress learnpress allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects LearnPress: from n/a through 4.4.12."
     },
     {
-      "id": "CVE-2026-123276",
-      "title": "CVE-2026-123276",
+      "id": "CVE-2026-66669",
+      "title": "CVE-2026-66669",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:05.740",
-      "summary": "In JetBrains CLion before 2026.3, \n2026.2.4.1 code execution was possible in Safe Mode via a crafted GDB server debug profile"
+      "date": "2026-11-07T09:17:16.063",
+      "summary": "Cross-Site Request Forgery (CSRF) vulnerability in Suplugins Superb Addons: Blocks, Patterns &amp; Theme Designer superb-blocks allows Cross Site Request Forgery.This issue affects Superb Addons: Blocks, Patterns &amp; Theme Designer: from n/a through 4.2.4."
     },
     {
-      "id": "CVE-2026-123277",
-      "title": "CVE-2026-123277",
+      "id": "CVE-2026-103900",
+      "title": "CVE-2026-103900",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:05.873",
-      "summary": "In JetBrains CLion before 2026.3, \n2026.2.4.1 missing authentication allowed local users to obtain the debug session environment on Linux"
+      "date": "2026-11-07T10:17:05.140",
+      "summary": "The WPJAM Basic plugin for WordPress is vulnerable to Privilege Escalation in versions up to, and including, 7.1 This is due to the WPJAM_User_Signup::signup() function unpacking attacker-supplied `data[args]` from the AJAX POST body and merging it via PHP array union into the payload passed to WPJAM_User::create(), whose internal whitelist (wpjam_pick) explicitly preserves the `role` key before it is handed to wp_insert_user(). The endpoint is registered as wp_ajax_nopriv_{provider}-signup with a nonce that is emitted on the public login page. This makes it possible for unauthenticated attackers to elevate their privileges to Administrator by creating a new user with an attacker-chosen role, provided a social-login provider is registered and open registration is enabled."
     },
     {
-      "id": "CVE-2026-123278",
-      "title": "CVE-2026-123278",
+      "id": "CVE-2026-104992",
+      "title": "CVE-2026-104992",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.010",
-      "summary": "In JetBrains IntelliJ IDEA before 2026.3 code execution was possible via the unauthenticated JDBC worker RMI endpoint"
+      "date": "2026-11-07T10:17:06.407",
+      "summary": "The Booking for Appointments and Events Calendar – Amelia plugin for WordPress is vulnerable to authorization bypass in all versions up to, and including, 9.9.1. This is due to the plugin not properly verifying that a user is authorized to perform an action. This makes it possible for authenticated attackers, with custom-level access and above, to export a full CSV of booking records for any event on the site — including attendee names, email addresses, phone numbers, booking status, number of persons, price, payment status, payment amount, and coupon codes — regardless of whether they own or participate in those events."
     },
     {
-      "id": "CVE-2026-123279",
-      "title": "CVE-2026-123279",
+      "id": "CVE-2026-107616",
+      "title": "CVE-2026-107616",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.140",
-      "summary": "In JetBrains Datalore before 2026.4 code execution was possible in a notebook's computation by view-only collaborators"
+      "date": "2026-11-07T10:17:06.593",
+      "summary": "The Amelia plugin for WordPress is vulnerable to unauthorized access of attendee data due to a missing authorization check on the GetEventAttendeesCommandHandler::handle() function in versions up to, and including, 9.9.1. The handler only enforces the broad `amelia_read_events` capability — which the plugin's own `wpamelia-customer` role possesses — and does not verify that the authenticated user is an organizer/provider of the event referenced by the client-supplied `id` query parameter. This makes it possible for authenticated attackers, with wpamelia-customer-level access and above, to export the full CSV of attendee personally identifiable information (first/last name, email, phone, date of birth, gender, private notes, payment amounts/methods, WooCommerce order IDs, custom-field values, and uploaded-file URLs) for any Amelia event on the site by directly invoking the `/report/event/attendees` endpoint with an arbitrary event ID."
     },
     {
-      "id": "CVE-2026-123280",
-      "title": "CVE-2026-123280",
+      "id": "CVE-2026-110004",
+      "title": "CVE-2026-110004",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.270",
-      "summary": "In JetBrains Datalore before 2026.2.4 unauthenticated users could execute code via published interactive reports"
+      "date": "2026-11-07T10:17:06.780",
+      "summary": "The wpForo Forum plugin for WordPress is vulnerable to arbitrary file deletion due to insufficient file path validation in the theme_delete function in all versions up to, and including, 3.2.2 This makes it possible for authenticated attackers, with subscriber-level access and above, to delete arbitrary files on the server, which can easily lead to remote code execution when the right file is deleted (such as wp-config.php). This exploit chain is reachable only on sites where an administrator has created a custom wpForo secondary usergroup with a blank WordPress role and the 'mth' (Manage Themes) capability; on such sites, an attacker can self-register and claim that group via the unguarded wpforo_secondary_groupids[] POST field, bypassing the role-based group filter and gaining theme-management access as a Subscriber."
     },
     {
-      "id": "CVE-2026-123281",
-      "title": "CVE-2026-123281",
+      "id": "CVE-2026-118784",
+      "title": "CVE-2026-118784",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.390",
-      "summary": "In JetBrains Datalore before 2026.4 notebook code could execute commands in the sidecar container via the mount broker"
+      "date": "2026-11-07T10:17:06.970",
+      "summary": "The WPSpeed plugin for WordPress is vulnerable to Stored Cross-Site Scripting in versions up to, and including, 2.6.10 This is due to a combination of two issues in the LightImages HTML optimizer: (1) Dispatcher::runOptimize() decides whether the current request is the site's home page by comparing only the URL path from REQUEST_URI against the path of the home URL, so on a plain-permalinks install the author archive URL /?author=<ID> is treated as the home page and the LightImages optimizer runs on it; and (2) LightImages::optimize() calls html_entity_decode() across the entire serialized DOMDocument output under the default-enabled img_processing_entity_decode setting, converting any entity-encoded markup present as plain text in the page (including WordPress's rendered author title) into live HTML. This makes it possible for authenticated attackers, with Subscriber-level access and above, to store entity-encoded markup in their own nickname/display_name through the normal profile endpoint and have that markup rehydrated into executing script when any logged-out visitor loads their author archive."
     },
     {
-      "id": "CVE-2026-123282",
-      "title": "CVE-2026-123282",
+      "id": "CVE-2026-119155",
+      "title": "CVE-2026-119155",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.520",
-      "summary": "In JetBrains Datalore before 2026.4 missing expiration validation of account tokens allowed a new authenticated session"
+      "date": "2026-11-07T10:17:07.150",
+      "summary": "The wpForo Forum plugin for WordPress is vulnerable to time-based SQL Injection via the 'href[locale]' parameter in all versions up to, and including, 3.2.2 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for unauthenticated attackers to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. The nonce required for exploitation is publicly issued to unauthenticated visitors on any forum page via the wpforo.nonces JavaScript object, meaning no account or prior interaction beyond a page load is required to obtain it."
     },
     {
-      "id": "CVE-2026-123283",
-      "title": "CVE-2026-123283",
+      "id": "CVE-2026-119164",
+      "title": "CVE-2026-119164",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.650",
-      "summary": "In JetBrains Datalore before 2026.4 account takeover was possible via SSO sign-in to a pre-registered account"
+      "date": "2026-11-07T10:17:07.337",
+      "summary": "The wpForo Forum plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 3.2.2 via the `data[secondary_groupids]` parameter of the `wpforo_action_profile_update` POST handler. This is due to a type-confusion flaw in the secondary_groupids authorization guard within the `Members::update()` function in `classes/Members.php`, where casting a scalar CSV string (e.g. `\"0,1\"`) with `(array)` before `array_map('intval', …)` and `array_filter()` produces an empty array — causing the guard's outer conditional, and the else-branch that would otherwise strip the field from the update, to be bypassed entirely — while `encode()`/`decode()` downstream correctly explodes the original CSV and persists the attacker-supplied group IDs to `wp_wpforo_profiles.secondary_groupids`. This makes it possible for authenticated attackers, with Subscriber-level access and above, to escalate their forum privileges to wpForo Administrator by injecting the privileged Admin group ID, granting access to the Forum Accesses editor and the ability to rewrite forum-wide capability policies for all members and edit arbitrary content owned by other users. Exploitation requires the"
     },
     {
-      "id": "CVE-2026-123284",
-      "title": "CVE-2026-123284",
+      "id": "CVE-2026-119465",
+      "title": "CVE-2026-119465",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.773",
-      "summary": "In JetBrains Datalore before 2026.4 improper authorisation on workspace moves allowed view-only collaborators to modify shared content"
+      "date": "2026-11-07T10:17:07.530",
+      "summary": "Insertion of Sensitive Information Into Sent Data vulnerability in WPVibes Elementor Addon Elements addon-elements-for-elementor-page-builder allows Retrieve Embedded Sensitive Data.This issue affects Elementor Addon Elements: from n/a through 1.15."
     },
     {
-      "id": "CVE-2026-123285",
-      "title": "CVE-2026-123285",
+      "id": "CVE-2026-119473",
+      "title": "CVE-2026-119473",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:06.907",
-      "summary": "In JetBrains Datalore before 2026.3 command execution was possible in the database task container via JVM options injection"
+      "date": "2026-11-07T10:17:07.693",
+      "summary": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in properfraction ProfilePress wp-user-avatar allows Code Injection.This issue affects ProfilePress: from n/a through 4.17.7."
     },
     {
-      "id": "CVE-2026-123286",
-      "title": "CVE-2026-123286",
+      "id": "CVE-2026-119484",
+      "title": "CVE-2026-119484",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.047",
-      "summary": "In JetBrains Datalore before 2026.4 improper authorisation allowed read the notebook owner's file storage session token"
+      "date": "2026-11-07T10:17:07.860",
+      "summary": "Cross-Site Request Forgery (CSRF) vulnerability in Supsystic Photo Gallery by Supsystic gallery-by-supsystic allows Cross Site Request Forgery.This issue affects Photo Gallery by Supsystic: from n/a through 1.21.6."
     },
     {
-      "id": "CVE-2026-123287",
-      "title": "CVE-2026-123287",
+      "id": "CVE-2026-119486",
+      "title": "CVE-2026-119486",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.177",
-      "summary": "In JetBrains Datalore before 2026.4 private notebook files could be downloaded without authentication via published interactive reports"
+      "date": "2026-11-07T10:17:08.037",
+      "summary": "Missing Authorization vulnerability in WP ManageNinja LLC FluentBoards fluent-boards allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects FluentBoards: from n/a through 2.2.2."
     },
     {
-      "id": "CVE-2026-123288",
-      "title": "CVE-2026-123288",
+      "id": "CVE-2026-119491",
+      "title": "CVE-2026-119491",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.310",
-      "summary": "In JetBrains Datalore before 2026.4 stored XSS in notebook charts was possible via Vega editor link"
+      "date": "2026-11-07T10:17:08.193",
+      "summary": "Missing Authorization vulnerability in David Lingren Media LIbrary Assistant media-library-assistant allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Media LIbrary Assistant: from n/a through 3.43."
     },
     {
-      "id": "CVE-2026-123289",
-      "title": "CVE-2026-123289",
+      "id": "CVE-2026-119493",
+      "title": "CVE-2026-119493",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.440",
-      "summary": "In JetBrains Datalore before 2026.4 improper authorisation allowed notebook viewers to modify files"
+      "date": "2026-11-07T10:17:08.360",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Metaphor Creations, LLC Ditty ditty-news-ticker allows Stored XSS.This issue affects Ditty: from n/a through 3.1.71."
     },
     {
-      "id": "CVE-2026-123290",
-      "title": "CVE-2026-123290",
+      "id": "CVE-2026-119494",
+      "title": "CVE-2026-119494",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.583",
-      "summary": "In JetBrains Datalore before 2026.4 hidden notebook code was exposed to unauthenticated users via the public interactive report content endpoint"
+      "date": "2026-11-07T10:17:08.523",
+      "summary": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Gemini Labs Site Reviews site-reviews allows Code Injection.This issue affects Site Reviews: from n/a through 8.3.6."
     },
     {
-      "id": "CVE-2026-123291",
-      "title": "CVE-2026-123291",
+      "id": "CVE-2026-119500",
+      "title": "CVE-2026-119500",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.730",
-      "summary": "In JetBrains Datalore before 2026.4 improper owner validation allowed reading another workspace's issues and runs notebook"
+      "date": "2026-11-07T10:17:08.683",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in bPlugins Flash & HTML5 Video html5-video-player allows Stored XSS.This issue affects Flash & HTML5 Video: from n/a through 2.14.1."
     },
     {
-      "id": "CVE-2026-123292",
-      "title": "CVE-2026-123292",
+      "id": "CVE-2026-119502",
+      "title": "CVE-2026-119502",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:07.887",
-      "summary": "In JetBrains Datalore before 2026.4 aPI tokens and sessions of removed or banned users remained valid"
+      "date": "2026-11-07T10:17:08.850",
+      "summary": "Missing Authorization vulnerability in BdThemes Ultimate Store Kit Elementor Addons ultimate-store-kit allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects Ultimate Store Kit Elementor Addons: from n/a through 4.0.1."
     },
     {
-      "id": "CVE-2026-123293",
-      "title": "CVE-2026-123293",
+      "id": "CVE-2026-119507",
+      "title": "CVE-2026-119507",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:08.013",
-      "summary": "In JetBrains IntelliJ IDEA before 2026.3, \n2026.2.4 code execution was possible in untrusted projects  via the Terraform tool path setting"
+      "date": "2026-11-07T10:17:09.017",
+      "summary": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in WPDeveloper NotificationX notificationx allows Code Injection.This issue affects NotificationX: from n/a through 3.3.6."
     },
     {
-      "id": "CVE-2026-123294",
-      "title": "CVE-2026-123294",
+      "id": "CVE-2026-119511",
+      "title": "CVE-2026-119511",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:08.140",
-      "summary": "In JetBrains Hub before 2026.2.52556 privilege escalation was possible by changing email authentication details during the verification flow"
+      "date": "2026-11-07T10:17:09.183",
+      "summary": "Missing Authorization vulnerability in Saeed MC Woocommerce Wishlist smart-wishlist-for-more-convert allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects MC Woocommerce Wishlist: from n/a through 2.0.3."
     },
     {
-      "id": "CVE-2026-123295",
-      "title": "CVE-2026-123295",
+      "id": "CVE-2026-119520",
+      "title": "CVE-2026-119520",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:08.273",
-      "summary": "In JetBrains Hub before 2026.2.52519 enforced two-factor authentication could be disabled via the profile update endpoint"
+      "date": "2026-11-07T10:17:09.343",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Brainstorm Force Spectra ultimate-addons-for-gutenberg allows Stored XSS.This issue affects Spectra: from n/a through 2.20.4."
     },
     {
-      "id": "CVE-2026-123296",
-      "title": "CVE-2026-123296",
+      "id": "CVE-2026-120514",
+      "title": "CVE-2026-120514",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:08.400",
-      "summary": "In JetBrains Hub before 2026.2.52519 privilege escalation via forged email verification was possible"
+      "date": "2026-11-07T10:17:09.513",
+      "summary": "The Zephyr Project Manager plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'zpm_profile_picture' parameter in all versions up to, and including, 3.3.209 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The injected payload is stored in the subscriber's own Zephyr profile and fires in any Administrator's browser session the first time the autocomplete mention lookup renders the avatar field, requiring no additional configuration beyond the plugin's default access_roles setting. Successful exploitation additionally requires an action by an administrator — the attacker cannot trigger the vulnerability on their own."
     },
     {
-      "id": "CVE-2026-123297",
-      "title": "CVE-2026-123297",
+      "id": "CVE-2026-120532",
+      "title": "CVE-2026-120532",
       "source": "NIST NVD",
-      "date": "2026-11-06T11:17:08.530",
-      "summary": "In JetBrains Hub before 2026.2.52519 two-factor authentication bypass was possible via the password reset flow"
+      "date": "2026-11-07T10:17:09.700",
+      "summary": "The wpForo Forum plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'post[body]' parameter in all versions up to, and including, 3.2.2 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with subscriber-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     }
   ]
 }
