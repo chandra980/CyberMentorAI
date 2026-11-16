@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-15T09:38:19.382335+00:00",
+  "generated_at": "2026-11-16T09:56:52.506826+00:00",
   "items": [
     {
       "id": "CVE-2026-114713",
@@ -882,284 +882,284 @@
       "due": "2026-09-12"
     },
     {
-      "id": "CVE-2026-124326",
-      "title": "CVE-2026-124326",
+      "id": "CVE-2026-101031",
+      "title": "CVE-2026-101031",
       "source": "NIST NVD",
-      "date": "2026-11-08T10:16:51.850",
-      "summary": "A flaw has been found in DataLinkDC Dinky up to 1.2.5. Impacted is the function file.getOriginalFilename of the file CatalogueController.java of the component Catalogue Upload. Executing a manipulation of the argument filename can lead to path traversal. The attack can be executed remotely. The exploit has been published and may be used. The researcher claims to have submitted a GHSA on the repository of the project."
+      "date": "2026-11-09T10:17:02.313",
+      "summary": "The `example_dag_decorator` example Dag shipped with Apache Airflow validated an IP address fetched over HTTP with Python's `ipaddress` module and then placed it into a shell command. `ipaddress` accepts IPv6 zone identifiers containing arbitrary characters, so when example Dags are loaded (`load_examples` enabled), a user who can trigger that Dag with a custom `url` parameter could point it at a server whose response injects shell commands run on the worker. This is an incomplete fix for CVE-2025-54941; users who upgraded for CVE-2025-54941 should upgrade again. Users are advised to upgrade to apache-airflow 3.4.0 or later, or to disable example Dags (`load_examples = False`), which is recommended for production."
     },
     {
-      "id": "CVE-2026-124328",
-      "title": "CVE-2026-124328",
+      "id": "CVE-2026-107474",
+      "title": "CVE-2026-107474",
       "source": "NIST NVD",
-      "date": "2026-11-08T11:16:34.420",
-      "summary": "A vulnerability has been found in FlowCI flow-core-x up to 1.23.49. The affected element is the function ConditionManagerImpl.run of the file core/src/main/java/com/flowci/core/common/manager/ConditionManagerImpl.java of the component Groovy Script Evaluation. The manipulation of the argument condition leads to code injection. The attack is possible to be carried out remotely. The exploit has been disclosed to the public and may be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-11-09T10:17:02.820",
+      "summary": "The Apache Airflow connections API did not mask the apprise provider's `config` connection extra, which can embed notification-service credentials. A user with permission to read connections could retrieve it in cleartext, although Airflow 3 treats connection credentials as write-only.\n\nUsers are advised to upgrade to apache-airflow 3.4.0 or later. Airflow 2.x is also affected; Airflow 2 has reached end of life and will not receive a fix, so Airflow 2 users should upgrade to Apache Airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124329",
-      "title": "CVE-2026-124329",
+      "id": "CVE-2026-111395",
+      "title": "CVE-2026-111395",
       "source": "NIST NVD",
-      "date": "2026-11-08T12:17:48.440",
-      "summary": "A vulnerability was found in FlowCI flow-core-x up to 1.23.49. The impacted element is the function FileHelper.unzip of the file common/src/main/java/com/flowci/common/helper/FileHelper.java. The manipulation results in path traversal. The attack may be performed from remote. A high complexity level is associated with this attack. The exploitability is regarded as difficult. The exploit has been made public and could be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-11-09T10:17:02.980",
+      "summary": "Apache Airflow did not reject reserved serialization keys inside a Dag run's `conf`. A user allowed to trigger a Dag that uses a deadline alert with an asynchronous callback could pass a `conf` that, once the deadline was missed, either crashed the scheduler repeatedly or was rebuilt into objects inside the Triggerer. Users are advised to upgrade to apache-airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124330",
-      "title": "CVE-2026-124330",
+      "id": "CVE-2026-111403",
+      "title": "CVE-2026-111403",
       "source": "NIST NVD",
-      "date": "2026-11-08T13:16:33.400",
-      "summary": "A vulnerability was determined in FlowCI flow-core-x up to 1.23.49. This affects the function exist/save/read/remove of the file store/src/main/java/com/flowci/store/LocalFileManager.java of the component LocalFileManager. This manipulation of the argument fileName causes path traversal. It is possible to initiate the attack remotely. A high degree of complexity is needed for the attack. The exploitability is reported as difficult. The exploit has been publicly disclosed and may be utilized. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-11-09T10:17:03.140",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Inventory WP Inventory Manager wp-inventory-manager allows Reflected XSS.This issue affects WP Inventory Manager: from n/a through 2.5.9."
     },
     {
-      "id": "CVE-2026-124331",
-      "title": "CVE-2026-124331",
+      "id": "CVE-2026-111421",
+      "title": "CVE-2026-111421",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:07.720",
-      "summary": "A vulnerability was identified in Jinher OA C6. This impacts an unknown function of the file /C6/JHSoft.Web.Project/OfficeReadOnly/ProjectAfficheManage.aspx. Such manipulation of the argument ProjID leads to sql injection. It is possible to launch the attack remotely. The exploit is publicly available and might be used. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-11-09T10:17:03.773",
+      "summary": "Apache Airflow's Task Execution API stored XCom values written by a task without the reserved-key check applied elsewhere, so a Dag author's task could write an XCom that, when a user later viewed it through the API with deserialization enabled, made the API server instantiate classes from the `airflow.*` namespace with arguments the Dag author chose. This is an incomplete fix for CVE-2026-59242: users who applied that fix in apache-airflow 3.3.1 remain affected through this route and should upgrade to apache-airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124424",
-      "title": "CVE-2026-124424",
+      "id": "CVE-2026-111452",
+      "title": "CVE-2026-111452",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:07.930",
-      "summary": "WWBN AVideo contains a path traversal vulnerability in plugin/AI/receiveAsync.json.php that allows holders of any valid AI token to write arbitrary .vtt files by injecting traversal sequences into the unsanitized response[lang] parameter. Attackers can send a type=translation request with a crafted lang value to plant attacker-controlled content in the webroot or overwrite other users' subtitle files."
+      "date": "2026-11-09T10:17:03.947",
+      "summary": "Apache Airflow's secrets masker matched sensitive key names only in their snake_case form, so values stored under camelCase keys such as `privateKey`, `connectionString`, `webhookUrl` or `accessKey` — for example in a Connection's extra or a Variable — were not redacted in task logs, rendered template fields or API responses. A user who can read task logs or rendered templates, but is not meant to see those credentials, could read them in cleartext. Users are advised to upgrade to apache-airflow 3.4.0 or later. Airflow 2.x is also affected; Airflow 2 has reached end of life and will not receive a fix, so Airflow 2 users should upgrade to Apache Airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124425",
-      "title": "CVE-2026-124425",
+      "id": "CVE-2026-111453",
+      "title": "CVE-2026-111453",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:08.120",
-      "summary": "Parse Server 8.6.109 before 8.6.116 and 9.10.6-alpha.1 before 9.10.7-alpha.2 contains an information disclosure vulnerability in which create or update responses mark fields as deleted based on stored values the caller cannot read. Attackers with write but not read access to an object can inspect these markers to infer whether protected fields are set."
+      "date": "2026-11-09T10:17:04.787",
+      "summary": "Apache Airflow's API endpoint for deleting an asset's queued events checked Dag edit permission against the `dag_id` query parameter, but deleted the queued events of every Dag the caller could read. An authenticated user with edit permission on one Dag and read access to others could suppress asset-triggered runs of Dags they cannot edit. This is an incomplete fix for CVE-2026-75157: users who upgraded to apache-airflow 3.3.2 for that fix are still affected and should upgrade to apache-airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124426",
-      "title": "CVE-2026-124426",
+      "id": "CVE-2026-111454",
+      "title": "CVE-2026-111454",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:08.350",
-      "summary": "Craft CMS from 5.0.0 before 5.11.2 contains an authorization bypass vulnerability that allows unauthenticated attackers to read content from sites outside a GraphQL schema's Sites scope. Attackers can send a POST request to /actions/graphql/api selecting the localized field without the siteId argument to disclose out-of-scope site content."
+      "date": "2026-11-09T10:17:04.950",
+      "summary": "Apache Airflow's asset API endpoints returned the IDs of Dags that are scheduled on, produce, or consume an asset without checking whether the caller may read those Dags. An authenticated user with asset read access could learn the IDs of Dags they are not authorized to see. Users are advised to upgrade to apache-airflow 3.4.0 or later. Airflow 2.x is also affected; Airflow 2 has reached end of life and will not receive a fix, so Airflow 2 users should upgrade to Apache Airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124427",
-      "title": "CVE-2026-124427",
+      "id": "CVE-2026-111455",
+      "title": "CVE-2026-111455",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:08.517",
-      "summary": "Craft CMS from 5.0.0 before 5.11.2 contains an authorization bypass vulnerability that allows anonymous GraphQL clients to read out-of-scope section entries via prev/next fields. Attackers can chain next hops from one visible in-scope entry to enumerate entries and read titles, slugs, and custom-field content from withheld sections."
+      "date": "2026-11-09T10:17:05.133",
+      "summary": "Apache Airflow's asynchronous connection test checked permissions when the test was queued — only create permission when the connection ID did not exist yet — but, when the test completed with `commit_on_success`, wrote the tested connection under that ID. A user allowed to create but not edit connections could overwrite a connection someone else had created in the meantime. Only deployments that enable the non-default `[core] test_connection` setting are affected. Users are advised to upgrade to apache-airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124428",
-      "title": "CVE-2026-124428",
+      "id": "CVE-2026-113504",
+      "title": "CVE-2026-113504",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:08.677",
-      "summary": "Craft CMS from 5.7.0 before 5.11.2 contains an arbitrary file read vulnerability that allows authenticated control panel users to read SVG files by posting arbitrary paths to the app/icon-svg endpoint. Attackers can supply aliases or absolute paths, which are resolved without permission checks, to read any SVG-content file readable by the PHP process, including files outside the Craft installation."
+      "date": "2026-11-09T10:17:05.303",
+      "summary": "Apache Airflow's secrets masker stopped descending into nested structures after five levels, so a secret registered with the masker — for example a Connection password or a Variable value — that appeared more than five containers deep under non-sensitive keys was shown in cleartext in task logs and rendered template fields. A user who can read task logs or rendered templates, but is not meant to see those secrets, could read them. Users are advised to upgrade to apache-airflow 3.4.0 or later. Airflow 2.x is also affected; Airflow 2 has reached end of life and will not receive a fix, so Airflow 2 users should upgrade to Apache Airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124429",
-      "title": "CVE-2026-124429",
+      "id": "CVE-2026-113508",
+      "title": "CVE-2026-113508",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:08.833",
-      "summary": "Craft CMS from 5.0.0 before 5.11.2 contains a privilege escalation vulnerability that allows unauthenticated public registrants to reclaim deactivated non-admin accounts while retaining their direct permissions. Attackers can register using a deactivated account, set a new password, and inherit permissions stored in userpermissions_users, enabling privileged account takeover when email verification is disabled."
+      "date": "2026-11-09T10:17:05.463",
+      "summary": "Apache Airflow's logout endpoint attempted to revoke the presented token on the server, but any failure during revocation was silently ignored and logout still reported success. When the auth manager redirects logout to an external logout URL (for example the FAB or Keycloak auth managers), server-side revocation is the only thing that invalidates the Airflow token; it failed on database errors and, reliably, for tokens from an external issuer accepted via `[api_auth] trusted_jwks_url` whose token identifier is longer than 32 characters. Anyone holding a copy of a user's token from before logout could keep using it against the Airflow API until it expired. Users are advised to upgrade to apache-airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124430",
-      "title": "CVE-2026-124430",
+      "id": "CVE-2026-119483",
+      "title": "CVE-2026-119483",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:08.990",
-      "summary": "Craft CMS from 5.10.0 before 5.11.2 contains a remote code execution vulnerability that allows non-administrator control panel users to obtain HMAC-signed Twig templates via the app/render-elements endpoint. Attackers can submit the signed templated returnUrl as the login redirect parameter, triggering unsandboxed renderObjectTemplate() evaluation and executing OS commands as the PHP worker."
+      "date": "2026-11-09T10:17:05.627",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in 10Web Form Maker by 10Web form-maker allows Stored XSS.This issue affects Form Maker by 10Web: from n/a through 1.15.50."
     },
     {
-      "id": "CVE-2026-124431",
-      "title": "CVE-2026-124431",
+      "id": "CVE-2026-119497",
+      "title": "CVE-2026-119497",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:09.147",
-      "summary": "Craft CMS from 5.10.0 before 5.11.2 contains an authorization bypass vulnerability that allows authenticated low-privileged users to browse volumes they lack permissions for. Attackers can delete a linked asset and use the replacement volume browser modal to view directory structures of all volumes, though not file contents."
+      "date": "2026-11-09T10:17:05.870",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in wpWax Directorist directorist allows Stored XSS.This issue affects Directorist: from n/a through 8.10.6."
     },
     {
-      "id": "CVE-2026-124432",
-      "title": "CVE-2026-124432",
+      "id": "CVE-2026-119503",
+      "title": "CVE-2026-119503",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:09.297",
-      "summary": "phpMyFAQ 4.1.9 before 4.1.11 and 4.2.0 pre-releases before 4.2.0-beta.3 contain an account enumeration vulnerability in the unauthenticated POST /api/webauthn/prepare-login endpoint, which returns stable stored credential IDs for passkey-registered accounts but an md5(time())-derived fallback ID otherwise. Unauthenticated attackers can compare allowCredentials IDs from requests sent more than one second apart, without rate limiting, to identify existing passkey-registered accounts and their credential IDs."
+      "date": "2026-11-09T10:17:06.107",
+      "summary": "Improper Neutralization of Script-Related HTML Tags in a Web Page (Basic XSS) vulnerability in Welcart Welcart e-Commerce usc-e-shop allows Code Injection.This issue affects Welcart e-Commerce: from n/a through 2.12.6."
     },
     {
-      "id": "CVE-2026-124433",
-      "title": "CVE-2026-124433",
+      "id": "CVE-2026-119504",
+      "title": "CVE-2026-119504",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:09.487",
-      "summary": "phpMyFAQ before 4.1.11 contains an insufficient authorization vulnerability that allows delegated administrators holding only GROUP_DELETE permission to delete higher-privileged groups. Attackers can submit a target group_list_select value to /admin/group/confirm and then /admin/group/delete to remove privileged groups, their memberships, and permission mappings."
+      "date": "2026-11-09T10:17:06.340",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in DynamiApps Frontend Admin by DynamiApps acf-frontend-form-element allows Stored XSS.This issue affects Frontend Admin by DynamiApps: from n/a through 3.30.1."
     },
     {
-      "id": "CVE-2026-124434",
-      "title": "CVE-2026-124434",
+      "id": "CVE-2026-119505",
+      "title": "CVE-2026-119505",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:09.663",
-      "summary": "Grav Lightbox Gallery plugin 1.1.0 before 1.3.2 on Grav 2.x calls any medium method named in image, thumb or thumb_options shortcode values without core's allowed media action check. A page editor can chain addMetaFile with value, toYaml or toJson to read server-readable YAML files, such as account password hashes, 2FA secrets and API keys, into a publicly viewable page."
+      "date": "2026-11-09T10:17:06.563",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Welcart Welcart e-Commerce usc-e-shop allows Stored XSS.This issue affects Welcart e-Commerce: from n/a through 2.12.6."
     },
     {
-      "id": "CVE-2026-124435",
-      "title": "CVE-2026-124435",
+      "id": "CVE-2026-119514",
+      "title": "CVE-2026-119514",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:09.837",
-      "summary": "OpenRemote before 1.32.2 contains a stored cross-site scripting vulnerability that allows authenticated users with write:admin permissions to upload HTML or SVG files containing JavaScript via the Manager configuration file upload endpoint. Attackers can lure victims to the unauthenticated image retrieval endpoint, which serves files as text/html or image/svg+xml, executing scripts within the application's origin."
+      "date": "2026-11-09T10:17:06.787",
+      "summary": "Incorrect Privilege Assignment vulnerability in Webful Creations RepairBuddy computer-repair-shop allows Privilege Escalation.This issue affects RepairBuddy: from n/a through 4.1234."
     },
     {
-      "id": "CVE-2026-124436",
-      "title": "CVE-2026-124436",
+      "id": "CVE-2026-121760",
+      "title": "CVE-2026-121760",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.000",
-      "summary": "OpenRemote before 1.32.2 contains an improper authorization vulnerability that allows realm administrators to access and modify global resources by calling admin endpoints lacking super administrator checks. Attackers can change the global keycloakUrl via /configuration/manager to redirect other realms' console authentication for credential phishing, inject CSS, replace map tiles, and delete logs."
+      "date": "2026-11-09T10:17:07.020",
+      "summary": "Missing Authorization vulnerability in weDevs weDocs wedocs allows Exploiting Incorrectly Configured Access Control Security Levels.This issue affects weDocs: from n/a through 2.6.1."
     },
     {
-      "id": "CVE-2026-124437",
-      "title": "CVE-2026-124437",
+      "id": "CVE-2026-121763",
+      "title": "CVE-2026-121763",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.163",
-      "summary": "Scriban before 7.5.3 contains a resource exhaustion vulnerability that allows untrusted template authors to exhaust memory and CPU because builtins like math.format, regex.replace and string.escape skip the LimitToString allocation guard. Attackers can submit small templates using huge format precision specifiers, shared-structure array comparison, BigInteger multiplication or exponential function recursion that ignore LoopLimit and CancellationToken, crashing or stalling multi-tenant hosts."
+      "date": "2026-11-09T10:17:07.240",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WPMU DEV Hummingbird hummingbird-performance allows Stored XSS.This issue affects Hummingbird: from n/a through 3.21.2."
     },
     {
-      "id": "CVE-2026-124438",
-      "title": "CVE-2026-124438",
+      "id": "CVE-2026-121764",
+      "title": "CVE-2026-121764",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.320",
-      "summary": "Scriban before 7.5.2 contains an information disclosure and object manipulation vulnerability that allows template authors to access .NET internals of function values through reflection member accessors. Attackers can use array.map to read Target, Method, or ReturnType on imported delegates, exposing and overwriting service properties, captured closure secrets, and assembly paths."
+      "date": "2026-11-09T10:17:07.483",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in FolioVision FV Flowplayer Video Player fv-wordpress-flowplayer allows Stored XSS.This issue affects FV Flowplayer Video Player: from n/a through 7.5.56.7212."
     },
     {
-      "id": "CVE-2026-124439",
-      "title": "CVE-2026-124439",
+      "id": "CVE-2026-121780",
+      "title": "CVE-2026-121780",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.470",
-      "summary": "Scriban and Scriban.Signed before 7.5.3 contain uncontrolled recursion flaws in which postfix member, indexer, and call chains bypass ExpressionDepthLimit, array comparison lacks depth and cycle checks, and object.eval bypasses RecursiveLimit. Attackers who can supply templates can trigger an uncatchable StackOverflowException that terminates the host process."
+      "date": "2026-11-09T10:17:07.727",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Gijo Varghese Flying Images nazy-load allows Stored XSS.This issue affects Flying Images: from n/a through 2.4.15."
     },
     {
-      "id": "CVE-2026-124440",
-      "title": "CVE-2026-124440",
+      "id": "CVE-2026-123463",
+      "title": "CVE-2026-123463",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.633",
-      "summary": "Kyverno from 1.19.1 before 1.19.2 contains an authorization bypass vulnerability in the apiCall namespace clamp that allows namespace tenants to issue cross-namespace and cluster-scoped API requests by appending malformed percent-escapes to urlPath. Attackers can create namespaced Policies whose apiCall runs as the admission-controller ServiceAccount to read other namespaces' resources and create mutating webhooks, escalating to cluster admin."
+      "date": "2026-11-09T10:17:07.953",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in WP Wham Checkout Files Upload for WooCommerce checkout-files-upload-woocommerce allows Stored XSS.This issue affects Checkout Files Upload for WooCommerce: from n/a through 2.4.0."
     },
     {
-      "id": "CVE-2026-124441",
-      "title": "CVE-2026-124441",
+      "id": "CVE-2026-123465",
+      "title": "CVE-2026-123465",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.800",
-      "summary": "Kyverno before 1.19.2 contains an authorization bypass vulnerability that allows namespaced tenants to generate any resource kind in any namespace by templating the generate rule's kind and namespace with variables. Attackers can create a Policy and trigger ConfigMap in their own namespace, causing the privileged background-controller to write NetworkPolicies or RoleBindings into victim or kube-system namespaces."
+      "date": "2026-11-09T10:17:08.180",
+      "summary": "Exposure of Sensitive System Information to an Unauthorized Control Sphere vulnerability in myCred myCred mycred allows Retrieve Embedded Sensitive Data.This issue affects myCred: from n/a through 4.0.2."
     },
     {
-      "id": "CVE-2026-124442",
-      "title": "CVE-2026-124442",
+      "id": "CVE-2026-123484",
+      "title": "CVE-2026-123484",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:10.957",
-      "summary": "AzuraCast before 0.24.0 contains a server-side request forgery vulnerability that allows users with station WebHooks permission to bypass the UserUrlFilter SSRF guard through HTTP redirects. Attackers can configure Mastodon, Telegram, GroupMe, or RadioReg webhooks pointing to a redirecting URL, causing the Guzzle client to reach internal services and expose responses via test logs."
+      "date": "2026-11-09T10:17:08.403",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Crocoblock JetFormBuilder jetformbuilder allows DOM-Based XSS.This issue affects JetFormBuilder: from n/a through 3.6.8."
     },
     {
-      "id": "CVE-2026-124443",
-      "title": "CVE-2026-124443",
+      "id": "CVE-2026-124586",
+      "title": "CVE-2026-124586",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:11.133",
-      "summary": "Frappe Framework before 15.121.1 and 16.x before 16.35.0 contains a broken access control vulnerability in File list and report queries that fails to restrict private file records to authorized users. Authenticated users can query File list or report views to obtain metadata of private files they are not permitted to access."
+      "date": "2026-11-09T10:17:08.637",
+      "summary": "A vulnerability was determined in Tencent RapidJSON 1.1.0. Impacted is the function GetCachedPowerByIndex in the library include/rapidjson/internal/diyfp.h. This manipulation of the argument decimalPosition causes out-of-bounds read. It is possible to initiate the attack remotely. The exploit has been publicly disclosed and may be utilized. The project was informed of the problem early through an issue report but has not responded yet."
     },
     {
-      "id": "CVE-2026-124444",
-      "title": "CVE-2026-124444",
+      "id": "CVE-2026-124587",
+      "title": "CVE-2026-124587",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:11.310",
-      "summary": "OpenEMR before 8.4.0 contains a mass assignment vulnerability in the patient portal OnsiteDocument query API that lets request parameters set bitwise criteria filters whose values are placed unquoted into the SQL WHERE clause. Authenticated patient portal users can inject SQL via parameters such as Id_BitwiseAnd to read any database table, including other patients' records and staff password hashes."
+      "date": "2026-11-09T10:17:08.950",
+      "summary": "A vulnerability was identified in elizaOS eliza 2.0.3-beta.7. The affected element is an unknown function of the file packages/app/platforms/electrobun/src/lifecycle/api-base-owner.ts of the component HTTP Server. Such manipulation leads to information disclosure. It is possible to launch the attack remotely. The exploit is publicly available and might be used. The name of the patch is cf6fa193017e70884e01c5bb7890f74b6b2b79d2. A patch should be applied to remediate this issue."
     },
     {
-      "id": "CVE-2026-124445",
-      "title": "CVE-2026-124445",
+      "id": "CVE-2026-124588",
+      "title": "CVE-2026-124588",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:11.487",
-      "summary": "OpenEMR from 7.0.1 before 8.4.0 contains a flaw in src/Common/Auth/OneTimeAuth.php that ignores the enforce_onetime_use and max_access_count flags, never revokes consumed service_auth tokens, and checks login_pin without rate limiting or strict comparison. Attackers holding a captured token can replay it or brute-force the PIN to open patient-portal sessions exposing PHI."
+      "date": "2026-11-09T10:17:09.240",
+      "summary": "A security flaw has been discovered in huggingface finetrainers 0.1.0/0.2.0. The impacted element is the function resolve_component_cls of the file finetrainers/utils/model.py of the component Model Index Handler. Performing a manipulation of the argument Library results in code injection. The attack can be initiated remotely. The exploit has been released to the public and may be used for attacks. The project was informed of the problem early through an issue report but has not responded yet."
     },
     {
-      "id": "CVE-2026-124446",
-      "title": "CVE-2026-124446",
+      "id": "CVE-2026-124589",
+      "title": "CVE-2026-124589",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:11.650",
-      "summary": "OpenEMR before 8.3.0 contains a path traversal vulnerability in the FaxSMS module's RCFaxClient and SignalWireClient disposeDocument functions that allows authenticated low-privilege users to read and overwrite arbitrary files via the unsanitized file_path parameter. Attackers can request action=download to retrieve cleartext files like sqlconf.php database credentials and keys, or use action=setup to overwrite web-server-writable files with ciphertext."
+      "date": "2026-11-09T10:17:09.540",
+      "summary": "A weakness has been identified in lxtGH OMG-Seg up to f3b26b609bae919760cd3ccf09c36179bb8624a0. This affects the function load_state_dict_into_model of the file omg_llava/xtuner/utils/handle_moe_load_and_save.py of the component MoE Shard Checkpoint Loader. Executing a manipulation of the argument weight_map can lead to path traversal. The attack can be launched remotely. The exploit has been made available to the public and could be used for attacks. This product does not use versioning. This is why information about affected and unaffected releases are unavailable. The project was informed of the problem early through an issue report but has not responded yet."
     },
     {
-      "id": "CVE-2026-124447",
-      "title": "CVE-2026-124447",
+      "id": "CVE-2026-124637",
+      "title": "CVE-2026-124637",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:11.803",
-      "summary": "OpenEMR before 8.3.0 contains an insecure direct object reference vulnerability in OnsitePortalActivityController::Update() that checks the request's patientId instead of the stored record's owner. Authenticated portal patients can send PUT requests to the onsiteportalactivity API with another patient's activity id and their own patientId to disclose tableArgs and checksum data, overwrite narratives and status, and take ownership of the record."
+      "date": "2026-11-09T10:17:09.827",
+      "summary": "A stored Cross-Site Scripting (XSS) vulnerability was identified in the profile editing form, in the parameters: cliNom and cliCognoms, in a request to https://www.luxorgymtarrega.com/dadespersonals/modificarClient/ID. User-provided data is neither validated nor escaped before being displayed in the HTML response and stored in the database, allowing arbitrary JavaScript code to be executed in the victim’s browser."
     },
     {
-      "id": "CVE-2026-124448",
-      "title": "CVE-2026-124448",
+      "id": "CVE-2026-40913",
+      "title": "CVE-2026-40913",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:11.960",
-      "summary": "OpenEMR before 8.3.0 contains a stored cross-site scripting vulnerability in the CCDA/CCD preview stylesheets, where cda.xsl copies event-handler attributes whose values evade a character denylist and ccd.xsl copies table-cell attributes unsanitized into preview HTML. Authenticated users can upload a crafted CCDA/CCD document with onmouseover, onclick, or onfocus handlers to execute script in a clinician's session when previewed."
+      "date": "2026-11-09T10:17:10.033",
+      "summary": "Apache Airflow's public Import Errors API returns the raw parse-failure stack trace to any user with the `ImportError.can_read` permission when the failing file has no registered DAG. This happens when a file fails to parse before any DAG is defined, or when all of its previously registered DAGs are removed but the parse error remains. Users who should not see that file's details can read stack traces that may expose file paths and code.\n\nUsers are advised to upgrade to Apache Airflow 3.4.0 or later, which restricts these stack traces to users with the new `IMPORT_ERRORS_ALL` permission."
     },
     {
-      "id": "CVE-2026-124449",
-      "title": "CVE-2026-124449",
+      "id": "CVE-2026-50204",
+      "title": "CVE-2026-50204",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:12.110",
-      "summary": "OpenEMR before 8.4.0 contains a missing authorization vulnerability in FHIR Media/:uuid and QuestionnaireResponse read routes that skip ACL checks. Non-patient API tokens lacking OpenEMR ACLs can request resources by uuid, bypassing compartment filtering to read any patient's documents and questionnaire responses."
+      "date": "2026-11-09T10:17:10.207",
+      "summary": "Apache Airflow's audit log stored Connection and Variable secret values in cleartext in the `Log.extra` column because the secrets masker matched only on configured sensitive key names. An authenticated low-privilege user with read access to the event-log / audit API — with no prior access to the affected connection or variable — could read those rows and recover the credentials verbatim. Users should upgrade to apache-airflow 3.4.0 or later, which masks these values and restricts the affected audit rows to authorized users. Airflow 2.x is also affected; Airflow 2 has reached end of life and will not receive a fix, so Airflow 2 users should upgrade to Apache Airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124450",
-      "title": "CVE-2026-124450",
+      "id": "CVE-2026-54863",
+      "title": "CVE-2026-54863",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:12.260",
-      "summary": "OpenEMR before 8.3.0 contains a broken access control and path traversal vulnerability in the fax/sms module disposeDocument action via an unvalidated file_path parameter. Authenticated low-privilege users can read sqlconf.php to recover database credentials and write arbitrary files as the web user, enabling remote code execution."
+      "date": "2026-11-09T10:17:10.647",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in Mamunur Rashid Review Schema review-schema allows Reflected XSS.This issue affects Review Schema: from n/a through 3.1.4."
     },
     {
-      "id": "CVE-2026-124451",
-      "title": "CVE-2026-124451",
+      "id": "CVE-2026-66675",
+      "title": "CVE-2026-66675",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:12.477",
-      "summary": "OpenEMR before 8.4.0 contains an authorization bypass vulnerability in its SMART on FHIR implementation because checkUserHasAccessToPatient() in BearerTokenAuthorizationStrategy.php unconditionally returns true. Authenticated users or malicious SMART apps can manipulate token launch context to bind requests to arbitrary patient UUIDs, gaining unauthorized read/write access to other patients' FHIR resources."
+      "date": "2026-11-09T10:17:10.887",
+      "summary": "Improper Neutralization of Input During Web Page Generation ('Cross-site Scripting') vulnerability in StylemixThemes Motors motors-car-dealership-classified-listings allows Stored XSS.This issue affects Motors: from n/a through 1.4.128."
     },
     {
-      "id": "CVE-2026-124452",
-      "title": "CVE-2026-124452",
+      "id": "CVE-2026-68982",
+      "title": "CVE-2026-68982",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:12.637",
-      "summary": "OpenEMR before 8.3.0 contains a stored cross-site scripting vulnerability in interface/forms/eye_mag/report.php that allows authenticated users to inject scripts by adding unescaped document notes. Attackers with document-note write access can store malicious JavaScript in a retina document note that executes when clinicians generate the Eye Exam patient report, exposing session cookies."
+      "date": "2026-11-09T10:17:11.123",
+      "summary": "Apache Airflow's CeleryExecutor ran callback workloads (`ExecuteCallback`, used for deadline-alert callbacks) without validating the workload's authentication token. Anyone able to write to the Celery broker could enqueue a forged callback and execute arbitrary code on every CeleryExecutor worker, without Airflow credentials. Deployments using the CeleryExecutor are affected.\n\nUsers are advised to upgrade to apache-airflow 3.4.0 or later, in which the worker claims the callback through the Execution API, validating the token, before running it."
     },
     {
-      "id": "CVE-2026-124453",
-      "title": "CVE-2026-124453",
+      "id": "CVE-2026-76185",
+      "title": "CVE-2026-76185",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:12.790",
-      "summary": "OpenEMR before 8.3.0 contains an insecure direct object reference vulnerability in portal/lib/persist.php that allows authenticated portal patients to write settings for other patients. Attackers can modify the setting_patient parameter in a JSON POST request to another patient's PID, altering that patient's portal settings such as the portal theme."
+      "date": "2026-11-09T10:17:11.297",
+      "summary": "Apache Airflow's Task SDK secret cache built its keys from the team name and secret id with unescaped `_` delimiters, so different (team, secret id) pairs could collide. In multi-team deployments a Dag author could read another team's Variable or Connection value by crafting a colliding secret id. Only deployments with both `core.multi_team = True` and `secrets.use_cache = True` are affected.\n\nUsers are advised to upgrade to apache-airflow 3.4.0 or later. Deployments that cannot upgrade can set `secrets.use_cache = False`."
     },
     {
-      "id": "CVE-2026-124455",
-      "title": "CVE-2026-124455",
+      "id": "CVE-2026-82337",
+      "title": "CVE-2026-82337",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:12.943",
-      "summary": "OpenEMR before 8.3.0 contains an insecure direct object reference vulnerability in OnsiteDocumentController::Query() that allows authenticated portal patients to read other patients' documents by overriding Pid_Equals criteria. Attackers can supply Pid_Equals, Pid_GreaterThan, or Pid_In request parameters to the onsitedocuments API to retrieve signed consent forms, signatures, and PHI of any patient."
+      "date": "2026-11-09T10:17:11.467",
+      "summary": "Apache Airflow rebuilt deadline alert fields through generic deserialization, which imports and instantiates the class named in the serialized Dag, in the scheduler and API server. A Dag author could cause classes within Airflow's deserialization allow list to be constructed in those processes with arguments they control. Deployments whose Dags use deadline alerts are affected.\n\nThis is an incomplete fix of CVE-2026-45360, which only hardened the `reference` field; deployments that applied that fix remain affected through the `callback` and `interval` fields.\n\nUsers of apache-airflow are recommended to upgrade to 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124456",
-      "title": "CVE-2026-124456",
+      "id": "CVE-2026-82436",
+      "title": "CVE-2026-82436",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:13.090",
-      "summary": "OpenEMR before 8.3.0 contains missing authorization and insecure direct object reference vulnerabilities in the oe-module-prior-authorizations module that allow authenticated low-privilege users to access and modify other patients' records. Attackers can request public/reports/list_report.php to view all patients' names, MRNs, insurance and prior-auth data, or submit arbitrary id values to public/index.php to overwrite other patients' prior-authorization records."
+      "date": "2026-11-09T10:17:11.633",
+      "summary": "Description\n\n`DefaultStateSerializer`, used to persist and restore stateful bolt checkpoints, configured Kryo with class\nregistration disabled and an instantiation strategy that constructs objects without invoking their\nconstructors, then deserialized whatever bytes the state store returned. A party able to write to the\ntopology's keyspace in the state store, for example a co-tenant of a shared Redis instance or anyone with\nnetwork access to it, could therefore place a serialized object graph that executes code inside the worker\nJVM when the state is restored.\n\nThis requires the Redis-backed state provider, which is not the default. Write access to a state-store key\nis a data-plane privilege; code execution in the worker JVM is not, so the two are not equivalent.\n\nMitigation\n\nUpgrade to 3.1.0, where the state serializer requires registered classes.\n\nNote that this is a behaviour change for existing state: checkpoints written by an affected version may fail\nto restore, and a migration step may be required. Users who cannot upgrade immediately should restrict\nnetwork and credential access to the state store to the cluster itself.\n\nCredit\n\nThe ASF -- found using Claude agents to study"
     },
     {
-      "id": "CVE-2026-124457",
-      "title": "CVE-2026-124457",
+      "id": "CVE-2026-82440",
+      "title": "CVE-2026-82440",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:13.240",
-      "summary": "OpenEMR before 8.3.0 contains a path traversal vulnerability in interface/billing/sl_eob_process.php that allows authenticated users to write and read files by supplying unsanitized eraname values. Attackers without billing privileges can inject ../ sequences to create ERA report .html files anywhere the web user can write and parse arbitrary .edi files echoed into the report."
+      "date": "2026-11-09T10:17:11.797",
+      "summary": "Description\n\nNimbus instantiates the class named by a topology's `topology.scheduler.strategy` when scheduling it. The\nallowlist intended to constrain that choice, `nimbus.scheduler.strategy.class.whitelist`, was treated as\n\"allow any class\" when unset, and it had no entry in the shipped `defaults.yaml`, so unset was the shipped\nstate. An authenticated submitter could therefore cause Nimbus to instantiate any class on the Nimbus\nclasspath that has a no-argument constructor.\n\nStorm's own production artifacts contain classes with side effects suitable for this: instantiating\n`org.apache.storm.testing.InProcessZookeeper` starts a ZooKeeper server with its own threads and sockets\nand nothing closes it, and `org.apache.storm.LocalCluster` behaves similarly. Repeated submissions\ntherefore consume threads, sockets and memory in the most privileged daemon in the cluster.\n\nMitigation\n\nUpgrade to 3.1.0, where an unset allowlist means the strategies shipped with Storm rather than any class.\n\nNote that this is a behaviour change: a cluster running an out-of-tree scheduler strategy without an\nexplicit allowlist will have those topologies refused until the class is added to\n`nimbus.scheduler.str"
     },
     {
-      "id": "CVE-2026-124458",
-      "title": "CVE-2026-124458",
+      "id": "CVE-2026-86468",
+      "title": "CVE-2026-86468",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:13.390",
-      "summary": "OpenEMR before 8.4.0 contains an authorization bypass vulnerability in the FHIR GET /fhir/Person/:uuid route that allows patient-portal users to read any staff member's demographics by bypassing compartment enforcement. Attackers holding a patient SMART token with patient/Person.read can harvest staff Person UUIDs from Appointment references to retrieve names, home addresses, phone numbers, and personal emails."
+      "date": "2026-11-09T10:17:11.963",
+      "summary": "Apache Airflow's CLI records its arguments in the audit log but masks secrets by argument position, so some supported command shapes leave secrets in cleartext, for example a trailing `--description` on Variable commands, `--conn-extra`, and the inline `--password` of `airflow keycloak-auth-manager` commands. A user who can read audit events but is denied Variable and Connection access can retrieve those values through the event-log API.\n\nUsers of apache-airflow are recommended to upgrade to 3.4.0 or later. Audit-log entries written before the upgrade keep the cleartext values: purge the affected entries and rotate the secrets they contain. Airflow 2.x is also affected; Airflow 2 has reached end of life and will not receive a fix, so Airflow 2 users should upgrade to Apache Airflow 3.4.0 or later."
     },
     {
-      "id": "CVE-2026-124459",
-      "title": "CVE-2026-124459",
+      "id": "CVE-2026-86829",
+      "title": "CVE-2026-86829",
       "source": "NIST NVD",
-      "date": "2026-11-08T14:18:13.550",
-      "summary": "OpenEMR before 8.3.0 contains an insecure direct object reference vulnerability in many encounter-form view and save endpoints that lack patient/encounter ownership checks. Authenticated clinical users can enumerate sequential form id values in requests such as soap/view.php and save.php to read and overwrite other patients' clinical records."
+      "date": "2026-11-09T10:17:13.757",
+      "summary": "Apache Airflow's scheduler fully deserializes XCom values written by task code while evaluating task dependencies. A Dag author, who controls what a task writes to XCom, therefore controls data that is deserialized inside the scheduler process - a context the Airflow security model reserves for code installed by the Deployment Manager, above the worker-scoped execution capability a Dag author is documented to have. Deployments that treat Dag authors as less trusted than Deployment Managers are affected, and the scheduler must be evaluating a task dependency that reads a task-written XCom value. Users of apache-airflow are recommended to upgrade to version 3.4.0 or later, which restricts dependency evaluation to primitive XCom values."
     }
   ]
 }
