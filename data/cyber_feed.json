@@ -1,5 +1,5 @@
 {
-  "generated_at": "2026-11-19T10:31:12.598000+00:00",
+  "generated_at": "2026-11-20T10:12:06.493011+00:00",
   "items": [
     {
       "id": "CVE-2024-10441",
@@ -882,284 +882,284 @@
       "due": "2026-09-25"
     },
     {
-      "id": "CVE-2026-124023",
-      "title": "CVE-2026-124023",
+      "id": "CVE-2023-54423",
+      "title": "CVE-2023-54423",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:10.253",
-      "summary": "Out-of-bounds Read vulnerability in the Guththila XML parser wrapper of Apache Axis2/C. On some malformed XML input the Guththila parser returned a raw input byte in place of an event code, and the AXIOM reader wrapper used that value as an index into a ten-entry lookup table without checking its range, reading heap memory past the end of the table. An unauthenticated client could trigger this by sending a crafted XML request to a server built with Guththila, the default parser, causing the request to be parsed incorrectly or, in some cases, the process to crash. The memory read is not returned to the client. This issue affects Apache Axis2/C: through 2.0.0. The fix is available in commits 23110287924e79d05a5b4712298c355d1f05c606 and f01683ec10e8fddb87279ec9351b3239021223e6 and will be included in the next release."
+      "date": "2026-11-13T10:17:23.227",
+      "summary": "OpenMage magento-lts before 20.2.0 contains a stored cross-site scripting vulnerability because the TinyMCE WYSIWYG editor fails to filter scripts in specially crafted HTML tags. Attackers can inject an img element with a malicious onmouseover attribute to execute scripts in the browsers of users viewing the rendered content."
     },
     {
-      "id": "CVE-2026-124701",
-      "title": "CVE-2026-124701",
+      "id": "CVE-2024-58404",
+      "title": "CVE-2024-58404",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:10.473",
-      "summary": "In Telerik UI for WinForms, versions prior to 2026.4.1111, a deserialization of untrusted data vulnerability exists that allows an attacker to perform unauthorized actions in the context of the affected application."
+      "date": "2026-11-13T10:17:23.447",
+      "summary": "Zipline versions from 3.4.5 before 3.7.10 contain a path traversal vulnerability in the user data export endpoint via the name query parameter. Authenticated attackers can bypass the user id check and use directory traversal sequences to read arbitrary files on the server host."
     },
     {
-      "id": "CVE-2026-124703",
-      "title": "CVE-2026-124703",
+      "id": "CVE-2024-58405",
+      "title": "CVE-2024-58405",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:10.743",
-      "summary": "In Telerik UI for WPF, versions prior to 2026.4.1110, an improper control of code generation vulnerability exists that allows an attacker to execute unauthorized code in the context of the affected application."
+      "date": "2026-11-13T10:17:23.610",
+      "summary": "Zipline through 3.7.9 contains an improper authorization vulnerability in the /api/auth/register endpoint, which enforces invite codes only when user registration is disabled, so registration succeeds without an invite when both invites and user registration are enabled. Unauthenticated attackers can send a direct POST request omitting the invite code to create accounts, view stats, and exhaust storage by uploading many files."
     },
     {
-      "id": "CVE-2026-124704",
-      "title": "CVE-2026-124704",
+      "id": "CVE-2025-71459",
+      "title": "CVE-2025-71459",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:10.923",
-      "summary": "In Telerik UI for WPF, versions prior to 2026.4.1110, a deserialization of untrusted data vulnerability exists that allows an attacker to perform unauthorized actions in the context of the affected application."
+      "date": "2026-11-13T10:17:23.780",
+      "summary": "Zipline through 4.3.2 contains a path traversal vulnerability that allows authenticated uploaders to write files outside the upload directory by supplying traversal sequences in the x-zipline-filename header. Attackers using the local datasource can create or overwrite files writable by the Zipline process, corrupting application data or disrupting service."
     },
     {
-      "id": "CVE-2026-126641",
-      "title": "CVE-2026-126641",
+      "id": "CVE-2025-71460",
+      "title": "CVE-2025-71460",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:11.317",
-      "summary": "A host key verification flaw was found in ansible-pylibssh and in the ansible.netcommon libssh connection plugin. When trust-on-first-use is enabled (host_key_auto_add on the libssh connection plugin, or AutoAddPolicy in ansible-pylibssh), a host that is already present in known_hosts but now presents a different key is accepted without warning. The pylibssh Session.verify_knownhost() method passes the SSH_KNOWN_HOSTS_CHANGED and SSH_KNOWN_HOSTS_OTHER states to the same missing_host_key() policy hook used for unknown hosts, and the bundled AutoAddPolicy/RejectPolicy classes (as well as ansible.netcommon's MyAddPolicy, which is modeled on paramiko's AutoAddPolicy) therefore add the changed key and continue the connection rather than aborting as paramiko's BadHostKeyException path would. As a result the controller authenticates to the substitute host, runs the play there, and appends the new key to known_hosts, which can disclose connection credentials to an attacker performing a machine-in-the-middle attack. Default configurations (host_key_checking enabled, host_key_auto_add unset) are not affected; non-interactive runs fail closed."
+      "date": "2026-11-13T10:17:23.940",
+      "summary": "Zipline before 4.2.1 contains a missing authorization vulnerability in the /api/user/files/transaction endpoint that allows authenticated users to modify other users' files due to absent ownership checks. Attackers who know a target file ID can submit transaction requests to edit or delete files belonging to any user."
     },
     {
-      "id": "CVE-2026-126643",
-      "title": "CVE-2026-126643",
+      "id": "CVE-2025-71461",
+      "title": "CVE-2025-71461",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:11.583",
-      "summary": "A cleartext storage flaw was found in the AAP Gateway Operator. When reconciling an AutomationController, the operator reads the protected resource-server Secret (Secret/<aap-name>-resource-server, key controller_resource_server_secret) and copies its plaintext value into the generated AutomationController custom resource under spec.extra_settings (RESOURCE_SERVER.SECRET_KEY). Although the operator uses no_log to keep the value out of its own logs, serializing it into the custom resource exposes it to any principal able to read the AutomationController CR without permission to read the backing Kubernetes Secret, breaking the expected OpenShift RBAC separation between the two resources. The value may also propagate into Kubernetes API/etcd storage, GitOps and Argo diffs and history, rendered manifests, support bundles, and audit data. The resource-server secret is intended for trusted Gateway-to-Controller service authentication, and its disclosure may allow a user to impersonate a trusted Controller service and reach privileged service-index APIs."
+      "date": "2026-11-13T10:17:24.100",
+      "summary": "Zipline before 4.0.2 contains a predictable filename vulnerability that allows attackers to infer other users' upload filenames by recovering the Math.random generator state. Attackers with five consecutive gfycat-style filenames can reconstruct the random state to predict previous and future filenames until the instance restarts, exposing private uploads."
     },
     {
-      "id": "CVE-2026-126644",
-      "title": "CVE-2026-126644",
+      "id": "CVE-2025-71462",
+      "title": "CVE-2025-71462",
       "source": "NIST NVD",
-      "date": "2026-11-12T11:17:11.770",
-      "summary": "A link-following flaw was found in the authorized_key module of the ansible.posix collection, residual to the fix for CVE-2026-11837. That fix guards only the final path component (os.chown with follow_symlinks=False and O_NOFOLLOW in _safe_open_write()). When an unprivileged local user replaces their ~/.ssh directory with a symlink to a directory they do not own, and an operator subsequently runs the authorized_key task as root (a common provisioning pattern), the module resolves its path operations through the symlink: atomic_move() writes the temporary file in the symlink target and renames it to <target>/authorized_keys, creating or overwriting a file in the attacker-chosen directory, and os.chmod(sshdir, 0o700) follows the symlink and changes the target directory's permissions. The written file is chowned to the unprivileged user, so this is not a privilege escalation, but it allows an attacker to create or overwrite files (for example in /etc/apt/apt.conf.d/, which APT reads regardless of file ownership) to cause integrity and availability impacts."
+      "date": "2026-11-13T10:17:24.250",
+      "summary": "Zipline before 3.7.12 contains a cross-site scripting vulnerability in the login page that allows attackers to execute JavaScript by supplying an unvalidated url parameter. Attackers can craft a login link with a javascript: URI in the url parameter that executes in the victim's browser after login."
     },
     {
-      "id": "CVE-2026-114369",
-      "title": "CVE-2026-114369",
+      "id": "CVE-2025-71463",
+      "title": "CVE-2025-71463",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:19.057",
-      "summary": "Resource exhaustion vulnerability in the Qt Framework QWebSocket and QWebSocketServer classes of the Qt WebSockets module"
+      "date": "2026-11-13T10:17:24.403",
+      "summary": "Scapy before 2.7.0 contains an insecure deserialization vulnerability in the load_session function that allows attackers to execute code by supplying a malicious pickle session file. Attackers can trick users into loading a crafted .pkl.gz file via the -s option or conf.session, executing embedded Python code through __reduce__()."
     },
     {
-      "id": "CVE-2026-124705",
-      "title": "CVE-2026-124705",
+      "id": "CVE-2026-103645",
+      "title": "CVE-2026-103645",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:22.260",
-      "summary": "In Progress® Telerik® UI for .NET MAUI prior to version 16.0.0, an untrusted URL redirection vulnerability in the RadRichTextEditor hyperlink handling and the RadPdfViewer link annotation handling allows an unauthenticated attacker to launch arbitrary operating system protocol handlers with attacker-controlled arguments via a crafted document or PDF link with a non-allowlisted URI scheme that the user opens."
+      "date": "2026-11-13T10:17:24.573",
+      "summary": "An integer overflow vulnerability in the Qt QTextCodec fromUnicode() and toUnicode() functionality of the Qt 5 Core Compatibility APIs module (Qt 6) and the Qt Core module (Qt 5). Only builds where Qt is compiled with ICU support are affected."
     },
     {
-      "id": "CVE-2026-127036",
-      "title": "CVE-2026-127036",
+      "id": "CVE-2026-112181",
+      "title": "CVE-2026-112181",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:22.960",
-      "summary": "Improper neutralization of CRLF sequences ('CRLF injection') vulnerability in ibi WebFOCUS.\n\nThis issue affects WebFOCUS: 9.1, from 9.2 through 7, and from 9.3 through 7."
+      "date": "2026-11-13T10:17:24.907",
+      "summary": "Vulnerability due to inadequate restriction of references to external XML entities in OpenKM Community Edition. The XML processing in FormUtils / LocalEntityResolver does not properly restrict the resolution of external resources. An authenticated remote attacker with the ROLE_USER role can exploit the flaw via a REST request. In the 6.3.x branch, this allows the attacker to trigger HTTP requests under their control (SSRF); in 7.0.3, it allows the attacker to read local files and access internal HTTP resources from the server."
     },
     {
-      "id": "CVE-2026-127046",
-      "title": "CVE-2026-127046",
+      "id": "CVE-2026-115871",
+      "title": "CVE-2026-115871",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:23.130",
-      "summary": "The MISP Modules website component contains an information disclosure vulnerability in the external tools management interface. The /external_tools/list endpoint returned stored API keys (the api_key field) in its JSON response via the ExternalTools model serializer. Additionally, the browser-based edit form pre-populated the API key input field with the stored credential value, exposing it in the DOM.\n\nThe /external_tools/list endpoint is accessible without authentication (the regression tests verify the response for both authenticated and unauthenticated clients), meaning any network-reachable client could retrieve the API keys for all configured external tools. These keys are used by the server to authenticate submissions to external analysis or enrichment services, so their disclosure allows an attacker to impersonate the MISP instance or directly access those external services.\n\nThe vulnerability also affected the edit workflow: the change_config endpoint previously required the API key to be present and non-empty on every save, forcing the key to round-trip through the client. The browser JavaScript stored the key in a reactive state object and updated the in-memory tool list"
+      "date": "2026-11-13T10:17:25.070",
+      "summary": "The WP STAGING – Backups & Restore, Migration & Clone Plugin – Cloud Backups, Scheduled Backups plugin for WordPress is vulnerable to Arbitrary Directory Deletion in all versions up to, and including, 4.19.0. This is due to insufficient path validation in the `cleanStagingDirectory` function, where the `deleteDir` parameter is only stripped of whitespace and double slashes by `sanitizePath()` without removing `..` traversal sequences or enforcing containment within the staging directory, leaving the sole pre-deletion guard as a simple string equality check against the WordPress home path. This makes it possible for authenticated attackers, with administrator-level access and above, to recursively delete arbitrary directories on the server — including `wp-content`, `wp-admin`, or directories outside the WordPress installation on shared hosting — resulting in denial of service or permanent data loss. An attacker must sequence a clone start, cancellation, and restart to drive the `delete_job` cache into the `directory` step before re-cancelling with a manipulated `deleteDir` value supplied via the `wp_ajax_wpstg_cancel_clone` endpoint."
     },
     {
-      "id": "CVE-2026-13764",
-      "title": "CVE-2026-13764",
+      "id": "CVE-2026-116418",
+      "title": "CVE-2026-116418",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:23.753",
-      "summary": "The Masterstudy - Education WordPress Theme theme for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 4.8.151. This is due to missing authorization and nonce validation on the `masterstudy_ms_stm_set_discard_transient` AJAX action. This makes it possible for authenticated attackers, with Subscriber-level access and above, to elevate their privileges to Administrator by setting the `stm_developer_access_token` transient and using the developer access auto-login flow to obtain administrator session cookies."
+      "date": "2026-11-13T10:17:25.253",
+      "summary": "Dell PowerScale InsightIQ, versions 6.3.0 through 6.4.0, contains an Incorrect Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Elevation of privileges."
     },
     {
-      "id": "CVE-2026-15309",
-      "title": "CVE-2026-15309",
+      "id": "CVE-2026-116433",
+      "title": "CVE-2026-116433",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:23.920",
-      "summary": "The CourseCure Courses plugin for WordPress is vulnerable to Privilege Escalation in versions up to, and including, 1.5.1. This is due to a missing capability check in the ajax_save_settings() function, which accepts arbitrary POST parameters and calls update_option() with attacker-controlled keys and values without any authorization verification. This makes it possible for authenticated attackers, with subscriber-level access and above, to elevate their privileges to administrator by setting the default_role WordPress option to 'administrator' and users_can_register to '1', then registering a new account that is automatically granted full administrator access."
+      "date": "2026-11-13T10:17:25.507",
+      "summary": "Dell PowerScale InsightIQ, versions 6.3.0 through 6.4.0, contains a Missing Authorization vulnerability. A low privileged attacker with remote access could potentially exploit this vulnerability, leading to Unauthorized access."
     },
     {
-      "id": "CVE-2026-16135",
-      "title": "CVE-2026-16135",
+      "id": "CVE-2026-116509",
+      "title": "CVE-2026-116509",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:24.087",
-      "summary": "The VibeBP plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.9.9.8.1. This is due to the plugin allowing arbitrary user meta updates through the set_email_notification_settings() function. This makes it possible for authenticated attackers, with Subscriber-level access and above, to grant themselves administrator privileges by updating their own 'wp_capabilities' user meta value."
+      "date": "2026-11-13T10:17:25.623",
+      "summary": "The Quiz and Survey Master (QSM) – Quiz Maker & Survey Maker plugin for WordPress is vulnerable to generic SQL Injection via the 'qpages' parameter in all versions up to, and including, 11.2.9 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with contributor-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. The injected payload survives storage and a published-status check in display_shortcode() because a non-numeric ID causes the isPublished lookup to return an empty string, after which the payload is imploded directly into a WHERE question_id IN() clause via plain string interpolation with no wpdb->prepare() or esc_sql() call."
     },
     {
-      "id": "CVE-2026-19421",
-      "title": "CVE-2026-19421",
+      "id": "CVE-2026-116614",
+      "title": "CVE-2026-116614",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:24.260",
-      "summary": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by a PowerShell injection vulnerability due to insufficient validation of user-supplied TXT record values in Windows DNS operations."
+      "date": "2026-11-13T10:17:25.793",
+      "summary": "The WPMR Google Feed Manager for WooCommerce – Sell on Google Merchant Center & Shopping plugin for WordPress is vulnerable to generic SQL Injection via the 'sourceId' parameter in all versions up to, and including, 2.24.1 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with editor-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. The plugin grants the edit_feeds capability to the Editor role on activation, meaning any Editor-level user satisfies the authorization checks and can exploit this vulnerability."
     },
     {
-      "id": "CVE-2026-2982",
-      "title": "CVE-2026-2982",
+      "id": "CVE-2026-116615",
+      "title": "CVE-2026-116615",
       "source": "NIST NVD",
-      "date": "2026-11-12T12:18:24.393",
-      "summary": "The WP Table Builder – Drag & Drop Table Builder plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'url' parameter in versions up to, and including, 2.1.7 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level permissions and higher, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Exploitation by lower-privileged users requires an administrator to explicitly allow those roles in plugin settings. While it is possible to assign subscriber-level roles with the ability to create tables, such privileges are usually assigned to the more appropriate contributor, author, or editor level roles."
+      "date": "2026-11-13T10:17:25.983",
+      "summary": "The Widget Options – Advanced Conditional Visibility for Gutenberg Blocks & Classic Widgets plugin for WordPress is vulnerable to Code Injection in all versions up to, and including, 4.2.6.1 via the `post_content` parameter. This is due to asymmetric parsing between the save-time strip filter (`widgetopts_strip_logic_from_blocks()`) and the render-time parser (`blockopts_filter_before_display()`): embedding an inner `<!--start_widgetopts` literal inside a JSON key causes the write-side `json_decode` to see a non-`class` key and skip stripping — persisting the payload verbatim to the database — while the render-side `str_replace` reconstitutes the key to `class`, feeding the attacker-controlled `logic` value directly into `@eval`. This makes it possible for authenticated attackers, with Author-level access and above, to inject PHP expressions that execute on every front-end page view, enabling boolean-oracle exfiltration of WordPress site configuration data — including admin email address, default role, and arbitrary `get_option`, `get_user_meta`, and `get_post_meta` values — via the plugin's allowlisted-function sandbox, which escalates to unrestricted code execution if any install"
     },
     {
-      "id": "CVE-2026-110951",
-      "title": "CVE-2026-110951",
+      "id": "CVE-2026-118191",
+      "title": "CVE-2026-118191",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:08.390",
-      "summary": "Weak Password Recovery Mechanism for Forgotten Password vulnerability in Hyper Teknoloji Ltd. Şti. Hyper E-Commerce Infrastructure, Hyper Teknoloji Ltd. Şti. Hyper E-Commerce Infrastructure - dealer integration, and Hyper Teknoloji Ltd. Şti. Hyper E-Commerce Infrastructure - Storefront application and management panel allows Password Recovery Exploitation.\n\nThis issue affects Hyper E-Commerce Infrastructure: before 1.1; Hyper E-Commerce Infrastructure - dealer integration: before 1.2; Hyper E-Commerce Infrastructure - Storefront application and management panel: before 2.1796."
+      "date": "2026-11-13T10:17:26.150",
+      "summary": "The Photo Gallery, Sliders, Proofing and Themes – NextGEN Gallery plugin for WordPress is vulnerable to arbitrary file deletion due to insufficient file path validation in the handle_job function in all versions up to, and including, 4.5.5 This makes it possible for authenticated attackers, with custom-level access and above, to delete arbitrary files on the server, which can easily lead to remote code execution when the right file is deleted (such as wp-config.php). The 'NextGEN Manage gallery' capability required to reach the vulnerable endpoint is granted to Administrators by default but can be delegated to lower-privileged roles via the plugin's Roles screen."
     },
     {
-      "id": "CVE-2026-111552",
-      "title": "CVE-2026-111552",
+      "id": "CVE-2026-118587",
+      "title": "CVE-2026-118587",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:09.637",
-      "summary": "Use of single-factor authentication vulnerability in Hyper Teknoloji Ltd. Şti. Hyper E-Commerce Infrastructure, Hyper Teknoloji Ltd. Şti. Hyper E-Commerce Infrastructure - dealer integration, and Hyper Teknoloji Ltd. Şti. Hyper E-Commerce Infrastructure - Storefront application and management panel allows Authentication Bypass.\n\nThis issue affects Hyper E-Commerce Infrastructure: before 1.1; Hyper E-Commerce Infrastructure - dealer integration: before 1.2; Hyper E-Commerce Infrastructure - Storefront application and management panel: before 2.1796."
+      "date": "2026-11-13T10:17:26.320",
+      "summary": "The PowerPress Podcasting plugin by Blubrry plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'width' parameter in all versions up to, and including, 11.18.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This vulnerability is only exploitable when the site's configured video player is set to html5video, or when the media URL uses a .webm or .ogv extension, as these conditions are required to route the shortcode attributes through the vulnerable powerpressplayer_build_html5video() builder. Successful exploitation additionally requires an action by an editor — the attacker cannot trigger the vulnerability on their own."
     },
     {
-      "id": "CVE-2026-123139",
-      "title": "CVE-2026-123139",
+      "id": "CVE-2026-119077",
+      "title": "CVE-2026-119077",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:11.573",
-      "summary": "Improper verification of the source of a communication channel vulnerability in Opera Neon on macOS and Windows allows a malicious browser extension to take control of the browser by sending commands through MCP Hub to the built-in Browser Operator extension. This issue affects Opera Neon MCP Hub extension: 0.0.1."
+      "date": "2026-11-13T10:17:26.483",
+      "summary": "The ELEX WordPress HelpDesk & Customer Ticketing System plugin for WordPress is vulnerable to PHP Object Injection in all versions up to, and including, 3.3.9 via the 'form (specifically the attacker-controlled ticket_label field inside the url-encoded form string)' parameter parameter. This is due to missing server-side authentication and the absence of a class allowlist on deserialization, with the only guard being a nonce publicly emitted on any page carrying the [wsdesk_support] shortcode. This makes it possible for unauthenticated attackers to execute code on the server. A successful exploit requires a single anonymous GET to any public page carrying the [wsdesk_support] shortcode to harvest the publicly emitted wsdesk_nonce value, after which a single unauthenticated POST completes the attack."
     },
     {
-      "id": "CVE-2026-125285",
-      "title": "CVE-2026-125285",
+      "id": "CVE-2026-120547",
+      "title": "CVE-2026-120547",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:15.003",
-      "summary": "Authentication bypass using an alternate path or channel vulnerability in TIBCO TIBCO Platform’s Self-Hosted Control Plane.\n\nThis issue affects TIBCO Platform’s Self-Hosted Control Plane: from 1 through 1.21."
+      "date": "2026-11-13T10:17:26.650",
+      "summary": "The CF7 Apps – Honeypot, Database, Redirection, Webhook, and Addons for Contact Form 7 plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'wpcf7-form (CF7 form body; the [honeypot ...] tag value)' parameter in all versions up to, and including, 3.8.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with custom-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This is only a meaningful privilege escalation on multisite installations or those with DISALLOW_UNFILTERED_HTML enabled, as Editor-level users on default single-site installs already possess the unfiltered_html capability."
     },
     {
-      "id": "CVE-2026-125870",
-      "title": "CVE-2026-125870",
+      "id": "CVE-2026-120573",
+      "title": "CVE-2026-120573",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:15.157",
-      "summary": "BookStack before 26.09.3 contains a missing authorization vulnerability in ImageController::checkImagePermission() that allows authenticated non-admin users to bypass page-level content restrictions for images whose owning page has been moved to the recycle bin, because the permission check relies on Page::getPage() which returns null for soft-deleted pages and silently skips the PageView check. Attackers can enumerate sequential image IDs via GET /images/edit/{id} to disclose metadata of restricted images, and users with image-update-all/image-delete-all privileges can rename, replace, or permanently delete images belonging to content they cannot view, persisting the damage even after the page is restored."
+      "date": "2026-11-13T10:17:26.817",
+      "summary": "The WPeMatico RSS Feed Fetcher plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'post_category' parameter in all versions up to, and including, 2.9.1 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The injected payload is persisted in post meta as campaign_data, bypassing wp_kses sanitization, and executes in the browser session of any user with edit_posts — including Administrators — who opens the WPeMatico campaigns list screen."
     },
     {
-      "id": "CVE-2026-126993",
-      "title": "CVE-2026-126993",
+      "id": "CVE-2026-120658",
+      "title": "CVE-2026-120658",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:15.460",
-      "summary": "A security flaw has been discovered in SiteServer SSCMS up to 7.2.2. Impacted is an unknown function of the file /api/v1/captcha. Performing a manipulation of the argument Value results in inadequate encryption strength. The attack is possible to be carried out remotely. The exploit has been released to the public and may be used for attacks. The vendor was contacted early about this disclosure but did not respond in any way."
+      "date": "2026-11-13T10:17:26.977",
+      "summary": "The Download Manager plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'file[additional_previews][]' parameter in all versions up to, and including, 7.6.3 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with author-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. The wpdm_sanitize_array() function strips HTML tags via wp_kses but leaves bare single quotes intact and calls stripslashes_deep() which defeats WordPress magic quotes protection, allowing a single-quote-based attribute breakout payload to be stored verbatim and later rendered without escaping."
     },
     {
-      "id": "CVE-2026-126994",
-      "title": "CVE-2026-126994",
+      "id": "CVE-2026-120688",
+      "title": "CVE-2026-120688",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:15.690",
-      "summary": "A vulnerability has been found in braindecode up to 1.8.1. Affected is the function resolve_type_kwargs of the file braindecode/models/util.py of the component Model Config Deserialization. Such manipulation of the argument Activation leads to use of externally-controlled input to select classes or code. The attack can be launched remotely. The exploit has been disclosed to the public and may be used. Upgrading to version 2.0.0 is able to address this issue. The name of the patch is 05b764d93b9a50400f523206fbe03d73d0cf5edb. The affected component should be upgraded."
+      "date": "2026-11-13T10:17:27.137",
+      "summary": "The EZ SQL Reports Shortcode Widget and DB Backup plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'HTTP_USER_AGENT (demonstrated); more generally, any attacker-controllable DB column the saved report selects' parameter in all versions up to, and including, 5.25.25 due to insufficient input sanitization and output escaping. This makes it possible for unauthenticated attackers to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. This requires an administrator to have saved a SQL report that selects an attacker-controllable database column, such as wp_comments.comment_agent, which WordPress stores verbatim from unauthenticated visitors even when comments are pending moderation."
     },
     {
-      "id": "CVE-2026-127050",
-      "title": "CVE-2026-127050",
+      "id": "CVE-2026-121518",
+      "title": "CVE-2026-121518",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.010",
-      "summary": "Backup Migration before 2.1.8 for WordPress contains a path traversal vulnerability in its PclZip restore fallback that allows an attacker to achieve arbitrary file write when an administrator restores a malicious backup archive on a server lacking the PHP zip extension. Attackers can craft a zip archive with entry names containing \"..\" sequences, which PclZip's extract() processes without the PCLZIP_OPT_EXTRACT_DIR_RESTRICTION option, writing a PHP file outside the intended extraction directory into the web-servable tree to achieve remote code execution."
+      "date": "2026-11-13T10:17:27.300",
+      "summary": "The Customer Reviews for WooCommerce plugin for WordPress is vulnerable to Sensitive Information Exposure in versions up to, and including, 5.127.0 via the 'search' parameter of the cr_show_more_all_reviews and cr_show_more_reviews AJAX actions. This is due to the handlers being hooked on wp_ajax_nopriv_* without a capability check (and, in the product-page handler, with a nonce check that is behind a filter defaulting to false) while passing the visitor-supplied search string straight into get_comments() as the 'search' argument, which core expands into LIKE conditions over comment_author, comment_author_email, comment_author_url, comment_author_IP and comment_content. This makes it possible for unauthenticated attackers to extract review author email addresses and IP addresses — fields WordPress and WooCommerce never expose to the public — one character at a time by observing whether the returned result set matches a probed substring."
     },
     {
-      "id": "CVE-2026-127056",
-      "title": "CVE-2026-127056",
+      "id": "CVE-2026-122063",
+      "title": "CVE-2026-122063",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.177",
-      "summary": "PapaParse before 5.7.1 contains an inefficient algorithmic complexity vulnerability that allows remote unauthenticated attackers to cause denial of service by submitting delimiter-free quoted CSV input to Papa.parse(). Attackers can supply a single-column quoted CSV with no delimiters, triggering repeated full-buffer indexOf scans per row that grow quadratically with input size, exhausting CPU and blocking the Node.js event loop or freezing a browser tab."
+      "date": "2026-11-13T10:17:27.477",
+      "summary": "The Newsletters plugin for WordPress is vulnerable to blind SQL Injection via the 'user_email' parameter in all versions up to, and including, 4.18.2 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with subscriber-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. Exploitation requires the admin-controlled 'currentusersubscribed' option to be enabled and at least one page rendering the Newsletters subscribe shortcode or widget to exist; a Subscriber-level attacker can self-serve the attack by updating their own profile email to a crafted payload and loading such a page."
     },
     {
-      "id": "CVE-2026-19422",
-      "title": "CVE-2026-19422",
+      "id": "CVE-2026-122227",
+      "title": "CVE-2026-122227",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.347",
-      "summary": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an authentication bypass vulnerability in Windows DNS and DHCP agent synchronization APIs, allowing unauthenticated user to impersonate onboarded Windows servers and perform unauthorized DNS and DHCP modifications."
+      "date": "2026-11-13T10:17:27.660",
+      "summary": "The Easy Property Listings plugin for WordPress is vulnerable to generic SQL Injection via the 'post_type' parameter in all versions up to, and including, 3.5.28 due to insufficient escaping on the user supplied parameter and lack of sufficient preparation on the existing SQL query. This makes it possible for authenticated attackers, with contributor-level access and above, to append additional SQL queries into already existing queries that can be used to extract sensitive information from the database. The sanitize_text_field() function is applied to the attribute value but does not escape single quotes, providing no mitigation against breaking out of the SQL IN('...') literal."
     },
     {
-      "id": "CVE-2026-75864",
-      "title": "CVE-2026-75864",
+      "id": "CVE-2026-123769",
+      "title": "CVE-2026-123769",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.497",
-      "summary": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an improper authorization vulnerability that allowed authenticated non-administrative users to delete DNS zones outside their assigned scope."
+      "date": "2026-11-13T10:17:27.823",
+      "summary": "The SureDash – Community, Courses & Member Dashboard plugin for WordPress is vulnerable to Privilege Escalation in all versions up to, and including, 1.13.0 This is due to the `save_settings()` REST handler at `/suredash/v1/save-settings` being gated only by `admin_permission_callback()`, which authorizes any holder of the custom `manage_portal_dashboard` capability (Portal Manager role) without requiring `promote_users`, `edit_users`, or `manage_options`, combined with `sanitize_settings_data()` iterating all attacker-supplied keys with no allow-list, allowing arbitrary keys such as `default_role` to pass through `sanitize_text_field()` unchanged and be persisted into the `portal_settings` option via `update_option()` with no role-validity check. This makes it possible for authenticated attackers with Portal Manager-level access and above to poison the `default_role` setting to `administrator`, after which any subsequent new-user registration through the publicly accessible block-register endpoint reads the corrupted setting and passes it directly to `wp_insert_user()`, producing a full WordPress Administrator account under the attacker's control. The exploit requires two steps: a"
     },
     {
-      "id": "CVE-2026-75867",
-      "title": "CVE-2026-75867",
+      "id": "CVE-2026-124218",
+      "title": "CVE-2026-124218",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.633",
-      "summary": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an authorization bypass vulnerability that allowed authenticated non-administrative users to modify Windows DHCP filter-list configurations across unauthorized clusters."
+      "date": "2026-11-13T10:17:27.993",
+      "summary": "The Drag and Drop File Upload for Elementor Forms plugin for WordPress is vulnerable to arbitrary file deletion due to insufficient file path validation in the remove_files function in all versions up to, and including, 1.6.2 This makes it possible for unauthenticated attackers to delete arbitrary files on the server, which can easily lead to remote code execution when the right file is deleted (such as wp-config.php). This vulnerability is reachable when the \"yeepdf_not_save\" privacy option is enabled, a commonly used production setting that triggers the remove_files() cleanup path."
     },
     {
-      "id": "CVE-2026-75868",
-      "title": "CVE-2026-75868",
+      "id": "CVE-2026-125055",
+      "title": "CVE-2026-125055",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.763",
-      "summary": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an authorization bypass vulnerability that allowed authenticated non-administrative users to modify DHCP options on subnets belonging to unauthorized clusters."
+      "date": "2026-11-13T10:17:28.153",
+      "summary": "The Chatterbug Forms – Fast, Flexible WordPress Form Builder plugin for WordPress is vulnerable to Arbitrary File Upload in all versions up to, and including, 1.0.2 via the cbforms_check_form_submissions function. This is due to missing server-side file extension validation in cbforms_check_form_submissions(), where the allowed-type check defaults to the uploaded file's own extension when no field restriction is configured, trivially allowing any extension including .php. This makes it possible for unauthenticated attackers to upload files that may be executable, which makes remote code execution possible. The submission nonce printed inline on every public page containing a Chatterbug form is freely obtainable by unauthenticated visitors and therefore does not constitute an effective access control barrier."
     },
     {
-      "id": "CVE-2026-75869",
-      "title": "CVE-2026-75869",
+      "id": "CVE-2026-125409",
+      "title": "CVE-2026-125409",
       "source": "NIST NVD",
-      "date": "2026-11-12T13:17:16.900",
-      "summary": "Zohocorp ManageEngine DDI Central versions below 6301 is affected by an authorization bypass and PowerShell command injection vulnerability that allowed authenticated non-administrative users to target unauthorized Windows DHCP subnets and potentially execute arbitrary commands on managed Windows DHCP servers through crafted DNS suffix values."
+      "date": "2026-11-13T10:17:28.317",
+      "summary": "The Passster – Password Protect Pages and Content plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'metavalue (metakeyinput=passster_id | passster_headline)' parameter in all versions up to, and including, 4.3.21 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. A Contributor can break out of the shortcode attribute context by embedding a ] character in the passster_id or passster_headline meta value to prematurely close the opening shortcode tag, then append a [/passster] closing tag so that the trailing HTML payload is emitted verbatim by do_shortcode() — bypassing the per-attribute escaping present inside render_shortcode() — and the script will also execute in an editor's or administrator's browser when they preview the Contributor's pending post, since filter_the_content() has no edit-permission capability gate."
     },
     {
-      "id": "CVE-2026-107484",
-      "title": "CVE-2026-107484",
+      "id": "CVE-2026-125948",
+      "title": "CVE-2026-125948",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:22.897",
-      "summary": "An input and authorization validation vulnerability in Gaia Portal backend handlers could allow an authenticated, non-administrative user to perform privileged operations that should be restricted to administrators."
+      "date": "2026-11-13T10:17:28.483",
+      "summary": "The Recipe Card Blocks Lite plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'steps[].text' parameter in all versions up to, and including, 3.7.0 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page. Because wp_kses_post() preserves block-delimiter HTML comments verbatim on save, a Contributor can embed event-handler payloads inside the block's steps[].text attribute in a draft or pending post without the unfiltered_html capability, and the payload executes for any visitor — including privileged editors and administrators who preview or publish the post — as well as through the public print endpoint."
     },
     {
-      "id": "CVE-2026-114466",
-      "title": "CVE-2026-114466",
+      "id": "CVE-2026-126029",
+      "title": "CVE-2026-126029",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:23.203",
-      "summary": "Arbitrary data can be read or written through git-fast-import(1) and git-fast-export(1) features not marked unsafe"
+      "date": "2026-11-13T10:17:28.657",
+      "summary": "The WPZOOM Addons for Elementor – Starter Templates & Widgets plugin for WordPress is vulnerable to Stored Cross-Site Scripting via the 'actions[save_builder][data][elements][...][settings][regions][i][link][url] / [pins][i][link][url]' parameter in all versions up to, and including, 1.4.20 due to insufficient input sanitization and output escaping. This makes it possible for authenticated attackers, with contributor-level access and above, to inject arbitrary web scripts in pages that will execute whenever a user accesses an injected page."
     },
     {
-      "id": "CVE-2026-114467",
-      "title": "CVE-2026-114467",
+      "id": "CVE-2026-126264",
+      "title": "CVE-2026-126264",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:23.360",
-      "summary": "Out-of-bounds write possible in Git when git-merge(1) used on tag with more than two GPG signatures"
+      "date": "2026-11-13T10:17:28.827",
+      "summary": "SiYuan before 3.8.9 contains an information disclosure vulnerability that allows authenticated Reader users to retrieve credential-named widget files by bypassing the sensitive-path guard in getFile. Attackers can request paths like /data/widgets/<package>/credentials.json for publish-referenced widgets to obtain API keys, tokens, or other stored secrets."
     },
     {
-      "id": "CVE-2026-114469",
-      "title": "CVE-2026-114469",
+      "id": "CVE-2026-126265",
+      "title": "CVE-2026-126265",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:23.500",
-      "summary": "Out-of-bounds read can crash git-apply(1) when binary patch inflates to very large size"
+      "date": "2026-11-13T10:17:29.003",
+      "summary": "SiYuan 2.1.0 before 3.8.9 contains a flaw where the loginAuth CAPTCHA challenge lives in a signed client-side cookie, allowing reuse of a solved challenge. Attackers can replay the original signed siyuan cookie with distinct wrong access codes to brute-force the code and gain an administrator session."
     },
     {
-      "id": "CVE-2026-116835",
-      "title": "CVE-2026-116835",
+      "id": "CVE-2026-126266",
+      "title": "CVE-2026-126266",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:23.630",
-      "summary": "In affected versions of Octopus Server, insufficient validation of custom claims on OIDC accounts allowed a user with permission to edit accounts to cause Octopus Server to issue signed OIDC tokens that impersonate a different project. This could grant access to external systems, such as cloud providers or other Octopus instances, that trust that project's identity."
+      "date": "2026-11-13T10:17:29.173",
+      "summary": "SiYuan from 3.6.0 before 3.8.9 contains an information disclosure vulnerability that allows unauthenticated publish visitors to bypass per-document passwords via regex search in getDoc. Attackers can send POST requests to /api/filetree/getDoc with queryMethod 3 and a broad regex to read protected body text returned in the unfiltered keywords field."
     },
     {
-      "id": "CVE-2026-120490",
-      "title": "CVE-2026-120490",
+      "id": "CVE-2026-126267",
+      "title": "CVE-2026-126267",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:23.770",
-      "summary": "On Scalable Platforms, an administrator with permissions to edit and install the Access Control Policy and NAT rules can create a NAT rule that redirects traffic to the Gateway's Sync interface, bypassing the built-in Sync protection. This could allow the administrator to execute operating system commands and write files on the Gateway with superuser privileges."
+      "date": "2026-11-13T10:17:29.350",
+      "summary": "NocoDB from 0.300.0 before 2026.04.4 contains a denial of service vulnerability that allows authenticated users to crash the server by triggering an unhandled promise rejection in MetaService metadata logging. Attackers can send a request leaving a lookup condition undefined, causing knex binding errors in the unawaited logHelper call that terminate the server process."
     },
     {
-      "id": "CVE-2026-120869",
-      "title": "CVE-2026-120869",
+      "id": "CVE-2026-126268",
+      "title": "CVE-2026-126268",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:23.990",
-      "summary": "An unauthenticated attacker can bypass authentication controls to access restricted resources on the Citrix NetScaler Console appliance"
+      "date": "2026-11-13T10:17:29.510",
+      "summary": "NocoDB before 2026.08.0 contains an IP address spoofing vulnerability that allows unauthenticated attackers to forge their recorded source IP by supplying X-Forwarded-For headers, because Express trust proxy is enabled unconditionally. Attackers can write arbitrary source addresses into audit and request logs to mislead investigations and evade the per-address public API rate limiter."
     },
     {
-      "id": "CVE-2026-123039",
-      "title": "CVE-2026-123039",
+      "id": "CVE-2026-126269",
+      "title": "CVE-2026-126269",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:24.233",
-      "summary": "The Gaia OS DynamicCLI daemon runs as root and listens on a world-writable local socket (/tmp/dynamic_socket) without authenticating connecting processes. An authenticated local user can send a command to the socket and have it executed as root."
+      "date": "2026-11-13T10:17:29.667",
+      "summary": "NocoDB before 2026.09.0 contains a stored cross-site scripting vulnerability that allows authenticated Editor users to execute scripts by storing crafted attachment MIME types like text/html;image/png. Attackers can write the value through the records API so the /dltemp signed URL serves HTML inline, stealing session tokens from localStorage to impersonate victims."
     },
     {
-      "id": "CVE-2026-124018",
-      "title": "CVE-2026-124018",
+      "id": "CVE-2026-126270",
+      "title": "CVE-2026-126270",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:27.040",
-      "summary": "Gutenverse Form plugin for WordPress before 3.2.2 contains a CSV formula injection vulnerability that allows unauthenticated attackers to inject spreadsheet formula-trigger characters by submitting free-text field values to the public form-submit REST route, which sanitizes input with sanitize_text_field() without stripping characters such as =, +, @, or a leading minus. Attackers can store malicious formulas in entry-data post meta that are later exported unneutralized via fputcsv() or esc_html() in the CSV export functions, causing the formula to execute when an administrator opens the exported file, enabling data exfiltration to an attacker-controlled URL or command execution on the administrator's workstation."
+      "date": "2026-11-13T10:17:29.827",
+      "summary": "NocoDB before 2026.09.1 contains a missing authentication vulnerability in the aggregated meta info route of utils.controller.ts that exposes instance-wide metadata to anonymous callers. Unauthenticated attackers can request the endpoint to enumerate bases, user counts, shared and password-protected view counts, webhook counts, and live per-base row counts, while repeated requests amplify database query load."
     },
     {
-      "id": "CVE-2026-124627",
-      "title": "CVE-2026-124627",
+      "id": "CVE-2026-126271",
+      "title": "CVE-2026-126271",
       "source": "NIST NVD",
-      "date": "2026-11-12T14:17:28.443",
-      "summary": "In affected versions of Octopus Server, incorrect validation of the external identity linked to a newly registered user could result in that user receiving the LDAP-mapped team memberships and associated permissions of another user. This issue only affects instances with LDAP authentication enabled and LDAP groups mapped to Octopus teams."
+      "date": "2026-11-13T10:17:29.987",
+      "summary": "NocoDB before 2026.09.0 contains an information disclosure vulnerability that allows authenticated base Viewers to obtain TLS client private keys by reading a base's data source. The source read handler masked only the connection password, letting attackers retrieve the decrypted private key, client certificate and CA to connect directly to the external database, bypassing NocoDB permissions."
     }
   ]
 }
